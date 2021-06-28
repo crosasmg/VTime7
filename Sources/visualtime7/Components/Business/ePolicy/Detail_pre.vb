@@ -78,69 +78,69 @@ Public Class Detail_pre
 			End If
 		End Get
 	End Property
-	
-	'% LoadReceipts: Devuelve los conceptos de facturación de los recibos emitidos
-	Public Function LoadReceipts(ByVal sCertype As String, ByVal nReceipt As Integer, ByVal nDigit As Integer, ByVal nPaynumbe As Integer, ByVal dEffecdate As Date, ByVal nBranch As Integer, ByVal nProduct As Integer) As Boolean
-		
-		'- Se define la variable lrecreaReceiptGen
-		
-		Dim lrecreaReceiptGen As eRemoteDB.Execute
-		Dim llngIndex As Integer
-		
-		lrecreaReceiptGen = New eRemoteDB.Execute
-		
-		'+ Definición de parámetros para stored procedure 'insudb.reaReceiptGen'
-		'+ Información leída el 17/11/2000 16:12:15
-		
-		With lrecreaReceiptGen
-			.StoredProcedure = "reaReceiptGen"
-			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nDigit", nDigit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nPayNumbe", nPaynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			
-			If .Run Then
-				llngIndex = -1
-				LoadReceipts = True
-				mblnCharge = True
-				
-				ReDim marrReceipts(100)
-				
-				Do While Not .EOF
-					llngIndex = llngIndex + 1
-					
-					marrReceipts(llngIndex).dExpirDate = .FieldToClass("dExpirDate")
-					marrReceipts(llngIndex).dStartdate = .FieldToClass("dStartDate")
-					marrReceipts(llngIndex).nBill_item = .FieldToClass("nBill_item")
-					marrReceipts(llngIndex).nCommision = .FieldToClass("nCommision")
-					marrReceipts(llngIndex).nCurrency = .FieldToClass("nCurrency")
-					marrReceipts(llngIndex).nPremAnual = .FieldToClass("nPremAnual")
-					marrReceipts(llngIndex).nPremium = .FieldToClass("nPremium")
-					marrReceipts(llngIndex).sDescript = .FieldToClass("sDescript")
-					marrReceipts(llngIndex).nAmountAf = .FieldToClass("nAmountAf")
-					marrReceipts(llngIndex).nAmountEx = .FieldToClass("nAmountEx")
-					
-					.RNext()
-				Loop 
-				
-				.RCloseRec()
-				
-				ReDim Preserve marrReceipts(llngIndex)
-			Else
-				LoadReceipts = False
-				mblnCharge = False
-			End If
-		End With
-		
-		'UPGRADE_NOTE: Object lrecreaReceiptGen may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lrecreaReceiptGen = Nothing
-	End Function
-	
-	'% ReceiptItem: Carga en las variables de la clase la información de un recibo
-	Public Function ReceiptItem(ByVal llngIndex As Integer) As Boolean
+
+    '% LoadReceipts: Devuelve los conceptos de facturación de los recibos emitidos
+    Public Function LoadReceipts(ByVal sCertype As String, ByVal nReceipt As Double, ByVal nDigit As Integer, ByVal nPaynumbe As Integer, ByVal dEffecdate As Date, ByVal nBranch As Integer, ByVal nProduct As Integer) As Boolean
+
+        '- Se define la variable lrecreaReceiptGen
+
+        Dim lrecreaReceiptGen As eRemoteDB.Execute
+        Dim llngIndex As Integer
+
+        lrecreaReceiptGen = New eRemoteDB.Execute
+
+        '+ Definición de parámetros para stored procedure 'insudb.reaReceiptGen'
+        '+ Información leída el 17/11/2000 16:12:15
+
+        With lrecreaReceiptGen
+            .StoredProcedure = "reaReceiptGen"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nDigit", nDigit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPayNumbe", nPaynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+            If .Run Then
+                llngIndex = -1
+                LoadReceipts = True
+                mblnCharge = True
+
+                ReDim marrReceipts(100)
+
+                Do While Not .EOF
+                    llngIndex = llngIndex + 1
+
+                    marrReceipts(llngIndex).dExpirDate = .FieldToClass("dExpirDate")
+                    marrReceipts(llngIndex).dStartdate = .FieldToClass("dStartDate")
+                    marrReceipts(llngIndex).nBill_item = .FieldToClass("nBill_item")
+                    marrReceipts(llngIndex).nCommision = .FieldToClass("nCommision")
+                    marrReceipts(llngIndex).nCurrency = .FieldToClass("nCurrency")
+                    marrReceipts(llngIndex).nPremAnual = .FieldToClass("nPremAnual")
+                    marrReceipts(llngIndex).nPremium = .FieldToClass("nPremium")
+                    marrReceipts(llngIndex).sDescript = .FieldToClass("sDescript")
+                    marrReceipts(llngIndex).nAmountAf = .FieldToClass("nAmountAf")
+                    marrReceipts(llngIndex).nAmountEx = .FieldToClass("nAmountEx")
+
+                    .RNext()
+                Loop
+
+                .RCloseRec()
+
+                ReDim Preserve marrReceipts(llngIndex)
+            Else
+                LoadReceipts = False
+                mblnCharge = False
+            End If
+        End With
+
+        'UPGRADE_NOTE: Object lrecreaReceiptGen may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecreaReceiptGen = Nothing
+    End Function
+
+    '% ReceiptItem: Carga en las variables de la clase la información de un recibo
+    Public Function ReceiptItem(ByVal llngIndex As Integer) As Boolean
 		
 		If mblnCharge Then
 			If llngIndex <= UBound(marrReceipts) Then

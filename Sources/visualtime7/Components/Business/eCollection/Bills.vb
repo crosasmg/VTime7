@@ -44,62 +44,62 @@ Public Class Bills
 	Public dExpirDat As Date
 	Public nTransac As Integer
 	Public nAgency As Integer
-	
-	
-	'%Find: Lee los datos de la tabla
-	Public Function Find(ByVal nInsur_area As Integer, ByVal sBillType As String, ByVal nBillnum As Double, Optional ByVal lblnFind As Boolean = False) As Boolean
-		Dim lrecReaBills As eRemoteDB.Execute
-		
-		On Error GoTo reaBills_Err
-		
-		If Me.nInsur_area = nInsur_area And Me.sBillType = sBillType And Me.nBillnum = nBillnum And Not lblnFind Then
-			Find = True
-		Else
-			lrecReaBills = New eRemoteDB.Execute
-			
-			'+
-			'+ Definición de store procedure reaBills al 04-05-2002 16:50:07
-			'+
-			With lrecReaBills
-				.StoredProcedure = "reaBills"
-				.Parameters.Add("nInsur_area", nInsur_area, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("sBilltype", sBillType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nBillnum", nBillnum, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				
-				If .Run(True) Then
-					Find = True
-					Me.nInsur_area = .FieldToClass("nInsur_area")
-					Me.sBillType = .FieldToClass("sBilltype")
-					Me.sBilling = .FieldToClass("sBilling")
-					Me.nBillnum = .FieldToClass("nBillnum")
-					Me.nCurrency = .FieldToClass("nCurrency")
-					Me.sClient = .FieldToClass("sClient")
-					Me.nAmount = .FieldToClass("nAmount")
-					Me.nAmo_afec = .FieldToClass("nAmo_afec")
-					Me.nAmo_exen = .FieldToClass("nAmo_exen")
-					Me.nIva = .FieldToClass("nIva")
-					Me.nCre_note = .FieldToClass("nCre_note")
-					Me.nNewbill = .FieldToClass("nNewbill")
-					Me.nBillstat = .FieldToClass("nBillstat")
-					Me.dStatdate = .FieldToClass("dStatdate")
-				Else
-					Find = False
-				End If
-			End With
-		End If
-		
-reaBills_Err: 
-		If Err.Number Then
-			Find = False
-		End If
-		'UPGRADE_NOTE: Object lrecReaBills may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lrecReaBills = Nothing
-		On Error GoTo 0
-		
-	End Function
-	
-	'%InsValCO700_K: Validaciones de la transacción(Header)
-	Public Function InsValCO700_K(ByVal sCodispl As String, ByVal nAction As Integer, ByVal nInsur_area As Integer, ByVal sDocType As String, ByVal sBillType As String, ByVal sProcess As String, ByVal dDateIni As Date, ByVal dDateEnd As Date, ByVal dDatePrint As Date, ByVal sMode As String, ByVal nBillnum As Double, ByVal sClient As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nAgency As Integer, ByVal dValDate As Date, Optional ByVal sIndAnticip As String = "") As String
+
+
+    '%Find: Lee los datos de la tabla
+    Public Function Find(ByVal nInsur_area As Integer, ByVal sBillType As String, ByVal nBillnum As Double, ByVal sDocType As String, Optional ByVal lblnFind As Boolean = False) As Boolean
+        Dim lrecReaBills As eRemoteDB.Execute
+
+        On Error GoTo reaBills_Err
+
+        If Me.nInsur_area = nInsur_area And Me.sBillType = sBillType And Me.nBillnum = nBillnum And Not lblnFind Then
+            Find = True
+        Else
+            lrecReaBills = New eRemoteDB.Execute
+
+            '+
+            '+ Definición de store procedure reaBills al 04-05-2002 16:50:07
+            '+
+            With lrecReaBills
+                .StoredProcedure = "reaBills"
+                .Parameters.Add("nInsur_area", nInsur_area, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("sBilltype", sBillType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nBillnum", nBillnum, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+                If .Run(True) Then
+                    Find = True
+                    Me.nInsur_area = .FieldToClass("nInsur_area")
+                    Me.sBillType = .FieldToClass("sBilltype")
+                    Me.sBilling = .FieldToClass("sBilling")
+                    Me.nBillnum = .FieldToClass("nBillnum")
+                    Me.nCurrency = .FieldToClass("nCurrency")
+                    Me.sClient = .FieldToClass("sClient")
+                    Me.nAmount = .FieldToClass("nAmount")
+                    Me.nAmo_afec = .FieldToClass("nAmo_afec")
+                    Me.nAmo_exen = .FieldToClass("nAmo_exen")
+                    Me.nIva = .FieldToClass("nIva")
+                    Me.nCre_note = .FieldToClass("nCre_note")
+                    Me.nNewbill = .FieldToClass("nNewbill")
+                    Me.nBillstat = .FieldToClass("nBillstat")
+                    Me.dStatdate = .FieldToClass("dStatdate")
+                Else
+                    Find = False
+                End If
+            End With
+        End If
+
+reaBills_Err:
+        If Err.Number Then
+            Find = False
+        End If
+        'UPGRADE_NOTE: Object lrecReaBills may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecReaBills = Nothing
+        On Error GoTo 0
+
+    End Function
+
+    '%InsValCO700_K: Validaciones de la transacción(Header)
+    Public Function InsValCO700_K(ByVal sCodispl As String, ByVal nAction As Integer, ByVal nInsur_area As Integer, ByVal sDocType As String, ByVal sBillType As String, ByVal sProcess As String, ByVal dDateIni As Date, ByVal dDateEnd As Date, ByVal dDatePrint As Date, ByVal sMode As String, ByVal nBillnum As Double, ByVal sClient As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nAgency As Integer, ByVal dValDate As Date, Optional ByVal sIndAnticip As String = "") As String
 		Dim lclsErrors As eFunctions.Errors
 		Dim lclsBills_num As eCollection.Bills_Num
 		Dim lclsAddress As Object
@@ -362,8 +362,9 @@ InsValCO700A_Err:
 			.Parameters.Add("nInsur_area", nInsur_area, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nUsercode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCommit", 1, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("dValDate", dValDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			insPostCO700A = .Run(False)
+            .Parameters.Add("dValDate", dValDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sDoctype", sDocType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            insPostCO700A = .Run(False)
 		End With
 		
 insPostCO700A_Err: 
@@ -452,8 +453,9 @@ insPostCO700A_Err:
 			.Parameters.Add("nUsercode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nExists", 0, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sKey", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("dValDate", dValDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			If .Run(False) Then
+            .Parameters.Add("dValDate", dValDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sDoctype", sDocType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            If .Run(False) Then
 				If .Parameters("nExists").Value = 1 Then
 					valExistsCO700_K = True
 					If .Parameters("sKey").Value <> String.Empty Then

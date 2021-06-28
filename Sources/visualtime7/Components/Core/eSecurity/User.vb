@@ -56,75 +56,75 @@ Public Class User
 		ConstDate
 		ConstString
 	End Enum
-	
-	'**%Find: This method returns TRUE or FALSE depending if the records exists in the table "Users"
-	'%Find: Este metodo retorna VERDADERO o FALSO dependiendo de la existencia o no de registros en la
-	'%tabla "Users"
-	Public Function Find(ByVal nUsercode As Integer, Optional ByRef lblnAll As Boolean = False) As Boolean
-		Dim lrecReaUser As eRemoteDB.Execute
-		Dim lclsUserValidate As eSecurity.UserValidate
-		Dim lstrPass As String
-		
-		On Error GoTo Find_Err
-		lrecReaUser = New eRemoteDB.Execute
-		lclsUserValidate = New eSecurity.UserValidate
-		
-		'**+Parameters definiton to stored prcoedure 'insudb.reaUsers'
-		'**+Data read on 01/15/2001 15.29.55
-		'+Definición de parámetros para stored procedure 'insudb.reaUsers'
-		'+Información leída el 15/01/2001 15.29.55
-		With lrecReaUser
-			.StoredProcedure = "reaUsers"
-			.Parameters.Add("Users", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			If .Run Then
-				Me.nUsercode = nUsercode
-				lstrPass = .FieldToClass("sAccesswo")
-				sAccesswo = lclsUserValidate.StrDecode(lstrPass)
-				pstrOldPassword = lclsUserValidate.StrDecode(lstrPass)
-				nOffice = .FieldToClass("nOffice", -1)
-				sClient = .FieldToClass("sClient")
-				sInitials = .FieldToClass("sInitials")
-				sSche_code = .FieldToClass("sSche_code")
-				sStatregt = .FieldToClass("sStatregt")
-				sType = .FieldToClass("sType")
-				nDepartme = .FieldToClass("nDepartme")
-				sChNextLogon = .FieldToClass("sChNextLogon")
-				sNeverChange = .FieldToClass("sNeverChange")
-				sNeverExpires = .FieldToClass("sNeverExpires")
-				sLockedOut = .FieldToClass("sLockedOut")
-				sMenu = .FieldToClass("sMenu")
-				dFromDate = .FieldToClass("dFromDate")
-				sMenu_descript = .FieldToClass("sMenuDes")
-				sCliename = .FieldToClass("sUsername")
-				nOfficeAgen = .FieldToClass("nOfficeagen", eRemoteDB.Constants.intNull)
+
+    '**%Find: This method returns TRUE or FALSE depending if the records exists in the table "Users"
+    '%Find: Este metodo retorna VERDADERO o FALSO dependiendo de la existencia o no de registros en la
+    '%tabla "Users"
+    Public Function Find(ByVal nUsercode As Double, Optional ByRef lblnAll As Boolean = False) As Boolean
+        Dim lrecReaUser As eRemoteDB.Execute
+        Dim lclsUserValidate As eSecurity.UserValidate
+        Dim lstrPass As String
+
+        On Error GoTo Find_Err
+        lrecReaUser = New eRemoteDB.Execute
+        lclsUserValidate = New eSecurity.UserValidate
+
+        '**+Parameters definiton to stored prcoedure 'insudb.reaUsers'
+        '**+Data read on 01/15/2001 15.29.55
+        '+Definición de parámetros para stored procedure 'insudb.reaUsers'
+        '+Información leída el 15/01/2001 15.29.55
+        With lrecReaUser
+            .StoredProcedure = "reaUsers"
+            .Parameters.Add("Users", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            If .Run Then
+                Me.nUsercode = nUsercode
+                lstrPass = .FieldToClass("sAccesswo")
+                sAccesswo = lclsUserValidate.StrDecode(lstrPass)
+                pstrOldPassword = lclsUserValidate.StrDecode(lstrPass)
+                nOffice = .FieldToClass("nOffice", -1)
+                sClient = .FieldToClass("sClient")
+                sInitials = .FieldToClass("sInitials")
+                sSche_code = .FieldToClass("sSche_code")
+                sStatregt = .FieldToClass("sStatregt")
+                sType = .FieldToClass("sType")
+                nDepartme = .FieldToClass("nDepartme")
+                sChNextLogon = .FieldToClass("sChNextLogon")
+                sNeverChange = .FieldToClass("sNeverChange")
+                sNeverExpires = .FieldToClass("sNeverExpires")
+                sLockedOut = .FieldToClass("sLockedOut")
+                sMenu = .FieldToClass("sMenu")
+                dFromDate = .FieldToClass("dFromDate")
+                sMenu_descript = .FieldToClass("sMenuDes")
+                sCliename = .FieldToClass("sUsername")
+                nOfficeAgen = .FieldToClass("nOfficeagen", eRemoteDB.Constants.intNull)
                 nAgency = .FieldToClass("nAgency", eRemoteDB.Constants.intNull)
                 nFailedLogonAttempts = .FieldToClass("NFAILED_LOGON_ATTEMPTS", eRemoteDB.Constants.intNull)
-				Find = True
-				.RCloseRec()
-			Else
-				Find = False
-			End If
-		End With
-		
-		'UPGRADE_NOTE: Object lrecReaUser may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lrecReaUser = Nothing
-		
-Find_Err: 
-		If Err.Number Then
-			Find = False
-		End If
-		'UPGRADE_NOTE: Object lrecReaUser may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lrecReaUser = Nothing
-		'UPGRADE_NOTE: Object lclsUserValidate may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lclsUserValidate = Nothing
-		On Error GoTo 0
-	End Function
-	
-	'**%ADD: This method is in charge of adding new records to the table "Users".  It returns TRUE or FALSE
-	'**%depending on whether the stored procedure executed correctly.
-	'%ADD: Este método se encarga de agregar nuevos registros a la tabla "Users". Devolviendo verdadero o
-	'%falso dependiendo de si el Stored procedure se ejecutó correctamente.
-	Public Function Add() As Boolean
+                Find = True
+                .RCloseRec()
+            Else
+                Find = False
+            End If
+        End With
+
+        'UPGRADE_NOTE: Object lrecReaUser may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecReaUser = Nothing
+
+Find_Err:
+        If Err.Number Then
+            Find = False
+        End If
+        'UPGRADE_NOTE: Object lrecReaUser may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecReaUser = Nothing
+        'UPGRADE_NOTE: Object lclsUserValidate may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsUserValidate = Nothing
+        On Error GoTo 0
+    End Function
+
+    '**%ADD: This method is in charge of adding new records to the table "Users".  It returns TRUE or FALSE
+    '**%depending on whether the stored procedure executed correctly.
+    '%ADD: Este método se encarga de agregar nuevos registros a la tabla "Users". Devolviendo verdadero o
+    '%falso dependiendo de si el Stored procedure se ejecutó correctamente.
+    Public Function Add() As Boolean
 		Dim lrecUsers As eRemoteDB.Execute
 		
 		On Error GoTo Add_Err
