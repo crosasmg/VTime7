@@ -141,33 +141,33 @@ Public Class Detail_pre
 
     '% ReceiptItem: Carga en las variables de la clase la información de un recibo
     Public Function ReceiptItem(ByVal llngIndex As Integer) As Boolean
-		
-		If mblnCharge Then
-			If llngIndex <= UBound(marrReceipts) Then
-				With marrReceipts(llngIndex)
-					dExpirDate = .dExpirDate
-					dStartdate = .dStartdate
-					nBill_item = .nBill_item
-					nCommi_rate = .nCommi_rate
-					nCommision = .nCommision
-					nCurrency = .nCurrency
-					nPremAnual = .nPremAnual
-					nPremium = .nPremium
-					sDescript = .sDescript
-					sType_detai = .sType_detai
-					nAmountAf = .nAmountAf
-					nAmountEx = .nAmountEx
-				End With
-				
-				ReceiptItem = True
-			Else
-				ReceiptItem = False
-			End If
-		End If
-	End Function
-	
-	'% Find: Rescata registro de Detail_pre
-	Public Function Findafex(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nReceipt As Double, ByVal nDigit As Integer, ByVal nPaynumbe As Integer) As Boolean
+
+        If mblnCharge Then
+            If llngIndex <= UBound(marrReceipts) Then
+                With marrReceipts(llngIndex)
+                    dExpirDate = .dExpirDate
+                    dStartdate = .dStartdate
+                    nBill_item = .nBill_item
+                    nCommi_rate = .nCommi_rate
+                    nCommision = .nCommision
+                    nCurrency = .nCurrency
+                    nPremAnual = .nPremAnual
+                    nPremium = .nPremium
+                    sDescript = .sDescript
+                    sType_detai = .sType_detai
+                    nAmountAf = .nAmountAf
+                    nAmountEx = .nAmountEx
+                End With
+
+                ReceiptItem = True
+            Else
+                ReceiptItem = False
+            End If
+        End If
+    End Function
+
+    '% Find: Rescata registro de Detail_pre
+    Public Function Findafex(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nReceipt As Double, ByVal nDigit As Integer, ByVal nPaynumbe As Integer) As Boolean
 		Dim lrecreadetail_pre As eRemoteDB.Execute
 		
 		On Error GoTo Findafex_Err
