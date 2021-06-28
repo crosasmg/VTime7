@@ -1,0 +1,2071 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.FASI.Contracts</name>
+    </assembly>
+    <members>
+        <member name="P:InMotionGIT.FASI.Contracts.BackOffice.Windows.sCodispl">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.OwnerId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.Count">
+            <summary>
+            Count
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.Type">
+            <summary>
+            Count
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Filter.ChildFilters">
+            <summary>
+            ChildFilters
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.TaskBasic.TaskID">
+            <summary>
+            ID of the task or event. It is a unique code..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.TaskID">
+            <summary>
+            ID of the task or event. It is a unique code..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RecordType">
+            <summary>
+            Tipo de registro
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.OriginType">
+            <summary>
+            Type of program or person that originated the event or task..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.OriginatedBy">
+            <summary>
+            ID of who originated the task or event. For example, if the task was originated by a business rule, this field will contain the ID of the business rule..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.StartingDateTime">
+            <summary>
+            Date and time when the event will start. For example, if the event is a meeting, this field will contain the date and time when it starts..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.Priority">
+            <summary>
+            Priority..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.AllDayActivity">
+            <summary>
+            Indicates that the activity will take the full day. When selected, the starting and ending time are not needed..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.IndividualTaskIndicator">
+            <summary>
+            Indicates that the task or activity is to be done by one person only. It is useful for tasks or activities assigned to a group of users. In that case, if it is selected, it means that the first user of the group that takes the activity will be able to mark it completed. If it is not selected, each member of the group will have to do it..
+            </summary>
+            <remarks>Data source is 'Task.IndividualTaskIndicator'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.PercentageCompleted">
+            <summary>
+            Percentage that has been completed of the activity or task. It is useful to follow up complex activities..
+            </summary>
+            <remarks>Data source is 'Task.PercentageCompleted'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.TaskShortDescription">
+            <summary>
+            Short description of the activity. It is the text shown when the user inquiries the agenda or todo list..
+            </summary>
+            <remarks>Data source is 'Task.TaskShortDescription'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.TaskLongDescription">
+            <summary>
+            Detailed description of the activity. It is used only if the short description is not enough..
+            </summary>
+            <remarks>Data source is 'Task.TaskLongDescription'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.VisualTIMETransaction">
+            <summary>
+            Code of the VisualTIME transaction that allows to perform the activity using the system..
+            </summary>
+            <remarks>Data source is 'Task.VisualTimeTransaction'</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.CompletedAction">
+            <summary>
+            Action to take when the task is to be done..
+            </summary>
+            <remarks>Data source is 'Task.CompletedAction'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.AlarmActive">
+            <summary>
+            Indicates that there is an alarm set for this activity or task..
+            </summary>
+            <remarks>Data source is 'Task.AlarmActive'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.AlarmDateTime">
+            <summary>
+            Date and time when the alarm is scheduled for this activity or task..
+            </summary>
+            <remarks>Data source is 'Task.AlarmDateTime'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.ReminderInfo">
+            <summary>
+            Reminder Info..
+            </summary>
+            <remarks>Data source is 'Task.ReminderInfo'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatActive">
+            <summary>
+            Indicates that this activity or task is recurrence..
+            </summary>
+            <remarks>Data source is 'Task.RepeatActive'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatFrequency">
+            <summary>
+            For repetitive events, this is the frequency of repeat..
+            </summary>
+            <remarks>Data source is 'Task.RepeatFrequency'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatStartingDate">
+            <summary>
+            For repetitive events, this is the starting date of repeat..
+            </summary>
+            <remarks>Data source is 'Task.RepeatStartingDate'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatEndingDate">
+            <summary>
+            For repetitive events, this is the ending date of repeat..
+            </summary>
+            <remarks>Data source is 'Task.RepeatStartingDate'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatTimes">
+            <summary>
+            For repetitive events, this is the number of times that the event will repeat..
+            </summary>
+            <remarks>Data source is 'Task.RepeatTimes'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RecurrenceInfo">
+            <summary>
+            Recurrence Info..
+            </summary>
+            <remarks>Data source is 'Task.RecurrenceInfo'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.WarningWhenCompleted">
+            <summary>
+            To send a message to the user when the task changes to completed state..
+            </summary>
+            <remarks>Data source is 'Task.WarningWhenCompleted'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.Label">
+            <summary>
+            Label..
+            </summary>
+            <remarks>Data source is 'Task.Label'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.ShowTimeAs">
+            <summary>
+            Show Time As..
+            </summary>
+            <remarks>Data source is 'Task.ShowTimeAs'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.ResourceInfo">
+            <summary>
+            Resource Info..
+            </summary>
+            <remarks>Data source is 'Task.ResourceInfo'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.LineofBusiness">
+            <summary>
+            Resource Info..
+            </summary>
+            <remarks>Data source is 'Task.LineOfBusiness'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.Status">
+            <summary>
+            Status of the activity or event..
+            </summary>
+            <remarks>Data source is 'Task.Status'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RecordStatus">
+            <summary>
+            Status of the record. It allows to restrict the use of the information in the system..
+            </summary>
+            <remarks>Data source is 'Task.RecordStatus'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.Localtion">
+            <summary>
+            Location
+            </summary>
+            <remarks>Data source is 'Task.Location'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.CreatorUserCode">
+            <summary>
+            Code of the user who creates the information. Information for audit..
+            </summary>
+            <remarks>Data source is 'Task.CreatorUserCode'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.CreationDate">
+            <summary>
+             Code of the user who updates the information. Information for audit..
+            </summary>
+            <remarks>Data source is 'Task.CreationDate'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.UpdateDate">
+            <summary>
+             Date and time when the information was updated. Information for audit..
+            </summary>
+            <remarks>Data source is 'Task.UpdateDate'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.UpdateUserCode">
+            <summary>
+             Code of the user who updates the information. Information for audit..
+            </summary>
+            <remarks>Data source is 'Task.CreatorUserCode'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RecordTypeDescript">
+            <summary>
+            Description for property 'RecordType'. Description associated with the code..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.OriginTypeDescript">
+            <summary>
+            Description for property 'OriginType'. Description associated with the code..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.PriorityDescript">
+            <summary>
+            Description for property 'Priority'. Description associated with the code..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RepeatFrequencyDescript">
+             <summary>
+             Description for property 'RepeatFrequency'. Description associated with the code..
+             </summary>
+            <remarks>Data source is 'TransRepeatFrequency.Description'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.StatusDescript">
+             <summary>
+             Description for property 'Status'. Description associated with the code..
+             </summary>
+            <remarks>Data source is 'TransTaskStatus.Description'.</remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Diary.Task.RecordStatusDescript">
+             <summary>
+             Description for property 'RecordStatus'. Description of the record status..
+             </summary>
+            <remarks>Data source is 'ETranRecordStatus.Description'.</remarks>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.Enumerations.EnumUserSecurity">
+            <summary>
+            Enumerator user security. // Numerador usuario de seguridad.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Children">
+            <summary>
+            Children de el pagina
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Url">
+            <summary>
+            Url del la pagina
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Id">
+            <summary>
+            Page id. // Código de página.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Title">
+            <summary>
+            Page title. // Título de la página.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.TranslationTitle">
+            <summary>
+            Translation Title. // Titulo de traducción.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.UserId">
+            <summary>
+            User code. // Código de usuario.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Icon">
+            <summary>
+            Propiedad que define la imagen que se retorna
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.VersionNo">
+            <summary>
+             Número de versión.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.Order">
+            <summary>
+            Numero de orden de la pagina.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.LayoutType">
+            <summary>
+            Layout type code. // Código de tipo de layout.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.Page.IsLoad">
+            <summary>
+            Is Load. // Esta cargada
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.General.UserActive">
+            <summary>
+            DTO para el manejo de sección en fasi y en drop-thing.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.SessionID">
+            <summary>
+            Propiedad que almacena el SessionId
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.IP">
+            <summary>
+            Dirección IP del acceso.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.UserName">
+            <summary>
+            Propiedad que almacena los usuario activos.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.EMail">
+            <summary>
+            Correo electrónico.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.InitDate">
+            <summary>
+             Fecha de inicio de la sesión
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.UserActive.LastUpdateDate">
+            <summary>
+             Fecha de ultima actualizan
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Title">
+            <summary>
+            Título de la página.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Name">
+            <summary>
+            Nombre del componente
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Expanded">
+            <summary>
+            Indicador de expansión.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.State">
+            <summary>
+            Estado.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.StateXML">
+            <summary>
+            Estado.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.X">
+            <summary>
+            Coordenada en X
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Y">
+            <summary>
+            Coordenada en Y
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Width">
+            <summary>
+            El ancho del widget
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Height">
+            <summary>
+            El alto del widget
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.IsEditAllow">
+            <summary>
+             Indicador si está permitido editar.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.IsAllowedToEditTheTitle">
+            <summary>
+            / Indicador si está permitido editar el titulo.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.Url">
+            <summary>
+             Código URL.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.PageId">
+            <summary>
+             Id pagina a quien pertenece
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.General.WidgetInstance.VersionNo">
+            <summary>
+            Version del widgetIntance en el caso de FASI Old es 1 y en el caso de migración es 2
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Response.FASIResponse.Successfully">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Response.FASIResponse.Reason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.Response.FASIResponseResult">
+            <summary>
+            DTO de manejo de información de la operación
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Contracts.Response.FASIResponseResult.#ctor">
+            <summary>
+            Constructor base
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Contracts.Response.FASIResponseResult.#ctor(System.Object)">
+            <summary>
+            Sobre carga de método para agregar data en el constructor
+            </summary>
+            <param name="Data"></param>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Response.FASIResponseResult.Data">
+            <summary>
+            Propiedad que permite agregar datos de retorno.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Response.FASIResponseResult.HttpStatusCode">
+            <summary>
+            Código de status de operación
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Response.FASIResponseResult.Code">
+            <summary>
+            Código del error para el manejo de repositorio de errores
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.UserName">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.UserId">
+            <summary>
+            Id del usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.IsAnonymous">
+            <summary>
+            Id de compañía
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.CompanyId">
+            <summary>
+            Id de compañía
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.Token">
+            <summary>
+            Value del token
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.ClientId">
+            <summary>
+            Id del client
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.ProducerId">
+            <summary>
+            Id del producer
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.FirstNameAndSecondLastName">
+            <summary>
+            FirstName And SecondLastName
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.LanguageID">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.LanguageName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.IsEmployee">
+            <summary>
+            Define si el usuario es o no empleado
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserProfile.AssignedRoles">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.UserName">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.CompanyId">
+            <summary>
+            Id de compañía
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.ExpirateDate">
+            <summary>
+            Fecha de expiran del token
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.Password">
+            <summary>
+            Clave del usuario a usar
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.UserId">
+            <summary>
+            Id del usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.Token.IsValid">
+            <summary>
+            Si el estado del token es valido
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.TokenResponse.Message">
+            <summary>
+            Permite almacenar algún mensaje que implica el proceso de creación del Token
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.TokenResponse.IsValid">
+            <summary>
+            Define si el token es valido o on 
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.TokenResponse.Token">
+            <summary>
+            Contiene el cuerpo del token
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.TokenResponse.ExpirateDate">
+            <summary>
+            Fecha de expiracion del token
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserToken.UserId">
+            <summary>
+            User Id
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserToken.UserName">
+            <summary>
+            User Name
+            </summary>
+            <remarks>
+            Nombre de usuario
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserToken.Email">
+            <summary>
+            Email
+            </summary>
+            <remarks>
+            Email
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserToken.ExpirationDate">
+            <summary>
+            Fecha de espiración
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.UserId">
+            <summary>
+            User Id
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.UserName">
+            <summary>
+            User Name
+            </summary>
+            <remarks>
+            Nombre de usuario
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.Email">
+            <summary>
+            Email
+            </summary>
+            <remarks>
+            Email
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.CreationDate">
+            <summary>
+            Fecha de creación
+            </summary>
+            <remarks>
+            Fecha de creación
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.LastLoginDate">
+            <summary>
+            Last Login Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.LastLockedOutDate">
+            <summary>
+            Last LockedOut Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsApproved">
+            <summary>
+            Is Approved the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsApproved' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsLockedOut">
+            <summary>
+            Blocked
+            </summary>
+            <remarks>
+            Blocked
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsOnline">
+            <summary>
+            Blocked
+            </summary>
+            <remarks>
+            Blocked
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.LastPasswordChangedDate">
+            <summary>
+            LastLockoutDate
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.RolAssiged">
+            <summary>
+            Roles Asignados
+            </summary>
+            <remarks>
+            Roles Asignados
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.GroupAssiged">
+            <summary>
+            Groups Ids
+            </summary>
+            <remarks>
+            Groups Ids
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.ClientId">
+            <summary>
+            Client ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ClientID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.FullName">
+            <summary>
+            Client ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ClientID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.LastActivityDate">
+            <summary>
+            Last Activity Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.ProducerId">
+            <summary>
+            Producer ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ProducerID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsAdministrator">
+            <summary>
+            Producer ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ProducerID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.AllowScheduler">
+            <summary>
+            This property is associated with the field 'AllowScheduler' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsEmployee">
+            <summary>
+            This property is associated with the field 'IsEmployee' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.SecurityLevel">
+            <summary>
+            Segundo Apellido
+            </summary>
+            <remarks>
+            This property is associated with the field 'SecondLastName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.IsInactive">
+            <summary>
+            Is Inactive
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsInactive' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.PasswordNeverExpires">
+            <summary>
+            User ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'PASSWORDNEVEREXPIRES ' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.User.Supervisors">
+            <summary>
+            Name of all the user's supervisors.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.AuthenticationInformation.User">
+            <summary>
+            Objeto user que contiene toda la información.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.AuthenticationInformation.FailedPasswordAttemptCount">
+            <summary>
+            Esta propiedad define cuantos intentos fallidos se tiene en el inicio de sección
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.AuthenticationInformation.RecaptchaShow">
+            <summary>
+            Esta propiedad define si se muestra o no el recaptcha.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.Language">
+            <summary>
+            Current Language
+            </summary>
+            <remarks>
+            This property is associated with the field 'CurrentLanguage' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.LanguageId">
+            <summary>
+            Current LanguageId
+            </summary>
+            <remarks>
+            This property is associated with the field 'LanguageId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.Theme">
+            <summary>
+            Current Theme
+            </summary>
+            <remarks>
+            This property is associated with the field 'Current Theme' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.UserName">
+            <summary>
+            UserName
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.RoleName">
+            <summary>
+            RoleName
+            </summary>
+            <remarks>
+            This property is associated with the field 'RoleName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.IsAdministrator">
+            <summary>
+            Is Administrator
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.IsEmployee">
+            <summary>
+            Is IsEmployee
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.IsProducer">
+            <summary>
+            Is IsEmployee
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.IsClient">
+            <summary>
+            Is Client
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipInfo.PasswordNeverExpires">
+            <summary>
+            Is Client
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Type">
+            <summary>
+            User ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.UserID">
+            <summary>
+            User ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.UserCode">
+            <summary>
+            User Code
+            </summary>
+            <remarks>
+            This property is associated with the field 'nUserCode' on the table 'User' of schema INSUDB.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordNeverExpires">
+            <summary>
+            User ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'PASSWORDNEVEREXPIRES ' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.MemberID">
+            <summary>
+            Member ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'MemberID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.RealUserName">
+            <summary>
+            Real User Name
+            </summary>
+            <remarks>
+            This property is associated with the field 'RealUserName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.UserName">
+            <summary>
+            Real User Name
+            </summary>
+            <remarks>
+            This property is associated with the field 'RealUserName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Password">
+            <summary>
+            Password
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserPwd' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordAnswer">
+            <summary>
+            Password Answare
+            </summary>
+            <remarks>
+            This property is associated with the field 'PwdAnswer' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastPasswordChangeDate">
+            <summary>
+            Last Password Change Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastLoginDate">
+            <summary>
+            Last Login Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastLockedOutDate">
+            <summary>
+            Last LockedOut Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastActivityDate">
+            <summary>
+            Last Activity Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.CreationDate">
+            <summary>
+            Create date
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastLockedoutDate">
+            <summary>
+            Last Lockedout Date the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastLockedOutDate' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsSubscriber">
+            <summary>
+            Is Subscriber the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsSubscriber' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsOnline">
+            <summary>
+            Is On line the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsOnline' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsApproved">
+            <summary>
+            Is Approved the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsApproved' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FailedPasswordAttemptWindowsStart">
+            <summary>
+            Failed Password Attempt Windows Start the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FAILEDPWDAPTWDSSRT' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsLockedOut">
+            <summary>
+            Is LockedOut the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsLockedOut' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FailedPasswordAttemptCount">
+            <summary>
+            Failed Password Attempt Count the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FailedPwdAptCount' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.UserLanguage">
+            <summary>
+            The language by user
+            </summary>
+            <remarks>
+            This property is associated with the field 'USERLANGUAGE' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FailedPasswordAnswerAttemptWindowsStart">
+            <summary>
+            Failed Password Answer Attempt Windows Start the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FailedPwdAnswerAptWdsStr' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastLockoutDate">
+            <summary>
+            LastLockoutDate
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastPasswordChangedDate">
+            <summary>
+            LastLockoutDate
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Comment">
+            <summary>
+            Comment
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FailedPasswordAnswerAttemptCount">
+            <summary>
+            Failed Password Answer Attemp Count
+            </summary>
+            <remarks>
+            This property is associated with the field 'FailedPwdAnswerAptCount' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Email">
+            <summary>
+            E-Mail the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'EMail' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.OldEmail">
+            <summary>
+            Define el anterior email del usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Language">
+            <summary>
+            Language
+            </summary>
+            <remarks>
+            This property is associated with the field 'Language' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LanguageName">
+            <summary>
+            Language Name
+            </summary>
+            <remarks>
+            This property is associated with the field 'LanguageName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Theme">
+            <summary>
+            Theme for the User Application
+            </summary>
+            <remarks>
+            This property is associated with the field 'Theme' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.ClientID">
+            <summary>
+            Client ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ClientID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.ProducerID">
+            <summary>
+            Producer ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'ProducerID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LanguageID">
+            <summary>
+            Language ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'LanguageID' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.UserType">
+            <summary>
+            User Type
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserType' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.OldEMail">
+            <summary>
+            Old E-Email the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'OldEmail' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FirstTimePasswordChange">
+            <summary>
+            Firt Time Password Chage the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FirstTimePasswordChange' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.AccountLockoutNotification">
+            <summary>
+            Acount Lockout Notification
+            </summary>
+            <remarks>
+            This property is associated with the field 'AccountLockoutNotification' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FirstName">
+            <summary>
+            Firts Name the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FirstName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.SurName">
+            <summary>
+            Sour Name the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'SurName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.SecondLastName">
+            <summary>
+            Segundo Apellido
+            </summary>
+            <remarks>
+            This property is associated with the field 'SecondLastName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.SecurityLevel">
+            <summary>
+            Segundo Apellido
+            </summary>
+            <remarks>
+            This property is associated with the field 'SecondLastName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsFirstVisit">
+            <summary>
+            Is First Visit
+            </summary>
+            <remarks>
+            This property is associated with the field 'SecondLastName' on the table 'IsFirstVisit'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.LastName">
+            <summary>
+            Last Name the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'LastName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FullName">
+            <summary>
+            Full Name the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'FullName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.FirstNameAndSecondLastName">
+            <summary>
+             Formato de Nombre y primer apellido
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.DateofBirth">
+            <summary>
+            Date of Birth the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'DateOfBirth' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Gender">
+            <summary>
+            Gender
+            </summary>
+            <remarks>
+            This property is associated with the field 'Gender' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.CompanyName">
+            <summary>
+            Company Name
+            </summary>
+            <remarks>
+            This property is associated with the field 'CompanyName' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.AddressHome">
+            <summary>
+            Andress Home
+            </summary>
+            <remarks>
+            This property is associated with the field 'AddressHome' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.City">
+            <summary>
+            Cidade
+            </summary>
+            <remarks>
+            This property is associated with the field 'City' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.State">
+            <summary>
+            State
+            </summary>
+            <remarks>
+            This property is associated with the field 'State' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Country">
+            <summary>
+            Country
+            </summary>
+            <remarks>
+            This property is associated with the field 'Country' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsAdministrator">
+            <summary>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.AllowScheduler">
+            <summary>
+            This property is associated with the field 'AllowScheduler' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsEmployee">
+            <summary>
+            This property is associated with the field 'IsEmployee' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.Active">
+            <summary>
+            This property is associated with the field 'Active' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.ExtensionNumber">
+            <summary>
+            Extension Number
+            </summary>
+            <remarks>
+            This property is associated with the field 'ExtensionNumber' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.AreaNumber">
+            <summary>
+            Area Number
+            </summary>
+            <remarks>
+            This property is associated with the field 'AreaNumber' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.TelephoneNumber">
+            <summary>
+            Telephone Number
+            </summary>
+            <remarks>
+            This property is associated with the field 'TelephoneNumber' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.IsInactive">
+            <summary>
+            Is Inactive
+            </summary>
+            <remarks>
+            This property is associated with the field 'IsInactive' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordOne">
+            <summary>
+            Password One the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'PasswordOne' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordTwo">
+            <summary>
+            Password Two the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'PasswordTwo' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordThree">
+            <summary>
+            Password Three the User
+            </summary>
+            <remarks>
+            This property is associated with the field 'PasswordThree' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeMembershipUser.PasswordQuestion">
+            <summary>
+            Password Question of the user.
+            </summary>
+            <remarks>
+            This property is associated with the field 'PasswordQuestion' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.FrontOfficeRoleProvider.Name">
+            <summary>
+            User ID
+            </summary>
+            <remarks>
+            This property is associated with the field 'UserId' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Id">
+            <summary>
+            Id de user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserCode">
+            <summary>
+            User code del usuario
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.RealUserName">
+            <summary>
+            internal User Name
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserType">
+            <summary>
+            { get; set; }signed User Type
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Type">
+            <summary>
+            { get; set; }signed User Type by string
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.OldEmail">
+            <summary>
+            Old E-mail of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.SurName">
+            <summary>
+            Middle name of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LastName">
+            <summary>
+            L{ get; set; }t name of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.SecondLastName">
+            <summary>
+            Second l{ get; set; }t name of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.DateOfBirth">
+            <summary>
+            Date of birth of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Gender">
+            <summary>
+            Gender of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Password">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.PasswordQuestion">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.PasswordAnswer">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.CompanyName">
+            <summary>
+            Company name of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserNamePlusEmail">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.FullName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.AddressHome">
+            <summary>
+            Address of home of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.City">
+            <summary>
+            City of location of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.State">
+            <summary>
+            State of location of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Country">
+            <summary>
+            Country of location of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.ExtensionNumber">
+            <summary>
+            Extension number of telephone of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.AreaNumber">
+            <summary>
+            Area number of telephone of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.TelephoneNumber">
+            <summary>
+            Telephone number of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.CreationDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LastLoginDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LastActivityDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsLockedOut">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LastLockoutDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LastPasswordChangedDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Comment">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsApproved">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsInactive">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.ClientID">
+            <summary>
+            Code of the client
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserID">
+            <summary>
+            Code of the VisualTIME's user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.ProducerID">
+            <summary>
+            Code of the producer
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.RolesAssigned">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsEmployee">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.FirstTimePasswordChange">
+            <summary>
+            First time password change of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.AccountLockoutNotification">
+            <summary>
+            Account lockout notification of the user
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsAdministrator">
+            <summary>
+            This property is associated with the field 'IsAdministrator' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.AllowScheduler">
+            <summary>
+            This property is associated with the field 'AllowScheduler' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsClient">
+            <summary>
+            This property is associated with the field 'IsClient' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsProducer">
+            <summary>
+            This property is associated with the field 'IsProducer' on the table 'User'.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.SecurityLevel">
+            <summary>
+            Security Level
+            </summary>
+            <remarks>
+            This property is associated with the field 'SecurityLevel' on the table 'User'.
+            </remarks>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsOnline">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.IsFirstVisit">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Language">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LanguageName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.Theme">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.LanguageID">
+            <summary>
+            Code of the language
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Security.UserInformation.UserLanguage">
+            <summary>
+            Language that user select by exclusive of profile environment 
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.Properties.Resources">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.AccountLockedResource">
+            <summary>
+              Busca una cadena traducida similar a The account is locked. You will be sent an email within minutes with a notification.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.AuthenticationUnknownError">
+            <summary>
+              Busca una cadena traducida similar a An error occurred in user validation.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.ChangedPasswordSuccessfully">
+            <summary>
+              Busca una cadena traducida similar a The password was successfully changed.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.companyIDGreaterToZero">
+            <summary>
+              Busca una cadena traducida similar a The company identificacion must be greater to zero.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.FirstTab">
+            <summary>
+              Busca una cadena traducida similar a Home.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.GroupExist">
+            <summary>
+              Busca una cadena traducida similar a A group with the name already exists.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.GroupNoExist">
+            <summary>
+              Busca una cadena traducida similar a The group does not exist.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.InactiveUserMessageResource">
+            <summary>
+              Busca una cadena traducida similar a The account is inactive. Contact the administrator.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.initialsCanNotBeEmpty">
+            <summary>
+              Busca una cadena traducida similar a The initials can not be empty.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.LookUpNotFound">
+            <summary>
+              Busca una cadena traducida similar a There is no list of values defined for the key &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MenuInactive">
+            <summary>
+              Busca una cadena traducida similar a The menu is not active.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MessageBySchemaSecurity">
+            <summary>
+              Busca una cadena traducida similar a Access not permitted by security scheme..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MessageBySchemaSheduler">
+            <summary>
+              Busca una cadena traducida similar a Access time not allowed by security scheme..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MessageBytTansactionsSheduler">
+            <summary>
+              Busca una cadena traducida similar a Access not allowed by schedule transactions..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MessageLoginGenericResource">
+            <summary>
+              Busca una cadena traducida similar a Invalid account or password.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MessagePasswordExpired">
+            <summary>
+              Busca una cadena traducida similar a You have exceeded the password change time, please change password..
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.MinRequiredPasswordLength">
+            <summary>
+              Busca una cadena traducida similar a Password must be greater than {0} characters.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.NewTab">
+            <summary>
+              Busca una cadena traducida similar a New Tab.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.NotAllowedHistory">
+            <summary>
+              Busca una cadena traducida similar a Your new password cannot be equal to the last 3.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.NotCompleteRegularExpression">
+            <summary>
+              Busca una cadena traducida similar a The password does not meet the format of the regular expression.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.NotFound">
+            <summary>
+              Busca una cadena traducida similar a The requested record was not found.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.PasswordCurrentEqual">
+            <summary>
+              Busca una cadena traducida similar a The password does not match the existing one.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.PasswordNotContainCharacterSpecial">
+            <summary>
+              Busca una cadena traducida similar a The password must contain at least {0} special characters.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.PasswordNotEmpty">
+            <summary>
+              Busca una cadena traducida similar a The password can not be empty.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.RoleExist">
+            <summary>
+              Busca una cadena traducida similar a The role already exists.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.RoleNoExist">
+            <summary>
+              Busca una cadena traducida similar a The role does not exist.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.RoleNotAssignedWidget">
+            <summary>
+              Busca una cadena traducida similar a The user does not have associated relays, so there is no authorized widget.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.RoleRelatedToUser">
+            <summary>
+              Busca una cadena traducida similar a Role has active relationships with some users.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.RoleRelatedToWidgets">
+            <summary>
+              Busca una cadena traducida similar a The role that you are trying to remove has widgets that are related.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecondTab">
+            <summary>
+              Busca una cadena traducida similar a New Page.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerBlack">
+            <summary>
+              Busca una cadena traducida similar a Black.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerBlue">
+            <summary>
+              Busca una cadena traducida similar a Blue.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerGreen">
+            <summary>
+              Busca una cadena traducida similar a Green.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerRed">
+            <summary>
+              Busca una cadena traducida similar a Red.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerWhite">
+            <summary>
+              Busca una cadena traducida similar a White.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretAnswerYellow">
+            <summary>
+              Busca una cadena traducida similar a Yellow.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.SecretQuestionColor">
+            <summary>
+              Busca una cadena traducida similar a What&apos;s your favorite color ?.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.TitleNotEmpty">
+            <summary>
+              Busca una cadena traducida similar a The title can not be empty.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UnknownError">
+            <summary>
+              Busca una cadena traducida similar a An unknown error occurred, contact your administrator.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserNotAuthorized">
+            <summary>
+              Busca una cadena traducida similar a The user is not authorized for this operation.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserNotExistByEmail">
+            <summary>
+              Busca una cadena traducida similar a There is no user with this registered email.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserNotValidToken">
+            <summary>
+              Busca una cadena traducida similar a There is no valid token to recover your password.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeAdministrator">
+            <summary>
+              Busca una cadena traducida similar a Administrator.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeAgent">
+            <summary>
+              Busca una cadena traducida similar a Agent.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeClient">
+            <summary>
+              Busca una cadena traducida similar a Client.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeEmployee">
+            <summary>
+              Busca una cadena traducida similar a Employee.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeIntermediary">
+            <summary>
+              Busca una cadena traducida similar a Intermediary.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.UserTypeUnknown">
+            <summary>
+              Busca una cadena traducida similar a User.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.WidgetInRoleExist">
+            <summary>
+              Busca una cadena traducida similar a There is already a link with the widget and the role.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.Properties.Resources.WindowLogicalCodeCanNotBeEmpty">
+            <summary>
+              Busca una cadena traducida similar a The code of the window can not be empty.
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.SMC.MailBoxInfo">
+            <summary>
+            Contrato que almacena la cantidad de mensajes por estado
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.SMC.Smc">
+            <summary>
+            Contrato del envío de mensajes.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Id">
+            <summary>
+            Identificador del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Sender">
+            <summary>
+            Identificador del usuario que envía el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Receiver">
+            <summary>
+            Identificador del usuario que recibe el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Subject">
+            <summary>
+            Asunto del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Body">
+            <summary>
+            Cuerpo del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Priority">
+            <summary>
+            Valor booleano que representa si el mensaje tiene prioridad.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.State">
+            <summary>
+            Identificador del estado del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Unread">
+            <summary>
+            Valor booleano que representa si el mensaje ha sido leído o no.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Received">
+            <summary>
+            Fecha en que se recibe el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Sended">
+            <summary>
+            Fecha en que se envía el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.Readed">
+            <summary>
+            Fecha en que es leído el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.SourceId">
+            <summary>
+            Identificador de la fuente del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.MailJobId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.Smc.SmcReceivers">
+            <summary>
+            Lista de usuarios que reciben el mensaje.
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.FASI.Contracts.SMC.SmcReceiver">
+            <summary>
+            Contrato de los receptores del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.Id">
+            <summary>
+            Identificador del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.Receiver">
+            <summary>
+            Identificador del usuario que recibe el mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.Unread">
+            <summary>
+            Valor booleano que representa si el mensaje fue leído o no.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.Readed">
+            <summary>
+            Fecha de lectura del mensaje.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.MailJobId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Contracts.SMC.SmcReceiver.State">
+            <summary>
+            Estado del mensaje.
+            </summary>
+        </member>
+    </members>
+</doc>

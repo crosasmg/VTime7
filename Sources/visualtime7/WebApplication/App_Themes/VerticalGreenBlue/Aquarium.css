@@ -1,0 +1,913 @@
+﻿body
+{
+}
+
+div.Wait
+{
+    background-image: url(Wait.gif);
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+}
+
+.DataViewPlaceholder
+{
+    font-size: medium;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    line-height: normal;
+    text-align: left;
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+div.DataViewModalPopup
+{
+    padding: 4px;
+    background-color: white;
+}
+
+div.DataViewContainer
+{
+}
+
+table.DataView
+{
+    width: 100%;
+    font-weight: normal;
+}
+
+table.DataView tr.HeaderRow th
+{
+	
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    font-weight: normal;
+    text-align: left;
+    background-color: #F2F2F2;
+    color: #696969;
+    background-image: url(HeaderBg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    padding: 2px 0px 0px 0px;
+}
+
+table.DataView tr.HeaderRow th a
+{
+    color: #696969;
+    text-decoration: none;
+}
+
+table.DataView tr.HeaderRow th a:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+table.DataViewLookup tr td.Empty
+{
+    width: 36px;
+}
+
+table.DataView tr td, table.DataViewLookup tr td
+{
+	
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    color: Black;
+}
+
+table.DataView tr.Row td.Cell
+{
+	
+    background-color: #FFFFFF;
+    border-top: solid 1px #FFFFFF;
+    border-bottom: solid 1px #FFFFFF;
+    padding: 2px;
+}
+
+table.DataView tr.AlternatingRow td.Cell
+{
+    padding: 2px;
+    background-color: #F5F5F5;
+    border-top: solid 1px #F5F5F5;
+    border-bottom: solid 1px #F5F5F5;
+}
+
+table.DataView tr.Row td a, table.DataView tr.AlternatingRow td a
+{
+    color: #003399;
+    text-decoration: none;
+}
+
+table.DataView tr.Row td a:hover, table.DataView tr.AlternatingRow td a:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+table.DataView tr.Row td input, table.DataView tr.AlternatingRow td input, table.DataView tr.Row td select, table.DataView tr.AlternatingRow td select, table.DataView tr.Row td textarea, table.DataView tr.AlternatingRow td textarea
+{
+    font-family: Tahoma;
+    font-size: 8.5pt;
+}
+
+table.DataView tr.Row td table.Liquid, table.DataView tr.AlternatingRow td table.Liquid
+{
+    width: 90%;
+    border-style: none;
+}
+table.DataView tr.Row td table.Liquid tr td.Liquid, table.DataView tr.AlternatingRow td table.Liquid tr td.Liquid
+{
+    padding: 0px;
+    border-style: none;
+}
+
+table.DataView tr.HeaderTextRow td.HeaderText
+{
+    color: #696969;
+    padding: 4px;
+}
+
+table.DataView tr.Selected td.Cell
+{
+    border-top: solid 1px #D2B47A;
+    border-bottom: solid 1px #D2B47A;
+    background-color: #FFE6A0;
+}
+
+table.DataView tr.Highlight td.Cell
+{
+    background-color: #D1ECFA;
+    border-top: solid 1px #B6E6FB;
+    border-bottom: solid 1px #B6E6FB;
+}
+
+table.DataView tr.NoRecords td.Cell
+{
+    padding: 4px 4px 32px 4px;
+}
+
+table.DataView tr.ActionRow td.ActionBar
+{
+    height: 25px;
+    border-top: solid 1px silver;
+    background-image: url(captionbckg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 1px;
+    padding: 0px 2px 0px 2px;
+    border-bottom: solid 1px silver;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td
+{
+    padding: 0px;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a
+{
+    color: #003399;
+    text-decoration: none;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a:hover, table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a:active
+{
+    color: black;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a div
+{
+    padding: 4px;
+    vertical-align: middle;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a div span
+{
+    background-image: url(DropArrow.gif);
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    padding-left: 0px;
+    padding-right: 12px;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a:hover div, table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Group a:active div
+{
+    padding: 3px;
+    border: solid 1px #6F9DD9;
+    background-image: url(ActionGroupBg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 1px;
+    color: Black;
+}
+
+table.DataView tr.ActionRow td.ActionBar table.Groups tr td.Divider div
+{
+    width: 6px;
+    height: 21px;
+    background-image: url(ActionBarDiv.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ModalPlaceholder table.DataView
+{
+    border-top: solid 1px silver;
+    border-left: solid 1px silver;
+    border-right: solid 1px silver;
+}
+
+.ModalPopup
+{
+    border-top: solid 1px dimgray;
+}
+
+.ModalPopup .ModalContainer
+{
+}
+
+.ModalPopup .ModalContainer table.DataView
+{
+}
+
+table.ViewSelector
+{
+}
+
+table.ViewSelector tr td.Label
+{
+    color: #204D89;
+    padding-right: 4px;
+}
+
+table.ViewSelector tr td.Selector
+{
+    background-color: white;
+    border: solid 1px #D2B47A;
+    padding: 1px;
+    font-weight: bold;
+    width: 100%;
+    white-space: nowrap;
+}
+
+table.ViewSelector tr td.Selector div.Name
+{
+    background-image: url(ViewNameBg.gif);
+    background-repeat: repeat-x;
+    background-position: 0px 1px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+table.ViewSelector tr td.Selector div.Name .Highlight
+{
+    color: #003399;
+}
+
+table.ViewSelector tr td.Selector div.Name span.Image
+{
+    background-image: url ( 'DropArrow.gif' );
+    background-repeat: no-repeat;
+}
+
+table.DataView tr.HeaderTextRow td.HeaderText a.Close
+{
+    padding-left: 12px;
+    color: #4682B4;
+    text-decoration: none;
+    background-image: url(Close.gif);
+    background-repeat: no-repeat;
+    background-position: left 2px;
+}
+
+table.DataView tr.HeaderTextRow td.HeaderText a.Close:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+table.DataView tr.InfoRow td
+{
+    background-color: #FFFFE1;
+    padding: 5px;
+    border-top: solid 1px silver;
+}
+
+table.DataView tr.InfoRow td span.Highlight
+{
+    color: Navy;
+}
+
+table.DataView tr.FooterRow td.Footer
+{
+    border-top: solid 1px silver;
+    padding: 1px;
+    border-bottom: solid 1px silver;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager
+{
+    padding: 0px;
+    height: 18px;
+    color: #666666;
+    white-space: nowrap;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager span
+{
+    padding: 2px 3px 2px 3px;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager span.Disabled
+{
+    color: #808080;
+}
+table.DataView tr.FooterRow td.Footer td.Pager span.Selected
+{
+    font-weight: bold;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager .PaddedLink
+{
+    padding: 2px 3px 2px 3px;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager a
+{
+    color: #4682B4;
+    text-decoration: none;
+}
+
+table.DataView tr.FooterRow td.Footer td.Pager a:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+table.DataView tr.CategoryRow td.Category
+{
+    border-top: solid 1px silver;
+    padding: 0px 4px 8px 0px;
+}
+
+table.DataView tr.CategoryRow td.Category table.Category tr td.HeaderText
+{
+    color: #696969;
+    font-weight: bold;
+    width: 20%;
+    padding: 4px 2px 4px 2px;
+}
+
+table.DataView tr.CategoryRow td.Category table.Category tr td.Description
+{
+    color: #696969;
+    width: 60%;
+    padding: 4px 2px 24px 2px;
+}
+
+table.DataView tr.CategoryRow td.Fields
+{
+    width: 100%;
+    background-color: #EBF3FF;
+    border-top: solid 1px silver;
+    padding: 8px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item
+{
+    padding: 0px 0px 12px 0px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Header
+{
+    color: gray;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Header span.Required
+{
+    padding: 2px;
+    color: #000000;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Error, table.DataView tr.Row td div.Error, table.DataView tr.AlternatingRow td div.Error
+{
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    font-weight: bold;
+    color: red;
+    padding: 0px 0px 2px 0px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value
+{
+    color: Black;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value input, table.DataView tr.CategoryRow td.Fields div.Item div.Value select, table.DataView tr.CategoryRow td.Fields div.Item div.Value textarea
+{
+    font-family: Verdana;
+    font-size: 8.5pt;
+}
+
+table.RadioButtonList tr td.Button
+{
+    padding: 0px;
+    border-style: none;
+}
+
+
+table.RadioButtonList tr td.Option
+{
+    padding: 2px 0px 0px 0px;
+    border-style: none;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup, table.DataViewLookup
+{
+    margin: 1px 0px 1px 0px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup tr td, table.DataView tr.Row td table.Lookup tr td, table.DataView tr.AlternatingRow td table.Lookup tr td, table.DataViewLookup tr td
+{
+    border: solid 1px silver;
+    background-color: White;
+    padding: 2px 3px 2px 3px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup tr td a, table.DataView tr.Row td table.Lookup tr td a, table.DataView tr.AlternatingRow td table.Lookup tr td a, table.DataViewLookup tr td a
+{
+    color: #003399;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup tr td a:hover, table.DataView tr.Row td table.Lookup tr td a:hover, table.DataView tr.AlternatingRow td table.Lookup tr td a:hover, table.DataViewLookup tr td a:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup tr td a.Clear, table.DataView tr.Row td table.Lookup tr td a.Clear, table.DataView tr.AlternatingRow td table.Lookup tr td a.Clear, table.DataViewLookup tr td a.Clear
+{
+    padding-left: 12px;
+    background-image: url(Erase.gif);
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 12px;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Value table.Lookup tr td a:hover.Clear, table.DataView tr.Row td table.Lookup tr td a:hover.Clear, table.DataView tr.AlternatingRow td table.Lookup tr td a:hover.Clear, table.DataViewLookup tr td a:hover.Clear
+{
+    text-decoration: none;
+}
+
+a.CreateNew, table.DataView tr.Row td a.CreateNew:hover, table.DataView tr.AlternatingRow td a.CreateNew:hover
+{
+    padding-left: 24px;
+    background-image: url(New.gif);
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    height: 12px;
+    text-decoration: none;
+}
+
+a:hover.CreateNew
+{
+    text-decoration: none;
+}
+
+a.Calendar, a.Calendar:hover
+{
+    text-decoration: none;
+    background-image: url(Calendar.gif);
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+    font-size: 16px;
+    padding-left: 16px;
+}
+
+.ModalPanel
+{
+    width: 90%;
+    height: 90%;
+}
+
+.ModalPlaceholder
+{
+    border-left: solid 1px dimgray;
+    border-right: solid 1px dimgray;
+    border-bottom: solid 1px dimgray;
+    padding: 4px 8px 8px 8px;
+    background-color: White;
+}
+
+.ModalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.ModalTop
+{
+    border-left: solid 1px dimgray;
+    border-right: solid 1px dimgray;
+    border-top: solid 1px dimgray;
+    background-color: White;
+    height: 4px;
+}
+
+.RightSideShadow
+{
+    width: 4px;
+    background-color: Black;
+    font-size: 1px;
+}
+
+.BottomShadow
+{
+    height: 4px;
+    background-color: black;
+    margin-left: 4px;
+    font-size: 1px;
+}
+
+.ModalPopup
+{
+    padding-top: 8px;
+}
+
+.ModalPlaceholder .Buttons
+{
+    padding: 8px 0px 4px 4px;
+    border-top: solid 1px silver;
+    font-size: 8.5pt;
+    font-family: Tahoma;
+}
+
+.ModalPlaceholder .Buttons table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ModalaPlaceholder .Buttons td
+{
+    padding: 0px;
+}
+
+.ModalPlaceholder .Buttons button
+{
+    width: 85px;
+    margin-right: 4px;
+    margin-left: 4px;
+    font-family: verdana;
+    font-size: 8.5pt;
+    height: 22px;
+    color: Black;
+}
+
+table.DataView tr.CategoryRow td.Fields div.Item div.Footer
+{
+    color: Gray;
+    padding-left: 8px;
+}
+
+table.DataView tr.ActionButtonsRow td button
+{
+    width: 85px;
+    margin-right: 4px;
+    margin-left: 4px;
+    font-family: verdana;
+    font-size: 8.5pt;
+    height: 22px;
+    color: Black;
+}
+
+table.DataView tr.TopButtonsRow td.ActionButtons, table.DataView tr.BottomButtonsRow td.ActionButtons
+{
+    padding: 0px;
+}
+table.DataView tr.TopButtonsRow td.ActionButtons table.ActionButtons tr td
+{
+    padding: 8px 0px 8px 2px;
+    color: #696969;
+}
+
+table.DataView tr.BottomButtonsRow td.ActionButtons table.ActionButtons tr td
+{
+    border-top: solid 2px silver;
+    padding: 8px 0px 8px 2px;
+    color: #696969;
+}
+
+.ContextMenuPanel
+{
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    border: 1px solid #868686;
+    z-index: 1000;
+    background: url(MenuBg.gif) repeat-y 0 0 #FAFAFA;
+    cursor: default;
+    padding: 1px 0px 0px 1px;
+    font-size: 11px;
+    background-color: White;
+}
+
+.ActionBarContextMenuPanel
+{
+    background: url(MenuBgLarge.gif) repeat-y 0 0 #FAFAFA;
+}
+
+.ContextMenuPanel .ContextMenuBreak
+{
+    margin: 1px 0px 1px 32px;
+    padding: 0;
+    height: 1px;
+    overflow: hidden;
+    display: block;
+    border-top: 1px solid #C5C5C5;
+}
+
+.ContextMenuPanel div.Wait
+{
+    background-image: url(Wait.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    margin: 1px 1px 1px 0px;
+    display: block;
+    padding: 4px 19px 4px 33px;
+    white-space: nowrap;
+    font-weight: normal;
+    color: #000000;
+}
+
+.ContextMenuPanel a.ContextMenuItem
+{
+    margin: 1px 1px 1px 0px;
+    display: block;
+    color: #003399;
+    cursor: pointer;
+    padding: 4px 19px 4px 32px;
+    border-left: solid 1px #E9EEEE;
+    white-space: nowrap;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.ActionBarContextMenuPanel a.ContextMenuItem
+{
+    padding: 4px 19px 4px 48px;
+}
+
+.ActionBarContextMenuPanel .ContextMenuBreak
+{
+    margin: 1px 0px 1px 48px;
+}
+
+.ContextMenuPanel a.ContextMenuItem:hover, .ContextMenuPanel a.ContextMenuItem:active
+{
+    background-color: #FFE6A0;
+    color: #003399;
+    border: 1px solid #D2B47A;
+    padding: 3px 18px 3px 32px;
+    text-decoration: none;
+}
+
+.ActionBarContextMenuPanel a.ContextMenuItem:hover, .ActionBarContextMenuPanel a.ContextMenuItem:active
+{
+    padding: 3px 18px 3px 48px;
+}
+
+.ContextMenuPanel a.ContextMenuItem div.Title
+{
+    font-weight: bold;
+    color: #003399;
+}
+
+.ContextMenuPanel a.ContextMenuItem div.Description
+{
+    color: #696969;
+    display: inline;
+}
+
+.ContextMenuPanel a.Disabled, .ContextMenuPanel a:hover.Disabled
+{
+    color: #696969;
+}
+
+div.CustomFilterDialog
+{
+    background-color: White;
+    padding: 8px;
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    border: solid 1px dimgray;
+    width: 400px;
+}
+
+div.CustomFilterDialog table tr td
+{
+    padding: 4px;
+}
+
+div.CustomFilterDialog span.Highlight
+{
+    color: Navy;
+}
+
+div.CustomFilterDialog input
+{
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    width: 390px;
+}
+
+div.CustomFilterDialog button
+{
+    width: 85px;
+    margin-left: 8px;
+    font-family: verdana;
+    font-size: 8.5pt;
+    height: 22px;
+    color: Black;
+}
+
+a.SortAscending
+{
+    background-image: url(SortAZ.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+a.SortDescending
+{
+    background-image: url(SortZA.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+a.SortDescending
+{
+    background-image: url(SortZA.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+
+a.Checked
+{
+    background-image: url(CheckMark.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+a.FilterOff
+{
+    background-image: url(FilterOff.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+a.FilterOffDisabled
+{
+    background-image: url(FilterOffDisabled.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+a.CustomFilter
+{
+    background-image: url(Filter.gif);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+
+.NewLargeIcon
+{
+    background-image: url(NewLarge.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.UpdateLargeIcon
+{
+    background-image: url(SaveLarge.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.ExportCsv
+{
+    background-image: url(ExportCsv.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.ExportRss
+{
+    background-image: url(ExportRss.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.EditIcon
+{
+    background-image: url(Edit.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.NavigateIcon
+{
+    background-image: url(Navigate.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.DeleteIcon
+{
+    background-image: url(Delete.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.UpdateIcon
+{
+    background-image: url(Save.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.CancelIcon
+{
+    background-image: url(Undo.gif);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+.SortUp
+{
+    background-image: url(SortUp.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-right: 5px;
+}
+
+.SortDown
+{
+    background-image: url(SortDown.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-right: 5px;
+}
+
+.Filter
+{
+    background-image: url(Filter.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 1px;
+    padding-right: 10px;
+}
+
+.MessageBar
+{
+    background-color: #FFFFE1;
+    border-bottom: solid 1px black;
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    width: 100%;
+    padding: 3px 3px 6px 3px;
+    text-align: left;
+    z-index: 20000;
+}
+
+.Message
+{
+    padding: 0px;
+}
+
+.Information
+{
+    background-image: url(Information.gif);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding: 2px 16px 2px 0px;
+}
+
+.Attention
+{
+    background-image: url(Attention.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding: 0px;
+    height: 16px;
+    width: 20px;
+}
+

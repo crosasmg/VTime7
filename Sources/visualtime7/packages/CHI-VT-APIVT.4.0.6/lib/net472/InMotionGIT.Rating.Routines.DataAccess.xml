@@ -1,0 +1,3225 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Rating.Routines.DataAccess
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire">
+ <summary>
+ Table of additional coverages Fire.
+ </summary>
+<remarks>Data-source is 'TAR_COVER_FH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.RetrieveByLineOfBusinessProductCode(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for AditionalCoverageFire class</returns>
+ <remarks>Datasource is 'XIF1655TAR_COVER_FH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AditionalCoverageFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AditionalCoverageFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="AditionalCoverageFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="AditionalCoverageFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.AditionalCoverageFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.AditionalCoverageFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,System.Decimal)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire">
+ <summary>
+ Basic coverage rate of fire
+ </summary>
+<remarks>Data-source is 'TAR_FIRE_FH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.RetrieveByConstructionClass(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for BasicRateForFire class</returns>
+ <remarks>Datasource is 'XIF1652TAR_FIRE_FH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.RetrieveByLineOfBusinessProductCode(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for BasicRateForFire class</returns>
+ <remarks>Datasource is 'XIF1651TAR_FIRE_FH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateForFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateForFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateForFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateForFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.Decimal)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk">
+ <summary>
+ Basic Rate Table of Industrial Risks.
+ </summary>
+<remarks>Data-source is 'TAR_FIREBASIND'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.RetrieveByArticleTypeOfBusiness(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for BasicRateForIndustrialRisk class</returns>
+ <remarks>Datasource is 'XIF613TAR_FIREBASIND'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateForIndustrialRiskItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateForIndustrialRiskItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateForIndustrialRiskItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRisk,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateForIndustrialRiskItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRiskCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateForIndustrialRisk.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateForIndustrialRiskCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire">
+ <summary>
+ Basic rate for ordinary risks of fire.
+ </summary>
+<remarks>Data-source is 'TAR_FIREBASORD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.RetrieveByActivityCategory(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for BasicRateOrdinaryRiskFire class</returns>
+ <remarks>Datasource is 'XIF612TAR_FIREBASORD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.RetrieveByNARTICLETypeOfBusiness(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for BasicRateOrdinaryRiskFire class</returns>
+ <remarks>Datasource is 'XIF611TAR_FIREBASORD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateOrdinaryRiskFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="BasicRateOrdinaryRiskFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateOrdinaryRiskFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="BasicRateOrdinaryRiskFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.BasicRateOrdinaryRiskFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.BasicRateOrdinaryRiskFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax">
+ <summary>
+ Table of flat rates of tax.
+ </summary>
+<remarks>Data-source is 'TAX_FIXVAL'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.RetrieveByTaxType(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for FlatRateOFTax class</returns>
+ <remarks>Datasource is 'XIF1TAX_FIXVAL'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.RetrieveBySupportingDocument(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for FlatRateOFTax class</returns>
+ <remarks>Datasource is 'XIF2TAX_FIXVAL'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Find(System.Int32,System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Find(System.Int32,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="FlatRateOFTaxItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="FlatRateOFTaxItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="FlatRateOFTaxItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTax,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="FlatRateOFTaxItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTaxCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.FlatRateOFTax.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.FlatRateOFTaxCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.ConstructionClass">
+<summary>
+Class of construction.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.StateOrProvince">
+<summary>
+Code of the state or province where the risk is located.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.Municipality">
+<summary>
+Code of the municipality.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.LowestInsuredAmount">
+<summary>
+Lowest limit of the sum insured of the coverage to which the rate or premium is applied
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.HighestInsuredAmount">
+<summary>
+Highest limit of the sum insured of the coverage to which the rate or premium is applied
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.RatePerThousand">
+<summary>
+Rate (o/oo) to be applied to the sum insured in order to obtain the premium of the module or coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.PremiumAmount">
+<summary>
+Premium amount or amount to be added to the premium
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.AditionalCoverageFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.ConstructionClass">
+<summary>
+Class of construction.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.LowestInsuredAmount">
+<summary>
+Lowest limit of the sum insured of the coverage to which the rate or premium is applied
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.HighestInsuredAmount">
+<summary>
+Highest limit of the sum insured of the coverage to which the rate or premium is applied
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.RatePerThousand">
+<summary>
+Rate (o/oo) to be applied to the sum insured in order to obtain the premium of the module or coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.PremiumAmount">
+<summary>
+Premium amount or amount to be added to the premium
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.Article">
+<summary>
+FIELD DELETED FROM THE SYSTEM
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.TypeOfBusiness">
+<summary>
+Type of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.BuldingRate">
+<summary>
+Building Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.ContentRate">
+<summary>
+Content Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.LiabilityRate">
+<summary>
+Rate for liability.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateForIndustrialRisk.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.NARTICLE">
+<summary>
+Type of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.TypeOfBusiness">
+<summary>
+Type of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.ActivityCategory">
+<summary>
+Category of the activity
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.BasicRateOrdinaryRiskFire.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.TaxCode">
+<summary>
+Code of the tax.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.TaxType">
+<summary>
+Tax type.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.SupportingDocument">
+<summary>
+Type of support document.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.Percentage">
+<summary>
+Percentage to be applied
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.FlatRateOFTax.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.ActivityCategory">
+<summary>
+Category of the activity
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.ConstructionClass">
+<summary>
+Class of construction.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.BuldingRate">
+<summary>
+Building Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.ContentRate">
+<summary>
+Content Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.LiabilityRate">
+<summary>
+Rate for liability.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableActivityCategoryFire.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.ClientRole">
+<summary>
+Role of the client in the policy.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.NOPTION">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.YoungestAge">
+<summary>
+Youngest age for this rate.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.nAge_end">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.LowestLimit">
+<summary>
+Lowest limit of the sum-insured range
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.HighestLimit">
+<summary>
+Highest limit of the sum-insured range
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.LowestYear">
+<summary>
+Lowest limit of the range of years for the rate.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.Gender">
+<summary>
+Gender of the insured person.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.TypeOfCalculation">
+<summary>
+Type of calculation.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.SmokerIndicator">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.RiskType">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.Rate">
+<summary>
+Rate to be applied according to the risk.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.FixedAmount">
+<summary>
+Amount of fixed cost to be added to the risk premium.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.RateType">
+<summary>
+Rate type (percent or per thousand)
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.Currency">
+<summary>
+Code of The Currency in which the fixed cost is expressed
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableAPVProduct.HighestYear">
+<summary>
+Highest limit of the range of years for the rate.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.SeismicZone">
+<summary>
+Seismic Zone
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.TypeOfSeismicConstruction">
+<summary>
+Type of seismic construction.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.MaximumNumberOfFloors">
+<summary>
+Maximum number of floors.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.MinimumNumberOfFloors">
+<summary>
+Minimum number of floors.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.BuildingRate">
+<summary>
+Building rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.ContentRate">
+<summary>
+Content rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableEarthquakeFire.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.ConsecutiveNumber">
+<summary>
+Consecutive number identifying the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.VehicleCode">
+<summary>
+Code of The Insured Vehicle
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.RatePerThousand">
+<summary>
+Rate (per thousand).
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.nPrem_fix">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForAuto.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.RatingTableForTheft">
+<summary>
+Code of the rating table for theft.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.RiskLocation">
+<summary>
+Risk location.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.RatePerThousand">
+<summary>
+Rate (o/oo) to be applied to the sum insured of the coverage to obtain the premium
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableForMoneyInSafe.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.SideClosureType">
+<summary>
+Types of side closures.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.ConstructionClass">
+<summary>
+Class of construction.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.BuildingRate">
+<summary>
+Building Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.ContentRate">
+<summary>
+Content Rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableHurricaneFire.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.RatingTableForTheft">
+<summary>
+Code of the rating table for theft.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.RiskClass">
+<summary>
+Risk classification
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.InsuredPercentage">
+<summary>
+Insured risk percentage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.RiskLocation">
+<summary>
+Risk location.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.RatePerThousand">
+<summary>
+Rate o/oo to be applied to a sum insured to obtain the coverage premium
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTheftContent.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.RiskType">
+<summary>
+Type of risk.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.ConsecutiveNumber">
+<summary>
+Consecutive number identifying the record as unique.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.Age">
+<summary>
+Age of the rate
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.SmokerIndicator">
+<summary>
+Smoker client indicator.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.InsuranceLowestYearsLimit">
+<summary>
+Lowest limit of the number of years of the insurance period
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.RateForWomen">
+<summary>
+Rate for women.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.PaymentLowestYearsLimit">
+<summary>
+Lowest limit of the number of years of the payment period
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.PremiumForWomen">
+<summary>
+Premium amount for women.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.RateForMen">
+<summary>
+Rate for men.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.PremiumForMen">
+<summary>
+Premium amount for men.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.RatingTableType">
+<summary>
+Type of rating.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.FinalYearOfInsurance">
+<summary>
+Final year of the insurance period of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.FinalYearOfPayment">
+<summary>
+Final year of the payment period of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.SingleRate">
+<summary>
+Single rate.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.RatingTableTraditionalLife.SinglePremium">
+<summary>
+Single Premium
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.LowestLimit">
+<summary>
+Lowest limit of the sum-insured range
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.HighestLimit">
+<summary>
+Highest limit of the sum-insured range
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.RatingTableForTheft">
+<summary>
+Code of the rating table for theft.
+</summary>
+</member>
+<member name="P:InMotionGIT.Rating.Routines.DataAccess.QueryStatement.TheftInsuredAmount.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire">
+ <summary>
+ Rates per category of activity - Fire.
+ </summary>
+<remarks>Data-source is 'TAR_FIRECAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.RetrieveByActivityCategory(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableActivityCategoryFire class</returns>
+ <remarks>Datasource is 'XIF519TAR_FIRECAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.RetrieveByConstructionClass(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableActivityCategoryFire class</returns>
+ <remarks>Datasource is 'XIF520TAR_FIRECAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableActivityCategoryFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableActivityCategoryFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableActivityCategoryFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableActivityCategoryFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableActivityCategoryFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableActivityCategoryFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct">
+ <summary>
+ Rating table of the APV product.
+ </summary>
+<remarks>Data-source is 'TAR_APV'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.RetrieveByLineOfBusinessProductCodeRecordEffectiveDateClientRoleCoverageModuleCoverageCode(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableAPVProduct class</returns>
+ <remarks>Datasource is 'XIE4TAR_APV'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.RetrieveByLineOfBusinessProductCode(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableAPVProduct class</returns>
+ <remarks>Datasource is 'XIF1TAR_APV'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableAPVProductItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableAPVProductItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableAPVProductItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProduct,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableAPVProductItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProductCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableAPVProduct.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableAPVProductCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Int32,System.Int32,System.Int32,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire">
+ <summary>
+ Rate Earthquake - Fire Policies.
+ </summary>
+<remarks>Data-source is 'TAR_EARTHQ'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.RetrieveByTypeOfSeismicConstruction(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableEarthquakeFire class</returns>
+ <remarks>Datasource is 'XIF525TAR_EARTHQ'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.RetrieveBySeismicZone(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableEarthquakeFire class</returns>
+ <remarks>Datasource is 'XIF527TAR_EARTHQ'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableEarthquakeFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableEarthquakeFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableEarthquakeFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableEarthquakeFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableEarthquakeFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableEarthquakeFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto">
+ <summary>
+ Tabla de tarifa de automoviles.
+ </summary>
+<remarks>Data-source is 'TAR_AUTO'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.RetrieveByVehicleCodeCoverageModuleProductCodeLineOfBusiness(System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableForAuto class</returns>
+ <remarks>Datasource is 'XIE1TAR_AUTO'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.RetrieveByCoverageModuleProductCodeLineOfBusinessVehicleCode(System.Int32,System.Int32,System.Int32,System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableForAuto class</returns>
+ <remarks>Datasource is 'XIE2TAR_AUTO'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.RetrieveByVehicleCode(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableForAuto class</returns>
+ <remarks>Datasource is 'XIF1658TAR_AUTO'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.RetrieveByLineOfBusinessProductCode(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableForAuto class</returns>
+ <remarks>Datasource is 'XIF1657TAR_AUTO'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableForAutoItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableForAutoItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableForAutoItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAuto,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableForAutoItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAutoCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForAuto.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForAutoCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int64)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe">
+ <summary>
+ Money rates in safes.
+ </summary>
+<remarks>Data-source is 'TAR_THEFT_CASH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.RetrieveByRiskLocation(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableForMoneyInSafe class</returns>
+ <remarks>Datasource is 'XIF1TAR_THEFT_CASH'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableForMoneyInSafeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableForMoneyInSafeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableForMoneyInSafeItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafe,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableForMoneyInSafeItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafeCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableForMoneyInSafe.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableForMoneyInSafeCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire">
+ <summary>
+ Hurricane rate - Fire.
+ </summary>
+<remarks>Data-source is 'TAR_HURRICANE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.RetrieveBySideClosureType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableHurricaneFire class</returns>
+ <remarks>Datasource is 'XIF521TAR_HURRICANE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.RetrieveByConstructionClass(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableHurricaneFire class</returns>
+ <remarks>Datasource is 'XIF522TAR_HURRICANE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableHurricaneFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableHurricaneFireItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableHurricaneFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFire,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableHurricaneFireItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFireCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableHurricaneFire.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableHurricaneFireCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent">
+ <summary>
+ Rates of theft of content.
+ </summary>
+<remarks>Data-source is 'TAR_THEFT_CON'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.RetrieveByRiskLocation(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTheftContent class</returns>
+ <remarks>Datasource is 'XIF1TAR_THEFT_CON'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.RetrieveByRiskClass(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTheftContent class</returns>
+ <remarks>Datasource is 'XIF2TAR_THEFT_CON'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.Decimal,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Find(System.Int32,System.Int32,System.Decimal,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableTheftContentItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableTheftContentItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableTheftContentItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContent,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableTheftContentItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContentCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTheftContent.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTheftContentCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Decimal,System.Int32,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife">
+ <summary>
+ Rate of traditional life.
+ </summary>
+<remarks>Data-source is 'TAR_TRALIFE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.RetrieveByUserCode(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTraditionalLife class</returns>
+ <remarks>Datasource is 'XIF1500TAR_TRALIFE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.RetrieveByRatingTableType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTraditionalLife class</returns>
+ <remarks>Datasource is 'XIF1513TAR_TRALIFE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.RetrieveByRiskType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTraditionalLife class</returns>
+ <remarks>Datasource is 'XIF2386TAR_TRALIFE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.RetrieveByLineOfBusinessProductCode(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for RatingTableTraditionalLife class</returns>
+ <remarks>Datasource is 'XIF1501TAR_TRALIFE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableTraditionalLifeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="RatingTableTraditionalLifeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableTraditionalLifeItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLife,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="RatingTableTraditionalLifeItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLifeCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.RatingTableTraditionalLife.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.RatingTableTraditionalLifeCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.Int64)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount">
+ <summary>
+ Theft insured amounts.
+ </summary>
+<remarks>Data-source is 'TAR_THEFT_CAP'.</remarks>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.SynchronizeChildren(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Find(System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="TheftInsuredAmountItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.ApplyChange(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="TheftInsuredAmountItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="TheftInsuredAmountItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.CancelCurrentRecord(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmount,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="TheftInsuredAmountItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmountCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Rating.Routines.DataAccess.TheftInsuredAmount.Synchronize(InMotionGIT.Rating.Routines.Entity.Contracts.TheftInsuredAmountCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+</members>
+</doc>

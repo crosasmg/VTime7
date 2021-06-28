@@ -1,0 +1,66 @@
+﻿{
+  "app": {
+    "title": "Maintenance of teams",
+    "form": {
+             "UserGroup_Message_Notify_update4": "Se actualizó correctamente el grupo",
+             "UserGroup_Title_Notify_update4": "Actualización de grupo",
+             "UserGroup_Message_Notify_update6": "No se pudo actualizar el grupo",
+             "UserGroup_Title_Notify_update6": "Actualización de grupo",
+             "UserGroup_Message_Notify_delete6": "The group was removed successfully",
+             "UserGroup_Title_Notify_delete6": "Group Elimination",
+             "UserGroup_Message_Notify_delete8": "Exists tasks that are linked to this group",
+             "UserGroup_Title_Notify_delete8": "Group Elimination",
+             "UserGroup_Message_Notify_delete9": "Can't delete group",
+             "UserGroup_Title_Notify_delete9": "Group Elimination",
+             "UserGroup_Message_Notify_delete11": "Exists tasks that are linked to this group",
+             "UserGroup_Title_Notify_delete11": "Group Elimination",
+             "UserGroup_Message_Notify_insert4": "Added successfully Group",
+             "UserGroup_Title_Notify_insert4": "Add group",
+             "UserGroup_Message_Notify_insert6": "No se pudo agregar el grupo",
+             "UserGroup_Title_Notify_insert6": "Agregar grupo",
+             "UserGroup_Title": "",
+             "UserGroup_AddButtonCaption": "Add",
+             "UserGroup_DeleteButtonCaption": "Delete",
+             "Id_Label": "Identifier",
+             "UserGroupTbl_Id_Title": "Identifier",
+             "Id_Tooltip": "Id",
+             "Id_Measure": "",
+             "Id_Legend": "",
+             "Id_Prefix": "",
+             "Id_RequiredMessage": "The identifier is required",
+             "Description_Label": "Description",
+             "UserGroupTbl_Description_Title": "Description",
+             "Description_Tooltip": "Description",
+             "Description_Measure": "",
+             "Description_Legend": "",
+             "Description_Prefix": "",
+             "Description_Watermark": "",
+             "Description_RequiredMessage": "The description is required",
+             "OwnerId_Label": "Owner",
+             "UserGroupTbl_OwnerId_Title": "Owner",
+             "OwnerId_Tooltip": "dropdownlist0",
+             "OwnerId_Measure": "",
+             "OwnerId_Legend": "",
+             "OwnerId_Prefix": "",
+             "OwnerId_FirstEmptyMessage": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "Id": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999",
+             "required": "The identifier is required"
+        },
+        "Description": {
+             "maxlength": "The field allows 39 maximum characters",
+             "required": "The description is required"
+        },
+        "OwnerId": {
+
+        }
+    }
+  }
+}

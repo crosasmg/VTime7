@@ -1,0 +1,382 @@
+<%@ Page LANGUAGE="VB" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="CRAXDRT" %>
+<%@ Import namespace="eRemoteDB" %>
+<%@ Import namespace="eSecurity" %>
+<script language="VB" runat="Server">
+Dim iLen As Integer
+Dim Path As String
+Dim crtable As Object
+Dim lobjDBConnect As eRemoteDB.Connection
+Dim reportname As String
+
+
+
+'==================================================================
+' If it easier for you to conceptualize this code by seeing it all
+' contained in a single file, simply delete the line above, and
+' replace it with the entire contents of the file being included.
+'==================================================================
+'session("oRpt").Database.logoffserver "pdsoledb.1","cadillacs","VTimeNet_cld", "sa", insGetPWD()
+'Set session("oRpt") = Nothing
+'Set session("oApp") = Nothing
+
+
+'% insGetPWD
+'-----------------------------
+Private Function insGetPWD() As String
+	'-----------------------------
+	Dim lobjUserValidate As eSecurity.UserValidate
+	lobjUserValidate = New eSecurity.UserValidate
+	insGetPWD = lobjUserValidate.StrDecode(session("sAccesswo"))
+	'UPGRADE_NOTE: Object lobjUserValidate may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lobjUserValidate = Nothing
+End Function
+
+'--------------------------------
+Private Sub InsLoadParameters()
+	'--------------------------------
+	Dim lstrType As String
+	On Error Resume Next
+	lstrType = session("oRpt").ParameterFields(1).ValueType
+	If Err.Number <> 0 Then
+		err.Clear()
+	End If
+	On Error GoTo 0
+	
+	'	session("oRpt").ParameterFields(1).AddCurrentValue 1
+	'	session("oRpt").ParameterFields(2).AddCurrentValue 12
+	'	session("oRpt").ParameterFields(3).AddCurrentValue 1
+	'	session("oRpt").ParameterFields(4).AddCurrentValue 1
+	'	session("oRpt").ParameterFields(5).AddCurrentValue 1
+	'	session("oRpt").ParameterFields(6).AddCurrentValue "20020430"
+	'	session("oRpt").ParameterFields(7).AddCurrentValue "CRWNULL"
+	
+	'	session("oRpt").ParameterFields(6).AddCurrentValue "20011221"
+	'	session("oRpt").ParameterFields(7).AddCurrentValue 9999
+	'	session("oRpt").ParameterFields(8).AddCurrentValue "racata"
+	'	session("oRpt").ParameterFields(9).AddCurrentValue "1"
+	'	session("oRpt").ParameterFields(10).AddCurrentValue "S"
+	'	session("oRpt").ParameterFields(11).AddCurrentValue "TIMENOTHING"
+	'	session("oRpt").ParameterFields(12).AddCurrentValue "CRWNULL"
+	
+	'	exit sub
+	'+ Si se trata de un parámetro de sp
+	
+	If lstrType = "7" Then
+		insLoadParametersRPT(insLoadParametersSP(0))
+	ElseIf lstrType = "12" Then 
+		insLoadParametersSP(insLoadParametersRPT(0))
+	End If
+End Sub
+
+'---------------------------------------------------------
+Private Function insLoadParametersSP(ByRef lintParIndex As Double) As Integer
+	'---------------------------------------------------------
+	Dim lintIndex As Integer
+	Dim lstrValue As String
+	Dim crpParameter As Object
+	
+	For lintIndex = 1 To Request.QueryString.Item("sp").Length
+		lstrValue = Request.QueryString.Item("sp").GetValue(lintIndex - 1)
+		crpParameter = session("oRpt").ParameterFields(lintParIndex + lintIndex)
+		'Response.Write "crpParameter.ValueType:" & crpParameter.ValueType & " | " 
+		'Response.Write crpParameter.Name & ":-" & lstrValue & "-> " & crpParameter.ValueType & "|" 
+		
+		Select Case crpParameter.ValueType
+			Case 12 'crSPTVarChar
+				crpParameter.AddCurrentValue(CStr(lstrValue))
+			Case 2 'crSPTNumeric
+				If CDbl(lstrValue) <> -32768 Then
+					crpParameter.AddCurrentValue(CShort(lstrValue))
+				End If
+			Case 7 'crSPTReal
+				If lstrValue <> "" Then
+					If lstrValue <> "0" Then
+						If CDbl(lstrValue) <> -32768 Then
+							
+							crpParameter.AddCurrentValue(CDbl(lstrValue))
+							
+						End If
+					Else
+						crpParameter.AddCurrentValue(CShort(lstrValue))
+					End If
+				End If
+			Case 10 'crSPTTime
+				If lstrValue <> "" Then
+					crpParameter.AddCurrentValue(CDate(lstrValue))
+				End If
+			Case 16
+				If lstrValue <> "" Then
+					crpParameter.AddCurrentValue(CDate(lstrValue))
+				End If
+		End Select
+	Next 
+	If Request.QueryString.Item("Server") = "2" Then
+		session("oRpt").ParameterFields(lintParIndex + lintIndex).AddCurrentValue("CRWNULL")
+		insLoadParametersSP = lintIndex + lintParIndex
+	Else
+		insLoadParametersSP = lintIndex + lintParIndex - 1
+	End If
+End Function
+'-------------------------------------------------------
+Private Function insLoadParametersRPT(ByRef lintParIndex As Integer) As Double
+	'-------------------------------------------------------
+	Dim lintIndex As Integer
+	Dim lstrValue As Object
+	Dim crpParameter As Object
+	
+	For lintIndex = 1 To Request.QueryString.Item("p").Length
+		lstrValue = Request.QueryString.Item("p").GetValue(lintIndex - 1)
+		crpParameter = session("oRpt").ParameterFields(lintParIndex + lintIndex)
+		Select Case crpParameter.ValueType
+			Case 12 'crSPTVarChar
+				crpParameter.AddCurrentValue(CStr(lstrValue))
+			Case 2 'crSPTNumeric
+				crpParameter.AddCurrentValue(CShort(lstrValue))
+			Case 7 'crSPTReal
+				If lstrValue <> 0 Then
+					crpParameter.AddCurrentValue(CDbl(lstrValue))
+				Else
+					crpParameter.AddCurrentValue(CShort(lstrValue))
+				End If
+			Case 10 'crSPTTime
+				crpParameter.AddCurrentValue(CDate(lstrValue))
+			Case 16
+				crpParameter.AddCurrentValue(CDate(lstrValue))
+		End Select
+	Next 
+	insLoadParametersRPT = lintIndex + lintParIndex - 1
+End Function
+
+</script>
+<TITLE>VisualTime - Reports</TITLE>
+<%Response.Expires = -1
+Response.Buffer = True
+'=============================================================================
+' WORKING WITH THE REPORT DESIGNER COMPONENT AND ASP TO LOG IN TO A MAIN REPORT 
+'==============================================================================
+'
+' CONCEPT                                                             
+'   The Application object created above (oApp) is needed so that we 
+'   can create the report object.
+'   Once we have created the report object (oRpt), we can then  
+'   gain access to such things the "Selection Formula" in that  
+'   report.   
+'                                                            
+'  ALWAYS REQUIRED STEPS (contained in AlwaysRequiredSteps.aspx)
+'   -  create the application object                                
+'   -  create the report object and open the report                                     
+'
+'  WORKING WITH SETLOGONINFO
+'   -  There are two ways to log on to a datasource using the
+'   Automation Server. One is the LogonServer method, which applies to
+'   the Application object, and the other is SetLogonInfo, which works '   
+'   with a Database Table object.  Two advantages of using SetLogonInfo
+'   are that you can set different datasources for subreports, and you
+'   can use the 'MatchLogonInfo' property.  If you don't use this
+'   property and an authenticated user is previewing reports,
+'   anybody else using the same id - without a password - 
+'   can also execute the same asp page and preview the reports.
+'
+'
+'  MORE ALWAYS REQUIRED STEPS
+'   -  retrieve the records                                         
+'   -  create the page engine 
+'
+'  DISPLAY THE REPORT
+'   -  display the report using a Smart Viewer
+' = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+
+'==================================================================
+'==================================================================
+' ALWAYS REQUIRED STEPS
+'
+' Include the file AlwaysRequiredSteps.aspx which contains the code    
+' for steps:
+'   -  create the application object
+'   -  create the report object and open the report
+
+%>
+<%
+'   This is the name of the report being used in this example. 
+'   This variable is being used in the AlwaysRequiredSteps.aspx 
+'   To use a different report, change it here.
+
+reportname = Request.QueryString.Item("URL") '"test.rpt"'"SimpleSetLogonInfo.rpt"
+'Response.Redirect("/VTimeNet/Visualtime/tets.aspx?rn=" & Request.Params.Get("Query_String")) 
+
+%>
+<!-- #INCLUDE FILE="AlwaysRequiredSteps.aspx" -->
+<%
+'   If it is easier to understand, simply delete the line above,  
+'   and replace it with the entire contents of the file  
+'   AlwaysRequiredSteps.aspx                                             
+'==================================================================
+'==================================================================
+
+'==================================================================
+'==================================================================
+' WORKING WITH SETLOGONINFO
+'
+' The datasource here is called "Automation".  It is a System 
+' Datasource, and points to the "pubs" database, which is installed
+' with SQL Server. You will also need to change your user id and
+' password.
+
+session("oRpt").MorePrintEngineErrorMessages = False
+session("oRpt").EnableParameterPrompting = False
+
+'+ Se adiciona el titulo del Reporte si se pasó como parametro
+If Request.QueryString.Item("ReporTitle") <> vbNullString Then
+	session("oRpt").reportTitle = Request.QueryString.Item("ReporTitle")
+End If
+
+' Set the location
+crtable = session("oRpt").Database.Tables.Item(1)
+
+'    crtable.SetLogonInfo cstr(Request.QueryString("ServerName")), " ",  session("sInitials"), insGetPWD
+lobjDBConnect = New eRemoteDB.Connection
+lobjDBConnect.bErr_Module = CStr(session("bErrorModule")) = "1"
+lobjDBConnect.LoadConnectInfo()
+crtable.SetLogonInfo(lobjDBConnect.Database, " ", lobjDBConnect.Login, lobjDBConnect.Password)
+'UPGRADE_NOTE: Object lobjDBConnect may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+lobjDBConnect = Nothing
+session("bErrorModule") = ""
+
+InsLoadParameters()
+
+
+'==================================================================
+'==================================================================
+
+
+
+'==================================================================
+'==================================================================
+'
+'  MORE ALWAYS REQUIRED STEPS
+'   -  retrieve the records                                         
+'   -  create the page engine                                       
+'   -  create the smart viewer and point it to rptserver.aspx
+'
+%>
+<!-- #INCLUDE FILE="MoreRequiredSteps.aspx" -->
+<%
+'   If it is easier to understand, simply delete the line above,  
+'   and replace it with the entire contents of the file 
+'   MoreRequiredSteps.aspx                                             
+'==================================================================
+'==================================================================
+
+' INSTANTIATE THE REPORT VIEWER
+'
+'When using the Crystal Reports in an ASP environment, we use
+'the same page-on-demand Report Viewers used with the Crystal Web Component Server.
+'There are six Report Viewers:
+'
+'1.  Report Viewer for ActiveX
+'2.  Report Viewer for Java using Browser JVM
+'3.  Report Viewer for Standard HTML with Frames
+'4.  Report Viewer for Standard HTML
+'5.  Report Viewer for Java Using Java Plugin
+'6.  Report Viewer for Netscape Plug-in (ActiveX)
+'
+'The Report Viewer that you use will based on the browser's display capablities.
+'For Example, you would not want to instantiate one of the Java viewers if the browser
+'did not support Java applets.  For purposes on this demo, we have chosen to
+'define a viewer.  You can through code determine the support capabilities of
+'the requesting browser.  However that functionality is inherent in the Crystal
+'Reports RDC and is beyond the scope of this demonstration app.
+'
+'We have chosen to leverage the server side include functionality of ASP
+'for simplicity sake.  So you can use the SmartViewer*.aspx files to instantiate
+'the smart viewer that you wish to send to the browser.  Simply replace the line
+'below with the Smart Viewer asp file you wish to use.
+'
+'The choices are SmartViewerActiveX.aspx, SmartViewerJava.aspx, JavaPluginViewer.aspx,
+'ActiveXPluginViewer.aspx. SmartViewerHTMLFrame.aspx, and SmartViewerHTMLPAge.aspx.
+'Note that to use this include you must have the appropriate .aspx file in the 
+'same virtual directory as the main ASP page.
+'
+'*NOTE* For SmartViewerHTMLFrame and SmartViewerHTMLPage, you must also have
+'the files framepage.aspx and toolbar.aspx in your virtual directory.
+
+
+'=============================================================================
+'  DISPLAY THE REPORT
+'   - display the report using a smart viewer
+' 
+' Include one of the Smart Viewers.
+'  - Report Viewer for ActiveX			=   SmartViewerActiveX.aspx
+'  - Report Viewer for Java using Browser JVM	=   SmartViewerJAVA.aspx
+'  - Report Viewer for Standard HTML		=   SmartViewerHTMLPage.aspx
+'  - Report Viewer for Standard HTML w/ Frames	=   SmartViewerHTMLFrame.aspx
+'  - Report Viewer for Java Using Java Plugin	=   JavaPluginViewer.aspx
+'  - Report Viewer for Netscape Plug-in		=   ActiveXPluginViewer.aspx
+'=============================================================================
+'<!-- #INCLUDE FILE="SmartViewerActiveX.aspx" -->
+<%'#$<$#D:\VisualTIMEChile\Result\VTimeStep1\common\reports\SmartViewerActiveX.aspx|
+'UPGRADE_ISSUE: The preceding line couldn't be parsed. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1010.aspx'%>
+<HTML>
+<HEAD>
+<TITLE>Seagate ActiveX Viewer</TITLE>
+</HEAD>
+<BODY BGCOLOR=C6C6C6 LANGUAGE=VBScript ONLOAD="Page_Initialize">
+
+<OBJECT ID="CRViewer"
+	CLASSID="CLSID:C4847596-972C-11D0-9567-00A0C9273C2A"
+	WIDTH=100% HEIGHT=95%
+	CODEBASE="/viewer/activeXViewer/activexviewer.cab#Version=8,0,0,224">
+<PARAM NAME="EnableRefreshButton" VALUE=0>
+<PARAM NAME="EnableGroupTree" VALUE=0>
+<PARAM NAME="DisplayGroupTree" VALUE=0>
+<PARAM NAME="EnablePrintButton" VALUE=1>
+<PARAM NAME="EnableExportButton" VALUE=1>
+<PARAM NAME="EnableDrillDown" VALUE=1>
+<PARAM NAME="EnableSearchControl" VALUE=1>
+<PARAM NAME="EnableAnimationControl" VALUE=1>
+<PARAM NAME="EnableZoomControl" VALUE=1>
+</OBJECT>
+
+
+<SCRIPT LANGUAGE="VBScript">
+<!--
+Sub Page_Initialize
+	On Error Resume Next
+	Dim webBroker
+	Set webBroker = CreateObject("WebReportBroker.WebReportBroker")
+	
+	if ScriptEngineMajorVersion < 2 then
+		window.alert "IE 3.02 users on NT4 need to get the latest version of VBScript or install IE 4.01 SP1. IE 3.02 users on Win95 need DCOM95 and latest version of VBScript, or install IE 4.01 SP1. These files are available at Microsoft's web site."
+		CRViewer.ReportName = "rptserver.aspx"
+	else
+		Dim webSource
+		Set webSource = CreateObject("WebReportSource.WebReportSource")
+		webSource.ReportSource = webBroker
+		webSource.URL = "rptserver.aspx"
+		webSource.PromptOnRefresh = True
+		CRViewer.ReportSource = webSource
+		Set webSource = Nothing
+	end if
+	CRViewer.ViewReport
+	Set webBroker = Nothing
+End Sub
+-->
+</SCRIPT>
+</BODY>
+</HTML>
+<%'#$>$#D:\VisualTIMEChile\Result\VTimeStep1\common\reports\SmartViewerActiveX.aspx|%>
+                    
+%>
+<!-- #INCLUDE FILE="SmartViewerActiveX.aspx" -->
+                     
+
+
+
+
+
+
+

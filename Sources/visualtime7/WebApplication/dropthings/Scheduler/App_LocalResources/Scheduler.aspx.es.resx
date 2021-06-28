@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptBtnResource1.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="AcceptButtonResource1.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="ASPxButton1Resource1.Text" xml:space="preserve">
+    <value>Preferencias...</value>
+  </data>
+  <data name="ASPxButton2Resource1.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="ASPxButton3Resource1.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="ASPxDateNavigator1Resource1.Properties.FastNavProperties.CancelButtonText" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ASPxDateNavigator1Resource1.Properties.FastNavProperties.OkButtonText" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="ASPxDateNavigator1Resource1.Properties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="ASPxDateNavigator1Resource1.Properties.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="CancelBtnResource1.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DenyBtnResource1.Text" xml:space="preserve">
+    <value>Denegar</value>
+  </data>
+  <data name="GridViewDataComboBoxColumnResource1.Caption" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="GridViewDataComboBoxColumnResource1.PropertiesComboBox.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="GridViewDataImageColumnResource1.Caption" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="GridViewDataImageColumnResource1.PropertiesImage.AlternateTextFormatString" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="GridViewDataImageColumnResource1.PropertiesImage.DescriptionUrlFormatString" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="GridViewDataTextColumnResource2.Caption" xml:space="preserve">
+    <value>Asunto de la tarea</value>
+  </data>
+  <data name="MainSchedulerResource1.OptionsLoadingPanel.Text" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.DayView.DisplayName" xml:space="preserve">
+    <value>Día de Calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.DayView.MenuCaption" xml:space="preserve">
+    <value>Ver &amp;día</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.DayView.ShortDisplayName" xml:space="preserve">
+    <value>Día</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.MonthView.DisplayName" xml:space="preserve">
+    <value>Mes del Calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.MonthView.MenuCaption" xml:space="preserve">
+    <value>Ver &amp;mes</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.MonthView.ShortDisplayName" xml:space="preserve">
+    <value>Mes</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.TimelineView.DisplayName" xml:space="preserve">
+    <value>Línea de tiempo del Calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.TimelineView.MenuCaption" xml:space="preserve">
+    <value>Ver &amp;línea de tiempo</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.TimelineView.ShortDisplayName" xml:space="preserve">
+    <value>Linea de tiempo</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WeekView.DisplayName" xml:space="preserve">
+    <value>Semana del Calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WeekView.MenuCaption" xml:space="preserve">
+    <value>Ver &amp;semana</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WeekView.ShortDisplayName" xml:space="preserve">
+    <value>Semana</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WorkWeekView.DisplayName" xml:space="preserve">
+    <value>Semana Laboral del Calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WorkWeekView.MenuCaption" xml:space="preserve">
+    <value>Ver semana la&amp;boral del calendario</value>
+  </data>
+  <data name="MainSchedulerResource1.Views.WorkWeekView.ShortDisplayName" xml:space="preserve">
+    <value>Semana laboral</value>
+  </data>
+  <data name="MenuItemResource1.Name" xml:space="preserve">
+    <value>itm1</value>
+  </data>
+  <data name="MenuItemResource1.Text" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="MenuItemResource2.Name" xml:space="preserve">
+    <value>itm2</value>
+  </data>
+  <data name="MenuItemResource2.Text" xml:space="preserve">
+    <value>Cambiar estado</value>
+  </data>
+  <data name="MenuItemResource3.Text" xml:space="preserve">
+    <value>No iniciada</value>
+  </data>
+  <data name="MenuItemResource4.Text" xml:space="preserve">
+    <value>Pendiente</value>
+  </data>
+  <data name="MenuItemResource5.Text" xml:space="preserve">
+    <value>Completada</value>
+  </data>
+  <data name="MenuItemResource6.Text" xml:space="preserve">
+    <value>En espera</value>
+  </data>
+  <data name="MenuItemResource7.Text" xml:space="preserve">
+    <value>Pospuesta</value>
+  </data>
+  <data name="MenuItemResource8.Text" xml:space="preserve">
+    <value>Cancelada</value>
+  </data>
+  <data name="MessageTxtResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Calendario</value>
+  </data>
+  <data name="popupCompleteTaskResource1.FooterText" xml:space="preserve">
+    <value>Pie de página</value>
+  </data>
+  <data name="popupCompleteTaskResource1.HeaderText" xml:space="preserve">
+    <value>Encabezado</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="popupCompleteTaskResource1.Modal" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="popupMenuResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="popupMenuResource1.NavigateUrlFormatString" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="popupMenuResource1.TextFormatString" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="popupMessageResource1.FooterText" xml:space="preserve">
+    <value>Pie de página</value>
+  </data>
+  <data name="popupMessageResource1.HeaderText" xml:space="preserve">
+    <value>Encabezado</value>
+  </data>
+  <data name="popupMessageResource1.Modal" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ReviewBtnResource1.Text" xml:space="preserve">
+    <value>Revisar</value>
+  </data>
+  <data name="TaskGridViewResource1.Caption" xml:space="preserve">
+    <value>Tareas pendientes</value>
+  </data>
+  <data name="TaskGridViewResource1.Settings.GroupFormat" xml:space="preserve">
+    <value>{0}: {1} {2}</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsLoadingPanel.Text" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsPager.CurrentPageNumberFormat" xml:space="preserve">
+    <value>[{0}]</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsPager.PageNumberFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsPager.Summary.AllPagesText" xml:space="preserve">
+    <value>Páginas: {0} - {1} ({2} items)</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsPager.Summary.Text" xml:space="preserve">
+    <value>Página {0} de {1} ({2} items)</value>
+  </data>
+  <data name="TimeRulerResource1.TimeZone.DaylightZoneName" xml:space="preserve">
+    <value>Hora de Verano de Greenwich</value>
+  </data>
+  <data name="TimeRulerResource1.TimeZone.DisplayName" xml:space="preserve">
+    <value>(GMT) Casablanca, Monrovia, Reykjavik</value>
+  </data>
+  <data name="TimeRulerResource1.TimeZone.StandardZoneName" xml:space="preserve">
+    <value>Hora Estándar de Greenwich</value>
+  </data>
+  <data name="TimeRulerResource2.TimeZone.DaylightZoneName" xml:space="preserve">
+    <value>Hora de Verano de Greenwich</value>
+  </data>
+  <data name="TimeRulerResource2.TimeZone.DisplayName" xml:space="preserve">
+    <value>(GMT) Casablanca, Monrovia, Reykjavik</value>
+  </data>
+  <data name="TimeRulerResource2.TimeZone.StandardZoneName" xml:space="preserve">
+    <value>Hora Estándar de Greenwich</value>
+  </data>
+  <data name="TaskGridViewResource1.SettingsText.EmptyDataRow" xml:space="preserve">
+    <value>No hay datos a mostrar</value>
+  </data>
+  <data name="chkDeleteResource1.Text" xml:space="preserve">
+    <value>Eliminar citas existentes antes de eliminar</value>
+  </data>
+  <data name="lblImportFileResource1.Text" xml:space="preserve">
+    <value>Seleccione el archivo a importar</value>
+  </data>
+  <data name="popupImportResource1.HeaderText" xml:space="preserve">
+    <value>Opciones para importar calendario</value>
+  </data>
+  <data name="NoAppointmentsMessage" xml:space="preserve">
+    <value>No hay citas para exportar en el calendario</value>
+  </data>
+  <data name="InvalidFileTypeMessage" xml:space="preserve">
+    <value>El tipo de archivo a exportar es inválido</value>
+  </data>
+  <data name="ASPxButton4Resource1.Text" xml:space="preserve">
+    <value>Nueva Tarea</value>
+  </data>
+  <data name="MenuItemResource10.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="MenuItemResource11.Text" xml:space="preserve">
+    <value>Nueva Tarea</value>
+  </data>
+  <data name="MenuItemResource9.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="popupCompleteTaskHeaderResource1.Text" xml:space="preserve">
+    <value>Completar Tarea</value>
+  </data>
+  <data name="popupMessageHeaderResource1.Text" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="ListEditItemResource4.Text" xml:space="preserve">
+    <value>No iniciada</value>
+  </data>
+  <data name="ListEditItemResource5.Text" xml:space="preserve">
+    <value>Pendiente</value>
+  </data>
+  <data name="ListEditItemResource6.Text" xml:space="preserve">
+    <value>Completada</value>
+  </data>
+  <data name="ListEditItemResource7.Text" xml:space="preserve">
+    <value>En espera</value>
+  </data>
+  <data name="ListEditItemResource8.Text" xml:space="preserve">
+    <value>Pospuesta</value>
+  </data>
+  <data name="ListEditItemResource9.Text" xml:space="preserve">
+    <value>Cancelada</value>
+  </data>
+  <data name="actionsImageResource1.ToolTip" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="ExecuteResource1.Text" xml:space="preserve">
+    <value>Ejecutar transacción: </value>
+  </data>
+  <data name="LoadingResource1.Text" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="NoneMessageResource" xml:space="preserve">
+    <value>Ninguna</value>
+  </data>
+  <data name="TransactionMessageResource" xml:space="preserve">
+    <value>No hay transacciones asociadas a la tarea</value>
+  </data>
+  <data name="OwnerLink.Text" xml:space="preserve">
+    <value>Tareas o eventos asignados por mi</value>
+  </data>
+  <data name="RelationshipLink.Text" xml:space="preserve">
+    <value>Tareas o eventos de mis supervisados</value>
+  </data>
+  <data name="ASPxLabel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ASPxLabel5Resource1.Text" xml:space="preserve">
+    <value>Filtro:</value>
+  </data>
+  <data name="ASPxLabel5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ASPxLabel6Resource1.Text" xml:space="preserve">
+    <value>Usuario:</value>
+  </data>
+  <data name="ASPxLabel6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ASPxLabel7Resource1.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="ASPxLabel7Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataDateColumnResource1.Caption" xml:space="preserve">
+    <value>Creación</value>
+  </data>
+  <data name="GridViewDataDateColumnResource1.ToolTip" xml:space="preserve">
+    <value>Día y hora en fue creado la tarea o evento</value>
+  </data>
+  <data name="GridViewDataDateColumnResource2.Caption" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="GridViewDataDateColumnResource2.ToolTip" xml:space="preserve">
+    <value>Día y hora en que debe comenzar el evento</value>
+  </data>
+  <data name="GridViewDataDateColumnResource3.Caption" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="GridViewDataDateColumnResource3.ToolTip" xml:space="preserve">
+    <value>Día y hora en que debe terminar el evento</value>
+  </data>
+  <data name="GridViewDataImageColumnResource1.ToolTip" xml:space="preserve">
+    <value>Prioridad que tiene la tarea</value>
+  </data>
+  <data name="GridViewDataImageColumnResource2.Caption" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="GridViewDataImageColumnResource2.ToolTip" xml:space="preserve">
+    <value>Tipo de registro, evento o tarea</value>
+  </data>
+  <data name="GridViewDataImageColumnResource3.Caption" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="GridViewDataImageColumnResource3.ToolTip" xml:space="preserve">
+    <value>Tipo de programa o persona que originó el evento o tarea</value>
+  </data>
+  <data name="GridViewDataTextColumnResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource3.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource4.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataTextColumnResource5.Caption" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="GridViewDataTextColumnResource5.ToolTip" xml:space="preserve">
+    <value>Estado de la actividad o evento</value>
+  </data>
+  <data name="GridViewDataTextColumnResource6.Caption" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="GridViewDataTextColumnResource6.ToolTip" xml:space="preserve">
+    <value>Porcentaje que ha sido realizado del total de la actividad o tarea</value>
+  </data>
+  <data name="GridViewDataTextColumnResource7.Caption" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="GridViewDataTextColumnResource7.ToolTip" xml:space="preserve">
+    <value>Usuario asociado a la actividad</value>
+  </data>
+  <data name="GridViewDataTextColumnResource8.Caption" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="GridViewDataTextColumnResource8.ToolTip" xml:space="preserve">
+    <value>Descripción breve de la actividad o tarea</value>
+  </data>
+  <data name="RelationshipTaskGridView2Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RelationshipTaskGridView2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShowPreview2Resource1.Text" xml:space="preserve">
+    <value>Mostrar detalle de la tarea o evento</value>
+  </data>
+  <data name="ShowPreview2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.HelpText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.LoadingPanelImage.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="StatusFilter2Resource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilter2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.HelpText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.LoadingPanelImage.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserFilter2Resource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="ASPxLabel2Resource1.Text" xml:space="preserve">
+    <value>Usuario:</value>
+  </data>
+  <data name="ASPxLabel2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ASPxLabel3Resource1.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="ASPxLabel3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ASPxLabel4Resource1.Text" xml:space="preserve">
+    <value>Filtro:</value>
+  </data>
+  <data name="ASPxLabel4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridViewDataImageColumnResource1.ToolTip1" xml:space="preserve">
+    <value>Prioridad que tiene la tarea</value>
+  </data>
+  <data name="GridViewDataTextColumnResource9.Caption" xml:space="preserve">
+    <value>Supervisor</value>
+  </data>
+  <data name="GridViewDataTextColumnResource9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopupControlContentControl4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RelationShipPopupResource1.HeaderText" xml:space="preserve">
+    <value>Tareas o eventos de mis supervisados</value>
+  </data>
+  <data name="RelationShipPopupResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="RelationShipPopupResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RelationShipPopupResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RelationshipTaskGridViewResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShowPreviewResource1.Text" xml:space="preserve">
+    <value>Mostrar detalle de la tarea o evento</value>
+  </data>
+  <data name="ShowPreviewResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusFilterResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="UserFilterResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="OwnerPopupPopup.HeaderText" xml:space="preserve">
+    <value>Tareas o eventos asignados por mi</value>
+  </data>
+  <data name="OwnerPopupPopup.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="AppointmentCaption" xml:space="preserve">
+    <value>Sin título - Cita</value>
+  </data>
+  <data name="TaskCaption" xml:space="preserve">
+    <value>Sin título - Tarea</value>
+  </data>
+</root>

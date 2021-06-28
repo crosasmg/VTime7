@@ -1,0 +1,122 @@
+﻿{
+  "app": {
+    "title": "Grupo de acceso",
+    "form": {
+             "Grupo_Acceso_Grid_Message_Notify_insert5": "Se agregó correctamente el registro",
+             "Grupo_Acceso_Grid_Title_Notify_insert5": "Agregar registro",
+             "Grupo_Acceso_Grid_Message_Notify_insert6": "No se pudo agregar el registro",
+             "Grupo_Acceso_Grid_Title_Notify_insert6": "Agregar registro",
+             "Grupo_Acceso_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "Grupo_Acceso_Grid_Title_Notify_update4": "Actualizar registro",
+             "Grupo_Acceso_Grid_Message_Notify_update5": "No se pudo actualizar el registro",
+             "Grupo_Acceso_Grid_Title_Notify_update5": "Actualizar registro",
+             "Grupo_Acceso_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "Grupo_Acceso_Grid_Title_Notify_delete4": "Eliminar registro",
+             "Grupo_Acceso_Grid_Message_Notify_delete5": "No se puede eliminar el registro",
+             "Grupo_Acceso_Grid_Title_Notify_delete5": "Eliminar registro",
+             "label0_Label": "Grupos que contienen los accesos a los recursos del sistema",
+             "label0_Tooltip": "Grupos que contienen los accesos a los recursos del sistema",
+             "label0_Prefix": "",
+             "Grupo_Acceso_Grid_Title": "",
+             "Grupo_Acceso_Grid_AddButtonCaption": "Agregar",
+             "Grupo_Acceso_Grid_DeleteButtonCaption": "Eliminar",
+             "Id_Grupo_Acceso_Label": "Id Grupo Acceso",
+             "Grupo_Acceso_GridTbl_Id_Grupo_Acceso_Title": "Id Grupo Acceso",
+             "Id_Grupo_Acceso_Tooltip": "Código del grupo de acceso.",
+             "Id_Grupo_Acceso_Measure": "",
+             "Id_Grupo_Acceso_Legend": "",
+             "Id_Grupo_Acceso_Prefix": "",
+             "Descripcion_Label": "Descripción",
+             "Grupo_Acceso_GridTbl_Descripcion_Title": "Descripción",
+             "Descripcion_Tooltip": "Descripción del código.",
+             "Descripcion_Measure": "",
+             "Descripcion_Legend": "",
+             "Descripcion_Prefix": "",
+             "Descripcion_Watermark": "",
+             "Descripcion_RequiredMessage": "El campo es requerido.",
+             "Descripcion_Corta_Label": "Descripcion Corta",
+             "Grupo_Acceso_GridTbl_Descripcion_Corta_Title": "Descripcion Corta",
+             "Descripcion_Corta_Tooltip": "Descripción abreviada del código.",
+             "Descripcion_Corta_Measure": "",
+             "Descripcion_Corta_Legend": "",
+             "Descripcion_Corta_Prefix": "",
+             "Descripcion_Corta_Watermark": "",
+             "Descripcion_Corta_RequiredMessage": "El campo es requerido.",
+             "Estado_Registro_Label": "Estado Registro",
+             "Grupo_Acceso_GridTbl_Estado_Registro_Title": "Estado Registro",
+             "Estado_Registro_Tooltip": "Estado del registro.",
+             "Estado_Registro_Measure": "",
+             "Estado_Registro_Legend": "",
+             "Estado_Registro_Prefix": "",
+             "Estado_Registro_RequiredMessage": "El campo es requerido.",
+             "CreationDate_Label": "Fecha de Creación",
+             "Grupo_Acceso_GridTbl_CreationDate_Title": "Fecha de Creación",
+             "CreationDate_Tooltip": "Fecha del computador en que se crea el registro.",
+             "CreationDate_Measure": "",
+             "CreationDate_Legend": "",
+             "CreationDate_Prefix": "",
+             "CreationDate_RequiredMessage": "El campo es requerido.",
+             "CreatorUserCode_Label": "User Code Creador",
+             "Grupo_Acceso_GridTbl_CreatorUserCode_Title": "User Code Creador",
+             "CreatorUserCode_Tooltip": "Código del usuario que crea el registro.",
+             "CreatorUserCode_Measure": "",
+             "CreatorUserCode_Legend": "",
+             "CreatorUserCode_Prefix": "",
+             "CreatorUserCode_RequiredMessage": "El campo es requerido.",
+             "UpdateDate_Label": "Fecha de Actualización del Registro",
+             "Grupo_Acceso_GridTbl_UpdateDate_Title": "Fecha de Actualización del Registro",
+             "UpdateDate_Tooltip": "Fecha del computador en que se crea o actualiza el registro.",
+             "UpdateDate_Measure": "",
+             "UpdateDate_Legend": "",
+             "UpdateDate_Prefix": "",
+             "UpdateDate_RequiredMessage": "El campo es requerido.",
+             "UpdateUserCode_Label": "Código de Usuario Que Actualiza",
+             "Grupo_Acceso_GridTbl_UpdateUserCode_Title": "Código de Usuario Que Actualiza",
+             "UpdateUserCode_Tooltip": "Código del usuario que crea o actualiza el registro.",
+             "UpdateUserCode_Measure": "",
+             "UpdateUserCode_Legend": "",
+             "UpdateUserCode_Prefix": "",
+             "UpdateUserCode_RequiredMessage": "El campo es requerido.",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "Id_Grupo_Acceso": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -9999999999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 9999999999",
+             "uniquecolumnGrupo_Acceso_GridId_Grupo_Acceso": "El valor del campo está duplicado en otro registro"
+        },
+        "Descripcion": {
+             "maxlength": "El campo permite 75 caracteres máximo",
+             "required": "El campo es requerido."
+        },
+        "Descripcion_Corta": {
+             "maxlength": "El campo permite 40 caracteres máximo",
+             "required": "El campo es requerido."
+        },
+        "Estado_Registro": {
+             "required": "El campo es requerido."
+        },
+        "CreationDate": {
+             "DatePicker": "The indicated date is not valid",
+             "required": "El campo es requerido."
+        },
+        "CreatorUserCode": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -999999999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 999999999",
+             "required": "El campo es requerido."
+        },
+        "UpdateDate": {
+             "DatePicker": "The indicated date is not valid",
+             "required": "El campo es requerido."
+        },
+        "UpdateUserCode": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -999999999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 999999999",
+             "required": "El campo es requerido."
+        }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="HT5RecuperarCasosPendientesMainForm">
+        <input type="hidden" id="HT5RecuperarCasosPendientesFormId" name="HT5RecuperarCasosPendientesFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zoneHeader zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zoneHeader">
+    <!-- Container content -->
+                <!-- Desde datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='DesdeLabel' class='control-label' for='Desde'>Desde</label><span id='DesdeRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='Desde_group'>
+                                    <input id='Desde' name='Desde' type='text' class='form-control' title='Fecha de inicio de la consulta' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Hasta datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='HastaLabel' class='control-label' for='Hasta'>Hasta</label><span id='HastaRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='Hasta_group'>
+                                    <input id='Hasta' name='Hasta' type='text' class='form-control' title='Fecha hasta del período de la consulta. Si desea visualizar los casos pendientes a la fecha hasta, debe colocar en este campo la fecha del dia siguiente.' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Aceptar consulta' ><span class='ladda-label'>OK</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zoneHeader zone -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                            <!-- Lookups: Items Grid -->
+                            <select id='UNDERWRITINGCASELineOfBusiness' hidden='hidden'>
+                            </select>
+
+                            <select id='UNDERWRITINGCASEProduct' hidden='hidden'>
+                            </select>
+
+                            <!-- End Lookups: Items grid -->
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- UNDERWRITINGCASEActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='UNDERWRITINGCASEActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_UNDERWRITINGCASEUnderwritingCaseIDContextMenu' class='dropdown-menu'>
+ <li data-item='Items_UNDERWRITINGCASEUnderwritingCaseID_Item1'><a>Recuperar caso</a></li>
+    </ul>
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190301021825987'></script>
+    <script src="/fasi/app/js/core.js?rel=20190301021825987"></script>
+    <script src="/fasi/app/js/general.js?rel=20190301021825987"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190301021825987'></script>
+    
+
+    <script src='/fasi/assets/js/spin.min.js'></script>
+    <script src='/fasi/assets/js/ladda.min.js'></script>
+    <script src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190301021825987'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190301021825987'></script>
+
+    <script src="/fasi/dli/queries/HT5RecuperarCasosPendientes.js?rel=20190301021825987"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.FASI.Utils</name>
+    </assembly>
+    <members>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.SessionID">
+            <summary>
+            Propiedad que almacena el SessionId
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.IP">
+            <summary>
+            Dirección IP del acceso.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.UserName">
+            <summary>
+            Propiedad que almacena los usuario activos.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.EMail">
+            <summary>
+            Correo electrónico.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.InitDate">
+            <summary>
+             Fecha de inicio de la sesión
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Utils.Model.AuditUserActivity.LastUpdateDate">
+            <summary>
+             Fecha de ultima actualizan
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Operations.Process.DoWork(System.String,System.String)">
+            <summary>
+            Operación que permite ejecutar operacional
+            </summary>
+            <param name="operation">Tipo operación</param>
+            <param name="body">Parameters</param>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Utils.Track.UserActivity">
+            <summary>
+            Realiza el manejo de la actividad para la sesión de los usuarios.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.Tracking(System.Web.HttpContext,System.String)">
+            <summary>
+            Almacena o actualiza la información de la sesión de un usuario.
+            </summary>
+            <param name="sessionId">Identificación de la sesión.</param>
+            <param name="username">Nombre del usuario.</param>
+            <param name="email">Dirección de correo electrónico.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.Finish(System.String)">
+            <summary>
+            Marca como cerrado un sesion activa.
+            </summary>
+            <param name="sessionId">Identificación de la sesión.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.CleanSessionByTimeOut">
+            <summary>
+            Elimina la sesiones que sobre pasen el tiempo maximo de la sesion
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.UserOffLineAll">
+            <summary>
+            Cambia el estado de todo los usuario que este online a offline.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.UpdateSessionOnAudit(System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            Actualiza el campo que identifica la sesión en la tabla de auditoria.
+            </summary>
+            <param name="sessionId">Identificación de la sesión.</param>
+            <param name="ip">Dirección IP del request.</param>
+            <param name="email">Dirección de correo electrónico.</param>
+            <param name="current">Hora actual.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Utils.Track.UserActivity.Audit(InMotionGIT.FASI.Utils.Model.AuditUserActivity)">
+            <summary>
+            Crea un registros de auditoria para indicar el cierre de sesión.
+            </summary>
+            <param name="activity">Instancia con la informacion de la sesión.</param>
+        </member>
+    </members>
+</doc>

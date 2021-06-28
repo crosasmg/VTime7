@@ -1,0 +1,35 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<dxpc:ASPxPopupControl  CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css" 
+                    CssPostfix="Office2003Olive" EnableHotTrack="False" 
+                    SpriteCssFilePath="~/App_Themes/Office2003Olive/{0}/sprite.css" runat="server" >
+<ModalBackgroundStyle>
+<BackgroundImage HorizontalPosition="center" VerticalPosition="center" />
+</ModalBackgroundStyle>
+<HeaderStyle>
+<Paddings PaddingRight="6px" />
+</HeaderStyle>
+<SizeGripImage Height="16px" Width="16px" />
+<CloseButtonImage Height="12px" Width="13px" /> 
+<ModalBackgroundStyle>
+    <BackgroundImage HorizontalPosition="center" VerticalPosition="center" />
+</ModalBackgroundStyle>
+<SizeGripImage Height="16px" Width="16px" />
+</dxpc:ASPxPopupControl>
+
+<dxpc:PopupControlContentControl runat="server" CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css" 
+CssPostfix="Office2003Olive" EnableHotTrack="False" ImageFolder="~/App_Themes/Office2003Olive/{0}/" >
+</dxpc:PopupControlContentControl>

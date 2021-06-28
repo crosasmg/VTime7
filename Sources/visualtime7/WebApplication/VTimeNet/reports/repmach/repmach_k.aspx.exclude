@@ -1,0 +1,104 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="eWRpt" %>
+<script language="VB" runat="Server">
+Dim mstrRepmachPath As String
+Dim mobjReport As eWRpt.clsReport
+
+'- Objeto para el manejo de las funciones generales de carga de valores
+Dim mobjValues As eFunctions.Values
+
+'- Objeto para el manejo del menú
+Dim mobjMenu As eFunctions.Menues
+
+'- Objeto para el manejo particular de los datos de la página
+Dim mcolClass As Object
+
+
+</script>
+<%
+Response.Expires = -1
+
+mobjValues = New eFunctions.Values
+mobjMenu = New eFunctions.Menues
+
+mobjValues.ActionQuery = Request.QueryString("nMainAction") = 401
+%>
+<HTML>
+<HEAD>
+	<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+    <%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'VTime/Includes/Constantes.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/Constantes.aspx" -->
+
+	<!-- #INCLUDE FILE="Parameters.aspx" -->
+    <%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/GenFunctions.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
+    <%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/tmenu.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/tmenu.js"></SCRIPT>		
+<SCRIPT LANGUAGE=JavaScript>
+//- Variable para el control de versiones
+    document.VssVersion="$$Revision: 7 $|$$Date: 3/12/03 18:36 $|$$Author: Nvaplat56 $"
+
+//% insStateZone: se controla el estado de los campos de la página
+//--------------------------------------------------------------------------------------------
+function insStateZone(){
+//--------------------------------------------------------------------------------------------
+}
+
+//% insCancel: se controla la acción Cancelar de la página
+//--------------------------------------------------------------------------------------------
+function insCancel(){
+//--------------------------------------------------------------------------------------------
+	return true;
+}
+
+//% insFinish: se controla la acción Cancelar de la página
+//--------------------------------------------------------------------------------------------
+function insFinish(){
+//--------------------------------------------------------------------------------------------
+   return Validation();
+}
+
+</SCRIPT>
+<%
+Response.Write(mobjValues.StyleSheet())
+If Request.QueryString("Type") <> "PopUp" Then
+	Response.Write(mobjMenu.MakeMenu(Request.QueryString("sCodispl"), "RepMach_k.aspx", 1, vbNullString))
+	Response.Write(mobjMenu.setZone(1, Request.QueryString("sCodispl"), Request.QueryString("sCodispl")))
+	'UPGRADE_NOTE: Object mobjMenu may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	mobjMenu = Nothing
+	Response.Write("<SCRIPT>var nMainAction=top.frames['fraSequence'].plngMainAction</SCRIPT>")
+End If
+%>
+</HEAD>
+<BODY ONUNLOAD="closeWindows();">
+<BR><BR>
+<%
+mobjReport = New eWRpt.clsReport
+mstrRepmachPath = mobjReport.TranslateWebPath(Request.ServerVariables("PATH_TRANSLATED"))
+Response.Write(mobjReport.GetHtmlForm(mstrRepmachPath & "\" & Session("SpecificationFile"), mstrRepmachPath & "\" & Session("ValidationFile"), Request.QueryString("sCodisPl"), Request.ServerVariables("SERVER_NAME") & "\Vtime\Reports\RepMach\ValRepMach.aspx?x=1"))
+'UPGRADE_NOTE: Object mobjReport may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjReport = Nothing
+Select Case Request.QueryString("sCodispl")
+	Case "CAC986"
+		Response.Write("<SCRIPT>self.document.forms[0].P_COD_COBERTURA.Parameters.Param1.sValue='" & Session("NINSUR_AREA") & "';</SCRIPT>")
+	Case "SIL1067"
+		Response.Write("<SCRIPT>self.document.forms[0].P_NUM_CASO.Parameters.Param1.sValue='0';</SCRIPT>")
+	Case "DPC997"
+		Response.Write("<SCRIPT>self.document.forms[0].P_NUM_PLAN.Parameters.Param1.sValue='0';</SCRIPT>")
+		Response.Write("<SCRIPT>self.document.forms[0].P_NUM_PLAN.Parameters.Param2.sValue='0';</SCRIPT>")
+	Case "AML884"
+		Response.Write("<SCRIPT>self.document.forms[0].P_NUSERCODE.value='" & Session("nUsercode") & "';</SCRIPT>")
+End Select
+'UPGRADE_NOTE: Object mobjValues may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjValues = Nothing
+%>
+</BODY>
+</HTML>
+
+
+
+

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="H5MantTipoElementoActions.aspx.vb" Inherits="dli.forms.H5MantTipoElementoActions" %>

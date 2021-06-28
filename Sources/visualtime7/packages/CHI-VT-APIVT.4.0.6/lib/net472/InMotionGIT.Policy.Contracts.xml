@@ -1,0 +1,191 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Policy.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Policy.Contracts.Light.Automobile">
+ <summary>
+ Particular information on automobile policies.
+ </summary>
+<remarks>Data-source is 'AUTO'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Automobile.VehicleCode">
+<summary>
+Code of The Insured Vehicle (SVEHCODE)..
+</summary>
+<remarks>Data-source is 'AUTO.SVEHCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Automobile.YearOfManufactured">
+<summary>
+Year when the vehicle was manufactured. (NYEAR)..
+</summary>
+<remarks>Data-source is 'AUTO.NYEAR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Automobile.ValueOfTheVehicle">
+<summary>
+Value of the insured vehicle. (NVEH_VALOR)..
+</summary>
+<remarks>Data-source is 'AUTO.NVEH_VALOR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.SelectedByDefault">
+<summary>
+Indicator of 'selected by default' for the Treatment of policy. (SDEFAULTI)..
+</summary>
+<remarks>Data-source is 'TCOVER.SDEFAULTI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.CoverageCode">
+<summary>
+Code of the coverage. (NCOVER)..
+</summary>
+<remarks>Data-source is 'COVER.NCOVER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.CoverageModule">
+<summary>
+Code of The Module of The Coverage. (NMODULEC)..
+</summary>
+<remarks>Data-source is 'COVER.NMODULEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.Description">
+<summary>
+Description of the coverage (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'TCOVER.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.InsuredAmount">
+<summary>
+Initial sum insured of the coverage (when the policy was issued) (NCAPITAL_O)..
+</summary>
+<remarks>Data-source is 'COVER.NCAPITAL_O'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.AnnualPremium">
+<summary>
+Annual premium amount of the coverage, as originally calculated. (NPREMIUM_O)..
+</summary>
+<remarks>Data-source is 'COVER.NPREMIUM_O'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Coverage.RatePerThousand">
+<summary>
+Rate to be applied (o/oo), as originally calculated. (NRATECOVE_O)..
+</summary>
+<remarks>Data-source is 'COVER.NRATECOVE_O'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.CoverageRating.AnnualPremium">
+<summary>
+Annual premium amount of the coverage. (NPREMIUM).
+</summary>
+<remarks>Data-source is 'COVER.NPREMIUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.CoverageRating.Coverages">
+<summary>
+Coverages of a policy.
+</summary>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.CoverageRating.Errors">
+ <summary>
+ Lista de errores generados por el proceso
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Policy.Contracts.Light.Life">
+ <summary>
+ Particular data on life policies.
+ </summary>
+<remarks>Data-source is 'LIFE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Life.InsuredAmountForCalculation">
+<summary>
+Insured amount for calculation of the total annual premium. (NCAPITAL_CA)..
+</summary>
+<remarks>Data-source is 'LIFE.NCAPITAL_CA'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Life.TypeOfInsurancePeriod">
+<summary>
+Type of Insurance Period.
+</summary>
+<remarks>This property use a enumeration based on property 'TypeOfInsurancePeriod'</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Life.InsuranceDuration">
+<summary>
+Duration of insurance. (NINSUR_TIME)..
+</summary>
+<remarks>Data-source is 'LIFE.NINSUR_TIME'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.ParticularData.Automobile">
+<summary>
+Automobile particular data for a policy.
+</summary>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.ParticularData.Life">
+<summary>
+Life particular data for a policy.
+</summary>
+</member>
+<member name="T:InMotionGIT.Policy.Contracts.Light.Risk">
+ <summary>
+ Certificates of a Policy (general).
+ </summary>
+<remarks>Data-source is 'CERTIFICAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Risk.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'CERTIFICAT.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Risk.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'CERTIFICAT.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Risk.ParticularData">
+<summary>
+Particular data on policy.
+</summary>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Risk.PrimaryInsured">
+<summary>
+Primary insured role.
+</summary>
+</member>
+<member name="T:InMotionGIT.Policy.Contracts.Light.Role">
+ <summary>
+ Role of the client in the policy/certificate.
+ </summary>
+<remarks>Data-source is 'ROLES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Role.ClientRole">
+<summary>
+Role of the client in the policy.
+</summary>
+<remarks>This property use a enumeration based on property 'ClientRole'</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Role.ClientID">
+<summary>
+Code of the client. (SCLIENT)..
+</summary>
+<remarks>Data-source is 'CLIENT.SCLIENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Role.BirthDate">
+<summary>
+Date of birth of the client. (DBIRTHDAT)..
+</summary>
+<remarks>Data-source is 'CLIENT.DBIRTHDAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Role.Gender">
+<summary>
+Gender of the client.
+</summary>
+<remarks>This property use a enumeration based on property 'Gender'</remarks>
+</member>
+<member name="P:InMotionGIT.Policy.Contracts.Light.Role.SmokerIndicator">
+<summary>
+Smoker client indicator.
+</summary>
+<remarks>This property use a enumeration based on property 'SmokerIndicator'</remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,47 @@
+﻿{
+  "app": {
+    "title": "Test Grid",
+    "form": {
+             "RoleInCase_Title": "RoleInCase",
+             "RoleInCase_AddButtonCaption": "Add",
+             "RoleInCase_DeleteButtonCaption": "Delete",
+             "ClientID_Label": "Client ID",
+             "RoleInCaseTbl_ClientID_Title": "Client ID",
+             "ClientID_Tooltip": "Code of the client.",
+             "ClientID_Measure": "",
+             "ClientID_Legend": "",
+             "ClientID_Prefix": "",
+             "ClientID_Watermark": "",
+             "ClientID_RequiredMessage": "The field is required.",
+             "ClientName_Label": "Client Name",
+             "RoleInCaseTbl_ClientName_Title": "Client Name",
+             "ClientName_Tooltip": "Complete name of the client.",
+             "ClientName_Measure": "",
+             "ClientName_Legend": "",
+             "ClientName_Prefix": "",
+             "ClientName_Watermark": "",
+             "Gender_Label": "Gender",
+             "RoleInCaseTbl_Gender_Title": "Gender",
+             "Gender_Tooltip": "Gender of the client.",
+             "Gender_Measure": "",
+             "Gender_Legend": "",
+             "Gender_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "ClientID": {
+             "maxlength": "The field allows 14 maximum characters",
+             "required": "The field is required."
+        },
+        "ClientName": {
+             "maxlength": "The field allows 93 maximum characters"
+        },
+        "Gender": {
+
+        }
+    }
+  }
+}

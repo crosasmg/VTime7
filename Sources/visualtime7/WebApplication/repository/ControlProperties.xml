@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controls>
+  <Control name="barcode">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="button">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"      codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"      codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="checkbox">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"             type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"             type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"             type="Boolean"   imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="checkboxlist">
+    <Properties>
+      <Property name="Visible"               codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"               codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"                 codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+      <Property name="CleanSelection"        codeVB="{0}.UnselectAll()"                            codeJavaScript="{0}.UnselectAll();"       codeLabel=""                              behavior="Both"            type=""          imageIndex="4" />
+      <Property name="SelectAllItems"        codeVB="{0}.SelectAll()"                              codeJavaScript="{0}.SelectAll();"         codeLabel=""                              behavior="Both"            type=""          imageIndex="5" />
+    </Properties>
+  </Control>
+  <Control name="checkcombobox">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="dataview">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"      codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"      codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="datepicker">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="dropdownlist">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="filebox">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="grid">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="htmleditor">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="hyperlink">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="image">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                             behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                             behavior="Both"           type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="label">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="map">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB=""                                             codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="physicaladdress">
+    <Properties>
+      <Property name="VisibleControl"      codeVB="{0}.Visible = {1}"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="EnabledControl"      codeVB="{0}.Enabled = {1}"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+    </Properties>
+  </Control>
+  <Control name="notes">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="numeric">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="Integer"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="radiobuttonlist">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="section">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="tab">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.GetTabByName('{1}').SetVisible({2});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.GetTabByName('{1}').SetEnabled({2});"     codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>
+  <Control name="tabcontainer">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"                       codeJavaScript="{0}.SetVisible({1});"                             codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"                       codeJavaScript="{0}.SetEnabled({1});"                             codeLabel=""                             behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="ActiveTab"    codeVB="{0}.ActiveTabPage = {0}.TabPages.FindByName(&quot;{1}&quot;)"    codeJavaScript="{0}.SetActiveTab({0}.GetTabByName('{1}'));"       codeLabel=""                             behavior="Both"            type="String"    imageIndex="3" />
+    </Properties>
+  </Control>
+  <Control name="text">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"           type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"           type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"           type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="time">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel="{0}Label.SetVisible({1});"     behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel="{0}Label.SetEnabled({1});"     behavior="Both"            type="Boolean"   imageIndex="1" />
+      <Property name="Value"        codeVB="{0}.Value = {1}"                              codeJavaScript="{0}.SetValue({1});"       codeLabel=""                              behavior="Both"            type="String"    imageIndex="2" />
+    </Properties>
+  </Control>
+  <Control name="zone">
+    <Properties>
+      <Property name="Visible"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="Enabled"      codeVB="BehaviorShowControls(&quot;{0},{1}&quot;)"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="1" />
+    </Properties>
+  </Control>  
+  <Control name="dnefiles">
+    <Properties>
+      <Property name="VisibleControl"      codeVB="{0}.Visible = {1}"   codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="EnabledControl"      codeVB="{0}.Enabled = {1}"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+    </Properties>
+  </Control>  
+  <Control name="dnenotes">
+    <Properties>
+      <Property name="VisibleControl"      codeVB="{0}.Visible = {1}"    codeJavaScript="{0}.SetVisible({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+      <Property name="EnabledControl"      codeVB="{0}.Enabled = {1}"    codeJavaScript="{0}.SetEnabled({1});"     codeLabel=""                              behavior="Both"            type="Boolean"   imageIndex="0" />
+    </Properties>
+  </Control>  
+</Controls>

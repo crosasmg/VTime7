@@ -1,0 +1,45 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+    <dxrp:ASPxRoundPanel SkinID="GroupBoxRoundedBorder" runat="server" View="GroupBox" ShowDefaultImages="False" BackColor="#E2E8C9" CssPostfix="Office2010Silver">
+           <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+           <Border BorderStyle="Solid" BorderColor="#758D5E" BorderWidth="1px" />
+           <HeaderStyle BackColor="#E2E8C9" Font-Bold="True" >
+           <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" PaddingRight="2px" />
+           </HeaderStyle>
+           <DisabledStyle ForeColor="Gray">
+           </DisabledStyle>
+           <TopLeftCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/TopLeftCorner.png" Width="6px">
+           </TopLeftCorner>
+           <NoHeaderTopLeftCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/NoHeaderTopLeftCorner.png" Width="6px">
+           </NoHeaderTopLeftCorner>
+           <TopRightCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/TopRightCorner.png" Width="6px">
+           </TopRightCorner>
+           <NoHeaderTopRightCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/NoHeaderTopRightCorner.png" Width="6px">
+           </NoHeaderTopRightCorner>
+           <BottomRightCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/BottomRightCorner.png" Width="6px">
+           </BottomRightCorner>
+           <BottomLeftCorner Height="6px" 
+               Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxRounded/BottomLeftCorner.png" Width="6px">
+           </BottomLeftCorner>
+           <NoHeaderTopEdge BackColor="#E2E8C9">
+           </NoHeaderTopEdge>
+    </dxrp:ASPxRoundPanel>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.BusinessRule.Engine
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.BusinessRule.Engine.Execute.ApplyRulesForIndependentRuleSet(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Executes the specified independent 'rule set', with the specified arguments. 
+ </summary>
+ <param name="ruleApplicationFilename">The path to the RuleApplicationDef.</param>
+ <param name="independentRuleSetName">Name of the independent ruleSet.</param>
+ <param name="arguments">An optional set of arguments to use for 'rule set' execution.</param>
+ <returns>List of possible errors detected in the execution.</returns>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Execute.ApplyRulesForEntity(System.String,System.String,System.Object)">
+ <summary>
+ Executes all the 'rule set' for an entity, using as a parameter the same complete entity.
+ </summary>
+ <param name="ruleApplicationFilename">The path to the RuleApplicationDef.</param>
+ <param name="entityName">Entity name.</param>
+ <param name="entityValue">Object used to create the entity</param>
+ <returns>List of possible errors detected in the execution.</returns>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Execute.ApplyRulesForEntity(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Executes all the 'rule set' for an entity, using as parameters the values of the fields for the entity.
+ </summary>
+ <param name="ruleApplicationFilename">The path to the RuleApplicationDef.</param>
+ <param name="entityName">Entity name.</param>
+ <param name="fields">the values of the fields for the entity.</param>
+ <returns>List of possible errors detected in the execution.</returns>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Execute.ExecuteRules(System.String,System.String,System.Object,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Executes all the 'rule set' for an entity.
+ </summary>
+ <param name="ruleApplicationFilename">The path to the RuleApplicationDef.</param>
+ <param name="entityName">Entity name.</param>
+ <param name="entityValue">Object used to create the entity</param>
+ <param name="fields">the values of the fields for the entity.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Execute.tracking(System.Object)">
+ <summary>
+ Is called when a notification o validation doesn't have an associated entity
+ </summary>
+ <param name="source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Maker.IsNotPrimitive(System.Type)">
+ <summary>
+ Returns True if a non primitive type is trying to be invoked
+ </summary>
+ <param name="objectType"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Maker.SpecialNames(System.String)">
+ <summary>
+ Converts an entity or field name to a valid name and not reserved for inrule
+ </summary>
+ <param name="name">Transform name</param>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Maker.SpecialNameToNormal(System.String)">
+ <summary>
+ Converts an entity or field name to a valid name and not reserved for inrule
+ </summary>
+ <param name="name">Transform name</param>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.WindowLogicalCode(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.MainAction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Acción seleccionada por el usuario en el menú principal.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.PopupAction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Acción seleccionada  por el usuario en el Grid.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.IsPopup(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Indica si el contexto de ejecución se encuentra procesando la ventana 'Popup' de un Grid.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.IsHeader(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Indica si el contexto de ejecución  se encuentra procesando la cabecera de una página.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.QueryStringToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para el QueryString en forma de diccionario
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.FormToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para el Form en forma de diccionario
+ </summary>
+</member>
+<member name="M:InMotionGIT.BusinessRule.Engine.Support.SessionToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para las variable de session en forma de diccionario
+ </summary>
+</member>
+</members>
+</doc>

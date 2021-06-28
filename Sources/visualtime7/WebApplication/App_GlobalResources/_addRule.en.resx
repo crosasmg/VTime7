@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlarmType" xml:space="preserve">
+    <value>Alarm Type</value>
+  </data>
+  <data name="AlarmTypeDescription" xml:space="preserve">
+    <value>Alarm Type &lt;p style="display:inline;font-size:11px;font-weight:normal;"&gt;(Select a record with a click to view detailed information about it).&lt;/p&gt;</value>
+  </data>
+  <data name="CurrencyCodeDescription" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Discountorextrapremiumcode" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DiscountOrExtraPremiumDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DiscountorExtraPremiumTypeDescription" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DOfFlatExtraPremiumDays" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DOfFlatExtraPremiumMonths" xml:space="preserve">
+    <value>Months</value>
+  </data>
+  <data name="DOfFlatExtraPremiumYears" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="ExclusionPeriodType" xml:space="preserve">
+    <value>Period Type</value>
+  </data>
+  <data name="ExclusionPeriodTypeDescription" xml:space="preserve">
+    <value>Period Type</value>
+  </data>
+  <data name="ExtraPremiumPercentage" xml:space="preserve">
+    <value>Extra Percentage</value>
+  </data>
+  <data name="MaximumInsuredAmount" xml:space="preserve">
+    <value>Maximum Amount</value>
+  </data>
+  <data name="CoverageCode" xml:space="preserve">
+    <value>Coverage</value>
+  </data>
+  <data name="CoverageDescription" xml:space="preserve">
+    <value>Coverage</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="DiscountorExtraPremiumType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ExclusionType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ExclusionTypeDescription" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ProductModule" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ProductModuleDescription" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="ImpairmentCode" xml:space="preserve">
+    <value>Illness</value>
+  </data>
+  <data name="ImpairmentCodeDescription" xml:space="preserve">
+    <value>Illness</value>
+  </data>
+  <data name="RatingTable" xml:space="preserve">
+    <value>Rating Table</value>
+  </data>
+  <data name="RatingTableDescription" xml:space="preserve">
+    <value>Rating Table Description</value>
+  </data>
+  <data name="RestrictionId" xml:space="preserve">
+    <value>Id Restriction</value>
+  </data>
+  <data name="RoleCode" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="RoleCodeDescription" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="FlatExtraPremium" xml:space="preserve">
+    <value>Flat Extra</value>
+  </data>
+  <data name="IsNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Cause" xml:space="preserve">
+    <value>Reason For Exclusion</value>
+  </data>
+  <data name="CauseDescription" xml:space="preserve">
+    <value>Reason For Exclusion</value>
+  </data>
+  <data name="AlarmTypeDescriptionUpdate" xml:space="preserve">
+    <value>Alarm Type &lt;p style="display:inline;font-size:11px;font-weight:normal;"&gt;(Select a record with a click to update detailed information about it).&lt;/p&gt;</value>
+  </data>
+  <data name="ExclusionClientID" xml:space="preserve">
+    <value>Exclude Insured</value>
+  </data>
+  <data name="ExclusionClientName" xml:space="preserve">
+    <value>Exclude Insured</value>
+  </data>
+  <data name="ValidationAlarms" xml:space="preserve">
+    <value>You must add at least one alarm, </value>
+  </data>
+  <data name="ValidationCoverage" xml:space="preserve">
+    <value>Select coverage.</value>
+  </data>
+  <data name="ValidationDescription" xml:space="preserve">
+    <value>Select Description.</value>
+  </data>
+  <data name="ValidationExclusion" xml:space="preserve">
+    <value>Select type of exclusion.</value>
+  </data>
+  <data name="ValidationFactor" xml:space="preserve">
+    <value>You must complete one of two fields: Factor (Percent) or Fixed Amount.</value>
+  </data>
+  <data name="ValidationFieldRequired" xml:space="preserve">
+    <value>Required Fields: </value>
+  </data>
+  <data name="ValidationIllCauseRate" xml:space="preserve">
+    <value>Select illness, cause and rate</value>
+  </data>
+  <data name="ValidationIllnessCause" xml:space="preserve">
+    <value>Select illness and cause.</value>
+  </data>
+  <data name="ValidationInsured" xml:space="preserve">
+    <value>Select insured.</value>
+  </data>
+  <data name="ValidationModCovIllCause" xml:space="preserve">
+    <value>Select module, coverage, illness and cause.</value>
+  </data>
+  <data name="ValidationModule" xml:space="preserve">
+    <value>Select module.</value>
+  </data>
+  <data name="ValidationModuleCoverage" xml:space="preserve">
+    <value>Select module / coverage.</value>
+  </data>
+  <data name="ValidationPeriod" xml:space="preserve">
+    <value>Select Period.</value>
+  </data>
+  <data name="ValidationRestrictions" xml:space="preserve">
+    <value>You must add at least one restriction, </value>
+  </data>
+  <data name="ValidationTemporal" xml:space="preserve">
+    <value>The temporary option merits completion of one of the three fields (days, months or years).</value>
+  </data>
+  <data name="XPremiumDiscountOnlyInsured" xml:space="preserve">
+    <value>Apply for the Insured</value>
+  </data>
+  <data name="ExclusionIllnessInsured" xml:space="preserve">
+    <value>Insured</value>
+  </data>
+</root>

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcnCodFundColumnCaption" xml:space="preserve">
+    <value>Fondo</value>
+  </data>
+  <data name="tcnCodFundColumnToolTip" xml:space="preserve">
+    <value>Código de los fondos que se encuentran asociados al producto de la polizá en tratamiento.</value>
+  </data>
+  <data name="tctFundsDescriptColumnToolTip" xml:space="preserve">
+    <value>Descripción de los fondos que se encuentran asociados al producto de la polizá en tratamiento.</value>
+  </data>
+  <data name="cbeTyp_ProfitworkerColumnCaption" xml:space="preserve">
+    <value>Beneficio tributario</value>
+  </data>
+  <data name="cbeTyp_ProfitworkerColumnToolTip" xml:space="preserve">
+    <value>Beneficio tributario asociado a los aportes de la cuenta</value>
+  </data>
+  <data name="chkActivFoundColumnCaption" xml:space="preserve">
+    <value>Portafolio Activo</value>
+  </data>
+  <data name="chkActivFoundColumnToolTip" xml:space="preserve">
+    <value>Indica si el portafolio esta activo para invertir</value>
+  </data>
+  <data name="tcnUnitsColumnCaption" xml:space="preserve">
+    <value>Unidades</value>
+  </data>
+  <data name="tcnUnitsColumnToolTip" xml:space="preserve">
+    <value>Número de unidades adquiridas por la póliza en tratamiento para cada fondo a la fecha del proceso.</value>
+  </data>
+  <data name="tcnTotal_AmountColumnCaption" xml:space="preserve">
+    <value>Valor ($)</value>
+  </data>
+  <data name="tcnTotal_AmountColumnToolTip" xml:space="preserve">
+    <value>El valor de las unidades por cada fondo tomando en cuenta la fecha de la transacción.</value>
+  </data>
+  <data name="tcnBalanceColumnCaption" xml:space="preserve">
+    <value>Saldo</value>
+  </data>
+  <data name="tcnBalanceColumnToolTip" xml:space="preserve">
+    <value>Saldo del fondo</value>
+  </data>
+  <data name="btnSignalColumnCaption" xml:space="preserve">
+    <value>Signo (+/-)</value>
+  </data>
+  <data name="btnSignalColumnToolTip" xml:space="preserve">
+    <value>Indica si el movimiento es de entrada o salida de unidades del fondo en tratamiento.</value>
+  </data>
+  <data name="tcnUnitsChangeColumnCaption" xml:space="preserve">
+    <value>Unidades a cambiar</value>
+  </data>
+  <data name="tcnUnitsChangeColumnToolTip" xml:space="preserve">
+    <value>Cantidad de unidades de entrada/salida del fondo en tratamiento.</value>
+  </data>
+  <data name="tcnValueChangeColumnCaption" xml:space="preserve">
+    <value>Valor a cambiar (M.O.)</value>
+  </data>
+  <data name="tcnValueChangeColumnToolTip" xml:space="preserve">
+    <value>Monto de entrada/salida del fondo en tratamiento.</value>
+  </data>
+  <data name="tcnAvailableColumnCaption" xml:space="preserve">
+    <value>Disponible para la compra</value>
+  </data>
+  <data name="tcnAvailableColumnToolTip" xml:space="preserve">
+    <value>Monto disponible para la compra.</value>
+  </data>
+  <data name="tcnBuy_costColumnCaption" xml:space="preserve">
+    <value>Costo de compra</value>
+  </data>
+  <data name="tcnBuy_costColumnToolTip" xml:space="preserve">
+    <value>Monto a cobrar al cliente por concepto de compras de unidades.</value>
+  </data>
+  <data name="tcnSell_costColumnCaption" xml:space="preserve">
+    <value>Costo de venta</value>
+  </data>
+  <data name="tcnSell_costColumnToolTip" xml:space="preserve">
+    <value>Monto a cobrar al cliente por concepto de venta de unidades.</value>
+  </data>
+  <data name="tcnSwi_costColumnCaption" xml:space="preserve">
+    <value>Cargo fijo por switch</value>
+  </data>
+  <data name="tcnSwi_costColumnToolTip" xml:space="preserve">
+    <value>Corresponde al monto fijo a cobrar al cliente una vez haya excedido el total de switches sin cargo, este valor es definido por el diseño del producto.</value>
+  </data>
+  <data name="tcnSwi_cost_percColumnCaption" xml:space="preserve">
+    <value>Cargo porcentual por switch</value>
+  </data>
+  <data name="tcnSwi_cost_percColumnToolTip" xml:space="preserve">
+    <value>Corresponde al porcentaje sobre el monto de switch a cobrar al cliente una vez haya excedido el total de switches sin cargo, este valor es definido por el diseño del producto.</value>
+  </data>
+  <data name="tcnSwi_cost_totColumnCaption" xml:space="preserve">
+    <value>Cargo total por switch</value>
+  </data>
+  <data name="tcnSwi_cost_totColumnToolTip" xml:space="preserve">
+    <value>Corresponde al monto a cobrar al cliente una vez haya excedido el total de switches sin cargo, este valor es definido por el diseño del producto.</value>
+  </data>
+  <data name="tcnDeb_accColumnCaption" xml:space="preserve">
+    <value>Débito a cuenta corriente</value>
+  </data>
+  <data name="tcnDeb_accColumnToolTip" xml:space="preserve">
+    <value>Monto a debitar de la cuenta corriente del cliente por concepto de cargo de switch y costo de compra / costo de venta de unidades.</value>
+  </data>
+  <data name="chkVigenColumnCaption" xml:space="preserve">
+    <value>Restringido para la venta</value>
+  </data>
+  <data name="chkVigenColumnToolTip" xml:space="preserve">
+    <value>Indica si el fondo está restringido para la venta</value>
+  </data>
+  <data name="tcnTotalCaption" xml:space="preserve">
+    <value>Saldo total</value>
+  </data>
+  <data name="tcnTotalToolTip" xml:space="preserve">
+    <value>Sumatoría de los saldos individuales de cada fondo</value>
+  </data>
+  <data name="tctBranchColumnCaption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+  <data name="tctProductColumnCaption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="tcnPolicyColumnCaption" xml:space="preserve">
+    <value>Póliza</value>
+  </data>
+  <data name="tcnCertifColumnCaption" xml:space="preserve">
+    <value>Certificado</value>
+  </data>
+  <data name="tcdEffecdateColumnCaption" xml:space="preserve">
+    <value>Fecha de efecto</value>
+  </data>
+  <data name="tcnBuysTotColumnCaption" xml:space="preserve">
+    <value>Solicitudes de compra</value>
+  </data>
+  <data name="tcnBuysTotColumnToolTip" xml:space="preserve">
+    <value>Corresponde al monto solicitado para compra</value>
+  </data>
+  <data name="tcnSellsTotColumnCaption" xml:space="preserve">
+    <value>Solicitudes de venta</value>
+  </data>
+  <data name="tcnSellsTotColumnToolTip" xml:space="preserve">
+    <value>Corresponde al monto solicitado para venta</value>
+  </data>
+</root>

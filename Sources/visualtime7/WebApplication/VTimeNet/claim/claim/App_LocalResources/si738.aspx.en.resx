@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcnClaimColumnCaption" xml:space="preserve">
+    <value>Claim</value>
+  </data>
+  <data name="tcnClaimColumnToolTip" xml:space="preserve">
+    <value>Number of the claims to be paid associated with the schedule</value>
+  </data>
+  <data name="tcnNetAmountColumnCaption" xml:space="preserve">
+    <value>Net Amount</value>
+  </data>
+  <data name="tcnNetAmountColumnToolTip" xml:space="preserve">
+    <value>Number of the claim to be paid associated with the schedule</value>
+  </data>
+  <data name="cbeCurrencyOrigColumnCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="cbeCurrencyOrigColumnToolTip" xml:space="preserve">
+    <value>vbNullString</value>
+  </data>
+  <data name="tcnNetAmount_LocColumnCaption" xml:space="preserve">
+    <value>Local Currency Amount</value>
+  </data>
+  <data name="tcnNetAmount_LocColumnToolTip" xml:space="preserve">
+    <value>Number of the claim to be paid  which is associated with the schedule</value>
+  </data>
+  <data name="cbePayTypeCaption" xml:space="preserve">
+    <value>Type of Payment</value>
+  </data>
+  <data name="cbePayTypeToolTip" xml:space="preserve">
+    <value>Type of payment to be made to the claim</value>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Currency of the payment</value>
+  </data>
+  <data name="tcdValdateCaption" xml:space="preserve">
+    <value>Valuation Date</value>
+  </data>
+  <data name="tcdValdateToolTip" xml:space="preserve">
+    <value>Date to be used when converting the payment currency to the local one</value>
+  </data>
+  <data name="tcnExchangeCaption" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="tcnExchangeToolTip" xml:space="preserve">
+    <value>Exchange rate to be used to convert the currency of the payment amount to local currency</value>
+  </data>
+  <data name="cbeOfficePayCaption" xml:space="preserve">
+    <value>Destination of the Cheque</value>
+  </data>
+  <data name="cbeOfficePayToolTip" xml:space="preserve">
+    <value>Branch office to which the claim payment check must be sent</value>
+  </data>
+  <data name="tctClientCodeCaption" xml:space="preserve">
+    <value>Addressee - Client</value>
+  </data>
+  <data name="tctClientCodeToolTip" xml:space="preserve">
+    <value>Code of the client to which the order for payment is issued</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Frame1</value>
+  </data>
+  <data name="optTypeBenef_1Caption" xml:space="preserve">
+    <value>Unique</value>
+  </data>
+  <data name="cbeWayPayCaption" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="cbeWayPayToolTip" xml:space="preserve">
+    <value>Payment mode of the payment to be made</value>
+  </data>
+  <data name="optTypeBenef_2Caption" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="tcnTotalAmountCaption" xml:space="preserve">
+    <value>Total to Pay</value>
+  </data>
+  <data name="tcnTotalAmountToolTip" xml:space="preserve">
+    <value>Total amount to be paid comprising the addition of the sums to be paid for every claim</value>
+  </data>
+</root>

@@ -1,0 +1,33 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+--%>
+<dxwgv:ASPxGridView runat="server" CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css" CssPostfix="Office2003Olive">
+  <Styles CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css" CssPostfix="Office2003Olive">
+  	<Header ImageSpacing="5px" SortingImageSpacing="5px"></Header>
+    <LoadingPanel ImageSpacing="10px"></LoadingPanel>
+	</Styles>
+  <ImagesFilterControl>
+  	<LoadingPanel Url="~/App_Themes/Office2003Olive/Editors/Loading.gif"></LoadingPanel>
+  </ImagesFilterControl>
+	<Images SpriteCssFilePath="~/App_Themes/Office2003Olive/{0}/sprite.css">
+    <LoadingPanelOnStatusBar Url="~/App_Themes/Office2003Olive/GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+    <LoadingPanel Url="~/App_Themes/Office2003Olive/GridView/Loading.gif"></LoadingPanel>   
+    <CollapsedButton Height="12px" Url="~/App_Themes/Office2003 Coffe/GridView/gvCollapsedButton.png" Width="11px" />
+		<ExpandedButton Height="12px" Url="~/App_Themes/Office2003 Coffe/GridView/gvExpandedButton.png" Width="11px" />
+		<DetailCollapsedButton Height="12px" Url="~/App_Themes/Office2003 Coffe/GridView/gvCollapsedButton.png" Width="11px" />
+		<DetailExpandedButton Height="12px" Url="~/App_Themes/Office2003 Coffe/GridView/gvExpandedButton.png" Width="11px" />
+		<FilterRowButton Height="13px" Width="13px" />
+  </Images>
+  <StylesEditors>
+  	<ProgressBar Height="25px"></ProgressBar>
+  </StylesEditors>
+</dxwgv:ASPxGridView>

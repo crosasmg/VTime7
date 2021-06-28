@@ -1,0 +1,186 @@
+﻿{
+  "app": {
+    "title": "Workflow monitor",
+    "form": {
+             "zone0_Footer": "",
+             "zone0_Instruction": "",
+             "zone0_Title": "zone",
+             "zone0_Tooltip": "zone",
+             "StartDP_Label": "Start",
+             "StartDP_Tooltip": "Start",
+             "StartDP_Measure": "",
+             "StartDP_Legend": "",
+             "StartDP_Prefix": "",
+             "StartDP_RequiredMessage": "The field is required",
+             "FinishDP_Label": "Finish",
+             "FinishDP_Tooltip": "Finish",
+             "FinishDP_Measure": "",
+             "FinishDP_Legend": "",
+             "FinishDP_Prefix": "",
+             "FinishDP_RequiredMessage": "The field is required",
+             "FinishDP_Validate1": "The value must be greater than the Start Date",
+             "OkButton_Caption": "OK",
+             "OkButton_Tooltip": "",
+             "OkButton_ConfirmationMessage": "",
+             "OkButton_InformationMessage": "Please wait...",
+             "Client_Title": "",
+             "Client_AddButtonCaption": "Add",
+             "Client_DeleteButtonCaption": "Delete",
+             "Identify_Label": "Id",
+             "ClientTbl_FirstName_Title": "Id",
+             "Identify_Tooltip": "",
+             "Identify_Measure": "",
+             "Identify_Legend": "",
+             "Identify_Prefix": "",
+             "Identify_Watermark": "",
+             "Identification_Label": "Identification",
+             "ClientTbl_LastName_Title": "Identification",
+             "Identification_Tooltip": "Last name of the client.",
+             "Identification_Measure": "",
+             "Identification_Legend": "",
+             "Identification_Prefix": "",
+             "Identification_Watermark": "",
+             "State_Label": "Status",
+             "ClientTbl_LastName2_Title": "Status",
+             "State_Tooltip": "Last name (2) of the client.",
+             "State_Measure": "",
+             "State_Legend": "",
+             "State_Prefix": "",
+             "State_Watermark": "",
+             "BeginDate_Label": "Start",
+             "ClientTbl_CustomDate_Title": "Start",
+             "BeginDate_Tooltip": "CustomDate",
+             "BeginDate_Measure": "",
+             "BeginDate_Legend": "",
+             "BeginDate_Prefix": "",
+             "CompleteDate_Label": "Completed",
+             "ClientTbl_CustomDateEx_Title": "Completed",
+             "CompleteDate_Tooltip": "CustomDateEx",
+             "CompleteDate_Measure": "",
+             "CompleteDate_Legend": "",
+             "CompleteDate_Prefix": "",
+             "Durate_Label": "Duration",
+             "ClientTbl_CustomNumeric_Title": "Duration",
+             "Durate_Tooltip": "",
+             "Durate_Measure": "",
+             "Durate_Legend": "",
+             "Durate_Prefix": "",
+             "Reason_Label": "Reason",
+             "ClientTbl_CustomString_Title": "Reason",
+             "Reason_Tooltip": "",
+             "Reason_Measure": "",
+             "Reason_Legend": "",
+             "Reason_Prefix": "",
+             "Reason_Watermark": "",
+             "zone1_Footer": "",
+             "zone1_Instruction": "",
+             "zone1_Title": "Grid Details",
+             "zone1_Tooltip": "zone",
+             "Detail_Title": "",
+             "Detail_AddButtonCaption": "Add",
+             "Detail_DeleteButtonCaption": "Delete",
+             "UserCode_Label": "Identification",
+             "DetailTbl_UserCode_Title": "Identification",
+             "UserCode_Tooltip": "",
+             "UserCode_Measure": "",
+             "UserCode_Legend": "",
+             "UserCode_Prefix": "",
+             "UserCode_RequiredMessage": "The field is required.",
+             "ActivityName_Label": "Activity",
+             "DetailTbl_ClientID_Title": "Activity",
+             "ActivityName_Tooltip": "",
+             "ActivityName_Measure": "",
+             "ActivityName_Legend": "",
+             "ActivityName_Prefix": "",
+             "ActivityName_Watermark": "",
+             "ActivityType_Label": "Type",
+             "DetailTbl_ConceptDescription_Title": "Type",
+             "ActivityType_Tooltip": "",
+             "ActivityType_Measure": "",
+             "ActivityType_Legend": "",
+             "ActivityType_Prefix": "",
+             "ActivityType_Watermark": "",
+             "DetailState_Label": "Status",
+             "DetailTbl_ConceptStatusDescription_Title": "Status",
+             "DetailState_Tooltip": "",
+             "DetailState_Measure": "",
+             "DetailState_Legend": "",
+             "DetailState_Prefix": "",
+             "DetailState_Watermark": "",
+             "DetailStart_Label": "Start",
+             "DetailTbl_DateOfTheInformation_Title": "Start",
+             "DetailStart_Tooltip": "Date of the client financial information.",
+             "DetailStart_Measure": "",
+             "DetailStart_Legend": "",
+             "DetailStart_Prefix": "",
+             "DetailStart_RequiredMessage": "The field is required.",
+             "DetailFinish_Label": "Completed",
+             "DetailTbl_UpdateTimeStamp_Title": "Completed",
+             "DetailFinish_Tooltip": "",
+             "DetailFinish_Measure": "",
+             "DetailFinish_Legend": "",
+             "DetailFinish_Prefix": "",
+             "DetailFinish_RequiredMessage": "The field is required.",
+             "DetailDuration_Label": "Duration",
+             "DetailTbl_Units_Title": "Duration",
+             "DetailDuration_Tooltip": "",
+             "DetailDuration_Measure": "",
+             "DetailDuration_Legend": "",
+             "DetailDuration_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "Identify": {
+             "maxlength": "The field allows 20 maximum characters"
+        },
+        "Identification": {
+             "maxlength": "The field allows 20 maximum characters"
+        },
+        "State": {
+             "maxlength": "The field allows 20 maximum characters"
+        },
+        "BeginDate": {
+             "DatePicker": "La fecha indicada no es válida"
+        },
+        "CompleteDate": {
+             "DatePicker": "La fecha indicada no es válida"
+        },
+        "Durate": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999"
+        },
+        "Reason": {
+             "maxlength": "The field allows 15 maximum characters"
+        },
+        "UserCode": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999",
+             "required": "The field is required."
+        },
+        "ActivityName": {
+             "maxlength": "The field allows 0 maximum characters"
+        },
+        "ActivityType": {
+             "maxlength": "The field allows 15 maximum characters"
+        },
+        "DetailState": {
+             "maxlength": "The field allows 15 maximum characters"
+        },
+        "DetailStart": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "DetailFinish": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "DetailDuration": {
+             "AutoNumericMinValue": "The minimum value allowed is -999999999999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 999999999999999999"
+        }
+    }
+  }
+}

@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CaseIDLabelResource1.Text" xml:space="preserve">
+    <value>Caso Id:</value>
+  </data>
+  <data name="CaseStatusResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="CaseStatusResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="CloseDateLabelResource1.Text" xml:space="preserve">
+    <value>Fecha de cierre:</value>
+  </data>
+  <data name="CloseDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="CloseDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="CloseDateResource1.ToolTip" xml:space="preserve">
+    <value>Fecha en que fue cerrado el caso de suscripción.</value>
+  </data>
+  <data name="CloseDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="DecisionLabelResource1.Text" xml:space="preserve">
+    <value>Decisión:</value>
+  </data>
+  <data name="DecitionResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="DecitionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="dpeCaseIdResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="FaceAmountLabelResource1.Text" xml:space="preserve">
+    <value>Suma asegurada:</value>
+  </data>
+  <data name="FaceAmountResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="FaceAmountResource2.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="HeaderCallbackPanelResource.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="GridViewCommandColumnResource7.ClearFilterButton.Text" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="GridViewDataDateColumnResource4.Caption" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="GridViewDataDateColumnResource4.PropertiesDateEdit.DisplayFormatString" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="GridViewDataTextColumnResource44.Caption" xml:space="preserve">
+    <value>Id de caso</value>
+  </data>
+  <data name="GridViewDataTextColumnResource45.Caption" xml:space="preserve">
+    <value>Suscriptor</value>
+  </data>
+  <data name="GridViewDataTextColumnResource46.Caption" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="GridViewDataTextColumnResource47.Caption" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="GridViewDataTextColumnResource48.Caption" xml:space="preserve">
+    <value>Decisión</value>
+  </data>
+  <data name="GridViewDataTextColumnResource49.Caption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="GridViewDataTextColumnResource50.Caption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+  <data name="GridViewDataTextColumnResource51.Caption" xml:space="preserve">
+    <value>Póliza</value>
+  </data>
+  <data name="GridViewDataTextColumnResource52.Caption" xml:space="preserve">
+    <value>Productor</value>
+  </data>
+  <data name="GridViewDataTextColumnResource53.Caption" xml:space="preserve">
+    <value>Suma asegurada</value>
+  </data>
+  <data name="GridViewDataTextColumnResource53.PropertiesTextEdit.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="GridViewDataTextColumnResource54.Caption" xml:space="preserve">
+    <value>Suscriptor que está editando el caso</value>
+  </data>
+  <data name="GridViewDataTextColumnResource57.Caption" xml:space="preserve">
+    <value>Solicitud/Aplicación</value>
+  </data>
+  <data name="OpenDateLabelResource1.Text" xml:space="preserve">
+    <value>Fecha de apertura:</value>
+  </data>
+  <data name="OpenDateLabelResource1.ToolTip" xml:space="preserve">
+    <value>Fecha de apertura del caso de suscripción.</value>
+  </data>
+  <data name="OpenDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="OpenDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="OpenDateResource1.ToolTip" xml:space="preserve">
+    <value>Fecha de apertura del caso de suscripción.</value>
+  </data>
+  <data name="OpenDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="RiskClassificationLAbelResource1.Text" xml:space="preserve">
+    <value>Clasificación del riesgo:</value>
+  </data>
+  <data name="RiskClassificationResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="RiskClassificationResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="txtCaseIdResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="UnderwritingCaseStatusLabelResource1.Text" xml:space="preserve">
+    <value>Estado del caso:</value>
+  </data>
+  <data name="CaseIDMessageLabelResource1.Text" xml:space="preserve">
+    <value>Caso inválido</value>
+  </data>
+  <data name="GeneralInformationPanel.HeaderText" xml:space="preserve">
+    <value>Información general</value>
+  </data>
+  <data name="AcceptCaseItemResource.Text" xml:space="preserve">
+    <value>Aceptar caso</value>
+  </data>
+  <data name="DeclineCaseItemResource.Text" xml:space="preserve">
+    <value>Declinar caso</value>
+  </data>
+  <data name="DeclineCaseItemResource" xml:space="preserve">
+    <value>Declinar Caso</value>
+  </data>
+  <data name="RejectionReasonResource" xml:space="preserve">
+    <value>Motivo de Rechazo</value>
+  </data>
+  <data name="RejectedReasonErrorField" xml:space="preserve">
+    <value>Campo obligatorio</value>
+  </data>
+  <data name="ReasonResourceComboBox.ToolTip" xml:space="preserve">
+    <value>Motivo por el cual se declina el caso</value>
+  </data>
+  <data name="ReasonResource.Text" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="ReasonResource" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="ReasonResource.ToolTip" xml:space="preserve">
+    <value>Motivo por el cual se declina el caso</value>
+  </data>
+  <data name="ReasonResourceToolTip" xml:space="preserve">
+    <value>Motivo por el cual se declina el caso</value>
+  </data>
+  <data name="CancelResource.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EditCancelCaseItemResource.Text" xml:space="preserve">
+    <value>Cancelar edición</value>
+  </data>
+  <data name="EditCaseItemResource.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="InformationASPxLabelResource.Text" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="OpenFormItemResource.Text" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="popupHeaderResource.Text" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="ReopenCaseItemResource.Text" xml:space="preserve">
+    <value>Reabrir caso</value>
+  </data>
+  <data name="SaveCaseItemResource.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SaveCloseCaseItemResource.Text" xml:space="preserve">
+    <value>Guardar y cerrar</value>
+  </data>
+  <data name="BatchNumberLabelResource1.Text" xml:space="preserve">
+    <value>Número de lote:</value>
+  </data>
+  <data name="BatchNumberResource2.ToolTip" xml:space="preserve">
+    <value>Número que identifica la carga masiva que generó el caso de suscripción.</value>
+  </data>
+  <data name="BatchNumberResource2.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="CurrencyLabelResource1.Text" xml:space="preserve">
+    <value>Moneda:</value>
+  </data>
+  <data name="CurrencyResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="CurrencyResource1.ToolTip" xml:space="preserve">
+    <value>Moneda del caso de suscripción.</value>
+  </data>
+  <data name="CurrencyResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="UnderwritingCaseTypeLabelResource1.Text" xml:space="preserve">
+    <value>Tipo de caso:</value>
+  </data>
+  <data name="UnderwritingCaseTypeResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="UnderwritingCaseTypeResource1.ToolTip" xml:space="preserve">
+    <value>Origen del caso de suscripción: nuevo negocio o cotización de modificación (endoso).</value>
+  </data>
+  <data name="UnderwritingCaseTypeResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="GridViewDataTextColumnRole.Caption" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="EditPolicyToBeIsuedResource.Text" xml:space="preserve">
+    <value>Editar póliza a emitir</value>
+  </data>
+  <data name="EditPolicyToBeEndorseItemResource.Text" xml:space="preserve">
+    <value>Editar póliza a endosar</value>
+  </data>
+  <data name="AcceptEndorsementItemResource.Text" xml:space="preserve">
+    <value>Aceptar endoso</value>
+  </data>
+  <data name="DeclineEndorsementItemResource.Text" xml:space="preserve">
+    <value>Declinar endoso</value>
+  </data>
+  <data name="CaseStatusResource1.ToolTip" xml:space="preserve">
+    <value>Estado en que se encuentra el caso de suscripción</value>
+  </data>
+  <data name="DecitionResource1.ToolTip" xml:space="preserve">
+    <value>Decisión tomada del caso de suscripción: pendiente, rechazado, aprobado, etc.</value>
+  </data>
+  <data name="dpeCaseIdResource1.ToolTip" xml:space="preserve">
+    <value>Número que identifica el caso de suscripción.</value>
+  </data>
+  <data name="FaceAmountResource2.ToolTip" xml:space="preserve">
+    <value>Suma asegurada del caso de suscripción.</value>
+  </data>
+  <data name="RiskClassificationResource1.ToolTip" xml:space="preserve">
+    <value>Clasificación del riesgo asegurado, por categorías: preferido plus, preferido, estándar, estándar plus, sub estándar, etc.</value>
+  </data>
+  <data name="FullproposalIDLabelResource1.Text" xml:space="preserve">
+    <value>Solicitud/Cotización:</value>
+  </data>
+  <data name="FullproposalIDResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="FullproposalIDResource1.ToolTip" xml:space="preserve">
+    <value>Número de solicitud/cotización en tratamiento.</value>
+  </data>
+  <data name="FullproposalIDResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="StageLabelResource1.Text1" xml:space="preserve">
+    <value>Etapa:</value>
+  </data>
+  <data name="StageLabelResource1.Text" xml:space="preserve">
+    <value>Etapa:</value>
+  </data>
+  <data name="StageResource1.LoadingPanelText1" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="StageResource1.ToolTip1" xml:space="preserve">
+    <value>Etapa o trayecto donde se encuentra el caso de suscripción</value>
+  </data>
+  <data name="StageResource1.ToolTip" xml:space="preserve">
+    <value>Etapa o trayecto donde se encuentra el caso de suscripción</value>
+  </data>
+  <data name="SuccessfulOperation" xml:space="preserve">
+    <value>Operación realizada exitosamente.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="FailOperation" xml:space="preserve">
+    <value>Operación Fallida, Causas: </value>
+  </data>
+  <data name="SuccessfulOperationAcceptCase" xml:space="preserve">
+    <value>Póliza Nº {0} según la Solicitud Nº {1} , fue emitida satisfactoriamente.</value>
+  </data>
+  <data name="SuccessfulOperationDeclineCase" xml:space="preserve">
+    <value>Caso Nº {0} según Solicitud Nº {1}, fue declinado satisfactoriamente.</value>
+  </data>
+  <data name="SuccessfulOperationReOpenCase" xml:space="preserve">
+    <value>Caso Nº {0} según Solicitud Nº {1}, fue reabierto satisfactoriamente.</value>
+  </data>
+  <data name="FreeReasonResourceText.ToolTip" xml:space="preserve">
+    <value>Motivo por el cual se declina el caso (Texto libre)</value>
+  </data>
+  <data name="FreeTextReasonResource" xml:space="preserve">
+    <value>Texto libre (Motivo)</value>
+  </data>
+  <data name="GridViewDataTextColumnResource60" xml:space="preserve">
+    <value>Número de lote</value>
+  </data>
+  <data name="WFProgressApprovedText" xml:space="preserve">
+    <value>Flujo de trabajo culminado.</value>
+  </data>
+  <data name="WFProgressApprovedTooltip" xml:space="preserve">
+    <value>Flujo de trabajo culminado.</value>
+  </data>
+  <data name="WFProgressPendingText" xml:space="preserve">
+    <value>Flujo de trabajo en ejecución.</value>
+  </data>
+  <data name="WFProgressPendingTooltip" xml:space="preserve">
+    <value>Flujo de trabajo en ejecución.</value>
+  </data>
+</root>

@@ -1,0 +1,106 @@
+<%@ Page LANGUAGE="VB" explicit="true" %>
+<%@ Import namespace="eCrystalExport" %>
+<%@ Import namespace="ADODB" %>
+<script language="VB" runat="Server">
+
+Const intNull As Short = -32768
+Dim oHelper As eCrystalExport.Export
+Dim i As Object
+Dim oMergePDF As eCrystalExport.MergePDF
+
+
+'--------------------------------
+Private Sub InsLoadParameters()
+	'--------------------------------
+	Dim lintIndex As Integer
+	Dim lstrValue As String
+	Dim crpParameter As Object
+	
+	For lintIndex = 1 To Request.QueryString.Item("p").Length
+		lstrValue = Request.QueryString.Item("p").GetValue(lintIndex - 1)
+		If lstrValue = CStr(intNull) Then
+			lstrValue = ""
+		ElseIf lstrValue = "@@" Then 
+			lstrValue = ""
+		End If
+		oHelper.Parameters.Add(lstrValue)
+	Next 
+	
+	For lintIndex = 1 To Request.QueryString.Item("sp").Length
+		lstrValue = Request.QueryString.Item("sp").GetValue(lintIndex - 1)
+		If lstrValue = CStr(intNull) Then
+			lstrValue = ""
+		ElseIf lstrValue = "@@" Then 
+			lstrValue = ""
+		End If
+		oHelper.Parameters.Add(lstrValue)
+	Next 
+	
+End Sub
+
+Private Sub OpenAndShowFile(ByRef sFileName As String, ByRef sFullPath As String)
+	Dim oStream As ADODB.Stream
+	
+	'	sFileName =  "xxx_010052795722962915.pdf"
+	'	sFullFileName = "E:\VisualTIME\VTime\TFiles\Reports\xxx_010052795722962915.pdf"
+	
+	'Response.write   sFullPath & sFileName 
+	
+	'exit sub
+	oStream = New ADODB.Stream' Create the object  
+	Response.Clear()
+	Response.Buffer = True
+	Response.AddHeader("Pragma", "no-cache")
+	Response.AddHeader("Expires", "Mon, 1 Jan 2000 05:00:00 GMT")
+	Response.AddHeader("Last-Modified", Now & " GMT")
+	Response.ContentType = "application/pdf"
+	Response.AddHeader("Content-Disposition", "inline; filename=jjj.pdf") ' & sFileName
+	
+	
+	oStream.Open() ' Open our file  
+	oStream.Type = 1 ' 1 = Binary  
+	
+	oStream.LoadFromFile(sFullPath & sFileName) ' Retreive binary data from the file  
+	Response.BinaryWrite(oStream.read()) ' Return the binary data to the caller  
+	'UPGRADE_NOTE: Object oStream may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	oStream = Nothing ' Destroy the ADO object  
+	Response.End()
+End Sub
+
+</script>
+<%
+'+ Se adiciona el titulo del Reporte si se pasó como parametro
+If Request.QueryString.Item("ReporTitle") <> vbNullString Then
+	Session("oRpt").reportTitle = Request.QueryString.Item("ReporTitle")
+End If
+
+oHelper = New eCrystalExport.Export
+oMergePDF = New eCrystalExport.MergePDF
+InsLoadParameters()
+
+On Error Resume Next
+Call oHelper.RealExport(Replace(Request.QueryString.Item("URL"), "/", "\"), "xxx.rpt", "PDF", Session("sInitialsCon"), Session("sAccesswoCon"))
+
+If Err.Number Then
+	On Error GoTo 0
+	Response.Write("****HA OCURRIDO UNA EXCEPCIÓN*****" & "<BR>" & Err.Description)
+Else
+	On Error GoTo 0
+	If Request.QueryString.Item("Merge") = "1" Or Request.QueryString.Item("Merge") = "Verdadero" Or Request.QueryString.Item("Merge") = "True" Then
+		'ejecuto el merge de cuadros de  polizas mas sus condicionados (es necesario que esten en pdf)
+		'oMergePDF.MergePDFs Request.QueryString("MergeBranch"),Request.QueryString("MergeProduct"),Request.QueryString("MergePolicy"),Request.QueryString("MergeCertif"), oHelper.sExportedFilePath & oHelper.sExportedFileName			
+		Response.Write(Request.QueryString.Item("MergeBranch") & " ")
+		Response.Write(Request.QueryString.Item("MergeProduct") & " ")
+		Response.Write(Request.QueryString.Item("MergePolicy") & " ")
+		Response.Write(Request.QueryString.Item("MergeCertif") & " ")
+		Response.Write(oHelper.sExportedFilePath & oHelper.sExportedFileName)
+		'OpenAndShowFile  oMergePDF.sExportedFileName, oMergePDF.sExportedFilePath
+	Else
+		OpenAndShowFile((oHelper.sExportedFileName), (oHelper.sExportedFilePath))
+	End If
+End If
+%>
+
+
+
+

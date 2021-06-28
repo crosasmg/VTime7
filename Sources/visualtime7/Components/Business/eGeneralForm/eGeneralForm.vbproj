@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05C3F80E-B222-41E4-BCF4-9AE774BA9EF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eGeneralForm</RootNamespace>
+    <AssemblyName>eGeneralForm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eGeneralForm.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.vb" />
+    <Compile Include="Addresss.vb" />
+    <Compile Include="Agencies.vb" />
+    <Compile Include="Age_Product.vb" />
+    <Compile Include="Age_Products.vb" />
+    <Compile Include="CancelProcess.vb" />
+    <Compile Include="Constantes.vb" />
+    <Compile Include="GeneralForm.vb" />
+    <Compile Include="genHandPass.vb" />
+    <Compile Include="Hollidays.vb" />
+    <Compile Include="Hollidayss.vb" />
+    <Compile Include="Images.vb" />
+    <Compile Include="Imagess.vb" />
+    <Compile Include="LedCompSel.vb" />
+    <Compile Include="Municipality.vb" />
+    <Compile Include="Municipalitys.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Notes.vb" />
+    <Compile Include="Notess.vb" />
+    <Compile Include="Phone.vb" />
+    <Compile Include="Phones.vb" />
+    <Compile Include="Province.vb" />
+    <Compile Include="Provinces.vb" />
+    <Compile Include="TabGen.vb" />
+    <Compile Include="TabGens.vb" />
+    <Compile Include="Tab_locat.vb" />
+    <Compile Include="Tab_locats.vb" />
+    <Compile Include="Zip_code.vb" />
+    <Compile Include="Zip_codes.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eGeneralForm.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

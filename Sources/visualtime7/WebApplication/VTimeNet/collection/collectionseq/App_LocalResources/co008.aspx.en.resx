@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chkSelAllCaption" xml:space="preserve">
+    <value>Select/deselect all</value>
+  </data>
+  <data name="tcnCashIdColumnCaption" xml:space="preserve">
+    <value>N° Comp cash desk</value>
+  </data>
+  <data name="tcnCashIdColumnToolTip" xml:space="preserve">
+    <value>Number of cash receipt</value>
+  </data>
+  <data name="nTypPayColumnCaption" xml:space="preserve">
+    <value>Type of payment</value>
+  </data>
+  <data name="nTypPayColumnToolTip" xml:space="preserve">
+    <value>It indicates how the payment will be made</value>
+  </data>
+  <data name="dDoc_dateColumnCaption" xml:space="preserve">
+    <value>Date of the Document</value>
+  </data>
+  <data name="dDoc_dateColumnToolTip" xml:space="preserve">
+    <value>Date of the document recorded as a type of payment</value>
+  </data>
+  <data name="sClientColumnCaption" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="sClientColumnToolTip" xml:space="preserve">
+    <value>Code of the client involved in the payment transaction</value>
+  </data>
+  <data name="nBankAccColumnCaption" xml:space="preserve">
+    <value>Bank Account</value>
+  </data>
+  <data name="nBankAccColumnToolTip" xml:space="preserve">
+    <value>Bank account associated with the type of payment</value>
+  </data>
+  <data name="nCurrencyColumnCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="nCurrencyColumnToolTip" xml:space="preserve">
+    <value>Currency in which the type of payment specified is expressed</value>
+  </data>
+  <data name="tcdValDateColumnCaption" xml:space="preserve">
+    <value>Date of value</value>
+  </data>
+  <data name="tcdValDateColumnToolTip" xml:space="preserve">
+    <value>Valuation date of payment.</value>
+  </data>
+  <data name="nAmountColumnCaption" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="nAmountColumnToolTip" xml:space="preserve">
+    <value>Amount to be paid</value>
+  </data>
+  <data name="tcnExchangeColumnCaption" xml:space="preserve">
+    <value>Exchange rate</value>
+  </data>
+  <data name="tcnExchangeColumnToolTip" xml:space="preserve">
+    <value>It indicates the exchange rate to be used to convert the amount to local currency</value>
+  </data>
+  <data name="tcnAmountLocColumnCaption" xml:space="preserve">
+    <value>Amount in Currency local</value>
+  </data>
+  <data name="tcnAmountLocColumnToolTip" xml:space="preserve">
+    <value>Amount expressed as a result of the amount and the exchange rate</value>
+  </data>
+  <data name="tcnAmountUFColumnCaption" xml:space="preserve">
+    <value>Amount in U.F.</value>
+  </data>
+  <data name="tcnAmountUFColumnToolTip" xml:space="preserve">
+    <value>Amount expressed in fiscal unit</value>
+  </data>
+  <data name="nBankColumnCaption" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="nBankColumnToolTip" xml:space="preserve">
+    <value>Bank to which the payment document belongs</value>
+  </data>
+  <data name="sDocNumberColumnCaption" xml:space="preserve">
+    <value>Number of Document</value>
+  </data>
+  <data name="sDocNumberColumnToolTip" xml:space="preserve">
+    <value>Number identifying the payment document</value>
+  </data>
+  <data name="nChequeLocatColumnCaption" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="nChequeLocatColumnToolTip" xml:space="preserve">
+    <value>Plaza Bank which owns the document used in the payment</value>
+  </data>
+  <data name="nTypCreCardColumnCaption" xml:space="preserve">
+    <value>Type of Card</value>
+  </data>
+  <data name="nIntermedColumnCaption" xml:space="preserve">
+    <value>Producer</value>
+  </data>
+  <data name="nIntermedColumnToolTip" xml:space="preserve">
+    <value>Producer involved in the payment</value>
+  </data>
+  <data name="nLed_companColumnCaption" xml:space="preserve">
+    <value>Ledger company</value>
+  </data>
+  <data name="nLed_companColumnToolTip" xml:space="preserve">
+    <value>Company to which the account affected by the exchange belongs</value>
+  </data>
+  <data name="sAccountColumnCaption" xml:space="preserve">
+    <value>General Ledger Account</value>
+  </data>
+  <data name="sAccountColumnToolTip" xml:space="preserve">
+    <value>Code of the ledger account affected by the exchange.</value>
+  </data>
+  <data name="sAux_accounColumnCaption" xml:space="preserve">
+    <value>Subsidiary ledge account</value>
+  </data>
+  <data name="sAux_accounColumnToolTip" xml:space="preserve">
+    <value>Subsidiary of the Ledger account which is affected by the exchange</value>
+  </data>
+  <data name="tcnRateColumnCaption" xml:space="preserve">
+    <value>Discount rate</value>
+  </data>
+  <data name="tcnRateColumnToolTip" xml:space="preserve">
+    <value>Interest rate takes the document</value>
+  </data>
+  <data name="tcnNominalValColumnCaption" xml:space="preserve">
+    <value>Face value</value>
+  </data>
+  <data name="tcnNominalValColumnToolTip" xml:space="preserve">
+    <value>Initial value printed in the document</value>
+  </data>
+  <data name="dtEmiDateColumnCaption" xml:space="preserve">
+    <value>Issue date</value>
+  </data>
+  <data name="dtEmiDateColumnToolTip" xml:space="preserve">
+    <value>Date when the face value is issued</value>
+  </data>
+  <data name="dtExpirDateColumnCaption" xml:space="preserve">
+    <value>Date of expiry</value>
+  </data>
+  <data name="dtExpirDateColumnToolTip" xml:space="preserve">
+    <value>Expiration date of the bonus printed in the document</value>
+  </data>
+  <data name="nAmountDecColumnCaption" xml:space="preserve">
+    <value>Amount with decimals positions</value>
+  </data>
+  <data name="nAmountDecColumnToolTip" xml:space="preserve">
+    <value>Amount with decimals to be paid</value>
+  </data>
+</root>

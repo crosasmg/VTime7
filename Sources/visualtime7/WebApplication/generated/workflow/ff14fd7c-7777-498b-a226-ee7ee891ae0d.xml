@@ -1,0 +1,20 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Report Mandato WF Test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ica="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:ircdr="clr-namespace:InMotionGIT.Report.Crystal.Designs.ReportCargo;assembly=InMotionGIT.Report.Crystal.Designs" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="ReportCargo" Type="InOutArgument(ircdr:ContractsCargoCollection)" />
+    <x:Property Name="Result" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>262,186</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sap:VirtualizedContainerService.HintSize="222,146">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Message" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ica:ReportDNE FailedMessage="[Message]" sap:VirtualizedContainerService.HintSize="200,22" PDFFileName="[Result]" ReportName="Mandato" RptContract="[ReportCargo]" urlMode="True" viewMode="True" />
+  </Sequence>
+</Activity>

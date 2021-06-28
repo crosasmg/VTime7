@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="valConceptColumnCaption" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+  <data name="valConceptColumnToolTip" xml:space="preserve">
+    <value>Código del concepto por el cual se está realizando el ingreso</value>
+  </data>
+  <data name="cbeCurrencyColumnCaption" xml:space="preserve">
+    <value>Moneda origen</value>
+  </data>
+  <data name="cbeCurrencyColumnToolTip" xml:space="preserve">
+    <value>Moneda en la que se encuentra expresado el monto del ingreso</value>
+  </data>
+  <data name="tcnAmountOrigColumnCaption" xml:space="preserve">
+    <value>Monto a pagar M.O.</value>
+  </data>
+  <data name="tcnAmountOrigColumnToolTip" xml:space="preserve">
+    <value>Monto del ingreso en su moneda origen</value>
+  </data>
+  <data name="tcdValuedateColumnCaption" xml:space="preserve">
+    <value>Fecha de valorización</value>
+  </data>
+  <data name="tcdValuedateColumnToolTip" xml:space="preserve">
+    <value>Fecha a la que se aplica el factor de cambio correspondiente</value>
+  </data>
+  <data name="tcnAmountLocColumnCaption" xml:space="preserve">
+    <value>Monto a pagar</value>
+  </data>
+  <data name="tcnAmountLocColumnToolTip" xml:space="preserve">
+    <value>Monto del ingreso en la moneda del pago</value>
+  </data>
+  <data name="tcnExchangeColumnCaption" xml:space="preserve">
+    <value>Factor de cambio</value>
+  </data>
+  <data name="tcnExchangeColumnToolTip" xml:space="preserve">
+    <value>Factor de cambio</value>
+  </data>
+  <data name="valBank_agreeColumnCaption" xml:space="preserve">
+    <value>Banco-convenio</value>
+  </data>
+  <data name="valBank_agreeColumnToolTip" xml:space="preserve">
+    <value>Banco que se encuentra en convenio de PAC o de Pago en ventanilla.</value>
+  </data>
+  <data name="valAccount_AgreeColumnCaption" xml:space="preserve">
+    <value>Convenio banco</value>
+    <comment>ID=40595</comment>
+  </data>
+  <data name="valAccount_AgreeColumnToolTip" xml:space="preserve">
+    <value>Número de Convenio</value>
+    <comment>ID=40595</comment>
+  </data>
+  <data name="valAgreementColumnCaption" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
+  <data name="valAgreementColumnToolTip" xml:space="preserve">
+    <value>Indica el número de convenio</value>
+  </data>
+  <data name="tcdCollectColumnCaption" xml:space="preserve">
+    <value>Fecha de cobranzas</value>
+  </data>
+  <data name="tcdCollectColumnToolTip" xml:space="preserve">
+    <value>Fecha de cobranzas asociada al concepto</value>
+  </data>
+  <data name="tcnBulletinsColumnCaption" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="tcnBulletinsColumnToolTip" xml:space="preserve">
+    <value>Número de boletín o aviso asociado al concepto de la linea</value>
+  </data>
+  <data name="dtcClientColumnCaption" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="dtcClientColumnToolTip" xml:space="preserve">
+    <value>Código del cliente en tratamiento</value>
+  </data>
+  <data name="tcnClaimColumnCaption" xml:space="preserve">
+    <value>Siniestro</value>
+  </data>
+  <data name="tcnClaimColumnToolTip" xml:space="preserve">
+    <value>Número identificativo del siniestro al que pertenece el movimiento (recobro/salvamento/recuperado)</value>
+  </data>
+  <data name="valCasesColumnCaption" xml:space="preserve">
+    <value>Caso</value>
+  </data>
+  <data name="valCasesColumnToolTip" xml:space="preserve">
+    <value>Número de caso asociado al siniestro</value>
+  </data>
+  <data name="valCurrAccColumnCaption" xml:space="preserve">
+    <value>Cta Cte.</value>
+  </data>
+  <data name="valCurrAccColumnToolTip" xml:space="preserve">
+    <value>Tipo cuenta corriente a afectar.</value>
+  </data>
+  <data name="valIntermedColumnCaption" xml:space="preserve">
+    <value>Intermediario</value>
+  </data>
+  <data name="valIntermedColumnToolTip" xml:space="preserve">
+    <value>Código del intermediario al que corresponde el movimiento.</value>
+  </data>
+  <data name="valLoansColumnCaption" xml:space="preserve">
+    <value>Anticipo</value>
+  </data>
+  <data name="valLoansColumnToolTip" xml:space="preserve">
+    <value>Número del anticipo asociado al intermediario al que corresponde el movimiento.</value>
+  </data>
+  <data name="valCompanyCRColumnCaption" xml:space="preserve">
+    <value>Co/Reaseguro</value>
+  </data>
+  <data name="valCompanyCRColumnToolTip" xml:space="preserve">
+    <value>Código de la compañía a la que corresponde el movimiento.</value>
+  </data>
+  <data name="SCA2-NColumnCaption" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+</root>

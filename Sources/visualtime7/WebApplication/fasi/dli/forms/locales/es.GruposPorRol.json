@@ -1,0 +1,76 @@
+﻿{
+  "app": {
+    "title": "Grupos por rol",
+    "form": {
+             "GrupoXRol_Grid_Message_Notify_insert4": "Se agregó correctamente el registro",
+             "GrupoXRol_Grid_Title_Notify_insert4": "Agregar registro",
+             "GrupoXRol_Grid_Message_Notify_insert5": "No se pudo agregar el registro",
+             "GrupoXRol_Grid_Title_Notify_insert5": "Agregar registro",
+             "GrupoXRol_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "GrupoXRol_Grid_Title_Notify_update4": "Actualizar registro",
+             "GrupoXRol_Grid_Message_Notify_update5": "No se pudo actualizar el registro",
+             "GrupoXRol_Grid_Title_Notify_update5": "Actualizar registro",
+             "GrupoXRol_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "GrupoXRol_Grid_Title_Notify_delete4": "Eliminar registro",
+             "GrupoXRol_Grid_Message_Notify_delete5": "No se puede eliminar el registro",
+             "GrupoXRol_Grid_Title_Notify_delete5": "Eliminar registro",
+             "label0_Label": "Grupos de acceso asociados a los roles del sistema",
+             "label0_Tooltip": "Grupos de acceso asociados a los roles del sistema",
+             "label0_Prefix": "",
+             "GrupoXRol_Grid_Title": "",
+             "GrupoXRol_Grid_AddButtonCaption": "Agregar",
+             "GrupoXRol_Grid_DeleteButtonCaption": "Eliminar",
+             "Id_Rol_Label": "Rol",
+             "GrupoXRol_GridTbl_Id_Rol_Title": "Rol",
+             "Id_Rol_Tooltip": "Rol de seguridad. Ver esquema FrontOffice para detalles",
+             "Id_Rol_Measure": "",
+             "Id_Rol_Legend": "",
+             "Id_Rol_Prefix": "",
+             "Id_Rol_RequiredMessage": "El campo es requerido.",
+             "Id_Grupo_Acceso_Label": "Grupo Acceso",
+             "GrupoXRol_GridTbl_Id_Grupo_Acceso_Title": "Grupo Acceso",
+             "Id_Grupo_Acceso_Tooltip": "Grupo de acceso",
+             "Id_Grupo_Acceso_Measure": "",
+             "Id_Grupo_Acceso_Legend": "",
+             "Id_Grupo_Acceso_Prefix": "",
+             "Id_Grupo_Acceso_RequiredMessage": "El campo es requerido.",
+             "Id_Compania_Label": "Id Compania",
+             "GrupoXRol_GridTbl_Id_Compania_Title": "Id Compania",
+             "Id_Compania_Tooltip": "Código que identifica a la compañía usuaria dueña de la información. Ver esquema Common para detalles.",
+             "Id_Compania_Measure": "",
+             "Id_Compania_Legend": "",
+             "Id_Compania_Prefix": "",
+             "Id_Compania_RequiredMessage": "El campo es requerido.",
+             "ExternalUser_Label": "Usuario Externo",
+             "GrupoXRol_GridTbl_ExternalUser_Title": "Usuario Externo",
+             "ExternalUser_Tooltip": "Indica si el usuario es externo o interno. Puede ser true o false. 1 o 0.",
+             "ExternalUser_Measure": "",
+             "ExternalUser_Legend": "",
+             "ExternalUser_Prefix": "",
+             "ExternalUser_RequiredMessage": "El campo es requerido.",
+             "ExternalUser_0_Display": "No",
+             "ExternalUser_1_Display": "Si",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+             "GrupoXRol_Grid_multiKeyValidate": "La combinación de estos campos tiene que ser único",
+        "Id_Rol": {
+             "required": "El campo es requerido."
+        },
+        "Id_Grupo_Acceso": {
+             "required": "El campo es requerido."
+        },
+        "Id_Compania": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El campo es requerido."
+        },
+        "ExternalUser": {
+             "required": "El campo es requerido."
+        }
+    }
+  }
+}

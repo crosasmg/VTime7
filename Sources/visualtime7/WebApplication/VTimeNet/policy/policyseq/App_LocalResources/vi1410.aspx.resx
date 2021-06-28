@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda asociado a la cuenta</value>
+  </data>
+  <data name="tcnPayfreqCaption" xml:space="preserve">
+    <value>Frecuencia de pago</value>
+  </data>
+  <data name="tcnPayfreqToolTip" xml:space="preserve">
+    <value>Frecuencia de pago de la prima</value>
+  </data>
+  <data name="AnchorVariosCaption" xml:space="preserve">
+    <value>Prima mínima anual</value>
+  </data>
+  <data name="AnchorVarios2Caption" xml:space="preserve">
+    <value>Prima mínima s/frecuencia</value>
+  </data>
+  <data name="tcnPremAnuCaption" xml:space="preserve">
+    <value>Prima mínima anual</value>
+  </data>
+  <data name="tcnPremAnuToolTip" xml:space="preserve">
+    <value>Sumatoria de las primas de las coberturas</value>
+  </data>
+  <data name="tcnPremiminCaption" xml:space="preserve">
+    <value>Prima mínima s/frecuencia de pago</value>
+  </data>
+  <data name="tcnPremiminToolTip" xml:space="preserve">
+    <value>Importe mínimo de prima</value>
+  </data>
+  <data name="tcnPremdealCaption" xml:space="preserve">
+    <value>Prima convenida anual</value>
+  </data>
+  <data name="tcnPremdealToolTip" xml:space="preserve">
+    <value>Monto de prima convenida/proyectada de la póliza</value>
+  </data>
+  <data name="tcnPremfreqCaption" xml:space="preserve">
+    <value>Prima convenida s/frecuencia de pago</value>
+  </data>
+  <data name="tcnPremfreqToolTip" xml:space="preserve">
+    <value>Monto de prima convenida calculada según la frecuencia de pago</value>
+  </data>
+  <data name="tcnVPprdealCaption" xml:space="preserve">
+    <value>VP s/prima pact.</value>
+  </data>
+  <data name="tcnVPprdealToolTip" xml:space="preserve">
+    <value>Valor póliza según la prima convenida</value>
+  </data>
+  <data name="tcnPremdepCaption" xml:space="preserve">
+    <value>Aportes realizados</value>
+  </data>
+  <data name="tcnPremdepToolTip" xml:space="preserve">
+    <value>Suma de todos los aportes realizados hasta la fecha de efecto</value>
+  </data>
+  <data name="tcnPayinitiCaption" xml:space="preserve">
+    <value>Aporte inicial</value>
+  </data>
+  <data name="tcnPayinitiToolTip" xml:space="preserve">
+    <value>Aporte inicial</value>
+  </data>
+  <data name="tcnIntwarrCaption" xml:space="preserve">
+    <value>Rentabilidad real anual</value>
+  </data>
+  <data name="tcnIntwarrToolTip" xml:space="preserve">
+    <value>Porcentaje de rentabilidad neta proyectada compañía (Cta. Básica)</value>
+  </data>
+  <data name="btnCalcCaption" xml:space="preserve">
+    <value>Ejecutar ilustración</value>
+  </data>
+  <data name="btnCalcToolTip" xml:space="preserve">
+    <value>Cálcular ilustración del valor póliza</value>
+  </data>
+  <data name="AnchorVarios3Caption" xml:space="preserve">
+    <value>Plan de aportes</value>
+  </data>
+  <data name="tctConceptColumnCaption" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+  <data name="tctConceptColumnToolTip" xml:space="preserve">
+    <value>Descripción del concepto de facturación</value>
+  </data>
+  <data name="tcnPremiumColumnCaption" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="tcnPremiumColumnToolTip" xml:space="preserve">
+    <value>Monto según frecuencia de pago</value>
+  </data>
+  <data name="tcnYear_iniColumnCaption" xml:space="preserve">
+    <value>Año inicial</value>
+  </data>
+  <data name="tcnYear_iniColumnToolTip" xml:space="preserve">
+    <value>Año inicial asociado al plan de pago</value>
+  </data>
+  <data name="tcnYear_endColumnCaption" xml:space="preserve">
+    <value>Año final</value>
+  </data>
+  <data name="tcnYear_endColumnToolTip" xml:space="preserve">
+    <value>Año final asociado al plan de pago</value>
+  </data>
+  <data name="tcnAmountdepColumnCaption" xml:space="preserve">
+    <value>Prima convenida</value>
+  </data>
+  <data name="tcnAmountdepColumnToolTip" xml:space="preserve">
+    <value>Monto de aportes de prima convenida anual</value>
+  </data>
+  <data name="sLinkColumnCaption" xml:space="preserve">
+    <value>Aporte mensual</value>
+  </data>
+  <data name="sLinkColumnToolTip" xml:space="preserve">
+    <value>Aporte mensual</value>
+  </data>
+  <data name="PeriodoutofrangeMessage" xml:space="preserve">
+    <value>El periodo no es de un año por lo tanto no se puede definir aportes mensuales</value>
+  </data>
+</root>

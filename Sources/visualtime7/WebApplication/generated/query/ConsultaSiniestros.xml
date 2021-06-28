@@ -1,0 +1,1583 @@
+﻿<metadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ConsultaSiniestros" Repository="LatCombined" UserInput="CLAIM.NCLAIM,Claim ID/Siniestro,Numeric,Siniestro|RecordEffectiveDate,Effective date/Fecha de efecto,datetime,today" version="2.1.0" ModelId="DD3071DE-981D-41B6-8BBA-444CFCAD8600" Release="5">
+  <titles />
+  <summaries />
+  <root name="Claim" Key="0" EntityType="Table" Identify="nClaim" PageSize="10" DetailView="Card">
+    <captions>
+      <caption Language="1" Value="Claim" />
+      <caption Language="2" Value="Siniestro " />
+    </captions>
+    <QueryStatements>
+      <RetrieveAll>SELECT CLAIM.ROWID AS RECORDID, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM.NBRANCH, TABLE101.SDESCRIPT AS NBRANCHDESC, CLAIM.NPRODUCT, PRODMASTER2.SDESCRIPT AS NPRODUCTDESC, CLAIM.NPOLICY, CLAIM.NCERTIF, CLAIM.NCLAIM, CLAIM.DDECLADAT, CLAIM.SCLAIMTYP, TABLE1323.SDESCRIPT AS SCLAIMTYPDESC, CLAIM.NCAUSECOD, CLAIM_CAUS4.SDESCRIPT AS NCAUSECODDESC, CLAIM.SSTACLAIM, TABLE1355.SDESCRIPT AS SSTACLAIMDESC, CLAIM.DPRESCDAT, CLAIM.DOCCURDAT, CLAIM.NLOC_RESERV, CLAIM.NLOC_REC_AM, CLAIM.NLOC_PAY_AM, CLAIM.NLOC_OUT_AM, CLAIM.NLOC_COS_RE, CLAIM.NIDCATAS FROM CLAIM LEFT JOIN TABLE10 TABLE101 ON TABLE101.NBRANCH = CLAIM.NBRANCH LEFT JOIN PRODMASTER PRODMASTER2 ON PRODMASTER2.NBRANCH = CLAIM.NBRANCH AND PRODMASTER2.NPRODUCT = CLAIM.NPRODUCT LEFT JOIN TABLE132 TABLE1323 ON TABLE1323.SCLAIMTYP = CLAIM.SCLAIMTYP LEFT JOIN CLAIM_CAUS CLAIM_CAUS4 ON CLAIM_CAUS4.NBRANCH = CLAIM.NBRANCH AND CLAIM_CAUS4.NPRODUCT = CLAIM.NPRODUCT AND CLAIM_CAUS4.NCAUSECOD = CLAIM.NCAUSECOD LEFT JOIN TABLE135 TABLE1355 ON TABLE1355.SSTACLAIM = CLAIM.SSTACLAIM WHERE ((CLAIM.NCLAIM = [SINIESTRO]))  ORDER BY CLAIM.NCLAIM</RetrieveAll>
+      <AllParameters>[SINIESTRO]</AllParameters>
+      <RetrieveByKey>SELECT CLAIM.ROWID AS RECORDID, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM.NBRANCH, TABLE101.SDESCRIPT AS NBRANCHDESC, CLAIM.NPRODUCT, PRODMASTER2.SDESCRIPT AS NPRODUCTDESC, CLAIM.NPOLICY, CLAIM.NCERTIF, CLAIM.NCLAIM, CLAIM.DDECLADAT, CLAIM.SCLAIMTYP, TABLE1323.SDESCRIPT AS SCLAIMTYPDESC, CLAIM.NCAUSECOD, CLAIM_CAUS4.SDESCRIPT AS NCAUSECODDESC, CLAIM.SSTACLAIM, TABLE1355.SDESCRIPT AS SSTACLAIMDESC, CLAIM.DPRESCDAT, CLAIM.DOCCURDAT, CLAIM.NLOC_RESERV, CLAIM.NLOC_REC_AM, CLAIM.NLOC_PAY_AM, CLAIM.NLOC_OUT_AM, CLAIM.NLOC_COS_RE, CLAIM.NIDCATAS FROM CLAIM LEFT JOIN TABLE10 TABLE101 ON TABLE101.NBRANCH = CLAIM.NBRANCH LEFT JOIN PRODMASTER PRODMASTER2 ON PRODMASTER2.NBRANCH = CLAIM.NBRANCH AND PRODMASTER2.NPRODUCT = CLAIM.NPRODUCT LEFT JOIN TABLE132 TABLE1323 ON TABLE1323.SCLAIMTYP = CLAIM.SCLAIMTYP LEFT JOIN CLAIM_CAUS CLAIM_CAUS4 ON CLAIM_CAUS4.NBRANCH = CLAIM.NBRANCH AND CLAIM_CAUS4.NPRODUCT = CLAIM.NPRODUCT AND CLAIM_CAUS4.NCAUSECOD = CLAIM.NCAUSECOD LEFT JOIN TABLE135 TABLE1355 ON TABLE1355.SSTACLAIM = CLAIM.SSTACLAIM WHERE CLAIM.NCLAIM = {NCLAIM}</RetrieveByKey>
+      <KeyParameters>{NCLAIM}</KeyParameters>
+      <IsExist>SELECT COUNT(*) FROM CLAIM WHERE ((CLAIM.NCLAIM = [SINIESTRO])) </IsExist>
+      <ParameterToChilds>NCLAIM</ParameterToChilds>
+    </QueryStatements>
+    <Parameters />
+    <pluralcaptions>
+      <pluralcaption Language="1" Value="Claims" />
+      <pluralcaption Language="2" Value="Siniestros" />
+    </pluralcaptions>
+    <columns>
+      <columnquery name="Claim.NBRANCH" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="2" Value="Ramo" />
+          <caption Language="1" Value="Line of Business" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Código del ramo comercial." />
+          <ToolTip Language="1" Value="Code of the line of business." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="TABLE10" RelationshipColumns="NBRANCH" Columns="NBRANCH" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NPRODUCT" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="2" Value="Producto" />
+          <caption Language="1" Value="Product Code" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Código del producto." />
+          <ToolTip Language="1" Value="Code of the product." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="PRODMASTER" RelationshipColumns="NBRANCH,NPRODUCT" Columns="NBRANCH,NPRODUCT" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.nPolicy" xmlType="xmlNumeric" precision="10" Visible="true">
+        <captions>
+          <caption Language="2" Value="Póliza" />
+          <caption Language="1" Value="Policy ID" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Número que identifica la póliza/cotización/solicitud." />
+          <ToolTip Language="1" Value="Number identifying the Policy/Quotation/Application." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NCERTIF" xmlType="xmlNumeric" precision="10" Visible="true">
+        <captions>
+          <caption Language="2" Value="Certificado" />
+          <caption Language="1" Value="Certificate ID" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Número del certificado." />
+          <ToolTip Language="1" Value="Number identifying the certificate." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.nClaim" xmlType="xmlNumeric" Style="Claim" precision="10" Visible="true">
+        <captions>
+          <caption Language="2" Value="Siniestro" />
+          <caption Language="1" Value="Claim ID" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Número que identifica al siniestro." />
+          <ToolTip Language="1" Value="Claim number." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.DDECLADAT" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+        <captions>
+          <caption Language="2" Value="Fecha de Declaración" />
+          <caption Language="1" Value="Claim Date" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Fecha de declaración." />
+          <ToolTip Language="1" Value="Date when the Claim was made." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+        <datetimestyle Format="Date" />
+      </columnquery>
+      <columnquery name="Claim.SCLAIMTYP" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="2" Value="Tipo de Pérdida" />
+          <caption Language="1" Value="Type of Loss" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Tipo de pérdida del siniestro." />
+          <ToolTip Language="1" Value="Type of loss in the claim." />
+        </ToolTips>
+        <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE132" RelationshipColumns="SCLAIMTYP" Columns="SCLAIMTYP" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NCAUSECOD" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="2" Value="Causa del Siniestro" />
+          <caption Language="1" Value="Cause of Loss" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Código de la causa del siniestro." />
+          <ToolTip Language="1" Value="Code of cause of the claim." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="CLAIM_CAUS" RelationshipColumns="NBRANCH,NPRODUCT,NCAUSECOD" Columns="NBRANCH,NPRODUCT,NCAUSECOD" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.SSTACLAIM" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="2" Value="Estado del Siniestro" />
+          <caption Language="1" Value="Claim Status" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Estado" />
+          <ToolTip Language="1" Value="Claim status." />
+        </ToolTips>
+        <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE135" RelationshipColumns="SSTACLAIM" Columns="SSTACLAIM" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.DPRESCDAT" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+        <captions>
+          <caption Language="2" Value="Fecha de Prescripción" />
+          <caption Language="1" Value="Lapse Date" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Fecha de prescripción del siniestro." />
+          <ToolTip Language="1" Value="Date when the claim will be closed (will lapse) if the requirements are not received." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+        <datetimestyle Format="Date" />
+      </columnquery>
+      <columnquery name="Claim.DOCCURDAT" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+        <captions>
+          <caption Language="2" Value="Fecha de Ocurrencia" />
+          <caption Language="1" Value="Loss Date" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Fecha y hora de ocurrencia del siniestro." />
+          <ToolTip Language="1" Value="Date and hour when the loss occurred." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+        <datetimestyle Format="Date" />
+      </columnquery>
+      <columnquery name="Claim.NLOC_RESERV" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+        <captions>
+          <caption Language="2" Value="Reserva Actual" />
+          <caption Language="1" Value="Current Reserve Amount" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Monto de reserva actual (en moneda local)." />
+          <ToolTip Language="1" Value="Current reserve amount (in local currency)." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NLOC_REC_AM" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+        <captions>
+          <caption Language="2" Value="Monto Recuperado" />
+          <caption Language="1" Value="Recovered Amount" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Monto total recuperado (en moneda local)." />
+          <ToolTip Language="1" Value="Amount recovered (in local currency)." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NLOC_PAY_AM" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+        <captions>
+          <caption Language="2" Value="Monto Pagado" />
+          <caption Language="1" Value="Paid Amount" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Monto pagado (en moneda local)." />
+          <ToolTip Language="1" Value="Amount paid on the reserve (in local currency)." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NLOC_OUT_AM" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+        <captions>
+          <caption Language="2" Value="Reserva Pendiente" />
+          <caption Language="1" Value="Outstanding Reserve Amount" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Monto pendiente de la reserva (en moneda local)." />
+          <ToolTip Language="1" Value="Outstanding reserve amount  (in local currency)." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NLOC_COS_RE" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+        <captions>
+          <caption Language="2" Value="Total de Gastos de Recuperación" />
+          <caption Language="1" Value="Total Recovery Expenses" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Monto total de gastos de recuperación (en moneda local)." />
+          <ToolTip Language="1" Value="Total amount of recovery expenses (in local currency)." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Claim.NIDCATAS" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+        <captions>
+          <caption Language="2" Value="Evento Catastrófico" />
+          <caption Language="1" Value="Catastrophe Code" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="2" Value="Número identificativo del evento catastrófico." />
+          <ToolTip Language="1" Value="Code that identifies an catastrophic event." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+    </columns>
+    <childs>
+      <child name="Claim_case" Key="1" EntityType="Table" Identify="nClaim,nCase_num,nDeman_type" PageSize="10" DetailView="Card">
+        <captions>
+          <caption Language="2" Value="Caso " />
+          <caption Language="1" Value="Case" />
+        </captions>
+        <QueryStatements>
+          <RetrieveAll>SELECT CLAIM_CASE.ROWID AS RECORDID, CLAIM_CASE.NCLAIM,CLAIM_CASE.NCASE_NUM,CLAIM_CASE.NDEMAN_TYPE, CLAIM_CASE.NCLAIM, CLAIM_CASE.NDEMAN_TYPE, CLAIM_CASE.NCASE_NUM, CLAIM_CASE.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_CASE.SSTACASE, TABLE1352.SDESCRIPT AS SSTACASEDESC, CLAIM_CASE.NNOTEDAMA FROM CLAIM_CASE LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_CASE.NDEMAN_TYPE LEFT JOIN TABLE135 TABLE1352 ON TABLE1352.SSTACLAIM = CLAIM_CASE.SSTACASE WHERE CLAIM_CASE.NCLAIM = {NCLAIM} ORDER BY CLAIM_CASE.NCLAIM, CLAIM_CASE.NCASE_NUM, CLAIM_CASE.NDEMAN_TYPE</RetrieveAll>
+          <AllParameters>{NCLAIM}</AllParameters>
+          <RetrieveByKey>SELECT CLAIM_CASE.ROWID AS RECORDID, CLAIM_CASE.NCLAIM,CLAIM_CASE.NCASE_NUM,CLAIM_CASE.NDEMAN_TYPE, CLAIM_CASE.NCLAIM, CLAIM_CASE.NDEMAN_TYPE, CLAIM_CASE.NCASE_NUM, CLAIM_CASE.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_CASE.SSTACASE, TABLE1352.SDESCRIPT AS SSTACASEDESC, CLAIM_CASE.NNOTEDAMA FROM CLAIM_CASE LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_CASE.NDEMAN_TYPE LEFT JOIN TABLE135 TABLE1352 ON TABLE1352.SSTACLAIM = CLAIM_CASE.SSTACASE WHERE CLAIM_CASE.NCLAIM = {NCLAIM} AND CLAIM_CASE.NCASE_NUM = {NCASE_NUM} AND CLAIM_CASE.NDEMAN_TYPE = {NDEMAN_TYPE}</RetrieveByKey>
+          <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</KeyParameters>
+          <IsExist>SELECT COUNT(*) FROM CLAIM_CASE WHERE CLAIM_CASE.NCLAIM = {NCLAIM}</IsExist>
+          <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE</ParameterToChilds>
+        </QueryStatements>
+        <Parameters />
+        <pluralcaptions>
+          <pluralcaption Language="2" Value="Casos" />
+          <pluralcaption Language="1" Value="Cases" />
+        </pluralcaptions>
+        <columns>
+          <columnquery name="Claim_case.nCase_num" xmlType="xmlNumeric" precision="5" ShowDecimalSymbol="false" Visible="true">
+            <captions>
+              <caption Language="2" Value="Número " />
+              <caption Language="1" Value="Case" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" />
+              <ToolTip Language="2" />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Claim_case.nDeman_type" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Tipo de Reclamo" />
+              <caption Language="1" Value="Type" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" />
+            </ToolTips>
+            <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Claim_case.sStaCase" xmlType="xmlChar" Visible="true">
+            <captions>
+              <caption Language="2" Value="Estado " />
+              <caption Language="1" Value="Status" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" />
+              <ToolTip Language="2" />
+            </ToolTips>
+            <ColumnSource RelationshipTable="TABLE135" RelationshipColumns="SSTACLAIM" Columns="SSTACASE" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Claim_case.nNoteDama" xmlType="xmlNumeric" precision="10" Visible="true">
+            <captions>
+              <caption Language="2" Value="Número de Nota" />
+              <caption Language="1" Value="Note ID" />
+            </captions>
+            <ToolTips />
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+        </columns>
+        <childs>
+          <child name="Cl_cover" Key="2" EntityType="Table" Identify="nCase_num,nModulec,nCover" ParentRelationshipList="CLAIM_CASE\CLAIM" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Cobertura afectada" />
+              <caption Language="1" Value="Coverage" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT DISTINCT CL_COVER.ROWID AS RECORDID, CL_COVER.NCLAIM,CL_COVER.NCASE_NUM,CL_COVER.NDEMAN_TYPE,CL_COVER.NMODULEC,CL_COVER.NCOVER,CL_COVER.NCURRENCY,CL_COVER.SCLIENT, CL_COVER.NCASE_NUM, CL_COVER.NMODULEC, CL_COVER.NCOVER, CL_COVER.SCLIENT, CLIENT1.SCLIENAME AS SCLIENTDESC, CL_COVER.NDEMAN_TYPE, TABLE6922.SDESCRIPT AS NDEMAN_TYPEDESC, CL_COVER.NDAMPROF, CL_COVER.SRESERVSTAT, CL_COVER.NRESERVE, CL_COVER.NREC_AMOUNT, CL_COVER.NPAY_AMOUNT, CL_COVER.NLOC_COS_RE, CL_COVER.SFRANTYPE, TABLE643.SDESCRIPT AS SFRANTYPEDESC, CL_COVER.NFRA_AMOUNT, CL_COVER.NCURRENCY, TABLE114.SDESCRIPT AS NCURRENCYDESC FROM CL_COVER LEFT JOIN CLIENT CLIENT1 ON CLIENT1.SCLIENT = CL_COVER.SCLIENT LEFT JOIN TABLE692 TABLE6922 ON TABLE6922.NDEMAN_TYPE = CL_COVER.NDEMAN_TYPE LEFT JOIN TABLE64 TABLE643 ON TABLE643.SFRANTYPE = CL_COVER.SFRANTYPE LEFT JOIN TABLE11 TABLE114 ON TABLE114.NCODIGINT = CL_COVER.NCURRENCY LEFT JOIN CLAIM_CASE CLAIM_CASE5 ON CLAIM_CASE5.NCLAIM = CL_COVER.NCLAIM AND CLAIM_CASE5.NCASE_NUM = CL_COVER.NCASE_NUM AND CLAIM_CASE5.NDEMAN_TYPE = CL_COVER.NDEMAN_TYPE LEFT JOIN CLAIM CLAIM6 ON CLAIM6.NCLAIM = CLAIM_CASE5.NCLAIM WHERE CL_COVER.NCLAIM = {NCLAIM} AND CL_COVER.NCASE_NUM = {NCASE_NUM} AND CL_COVER.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CL_COVER.NCLAIM, CL_COVER.NCASE_NUM, CL_COVER.NDEMAN_TYPE, CL_COVER.NMODULEC, CL_COVER.NCOVER, CL_COVER.NCURRENCY, CL_COVER.SCLIENT</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT DISTINCT CL_COVER.ROWID AS RECORDID, CL_COVER.NCLAIM,CL_COVER.NCASE_NUM,CL_COVER.NDEMAN_TYPE,CL_COVER.NMODULEC,CL_COVER.NCOVER,CL_COVER.NCURRENCY,CL_COVER.SCLIENT, CL_COVER.NCASE_NUM, CL_COVER.NMODULEC, CL_COVER.NCOVER, CL_COVER.SCLIENT, CLIENT1.SCLIENAME AS SCLIENTDESC, CL_COVER.NDEMAN_TYPE, TABLE6922.SDESCRIPT AS NDEMAN_TYPEDESC, CL_COVER.NDAMPROF, CL_COVER.SRESERVSTAT, CL_COVER.NRESERVE, CL_COVER.NREC_AMOUNT, CL_COVER.NPAY_AMOUNT, CL_COVER.NLOC_COS_RE, CL_COVER.SFRANTYPE, TABLE643.SDESCRIPT AS SFRANTYPEDESC, CL_COVER.NFRA_AMOUNT, CL_COVER.NCURRENCY, TABLE114.SDESCRIPT AS NCURRENCYDESC FROM CL_COVER LEFT JOIN CLIENT CLIENT1 ON CLIENT1.SCLIENT = CL_COVER.SCLIENT LEFT JOIN TABLE692 TABLE6922 ON TABLE6922.NDEMAN_TYPE = CL_COVER.NDEMAN_TYPE LEFT JOIN TABLE64 TABLE643 ON TABLE643.SFRANTYPE = CL_COVER.SFRANTYPE LEFT JOIN TABLE11 TABLE114 ON TABLE114.NCODIGINT = CL_COVER.NCURRENCY LEFT JOIN CLAIM_CASE CLAIM_CASE5 ON CLAIM_CASE5.NCLAIM = CL_COVER.NCLAIM AND CLAIM_CASE5.NCASE_NUM = CL_COVER.NCASE_NUM AND CLAIM_CASE5.NDEMAN_TYPE = CL_COVER.NDEMAN_TYPE LEFT JOIN CLAIM CLAIM6 ON CLAIM6.NCLAIM = CLAIM_CASE5.NCLAIM WHERE CL_COVER.NCLAIM = {NCLAIM} AND CL_COVER.NCASE_NUM = {NCASE_NUM} AND CL_COVER.NDEMAN_TYPE = {NDEMAN_TYPE} AND CL_COVER.NMODULEC = {NMODULEC} AND CL_COVER.NCOVER = {NCOVER} AND CL_COVER.NCURRENCY = {NCURRENCY} AND CL_COVER.SCLIENT = '{SCLIENT}'</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},{NMODULEC},{NCOVER},{NCURRENCY},{SCLIENT}</KeyParameters>
+              <IsExist>SELECT DISTINCT COUNT(*) FROM CL_COVER LEFT JOIN CLAIM_CASE CLAIM_CASE1 ON CLAIM_CASE1.NCLAIM = CL_COVER.NCLAIM AND CLAIM_CASE1.NCASE_NUM = CL_COVER.NCASE_NUM AND CLAIM_CASE1.NDEMAN_TYPE = CL_COVER.NDEMAN_TYPE LEFT JOIN CLAIM CLAIM2 ON CLAIM2.NCLAIM = CLAIM_CASE1.NCLAIM WHERE CL_COVER.NCLAIM = {NCLAIM} AND CL_COVER.NCASE_NUM = {NCASE_NUM} AND CL_COVER.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE,NMODULEC,NCOVER,NCURRENCY,SCLIENT</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Coberturas afectadas" />
+              <pluralcaption Language="1" Value="Coverages" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="Cl_cover.nCase_num" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Caso" />
+                  <caption Language="1" Value="Case" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nModulec" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Módulo" />
+                  <caption Language="1" Value="Module" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nCover" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Cobertura" />
+                  <caption Language="1" Value="Coverage" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipTable="GCV_COVERAGEDESCRIPTION" RelationshipColumns="NBRANCH,NPRODUCT,NCOVER" Columns="CLAIM.NBRANCH,CLAIM.NPRODUCT,CL_COVER.NCOVER" RelationshipList="CLAIM_CASE\CLAIM" Description="SDESCRIPT" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.sClient" xmlType="xmlChar" Style="Client" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Cliente" />
+                  <caption Language="1" Value="Client" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nDeman_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Reclamo" />
+                  <caption Language="1" Value="Claim Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nDamProf" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Estimado Profesional" />
+                  <caption Language="1" Value="Adjuster Estimate" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.sReservstat" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Estado de Reserva" />
+                  <caption Language="1" Value="Reserve Status" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nReserve" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Reserva" />
+                  <caption Language="1" Value="Reserve" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nRec_amount" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Monto Recuperado" />
+                  <caption Language="1" Value="Recovered Amount" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nPay_amount" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Monto Pagado de la Reserva" />
+                  <caption Language="1" Value="Amount Already Paid" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nLoc_cos_re" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Total de Gastos de Recuperación" />
+                  <caption Language="1" Value="Total Recovery Expenses" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.sFrantype" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Franquicia o Deducible" />
+                  <caption Language="1" Value="Franchise or Deductible" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE64" RelationshipColumns="SFRANTYPE" Columns="SFRANTYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nFra_amount" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Monto de Franquicia o Deducible" />
+                  <caption Language="1" Value="Franchise or Deductible Amount" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Cl_cover.nCurrency" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Moneda" />
+                  <caption Language="1" Value="Currency" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE11" RelationshipColumns="NCODIGINT" Columns="NCURRENCY" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="nClaim,nCase_num,nDeman_type" Columns="nClaim,nCase_num,nDeman_type" RelationshipList="CLAIM_CASE\CLAIM" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Coberturas asociadas a un siniestro." />
+              <Remark Language="1" Value="Coverages related with a  claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="Claim_attm" Key="3" isHistorical="true" EntityType="Table" Identify="nCase_num,nDeman_type" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Atención Médica" />
+              <caption Language="1" Value="Health" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM_ATTM.ROWID AS RECORDID, CLAIM_ATTM.NCLAIM,CLAIM_ATTM.NCASE_NUM,CLAIM_ATTM.NDEMAN_TYPE,CLAIM_ATTM.DEFFECDATE, CLAIM_ATTM.NCASE_NUM, CLAIM_ATTM.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_ATTM.SCLIENT, CLIENT2.SCLIENAME AS SCLIENTDESC, CLAIM_ATTM.NSERVICE, CLAIM_ATTM.SILLNESS, TAB_AM_ILL3.SDESCRIPT AS SILLNESSDESC, CLAIM_ATTM.SCLIENTPROF, CLIENT4.SCLIENAME AS SCLIENTPROFDESC FROM CLAIM_ATTM LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_ATTM.NDEMAN_TYPE LEFT JOIN CLIENT CLIENT2 ON CLIENT2.SCLIENT = CLAIM_ATTM.SCLIENT LEFT JOIN TAB_AM_ILL TAB_AM_ILL3 ON TAB_AM_ILL3.SILLNESS = CLAIM_ATTM.SILLNESS LEFT JOIN CLIENT CLIENT4 ON CLIENT4.SCLIENT = CLAIM_ATTM.SCLIENT WHERE CLAIM_ATTM.NCLAIM = {NCLAIM} AND CLAIM_ATTM.NCASE_NUM = {NCASE_NUM} AND CLAIM_ATTM.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIM_ATTM.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (CLAIM_ATTM.DNULLDATE IS NULL OR CLAIM_ATTM.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]') ORDER BY CLAIM_ATTM.NCLAIM, CLAIM_ATTM.NCASE_NUM, CLAIM_ATTM.NDEMAN_TYPE, CLAIM_ATTM.DEFFECDATE</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},[RECORDEFFECTIVEDATE]</AllParameters>
+              <RetrieveByKey>SELECT CLAIM_ATTM.ROWID AS RECORDID, CLAIM_ATTM.NCLAIM,CLAIM_ATTM.NCASE_NUM,CLAIM_ATTM.NDEMAN_TYPE,CLAIM_ATTM.DEFFECDATE, CLAIM_ATTM.NCASE_NUM, CLAIM_ATTM.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_ATTM.SCLIENT, CLIENT2.SCLIENAME AS SCLIENTDESC, CLAIM_ATTM.NSERVICE, CLAIM_ATTM.SILLNESS, TAB_AM_ILL3.SDESCRIPT AS SILLNESSDESC, CLAIM_ATTM.SCLIENTPROF, CLIENT4.SCLIENAME AS SCLIENTPROFDESC FROM CLAIM_ATTM LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_ATTM.NDEMAN_TYPE LEFT JOIN CLIENT CLIENT2 ON CLIENT2.SCLIENT = CLAIM_ATTM.SCLIENT LEFT JOIN TAB_AM_ILL TAB_AM_ILL3 ON TAB_AM_ILL3.SILLNESS = CLAIM_ATTM.SILLNESS LEFT JOIN CLIENT CLIENT4 ON CLIENT4.SCLIENT = CLAIM_ATTM.SCLIENT WHERE CLAIM_ATTM.NCLAIM = {NCLAIM} AND CLAIM_ATTM.NCASE_NUM = {NCASE_NUM} AND CLAIM_ATTM.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIM_ATTM.DEFFECDATE = '{DEFFECDATE:D}' AND CLAIM_ATTM.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (CLAIM_ATTM.DNULLDATE IS NULL OR CLAIM_ATTM.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]')</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},{DEFFECDATE:D},[RECORDEFFECTIVEDATE]</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM_ATTM WHERE CLAIM_ATTM.NCLAIM = {NCLAIM} AND CLAIM_ATTM.NCASE_NUM = {NCASE_NUM} AND CLAIM_ATTM.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIM_ATTM.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (CLAIM_ATTM.DNULLDATE IS NULL OR CLAIM_ATTM.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]')</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE,DEFFECDATE:D</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Atención Médica" />
+              <pluralcaption Language="1" Value="Health" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="Claim_attm.nCase_num" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Caso" />
+                  <caption Language="1" Value="Case" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                  <ToolTip Language="2" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_attm.nDeman_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Reclamo" />
+                  <caption Language="1" Value="Claim Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_attm.sClient" xmlType="xmlChar" Style="Client" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Código de Cliente" />
+                  <caption Language="1" Value="Client " />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_attm.nService" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Servicio" />
+                  <caption Language="1" Value="Service" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_attm.sIllness" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Enfermedad" />
+                  <caption Language="1" Value="Illness" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TAB_AM_ILL" RelationshipColumns="SILLNESS" Columns="SILLNESS" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_attm.sClientProf" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Código de Cliente del Médico" />
+                  <caption Language="1" Value="Medical Doctor Client ID" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="nClaim,nCase_num,nDeman_type" Columns="nClaim,nCase_num,nDeman_type" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Datos de siniestros de Atención Médica." />
+              <Remark Language="1" Value="Information of medical claims (health)." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="Claim_auto" Key="4" EntityType="Table" Identify="nCase_num,nDeman_type" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Auto " />
+              <caption Language="1" Value="Automobile" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM_AUTO.ROWID AS RECORDID, CLAIM_AUTO.NCLAIM,CLAIM_AUTO.NCASE_NUM,CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NCASE_NUM, CLAIM_AUTO.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, DECODE(CLAIM_AUTO.SALCOHOLIC, '1', 1, '2', 0, NULL, 0) AS SALCOHOLIC, DECODE(CLAIM_AUTO.SPOLICEDEM, '1', 1, '2', 0, NULL, 0) AS SPOLICEDEM, CLAIM_AUTO.NINFRACTION, CLAIM_AUTO.NAUTO_QUANT, CLAIM_AUTO.NNOTENUM FROM CLAIM_AUTO LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_AUTO.NDEMAN_TYPE WHERE CLAIM_AUTO.NCLAIM = {NCLAIM} AND CLAIM_AUTO.NCASE_NUM = {NCASE_NUM} AND CLAIM_AUTO.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CLAIM_AUTO.NCLAIM, CLAIM_AUTO.NCASE_NUM, CLAIM_AUTO.NDEMAN_TYPE</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT CLAIM_AUTO.ROWID AS RECORDID, CLAIM_AUTO.NCLAIM,CLAIM_AUTO.NCASE_NUM,CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NCASE_NUM, CLAIM_AUTO.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, DECODE(CLAIM_AUTO.SALCOHOLIC, '1', 1, '2', 0, NULL, 0) AS SALCOHOLIC, DECODE(CLAIM_AUTO.SPOLICEDEM, '1', 1, '2', 0, NULL, 0) AS SPOLICEDEM, CLAIM_AUTO.NINFRACTION, CLAIM_AUTO.NAUTO_QUANT, CLAIM_AUTO.NNOTENUM FROM CLAIM_AUTO LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_AUTO.NDEMAN_TYPE WHERE CLAIM_AUTO.NCLAIM = {NCLAIM} AND CLAIM_AUTO.NCASE_NUM = {NCASE_NUM} AND CLAIM_AUTO.NDEMAN_TYPE = {NDEMAN_TYPE}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM_AUTO WHERE CLAIM_AUTO.NCLAIM = {NCLAIM} AND CLAIM_AUTO.NCASE_NUM = {NCASE_NUM} AND CLAIM_AUTO.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Auto" />
+              <pluralcaption Language="1" Value="Automobile " />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="Claim_auto.nCase_num" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Caso" />
+                  <caption Language="1" Value="Case" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                  <ToolTip Language="2" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_auto.nDeman_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Reclamo" />
+                  <caption Language="1" Value="Claim Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_auto.sAlcoholic" xmlType="xmlChar" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Exceso de Alcohol" />
+                  <caption Language="1" Value="DUII ndicator" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="Claim_auto.sPoliceDem" xmlType="xmlChar" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Denuncia Policial" />
+                  <caption Language="1" Value="Police Report Indicator" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="Claim_auto.nInfraction" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Indicador de Infracción" />
+                  <caption Language="1" Value="Traffic Ofense" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_auto.nAuto_quant" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Número de Vehículos Envueltos" />
+                  <caption Language="1" Value="Number of Vehicles" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_auto.nNotenum" xmlType="xmlNumeric" SummaryVisible="false" precision="10" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Número de Nota" />
+                  <caption Language="1" Value="Note ID" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="nClaim,nCase_num,nDeman_type" Columns="nClaim,nCase_num,nDeman_type" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Datos de siniestros de automóvil." />
+              <Remark Language="1" Value="Data on automobile claims." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="CLAIM_DAMA" Key="5" EntityType="Table" Identify="NCASE_NUM,NDEMAN_TYPE,NDAMAGE_COD" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Daños de Auto" />
+              <caption Language="1" Value="Damages in Claim" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM_DAMA.ROWID AS RECORDID, CLAIM_DAMA.NCLAIM,CLAIM_DAMA.NCASE_NUM,CLAIM_DAMA.NDEMAN_TYPE,CLAIM_DAMA.NDAMAGE_COD, CLAIM_DAMA.NDAMAGE_COD, CLAIM_DAMA.NDAMAGE_COD, TABLE55791.SDESCRIPT AS NDAMAGE_CODDESC, CLAIM_DAMA.NMAG_DAM, TABLE56742.SDESCRIPT AS NMAG_DAMDESC, CLAIM_DAMA.NAMOUNT FROM CLAIM_DAMA LEFT JOIN TABLE5579 TABLE55791 ON TABLE55791.NAUTO_PART = CLAIM_DAMA.NDAMAGE_COD LEFT JOIN TABLE5674 TABLE56742 ON TABLE56742.NMAG_DAM = CLAIM_DAMA.NMAG_DAM WHERE CLAIM_DAMA.NCLAIM = {NCLAIM} AND CLAIM_DAMA.NCASE_NUM = {NCASE_NUM} AND CLAIM_DAMA.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CLAIM_DAMA.NCLAIM, CLAIM_DAMA.NCASE_NUM, CLAIM_DAMA.NDEMAN_TYPE, CLAIM_DAMA.NDAMAGE_COD</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT CLAIM_DAMA.ROWID AS RECORDID, CLAIM_DAMA.NCLAIM,CLAIM_DAMA.NCASE_NUM,CLAIM_DAMA.NDEMAN_TYPE,CLAIM_DAMA.NDAMAGE_COD, CLAIM_DAMA.NDAMAGE_COD, CLAIM_DAMA.NDAMAGE_COD, TABLE55791.SDESCRIPT AS NDAMAGE_CODDESC, CLAIM_DAMA.NMAG_DAM, TABLE56742.SDESCRIPT AS NMAG_DAMDESC, CLAIM_DAMA.NAMOUNT FROM CLAIM_DAMA LEFT JOIN TABLE5579 TABLE55791 ON TABLE55791.NAUTO_PART = CLAIM_DAMA.NDAMAGE_COD LEFT JOIN TABLE5674 TABLE56742 ON TABLE56742.NMAG_DAM = CLAIM_DAMA.NMAG_DAM WHERE CLAIM_DAMA.NCLAIM = {NCLAIM} AND CLAIM_DAMA.NCASE_NUM = {NCASE_NUM} AND CLAIM_DAMA.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIM_DAMA.NDAMAGE_COD = {NDAMAGE_COD}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},{NDAMAGE_COD}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM_DAMA WHERE CLAIM_DAMA.NCLAIM = {NCLAIM} AND CLAIM_DAMA.NCASE_NUM = {NCASE_NUM} AND CLAIM_DAMA.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE,NDAMAGE_COD</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Daños de Auto" />
+              <pluralcaption Language="1" Value="Damages in Claims" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="CLAIM_DAMA.NDAMAGE_COD" xmlType="xmlNumeric" precision="10" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Repuesto" />
+                  <caption Language="1" Value="Spare Part" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE5579" RelationshipColumns="NAUTO_PART" Columns="NDAMAGE_COD" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_DAMA.NMAG_DAM" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Magnitud del Daño" />
+                  <caption Language="1" Value="Magnitude of Damages" />
+                </captions>
+                <ToolTips />
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE5674" RelationshipColumns="NMAG_DAM" Columns="NMAG_DAM" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_DAMA.NAMOUNT" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Monto aproximado" />
+                  <caption Language="1" Value="NAMOUNT" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" Columns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" />
+            <titles>
+              <title Language="2" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Daños ocurridos al riesgos asegurado (caso) en el siniestro." />
+              <Remark Language="1" Value="Damages occurred to the insured risks in a claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="CLAIM_THIR" Key="6" EntityType="Table" Identify="NCASE_NUM,NDEMAN_TYPE" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Terceros de Auto" />
+              <caption Language="1" Value="Third Parties" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM_THIR.ROWID AS RECORDID, CLAIM_THIR.NCLAIM,CLAIM_THIR.NCASE_NUM,CLAIM_THIR.NDEMAN_TYPE, CLAIM_THIR.NDEMAN_TYPE, CLAIM_THIR.SLICENSE_TY, TABLE801.SDESCRIPT AS SLICENSE_TYDESC, CLAIM_THIR.SREGIST, CLAIM_THIR.SCHASSIS, CLAIM_THIR.SMOTOR, CLAIM_THIR.STHIR_POLIC, CLAIM_THIR.STHIR_CLAIM, DECODE(CLAIM_THIR.SRECOV_IND, '1', 1, '2', 0, NULL, 0) AS SRECOV_IND, CLAIM_THIR.NTHIR_COMP, CLAIM_THIR.NBLAME, TABLE2042.SDESCRIPT AS NBLAMEDESC FROM CLAIM_THIR LEFT JOIN TABLE80 TABLE801 ON TABLE801.SLICENSE_TY = CLAIM_THIR.SLICENSE_TY LEFT JOIN TABLE204 TABLE2042 ON TABLE2042.NBLAME = CLAIM_THIR.NBLAME WHERE CLAIM_THIR.NCLAIM = {NCLAIM} AND CLAIM_THIR.NCASE_NUM = {NCASE_NUM} AND CLAIM_THIR.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CLAIM_THIR.NCLAIM, CLAIM_THIR.NCASE_NUM, CLAIM_THIR.NDEMAN_TYPE</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT CLAIM_THIR.ROWID AS RECORDID, CLAIM_THIR.NCLAIM,CLAIM_THIR.NCASE_NUM,CLAIM_THIR.NDEMAN_TYPE, CLAIM_THIR.NDEMAN_TYPE, CLAIM_THIR.SLICENSE_TY, TABLE801.SDESCRIPT AS SLICENSE_TYDESC, CLAIM_THIR.SREGIST, CLAIM_THIR.SCHASSIS, CLAIM_THIR.SMOTOR, CLAIM_THIR.STHIR_POLIC, CLAIM_THIR.STHIR_CLAIM, DECODE(CLAIM_THIR.SRECOV_IND, '1', 1, '2', 0, NULL, 0) AS SRECOV_IND, CLAIM_THIR.NTHIR_COMP, CLAIM_THIR.NBLAME, TABLE2042.SDESCRIPT AS NBLAMEDESC FROM CLAIM_THIR LEFT JOIN TABLE80 TABLE801 ON TABLE801.SLICENSE_TY = CLAIM_THIR.SLICENSE_TY LEFT JOIN TABLE204 TABLE2042 ON TABLE2042.NBLAME = CLAIM_THIR.NBLAME WHERE CLAIM_THIR.NCLAIM = {NCLAIM} AND CLAIM_THIR.NCASE_NUM = {NCASE_NUM} AND CLAIM_THIR.NDEMAN_TYPE = {NDEMAN_TYPE}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM_THIR WHERE CLAIM_THIR.NCLAIM = {NCLAIM} AND CLAIM_THIR.NCASE_NUM = {NCASE_NUM} AND CLAIM_THIR.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Terceros de Autos" />
+              <pluralcaption Language="1" Value="Third Parties" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="CLAIM_THIR.SLICENSE_TY" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Matrícula" />
+                  <caption Language="1" Value="License Plate Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE80" RelationshipColumns="SLICENSE_TY" Columns="SLICENSE_TY" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.SREGIST" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Licencia" />
+                  <caption Language="1" Value="License Plate" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.SCHASSIS" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Chasis Tercero" />
+                  <caption Language="1" Value="Third Party Chassis" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.SMOTOR" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Serial del Motor" />
+                  <caption Language="1" Value="Engine Serial Number" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.STHIR_POLIC" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Número de Póliza en Asegurador del Tercero" />
+                  <caption Language="1" Value="Policy IDI nC arrier Covering The Third Party" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.STHIR_CLAIM" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Número de Siniestro en Asegurador del Tercero" />
+                  <caption Language="1" Value="Claim IDI nC arrier Covering The Third Party" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.SRECOV_IND" xmlType="xmlChar" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Posibilidad de Recobro" />
+                  <caption Language="1" Value="Possibility of Recovery" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.NTHIR_COMP" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Asegurador del Tercero" />
+                  <caption Language="1" Value="Carrier of Third Party" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM_THIR.NBLAME" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Culpabilidad" />
+                  <caption Language="1" Value="Fault" />
+                </captions>
+                <ToolTips />
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE204" RelationshipColumns="NBLAME" Columns="NBLAME" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" Columns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Terceros involucrados en siniestros de automóvil." />
+              <Remark Language="1" Value="third parties involved in automobile claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="Life_claim" Key="7" EntityType="Table" Identify="nCase_num,nDeman_type" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Vida" />
+              <caption Language="1" Value="Life" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT LIFE_CLAIM.ROWID AS RECORDID, LIFE_CLAIM.NCLAIM,LIFE_CLAIM.NCASE_NUM,LIFE_CLAIM.NDEMAN_TYPE, LIFE_CLAIM.NDEMAN_TYPE, LIFE_CLAIM.NCASE_NUM, LIFE_CLAIM.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, LIFE_CLAIM.NIN_LIF_TYP, TABLE2112.SDESCRIPT AS NIN_LIF_TYPDESC, LIFE_CLAIM.NCLA_LI_TYP, TABLE2103.SDESCRIPT AS NCLA_LI_TYPDESC, LIFE_CLAIM.NMONTH_AMOU, LIFE_CLAIM.DEND_DATE FROM LIFE_CLAIM LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = LIFE_CLAIM.NDEMAN_TYPE LEFT JOIN TABLE211 TABLE2112 ON TABLE2112.NIN_LIF_TYP = LIFE_CLAIM.NIN_LIF_TYP LEFT JOIN TABLE210 TABLE2103 ON TABLE2103.NCLA_LI_TYP = LIFE_CLAIM.NCLA_LI_TYP WHERE LIFE_CLAIM.NCLAIM = {NCLAIM} AND LIFE_CLAIM.NCASE_NUM = {NCASE_NUM} AND LIFE_CLAIM.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY LIFE_CLAIM.NCLAIM, LIFE_CLAIM.NCASE_NUM, LIFE_CLAIM.NDEMAN_TYPE</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT LIFE_CLAIM.ROWID AS RECORDID, LIFE_CLAIM.NCLAIM,LIFE_CLAIM.NCASE_NUM,LIFE_CLAIM.NDEMAN_TYPE, LIFE_CLAIM.NDEMAN_TYPE, LIFE_CLAIM.NCASE_NUM, LIFE_CLAIM.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, LIFE_CLAIM.NIN_LIF_TYP, TABLE2112.SDESCRIPT AS NIN_LIF_TYPDESC, LIFE_CLAIM.NCLA_LI_TYP, TABLE2103.SDESCRIPT AS NCLA_LI_TYPDESC, LIFE_CLAIM.NMONTH_AMOU, LIFE_CLAIM.DEND_DATE FROM LIFE_CLAIM LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = LIFE_CLAIM.NDEMAN_TYPE LEFT JOIN TABLE211 TABLE2112 ON TABLE2112.NIN_LIF_TYP = LIFE_CLAIM.NIN_LIF_TYP LEFT JOIN TABLE210 TABLE2103 ON TABLE2103.NCLA_LI_TYP = LIFE_CLAIM.NCLA_LI_TYP WHERE LIFE_CLAIM.NCLAIM = {NCLAIM} AND LIFE_CLAIM.NCASE_NUM = {NCASE_NUM} AND LIFE_CLAIM.NDEMAN_TYPE = {NDEMAN_TYPE}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM LIFE_CLAIM WHERE LIFE_CLAIM.NCLAIM = {NCLAIM} AND LIFE_CLAIM.NCASE_NUM = {NCASE_NUM} AND LIFE_CLAIM.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Vida" />
+              <pluralcaption Language="1" Value="Life " />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="Life_claim.nCase_num" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Número de Caso" />
+                  <caption Language="1" Value="Case" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Life_claim.nDeman_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Reclamo" />
+                  <caption Language="1" Value="Claim Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Life_claim.nIn_lif_typ" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Indemnización" />
+                  <caption Language="1" Value="Type of Indemnity" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE211" RelationshipColumns="NIN_LIF_TYP" Columns="NIN_LIF_TYP" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Life_claim.nCla_li_typ" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Siniestro de Vida" />
+                  <caption Language="1" Value="Claim Type of Life" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE210" RelationshipColumns="NCLA_LI_TYP" Columns="NCLA_LI_TYP" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Life_claim.nMonth_amou" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Pago Mensual" />
+                  <caption Language="1" Value="Monthly Payment" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Life_claim.dEnd_date" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Fecha Fin de Pagos" />
+                  <caption Language="1" Value="Ending Payment Date" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <datetimestyle Format="Date" />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="nClaim,nCase_num,nDeman_type" Columns="nClaim,nCase_num,nDeman_type" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Datos de siniestros de vida." />
+              <Remark Language="1" Value="Information of  claims of life." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="CLAIMBENEF" Key="8" EntityType="Table" Identify="NCASE_NUM,NDEMAN_TYPE,SCLIENT,NID" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Beneficiario" />
+              <caption Language="1" Value="Beneficiary" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIMBENEF.ROWID AS RECORDID, CLAIMBENEF.NCLAIM,CLAIMBENEF.NCASE_NUM,CLAIMBENEF.NDEMAN_TYPE,CLAIMBENEF.SCLIENT,CLAIMBENEF.NID, CLAIMBENEF.NID, CLAIMBENEF.NBENE_TYPE, TABLE1841.SDESCRIPT AS NBENE_TYPEDESC, CLAIMBENEF.SCLIENT, CLIENT2.SLEGALNAME AS SCLIENTDESC, CLAIMBENEF.NRELATION, TABLE153.SDESCRIPT AS NRELATIONDESC, CLAIMBENEF.NPARTICIP, DECODE(CLAIMBENEF.SDEMANDANT, '1', 1, '2', 0, NULL, 0) AS SDEMANDANT, CLAIMBENEF.NOFFICE_PAY, TABLE94.SDESCRIPT AS NOFFICE_PAYDESC, CLAIMBENEF.SCLIENT_REP, CLIENT5.SCLIENAME AS SCLIENT_REPDESC FROM CLAIMBENEF LEFT JOIN TABLE184 TABLE1841 ON TABLE1841.NBENE_TYPE = CLAIMBENEF.NBENE_TYPE LEFT JOIN CLIENT CLIENT2 ON CLIENT2.SCLIENT = CLAIMBENEF.SCLIENT LEFT JOIN TABLE15 TABLE153 ON TABLE153.NRELASHIP = CLAIMBENEF.NRELATION LEFT JOIN TABLE9 TABLE94 ON TABLE94.NOFFICE = CLAIMBENEF.NOFFICE_PAY LEFT JOIN CLIENT CLIENT5 ON CLIENT5.SCLIENT = CLAIMBENEF.SCLIENT WHERE CLAIMBENEF.NCLAIM = {NCLAIM} AND CLAIMBENEF.NCASE_NUM = {NCASE_NUM} AND CLAIMBENEF.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CLAIMBENEF.NCLAIM, CLAIMBENEF.NCASE_NUM, CLAIMBENEF.NDEMAN_TYPE, CLAIMBENEF.SCLIENT, CLAIMBENEF.NID</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT CLAIMBENEF.ROWID AS RECORDID, CLAIMBENEF.NCLAIM,CLAIMBENEF.NCASE_NUM,CLAIMBENEF.NDEMAN_TYPE,CLAIMBENEF.SCLIENT,CLAIMBENEF.NID, CLAIMBENEF.NID, CLAIMBENEF.NBENE_TYPE, TABLE1841.SDESCRIPT AS NBENE_TYPEDESC, CLAIMBENEF.SCLIENT, CLIENT2.SLEGALNAME AS SCLIENTDESC, CLAIMBENEF.NRELATION, TABLE153.SDESCRIPT AS NRELATIONDESC, CLAIMBENEF.NPARTICIP, DECODE(CLAIMBENEF.SDEMANDANT, '1', 1, '2', 0, NULL, 0) AS SDEMANDANT, CLAIMBENEF.NOFFICE_PAY, TABLE94.SDESCRIPT AS NOFFICE_PAYDESC, CLAIMBENEF.SCLIENT_REP, CLIENT5.SCLIENAME AS SCLIENT_REPDESC FROM CLAIMBENEF LEFT JOIN TABLE184 TABLE1841 ON TABLE1841.NBENE_TYPE = CLAIMBENEF.NBENE_TYPE LEFT JOIN CLIENT CLIENT2 ON CLIENT2.SCLIENT = CLAIMBENEF.SCLIENT LEFT JOIN TABLE15 TABLE153 ON TABLE153.NRELASHIP = CLAIMBENEF.NRELATION LEFT JOIN TABLE9 TABLE94 ON TABLE94.NOFFICE = CLAIMBENEF.NOFFICE_PAY LEFT JOIN CLIENT CLIENT5 ON CLIENT5.SCLIENT = CLAIMBENEF.SCLIENT WHERE CLAIMBENEF.NCLAIM = {NCLAIM} AND CLAIMBENEF.NCASE_NUM = {NCASE_NUM} AND CLAIMBENEF.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIMBENEF.SCLIENT = '{SCLIENT}' AND CLAIMBENEF.NID = {NID}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},{SCLIENT},{NID}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIMBENEF WHERE CLAIMBENEF.NCLAIM = {NCLAIM} AND CLAIMBENEF.NCASE_NUM = {NCASE_NUM} AND CLAIMBENEF.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE,SCLIENT,NID</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Beneficiarios" />
+              <pluralcaption Language="1" Value="Beneficiaries" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="CLAIMBENEF.NBENE_TYPE" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Beneficiario" />
+                  <caption Language="1" Value="Beneficiary Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE184" RelationshipColumns="NBENE_TYPE" Columns="NBENE_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.SCLIENT" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Beneficiario" />
+                  <caption Language="1" Value="Beneficiary" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                  <ToolTip Language="2" />
+                </ToolTips>
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SLEGALNAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.NRELATION" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Nexo" />
+                  <caption Language="1" Value="Relationship" />
+                </captions>
+                <ToolTips />
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE15" RelationshipColumns="NRELASHIP" Columns="NRELATION" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.NPARTICIP" xmlType="xmlNumeric" scale="2" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Porcentaje de Participación" />
+                  <caption Language="1" Value="Percentage Share" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.SDEMANDANT" xmlType="xmlChar" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Indicador de Reclamante" />
+                  <caption Language="1" Value="Claimant Indicator" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.NOFFICE_PAY" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Enviar Cheque a Sucursal" />
+                  <caption Language="1" Value="Send Check to This Branch Office" />
+                </captions>
+                <ToolTips />
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE9" RelationshipColumns="NOFFICE" Columns="NOFFICE_PAY" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIMBENEF.SCLIENT_REP" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Representante Legal" />
+                  <caption Language="1" Value="Guardian Client ID" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" Columns="NCLAIM,NCASE_NUM,NDEMAN_TYPE" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Beneficiario relacionado  con el siniestro" />
+              <Remark Language="1" Value="Client roles associated with a claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+          <child name="Claim_his" Key="9" EntityType="Table" Identify="nCase_num,nDeman_type,nTransac" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="2" Value="Historia " />
+              <caption Language="1" Value="History" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM_HIS.ROWID AS RECORDID, CLAIM_HIS.NCLAIM,CLAIM_HIS.NCASE_NUM,CLAIM_HIS.NDEMAN_TYPE,CLAIM_HIS.NTRANSAC, CLAIM_HIS.NTRANSAC, CLAIM_HIS.NCASE_NUM, CLAIM_HIS.DOPERDATE, CLAIM_HIS.NTRANSAC, CLAIM_HIS.SCLIENT, CLIENT1.SCLIENAME AS SCLIENTDESC, CLAIM_HIS.NOPER_TYPE, TABLE1402.SDESCRIPT AS NOPER_TYPEDESC, CLAIM_HIS.NPAY_TYPE, TABLE1993.SDESCRIPT AS NPAY_TYPEDESC, CLAIM_HIS.NPAY_FORM, TABLE1384.SDESCRIPT AS NPAY_FORMDESC, CLAIM_HIS.NSERV_ORDER, DECODE(CLAIM_HIS.SIND_ORDER, '1', 1, '2', 0, NULL, 0) AS SIND_ORDER, CLAIM_HIS.SORDER_NUM, DECODE(CLAIM_HIS.SEXECUTED, '1', 1, '2', 0, NULL, 0) AS SEXECUTED, CLAIM_HIS.NAMOUNT, CLAIM_HIS.NCURRENCY, TABLE115.SDESCRIPT AS NCURRENCYDESC FROM CLAIM_HIS LEFT JOIN CLIENT CLIENT1 ON CLIENT1.SCLIENT = CLAIM_HIS.SCLIENT LEFT JOIN TABLE140 TABLE1402 ON TABLE1402.NOPER_TYPE = CLAIM_HIS.NOPER_TYPE LEFT JOIN TABLE199 TABLE1993 ON TABLE1993.NPAY_TYPE = CLAIM_HIS.NPAY_TYPE LEFT JOIN TABLE138 TABLE1384 ON TABLE1384.NPAY_FORM = CLAIM_HIS.NPAY_FORM LEFT JOIN TABLE11 TABLE115 ON TABLE115.NCODIGINT = CLAIM_HIS.NCURRENCY WHERE CLAIM_HIS.NCLAIM = {NCLAIM} AND CLAIM_HIS.NCASE_NUM = {NCASE_NUM} AND CLAIM_HIS.NDEMAN_TYPE = {NDEMAN_TYPE} ORDER BY CLAIM_HIS.NCLAIM, CLAIM_HIS.NCASE_NUM, CLAIM_HIS.NDEMAN_TYPE, CLAIM_HIS.NTRANSAC</RetrieveAll>
+              <AllParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</AllParameters>
+              <RetrieveByKey>SELECT CLAIM_HIS.ROWID AS RECORDID, CLAIM_HIS.NCLAIM,CLAIM_HIS.NCASE_NUM,CLAIM_HIS.NDEMAN_TYPE,CLAIM_HIS.NTRANSAC, CLAIM_HIS.NTRANSAC, CLAIM_HIS.NCASE_NUM, CLAIM_HIS.DOPERDATE, CLAIM_HIS.NTRANSAC, CLAIM_HIS.SCLIENT, CLIENT1.SCLIENAME AS SCLIENTDESC, CLAIM_HIS.NOPER_TYPE, TABLE1402.SDESCRIPT AS NOPER_TYPEDESC, CLAIM_HIS.NPAY_TYPE, TABLE1993.SDESCRIPT AS NPAY_TYPEDESC, CLAIM_HIS.NPAY_FORM, TABLE1384.SDESCRIPT AS NPAY_FORMDESC, CLAIM_HIS.NSERV_ORDER, DECODE(CLAIM_HIS.SIND_ORDER, '1', 1, '2', 0, NULL, 0) AS SIND_ORDER, CLAIM_HIS.SORDER_NUM, DECODE(CLAIM_HIS.SEXECUTED, '1', 1, '2', 0, NULL, 0) AS SEXECUTED, CLAIM_HIS.NAMOUNT, CLAIM_HIS.NCURRENCY, TABLE115.SDESCRIPT AS NCURRENCYDESC FROM CLAIM_HIS LEFT JOIN CLIENT CLIENT1 ON CLIENT1.SCLIENT = CLAIM_HIS.SCLIENT LEFT JOIN TABLE140 TABLE1402 ON TABLE1402.NOPER_TYPE = CLAIM_HIS.NOPER_TYPE LEFT JOIN TABLE199 TABLE1993 ON TABLE1993.NPAY_TYPE = CLAIM_HIS.NPAY_TYPE LEFT JOIN TABLE138 TABLE1384 ON TABLE1384.NPAY_FORM = CLAIM_HIS.NPAY_FORM LEFT JOIN TABLE11 TABLE115 ON TABLE115.NCODIGINT = CLAIM_HIS.NCURRENCY WHERE CLAIM_HIS.NCLAIM = {NCLAIM} AND CLAIM_HIS.NCASE_NUM = {NCASE_NUM} AND CLAIM_HIS.NDEMAN_TYPE = {NDEMAN_TYPE} AND CLAIM_HIS.NTRANSAC = {NTRANSAC}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE},{NTRANSAC}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM_HIS WHERE CLAIM_HIS.NCLAIM = {NCLAIM} AND CLAIM_HIS.NCASE_NUM = {NCASE_NUM} AND CLAIM_HIS.NDEMAN_TYPE = {NDEMAN_TYPE}</IsExist>
+              <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE,NTRANSAC</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="2" Value="Historia del Siniestro" />
+              <pluralcaption Language="1" Value="History" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="Claim_his.nCase_num" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Caso" />
+                  <caption Language="1" Value="Case" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.dOperdate" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Fecha" />
+                  <caption Language="1" Value="Transaction Date" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <datetimestyle Format="Date" />
+              </columnquery>
+              <columnquery name="Claim_his.nTransac" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Movimiento" />
+                  <caption Language="1" Value="Claim Entry Number" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.sClient" xmlType="xmlChar" Style="Client" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Cliente" />
+                  <caption Language="1" Value="Client Code" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.nOper_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Operación" />
+                  <caption Language="1" Value="Operation Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE140" RelationshipColumns="NOPER_TYPE" Columns="NOPER_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.nPay_type" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Tipo de Pago" />
+                  <caption Language="1" Value="Payment Type" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE199" RelationshipColumns="NPAY_TYPE" Columns="NPAY_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.nPay_form" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Forma de Pago" />
+                  <caption Language="1" Value="Claim Payment Method" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE138" RelationshipColumns="NPAY_FORM" Columns="NPAY_FORM" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.nServ_order" xmlType="xmlNumeric" SummaryVisible="false" precision="10" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Orden de Servicio" />
+                  <caption Language="1" Value="Service Order" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.sInd_order" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Orden de Pago" />
+                  <caption Language="1" Value="Payment Order Indicator" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="Claim_his.sOrder_num" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Orden de Pago/Cheque" />
+                  <caption Language="1" Value="Payment Order or Check Number" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="2" />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.sExecuted" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Pago Realizado" />
+                  <caption Language="1" Value="Paid" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <checkboxstyle FalseValue="2" TrueValue="1" />
+              </columnquery>
+              <columnquery name="Claim_his.nAmount" xmlType="xmlNumeric" SummaryVisible="false" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Monto" />
+                  <caption Language="1" Value="Amount" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="Claim_his.nCurrency" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+                <captions>
+                  <caption Language="2" Value="Moneda" />
+                  <caption Language="1" Value="Currency" />
+                </captions>
+                <ToolTips />
+                <ColumnSource RelationshipTable="TABLE11" RelationshipColumns="NCODIGINT" Columns="NCURRENCY" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs />
+            <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim_case" RelationshipColumns="nClaim,nCase_num,nDeman_type" Columns="nClaim,nCase_num,nDeman_type" />
+            <titles>
+              <title Language="2" />
+              <title Language="1" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="2" Value="Historia del siniestro." />
+              <Remark Language="1" Value="History of the claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+            <StyleList />
+          </child>
+        </childs>
+        <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim" RelationshipColumns="nClaim" Columns="nClaim" />
+        <titles>
+          <title Language="2" />
+          <title Language="1" />
+        </titles>
+        <titlesQuery>
+          <titleQuery Language="2" />
+          <titleQuery Language="1" />
+        </titlesQuery>
+        <descriptionsQuery>
+          <descriptionQuery Language="2" />
+          <descriptionQuery Language="1" />
+        </descriptionsQuery>
+        <Remarks>
+          <Remark Language="2" Value="Casos asociados al siniestro." />
+          <Remark Language="1" Value="Cases associated with a claim." />
+        </Remarks>
+        <ContextMenu />
+        <ActionFilters />
+        <StyleList />
+      </child>
+      <child name="CHEQUES" Key="10" EntityType="Table" Identify="NREQUEST_NU,SCHEQUE,NCONSEC" PageSize="10">
+        <captions>
+          <caption Language="2" Value="Cheques" />
+          <caption Language="1" Value="Checks" />
+        </captions>
+        <QueryStatements>
+          <RetrieveAll>SELECT CHEQUES.ROWID AS RECORDID, CHEQUES.NREQUEST_NU,CHEQUES.SCHEQUE,CHEQUES.NCONSEC, CHEQUES.NREQUEST_NU, CHEQUES.NCONSEC, CHEQUES.SREQUEST_TY, TABLE1931.SDESCRIPT AS SREQUEST_TYDESC, CHEQUES.NREQUEST_NU, CHEQUES.SCHEQUE, CHEQUES.NCONCEPT, TABLE2932.SDESCRIPT AS NCONCEPTDESC, CHEQUES.NAMOUNT, CHEQUES.NCURRENCYPAY, CHEQUES.NSTA_CHEQUE, TABLE1873.SDESCRIPT AS NSTA_CHEQUEDESC, CHEQUES.DSTAT_DATE, CHEQUES.NOFFICEAGEN, TABLE55564.SDESCRIPT AS NOFFICEAGENDESC, CHEQUES.NAGENCY, CHEQUES.NTYPESUPPORT, TABLE55705.SDESCRIPT AS NTYPESUPPORTDESC, CHEQUES.NDOCSUPPORT, CHEQUES.SINTER_PAY, CLIENT6.SCLIENAME AS SINTER_PAYDESC, CHEQUES.NUSER_SOL, USERS7.SINITIALS AS NUSER_SOLDESC, CHEQUES.NQ_PAYS, CHEQUES.DNULLDATE, CHEQUES.DISSUE_DAT, CHEQUES.SDESCRIPT, CHEQUES.DDAT_PROPOS FROM CHEQUES LEFT JOIN TABLE193 TABLE1931 ON TABLE1931.SREQUEST_TY = CHEQUES.SREQUEST_TY LEFT JOIN TABLE293 TABLE2932 ON TABLE2932.NCONCEPT = CHEQUES.NCONCEPT LEFT JOIN TABLE187 TABLE1873 ON TABLE1873.NSTA_CHEQUE = CHEQUES.NSTA_CHEQUE LEFT JOIN TABLE5556 TABLE55564 ON TABLE55564.NOFFICEAGEN = CHEQUES.NOFFICEAGEN LEFT JOIN TABLE5570 TABLE55705 ON TABLE55705.NTYPESUPPORT = CHEQUES.NTYPESUPPORT LEFT JOIN CLIENT CLIENT6 ON CLIENT6.SCLIENT = CHEQUES.SCLIENT LEFT JOIN USERS USERS7 ON USERS7.NUSERCODE = CHEQUES.NUSERCODE WHERE CHEQUES.NCLAIM = {NCLAIM} ORDER BY CHEQUES.NREQUEST_NU, CHEQUES.SCHEQUE, CHEQUES.NCONSEC</RetrieveAll>
+          <AllParameters>{NCLAIM}</AllParameters>
+          <RetrieveByKey>SELECT CHEQUES.ROWID AS RECORDID, CHEQUES.NREQUEST_NU,CHEQUES.SCHEQUE,CHEQUES.NCONSEC, CHEQUES.NREQUEST_NU, CHEQUES.NCONSEC, CHEQUES.SREQUEST_TY, TABLE1931.SDESCRIPT AS SREQUEST_TYDESC, CHEQUES.NREQUEST_NU, CHEQUES.SCHEQUE, CHEQUES.NCONCEPT, TABLE2932.SDESCRIPT AS NCONCEPTDESC, CHEQUES.NAMOUNT, CHEQUES.NCURRENCYPAY, CHEQUES.NSTA_CHEQUE, TABLE1873.SDESCRIPT AS NSTA_CHEQUEDESC, CHEQUES.DSTAT_DATE, CHEQUES.NOFFICEAGEN, TABLE55564.SDESCRIPT AS NOFFICEAGENDESC, CHEQUES.NAGENCY, CHEQUES.NTYPESUPPORT, TABLE55705.SDESCRIPT AS NTYPESUPPORTDESC, CHEQUES.NDOCSUPPORT, CHEQUES.SINTER_PAY, CLIENT6.SCLIENAME AS SINTER_PAYDESC, CHEQUES.NUSER_SOL, USERS7.SINITIALS AS NUSER_SOLDESC, CHEQUES.NQ_PAYS, CHEQUES.DNULLDATE, CHEQUES.DISSUE_DAT, CHEQUES.SDESCRIPT, CHEQUES.DDAT_PROPOS FROM CHEQUES LEFT JOIN TABLE193 TABLE1931 ON TABLE1931.SREQUEST_TY = CHEQUES.SREQUEST_TY LEFT JOIN TABLE293 TABLE2932 ON TABLE2932.NCONCEPT = CHEQUES.NCONCEPT LEFT JOIN TABLE187 TABLE1873 ON TABLE1873.NSTA_CHEQUE = CHEQUES.NSTA_CHEQUE LEFT JOIN TABLE5556 TABLE55564 ON TABLE55564.NOFFICEAGEN = CHEQUES.NOFFICEAGEN LEFT JOIN TABLE5570 TABLE55705 ON TABLE55705.NTYPESUPPORT = CHEQUES.NTYPESUPPORT LEFT JOIN CLIENT CLIENT6 ON CLIENT6.SCLIENT = CHEQUES.SCLIENT LEFT JOIN USERS USERS7 ON USERS7.NUSERCODE = CHEQUES.NUSERCODE WHERE CHEQUES.NREQUEST_NU = {NREQUEST_NU} AND CHEQUES.SCHEQUE = '{SCHEQUE}' AND CHEQUES.NCONSEC = {NCONSEC} AND CHEQUES.NCLAIM = {NCLAIM}</RetrieveByKey>
+          <KeyParameters>{NREQUEST_NU},{SCHEQUE},{NCONSEC},{NCLAIM}</KeyParameters>
+          <IsExist>SELECT COUNT(*) FROM CHEQUES WHERE CHEQUES.NCLAIM = {NCLAIM}</IsExist>
+          <ParameterToChilds>NREQUEST_NU,SCHEQUE,NCONSEC</ParameterToChilds>
+        </QueryStatements>
+        <Parameters />
+        <pluralcaptions>
+          <pluralcaption Language="2" Value="Cheques" />
+          <pluralcaption Language="1" Value="Checks" />
+        </pluralcaptions>
+        <columns>
+          <columnquery name="CHEQUES.SREQUEST_TY" xmlType="xmlChar" Visible="true">
+            <captions>
+              <caption Language="2" Value="Tipo" />
+              <caption Language="1" Value="Payment Order Type" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Tipo de orden de pago." />
+              <ToolTip Language="1" Value="Type of the payment order." />
+            </ToolTips>
+            <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE193" RelationshipColumns="SREQUEST_TY" Columns="SREQUEST_TY" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NREQUEST_NU" xmlType="xmlNumeric" WidthColumn="70" precision="10" Visible="true">
+            <captions>
+              <caption Language="2" Value="Orden de Pago" />
+              <caption Language="1" Value="Payment Order" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Número de la orden de pago." />
+              <ToolTip Language="1" Value="Number of the payment order." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.SCHEQUE" xmlType="xmlChar" WidthColumn="70" Visible="true">
+            <captions>
+              <caption Language="2" Value="Cheque" />
+              <caption Language="1" Value="Check" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Número identificativo del cheque emitido por la compañía." />
+              <ToolTip Language="1" Value="Number identifying the check issued by the insurance company." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NCONCEPT" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Concepto" />
+              <caption Language="1" Value="Concept" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Concepto por el cual se realiza la orden de pago." />
+              <ToolTip Language="1" Value="Reason why the payment is requested." />
+            </ToolTips>
+            <ColumnSource RelationshipTable="TABLE293" RelationshipColumns="NCONCEPT" Columns="NCONCEPT" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NAMOUNT" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+            <captions>
+              <caption Language="2" Value="Monto" />
+              <caption Language="1" Value="Amount" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Monto del pago solicitado." />
+              <ToolTip Language="1" Value="Amount of the payment requested." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NCURRENCYPAY" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Moneda" />
+              <caption Language="1" Value="Payment Currency" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Código de la moneda de pago de la orden de pago." />
+              <ToolTip Language="1" Value="Currency used in the payment." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NSTA_CHEQUE" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Estado" />
+              <caption Language="1" Value="Payment Order Status" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Estado de la orden de pago." />
+              <ToolTip Language="1" Value="Status of the payment order." />
+            </ToolTips>
+            <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE187" RelationshipColumns="NSTA_CHEQUE" Columns="NSTA_CHEQUE" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.DSTAT_DATE" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="2" Value="Fecha del estado" />
+              <caption Language="1" Value="Status Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Fecha en que la orden de pago toma el estado indicado." />
+              <ToolTip Language="1" Value="Date when the payment order takes on the status specified." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+          <columnquery name="CHEQUES.NOFFICEAGEN" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Oficina de Entrega" />
+              <caption Language="1" Value="Office Code" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Código de la oficina donde el cliente busca el cheque que es generado para la orden de pago." />
+              <ToolTip Language="1" Value="Code of Office where the client receives the check." />
+            </ToolTips>
+            <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE5556" RelationshipColumns="NOFFICEAGEN" Columns="NOFFICEAGEN" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NAGENCY" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Agencia de Entrega" />
+              <caption Language="1" Value="Agency for Delivery" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Código de la agencia donde el cliente busca el cheque que es generado para la orden de pago (este código identifica la sucursal y oficina)." />
+              <ToolTip Language="1" Value="Code of the agency where the client has to pick up the generated payment (this code also identifies branch office and field office)." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NTYPESUPPORT" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Documento de Soporte" />
+              <caption Language="1" Value="Support Document" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Tipo de documento de respaldo o soporte." />
+              <ToolTip Language="1" Value="Type of support document." />
+            </ToolTips>
+            <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE5570" RelationshipColumns="NTYPESUPPORT" Columns="NTYPESUPPORT" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NDOCSUPPORT" xmlType="xmlNumeric" SummaryVisible="false" precision="10" Visible="true">
+            <captions>
+              <caption Language="2" Value="Número de Documento" />
+              <caption Language="1" Value="Document IDN umber" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Número de documento soporte del pago." />
+              <ToolTip Language="1" Value="Document number related to the payment." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.SINTER_PAY" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+            <captions>
+              <caption Language="2" Value="Beneficiario del Pago" />
+              <caption Language="1" Value="Payee Clien ID" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Código del cliente a nombre de quien va a ser emitida la orden de pago." />
+              <ToolTip Language="1" Value="Code of the client on whose name the order for payment will be issued." />
+            </ToolTips>
+            <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NUSER_SOL" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Usuario Solicitante" />
+              <caption Language="1" Value="Requesting User" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Código del usuario que realiza la solicitud de orden de pago." />
+              <ToolTip Language="1" Value="Code of the user requesting the payment order" />
+            </ToolTips>
+            <ColumnSource RelationshipTable="USERS" RelationshipColumns="NUSERCODE" Columns="NUSERCODE" Description="SINITIALS" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.NQ_PAYS" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+            <captions>
+              <caption Language="2" Value="Cantidad de Pagos" />
+              <caption Language="1" Value="Number of Payments" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Cantidad de pagos que se deben realizar bajo esta orden de pago (pagos periódicos)." />
+              <ToolTip Language="1" Value="Number of payments that will be issued under this payment order (periodical payments)." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.DNULLDATE" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="2" Value="Fecha de Anulación" />
+              <caption Language="1" Value="Cancellation Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Fecha de anulación del registro." />
+              <ToolTip Language="1" Value="Date when the record is cancelled." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+          <columnquery name="CHEQUES.DISSUE_DAT" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="2" Value="Fecha de Emisión" />
+              <caption Language="1" Value="Issue Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Fecha de emisión de la póliza o certificado." />
+              <ToolTip Language="1" Value="Date when the policy/certificate is issued" />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+          <columnquery name="CHEQUES.SDESCRIPT" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+            <captions>
+              <caption Language="2" Value="Descripción Breve de Razón de Pago" />
+              <caption Language="1" Value="Short Description" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Breve descripción de la razón por la que se solicita el pago." />
+              <ToolTip Language="1" Value="Short description of the reason why the payment is requested." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="CHEQUES.DDAT_PROPOS" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="2" Value="Fecha de Solicitud del Pago" />
+              <caption Language="1" Value="Date of Payment Request" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="2" Value="Fecha de solicitud del pago." />
+              <ToolTip Language="1" Value="Date when the payment was requested." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+        </columns>
+        <childs />
+        <Relationship IsAutomaticGenerated="true" RelationshipTable="Claim" RelationshipColumns="NCLAIM" Columns="NCLAIM" />
+        <titles />
+        <titlesQuery />
+        <descriptionsQuery />
+        <Remarks>
+          <Remark Language="2" Value="Cheques solicitados y emitidos." />
+          <Remark Language="1" Value="Required checks and checks issued." />
+        </Remarks>
+        <ContextMenu />
+        <ActionFilters />
+        <StyleList />
+      </child>
+    </childs>
+    <Conditions Element="Claim.nClaim" Operator="IsEqualTo" ParameterType="UserInput" Default="Siniestro" Logical="None" />
+    <titles>
+      <title Language="2" Value="Consulta de Siniestros" />
+      <title Language="1" Value="Claims" />
+    </titles>
+    <titlesQuery>
+      <titleQuery Language="2" Value="Consulta de siniestros" />
+      <titleQuery Language="1" Value="Claims" />
+    </titlesQuery>
+    <descriptionsQuery>
+      <descriptionQuery Language="2" Value="Consulta general de siniestro" />
+      <descriptionQuery Language="1" Value="Claims" />
+    </descriptionsQuery>
+    <Remarks>
+      <Remark Language="1" Value="General information of a  claim." />
+      <Remark Language="2" Value="Datos generales del siniestro." />
+    </Remarks>
+    <ContextMenu />
+    <ActionFilters />
+    <StyleList />
+  </root>
+  <roles>EASE1</roles>
+  <HaveChildrenWithHistory>true</HaveChildrenWithHistory>
+  <Parameters>
+    <QueryParameters Name="Siniestro" CustomName="" Type="Claim" Behavior="" Length="" Default="" Required="true">
+      <Captions>
+        <Caption Language="1" Value="Claim number" />
+        <Caption Language="2" Value="Siniestro" />
+      </Captions>
+      <ToolTips>
+        <ToolTip Language="1" Value="Claim number" />
+        <ToolTip Language="2" Value="Siniestro" />
+      </ToolTips>
+    </QueryParameters>
+    <QueryParameters Name="RecordEffectiveDate" CustomName="" Type="DatePicker" Behavior="" Length="" Default="today" Required="false">
+      <Captions>
+        <Caption Language="1" Value="Effective date" />
+        <Caption Language="2" Value="Fecha de efecto" />
+      </Captions>
+      <ToolTips>
+        <ToolTip Language="1" Value="Effective date" />
+        <ToolTip Language="2" Value="fecha de efecto" />
+      </ToolTips>
+    </QueryParameters>
+  </Parameters>
+</metadata>

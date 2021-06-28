@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="H5NNInformacionGeneralClienteIndicadoMainForm">
+        <input type="hidden" id="H5NNInformacionGeneralClienteIndicadoFormId" name="H5NNInformacionGeneralClienteIndicadoFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zoneHeader zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zoneHeader">
+    <!-- Container content -->
+                <!-- Client Client -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='ClientLabel' class='control-label' for='Client'>Cliente</label><span id='ClientRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='Client' name='Client' maxlength='80' size='80' title='' type='text' />
+                    </div>
+                  </div>
+                </div>
+                <!-- RecordEffectiveDate datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='RecordEffectiveDateLabel' class='control-label' for='RecordEffectiveDate'>Fecha de efecto</label><span id='RecordEffectiveDateRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='RecordEffectiveDate_group'>
+                                    <input id='RecordEffectiveDate' name='RecordEffectiveDate' type='text' class='form-control' title='' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Hacer click para ejecutar consulta' ><span class='ladda-label'>Aceptar</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zoneHeader zone -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                       </div>
+
+
+                    <!-- Lookups: zoneChildren Sub-Grid -->
+                            <select id='EMAILSHasBeenConfirmed' hidden='hidden'>
+                                 <option value='1'>Si</option>
+                                 <option value='2'>No</option>
+                                 <option value='0'>NO</option>
+                            </select>
+
+                    <!-- End Lookups: zoneChildren grid -->
+
+                    <!-- Lookups: zoneChildren Sub-Grid -->
+                            <select id='OTHERTYPEADDRESSCountryID' hidden='hidden'>
+                            </select>
+
+                            <select id='OTHERTYPEADDRESSAddressValidatedElectronically' hidden='hidden'>
+                                 <option value='1'>Si</option>
+                                 <option value='2'>No</option>
+                                 <option value='0'>NO</option>
+                            </select>
+
+                    <!-- End Lookups: zoneChildren grid -->
+
+                    <!-- Lookups: zoneChildren Sub-Grid -->
+                            <select id='CertificatNINTERMED' hidden='hidden'>
+                            </select>
+
+                    <!-- End Lookups: zoneChildren grid -->
+
+                    <!-- Lookups: zoneChildren Sub-Grid -->
+                            <select id='PremiumsReject' hidden='hidden'>
+                                 <option value='1'>Si</option>
+                                 <option value='2'>No</option>
+                                 <option value='0'>No</option>
+                            </select>
+
+                            <select id='PremiumnType' hidden='hidden'>
+                                 <option value='0'></option>
+                            </select>
+
+                            <select id='PremiumsManauti' hidden='hidden'>
+                                 <option value='1'>Automático</option>
+                                 <option value='2'>Manual</option>
+                            </select>
+
+                    <!-- End Lookups: zoneChildren grid -->
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- ClientActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='ClientActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_ClientsClienameContextMenu' class='dropdown-menu'>
+ <li data-item='Items_ClientsCliename_Item1'><a>Modificar información del cliente</a></li>
+ <li data-item='Items_ClientsCliename_Item2'><a>Emitir póliza</a></li>
+ <li data-item='Items_ClientsCliename_Item3'><a>Declarar siniestro</a></li>
+    </ul>
+    <ul id='CertificatContextMenu' class='dropdown-menu'>
+        <li data-item='Certificat_Item1'><a>Consulta detallada</a></li>
+        <li data-item='Certificat_Item2'><a>Modificar póliza</a></li>
+        <li data-item='Certificat_Item3'><a>Imprimir cuadro de póliza</a></li>
+    </ul>
+    <ul id='Certificat_CertificatnPolicyContextMenu' class='dropdown-menu'>
+ <li data-item='Certificat_CertificatnPolicy_Item1'><a>Consulta detallada</a></li>
+ <li data-item='Certificat_CertificatnPolicy_Item2'><a>Modificar póliza</a></li>
+ <li data-item='Certificat_CertificatnPolicy_Item3'><a>Imprimir cuadro de póliza</a></li>
+    </ul>
+    <ul id='PremiumContextMenu' class='dropdown-menu'>
+        <li data-item='Premium_Item1'><a>Consulta detallada</a></li>
+    </ul>
+    <ul id='Premium_PremiumnReceiptContextMenu' class='dropdown-menu'>
+ <li data-item='Premium_PremiumnReceipt_Item1'><a>Consulta detallada</a></li>
+    </ul>
+    <ul id='ClaimContextMenu' class='dropdown-menu'>
+        <li data-item='Claim_Item1'><a>Consulta detallada</a></li>
+    </ul>
+    <ul id='Claim_ClaimnClaimContextMenu' class='dropdown-menu'>
+ <li data-item='Claim_ClaimnClaim_Item1'><a>Consulta detallada</a></li>
+    </ul>
+    <ul id='ROLEINCASEContextMenu' class='dropdown-menu'>
+        <li data-item='ROLEINCASE_Item1'><a>Panel de suscripción</a></li>
+    </ul>
+    <ul id='ROLEINCASE_ROLEINCASEUnderwritingCaseIDContextMenu' class='dropdown-menu'>
+ <li data-item='ROLEINCASE_ROLEINCASEUnderwritingCaseID_Item1'><a>Panel de suscripción</a></li>
+    </ul>
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190227104533069'></script>
+    <script src="/fasi/app/js/core.js?rel=20190227104533069"></script>
+    <script src="/fasi/app/js/general.js?rel=20190227104533069"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190227104533069'></script>
+    
+
+    <script src='/fasi/assets/js/spin.min.js'></script>
+    <script src='/fasi/assets/js/ladda.min.js'></script>
+    <script src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script src='/fasi/app/js/client.js?rel=20190227104533069'></script>
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190227104533069'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190227104533069'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/H5NNInformacionGeneralClienteIndicado.js?rel=20190227104533069"></script>
+</body>
+</html>

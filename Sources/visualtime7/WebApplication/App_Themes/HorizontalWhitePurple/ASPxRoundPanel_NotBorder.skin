@@ -1,0 +1,43 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+    <dxrp:ASPxRoundPanel SkinID="NotBorder" runat="server" ShowDefaultImages="False" BackColor="White" ShowHeader="False" CssPostfix="Office2010Silver">
+         <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+           <HeaderStyle BackColor="#DEDEDE">
+           <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" 
+               PaddingRight="2px" />
+           <BorderBottom BorderStyle="None" />
+           </HeaderStyle>
+           <TopLeftCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/TopLeftCorner.png" Width="1px">
+           </TopLeftCorner>
+           <NoHeaderTopLeftCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/NoHeaderTopLeftCorner.png" Width="1px">
+           </NoHeaderTopLeftCorner>
+           <TopRightCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/TopRightCorner.png" Width="1px">
+           </TopRightCorner>
+           <NoHeaderTopRightCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/NoHeaderTopRightCorner.png" Width="1px">
+           </NoHeaderTopRightCorner>
+           <BottomRightCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/BottomRightCorner.png" Width="1px">
+           </BottomRightCorner>
+           <BottomLeftCorner Height="1px" 
+               Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionSquareBorder/BottomLeftCorner.png" Width="1px">
+           </BottomLeftCorner>        
+           <Border BorderWidth="0px" />
+        </dxrp:ASPxRoundPanel>

@@ -1,0 +1,357 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="ControlGeneralClaimDeclaration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.ClaimManager.Activities;assembly=InMotionGIT.ClaimManager.Activities" xmlns:ica2="clr-namespace:InMotionGIT.Client.Activities;assembly=InMotionGIT.Client.Activities" xmlns:ica3="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Claim.Entity.Contracts;assembly=InMotionGIT.Claim.Entity.Contracts" xmlns:icec1="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s6="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="ClaimID" Type="InArgument(x:Int64)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>854.4,1097.6</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="ControlGeneralClaimDeclaration" sap:VirtualizedContainerService.HintSize="814.4,1057.6">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="icec:Claim" Name="Claim" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="SolicitarDocumentos" />
+      <Variable x:TypeArguments="x:String" Name="DocumentosPendientes" />
+      <Variable x:TypeArguments="x:String" Name="eMailBeneficiario" />
+      <Variable x:TypeArguments="x:Int32" Name="Contador" />
+      <Variable x:TypeArguments="x:Boolean" Name="SeRequiereEspera" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">410,2.4</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">440,77.6 440,123.6</av:PointCollection>
+        <x:Double x:Key="Width">800.80000000000018</x:Double>
+        <x:Double x:Key="Height">1021.1999999999999</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">358.4,123.6</av:Point>
+            <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">440,256.4 440,298.8</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="ControlGeneralClaimDeclaration. Claim { Value /ClaimID }" />
+            <icd:LocalizedString Language="2" Value="ControlGeneralClaimDeclaration." />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID0">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">340,298.8</av:Point>
+                <av:Size x:Key="ShapeSize">200,22.4</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">440,321.2 440,359.6</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ica1:Retrieve EffectiveDate="{x:Null}" Exist="{x:Null}" Claim="[Claim]" ClaimId="[ClaimID]" DisplayName="RetrieveClaim" sap:VirtualizedContainerService.HintSize="200,22.4" withLookupInformation="False">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ica1:Retrieve>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">318.4,359.6</av:Point>
+                    <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">440,420.4 440,459.6</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="AssignSeRequiereEsperaFalse" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[SeRequiereEspera]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">318.4,459.6</av:Point>
+                        <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">440,520.4 440,553.6</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="AssignDocumentosPendientes" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[DocumentosPendientes]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;p&gt;" &amp;  "   DOCUMENTO   " &amp; "&lt;/p&gt;"]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">340,553.6</av:Point>
+                            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">440,606.4 440,646.4</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ForEach x:TypeArguments="icec:ClaimCase" DisplayName="ForEach&lt;ClaimCase&gt;" sap:VirtualizedContainerService.HintSize="200,52.8" Values="[Claim.ClaimCases]">
+                          <ActivityAction x:TypeArguments="icec:ClaimCase">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="icec:ClaimCase" Name="itemCase" />
+                            </ActivityAction.Argument>
+                            <ForEach x:TypeArguments="icec:ClaimBeneficiary" DisplayName="ForEach&lt;ClaimBeneficiary&gt;" sap:VirtualizedContainerService.HintSize="694.4,1129.6" Values="[itemCase.ClaimBeneficiaries]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="icec:ClaimBeneficiary">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="icec:ClaimBeneficiary" Name="itemBenef" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="664,1020.8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="AssignSolicitarDocumentosFalse" sap:VirtualizedContainerService.HintSize="641.6,60.8">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[SolicitarDocumentos]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <If Condition="[Not (itemBenef.DocumentRequestInClaims is Nothing) andalso itemBenef.DocumentRequestInClaims.Count &lt;&gt; 0]" DisplayName="If HayDocumentos" sap:VirtualizedContainerService.HintSize="641.6,211.2">
+                                    <If.Then>
+                                      <ForEach x:TypeArguments="icec:DocumentRequestInClaim" DisplayName="ForEach&lt;DocumentRequestInClaim&gt;" sap:VirtualizedContainerService.HintSize="200,52.8" Values="[itemBenef.DocumentRequestInClaims]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="icec:DocumentRequestInClaim">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="icec:DocumentRequestInClaim" Name="itemDocument" />
+                                          </ActivityAction.Argument>
+                                          <If Condition="[itemDocument.DocumentStatus &lt;&gt; 3]" sap:VirtualizedContainerService.HintSize="464,497.6">
+                                            <If.Then>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="265.6,387.2">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="AssignSolicitar" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[SolicitarDocumentos]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign DisplayName="AssignSeRequiereEsperaTrue" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[SeRequiereEspera]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign DisplayName="AssignListaDocumentos" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[DocumentosPendientes]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[DocumentosPendientes &amp; "&lt;p&gt;" &amp;  itemDocument.sDescript &amp; "&lt;/p&gt;"]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Then>
+                                          </If>
+                                        </ActivityAction>
+                                      </ForEach>
+                                    </If.Then>
+                                  </If>
+                                  <If Condition="[SolicitarDocumentos = true]" DisplayName="If SolicitarDocumentos = true" sap:VirtualizedContainerService.HintSize="641.6,544">
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="486.4,433.6">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="icec1:Client" Name="Beneficiario" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ica2:Retrieve EffectiveDate="{x:Null}" Email="{x:Null}" Exist="{x:Null}" AddressOnly="True" Client="[Beneficiario]" ClientId="[itemBenef.ClientID]" DisplayName="RetrieveBeneficiario" sap:VirtualizedContainerService.HintSize="464,22.4" />
+                                        <If Condition="[not (String.IsNullOrEmpty(Beneficiario.eMailAddressDefault))]" DisplayName="If BeneficiarioConMail" sap:VirtualizedContainerService.HintSize="464,246.4">
+                                          <If.Then>
+                                            <ica3:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="SM ConMail" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[Beneficiario.eMailAddressDefault]">
+                                              <ica3:SendMail.Body>
+                                                <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs5A2818B4{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:bold;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado(a) &lt;/span&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /Beneficiario/CompleteClientName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;En atenci&amp;oacute;n a su reclamo/sinietsro identificado con el nro. &lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /ClaimID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, le informamos que debe entregar (a la brevedad posible) el(los) siguiente(s) documento(s).&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /DocumentosPendientes }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hasta tanto no recibamos el(los) documento(s) indicado(s) en la lista anterior, no podemos proceder al pago del mismo.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Departamento de siniestros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;CitiBanamex&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /eMailBeneficiario }&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs5A2818B4{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:bold;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado(a) &lt;/span&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /Beneficiario/CompleteClientName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;En atenci&amp;oacute;n a su reclamo/sinietsro identificado con el nro. &lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /ClaimID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, le informamos que debe entregar (a la brevedad posible) el(los) siguiente(s) documento(s).&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /DocumentosPendientes }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hasta tanto no recibamos el(los) documento(s) indicado(s) en la lista anterior, no podemos proceder al pago del mismo.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Departamento de siniestros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;CitiBanamex&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /eMailBeneficiario }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                              </ica3:SendMail.Body>
+                                              <ica3:SendMail.Subject>
+                                                <icd:LocalizedString Language="1" Value="Aviso de documentos pendientes de entregar" />
+                                                <icd:LocalizedString Language="2" Value="Aviso de documentos pendientes de entregar" />
+                                              </ica3:SendMail.Subject>
+                                            </ica3:SendMail>
+                                          </If.Then>
+                                          <If.Else>
+                                            <ica3:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="SM SinMail" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="aperez@inmotiongit.com">
+                                              <ica3:SendMail.Body>
+                                                <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs5A2818B4{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:bold;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado(a) &lt;/span&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /Beneficiario/CompleteClientName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;En atenci&amp;oacute;n a su reclamo/sinietsro identificado con el nro. &lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /ClaimID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, le informamos que debe entregar (a la brevedad posible) el(los) siguiente(s) documento(s).&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /DocumentosPendientes }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hasta tanto no recibamos el(los) documento(s) indicado(s) en la lista anterior, no podemos proceder al pago del mismo.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Departamento de siniestros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;CitiBanamex&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /eMailBeneficiario }&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs5A2818B4{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:bold;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado(a) &lt;/span&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /Beneficiario/CompleteClientName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;En atenci&amp;oacute;n a su reclamo/sinietsro identificado con el nro. &lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /ClaimID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, le informamos que debe entregar (a la brevedad posible) el(los) siguiente(s) documento(s).&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs5A2818B4&quot;&gt;{ Value /DocumentosPendientes }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hasta tanto no recibamos el(los) documento(s) indicado(s) en la lista anterior, no podemos proceder al pago del mismo.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Departamento de siniestros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;CitiBanamex&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /eMailBeneficiario }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                              </ica3:SendMail.Body>
+                                              <ica3:SendMail.Subject>
+                                                <icd:LocalizedString Language="1" Value="Aviso de documentos pendientes de entregar" />
+                                                <icd:LocalizedString Language="2" Value="Aviso de documentos pendientes de entregar" />
+                                              </ica3:SendMail.Subject>
+                                            </ica3:SendMail>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </If.Then>
+                                  </If>
+                                </Sequence>
+                              </ActivityAction>
+                            </ForEach>
+                          </ActivityAction>
+                        </ForEach>
+                        <FlowStep.Next>
+                          <FlowDecision x:Name="__ReferenceID4" Condition="[SeRequiereEspera]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">404.8,646.4</av:Point>
+                                <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                <av:PointCollection x:Key="TrueConnector">404.8,690 300,690 300,756.4</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">475.2,690 620,690 620,766.4</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowDecision x:Name="__ReferenceID5" Condition="[Contador &lt;= 3]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">264.8,756.4</av:Point>
+                                    <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                    <x:String x:Key="TrueLabel">Contador&lt;3</x:String>
+                                    <av:PointCollection x:Key="TrueConnector">264.8,800 170,800 170,899.6</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <FlowDecision.True>
+                                  <FlowStep x:Name="__ReferenceID8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">48.4,899.6</av:Point>
+                                        <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">170,960.4 170,998.8</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="AssignContador+1" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[Contador]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[Contador + 1]</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID6">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">70,998.8</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,22.4</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">70,1010 40,1010 40,310 340,310</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Delay Duration="00:03:00" sap:VirtualizedContainerService.HintSize="200,22.4">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Delay>
+                                        <FlowStep.Next>
+                                          <x:Reference>__ReferenceID0</x:Reference>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.True>
+                              </FlowDecision>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <FlowStep x:Name="__ReferenceID9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">480,766.4</av:Point>
+                                    <av:Size x:Key="ShapeSize">280,107.2</av:Size>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteControlClaimProcessBanamex" sap:VirtualizedContainerService.HintSize="280,107.2" ModelId="f992905d-69c7-4756-8a35-43ab65017385" Release="1" Tracking="True" WorkflowPath="ControlClaimProcessBanamex">
+                                  <icag:ExecuteWorkflow.ChildArguments>
+                                    <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                                    <InArgument x:TypeArguments="x:Int64" x:Key="ClaimID">[ClaimID]</InArgument>
+                                  </icag:ExecuteWorkflow.ChildArguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </icag:ExecuteWorkflow>
+                              </FlowStep>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+  </Flowchart>
+</Activity>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.Seguridad.Proxy</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.Seguridad.Proxy.TokenHelper">
+            <summary>
+            Auxilia en las operaciones de obtención de token
+            
+            Es necesario agregar en el archivo de configuración los siguientes AppSettings:
+            STS.Key
+            STS.URL
+            STS.Customer.Id
+            STS.Customer.Secret
+            STS.Customer.Id.Anonymous
+            STS.Customer.Secret.Anonymous
+            STS.User.Secret.Anonymous
+            STS.UseOfValidCertificate
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.GetValidToken">
+            <summary>
+            Refresh the token, if it's invalid, asks for a new one and it is returned.
+            </summary>
+            <returns>Token</returns>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.GetAnonymousToken">
+            <summary>
+            Refresh the anonymous token, if it's invalid, asks for a new one and it is returned.
+            </summary>
+            <returns>Token</returns>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.RequestToken(System.String)">
+            <summary>
+            Invokes the STS to request a token.
+            If the response is successful, "TokenResponse" and "AccessToken" sessions variables will be created.
+            </summary>
+            <param name="userEmail">User name for requesting the token.</param>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.RequestAnonymousToken">
+            <summary>
+            Invokes the STS to request an anonymous token.
+            If the response is successful, "TokenResponse" and "AccessToken" sessions variables will be created.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.AcceptAllCertifications(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Bypass the cert validation.
+            </summary>   
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.Sha256Creator(System.String)">
+            <summary>
+            Creates a SHA256 hash of the specified input.
+            </summary>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:InMotionGIT.Seguridad.Proxy.TokenHelper.HMACCreator(System.String,System.String)">
+            <summary>
+            Creates a HMAC has of the specified input and uses the sha256 of the STSKey as the key.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="key">STSKey.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

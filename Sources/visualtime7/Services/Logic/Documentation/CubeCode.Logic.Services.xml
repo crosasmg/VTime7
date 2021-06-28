@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.Smart.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.Smart.Logic.App_Start.LogicException">
+            <summary>
+            Exception de compilación de los controladores dinámicos
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.WebApiConfig">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+             <summary>
+            
+             </summary>
+             <param name="config"></param>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Controllers.HelperController">
+            <summary>
+             Controlador que permite se tiene para usar las librearías internas
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.CacheEnable">
+            <summary>
+            Retorna los cache que se tiene disponibles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.CleanByKey(System.String)">
+            <summary>
+             Realiza un limpieza de un key especifico
+            </summary>
+            <param name="key">key del controlador a llamar</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.CleanAll">
+            <summary>
+             Realiza un limpieza de todos los controlador en cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.Test(System.String)">
+            <summary>
+            Método que permite hacer una prueba de la compilación del controller
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.Get">
+            <summary>
+            Retorna todo los controles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Controllers.HelperController.Get(System.String)">
+            <summary>
+             Obtiene el body para el yaml
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Entity.LogicBuilderResponse">
+            <summary>
+            Entidad que permite realizar el builder del controller
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.Smart.Logic.Entity.LogicBuilderResponse.Success">
+            <summary>
+            Define si se puedo compilar sin errores
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.Smart.Logic.Entity.LogicBuilderResponse.Message">
+            <summary>
+            Retorno el mensaje para ver si existe errores
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.Smart.Logic.Entity.LogicBuilderResponse.Fragment">
+            <summary>
+            Fragmento de código del primero error
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Entity.ReferenceItem">
+            <summary>
+            Referencias Custumizadas
+            </summary>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Handlers.BuilderHander">
+            <summary>
+             Handler para creación de builder
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Handlers.BuilderHander.ReatriveCode(System.String)">
+            <summary>
+            Retorna el código de un controlador por su key
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Handlers.BuilderHander.Builder(System.String,System.String,System.Boolean)">
+            <summary>
+             Realiza la compilación de código
+            </summary>
+            <param name="code"></param>
+            <param name="Runtime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Handlers.BuilderHander.Reference(System.String)">
+            <summary>
+            Construcción de referencias para el builder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Handlers.CacheHandler">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:InMotionGIT.Smart.Logic.Handlers.CacheHandler.KeyName">
+            <summary>
+            Define el key root del logic
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Smart.Logic.Handlers.CacheHandler.Time">
+            <summary>
+            Define el tiempo de cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.Smart.Logic.Manager">
+            <summary>
+            Clase que se encarga de administrar diatónicamente los controladores
+            </summary>
+        </member>
+    </members>
+</doc>

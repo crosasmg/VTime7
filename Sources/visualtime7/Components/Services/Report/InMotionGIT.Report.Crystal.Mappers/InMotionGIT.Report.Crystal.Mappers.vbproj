@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE27865B-EAEA-4FBE-9297-785064F15704}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InMotionGIT.Report.Crystal.Mappers</RootNamespace>
+    <AssemblyName>InMotionGIT.Report.Crystal.Mappers</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InMotionGIT.Report.Crystal.Mappers.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InMotionGIT.Report.Crystal.Mappers.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InMotionGIT.Report.Crystal.Mappers.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InMotionGIT.Bill.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Bill.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Claim.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Claim.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Claim.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1a02eb7228f84a9c, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Claim.Proxy.3.0.38\lib\InMotionGIT.Claim.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Client.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0916de17d4f0ed90, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Client.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Client.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=45503acc67f9bceb, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Client.Proxy.3.0.38\lib\InMotionGIT.Client.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Collecting.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Collecting.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f15c8eb20a17aaf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Common.1.0.23\lib\InMotionGIT.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Common.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Common.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Common.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6cfb3d2b46d69b79, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Common.Proxy.1.0.22\lib\InMotionGIT.Common.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Financing.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Financing.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.General.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c5ccb9e3f3101426, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.General.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.General.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506abf1e02075ff8, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.General.Proxy.3.0.38\lib\InMotionGIT.General.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Intermedia.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Intermedia.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Policy.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Policy.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.PolicyManager.Proxy">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.PolicyManager.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.PolicyManager.Services">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.PolicyManager.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Product.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Product.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Product.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4cb431f27ebaef0b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Product.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.Common" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mappers\ClientInformationMapper.vb" />
+    <Compile Include="Mappers\ClientReportMapper.vb" />
+    <Compile Include="Helpers\General.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InMotionGIT.Report.Crystal.Mappers.snk" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InMotionGIT.Report.Crystal.Designs\InMotionGIT.Report.Crystal.Designs.vbproj">
+      <Project>{292e76b6-a070-4f2d-9f49-8ae9ebdb300e}</Project>
+      <Name>InMotionGIT.Report.Crystal.Designs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

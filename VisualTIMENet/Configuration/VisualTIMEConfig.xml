@@ -1,0 +1,111 @@
+﻿<?xml version='1.0' encoding='windows-1252'?>
+<Config>
+ <Database>
+  <Server>Oracle</Server>
+  <ServerName>10.1.0.219</ServerName>  
+  <Owner>INSUDB</Owner>  
+  <DatabaseName>TIME</DatabaseName>  
+  <ConnectionStringWithPool>Data source=VISUALTIME7_DEV;Min Pool Size=60;Max Pool Size=350;Connection Lifetime=120</ConnectionStringWithPool>
+  <ConnectionString>Data source=VISUALTIME7_DEV;</ConnectionString>
+  <ConnectionStringProvider>Oracle.DataAccess.Client</ConnectionStringProvider>    
+  <CommandTimeOut>60</CommandTimeOut> 
+  <User>181B9BADB746</User> 
+  <Password>4E30AE49A32B4F044D</Password>
+  <CacheEnabled>Yes</CacheEnabled>
+  <MultiCompany>Yes</MultiCompany>
+ </Database>
+  <MultiCompanies>
+    <Company id='1' name='Vida' user='181B9BADB746' password='4E30AE49A32B4F044D'/>    
+    <Company id='2' name='Generales' user='C97A7C5EA2CB4F53CB' password='4E30AE49A32B4F044D'/>    
+  </MultiCompanies>
+  <Portal> 
+  <UsePortal>Yes</UsePortal>
+  <Roles> 
+     <Role>Empleado</Role>
+  </Roles>
+ </Portal> 
+ <Workflow> 
+  <Enabled>Yes</Enabled> 
+  <Prefix>GIT.EDW.Workflow</Prefix> 
+  <Path>E:\VisualTIMENet\WebApplication\Bin\</Path>    
+ </Workflow > 
+ <Report>
+  <WorkingMode>Server</WorkingMode>
+  <Server>https://x.x.x.x/VTimeNet/Common/Reports/Report.aspx</Server>
+  <ConnectionString>TIME</ConnectionString>
+  <Width>1200</Width>
+  <Height>1300</Height> 
+ </Report>
+ <Debug>
+  <Active>No</Active>
+  <StoredProcedureCalled>Yes</StoredProcedureCalled>
+  <LogFile>E:\VisualTIMENet\Temp\TFiles\PerformanceDebug.Log</LogFile>
+  <Developer>No</Developer>
+  <OracleTrace>No</OracleTrace>
+  <Usercode>1508|1971|1374|3010|</Usercode>
+ </Debug>
+ <ErrorSystem>
+  <Server>Oracle</Server>
+  <ServerName>10.1.0.219</ServerName>  
+  <Owner>insudb</Owner>
+  <DatabaseName>TIME</DatabaseName>  
+  <ConnectionString>Data Source=VISUALTIME7_DEV;Pooling=false;Unicode=True</ConnectionString>
+  <User>181B9BADB746</User>
+  <Password>4E30AE49A32B4F044D</Password>
+  <CommandTimeOut>60</CommandTimeOut>
+  <MultiCompany>No</MultiCompany>
+ </ErrorSystem>
+ <ImagesDB>
+  <Provider>Oracle.DataAccess.Client</Provider>
+  <Database>TIME</Database>
+  <ConnectionString>Provider=Oracle.DataAccess.Client;Data Source=VISUALTIME7_DEV;Persist Security Info=True</ConnectionString>
+  <sInitials>181B9BADB746</sInitials>
+  <sAccessWo>4E30AE49A32B4F044D</sAccessWo>
+ </ImagesDB>
+ <Paths>
+  <Configuration>E:\VisualTIMENet\Configuration</Configuration>
+  <MultiCompany>E:\VisualTIMENet\Configuration</MultiCompany>
+  <VirtualDirectory>E:\VisualTIMENet\WebApplication\VTimeNet</VirtualDirectory>
+  <Configuration>E:\VisualTIMENet\Configuration</Configuration>
+  <VisualTIMERLog>E:\VisualTIMENet\Temp\VisualTIMERLog</VisualTIMERLog>
+  <Cache>E:\VisualTIMENet\Temp\Cache</Cache>
+  <Help>https://172.23.2.168/funcionales/es_es_lat/</Help>
+  <ImageTemp>E:\VisualTIMENet\Temp\TFiles</ImageTemp>
+  <ErrorLog>E:\VisualTIMENet\Temp\Log</ErrorLog>
+  <Report>/Reports/</Report>
+  <CDoc_Path>E:\VisualTIMENet\Temp\TFiles\</CDoc_Path>
+  <sSchecode>E:\VisualTIMENet\Temp\Cache\Schema</sSchecode>
+  <ExportDirectoryReport>E:\VisualTIMENet\Temp\TFiles\Report\</ExportDirectoryReport> 
+  <VirtualReportExportPath>/VTimeNet/TFiles/Report</VirtualReportExportPath> 
+  <ExportDirectoryLetter>E:\VisualTIMENet\eis\VTimeNetLat\temp\TFiles\Letter\</ExportDirectoryLetter> 
+  <VirtualLetterExportPath>/VTimeNetLat/Temp/TFiles/Letter</VirtualLetterExportPath>   
+  <VirtualRootLoad>E:\VisualTIMENet\Temp\TFiles</VirtualRootLoad>   
+  <MASSIVELOAD>E:\VisualTIMENet\Temp\TFiles</MASSIVELOAD>
+  <Correspondence>D:\Model of correspondence</Correspondence> 
+  <LoadFile>E:\VisualTIMENet\Temp\TFiles\</LoadFile>
+  <ClauseLoad>E:\VisualTIMENet\Temp\TFiles\Clause\</ClauseLoad>
+  <LogoFilename>E:\VisualTIMENet\WebApplication\VTimeNet\Images\Logos\ReportLogo.jpg</LogoFilename>
+  <ExportDirectoryPolicy>E:\VisualTIMENet\Temp\TFiles\policy\</ExportDirectoryPolicy>   
+ </Paths>
+ <WorkFlow>
+  <Active>No</Active>
+ </WorkFlow>
+ <Application>
+ 	<ContactUs>mailto:vtsupport@ease.com.ve</ContactUs>
+ 	<PasswordOpt>TIME</PasswordOpt>
+ 	<ImgPath>E:\VisualTIMENet\eis\VTimeNetLat\temp\TFiles</ImgPath>
+ 	<UpLoadFile>E:\VisualTIMENet\eis\VTimeNetLat\temp\TFiles</UpLoadFile>
+ 	<Outlook>1</Outlook>
+        <OfficialPolicy>1</OfficialPolicy>
+ </Application>
+ <Style>
+    <Sheet>Custom.ccs</Sheet>   
+    <BodyBackground>framesequence.jpg</BodyBackground>
+ </Style>
+ <Security>
+     <MaxFailedLogonAttempts>3</MaxFailedLogonAttempts>
+     <PasswordExpiresAfter>60</PasswordExpiresAfter>
+     <PasswordStrength>(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,12})</PasswordStrength>
+     <PasswordChangeSchema>CHNGPW</PasswordChangeSchema>
+ </Security>
+</Config>

@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcdReqDateCaption" xml:space="preserve">
+    <value>Fecha</value>
+    <comment>ID=9073</comment>
+  </data>
+  <data name="tcdReqDateToolTip" xml:space="preserve">
+    <value>Fecha en que se realiza la solicitud de la orden de pago.</value>
+    <comment>ID=9073</comment>
+  </data>
+  <data name="cbePayOrderTypCaption" xml:space="preserve">
+    <value>Tipo de orden de pago</value>
+    <comment>ID=9078</comment>
+  </data>
+  <data name="cbePayOrderTypToolTip" xml:space="preserve">
+    <value>Indica si la orden de pago corresponde a solicitud, tranferencia bancaria</value>
+    <comment>ID=9078</comment>
+  </data>
+  <data name="tcnRequestNuCaption" xml:space="preserve">
+    <value>Número de solicitud</value>
+    <comment>ID=9079</comment>
+  </data>
+  <data name="tcnRequestNuToolTip" xml:space="preserve">
+    <value>Número de orden asociado a la solicitud.</value>
+    <comment>ID=9079</comment>
+  </data>
+  <data name="tctChequeNumCaption" xml:space="preserve">
+    <value>Número de cheque</value>
+    <comment>ID=9071</comment>
+  </data>
+  <data name="tctChequeNumToolTip" xml:space="preserve">
+    <value>Número de cheque asociado a la solicitud.</value>
+    <comment>ID=9071</comment>
+  </data>
+  <data name="cbeCompanyCaption" xml:space="preserve">
+    <value>Compañía</value>
+  </data>
+  <data name="cbeCompanyToolTip" xml:space="preserve">
+    <value>Compañía a la cual pertenecen los conceptos de la orden de pago.</value>
+  </data>
+  <data name="valAccountCaption" xml:space="preserve">
+    <value>Cuenta bancaria</value>
+  </data>
+  <data name="valAccountToolTip" xml:space="preserve">
+    <value>Número de cuenta donde se realizará el pago automático de la prima</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Información general del pago</value>
+  </data>
+  <data name="cbeOfficeCaption" xml:space="preserve">
+    <value>Sucursal</value>
+    <comment>ID=13378</comment>
+  </data>
+  <data name="cbeOfficeToolTip" xml:space="preserve">
+    <value>Sucursal a la que pertenece la póliza</value>
+    <comment>ID=13378</comment>
+  </data>
+  <data name="cbeOfficeAgenCaption" xml:space="preserve">
+    <value>Oficina</value>
+  </data>
+  <data name="cbeOfficeAgenToolTip" xml:space="preserve">
+    <value>Oficina a la que pertenece la póliza en tratamiento</value>
+  </data>
+  <data name="cbeAgencyCaption" xml:space="preserve">
+    <value>Agencia</value>
+  </data>
+  <data name="cbeAgencyToolTip" xml:space="preserve">
+    <value>Agencia a la que pertenece la póliza en tratamiento</value>
+  </data>
+  <data name="valConceptCaption" xml:space="preserve">
+    <value>Concepto</value>
+    <comment>ID=9038</comment>
+  </data>
+  <data name="valConceptToolTip" xml:space="preserve">
+    <value>Razón por la cual se está solicitando la orden de pago.</value>
+    <comment>ID=9038</comment>
+  </data>
+  <data name="tctDescriptCaption" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>ID=9075</comment>
+  </data>
+  <data name="tctDescriptToolTip" xml:space="preserve">
+    <value>Descripción del pago que se está realizando con esta orden.</value>
+    <comment>ID=9075</comment>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda origen</value>
+    <comment>ID=9074</comment>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda en la que se encuentra expresado el monto de la orden de pago.</value>
+    <comment>ID=9074</comment>
+  </data>
+  <data name="tcnAmountCaption" xml:space="preserve">
+    <value>Monto en moneda origen</value>
+    <comment>ID=9068</comment>
+  </data>
+  <data name="tcnAmountToolTip" xml:space="preserve">
+    <value>Monto de la orden en su moneda origen.</value>
+    <comment>ID=9068</comment>
+  </data>
+  <data name="cbeCurrencyPayCaption" xml:space="preserve">
+    <value>Moneda de pago</value>
+    <comment>ID=9074</comment>
+  </data>
+  <data name="cbeCurrencyPayToolTip" xml:space="preserve">
+    <value>Moneda en la que se realiza el pago.</value>
+    <comment>ID=9074</comment>
+  </data>
+  <data name="tcnAmountpayCaption" xml:space="preserve">
+    <value>Monto en moneda de pago</value>
+    <comment>ID=9068</comment>
+  </data>
+  <data name="tcnAmountpayToolTip" xml:space="preserve">
+    <value>Monto en moneda de pago.</value>
+    <comment>ID=9068</comment>
+  </data>
+  <data name="cbeBranchCaption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+  <data name="cbeBranchToolTip" xml:space="preserve">
+    <value>Ramo comercial al cual se asocia la orden de pago.</value>
+  </data>
+  <data name="valBranch_LedCaption" xml:space="preserve">
+    <value>Ramo contable</value>
+  </data>
+  <data name="valBranch_LedToolTip" xml:space="preserve">
+    <value>Ramo contable al cual se asocia la orden de pago.</value>
+  </data>
+  <data name="valProductCaption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="valProductToolTip" xml:space="preserve">
+    <value>Producto al cual pertenece la póliza que genera la orden de pago.</value>
+  </data>
+  <data name="tcnProponumCaption" xml:space="preserve">
+    <value>Propuesta</value>
+  </data>
+  <data name="tcnProponumToolTip" xml:space="preserve">
+    <value>Número de propuesta para el rechazo por propuesta.</value>
+  </data>
+  <data name="tcnPolicyCaption" xml:space="preserve">
+    <value>Póliza</value>
+  </data>
+  <data name="tcnPolicyToolTip" xml:space="preserve">
+    <value>Número de póliza que generó la orden de pago.</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Impuestos y Retenciones</value>
+  </data>
+  <data name="cbeTypeSupportCaption" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="cbeTypeSupportToolTip" xml:space="preserve">
+    <value>Código del tipo de documento soporte del pago que aplica para el cálculo de impuesto.</value>
+  </data>
+  <data name="tcnDoc_supportCaption" xml:space="preserve">
+    <value>Número del documento</value>
+  </data>
+  <data name="tcnDoc_supportToolTip" xml:space="preserve">
+    <value>Número del documento soporte del pago.</value>
+  </data>
+  <data name="cbeTax_codeCaption" xml:space="preserve">
+    <value>Tipo de impuesto</value>
+  </data>
+  <data name="cbeTax_codeToolTip" xml:space="preserve">
+    <value>Tipo de impuesto asociado al documento de pago.</value>
+  </data>
+  <data name="tcnPercentCaption" xml:space="preserve">
+    <value>Porcentaje</value>
+  </data>
+  <data name="tcnPercentToolTip" xml:space="preserve">
+    <value>Porcentaje a aplicar para el impuesto.</value>
+  </data>
+  <data name="tcnTax_amountCaption" xml:space="preserve">
+    <value>Monto impuesto</value>
+  </data>
+  <data name="tcnTax_amountToolTip" xml:space="preserve">
+    <value>Monto del impuesto correspondiente a la orden de pago.</value>
+  </data>
+  <data name="tcnAfectCaption" xml:space="preserve">
+    <value>Monto afecto</value>
+  </data>
+  <data name="tcnAfectToolTip" xml:space="preserve">
+    <value>Monto afecto correspondiente a la orden de pago.</value>
+  </data>
+  <data name="tcnExcentCaption" xml:space="preserve">
+    <value>Monto exento</value>
+  </data>
+  <data name="tcnExcentToolTip" xml:space="preserve">
+    <value>Monto exento correspondiente a la orden de pago.</value>
+  </data>
+  <data name="tcnAmounttotalCaption" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="tcnAmounttotalToolTip" xml:space="preserve">
+    <value>Monto total de la orden de pago.</value>
+  </data>
+  <data name="dtcBenefCaption" xml:space="preserve">
+    <value>Beneficiario</value>
+    <comment>ID=9069</comment>
+  </data>
+  <data name="dtcBenefToolTip" xml:space="preserve">
+    <value>Beneficiario de la orden de pago.</value>
+    <comment>ID=9069</comment>
+  </data>
+  <data name="valTypeprovCaption" xml:space="preserve">
+    <value>Proveedor</value>
+    <comment>ID=9069</comment>
+  </data>
+  <data name="valTypeprovToolTip" xml:space="preserve">
+    <value>Proveedor</value>
+    <comment>ID=9069</comment>
+  </data>
+  <data name="tcdChequeDateCaption" xml:space="preserve">
+    <value>Fecha de emisión</value>
+    <comment>ID=9070</comment>
+  </data>
+  <data name="tcdChequeDateToolTip" xml:space="preserve">
+    <value>Fecha de emisión en la que se espera se emita la orden de pago.</value>
+    <comment>ID=9070</comment>
+  </data>
+  <data name="tcdAccDateCaption" xml:space="preserve">
+    <value>Fecha de contabilización</value>
+    <comment>ID=9066</comment>
+  </data>
+  <data name="tcdAccDateToolTip" xml:space="preserve">
+    <value>Fecha de contabilización de la orden de pago.</value>
+    <comment>ID=9066</comment>
+  </data>
+  <data name="valReqUserCaption" xml:space="preserve">
+    <value>Solicitado por</value>
+    <comment>ID=9080</comment>
+  </data>
+  <data name="valReqUserToolTip" xml:space="preserve">
+    <value>Código del usuario que realiza la solicitud.</value>
+    <comment>ID=9080</comment>
+  </data>
+  <data name="AnchorTransferCaption" xml:space="preserve">
+    <value>Datos para transferencia</value>
+  </data>
+  <data name="cbeBankExtCaption" xml:space="preserve">
+    <value>Banco asociado a la cuenta</value>
+  </data>
+  <data name="cbeBankExtToolTip" xml:space="preserve">
+    <value>Banco asociado a la cuenta</value>
+  </data>
+  <data name="dtcAccountHolderCaption" xml:space="preserve">
+    <value>Titular de la cuenta</value>
+  </data>
+  <data name="dtcAccountHolderToolTip" xml:space="preserve">
+    <value>Titular de la cuenta</value>
+  </data>
+  <data name="valBankAccountCaption" xml:space="preserve">
+    <value>Cuenta bancaria</value>
+  </data>
+  <data name="valBankAccountToolTip" xml:space="preserve">
+    <value>Cuenta bancaria a transferir</value>
+  </data>
+  <data name="cbeAcc_TypeCaption" xml:space="preserve">
+    <value>Tipo de cuenta</value>
+  </data>
+  <data name="cbeAcc_TypeToolTip" xml:space="preserve">
+    <value>Tipo de cuenta a transferir</value>
+  </data>
+</root>

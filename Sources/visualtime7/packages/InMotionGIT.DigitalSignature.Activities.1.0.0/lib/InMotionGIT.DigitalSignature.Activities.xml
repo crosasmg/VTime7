@@ -1,0 +1,211 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.DigitalSignature.Activities
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.DigitalSignature.Activities.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:InMotionGIT.DigitalSignature.Activities.CreateDocument">
+ <summary>
+ Loading a document associated with a signer, pending signature or signed.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.DocumentType">
+ <summary>
+ Type the value document is defined by Acepta system.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.Description">
+ <summary>
+ Description of document
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.Filename">
+ <summary>
+ Name the file to be uploaded.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.Signatory">
+ <summary>
+ Identification of the signatory.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.EMail">
+ <summary>
+ EMail of the signatory.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.AuditoryCode">
+ <summary>
+ Auditory code.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.AuditoryDate">
+ <summary>
+ Auditory Date.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.Comment">
+ <summary>
+ Comment for action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.ErrorId">
+ <summary>
+ Identification error.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.CreateDocument.DocumentCode">
+ <summary>
+ Code of the document added.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DigitalSignature.Activities.CreateDocument.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DigitalSignature.Activities.DocumentFinalSignature">
+ <summary>
+ Retrieves a document.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentFinalSignature.DocumentCode">
+ <summary>
+ Document code to retrieve.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentFinalSignature.FirmarDocResponse">
+ <summary>
+ Identification error.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DigitalSignature.Activities.DocumentFinalSignature.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DigitalSignature.Activities.DocumentInformation">
+ <summary>
+ Retrieves a document.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentInformation.DocumentCode">
+ <summary>
+ Document code to retrieve.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentInformation.ErrorId">
+ <summary>
+ Identification error.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentInformation.Filename">
+ <summary>
+ Name of local generated file.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DigitalSignature.Activities.DocumentInformation.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DigitalSignature.Activities.DocumentSigning">
+ <summary>
+ It allows sign a document or add a signer.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.DocumentCode">
+ <summary>
+ Document code to sign.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.Signatory">
+ <summary>
+ Identification of the signatory.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.EMail">
+ <summary>
+ EMail of the signatory.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.AuditoryCode">
+ <summary>
+ Auditory code.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.AuditoryDate">
+ <summary>
+ Auditory Date.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.Comment">
+ <summary>
+ Comment for action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentSigning.ErrorId">
+ <summary>
+ Identification error.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DigitalSignature.Activities.DocumentSigning.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DigitalSignature.Activities.DocumentStatus">
+ <summary>
+ Check the status of a document.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentStatus.DocumentCode">
+ <summary>
+ Document code to retrieve.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentStatus.ErrorId">
+ <summary>
+ Identification error.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentStatus.Status">
+ <summary>
+ Signature Status.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentStatus.AuditoryCode">
+ <summary>
+ Auditory code.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DigitalSignature.Activities.DocumentStatus.AuditoryDate">
+ <summary>
+ SignatureAuditory Date.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DigitalSignature.Activities.DocumentStatus.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+</members>
+</doc>

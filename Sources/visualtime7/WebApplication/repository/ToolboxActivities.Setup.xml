@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+http://msdn.microsoft.com/en-us/library/ee829528.aspx
+http://blogs.msdn.com/b/endpoint/archive/2011/04/18/microsoft-net-framework-4-platform-update-1.aspx
+http://msmvps.com/blogs/theproblemsolver/archive/tags/WF4/default.aspx?PageIndex=3
+http://blogs.msdn.com/b/cathyk/archive/2009/11/12/expressiontextbox-101.aspx
+http://www.devexpress.com/Support/Center/p/E1705.aspx
+-->
+<Toolbox>
+
+	<assemblies>
+		<add assembly="InMotionGIT.Utils" />
+		<add assembly="InMotionGIT.Common.Contracts" />
+		<add assembly="InMotionGIT.Actions.Designer" />
+		<add assembly="InMotionGIT.Database.Model" />
+		<add assembly="InMotionGIT.Correspondence.Support" />
+		<add assembly="InMotionGIT.Common.Activities" />
+		<add assembly="InMotionGIT.Correspondence.Activity" />
+		<add assembly="InMotionGIT.DecisionTable.Activity" />
+
+		<add assembly="InMotionGIT.Questionnaires" />
+		<add assembly="GIT.Quote.Base" />
+
+		<add assembly="InMotionGIT.FrontOffice.Proxy" />
+		<add assembly="InMotionGIT.Agenda.Contracts" />
+		<add assembly="InMotionGIT.Agenda.Activities.Design" />
+
+		<!-- General -->
+		<add assembly="InMotionGIT.General.Entity.Contracts" />
+		<add assembly="InMotionGIT.General.Services" />
+		<add assembly="InMotionGIT.General.Activities" />
+
+		<!-- Client -->
+		<add assembly="InMotionGIT.Client.Entity.Contracts" />
+		<add assembly="InMotionGIT.Client.Activities" />
+
+		<!-- Intermedia -->
+		<add assembly="InMotionGIT.Intermedia.Entity.Contracts" />
+		<add assembly="InMotionGIT.Intermedia.Activities" />
+
+		<!-- Policy  -->
+		<add assembly="InMotionGIT.Policy.Entity.Contracts" />
+
+		<!-- Product -->
+		<add assembly="InMotionGIT.Product.Activities" />
+		<add assembly="InMotionGIT.Product.Entity.Contracts" />
+		<add assembly="InMotionGIT.Product.Proxy" />
+    
+		<add assembly="InMotionGIT.PolicyManager.Activities" />
+		<add assembly="InMotionGIT.Bill.Entity.Contracts" />
+		<add assembly="InMotionGIT.Claim.Entity.Contracts" />
+		<add assembly="InMotionGIT.CoReinsurance.Entity.Contracts" />
+		<add assembly="InMotionGIT.WebServiceQuoteManager.Contract" />
+		<add assembly="InMotionGIT.WebServiceQuoteManager.Service" />
+		<add assembly="InMotionGIT.WebServiceQuoteManager.Activities" />
+
+		<add assembly="InMotionGIT.Underwriting.Contracts" />
+		<add assembly="InMotionGIT.Underwriting.Proxy" />
+		<add assembly="InMotionGIT.Underwriting.Activities" />
+    <add assembly="InMotionGIT.Underwriting.Activities.Design" />
+    
+		<add assembly="InMotionGIT.Assembly.Model" />
+		<add assembly="InMotionGIT.BusinessRule" />
+		<add assembly="InMotionGIT.BusinessRule.Activities" />
+
+		<add assembly="InMotionGIT.PolicyReinsuranceManager.Contract" />
+		<add assembly="InMotionGIT.PolicyReinsuranceManager.Service" />
+		<add assembly="InMotionGIT.PolicyReinsurance.Activities" />
+
+		<add assembly="InMotionGIT.ClaimManager.Service" />
+		<add assembly="InMotionGIT.ClaimManager.Activities" />
+		<add assembly="InMotionGIT.LifePolicy.Service" />
+		<add assembly="InMotionGIT.LifePolicy.Activities" />
+		
+		<add assembly="InMotionGIT.Activities" />
+		<add assembly="InMotionGIT.Activities.Design" />
+		<add assembly="InMotionGIT.Activities.Contracts" />
+		
+		<!-- Address Manager Service -->
+		
+		<add assembly="InMotionGIT.AddressManager.Activities" />
+		<add assembly="InMotionGIT.AddressManager.Contract" />
+		
+		<!-- Phone Manager Service -->
+		<add assembly="InMotionGIT.PhoneManager.Activities" />
+		<add assembly="InMotionGIT.PhoneManager.Contract" />
+
+		<!-- Cotizador Web -->
+		<add assembly="InMotionGIT.CotizadorWeb.Activities"/>
+		
+		<!-- DNE service -->
+		<add assembly="InMotionGIT.DatosNoEstruct.Activities"/>
+		<add assembly="InMotionGIT.DatosNoEstruct.ContratoDeDatos"/>
+		
+		<!-- STS -->
+		<add assembly="InMotionGIT.Seguridad.Activities"/>
+		
+		<add assembly="InMotionGIT.Integration.Acepta"/>
+		<add assembly="InMotionGIT.DigitalSignature.Activities"/>
+
+    <!-- AutomobileConnection -->
+    <add assembly="InMotionGIT.AutomobileConnection.Activities"/>
+
+	<!--Crystal report service-->
+	<add assembly="InMotionGIT.Report.Crystal.Designs"/>
+
+	</assemblies>
+
+<!--  
+  <Tab name="Research" allow="" summary="">
+		<Activity fullName="System.Activities.Statements.WriteLine" 	 assemblyname="" allow="" summary="The Writeline activity writes text to a specified TextWriter object. If no TextWriter is specified, Writeline writes the text to the console."/>    
+
+    <Activity fullName="InMotionGIT.Common.Activities.Bookmark"                  assemblyname="" allow="" summary=""/>
+    <Activity fullName="InMotionGIT.Common.Activities.Resume"                    assemblyname="" allow="" summary=""/>
+    <Activity fullName="InMotionGIT.Common.Activities.General.Navigation"        assemblyname="" allow="" summary=""/>
+
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Retrieve"                    assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.RetrieveScalar"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Find"                        assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Insert"                      assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Update"                      assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Delete"                      assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.Update"                      assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.CallProcedure" 	          assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.DataAccess.CallProcedureWithResultset"  assemblyname="" allow="" summary=""/>    
+  </Tab>
+-->
+
+  <Tab name="Standard" allow="" summary="">
+		<Activity fullName="InMotionGIT.BusinessRule.Activities.RuleExecute"         assemblyname="" allow="" summary=""/>	
+		<Activity fullName="InMotionGIT.DecisionTable.Activity.DecisionTable"        assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Agenda.Activities.Design.CreateTask"         assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Correspondence.Activity.Report"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Correspondence.Activity.ReportDNE"           assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Correspondence.Activity.SendMail"            assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Correspondence.Activity.SendSMS"             assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.General.ExecuteWorkflow"   assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.General.Notification"      assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Common.Activities.ProcessIdentifier"         assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Activities.FileProcessing"                   assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.General.Activities.General.RenameFile"   	 assemblyname="" allow="" summary=""/>
+    <Activity fullName="InMotionGIT.Activities.Trace"                            assemblyname="" allow="" summary=""/>
+	</Tab>
+
+	<Tab name="Control Flow" allow="" summary="Activity designers used to control the flow within a workflow.">
+		<Activity fullName="System.Activities.Statements.DoWhile"                                           assemblyname="" allow="" summary="Executes a child activity contained in its Body at least once, until a specified condition evaluates to false. If you need the activity contained in a loop body to be executed zero or more times, use the While activity instead."/>
+		<Activity fullName="System.Activities.Core.Presentation.Factories.ForEachWithBodyFactory`1"         assemblyname="" allow="" summary="Executes the activity contained in its Body for each item in a specified Values collection." icon="ForEach" name="ForEach" />
+		<Activity fullName="System.Activities.Statements.If"                                                assemblyname="" allow="" summary="Evaluates a condition and executes an activity depending on the results of that evaluation. This activity is most useful when using a procedural modeling style of programming. An If activity can be nested inside a Sequence activity or a Parallel activity, for example. If you are using a Flowchart activity, consider using a FlowDecision activity instead."/>
+		<Activity fullName="System.Activities.Statements.Parallel"                                          assemblyname="" allow="" summary="Executes a collection of child activities concurrently."/>
+		<Activity fullName="System.Activities.Core.Presentation.Factories.ParallelForEachWithBodyFactory`1" assemblyname="" allow="" summary="Enumerates the elements of a collection and executes an embedded statement for each element of the collection in parallel, which is asynchronously on the same thread. Use this flow control activity instead of the Sequence activity if the child activities of this activity are expected to go idle." icon="ParallelForEach" name="ParallelForEach" />
+		<Activity fullName="System.Activities.Core.Presentation.Factories.PickWithTwoBranchesFactory"       assemblyname="" allow="" summary="Provides event-based control flow. The activity executes one of several branches in response to a triggering event." icon="Pick" name="Pick" />
+		<Activity fullName="System.Activities.Statements.PickBranch"                                        assemblyname="" allow="" summary="Provides an event-based path of execution within a Pick activity that can be triggered by an incoming event."/>
+		<Activity fullName="System.Activities.Statements.Sequence"                                          assemblyname="" allow="" summary="Contains an ordered collection of child activities that it executes in order."/>
+		<Activity fullName="System.Activities.Statements.Switch`1"                                          assemblyname="" allow="" summary="Evaluates a specified expression and executes the activity from a collection of activities whose associated key matches the value obtained from the evaluation." name="FlowSwitch"/>
+		<Activity fullName="System.Activities.Statements.While"                                             assemblyname="" allow="" summary="Executes a child activity contained in its Body while the specified Condition evaluates to true. The contained activity may never execute. If you want the contained activity to be executed at least once, use the DoWhile activity instead."/>
+	</Tab>
+	<Tab name="Flowchart" allow="" summary="Activity designers used to construct flowchart activities">
+		<Activity fullName="System.Activities.Statements.Flowchart"    assemblyname="" allow="" summary="Used to create workflows that define and manage complex flow controls."  icon="FlowChart" />
+		<Activity fullName="System.Activities.Statements.FlowDecision" assemblyname="" allow="" summary="Provides a branch for the flow of control into one of two alternatives based on whether a specified condition is satisfied."/>
+		<Activity fullName="System.Activities.Statements.FlowSwitch`1" assemblyname="" allow="" summary="Provides branching for the flow of control based on match criterion when more than two alternative branches are required." name="FlowSwitch"/>
+	</Tab>
+	<Tab name="Messaging" allow="" summary="Activity designers used to manage messaging activities.">
+		<Activity fullName="System.ServiceModel.Activities.Send"                                              assemblyname="" allow="" summary="A Send activity is used to send a message to a service."/>
+		<Activity fullName="System.ServiceModel.Activities.SendReply"                                         assemblyname="" allow="" summary="An activity that receives a message as part of a request/reply message exchange pattern."/>
+		<Activity fullName="System.ServiceModel.Activities.Presentation.Factories.SendAndReceiveReplyFactory" assemblyname="" allow="" summary="" name="SendAndReceiveReply" icon="SendAndReceiveReply"/>
+		<Activity fullName="System.ServiceModel.Activities.Receive"                                           assemblyname="" allow="" summary="The Receive activity can receive a single item or multiple items depending on the type of receive content used. "/>
+		<Activity fullName="System.ServiceModel.Activities.ReceiveReply"                                      assemblyname="" allow="" summary="An activity that receives a message as part of a request/reply message exchange pattern."/>
+		<Activity fullName="System.ServiceModel.Activities.Presentation.Factories.ReceiveAndSendReplyFactory" assemblyname="" allow="" summary="" name="ReceiveAndSendReply" icon="ReceiveAndSendReply"/>
+		<Activity fullName="System.ServiceModel.Activities.InitializeCorrelation"                             assemblyname="" allow="" summary="An InitializeCorrelation activity is used to initialize correlations without sending or receiving a message. Typically correlation is initialized when sending or receiving a message. If correlation must be established before a message is sent or received, use InitializeCorrelation to initialize the correlation."/>
+		<Activity fullName="System.ServiceModel.Activities.CorrelationScope"                                  assemblyname="" allow="" summary="Provides implicit CorrelationHandle management for child messaging activities."/>
+		<Activity fullName="System.ServiceModel.Activities.TransactedReceiveScope"                            assemblyname="" allow="" summary="Enables you to flow a transaction into server transactions created by a workflow or dispatcher."/>
+	</Tab>
+	<Tab name="Runtime" allow="" summary="Activity designers used to persist and terminate workflow activities.">
+		<Activity fullName="System.Activities.Statements.Persist" 			    assemblyname="" allow="" summary="The Persist activity saves a workflow to disk, if possible. The Persist activity cannot be executed in a non-persistence zone as, for example, within a TransactionScope activity. If you do use a Persist activity in a non-persistence scope, an exception is thrown at runtime."/>
+		<Activity fullName="System.Activities.Statements.TerminateWorkflow"     assemblyname="" allow="" summary="The TerminateWorkflow activity terminates the execution of a workflow."/>
+	</Tab>
+	<Tab name="Primitives" allow="" summary="Activity designers used to manage primitive activities such as assign and delay.">
+		<Activity fullName="System.Activities.Statements.Assign" 			 assemblyname="" allow="" summary="The Assign activity assigns a value to a variable or argument."/>
+		<Activity fullName="System.Activities.Statements.Delay" 			 assemblyname="" allow="" summary="The Delay activity delays the execution of a workflow for a specified amount of time."/>
+		<Activity fullName="System.Activities.Statements.InvokeMethod"       assemblyname="" allow="" summary="The InvokeMethod calls a public method of a specified object or type."/>
+		<!--
+
+-->
+	</Tab>
+	<Tab name="Transaction" allow="" summary="Activity designers used to manage transaction activities.">
+		<Activity fullName="System.Activities.Statements.CancellationScope"   assemblyname="" allow="" summary="The CancellationScope activity allows you to specify an activity for execution and cancellation logic for that activity."/>
+		<Activity fullName="System.Activities.Statements.CompensableActivity" assemblyname="" allow="" summary="The CompensableActivity defines a unit of work that can be confirmed or compensated after successful completion."/>
+		<Activity fullName="System.Activities.Statements.Compensate"          assemblyname="" allow="" summary="The Compensate activity explicitly invokes the CompensationHandler for an activity contained in a CompensableActivity."/>
+		<Activity fullName="System.Activities.Statements.Confirm"             assemblyname="" allow="" summary="The Confirm activity explicitly invokes the ConfirmationHandler for an activity contained in a CompensableActivity."/>
+		<Activity fullName="System.Activities.Statements.TransactionScope"    assemblyname="" allow="" summary="The TransactionScope activity executes the contained activity in a single transaction. The transaction commits when the Body activity and all other participants in the transaction have completed successfully."/>
+	</Tab>
+	<Tab name="Collections" allow="" summary="Activity designers used to manage collection activities.">
+		<Activity fullName="System.Activities.Statements.AddToCollection`1"      assemblyname="" allow="" summary="The AddToCollection activity adds an item to a collection." name="AddToCollection"/>
+		<Activity fullName="System.Activities.Statements.ClearCollection`1"      assemblyname="" allow="" summary="The ClearCollection activity clears a specified collection of all items." name="ClearCollection"/>
+		<Activity fullName="System.Activities.Statements.ExistsInCollection`1"   assemblyname="" allow="" summary="The ExistsInCollection activity determines whether a specified item exists in a particular collection." name="ExistsInCollection"/>
+		<Activity fullName="System.Activities.Statements.RemoveFromCollection`1" assemblyname="" allow="" summary="The RemoveFromCollection activity removes a specified item from a particular collection." name="RemoveFromCollection"/>
+	</Tab>
+	<Tab name="Error Handling" allow="" summary="Activity designers used to manage error handling activities.">
+		<Activity fullName="System.Activities.Statements.Rethrow"  assemblyname="" allow="" summary="The Rethrow activity throws a previously thrown exception. This activity can only be used in a Catch handler in the TryCatch activity."/>
+		<Activity fullName="System.Activities.Statements.Throw"    assemblyname="" allow="" summary="The Throw activity throws an exception."/>
+		<Activity fullName="System.Activities.Statements.TryCatch" assemblyname="" allow="" summary="The TryCatch activity contains a Try activity, a collection of Catch&lt;TException&gt; and a Finally activity. A Catch of type TException contains an ExceptionType and an Action. Together they are used to implement a typical exception-based error handling mechanism. A TryCatch activity tries to execute its Try activity. If the Try activity throws any exception, the TryCatch activity uses its Catch&lt;TException&gt; collection to match the exception. If there is a match, then the Action of the corresponding Catch&lt;TException&gt; is executed, serving as the error handling logic for the exception. If the activities in the Try section successfully complete or the activities in the Catches successfully complete, the TryCatch activity executes its Finally activity."/>
+	</Tab>
+	<Tab name="Underwriting" allow="" summary="">
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UWCaseSetup"             assemblyname="" allow="" summary="Create a case of subscription from a policy."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UWCaseAddRole"           assemblyname="" allow="" summary="Add a role to the case of subscription, from a client."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UWCaseRequirements"      assemblyname="" allow="" summary="Add a requirement, a case of subscription."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UWCaseRequirementChange" assemblyname="" allow="" summary="Change the status of a request, for a case of subscription."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.SaveUWCase"              assemblyname="" allow="" summary="Synchronizes information a case of subscription in the database."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.RetrieveUWCase"          assemblyname="" allow="" summary="Retrieves information from a case of subscription."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UWApplyRule"             assemblyname="" allow="" summary="Apply a subscription rule a requirement, as set."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.ApplyRule"               assemblyname="" allow="" summary="Apply a subscription rule a requirement, as set."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.AcceptCase"              assemblyname="" allow="" summary="It states that the case of subscription was accepted."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.OpenCase"                assemblyname="" allow="" summary="Open a case subscription."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.CloseCase"               assemblyname="" allow="" summary="Closes or declines, a case subscription."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.UpdateRequirementByType" assemblyname="" allow="" summary="Change the status of a requirement by type, for a case of subscription."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.UpdateUWCase"            assemblyname="" allow="" summary="Synchronizes information updated by Underwriting Panel."/>
+	    <Activity fullName="InMotionGIT.Underwriting.Activities.ActivateTemporaryResourcesDNE"   assemblyname="" allow="" summary="Activates Temporary Resources from DNE services"/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.TranslateRequirementLinks"   assemblyname="" allow="" summary="Returns a translated requirement links associated to role, according the language sent by parameter."/> 
+		<Activity fullName="InMotionGIT.Underwriting.Activities.UpdateWorkFlowStatusInCase"            assemblyname="" allow="" summary="Update status of the workflow execution of a case."/>
+		<Activity fullName="InMotionGIT.Underwriting.Activities.GenerateHistoryUWCase"            assemblyname="" allow="" summary="Generate history to underwriting case."/>
+  </Tab>
+	<Tab name="Core: Client" allow="" summary="">
+		<Activity fullName="InMotionGIT.Client.Activities.GetNewClientId"        assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Activities.Find"                  assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Activities.Retrieve"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Activities.ClientSetup"           assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Activities.ApplyChange"           assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Activities.Synchronize"           assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Producer" allow="" summary="">
+		<Activity fullName="InMotionGIT.Intermedia.Activities.Find"                  assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Intermedia.Activities.Retrieve"              assemblyname="" allow="" summary=""/>
+		<!--<Activity fullName="InMotionGIT.Intermedia.Activities.Synchronize"           assemblyname="" allow="" summary=""/>-->
+	</Tab>
+	<Tab name="Core: Product" allow="" summary="">
+		<!--<Activity fullName="InMotionGIT.PolicyManager.Activities.ClientActuarialAge"     assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.ValidateClient"         assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.Product.Activities.Retrieve"                     assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Policy" allow="" summary="">
+		<Activity fullName="InMotionGIT.LifePolicy.Activities.ObtainFaceAmountOfLifePoliciesofTheInsuredPerson"           assemblyname="" allow="" summary="Obtain the Face Amount Of Life Policies Of The Insured Person"/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.CoverageRating"           assemblyname="" allow="" summary="Coverage rating"/>
+		<!--<Activity fullName="InMotionGIT.PolicyManager.Activities.DiscountExtraPremiumTax"  assemblyname="" allow="" summary=""/>-->
+		<!--<Activity fullName="InMotionGIT.PolicyManager.Activities.Billing"                  assemblyname="" allow="" summary="Generate a Bill"/>-->
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Find"                     assemblyname="" allow="" summary=""/>
+		<Activity fullName="InmotionGIT.PolicyReinsurance.Activities.CalculateReinsuranceDistribution"      assemblyname="" allow="" summary="Calculate the reinsurance distribution of the policy/certificate"/>
+		<Activity fullName="InmotionGIT.PolicyReinsurance.Activities.GetFacultativePureOfPolicy"            assemblyname="" allow="" summary="Get the facultative companies included in the reinsurance distribution of the policy/certificate"/>
+		<Activity fullName="InmotionGIT.PolicyReinsurance.Activities.GetReinsuranceAmountsByLineOfBusiness" assemblyname="" allow="" summary="Get the reinsurance amounts of the reinsurance line of business of the policy/certificate"/>    
+		<Activity fullName="InmotionGIT.PolicyReinsurance.Activities.ReinsuranceDistributionSynchronize"    assemblyname="" allow="" summary="Update the reinsurance distribution of the policy/certificate"/>   
+<!--<Activity fullName="InMotionGIT.PolicyManager.Activities.Cancel"                   assemblyname="" allow="" summary=""/>	
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Cancel"                   assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Suspend"                  assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Renew"                    assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.GetNewPolicyId"           assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Retrieve"                 assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.PolicySetup"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.ApplyChange"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.Synchronize"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.PolicyLoader"             assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.RiskBuilder"              assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.PolicyManager.Activities.RiskClone"                assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Bill" allow="" summary="">
+		<!--<Activity fullName="InMotionGIT.Bill.Entity.Contracts.Activities.ChangeStatus" assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.Bill.Entity.Contracts.Activities.Find"         assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Bill.Entity.Contracts.Activities.Retrieve"     assemblyname="" allow="" summary=""/>
+		<!--<Activity fullName="InMotionGIT.Bill.Entity.Contracts.Activities.BillSetup"    assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.Bill.Entity.Contracts.Activities.Synchronize"  assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Claim" allow="" summary="">
+		<Activity fullName="InMotionGIT.ClaimManager.Activities.ClaimDeclaration"	assemblyname="" allow="" summary="Create the information related to the declaration of the claim"/>   
+<!--<Activity fullName="InMotionGIT.ClaimManager.Activities.ChangeStatus" 	    assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.ClaimManager.Activities.PaymentOrden" 	    assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.ClaimManager.Activities.Find"         	    assemblyname="" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.ClaimManager.Activities.Retrieve"     	    assemblyname="" allow="" summary=""/>
+		<!--<Activity fullName="InMotionGIT.ClaimManager.Activities.ClaimSetup"   	    assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.ClaimManager.Activities.Synchronize"  	    assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: General" allow="" summary="">
+		<Activity fullName="InMotionGIT.General.Activities.General.Numerator"   assemblyname="" allow="" summary=""/>
+	</Tab>  
+	<Tab name="Core: Security" allow="" summary="">
+		<!--<Activity fullName="InMotionGIT.General.Activities.Security.SecuritySetup"   assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.General.Activities.Security.UserRetrieve"    assemblyname="" allow="" summary=""/>
+		<!--<Activity fullName="InMotionGIT.General.Activities.Security.UserSynchronize" assemblyname="" allow="" summary=""/>-->
+		<Activity fullName="InMotionGIT.General.Activities.Security.SchemeRetrieve"  assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Service Orders" allow="" summary="">
+		<Activity fullName="InMotionGIT.General.Activities.ServiceOrders.Retrieve"   assemblyname="" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Notes" allow="" summary="">
+		<Activity fullName="InMotionGIT.General.Activities.Notes.SynchronizeNotes"          assemblyname="" allow="" summary="Synchronize Notes"/>
+	</Tab>
+	<Tab name="Address Service" allow="" summary="Activities that consume the address service">
+		<Activity fullName="InMotionGIT.AddressManager.Activities.DeleteAddress"           	assemblyname="" allow="" summary="Deletes the address of the owner."/>		
+		<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStreetAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a StreetAddress object. This uses simple mode, which does no probabilistic analysis."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStringAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a string. This uses simple mode, which does no probabilistic analysis."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.PrepareToSyncAddress" 	assemblyname="" allow="" summary="Saves the address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveAddressesByIdDLI" assemblyname="" allow="" summary="Retrieves the addresses of the owner by it's address id."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveeMail"           	assemblyname="" allow="" summary="Retrieves the email address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePhysicalAddress" 	assemblyname="" allow="" summary="Retrieves the physical address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePoBox"           	assemblyname="" allow="" summary="Retrieves the PoBox address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveSocialNetwork"   	assemblyname="" allow="" summary="Retrieves the social network address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveWebAddress"      	assemblyname="" allow="" summary="Retrieves the web address of the owner."/>
+		<Activity fullName="InMotionGIT.AddressManager.Activities.BuildCompleteAddress"    	assemblyname="" allow="" summary="Builds the complete address from the part of the address."/>
+	</Tab>
+	<Tab name="Phone Service" allow="" summary="Activities that consume the phone service">
+		<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhones"          			assemblyname="" allow="" summary="Retrieves the phones of the owner."/>
+		<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhoneByInternalPhoneKey"    assemblyname="" allow="" summary="Retrieves a single phone from the owner."/>
+		<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhonesByPhoneID"      		assemblyname="" allow="" summary="Retrieves the phones of the owner."/>
+		<Activity fullName="InMotionGIT.PhoneManager.Activities.SyncPhone"        					assemblyname="" allow="" summary="Saves or updates the phone of the owner."/>
+		<Activity fullName="InMotionGIT.PhoneManager.Activities.DeletePhone"      					assemblyname="" allow="" summary="Deletes the phone of the owner."/>		
+	</Tab>
+	<Tab name="Unstructured Data Service (DNE)" allow="" summary="Unstructured data service">
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.AddResourceWithTemporaryState" 	assemblyname="" allow="" summary="Adds a a Resource(Img, Doc, Aud, Vid) to the database."/>
+	    <Activity fullName="InMotionGIT.DatosNoEstruct.Activities.AddDocument"     					assemblyname="" allow="" summary="Adds a document to the database."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.AddImage"     					assemblyname="" allow="" summary="Adds an Image to the database."/>		
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.AddNote"	     					assemblyname="" allow="" summary="Adds a Note to the database."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.AddSequence"	     				assemblyname="" allow="" summary="Adds a Sequence to the database."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.ConvertFilePathToBytes"	    	assemblyname="" allow="" summary="Converts a given file path to bytes."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.DeleteResource"   				assemblyname="" allow="" summary="Deletes a Resource(Img,Vid,Doc,Aud,Not)"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GenerateSequence"     			assemblyname="" allow="" summary="Generates a Sequence into the database."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetAudio"   						assemblyname="" allow="" summary="Gets Audio"/> 				
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetDocument"   					assemblyname="" allow="" summary="Gets Document from the DB"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetImage"     					assemblyname="" allow="" summary="Gets the image from the database."/>
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetNote"	     					assemblyname="" allow="" summary="Gets the note from the database."/>		
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetResource"   					assemblyname="" allow="" summary="Gets a Resource from the DB"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetResourceContent"   			assemblyname="" allow="" summary="Gets Resource content(bytes)"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.GetVideo"   						assemblyname="" allow="" summary="Gets Video"/> 		
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.UpdateResource"   				assemblyname="" allow="" summary="Updates a Resource. The content(Img,Vid,Doc,Aud) cannot be modifed, only the name of the resource"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.UpdateNote"   					assemblyname="" allow="" summary="Updates a Note into the Database"/> 				
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.UpdateNoteContent"   				assemblyname="" allow="" summary="Updates a Note Content in the Database"/> 
+		<Activity fullName="InMotionGIT.DatosNoEstruct.Activities.ActivateTemporaryResources"   	assemblyname="" allow="" summary="Makes elements of a sequence permanent."/>
+	</Tab>
+	<Tab name="Security token service" allow="" summary="Security token service">
+				<Activity fullName="InMotionGIT.Seguridad.Activities.RequestToken"       			assemblyname="" allow="" summary="Request a security token that needs to be used with the code activities."/>
+	</Tab>
+	<Tab name="Digital Signature" allow="" summary="Digital signature service">
+		<Activity fullName="InMotionGIT.DigitalSignature.Activities.CreateDocument"       			assemblyname="" allow="" summary="Loading a document associated with a signer, pending signature or signed."/>
+		<Activity fullName="InMotionGIT.DigitalSignature.Activities.DocumentSigning"       			assemblyname="" allow="" summary="It allows sign a document or add a signer."/>
+		<Activity fullName="InMotionGIT.DigitalSignature.Activities.DocumentStatus"       			assemblyname="" allow="" summary="Check the status of a document."/>
+		<Activity fullName="InMotionGIT.DigitalSignature.Activities.DocumentInformation"       		assemblyname="" allow="" summary="Retrieves a document."/>
+	</Tab>
+
+  <Tab name="AutomobileConnection" allow="" summary="Automobile Connection Service">
+    <Activity fullName="InMotionGIT.AutomobileConnection.Activities.GetAutomobileInformation"       			assemblyname="" allow="" summary="Obtains a vehicle's information using a specified provider"/>
+    <Activity fullName="InMotionGIT.AutomobileConnection.Activities.GetAutomobilePrice"       			assemblyname="" allow="" summary="Obtains a vehicle's price using a specified provider"/>
+  </Tab>
+  
+  <!--
+	<Tab name="Core: Client" allow="" summary="">
+		<Activity fullName="InMotionGIT.Client.Workflow.Activities.ClientProcess"   assemblyname="InMotionGIT.Client.Contracts,InMotionGIT.Client.Services.Proxy,InMotionGIT.Client.Workflow.Activities" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Workflow.Activities.ClientExist"     assemblyname="InMotionGIT.Client.Contracts,InMotionGIT.Client.Services.Proxy,InMotionGIT.Client.Workflow.Activities" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Workflow.Activities.LoadClient"      assemblyname="InMotionGIT.Client.Contracts,InMotionGIT.Client.Services.Proxy,InMotionGIT.Client.Workflow.Activities" allow="" summary=""/>
+		<Activity fullName="InMotionGIT.Client.Workflow.Activities.MaintainClient"  assemblyname="InMotionGIT.Client.Contracts,InMotionGIT.Client.Services.Proxy,InMotionGIT.Client.Workflow.Activities" allow="" summary=""/>
+	</Tab>
+ <Tab name="Core: Policy" allow="" summary="">
+		<Activity fullName="InMotionGIT.Policy.Workflow.Activities.PolicyProcess"   assemblyname="InMotionGIT.Client.Contracts,InMotionGIT.Policy.Contracts,InMotionGIT.Policy.Services.Proxy,InMotionGIT.Policy.Workflow.Activities" allow="" summary=""/>
+	</Tab>
+	<Tab name="Core: Security" allow="" summary="">
+		<Activity fullName="InMotionGIT.Security.Workflow.Activities.SecuritySetup" assemblyname="InMotionGIT.Security.Context.Services.Proxy,InMotionGIT.Security.Workflow.Activities" allow="" summary=""/>
+
+	</Tab>-->
+
+
+</Toolbox>

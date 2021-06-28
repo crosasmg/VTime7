@@ -1,0 +1,63 @@
+Modificar el archivo Toolbox.Activities.Setup.xml
+
+ANTES
+<!-- Address Manager Service -->
+<add assembly="InMotionGIT.PhoneManager.Activities" />
+		
+AHORA
+<!-- Phone Manager Service -->
+<add assembly="InMotionGIT.PhoneManager.Activities" />
+<add assembly="InMotionGIT.PhoneManager.Contract" />
+	
+
+	
+ANTES
+
+<Tab name="Phone Service" allow="" summary="Activities that consume the phone service">
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhones"          	assemblyname="" allow="" summary="Retrieves the phones of the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.SyncPhone"        			assemblyname="" allow="" summary="Saves or updates the phone of the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.DeletePhone"      			assemblyname="" allow="" summary="Deletes the phone of the owner."/>
+</Tab>
+
+<Tab name="Phone Service" allow="" summary="Activities that consume the phone service">
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhones"          			assemblyname="" allow="" summary="Retrieves the phones of the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhoneByInternalPhoneKey"    assemblyname="" allow="" summary="Retrieves a single phone from the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.RetrievePhonesByPhoneID"      		assemblyname="" allow="" summary="Retrieves the phones of the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.SyncPhone"        					assemblyname="" allow="" summary="Saves or updates the phone of the owner."/>
+	<Activity fullName="InMotionGIT.PhoneManager.Activities.DeletePhone"      					assemblyname="" allow="" summary="Deletes the phone of the owner."/>		
+</Tab>
+
+
+
+ANTES
+
+<Tab name="Address Service" allow="" summary="Activities that consume the address service">
+	<Activity fullName="InMotionGIT.AddressManager.Activities.DeleteAddress"           	assemblyname="" allow="" summary="Deletes the address of the owner."/>		
+	<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStreetAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a StreetAddress object. This uses simple mode, which does no probabilistic analysis."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStringAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a string. This uses simple mode, which does no probabilistic analysis."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.PrepareToSyncAddress" 	  assemblyname="" allow="" summary="Saves the address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveAddresses"      	assemblyname="" allow="" summary="Retrieves the addresses of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveAddressesById"   	assemblyname="" allow="" summary="Retrieves the addresses of the owner by it's address id."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveeMail"           	assemblyname="" allow="" summary="Retrieves the email address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePhysicalAddress" 	assemblyname="" allow="" summary="Retrieves the physical address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePoBox"           	assemblyname="" allow="" summary="Retrieves the PoBox address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveSocialNetwork"   	assemblyname="" allow="" summary="Retrieves the social network address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveWebAddress"      	assemblyname="" allow="" summary="Retrieves the web address of the owner."/>
+<Activity fullName="InMotionGIT.AddressManager.Activities.BuildCompleteAddress"    	assemblyname="" allow="" summary="Builds the complete address from the part of the address."/>
+</Tab>
+
+AHORA
+
+<Tab name="Address Service" allow="" summary="Activities that consume the address service">
+	<Activity fullName="InMotionGIT.AddressManager.Activities.DeleteAddress"           	assemblyname="" allow="" summary="Deletes the address of the owner."/>		
+	<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStreetAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a StreetAddress object. This uses simple mode, which does no probabilistic analysis."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.NormalizeStringAddress"   assemblyname="" allow="" summary="Normalizes an address contained in a string. This uses simple mode, which does no probabilistic analysis."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.PrepareToSyncAddress" 	assemblyname="" allow="" summary="Saves the address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveAddressesByIdDLI" assemblyname="" allow="" summary="Retrieves the addresses of the owner by it's address id."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveeMail"           	assemblyname="" allow="" summary="Retrieves the email address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePhysicalAddress" 	assemblyname="" allow="" summary="Retrieves the physical address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrievePoBox"           	assemblyname="" allow="" summary="Retrieves the PoBox address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveSocialNetwork"   	assemblyname="" allow="" summary="Retrieves the social network address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.RetrieveWebAddress"      	assemblyname="" allow="" summary="Retrieves the web address of the owner."/>
+	<Activity fullName="InMotionGIT.AddressManager.Activities.BuildCompleteAddress"    	assemblyname="" allow="" summary="Builds the complete address from the part of the address."/>
+</Tab>

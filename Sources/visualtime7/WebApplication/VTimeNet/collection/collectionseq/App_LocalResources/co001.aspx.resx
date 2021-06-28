@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbeCollecDocTypColumnCaption" xml:space="preserve">
+    <value>Concepto de cargo/abono</value>
+  </data>
+  <data name="cbeCollecDocTypColumnToolTip" xml:space="preserve">
+    <value>Concepto de cargo/abono o tipo de documento</value>
+  </data>
+  <data name="cbeBranchColumnCaption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+  <data name="cbeBranchColumnToolTip" xml:space="preserve">
+    <value>Ramo en tratamiento</value>
+  </data>
+  <data name="valProductColumnCaption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="valProductColumnToolTip" xml:space="preserve">
+    <value>Producto asociado al ramo</value>
+  </data>
+  <data name="tcnPolicyColumnCaption" xml:space="preserve">
+    <value>Póliza</value>
+  </data>
+  <data name="tcnPolicyColumnToolTip" xml:space="preserve">
+    <value>Número de la póliza</value>
+  </data>
+  <data name="tcnCertifColumnCaption" xml:space="preserve">
+    <value>Certificado</value>
+  </data>
+  <data name="tcnCertifColumnToolTip" xml:space="preserve">
+    <value>Número de certificado</value>
+  </data>
+  <data name="tcnDocumentColumnCaption" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="tcnDocumentColumnToolTip" xml:space="preserve">
+    <value>Número de documento</value>
+  </data>
+  <data name="btnSCO001ColumnToolTip" xml:space="preserve">
+    <value>Datos de verificación del recibo</value>
+  </data>
+  <data name="tcnDraftColumnCaption" xml:space="preserve">
+    <value>Cuota</value>
+  </data>
+  <data name="tcnDraftColumnToolTip" xml:space="preserve">
+    <value>Número de la cuota en el contrato de financiamiento</value>
+  </data>
+  <data name="valCodeColumnCaption" xml:space="preserve">
+    <value>Préstamo</value>
+  </data>
+  <data name="dtcClientColumnCaption" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="dtcClientColumnToolTip" xml:space="preserve">
+    <value>Código del cliente en tratamiento</value>
+  </data>
+  <data name="tcnProponumColumnCaption" xml:space="preserve">
+    <value>Propuesta</value>
+  </data>
+  <data name="tcnProponumColumnToolTip" xml:space="preserve">
+    <value>Número de propuesta</value>
+  </data>
+  <data name="tcnAmountColColumnCaption" xml:space="preserve">
+    <value>Monto pendiente</value>
+  </data>
+  <data name="tcnAmountColColumnToolTip" xml:space="preserve">
+    <value>Monto pendiente de cobro</value>
+  </data>
+  <data name="cbeCurrencyColumnCaption" xml:space="preserve">
+    <value>Moneda origen</value>
+  </data>
+  <data name="cbeCurrencyColumnToolTip" xml:space="preserve">
+    <value>Moneda origen del documento</value>
+  </data>
+  <data name="tcdValuedateColumnCaption" xml:space="preserve">
+    <value>Fecha de valorización</value>
+  </data>
+  <data name="tcdValuedateColumnToolTip" xml:space="preserve">
+    <value>Fecha a la que se aplica el factor de cambio correspondiente</value>
+  </data>
+  <data name="tcnExchangeColumnCaption" xml:space="preserve">
+    <value>Factor de cambio</value>
+  </data>
+  <data name="tcnExchangeColumnToolTip" xml:space="preserve">
+    <value>Factor de cambio</value>
+  </data>
+  <data name="tcnAmountPayColumnCaption" xml:space="preserve">
+    <value>Monto a pagar M.O.</value>
+  </data>
+  <data name="tcnAmountPayColumnToolTip" xml:space="preserve">
+    <value>Monto total a pagar</value>
+  </data>
+  <data name="tcnAmountLocColumnCaption" xml:space="preserve">
+    <value>Monto a pagar</value>
+  </data>
+  <data name="tcnAmountLocColumnToolTip" xml:space="preserve">
+    <value>Monto en moneda del pago</value>
+  </data>
+  <data name="tcnInterest_rateColumnCaption" xml:space="preserve">
+    <value>Intereses de mora M.O.</value>
+  </data>
+  <data name="tcnInterest_rateColumnToolTip" xml:space="preserve">
+    <value>Monto interes de mora</value>
+  </data>
+  <data name="tcnInterestLocColumnCaption" xml:space="preserve">
+    <value>Interes de mora a pagar</value>
+  </data>
+  <data name="tcnInterestLocColumnToolTip" xml:space="preserve">
+    <value>Monto de interes de mora en moneda del pago</value>
+  </data>
+  <data name="tcnTax_discountColumnCaption" xml:space="preserve">
+    <value>Tasa de descuento</value>
+  </data>
+  <data name="tcnTax_discountColumnToolTip" xml:space="preserve">
+    <value>Interes de mora</value>
+  </data>
+  <data name="tcnface_valueColumnCaption" xml:space="preserve">
+    <value>Valor nominal</value>
+  </data>
+  <data name="tcnface_valueColumnToolTip" xml:space="preserve">
+    <value>Monto de valor nominal del bono (en moneda local)</value>
+  </data>
+  <data name="tcdIssuedateColumnCaption" xml:space="preserve">
+    <value>Fecha de emisión</value>
+  </data>
+  <data name="tcdIssuedateColumnToolTip" xml:space="preserve">
+    <value>Fecha de emisión del bono</value>
+  </data>
+  <data name="tcdExpirdateColumnCaption" xml:space="preserve">
+    <value>Fecha de vencimiento</value>
+  </data>
+  <data name="tcdExpirdateColumnToolTip" xml:space="preserve">
+    <value>Fecha de vencimiento del bono</value>
+  </data>
+  <data name="valOriginColumnCaption" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="valOriginColumnToolTip" xml:space="preserve">
+    <value>Origen del depósito</value>
+  </data>
+  <data name="tcdOriginDateColumnCaption" xml:space="preserve">
+    <value>Fecha original</value>
+  </data>
+  <data name="tcdOriginDateColumnToolTip" xml:space="preserve">
+    <value>Fecha original del aporte</value>
+  </data>
+  <data name="valInstitutionColumnCaption" xml:space="preserve">
+    <value>Entidad financiera</value>
+  </data>
+  <data name="valInstitutionColumnToolTip" xml:space="preserve">
+    <value>Entidad desde la cual proviene el aporte que se está realizando</value>
+  </data>
+  <data name="tcnAmountLocDecColumnCaption" xml:space="preserve">
+    <value>Monto a pagar con decimales</value>
+  </data>
+  <data name="tcnAmountLocDecColumnToolTip" xml:space="preserve">
+    <value>Monto en moneda del pago con decimales</value>
+  </data>
+  <data name="cbeTyp_ProfitColumnCaption" xml:space="preserve">
+    <value>Régimen tributario</value>
+  </data>
+  <data name="cbeTyp_ProfitColumnToolTip" xml:space="preserve">
+    <value>Código de la forma de numeración</value>
+  </data>
+  <data name="chkNewReceiptColumnCaption" xml:space="preserve">
+    <value>Generar recibo</value>
+  </data>
+  <data name="chkNewReceiptColumnToolTip" xml:space="preserve">
+    <value>Generar recibo</value>
+  </data>
+  <data name="valCodeColumnToolTip" xml:space="preserve">
+    <value>Código del préstamo</value>
+  </data>
+</root>

@@ -1,0 +1,186 @@
+﻿{
+  "app": {
+    "title": "Monitoreo de Workflows",
+    "form": {
+             "zone0_Footer": "",
+             "zone0_Instruction": "",
+             "zone0_Title": "zona",
+             "zone0_Tooltip": "zona",
+             "StartDP_Label": "Inicio",
+             "StartDP_Tooltip": "Fecha Inicio",
+             "StartDP_Measure": "",
+             "StartDP_Legend": "",
+             "StartDP_Prefix": "",
+             "StartDP_RequiredMessage": "El campo es requerido",
+             "FinishDP_Label": "Fin",
+             "FinishDP_Tooltip": "Fecha de Fin",
+             "FinishDP_Measure": "",
+             "FinishDP_Legend": "",
+             "FinishDP_Prefix": "",
+             "FinishDP_RequiredMessage": "El campo es requerido",
+             "FinishDP_Validate1": "El valor debe ser superior a la Fecha de Inicio",
+             "OkButton_Caption": "OK",
+             "OkButton_Tooltip": "",
+             "OkButton_ConfirmationMessage": "",
+             "OkButton_InformationMessage": "Por favor espere...",
+             "Client_Title": "",
+             "Client_AddButtonCaption": "Agregar",
+             "Client_DeleteButtonCaption": "Eliminar",
+             "Identify_Label": "Id",
+             "ClientTbl_FirstName_Title": "Id",
+             "Identify_Tooltip": "",
+             "Identify_Measure": "",
+             "Identify_Legend": "",
+             "Identify_Prefix": "",
+             "Identify_Watermark": "",
+             "Identification_Label": "Identificación",
+             "ClientTbl_LastName_Title": "Identificación",
+             "Identification_Tooltip": "Last name of the client.",
+             "Identification_Measure": "",
+             "Identification_Legend": "",
+             "Identification_Prefix": "",
+             "Identification_Watermark": "",
+             "State_Label": "Estado",
+             "ClientTbl_LastName2_Title": "Estado",
+             "State_Tooltip": "Last name (2) of the client.",
+             "State_Measure": "",
+             "State_Legend": "",
+             "State_Prefix": "",
+             "State_Watermark": "",
+             "BeginDate_Label": "Inicio",
+             "ClientTbl_CustomDate_Title": "Inicio",
+             "BeginDate_Tooltip": "CustomDate",
+             "BeginDate_Measure": "",
+             "BeginDate_Legend": "",
+             "BeginDate_Prefix": "",
+             "CompleteDate_Label": "Completado",
+             "ClientTbl_CustomDateEx_Title": "Completado",
+             "CompleteDate_Tooltip": "CustomDateEx",
+             "CompleteDate_Measure": "",
+             "CompleteDate_Legend": "",
+             "CompleteDate_Prefix": "",
+             "Durate_Label": "Duración",
+             "ClientTbl_CustomNumeric_Title": "Duración",
+             "Durate_Tooltip": "",
+             "Durate_Measure": "",
+             "Durate_Legend": "",
+             "Durate_Prefix": "",
+             "Reason_Label": "Razón",
+             "ClientTbl_CustomString_Title": "Razón",
+             "Reason_Tooltip": "",
+             "Reason_Measure": "",
+             "Reason_Legend": "",
+             "Reason_Prefix": "",
+             "Reason_Watermark": "",
+             "zone1_Footer": "",
+             "zone1_Instruction": "",
+             "zone1_Title": "Grid de Detalle",
+             "zone1_Tooltip": "zona",
+             "Detail_Title": "",
+             "Detail_AddButtonCaption": "Agregar",
+             "Detail_DeleteButtonCaption": "Eliminar",
+             "UserCode_Label": "Identificación",
+             "DetailTbl_UserCode_Title": "Identificación",
+             "UserCode_Tooltip": "",
+             "UserCode_Measure": "",
+             "UserCode_Legend": "",
+             "UserCode_Prefix": "",
+             "UserCode_RequiredMessage": "El campo es requerido.",
+             "ActivityName_Label": "Actividad",
+             "DetailTbl_ClientID_Title": "Actividad",
+             "ActivityName_Tooltip": "",
+             "ActivityName_Measure": "",
+             "ActivityName_Legend": "",
+             "ActivityName_Prefix": "",
+             "ActivityName_Watermark": "",
+             "ActivityType_Label": "Tipo",
+             "DetailTbl_ConceptDescription_Title": "Tipo",
+             "ActivityType_Tooltip": "",
+             "ActivityType_Measure": "",
+             "ActivityType_Legend": "",
+             "ActivityType_Prefix": "",
+             "ActivityType_Watermark": "",
+             "DetailState_Label": "Estado",
+             "DetailTbl_ConceptStatusDescription_Title": "Estado",
+             "DetailState_Tooltip": "",
+             "DetailState_Measure": "",
+             "DetailState_Legend": "",
+             "DetailState_Prefix": "",
+             "DetailState_Watermark": "",
+             "DetailStart_Label": "Inicio",
+             "DetailTbl_DateOfTheInformation_Title": "Inicio",
+             "DetailStart_Tooltip": "Date of the client financial information.",
+             "DetailStart_Measure": "",
+             "DetailStart_Legend": "",
+             "DetailStart_Prefix": "",
+             "DetailStart_RequiredMessage": "El campo es requerido.",
+             "DetailFinish_Label": "Completado",
+             "DetailTbl_UpdateTimeStamp_Title": "Completado",
+             "DetailFinish_Tooltip": "",
+             "DetailFinish_Measure": "",
+             "DetailFinish_Legend": "",
+             "DetailFinish_Prefix": "",
+             "DetailFinish_RequiredMessage": "El campo es requerido.",
+             "DetailDuration_Label": "Duración",
+             "DetailTbl_Units_Title": "Duración",
+             "DetailDuration_Tooltip": "",
+             "DetailDuration_Measure": "",
+             "DetailDuration_Legend": "",
+             "DetailDuration_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "Identify": {
+             "maxlength": "El campo permite 20 caracteres máximo"
+        },
+        "Identification": {
+             "maxlength": "El campo permite 20 caracteres máximo"
+        },
+        "State": {
+             "maxlength": "El campo permite 20 caracteres máximo"
+        },
+        "BeginDate": {
+             "DatePicker": "The indicated date is not valid"
+        },
+        "CompleteDate": {
+             "DatePicker": "The indicated date is not valid"
+        },
+        "Durate": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999"
+        },
+        "Reason": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "UserCode": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El campo es requerido."
+        },
+        "ActivityName": {
+             "maxlength": "El campo permite 0 caracteres máximo"
+        },
+        "ActivityType": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "DetailState": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "DetailStart": {
+             "DatePicker": "The indicated date is not valid",
+             "required": "El campo es requerido."
+        },
+        "DetailFinish": {
+             "DatePicker": "The indicated date is not valid",
+             "required": "El campo es requerido."
+        },
+        "DetailDuration": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -999999999999999999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 999999999999999999"
+        }
+    }
+  }
+}

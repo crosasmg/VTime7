@@ -1,0 +1,196 @@
+﻿<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icaa="clr-namespace:InMotionGIT.Chile.Activity.AACH;assembly=InMotionGIT.Chile.Activity" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:ilec="clr-namespace:InMotionGIT.LineOfBusiness.Entity.Contracts;assembly=InMotionGIT.LineOfBusiness.Entity.Contracts" xmlns:ipa="clr-namespace:InMotionGIT.PolicyManager.Activities;assembly=InMotionGIT.PolicyManager.Activities" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipeci="clr-namespace:InMotionGIT.Policy.Entity.Contracts.Interfaces;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=System" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s5="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Configuration;assembly=System" xmlns:sc1="clr-namespace:System.Configuration;assembly=System.Configuration" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="sads sap" x:Class="ActualizacionPrimaAACH">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="PurchaseOrder" Type="InArgument(x:Int32)" />
+    <x:Property Name="PolicyID" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>680,1294</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="ActualizacionPrimaAACH" sap:VirtualizedContainerService.HintSize="640,1254">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="ipec:RiskInformation" Name="risk" />
+      <Variable x:TypeArguments="ilec:AutomobileLineOfBusiness" Name="autoInfo" />
+      <Variable x:TypeArguments="x:Boolean" Name="CallStatus" />
+      <Variable x:TypeArguments="x:String" Name="CallMessage" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">380,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">410,77.5 410,124</av:PointCollection>
+        <x:Double x:Key="Width">626</x:Double>
+        <x:Double x:Key="Height">1218</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">328.5,124</av:Point>
+            <av:Size x:Key="ShapeSize">163,132</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">410,256 410,299</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,132">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="English" Value="ActualizacionPrimaAACH. PolicyID { Value /PolicyID } PurchaseOrder { Value /PurchaseOrder }" />
+            <icd:LocalizedString Language="Spanish" Value="ReImprimir y enviar póliza ({ Value /autoInfo/LicensePlate } / { Value /PurchaseOrder } / { Value /risk/PolicyID })" />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">310,299</av:Point>
+                <av:Size x:Key="ShapeSize">200,22</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">410,321 410,370</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ipa:Retrieve EffectiveDate="{x:Null}" Exist="{x:Null}" LineOfBusiness="{x:Null}" ProductId="{x:Null}" TypeOfRecord="{x:Null}" CertificateID="0" DisplayName="Se busca la información de la póliza" sap:VirtualizedContainerService.HintSize="200,22" IncludeClientInformation="True" PolicyID="[PolicyID]" RiskInformation="[risk]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ipa:Retrieve>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">289,370</av:Point>
+                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">410,430 410,509</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Se establecen los datos particulares" sap:VirtualizedContainerService.HintSize="242,60">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="ilec:AutomobileLineOfBusiness">[autoInfo]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="ilec:AutomobileLineOfBusiness">[directcast(risk.LineOfBusinessData, InMotionGIT.LineOfBusiness.Entity.Contracts.AutomobileLineOfBusiness)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">310,509</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">410,531 410,616.5</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <icaa:RegistroCertificado DisplayName="Registro en la AACH" FailedExecution="[CallStatus]" sap:VirtualizedContainerService.HintSize="200,22" Message="[CallMessage]" PurchaseOrder="[PurchaseOrder]" RiskInformation="[risk]" />
+                    <FlowStep.Next>
+                      <FlowDecision x:Name="__ReferenceID5" Condition="[CallStatus]" sap:VirtualizedContainerService.HintSize="70,87">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">375,616.5</av:Point>
+                            <av:Size x:Key="ShapeSize">70,87</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">375,660 250,660 250,726.5</av:PointCollection>
+                            <x:String x:Key="TrueLabel">Falló</x:String>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowDecision x:Name="__ReferenceID6" Condition="[CallMessage.StartsWith(&quot;Póliza ya registrada con mismo Número y Folio&quot;)]" sap:VirtualizedContainerService.HintSize="70,87">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">215,726.5</av:Point>
+                                <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                <av:PointCollection x:Key="FalseConnector">285,770 400,770 400,1042</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">215,770 100,770 100,839</av:PointCollection>
+                                <x:String x:Key="TrueLabel" xml:space="preserve"> Póliza ya registrada</x:String>
+                                <x:String x:Key="FalseLabel">Otro error</x:String>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowStep x:Name="__ReferenceID7">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">0,839</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">100,861 100,926.5</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <icaa:ActualizacionFolio DisplayName="Actualización en la AACH" FailedExecution="[CallStatus]" sap:VirtualizedContainerService.HintSize="200,22" Message="[CallMessage]" PurchaseOrder="[PurchaseOrder]" RiskInformation="[risk]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </icaa:ActualizacionFolio>
+                                <FlowStep.Next>
+                                  <FlowDecision x:Name="__ReferenceID8" Condition="[CallStatus]" sap:VirtualizedContainerService.HintSize="70,87">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <av:Point x:Key="ShapeLocation">65,926.5</av:Point>
+                                        <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                        <av:PointCollection x:Key="TrueConnector">65,970 35,970 35,1110 321,1110</av:PointCollection>
+                                        <x:String x:Key="TrueLabel">Falló</x:String>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <FlowDecision.True>
+                                      <FlowStep x:Name="__ReferenceID0">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">321,1042</av:Point>
+                                            <av:Size x:Key="ShapeSize">158,136</av:Size>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ica1:SendMail AttachFileName="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" DisplayName="Notificación de falla de registro en la AACH" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158,136" To="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList&quot;)]" cc="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList.Ext1&quot;)]">
+                                          <ica1:SendMail.Body>
+                                            <icd:LocalizedString Language="English" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error durante la ejecuci&amp;oacute;n del registro del certificado por medio del servico de la AACH para la reimpresi&amp;oacute;n, el detalle del error generado es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                            <icd:LocalizedString Language="Spanish" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error durante la ejecuci&amp;oacute;n del registro del certificado por medio del servico de la AACH para la reimpresi&amp;oacute;n, el detalle del error generado es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                            <icd:LocalizedString Language="Portuguese" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error durante la ejecuci&amp;oacute;n del registro del certificado por medio del servico de la AACH para la reimpresi&amp;oacute;n, el detalle del error generado es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                          </ica1:SendMail.Body>
+                                          <ica1:SendMail.Subject>
+                                            <icd:LocalizedString Language="English" Value="SOAP 2015: Falla registro en la AACH ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                                            <icd:LocalizedString Language="Spanish" Value="SOAP 2015: Falla registro en la AACH ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                                            <icd:LocalizedString Language="Portuguese" Value="SOAP 2015: Falla registro en la AACH ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                                          </ica1:SendMail.Subject>
+                                        </ica1:SendMail>
+                                      </FlowStep>
+                                    </FlowDecision.True>
+                                  </FlowDecision>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <x:Reference>__ReferenceID0</x:Reference>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowDecision.True>
+                      </FlowDecision>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+  </Flowchart>
+</Activity>

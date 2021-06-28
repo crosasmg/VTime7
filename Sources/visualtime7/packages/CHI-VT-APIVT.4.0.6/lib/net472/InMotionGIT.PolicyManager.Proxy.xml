@@ -1,0 +1,464 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.PolicyManager.Proxy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.PolicyManager.Proxy.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.PolicyManager.Proxy.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.PolicyManager.Proxy.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:InMotionGIT.PolicyManager.Proxy.Enumerations.EnumBillingDetail">
+ <summary>
+ Defines the level of detail of the response of billing services. // Define el nivel de detalle de la respuesta del billing services
+ </summary>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Find(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Allows checks for an individual policy , parent or certificate. // Permite verifica la existencia de una póliza individual, matriz o certificado.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <returns>True if any policy / quote / request , false otherwise. // Verdadero en caso de existir la póliza/cotización/solicitud, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Find(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.String)">
+ <summary>
+ Allows checks for an individual policy , parent or certificate. // Permite verifica la existencia de una póliza individual, matriz o certificado.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if any policy / quote / request , false otherwise. // Verdadero en caso de existir la póliza/cotización/solicitud, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Retrieve(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean)">
+ <summary>
+ Retrieves information from an individual policy , parent or certificate. // Recupera la información de una póliza individual, matriz o certificado.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="includeClientInformation">Included client information. // Indica que el resulta incluya la información de las figuras asociadas a la póliza/cotización/solicitud.</param>
+ <returns>Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Retrieve(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean,System.String,System.String)">
+ <summary>
+ Retrieves information from an individual policy , parent or certificate. // Recupera la información de una póliza individual, matriz o certificado.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="includeClientInformation">Included client information. // Indica que el resulta incluya la información de las figuras asociadas a la póliza/cotización/solicitud.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveByBill(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean,System.DateTime,System.DateTime,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves information from a policy with receipts by date range. // Recupera la información de una póliza con los recibos por intervalo de fecha.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="startDate">Start range date. // Inicio de las fecha de que se emitieron los recibos.</param>
+ <param name="endDate">End range date. // Inicio de las fecha de que se emitieron los recibos.</param>
+ <param name="includeClientInformation">Included client information. // Indica que el resulta incluya la información de las figuras asociadas a la póliza/cotización/solicitud.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <returns>Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveByBill(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean,System.DateTime,System.DateTime,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.String)">
+ <summary>
+ Retrieves information from a policy with receipts by date range. // Recupera la información de una póliza con los recibos por intervalo de fecha.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="startDate">Start range date. // Inicio de las fecha de que se emitieron los recibos.</param>
+ <param name="endDate">End range date. // Inicio de las fecha de que se emitieron los recibos.</param>
+ <param name="includeClientInformation">Included client information. // Indica que el resulta incluya la información de las figuras asociadas a la póliza/cotización/solicitud.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.GeneratePolicyIdentify(InMotionGIT.Common.Contracts.Enumerations.EnumTypeOfRecord,System.Int32,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Automatically generates a new id of a policy. // Genera de forma automática un nuevo identificador de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <returns>New policy id. // Nuevo identificador de una póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.GeneratePolicyIdentify(InMotionGIT.Common.Contracts.Enumerations.EnumTypeOfRecord,System.Int32,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.String)">
+ <summary>
+ Automatically generates a new id of a policy. // Genera de forma automática un nuevo identificador de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="consumer">Consumer information. // Información del consumidor.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>New policy id. // Nuevo identificador de una póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveAutomobileInformation(System.Int32,System.String,System.String,System.String,System.DateTime)">
+ <summary>
+ Returns a Vehicle information. // Retorna la información de un vehículo.
+ </summary>
+ <param name="licensePlateType">License plate type code. // Tipo de patente.</param>
+ <param name="licensePlate">License Plate code. // Patente del vehículo.</param>
+ <param name="engineSerialNumber">Engine serial number. // Número del motor del vehículo.</param>
+ <param name="chassis">Chassis number. // Número del chasis del vehículo.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>Vehicle information. // Información del Vehículo</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveAutomobileInformation(System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Returns a Vehicle information. // Retorna la información de un vehículo.
+ </summary>
+ <param name="licensePlateType">License plate type code. // Tipo de patente.</param>
+ <param name="licensePlate">License Plate code. // Patente del vehículo.</param>
+ <param name="engineSerialNumber">Engine serial number. // Número del motor del vehículo.</param>
+ <param name="chassis">Chassis number. // Número del chasis del vehículo.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Vehicle information. // Información del Vehículo</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.LicensePlateCheckDigitCalculate(System.String)">
+ <summary>
+ Calculates the verify code of a license plate. // Calcula el dígito verificar para una patente.
+ </summary>
+ <param name="licensePlate">License Plate code. // Patente del vehículo.</param>
+ <returns>Verify code. // dígito verificador de la patente.</returns>
+ <remarks>If returns an asterisk means that the lincense plate is invalid. // Si el valor retornado es un asterisco entonces se trata de una patente invalida.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.LicensePlateCheckDigitCalculate(System.String,System.String,System.String)">
+ <summary>
+ Calculates the verify code of a license plate. // Calcula el dígito verificar para una patente.
+ </summary>
+ <param name="licensePlate">License Plate code. // Patente del vehículo.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Verify code. // dígito verificador de la patente.</returns>
+ <remarks>If returns an asterisk means that the lincense plate is invalid. // Si el valor retornado es un asterisco entonces se trata de una patente invalida.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CoverageRating(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Boolean,System.DateTime)">
+ <summary>
+ Calculation of coverage based on the specification of a product. // Cálculo de coberturas basado en la especificación de un producto.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="detail">It indicates whether the result Is detail ( temporary table ) Or summary ( table covers). // Indica si el resultado se hace de forma detallada (tabla temporal) o resumido (tabla de coberturas).</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>List of coverage with their respective calculation Or list of errors . // Lista de cobertura con su respectivo cálculo o listado de errores.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the calculation result . // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CoverageRating(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Boolean,System.DateTime,System.String,System.String)">
+ <summary>
+ Calculation of coverage based on the specification of a product. // Cálculo de coberturas basado en la especificación de un producto.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="detail">It indicates whether the result Is detail ( temporary table ) Or summary ( table covers). // Indica si el resultado se hace de forma detallada (tabla temporal) o resumido (tabla de coberturas).</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of coverage with their respective calculation Or list of errors . // Lista de cobertura con su respectivo cálculo o listado de errores.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the calculation result . // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CoverageRatingLife(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Calculate the covers for a life product // Cálculo de coberturas para una póliza de Vida
+ </summary>
+ <param name="riskInformationInstance">Information of a policy/quote/request // Información de una póliza/cotización/solicitud.</param>
+ <param name="atDate">Operation date // Fecha de validez de la información</param>
+ <param name="accessToken">Access Token value // Token de acceso</param>
+ <param name="provider">Process provider // Proveedor del proceso</param>
+ <param name="companyID">MultiCompayCode // Código múlticompañia</param>
+ <returns>Information of a policy/quote/request with CoverageWithCalculatedPremium // Información de una póliza/cotización/solicitud con CoverageWithCalculatedPremium (coberturas)</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Billing(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Boolean,InMotionGIT.PolicyManager.Proxy.Enumerations.EnumBillingDetail,System.DateTime)">
+ <summary>
+ Calculation of receipt based on the specification of a product. // Cálculo de recibo basado en la especificación de un producto.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="calculateByModule">Allows the calculation is defined realize for each module in the product. // Permite que el calculo se realize por cada modulo definido en el producto.</param>
+ <param name="detailLevel">Indica si nivel de detalle para el resultado del servicio.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>Breakdown concepts billing or listing errors. // Desglose de los conceptos de facturación o listado de errores.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the calculation result . // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.Billing(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Boolean,InMotionGIT.PolicyManager.Proxy.Enumerations.EnumBillingDetail,System.DateTime,System.String,System.String)">
+ <summary>
+ Calculation of receipt based on the specification of a product. // Cálculo de recibo basado en la especificación de un producto.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="calculateByModule">Allows the calculation is defined realize for each module in the product. // Permite que el calculo se realize por cada modulo definido en el producto.</param>
+ <param name="detailLevel">Indica si nivel de detalle para el resultado del servicio.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Breakdown concepts billing or listing errors. // Desglose de los conceptos de facturación o listado de errores.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the calculation result . // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.PolicyLoad(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,System.Boolean,System.DateTime,System.Boolean)">
+ <summary>
+ Prepares, validates and synchronizes information on a policy. // Prepara, valida y sincroniza la información de una póliza.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="transaction">Indicates the type of transaction to be performed. // Indica el tipo de transacción a realizar.</param>
+ <param name="generatePolicyId">Whether to generate the policy number/quote/request should arrive empty. // Indica si se debe generar el número de la póliza/cotización/solicitud en caso de llegar vacío.</param>
+ <param name="loadClient">Indicates whether should be created/updated customer information related to the policy. // Indica si deberá ser creada/actualizada la información de los clientes vinculados a la póliza.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>Data Policy/quote/loaded application. // Datos de la póliza/cotización/solicitud cargados.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the instance of the Information for policy / quote / request. // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por la instancia de la Información para la póliza/cotización/solicitud.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.PolicyLoad(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,System.Boolean,System.DateTime,System.Boolean,System.String,System.String)">
+ <summary>
+ Prepares, validates and synchronizes information on a policy. // Prepara, valida y sincroniza la información de una póliza.
+ </summary>
+ <param name="risk">Information of a policy/quote/request. // Información de una póliza/cotización/solicitud.</param>
+ <param name="transaction">Indicates the type of transaction to be performed. // Indica el tipo de transacción a realizar.</param>
+ <param name="generatePolicyId">Whether to generate the policy number/quote/request should arrive empty. // Indica si se debe generar el número de la póliza/cotización/solicitud en caso de llegar vacío.</param>
+ <param name="loadClient">Indicates whether should be created/updated customer information related to the policy. // Indica si deberá ser creada/actualizada la información de los clientes vinculados a la póliza.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Data Policy/quote/loaded application. // Datos de la póliza/cotización/solicitud cargados.</returns>
+ <remarks>If there are any errors , they are returned As a list Of errors In the ' errors' property exposed by the instance of the Information for policy / quote / request. // En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por la instancia de la Información para la póliza/cotización/solicitud.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.ClientInformationRequired(System.Int32,System.Int32,InMotionGIT.Client.Entity.Contracts.Client,InMotionGIT.Common.Contracts.Enumerations.EnumRole,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,System.DateTime)">
+ <summary>
+ To validate the customer information based on the specifications defined for a product. // Permite validar la información de un cliente basado en la especificaciones definidas para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of commercial industry. // Código del ramo comercial.</param>
+ <param name="productCode">Product code. // Código del producto.</param>
+ <param name="insured">Instance of client information. // Instancia de la información de un cliente.</param>
+ <param name="role">Figure client. // Figura del cliente.</param>
+ <param name="transaction">Transaction Type policy. // Tipo de transacción de póliza.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>List error found based on the product specification. // Listado de Error encontrados basado en la especificación del producto.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.ClientInformationRequired(System.Int32,System.Int32,InMotionGIT.Client.Entity.Contracts.Client,InMotionGIT.Common.Contracts.Enumerations.EnumRole,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,System.DateTime,System.String,System.String)">
+ <summary>
+ To validate the customer information based on the specifications defined for a product. // Permite validar la información de un cliente basado en la especificaciones definidas para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of commercial industry. // Código del ramo comercial.</param>
+ <param name="productCode">Product code. // Código del producto.</param>
+ <param name="insured">Instance of client information. // Instancia de la información de un cliente.</param>
+ <param name="role">Figure client. // Figura del cliente.</param>
+ <param name="transaction">Transaction Type policy. // Tipo de transacción de póliza.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List error found based on the product specification. // Listado de Error encontrados basado en la especificación del producto.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveForAmendment(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean)">
+ <summary>
+ Return Policy information. // Retorna la información de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="includeClientInformation">Indicates if return a client information detail with the policy information. // Indica si retorna la información detalla del cliente junto con la información de la póliza.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveForAmendment(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.Boolean,System.String,System.String)">
+ <summary>
+ Return Policy information. // Retorna la información de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la transacción.</param>
+ <param name="includeClientInformation">Indicates if return a client information detail with the policy information. // Indica si retorna la información detalla del cliente junto con la información de la póliza.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentSetup(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentSetup(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,System.String,System.String)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentApply(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,InMotionGIT.Product.Entity.Contracts.ProductMaster)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentApply(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,InMotionGIT.Product.Entity.Contracts.ProductMaster,System.String,System.Int32)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentApply(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,InMotionGIT.Product.Entity.Contracts.ProductMaster,System.String,System.Int32,System.String)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentApply(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.AmendmentApply(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime,System.String,System.Int32,System.String)">
+ <summary>
+ Prepare the associated objects to the change from a risk. // Prepara los objetos asociados a cambiar en RiskInformation.
+ </summary>
+ <param name="risk">RiskInformation Object. // Objeto RiskInformation.</param>
+ <param name="atDate">Operation date. // Fecha en que se realiza la operación.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Policy information. // Información de póliza.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CalculateCapital(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Policy.Entity.Contracts.CoverageWithCalculatedPremium,System.DateTime,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,InMotionGIT.Product.Entity.Contracts.Enumerations.EnumSpecialCalculations)">
+ <summary>
+ Cálculo del capital de la cobertura basado en la especificación de un producto
+ </summary>
+ <param name="RiskInformation">Información de una póliza/cotización/solicitud.</param>
+ <param name="product">Información del producto con el cual se calcula el capital</param>
+ <param name="tCover">Información de la cobertura a calcular el capital</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="transaction">Tipo de transacción de póliza</param>
+ <param name="specialCalculations">specialCalculations.</param>
+ <returns>Capital de la cobertura o listado de errores.</returns>
+ <remarks>En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CalculateCapital(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Policy.Entity.Contracts.CoverageWithCalculatedPremium,System.DateTime,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,InMotionGIT.Product.Entity.Contracts.Enumerations.EnumSpecialCalculations,System.String,System.String)">
+ <summary>
+ Cálculo del capital de la cobertura basado en la especificación de un producto
+ </summary>
+ <param name="RiskInformation">Información de una póliza/cotización/solicitud.</param>
+ <param name="product">Información del producto con el cual se calcula el capital</param>
+ <param name="tCover">Información de la cobertura a calcular el capital</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="transaction">Tipo de transacción de póliza</param>
+ <param name="specialCalculations">specialCalculations.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Capital de la cobertura o listado de errores.</returns>
+ <remarks>En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CalculatePremium(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Policy.Entity.Contracts.CoverageWithCalculatedPremium,System.DateTime,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,InMotionGIT.Product.Entity.Contracts.Enumerations.EnumSpecialCalculations)">
+ <summary>
+ Cálculo de la prima de la cobertura basado en la especificación de un producto
+ </summary>
+ <param name="RiskInformation">Información de una póliza/cotización/solicitud.</param>
+ <param name="product">Información del producto con el cual se calcula el capital</param>
+ <param name="tCover">Información de la cobertura a calcular el capital</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="transaction">Tipo de transacción de póliza</param>
+ <param name="specialCalculations">specialCalculations.</param>
+ <returns>Capital de la cobertura o listado de errores.</returns>
+ <remarks>En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.CalculatePremium(InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Policy.Entity.Contracts.CoverageWithCalculatedPremium,System.DateTime,InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumTransaction,InMotionGIT.Product.Entity.Contracts.Enumerations.EnumSpecialCalculations,System.String,System.String)">
+ <summary>
+ Cálculo de la prima de la cobertura basado en la especificación de un producto
+ </summary>
+ <param name="RiskInformation">Información de una póliza/cotización/solicitud.</param>
+ <param name="product">Información del producto con el cual se calcula el capital</param>
+ <param name="tCover">Información de la cobertura a calcular el capital</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="transaction">Tipo de transacción de póliza</param>
+ <param name="specialCalculations">specialCalculations.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Capital de la cobertura o listado de errores.</returns>
+ <remarks>En caso de existir algún error, los mismos se retornan en forma de una lista de errores bajo la propiedad 'errors' expuesta por el resultado del cálculo.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.VehicleBrandsLkp(System.String,System.String)">
+ <summary>
+ Lista de marcas de vehículos.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>lista de marcas de vehículos.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveVehicleInformationByBrandAndModel(System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Retorna la información de un vehículo por medio de su marca y modelo.
+ </summary>
+ <param name="brand">Marca de vehículo.</param>
+ <param name="model">Modelo de vehículo.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un vehículo.</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveVehicleInformationByCode(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Obtiene la información de un código especifico
+ </summary>
+ <param name="vehicleCode">Código del vehículo</param>
+ <param name="accessToken">Token</param>
+ <param name="provider">Código de proveedor del servicio</param>
+ <param name="companyID">Código multicompañia</param>
+ <returns>Información de un auto - TAB_AU_VEH</returns>
+</member>
+<member name="M:InMotionGIT.PolicyManager.Proxy.Manager.RetrieveVehicleByBrand(System.Int32,System.DateTime,System.String,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna los modelos de vehículos asociados a un código de marca de vehículo.
+ </summary>
+ <param name="brandCode">Codigo de marca del vehículo</param>
+ <param name="atDate">Fecha de validez de la información</param>
+ <param name="withLookupInformation">Indica si el objeto debe incluir la información de la descripción para lista de valores</param>
+ <param name="childFilter">Estructuras relacionadas</param>
+ <param name="provider">Código de cliente del servicio</param>
+ <param name="companyID">Código de la compañía</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

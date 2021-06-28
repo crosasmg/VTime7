@@ -1,0 +1,889 @@
+﻿
+body, td, a, p, .h, h1, h2, h3, div, form
+{
+    font-family: helvetica,arial,sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    background: #FFFFFF none repeat scroll 0;
+    color: #393733;
+    font-size: 8pt;
+}
+
+#btnGO {
+    color: #FFFFFF;
+    text-shadow: none;
+	background:  #FF9933;
+    border: gray;
+    border-radius: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B614B',endColorstr='#4787ed',GradientType=0);
+}
+
+
+#txtSearchTransacction
+{
+	color:grey;
+    font-weight: bold;
+}
+
+
+a
+{
+    text-decoration: none;
+}
+
+a:link, a:visited, a:active
+{
+    color: #555555;
+}
+
+a:hover
+{
+    color: #004785;
+    text-decoration: underline;
+}
+
+#container
+{
+    margin: 0 auto;
+    text-align: left;
+}
+
+#header
+{
+    background: #FF9933; /* Old browsers */
+    color: #fff;
+    height: 36px;
+    width: 100%;
+}
+
+.header-container, .body-container
+{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header-container h1 a:hover
+{
+	text-decoration: none;
+}
+
+#HeaderLogo
+{
+    font-weight: normal;
+    color: white;
+}
+
+#HeaderLogo > span
+{
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.logo-client-wrapper
+{
+    height: 90px;
+    border: 0;
+    margin: 10px 0;
+}
+
+.logo-client-wrapper > a
+{
+    display: block;
+    height: 100px;
+    width: 200px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url('/images/logos/logo.png');
+    background-image: url('/images/logos/logo.png'),none;
+}
+
+/* header text */
+#header h1
+{
+    font-size: 14pt;
+    float: left;
+    height: 30px;
+    line-height: 36px;
+}
+
+#header h1 a
+{
+    color: #555555;
+}
+
+#login_panel
+{
+    font-size: 9pt;
+    float: right;
+    background: #0099CC;
+    padding: 11px 14px;
+    margin-top: 16px;
+}
+
+#login_panel a
+{
+    color: #fff;
+}
+
+/* The search bar that has google and live search boxes */
+#search_bar
+{
+    background: #696666;
+    width: 100%;
+    padding: 5px 0;
+    clear: both;
+    overflow: auto;
+}
+
+#search_bar_wrapper
+{
+    margin: 5px;
+}
+
+#google_search
+{
+    float: left;
+    margin-right: 20px;
+}
+
+#google_search img
+{
+    float: left;
+    margin-right: 5px;
+}
+
+#google_search input
+{
+    float: left;
+    margin-right: 5px;
+}
+
+#google_search input#query
+{
+    width: 200px;
+}
+
+#live_search
+{
+    float: left;
+    margin-right: 20px;
+}
+
+#live_search .livesearch_logo
+{
+    float: left;
+    margin-right: 5px;
+}
+
+#WLSearchBoxDiv
+{
+    float: left;
+}
+
+#header_message
+{
+    clear: both;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    width: 100%;
+    line-height: 20px;
+    font-size: 8pt;
+    text-align: center;
+    border: 0;
+}
+
+.header_message_wrapper
+{
+    padding: 5px;
+    color: #fff;
+}
+
+#header_message a
+{
+    color: #fff;
+}
+
+#contents
+{
+    background: #FFFFF;
+    border: 0;
+    border-top: 1px;
+    border-style: solid;
+    border-color: #CFCFCF;
+}
+
+#contents_wrapper
+{
+    background: transparent;
+    min-height: 400px;
+    height: auto !important;
+}
+
+#tab_container
+{
+    height: 30px;
+}
+
+#widget_area
+{
+    overflow: auto;
+    width: 100%;
+}
+
+#widget_area_wrapper
+{
+    /* padding-left:15px */
+}
+
+/* tab common styles */
+ul.tabs
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.tab
+{
+    float: left;
+    margin: 0 5px 0 0;
+    height: 30px;
+}
+
+li.tab div.tab_wrapper
+{
+    padding: 7px 18px 5px 15px;
+}
+
+li.tab a
+{
+    font-size: 9pt;
+    margin: 5px 5px 0 50x;
+}
+
+li.tab a:hover
+{
+    text-decoration: none;
+    color: #13487c;
+}
+
+li.tab span
+{
+    font-size: 9pt;
+    margin: 5px 5px 0 5px; /*font-weight: bold;*/
+    color: #FFFFFF; /*#5B2D7F;*/
+}
+
+/* active tab */
+li.activetab
+{
+    padding-left: 3px;
+    background: #FF9933;
+    border: 1px;
+    border-color: #FF9933;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+li.activetab div.tab_wrapper
+{
+}
+
+li.activetab a
+{
+    color: #000;
+    font-weight: 700;
+}
+
+/* inactive tab */
+li.inactivetab
+{
+    padding-left: 5px;
+    background: #DADADA;
+}
+
+li.inactivetab:hover
+{
+    color: #FFFFFF;
+    background: #FF9933;
+}
+
+li.inactivetab:hover a
+{
+    color: #FFFFFF;
+}
+
+li.inactivetab div.tab_wrapper
+{
+}
+
+li.inactivetab a
+{
+    color: #696666;
+}
+
+/* new tab */
+li.newtab
+{
+    float: left;
+    padding-top: 8px;
+}
+
+#Progress
+{
+    position: absolute;
+    left: 100%;
+    margin-left: -50px;
+    top: 130px;
+}
+
+#HelpDiv
+{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: -320px;
+    height: 300px;
+    width: 300px;
+    display: none;
+    background-color: #fff;
+    border: solid 1px #696969;
+    padding: 10px;
+    z-index: 60000;
+}
+
+.helpContent
+{
+    height: 280px;
+    overflow: auto;
+}
+
+#footer
+{
+    clear: both;
+    height: 50px;
+    text-align: left;
+    padding-left: 5px; /*padding-bottom:15px;*/
+    border: 1px;
+    border-color: #CFCFCF;
+    border-top-style: solid;
+}
+
+#footer_wrapper
+{
+    padding-top: 5px;
+    color: #8A8A8A;
+    font-size: 8pt;
+    line-height: 50px;
+}
+
+#counter
+{
+    position: absolute;
+    left: 100%;
+    margin-left: -125px;
+    margin-top: -86px;
+}
+
+.copyright
+{
+    color: #696969;
+}
+
+.invitation
+{
+    color: #696969;
+}
+
+.license
+{
+    /* color:#696969  */
+}
+
+#body
+{
+}
+
+.pushdown
+{
+    clear: both;
+    height: 0 !important;
+    visibility: hidden;
+    line-height: 0 !important;
+    overflow: hidden !important;
+}
+
+#onpage_menu
+{
+    /*background:#FFF url(content_corners.gif) no-repeat scroll top left;*/
+    display: none;
+}
+
+#onpage_menu_wrapper
+{
+    background: transparent url(content_corners.gif) no-repeat scroll top right;
+    overflow: auto;
+    width: 100%;
+}
+
+.onpage_menu_bar_hover
+{
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+#onpage_menu_bar
+{
+    padding: 5px;
+    margin: 0;
+    margin-top: 2px;
+    min-height: 15px;
+    height: 25px;
+    border-bottom: solid 1px #EFEFEF;
+}
+
+.onpage_menu_action
+{
+    float: left;
+    margin-right: 20px;
+}
+
+.ChangePageTitleLinkButton
+{
+    float: right;
+}
+
+#onpage_menu_panels
+{
+    padding: 0;
+}
+
+div#onpage_menu_panels div > table
+{
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+.onpage_menu_panel
+{
+    padding: 8px;
+    clear: both;
+    min-height: 125px;
+    height: auto;
+    background: #EFEFEF;
+    border: 1px;
+    border-color: #CFCFCF;
+    border-style: solid;
+}
+
+.onpage_menu_panel_column
+{
+    float: left;
+    min-height: 40px;
+    height: auto !important;
+    height: 40px;
+    width: 30%;
+    margin-right: 15px;
+}
+
+.onpage_menu_panel_column h1
+{
+    font-size: 12pt;
+    color: #000;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #000;
+    margin-bottom: 15px;
+}
+
+.onpage_menu_panel_column p
+{
+    padding: 5px;
+    font-size: 10pt;
+}
+
+.widget_holder
+{
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
+}
+
+.widget
+{
+    margin-bottom: 10px;
+    background-color: #FFF;
+    border: solid 1px #CFCFCF;
+    padding: 0;
+    box-shadow: 9px 10px 10px -10px rgba(0,0,0,0.75);
+    transition: border-color 0.3s linear;
+    -moz-transition: border-color 0.3s linear;
+    -o-transition: border-color 0.3s linear;
+    -webkit-transition: border-color 0.3s linear;
+}
+
+.widget_hover
+{
+    border: solid 1px #999;
+    padding: 0;
+    box-shadow: 9px 10px 10px -10px rgba(0,0,0,0.75);
+    transition: border-color 0.3s linear;
+    -moz-transition: border-color 0.3s linear;
+    -o-transition: border-color 0.3s linear;
+    -webkit-transition: border-color 0.3s linear;
+}
+
+.widget_header
+{
+    cursor: move;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #0099CC;
+}
+
+/*#B2DD80*/
+.widget_header_table
+{
+    width: 100%;
+    border: none;
+}
+
+.widget_title
+{
+    width: 90%;
+    padding-left: 2px;
+    font-weight: bold;
+    padding-right: 5px;
+    color: #FFFFFF;
+}
+
+.widget_title a
+{
+    overflow: hidden;
+    height: 1.2em;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.widget_collapse, .widget_expand, .widget_close
+{
+    display: inline;
+}
+
+.widget_dropcue
+{
+    border: dashed 2px gray;
+    display: none;
+    margin-bottom: 20px;
+}
+
+.widget_edit
+{
+    width: 10%;
+    white-space: nowrap;
+    text-align: right;
+    padding: 2px 2px 0 0;
+}
+
+.widget_edit a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.widget_edit a:hover
+{
+    color: #e20025;
+}
+
+.widget_button
+{
+    padding: 0 1px;
+    vertical-align: top;
+}
+
+.widget_min
+{
+    background-image: url(min_blue.gif);
+}
+
+a.widget_min:hover
+{
+    background-image: url(min_blue_highlight.gif);
+}
+
+.widget_max
+{
+    background-image: url(max_blue.gif);
+}
+
+a.widget_max:hover
+{
+    background-image: url(max_blue_highlight.gif);
+}
+
+.widget_close
+{
+    background-image: url(x_blue.gif);
+}
+
+a.widget_close:hover
+{
+    background-image: url(x_blue_highlight.gif);
+}
+
+.widget_box
+{
+    display: block;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+    cursor: hand;
+    cursor: pointer;
+}
+
+.widget_body
+{
+    margin: 5px;
+}
+
+.column
+{
+    width: 33%;
+    vertical-align: top;
+}
+
+.table_fixed
+{
+    table-layout: fixed;
+    clear: both;
+}
+
+.column_divider
+{
+    height: 400px;
+    width: 10px;
+}
+
+.dashboard_body
+{
+    width: 100%;
+    height: 500px;
+    background-color: #d3d3d3;
+}
+
+.handleText
+{
+    width: 16px;
+    height: 16px;
+    background-image: url(HandleGrip.png);
+    overflow: hidden;
+    cursor: se-resize;
+}
+
+#AddContentUpdatePanel
+{
+    clear: both;
+}
+
+.add_stuff_toggle
+{
+    position: absolute;
+    font-weight: 700;
+    font-size: 12pt;
+    position: relative;
+    top: -25px;
+    left: 80%;
+}
+
+.widget_showcase
+{
+}
+
+.addcontent_message
+{
+    font-weight: 700;
+    float: left;
+}
+
+.addcontent_navigation
+{
+    float: right;
+    font-weight: 700;
+}
+
+#WidgetDataList
+{
+    clear: both;
+    margin-top: 20px;
+}
+
+.smalltext, .smalltext a
+{
+    font-size: 90%;
+}
+
+a.feed_item_link
+{
+    line-height: 120%;
+    clear: both;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 8pt;
+    color: #393733;
+}
+
+#DeleteConfirmPopup
+{
+    display: none;
+    z-index: 60000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
+    width: 300px;
+    height: 120px;
+    border: solid 4px #000;
+    padding: 10px;
+    background: #fff url(warning.jpg) no-repeat 10px 10px;
+    text-align: center;
+}
+
+#DeleteConfirmPopup h1
+{
+    margin-left: 30px;
+    font-size: 120%;
+}
+
+#DeleteConfirmPopup p
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+#DeletePageConfirmPopup
+{
+    display: none;
+    z-index: 60000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
+    width: 300px;
+    height: 120px;
+    border: solid 4px #000;
+    padding: 10px;
+    background: #fff url(warning.jpg) no-repeat 10px 10px;
+    text-align: center;
+}
+
+#DeletePageConfirmPopup h1
+{
+    margin-left: 30px;
+    font-size: 120%;
+}
+
+#DeletePageConfirmPopup p
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+tr.TitleTopLine
+{
+    background-color: #36c;
+}
+
+td.TitleTop
+{
+    background-color: #DDE8CC;
+    padding-left: 4px;
+    padding-bottom: 3px;
+    padding-top: 2px;
+}
+
+.TitleTop
+{
+    font-family: helvetica,arial,sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #000;
+}
+
+table.LoginBox
+{
+    background-color: #DDE8CC;
+    border: 1px solid #FFF;
+    width: 100%;
+    border-spacing: 3px;
+    padding: 5px;
+}
+
+table.QueryDetailTable
+{
+    width: 100%;
+    font-weight: 400;
+    background-color: #fff;
+    border: 0;
+}
+
+td.QueryDetailCellCaption
+{
+    width: 25%;
+    background-color: #F5F5F5;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 7px;
+    padding-top: 2px;
+    margin-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+td.QueryDetailCellValue
+{
+    width: 75%;
+    padding-left: 5px;
+    padding-top: 2px;
+    margin-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+table.QueryDetailTableCard
+{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9pt;
+}
+
+td.QueryDetailCellCaptionCard
+{
+    text-align: left;
+    border: solid 1px #6B8E23;
+    padding: 4px;
+}
+
+td.QueryDetailCellValueCard
+{
+    border: solid 1px #6B8E23;
+    padding: 4px;
+    font-weight: 700;
+}
+
+#ctl00_PrincipalMenu a:hover
+{
+    text-decoration: none !important;
+}

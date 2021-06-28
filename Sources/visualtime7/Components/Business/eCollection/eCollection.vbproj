@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF68F326-E6A6-493B-A864-C43D2B642FE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eCollection</RootNamespace>
+    <AssemblyName>eCollection</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eCollection.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agreement.vb" />
+    <Compile Include="Agreements.vb" />
+    <Compile Include="Bank_Agree.vb" />
+    <Compile Include="Bank_Agrees.vb" />
+    <Compile Include="Bank_Universe.vb" />
+    <Compile Include="Bills.vb" />
+    <Compile Include="Billss.vb" />
+    <Compile Include="Bills_Num.vb" />
+    <Compile Include="Bills_Nums.vb" />
+    <Compile Include="Bulletin.vb" />
+    <Compile Include="Bulletins.vb" />
+    <Compile Include="Bulletins_det.vb" />
+    <Compile Include="Bulletins_dets.vb" />
+    <Compile Include="CashBankAccMov.vb" />
+    <Compile Include="CashBankAccMovs.vb" />
+    <Compile Include="ColformRef.vb" />
+    <Compile Include="CollectionRep.vb" />
+    <Compile Include="CollectionSeq.vb" />
+    <Compile Include="Collector.vb" />
+    <Compile Include="Collectors.vb" />
+    <Compile Include="Collect_comm.vb" />
+    <Compile Include="Collect_comms.vb" />
+    <Compile Include="Commiss_pr.vb" />
+    <Compile Include="Delay_Int.vb" />
+    <Compile Include="Delay_Ints.vb" />
+    <Compile Include="Dir_debit.vb" />
+    <Compile Include="FormFile.vb" />
+    <Compile Include="FormRecord.vb" />
+    <Compile Include="FormRecords.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Out_moveme.vb" />
+    <Compile Include="Param_universe.vb" />
+    <Compile Include="Premium.vb" />
+    <Compile Include="Premiums.vb" />
+    <Compile Include="Premium_mo.vb" />
+    <Compile Include="Premium_mos.vb" />
+    <Compile Include="Reject_cause.vb" />
+    <Compile Include="Reject_causes.vb" />
+    <Compile Include="rnullcondi.vb" />
+    <Compile Include="rnullcondis.vb" />
+    <Compile Include="T_Bulletin.vb" />
+    <Compile Include="T_bulletins_det.vb" />
+    <Compile Include="T_bulletins_dets.vb" />
+    <Compile Include="T_concepts.vb" />
+    <Compile Include="T_conceptss.vb" />
+    <Compile Include="T_DocTyp.vb" />
+    <Compile Include="T_DocTyps.vb" />
+    <Compile Include="T_Move_acc.vb" />
+    <Compile Include="t_move_accs.vb" />
+    <Compile Include="ValCollectionRep.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eCollection.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eGeneral\eGeneral.vbproj">
+      <Project>{67208FC2-FE0A-4D94-9FD0-28DA643EDF03}</Project>
+      <Name>eGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eClient\eClient.vbproj">
+      <Project>{30582942-2DF4-4212-AB9D-DF0C18291AAE}</Project>
+      <Name>eClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eProduct\eProduct.vbproj">
+      <Project>{E4EF1C50-30F8-4EB0-9D9C-8CFD624B6B0A}</Project>
+      <Name>eProduct</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

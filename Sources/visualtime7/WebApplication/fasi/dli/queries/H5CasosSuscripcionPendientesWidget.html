@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="H5CasosSuscripcionPendientesMainForm">
+        <input type="hidden" id="H5CasosSuscripcionPendientesFormId" name="H5CasosSuscripcionPendientesFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                            <!-- Lookups: Items Grid -->
+                            <select id='UnderwritingCaseCreatorUserCode' hidden='hidden'>
+                            </select>
+
+                            <select id='UnderwritingCaseUpdateUserCode' hidden='hidden'>
+                            </select>
+
+                            <!-- End Lookups: Items grid -->
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- UnderwritingCaseActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='UnderwritingCaseActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_UnderwritingCaseUnderwritingCaseIDContextMenu' class='dropdown-menu'>
+ <li data-item='Items_UnderwritingCaseUnderwritingCaseID_Item1'><a>Action_1</a></li>
+    </ul>
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190227111213222'></script>
+    <script src="/fasi/app/js/core.js?rel=20190227111213222"></script>
+    <script src="/fasi/app/js/general.js?rel=20190227111213222"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190227111213222'></script>
+    
+
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190227111213222'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190227111213222'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/H5CasosSuscripcionPendientes.js?rel=20190227111213222"></script>
+</body>
+</html>

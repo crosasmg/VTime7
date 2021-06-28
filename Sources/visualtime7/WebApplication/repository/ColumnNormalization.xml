@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ArrayOfColumn xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <Column name="nModulec" ordinal="0" modelkind="Char" default="0">
+      <Extend tabtablecode="TABTAB_MODUL" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   <Column name="nCover" ordinal="0" modelkind="Char">
+      <Extend tabtablecode="TAB_COVER" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   <Column name="sDescript" ordinal="0" modelkind="Char">
+      <Extend behavior="TableSummary" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   <Column name="sStatregt" ordinal="0" modelkind="Char">
+      <Extend behavior="RecordStatus" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   <Column name="nUsercode" ordinal="0" modelkind="Char">
+      <Extend behavior="AuthorOrUpdate" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   <Column name="dCompdate" ordinal="0" modelkind="DateTime">
+      <Extend behavior="DateCreatedOrUpdated" xmlns="urn:InMotionGIT.Database.Model.Data" />
+   </Column>
+   
+</ArrayOfColumn>

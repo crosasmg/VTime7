@@ -1,0 +1,69 @@
+﻿{
+  "app": {
+    "title": "Mantenimiento de roles",
+    "form": {
+             "Role_Message_Notify_insert4": "Se agregó correctamente el rol",
+             "Role_Title_Notify_insert4": "Agregar rol",
+             "Role_Message_Notify_insert6": "No se agregó correctamente el rol",
+             "Role_Title_Notify_insert6": "Agregar rol",
+             "Role_Message_Notify_update3": "Se actualizó correctamente el rol",
+             "Role_Title_Notify_update3": "Actualización del rol",
+             "Role_Message_Notify_update6": "No se pudo actualizar correctamente el rol",
+             "Role_Title_Notify_update6": "Actualización del rol",
+             "Role_Message_Notify_delete6": "Se eliminó el rol",
+             "Role_Title_Notify_delete6": "Eliminación de rol",
+             "Role_Message_Notify_delete8": "No se pudo eliminar el rol porque esta asociado a uno o más usuarios",
+             "Role_Title_Notify_delete8": "Eliminación del rol",
+             "Role_Message_Notify_delete9": "No se pudo eliminar el rol",
+             "Role_Title_Notify_delete9": "Eliminación de rol",
+             "Role_Message_Notify_delete11": "No se pudo eliminar el rol porque esta asociado a uno o más usuarios",
+             "Role_Title_Notify_delete11": "Eliminación del rol",
+             "Role_Title": "",
+             "Role_AddButtonCaption": "Agregar",
+             "Role_DeleteButtonCaption": "Eliminar",
+             "Id_Label": "Identificador",
+             "RoleTbl_Id_Title": "Identificador",
+             "Id_Tooltip": "Identificador",
+             "Id_Measure": "",
+             "Id_Legend": "",
+             "Id_Prefix": "",
+             "Name_Label": "Nombre",
+             "RoleTbl_Name_Title": "Nombre",
+             "Name_Tooltip": "Nombre",
+             "Name_Measure": "",
+             "Name_Legend": "",
+             "Name_Prefix": "",
+             "Name_Watermark": "",
+             "Name_RequiredMessage": "El nombre es requerido",
+             "SecurityLevel_Label": "Nivel  de seguridad",
+             "RoleTbl_SecurityLevel_Title": "Nivel  de seguridad",
+             "SecurityLevel_Tooltip": "Nivel  de seguridad",
+             "SecurityLevel_Measure": "",
+             "SecurityLevel_Legend": "",
+             "SecurityLevel_Prefix": "",
+             "IsBackOfficeSource_Label": "Rol del Backoffice",
+             "RoleTbl_IsBackOfficeSource_Title": "Rol del Backoffice",
+             "IsBackOfficeSource_Tooltip": "Rol del Backoffice",
+             "IsBackOfficeSource_Legend": "",
+             "IsBackOfficeSource_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "Id": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999"
+        },
+        "Name": {
+             "maxlength": "El campo permite 15 caracteres máximo",
+             "required": "El nombre es requerido"
+        },
+        "SecurityLevel": {
+             "AutoNumericMinValue": "El valor mínimo permitido es 1",
+             "AutoNumericMaxValue": "El valor máximo permitido es 9"
+        }
+    }
+  }
+}

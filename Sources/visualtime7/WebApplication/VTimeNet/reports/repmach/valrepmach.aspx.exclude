@@ -1,0 +1,2200 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="eClient" %>
+<%@ Import namespace="ePolicy" %>
+<%@ Import namespace="eAgent" %>
+<%@ Import namespace="eClaim" %>
+<%@ Import namespace="eCoReinsuran" %>
+<%@ Import namespace="eCashBank" %>
+<%@ Import namespace="eProduct" %>
+<%@ Import namespace="eLedge" %>
+<%@ Import namespace="eCollection" %>
+<%@ Import namespace="eSchedule" %>
+<%@ Import namespace="eWRpt" %>
+<script language="VB" runat="Server">
+
+    '- Se define la contante para el manejo de errores en caso de advertencias
+    Dim mstrCommAnd As String
+    Dim print_report As Boolean
+
+    '- Variable para el manejo de los errores de la página, devueltos por insvalSequence
+    Dim mstrErrors As String
+
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
+
+
+    '% insValProject: Se realizan las validaciones masivas de la forma
+    '--------------------------------------------------------------------------------------------
+    Function insvalRepMach() As String
+        Dim lstrerror As Object
+        Dim lstrCertype As String
+        Dim scertype As String
+        Dim lintError As Integer
+        Dim ldblPolicy As Object
+        Dim mclsCAC1024 As Object
+        '--------------------------------------------------------------------------------------------
+        Dim larrVal() As String
+        Dim lstrASPVal As String
+        Dim lclsError As eFunctions.Errors
+        Dim lclsValidation As Object
+
+
+        Dim p_num_comis As Integer
+        Dim p_ramo As Integer
+        Dim p_producto As Integer
+        Dim P_Num_Poliza As Integer
+
+        lclsError = New eFunctions.Errors
+
+        '+Validaciones de campos individuales
+        '++++++++++++++++++++++++++++++++++++
+
+        '+Se recorren los campos ocultos que indican validaciones asp    
+        For Each lstrASPVal In Request.Form("hddASPVal")
+            '+Como campo viene con formato <tipo-validacion>|<nombre-campo> se separa en dos
+            larrVal = Microsoft.VisualBasic.Split(lstrASPVal, "|")
+
+            '+Se consulta por el tipo de validacion asp        
+            Select Case larrVal(0)
+
+                Case "valObligInter"
+                    If Request.Form(larrVal(1)) = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3272)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                Case "valObligSuc"
+                    If Request.Form(larrVal(1)) = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9120)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                '+Validacion del rut      
+                Case "valRut"
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form(larrVal(1))) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2044, 0, 1, "(" & Request.Form(larrVal(1)) & ")")
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                Case "valMes"
+                    If Request.Form("P_MES") < 1 Or Request.Form("P_MES") > 12 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60290)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                '+Validación de la Propuesta solo con el npolicy
+                Case "valProp"
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("1", Request.Form(larrVal(1))) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                '+Validación de la Póliza solo con el npolicy
+                Case "valPol"
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form(larrVal(1))) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                '+Validación del número de Patente por Sregist
+                Case "valPatente"
+                    lclsValidation = New ePolicy.Auto_db
+                    If Not lclsValidation.Find(Request.Form("P_NUM_PATEN"), True) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 713033)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                '+Validación que el periodo sea valido(que la fecha hasta sea posterior a la fecha desde)
+                Case "ValPeriodo"
+                    If Request.Form("P_FECHA_DESDE") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60217)
+                    End If
+                    If Request.Form("P_FECHA_HASTA") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60218)
+                    End If
+                    If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 12120)
+                    End If
+
+                Case "ValFecha"
+                    If Request.Form("P_FECHA_PROCESO") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3587)
+                    End If
+
+                '+ validación que el rut ingresdo pertenezca a un intermediario
+                Case "valIntermed"
+                    lclsValidation = New eAgent.Intermedia
+                    If Not lclsValidation.findIntermedsClient(Request.Form(larrVal(1))) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9002)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                Case "ValClaim"
+                    If Request.Form(larrVal(1)) <> "" Then
+                        lclsValidation = New eClaim.Claim
+                        If Not lclsValidation.Find(Request.Form(larrVal(1))) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 7023)
+                        End If
+                    Else
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4006)
+                    End If
+
+                Case "valRamo"
+                    If Request.Form(larrVal(1)) = 0 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                Case "valProduct"
+                    If Request.Form(larrVal(1)) = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                '+Validación de la Póliza, Propuesta o Cotización solo con el npolicy
+                Case "valPolicy"
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy(Request.Form("P_SCERTYPE"), Request.Form(larrVal(1))) Then
+                        Select Case Request.Form("P_SCERTYPE")
+                            Case "1"
+                                lintError = 55683
+                            Case "2"
+                                lintError = 3001
+                            Case "3"
+                                lintError = 55651
+                        End Select
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), lintError)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+
+                Case "ValPolicyCAC900"
+                    'Case "otras a crear"
+                    lstrerror = ""
+                    If Request.Form("P_NUM_POLIZA") <> "" Then
+                        If Request.Form("P_NUM_COTIZ") <> "" Then
+                            lstrerror = "3916"
+                        Else
+                            If Request.Form("P_NUM_PROP") <> "" Then
+                                lstrerror = "3916"
+                            End If
+                        End If
+                    Else
+                        If Request.Form("P_NUM_COTIZ") <> "" Then
+                            If Request.Form("P_NUM_PROP") <> "" Then
+                                lstrerror = "3916"
+                            End If
+                        Else
+                            If Request.Form("P_NUM_PROP") = "" Then
+                                lstrerror = "3916"
+                            End If
+                        End If
+                    End If
+                    If lstrerror = "" Then
+                        If Request.Form("P_NUM_POLIZA") <> "" Then
+                            ldblPolicy = Request.Form("P_NUM_POLIZA")
+                            lstrCertype = "2"
+                        Else
+                            If Request.Form("P_NUM_COTIZ") <> "" Then
+                                ldblPolicy = Request.Form("P_NUM_COTIZ")
+                                lstrCertype = "3"
+                            Else
+                                ldblPolicy = Request.Form("P_NUM_PROP")
+                                lstrCertype = "1"
+                            End If
+                        End If
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.FindPolicybyPolicy(lstrCertype, mobjValues.StringToType(ldblPolicy, eFunctions.Values.eTypeData.etdDouble)) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3917)
+                        End If
+                        'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                        lclsValidation = Nothing
+                    Else
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), lstrerror)
+                    End If
+
+            End Select
+        Next lstrASPVal
+
+
+        '+Validaciones por transaccion
+        '++++++++++++++++++++++++++++++++++++
+
+        Dim lclsContrmaster As eCoReinsuran.Contrmaster
+        Select Case Request.QueryString("sCodispl")
+
+            Case "CRL892"
+                'UPGRADE_WARNING: Date was upgraded to Today and has a new behavior. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1041.aspx'
+                If Request.Form("P_FECHA_PROCESO") > CStr(Today) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 700005)
+                End If
+
+                If Request.Form("P_NUM_CONTRATO") > "" Then
+
+                    lclsContrmaster = New eCoReinsuran.Contrmaster
+
+                    If Not lclsContrmaster.Find(1, Request.Form("P_NUM_CONTRATO"), 0, 0, eRemoteDB.Constants.dtmNull) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 6015)
+                    End If
+
+                    'UPGRADE_NOTE: Object lclsContrmaster may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsContrmaster = Nothing
+                End If
+
+            Case "AG817"
+                '+Validaciones de póliza 
+                If Request.Form("P_INTER_ORIGIN") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 90360, 1, CShort(" Original"))
+                End If
+
+                If Request.Form("P_INTER_ACTUAL") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9036, 0, 1, " Actual")
+                End If
+
+
+            Case "AGC957"
+
+                '+Validaciones de póliza 
+                If Request.Form("P_NUM_COMISI") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 21038)
+                End If
+
+                If Request.Form("P_FEC_PER_LIQ") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11121, 0, 1, " de liquidación")
+                End If
+
+                If Request.Form("P_RAMO") = 0 And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70138)
+                Else
+                    If Request.Form("P_PRODUCTO") = "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70138)
+                    Else
+                        If Request.Form("P_NUM_POLIZA") <> "" Then
+                            lclsValidation = New ePolicy.Policy
+                            If Not lclsValidation.Find("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA")) Then
+                                lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                            End If
+                        End If
+                    End If
+                End If
+
+            Case "CAL908"
+
+                If Request.Form("P_RUT_ASEGURADO") = "" And Request.Form("P_NUMERO_PROPUESTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60105)
+                Else
+                    If Request.Form("P_RUT_ASEGURADO") <> "" Then
+                        '+ Valida que el rut del cliente exista
+                        lclsValidation = New eClient.Client
+                        If Not lclsValidation.Find(Request.Form("P_RUT_ASEGURADO")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2044, 0, 1, "(" & Request.Form("P_RUT_ASEGURADO") & ")")
+                        End If
+                        'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                        lclsValidation = Nothing
+                    End If
+
+                    lclsValidation = New ePolicy.Policy
+                    '+ Valida que la propuesta exista (busca por npolicy, para scertype in ('1','2','6','7','8'))     
+                    If Request.Form("P_NUMERO_PROPUESTA") <> "" Then
+                        If Not lclsValidation.FindPolPropbyPolicy(Request.Form("P_NUMERO_PROPUESTA")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                        End If
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                    If Request.Form("P_RUT_ASEGURADO") <> "" And Request.Form("P_NUMERO_PROPUESTA") <> "" Then
+                        '+ valida que la propuesta/Poliza(en la tabla cover) este asociada al rut ingresado para el cliente
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.FindClient_Prop(Request.Form("P_RUT_ASEGURADO"), Request.Form("P_NUMERO_PROPUESTA")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56106)
+                        End If
+                        'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                        lclsValidation = Nothing
+                    End If
+
+                End If
+
+            Case "CAC912"
+                '+ Valida el ingreso de al menos un campo: nro de propuesta o de cotización
+                If Request.Form("P_NUM_PROPUESTA") = "" And Request.Form("P_RUT_ASEGURADO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55153)
+                End If
+
+
+
+                '+ Valida el ingreso de solo un campo nro de propuesta o de cotización no ambas
+                If Request.Form("P_NUM_PROPUESTA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy(Request.Form("P_REGISTRO"), Request.Form("P_NUM_PROPUESTA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+                '+ Valida el ingreso de solo un campo nro de propuesta o de cotización no ambas
+                If Request.Form("P_RUT_ASEGURADO") <> "" Then
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_ASEGURADO")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2044, 0, 1, "(" & Request.Form("P_RUT_ASEGURADO") & ")")
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "CAC916"
+                '+ Valida el ingreso de al menos un campo: nro de propuesta o de cotización
+                If Request.Form("P_NUM_PROP") = "" And Request.Form("P_NUM_COTIZ") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55122)
+                End If
+                '+ Valida el ingreso de solo un campo nro de propuesta o de cotización no ambas
+                If Request.Form("P_NUM_PROP") <> "" And Request.Form("P_NUM_COTIZ") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55123)
+                End If
+                '+ Valida si la propuesta ingresada esta registrada        
+                If Request.Form("P_NUM_PROP") <> "" And Request.Form("P_NUM_COTIZ") = "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("1", Request.Form("P_NUM_PROP")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+                '+ Valida si la cotización ingresada esta registrada
+                If Request.Form("P_NUM_PROP") = "" And Request.Form("P_NUM_COTIZ") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("3", Request.Form("P_NUM_COTIZ")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3668)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "CAC929"
+                If Request.Form("P_COD_SUCURSAL") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1925, 0, 1, "Campo Sucursal")
+                End If
+                If Request.Form("P_COD_ESTADO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1925, 0, 1, "Campo Estado de la propuesta")
+                End If
+                If Request.Form("P_TIPO_SOLICITUD") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1925, 0, 1, "Campo Tipo de Solicitud")
+                End If
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1925, 0, 1, "Campo Fecha Desde")
+                End If
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1925, 0, 1, "Campo Fecha Hasta")
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70061)
+                End If
+
+            Case "CRL515"
+                If Request.Form("P_FECHA_PROCESO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55581)
+                End If
+                If Request.Form("P_COD_RAMO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                End If
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11009)
+                End If
+                If Request.Form("P_NUM_CERTIF") <> "" And Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55623, 0, 1, "si incluye el número de Certificado")
+                End If
+                If Request.Form("P_RUT_ASEGURADO") <> "" And Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55623,  , 0, CStr(1), CBool("si incluye el rut del asegurado"))
+                End If
+                If Request.Form("P_NUM_CERTIF") <> "" And Request.Form("P_NUM_POLIZA") <> "" And Request.Form("P_RUT_ASEGURADO") = "" Then
+                    lclsValidation = New ePolicy.Certificat
+                    If Not lclsValidation.Find("2", Request.Form("P_COD_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA"), Request.Form("P_NUM_CERTIF")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1978)
+                    End If
+                End If
+                If Request.Form("P_NUM_CERTIF") <> "" And Request.Form("P_NUM_POLIZA") <> "" And Request.Form("P_RUT_ASEGURADO") <> "" Then
+                    lclsValidation = New ePolicy.Certificat
+                    If Not lclsValidation.Find_CRL515("2", Request.Form("P_COD_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA"), Request.Form("P_NUM_CERTIF"), Request.Form("P_RUT_ASEGURADO")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1978, 0, 1, "Poliza/Certificado/Asegurado")
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "CAL1110"
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60113)
+                End If
+                'UPGRADE_WARNING: Date was upgraded to Today and has a new behavior. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1041.aspx'
+                If Request.Form("P_FECHA_HASTA") > CStr(Today) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3324)
+                End If
+
+            Case "CAL1108"
+                If Request.Form("P_COD_RAMO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                End If
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11009)
+                End If
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60217)
+                End If
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60218)
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60205)
+                End If
+                'UPGRADE_WARNING: Date was upgraded to Today and has a new behavior. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1041.aspx'
+                If Request.Form("P_FECHA_HASTA") > CStr(Today) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3324)
+                End If
+
+            Case "CAL1151", "CAL1156"
+                If Request.Form("P_RAMO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                End If
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014)
+                End If
+                If Request.Form("P_NUM_CERTIF") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3006)
+                End If
+                If Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                Else
+                    If Request.Form("P_PRODUCTO") <> "" And Request.Form("P_NUM_CERTIF") <> "" Then
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.insValPolCertif("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA"), Request.Form("P_NUM_CERTIF")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001, 0, 1, "Verifica el Número de Póliza y Certificado")
+                        End If
+                    End If
+                End If
+
+            Case "CAL1078", "CAL1079", "CAL1080", "CAL1081", "CAL1082"
+                If Request.Form("P_TIPO_MOV") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 7125)
+                Else
+                    If Request.Form("P_TIPO_MOV") = 1 Then
+                        scertype = "1"
+                    Else
+                        If Request.Form("P_TIPO_MOV") = 2 Then
+                            scertype = "6"
+                        Else
+                            scertype = "7"
+                        End If
+                    End If
+                End If
+                If Request.Form("P_RAMO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                End If
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014)
+                End If
+                If Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55677)
+                Else
+                    If Request.Form("P_PRODUCTO") <> "" And Request.Form("P_NUM_CERTIF") <> "" And Request.Form("P_TIPO_MOV") > 0 Then
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.insValPolCertif(scertype, Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA"), Request.Form("P_NUM_CERTIF")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55651, 0, 1, "Verificar el Número de Propuestas, Tipo de Movimiento  y Certificado")
+                        End If
+                    End If
+                End If
+                If Request.Form("P_NUM_CERTIF") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3006)
+                End If
+
+
+            Case "CAC1005A"
+                If Request.Form("P_RUT_CONTRATANTE") <> "" Then
+                    '+ Valida que el rut del cliente exista
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2044, 0, 1, "(" & Request.Form("P_RUT_ASEGURADO") & ")")
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "CAC1006A"
+                If Request.Form("P_RUT_CONTRATANTE") <> "" Then
+                    '+ Valida que el rut del cliente exista
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2044, 0, 1, "(" & Request.Form("P_RUT_ASEGURADO") & ")")
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+                '+ Valida que la propuesta exista 
+                If Request.Form("P_NUM_PROPUESTA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("1", Request.Form("P_NUM_PROPUESTA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+                If Request.Form("P_RUT_CONTRATANTE") = "" And Request.Form("P_NUM_PROPUESTA") = "" Then
+                    '+ valida que ingrese el numero de propuesta o el contratante, pero que ingrese uno
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55126)
+                End If
+
+                If Request.Form("P_RUT_CONTRATANTE") <> "" And Request.Form("P_NUM_PROPUESTA") <> "" Then
+                    '+ valida que la propuesta/Poliza(en la tabla cover) este asociada al rut ingresado para el cliente
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindContrat_Prop(Request.Form("P_RUT_CONTRATANTE"), Request.Form("P_NUM_PROPUESTA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56106)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+            Case "CAL843"
+
+
+                '+ Valida que la propuesta exista 
+                If Request.Form("P_NUM_PROP") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("1", Request.Form("P_NUM_PROP")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55683)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+
+
+            Case "AGC901"
+                '+Valida que el rut ingresado pertenezca a un intermediario
+                If Request.Form("P_RUT_JEFATURA") <> "" Then
+                    lclsValidation = New eAgent.Intermedia
+                    If Not lclsValidation.findIntermedsClient(Request.Form("P_RUT_JEFATURA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9002)
+                    End If
+
+                    '+ Valida que el rut ingresado pertenezca a un supervisor             
+                    If Not lclsValidation.FindIntermSup(Request.Form("P_RUT_JEFATURA"), 5) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55870)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "AGC816_1"
+                If Request.Form("P_AGENCIA") = "" And Request.Form("P_COD_INTERMED") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55522, 0, 1, "o el Número del  intermediario")
+                End If
+
+                If Request.Form("P_AGENCIA") <> "" And Request.Form("P_COD_INTERMED") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55522, 0, 1, "o el Número del Intermediario(Solo uno de los 2)")
+                End If
+
+                If Request.Form("P_TIPO_INFOR") = "0" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1012, 0, 1, "(" & "Ingrese tipo de Información" & ")")
+                End If
+
+                If Request.Form("P_ANO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1012, 0, 1, "(" & "Ingrese año de la consulta" & ")")
+                End If
+
+            Case "OPC920"
+                If Request.Form("P_NUM_POL") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                Else
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POL")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    Else
+                        If lclsValidation.sPolitype = "2" Then
+                            If Request.Form("P_NUM_CERTIF") <> "" Then
+                                lclsValidation = New ePolicy.Certificat
+                                If Not lclsValidation.Find_Policy("2", Request.Form("P_NUM_POL"), Request.Form("P_NUM_CERTIF")) Then
+                                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 8215)
+                                End If
+                            Else
+                                lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3006)
+                            End If
+                        Else
+                            If Not (Request.Form("P_NUM_CERTIF") = "") And Not (Request.Form("P_NUM_CERTIF") = "0") Then
+                                lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3481)
+                            End If
+                        End If
+                    End If
+                End If
+                'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                lclsValidation = Nothing
+
+            Case "OPC965"
+                If Request.Form("P_NUM_POL") = "" And Request.Form("P_FECHA_DESDE") = "" And Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55128)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") = "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70020)
+                    End If
+                End If
+                If Request.Form("P_NUM_POL") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POL")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                End If
+
+            Case "AGL845"
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") = "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70020)
+                    End If
+                End If
+
+            Case "AGL928"
+                If Request.Form("P_RUT_COMISIONISTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 21038)
+                Else
+                    lclsValidation = New eAgent.Intermedia
+                    If Not lclsValidation.findIntermedsClient(Request.Form("P_RUT_COMISIONISTA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 707004)
+                    End If
+                End If
+
+            Case "OPC946"
+                If Request.Form("P_RAMO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9064)
+                End If
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014)
+                End If
+
+                If Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                End If
+
+                If Request.Form("P_RAMO") > 0 And Request.Form("P_PRODUCTO") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.Find("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                End If
+
+            Case "OPC908_1"
+                If Request.Form("P_Opcion") = 1 Then
+                    If Request.Form("P_NUM_ORD_PAGO") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11146)
+                    Else
+                        lclsValidation = New eCashBank.Cheque
+                        If Not lclsValidation.FindBynrequest_nu(Request.Form("P_NUM_ORD_PAGO")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 7152)
+                        End If
+                    End If
+                    If Request.Form("P_FECHA_DESDE") <> "" Or Request.Form("P_FECHA_HASTA") <> "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55132)
+                    End If
+                Else
+                    If Request.Form("P_NUM_ORD_PAGO") <> "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55131)
+                    End If
+                    If Request.Form("P_FECHA_DESDE") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 5072)
+                    Else
+                        If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) < (mobjValues.StringToType("01/01/1970", eFunctions.Values.eTypeData.etdDate)) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60822)
+                        End If
+                    End If
+                    If Request.Form("P_FECHA_HASTA") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1097)
+                    End If
+                    If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                        If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11425)
+                        End If
+                    End If
+                End If
+
+            '+ AGC866: Comisiones Calculadas      
+            Case "AGC866"
+                If Request.Form("P_NUM_COMIS") <> "" Then
+                    p_num_comis = Request.Form("P_NUM_COMIS")
+                Else
+                    p_num_comis = 0
+                End If
+
+                If Request.Form("P_RAMO") > 0 Then
+                    p_ramo = Request.Form("P_RAMO")
+                Else
+                    p_ramo = 0
+                End If
+
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    p_producto = Request.Form("P_PRODUCTO")
+                Else
+                    p_producto = 0
+                End If
+
+                If Request.Form("P_NUM_POLIZA") <> "" Then
+                    P_Num_Poliza = Request.Form("P_NUM_POLIZA")
+                Else
+                    P_Num_Poliza = 0
+                End If
+
+                If Request.Form("P_RAMO") > 0 And Request.Form("P_PRODUCTO") = "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014)
+                End If
+
+                If Request.Form("P_RAMO") = 0 And Request.Form("P_PRODUCTO") = "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+                If Request.Form("P_RAMO") > 0 And Request.Form("P_PRODUCTO") <> "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.Find("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+                If Request.Form("P_RUT_COMIS") <> "" Then
+                    lclsValidation = New eAgent.Intermedia
+                    If Not lclsValidation.findIntermedsClient(Request.Form("P_RUT_COMIS")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 707004)
+                    Else
+                        If Request.Form("P_NUM_COMIS") <> "" Then
+                            lclsValidation = New eAgent.Intermedia
+                            If Not lclsValidation.FindsClienInterm(Request.Form("P_NUM_COMIS"), Request.Form("P_RUT_COMIS")) Then
+                                lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9069)
+                            End If
+                        End If
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+                If Request.Form("P_NUM_LIQ") <> "" Then
+                    lclsValidation = New eAgent.pay_comm
+                    If Not lclsValidation.Find_nPayComm(Request.Form("P_FECHA_DESDE"), Request.Form("P_FECHA_HASTA"), Request.Form("P_NUM_LIQ"), p_num_comis, p_ramo, p_producto, P_Num_Poliza) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1933)
+                    End If
+                    'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsValidation = Nothing
+                End If
+
+            Case "CAL872"
+                lclsValidation = New ePolicy.Policy
+                If Not lclsValidation.Find("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA")) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                End If
+
+                lclsValidation = New ePolicy.ValPolicyRep
+                If lclsValidation.insValCAL872("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA")) And Request.Form("P_NUM_CERTIF") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3006)
+                End If
+
+                If Request.Form("P_NUM_CERTIF") <> "" Then
+                    lclsValidation = New ePolicy.Certificat
+                    If Not lclsValidation.Find("2", Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Request.Form("P_NUM_POLIZA"), Request.Form("P_NUM_CERTIF")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 8215)
+                    End If
+                End If
+
+            Case "VIL1078"
+                If Request.Form("P_RAMO") > 0 And Request.Form("P_NUM_PROP") <> "" Then
+                    lclsValidation = New ePolicy.ValPolicyRep
+                    If Not lclsValidation.InsValVIL1078("1", Request.Form("P_RAMO"), Request.Form("P_NUM_PROP")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                End If
+
+            Case "AML884"
+                If Request.Form("P_NUM_COTIZ") = "" And Request.Form("P_RUT_CONTRATANTE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3143, 0, 1, "(" & "Rut del Contratante o Número de Cotización" & ")")
+                End If
+
+                If Request.Form("P_NUM_COTIZ") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("3", Request.Form("P_NUM_COTIZ")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3668)
+                    End If
+                End If
+
+                If Request.Form("P_RUT_CONTRATANTE") <> "" Then
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2228)
+                    End If
+                End If
+                If Request.Form("P_RUT_CONTRATANTE") <> "" And Request.Form("P_NUM_COTIZ") <> "" Then
+                    lclsValidation = New ePolicy.ValPolicyRep
+                    If Not lclsValidation.insValAML884("3", Request.Form("P_NUM_COTIZ"), Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55149)
+                    End If
+                End If
+
+            Case "CAC931"
+                lclsValidation = New ePolicy.Policy
+                If Not lclsValidation.FindPolicybyPolicy(Request.Form("P_REGISTRO"), Request.Form("P_NUMERO_POLIZA")) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55152)
+                End If
+
+            Case "CAC940"
+                If Request.Form("P_TIPO_REG") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 10214)
+                Else
+                    If Request.Form("P_TIPO_REG") = 2 And Request.Form("P_NUM_POLIZA") <> "" Then
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                        End If
+                    End If
+                    If Request.Form("P_TIPO_REG") = 2 And Request.Form("P_NUM_POLIZA") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70038)
+                    End If
+
+                    If Request.Form("P_TIPO_REG") = 3 And Request.Form("P_NUM_POLIZA") <> "" Then
+                        lclsValidation = New ePolicy.Policy
+                        If Not lclsValidation.FindPolicybyPolicy("3", Request.Form("P_NUM_COTIZ")) Then
+                            lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3668)
+                        End If
+                    End If
+                    If Request.Form("P_TIPO_REG") = 3 And Request.Form("P_NUM_POLIZA") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3976)
+                    End If
+                End If
+
+            Case "CAC947"
+                If Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3668)
+                    End If
+                Else
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                End If
+
+                If Request.Form("P_RUT_CONTRATANTE") <> "" Then
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2228)
+                    End If
+                Else
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2001)
+                End If
+
+                If Request.Form("P_RUT_CONTRATANTE") <> "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.ValPolicyRep
+                    If Not lclsValidation.insValAML884("2", Request.Form("P_NUM_POLIZA"), Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2792, 0, 1, " que figure como contratante en la póliza indicada")
+                    End If
+                End If
+            Case "CAC1016A", "CAC1016B"
+                If Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                Else
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                End If
+
+            Case "CAC1021"
+                If Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                Else
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                End If
+
+                If Request.Form("P_RUT_CONT") <> "" And Request.Form("P_NUM_POLIZA") <> "" Then
+                    lclsValidation = New ePolicy.ValPolicyRep
+                    If Not lclsValidation.insValAML884("2", Request.Form("P_NUM_POLIZA"), Request.Form("P_RUT_CONT")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2792, 0, 1, " que figure como contratante en la póliza indicada")
+                    End If
+                End If
+
+            Case "CRL882"
+                If Request.Form("P_TIPO_PRIMA") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9040, 0, 1, "de Prima")
+                End If
+
+                If Request.Form("P_PRODUCTO_INICIAL") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11009, 0, 1, "Inicial")
+                End If
+
+                If Request.Form("P_PRODUCTO_FINAL") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11009, 0, 1, "Final")
+                End If
+
+                If mobjValues.StringToType(Request.Form("P_PRODUCTO_FINAL"), eFunctions.Values.eTypeData.etdLong) < mobjValues.StringToType(Request.Form("P_PRODUCTO_INICIAL"), eFunctions.Values.eTypeData.etdLong) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014, 0, 1, "Final mayor que producto Inicial")
+                End If
+
+                If Request.Form("P_PRODUCTO_DISTINTO") <> "" Then
+                    If mobjValues.StringToType(Request.Form("P_PRODUCTO_DISTINTO"), eFunctions.Values.eTypeData.etdLong) < mobjValues.StringToType(Request.Form("P_PRODUCTO_INICIAL"), eFunctions.Values.eTypeData.etdLong) Or Request.Form("P_PRODUCTO_DISTINTO") > mobjValues.StringToType(Request.Form("P_PRODUCTO_FINAL"), eFunctions.Values.eTypeData.etdLong) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1014, 0, 1, "Distinto  entre el producto inicial y el producto final")
+                    End If
+                End If
+
+                If Request.Form("P_COD_CIA_REASEGURA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1046, 0, 1, "Reaseguradora")
+                End If
+
+                If Request.Form("P_CONTRATO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 21062)
+                End If
+
+                If Request.Form("P_PERIODO_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_PERIODO_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If mobjValues.StringToType(Request.Form("P_PERIODO_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_PERIODO_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11425)
+                End If
+
+            Case "DPC997"
+                If Request.Form("P_PRODUCTO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11009)
+                End If
+
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    lclsValidation = New eProduct.Product
+                    'UPGRADE_WARNING: Date was upgraded to Today and has a new behavior. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1041.aspx'
+                    If lclsValidation.IsModule(Request.Form("P_RAMO"), Request.Form("P_PRODUCTO"), Today) And Request.Form("P_NUM_PLAN") = "" Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 12112)
+                    End If
+                End If
+                If Request.Form("P_COD_COB") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11163)
+                End If
+
+            Case "CRL846"
+                If Request.Form("P_TIPO_CUMULO") = 0 Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60529)
+                End If
+
+                If Request.Form("P_COD_COBERTURA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60530)
+                End If
+
+                If Request.Form("P_MES") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1137, 0, 1, "del periodo")
+                Else
+                    If mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong) < 1 Or mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong) > 12 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60290)
+                    End If
+                End If
+
+                If Request.Form("P_ANO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9060, 0, 1, "del periodo")
+                End If
+
+            Case "CAC910"
+                lclsValidation = New ePolicy.Policy
+                '+ Valida que la propuesta exista (busca por npolicy, para scertype in ('1','2','6','7','8'))     
+                If Request.Form("P_NUMERO_PROPUESTA") <> "" Then
+                    If Not lclsValidation.FindPolPropbyPolicy(Request.Form("P_NUMERO_PROPUESTA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3667)
+                    End If
+                End If
+                'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                lclsValidation = Nothing
+
+            Case "AGC833"
+                lclsValidation = New ePolicy.Policy
+                If Request.Form("P_NUMERO_POLIZA") <> "" Then
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUMERO_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                End If
+
+                'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                lclsValidation = Nothing
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11425)
+                End If
+
+            Case "OPL700"
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60217)
+                End If
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60218)
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11425)
+                End If
+
+            Case "SIL1170"
+
+                lclsValidation = New eClaim.Claim
+                '+ Valida que el siniestro exista y que sea del ramo incendio. 
+                If Request.Form("VNCLAIM") <> "" Then
+                    If Not lclsValidation.FindClaim(Request.Form("VNCLAIM")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56174)
+                    End If
+                End If
+
+            Case "SIL1072"
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") = "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_FECHA_DESDE") <> "" And Request.Form("P_FECHA_HASTA") <> "" Then
+                    If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 70020)
+                    End If
+                End If
+                If Request.Form("P_NUM_POLIZA") <> "" And Request.Form("P_RUT_CONTRATANTE") <> "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55623, 0, 1, "o el Rut del Contratante, no ambos")
+                End If
+                '        if Request.Form("P_NUM_POLIZA") = "" Then            
+                '           lclsError.ErrorMessage Request.QueryString("sCodispl"), 55623
+                '        End If
+                If Request.Form("P_NUM_POLIZA") <> "" And Request.Form("P_RUT_CONTRATANTE") = "" Then
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POLIZA")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3668)
+                    End If
+                End If
+                If Request.Form("P_RUT_CONTRATANTE") <> "" And Request.Form("P_NUM_POLIZA") = "" Then
+                    lclsValidation = New eClient.Client
+                    If Not lclsValidation.Find(Request.Form("P_RUT_CONTRATANTE")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 2228)
+                    End If
+                End If
+
+
+            Case "SIL833", "SIL834", "SIL835", "SIL836", "SIL837", "SIL838", "SIL840", "SIL901", "SIL902"
+                If Request.Form("P_MES") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 1137)
+                Else
+                    If mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong) < 1 Or mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong) > 12 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60290)
+                    End If
+                End If
+                If Request.Form("P_ANIO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9060)
+                End If
+
+            Case "OPL911"
+
+                If Request.Form("P_PERIODO_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_PERIODO_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If mobjValues.StringToType(Request.Form("P_PERIODO_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_PERIODO_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 12120)
+                End If
+
+
+            Case "CAC1024"
+
+                lclsError = New eFunctions.Errors
+
+                If Request.Form("P_NUM_POL") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3003)
+                Else
+
+                    lclsValidation = New ePolicy.Policy
+                    If Not lclsValidation.FindPolicybyPolicy("2", Request.Form("P_NUM_POL")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3001)
+                    End If
+                End If
+
+                If Request.Form("P_NUM_DENUN") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 7022)
+                Else
+                    lclsValidation = New eClaim.ValClaimRep
+                    If Not lclsValidation.FindNumDenun(Request.Form("P_NUM_DENUN")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4005)
+                    End If
+                End If
+
+                If Request.Form("P_COD_COB") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11163)
+                Else
+                    lclsValidation = New eClaim.ValClaimRep
+                    If Not lclsValidation.FindCodCober(Request.Form("P_COD_COB")) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 11010)
+                    End If
+                End If
+
+            Case "OPC912"
+                If Request.Form("P_FECHA_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+
+                If Request.Form("P_FECHA_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+
+                If mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 12120)
+                End If
+
+            Case "VIL891"
+                If Request.Form("P_FECHA_INICIO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 4148)
+                End If
+                If Request.Form("P_FECHA_FIN") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 9072)
+                End If
+                If mobjValues.StringToType(Request.Form("P_FECHA_INICIO"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FECHA_FIN"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60113)
+                End If
+                'UPGRADE_WARNING: Date was upgraded to Today and has a new behavior. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1041.aspx'
+                If mobjValues.StringToType(Request.Form("P_FECHA_FIN"), eFunctions.Values.eTypeData.etdDate) > CStr(Today) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 3324)
+                End If
+            Case "AGL787"
+                If Request.Form("P_MES") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60340, 0, 1, " de proceso")
+                Else
+                    If Request.Form("P_MES") < 1 Or Request.Form("P_MES") > 12 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60290)
+                    End If
+                End If
+                If Request.Form("P_ANIO") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 60338, 0, 1, " de  Proceso")
+                End If
+                'UPGRADE_NOTE: Object lclsValidation may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                lclsValidation = Nothing
+            Case "COL831"
+                If Request.Form("P_FEC_INI_VIG_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55625)
+                End If
+
+                If Request.Form("P_FEC_INI_VIG_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55626)
+                End If
+
+                If mobjValues.StringToType(Request.Form("P_FEC_INI_VIG_DESDE"), eFunctions.Values.eTypeData.etdDate) > mobjValues.StringToType(Request.Form("P_FEC_INI_VIG_HASTA"), eFunctions.Values.eTypeData.etdDate) Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 55627)
+                End If
+                If Request.Form("P_NUM_DIA_COB_DESDE") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56201, 0, 1, "Desde")
+                Else
+                    If mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_DESDE"), eFunctions.Values.eTypeData.etdLong) < 1 Or mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_DESDE"), eFunctions.Values.eTypeData.etdLong) > 31 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56202, 0, 1, "(Día de Cobro Desde)")
+                    End If
+                End If
+                If Request.Form("P_NUM_DIA_COB_HASTA") = "" Then
+                    lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56201, 0, 1, "Hasta")
+                Else
+                    If mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_HASTA"), eFunctions.Values.eTypeData.etdLong) < 1 Or mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_HASTA"), eFunctions.Values.eTypeData.etdLong) > 31 Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56202, 0, 1, "(Día de Cobro Hasta)")
+                    End If
+                End If
+                If Request.Form("P_NUM_DIA_COB_DESDE") <> "" And Request.Form("P_NUM_DIA_COB_HASTA") <> "" Then
+                    If mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_DESDE"), eFunctions.Values.eTypeData.etdLong) > mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_HASTA"), eFunctions.Values.eTypeData.etdLong) Then
+                        lclsError.ErrorMessage(Request.QueryString("sCodispl"), 56203)
+                    End If
+                End If
+
+        End Select
+
+
+        '+Se retornan los errores por campo y transaccion encontrados
+        insvalRepMach = lclsError.Confirm()
+
+
+        'UPGRADE_NOTE: Object lclsError may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+        lclsError = Nothing
+    End Function
+
+    '% insPostProject: Se realizan las actualizaciones a las tablas
+    '--------------------------------------------------------------------------------------------
+    Function insPostRepMach() As Boolean
+        Dim P_Num_Poliza As Double
+        Dim nClaim As Integer
+        Dim nIntermed As Double
+        '--------------------------------------------------------------------------------------------
+        Dim nPolicy As Double
+        Dim nBranch As Integer
+        Dim nProduct As Integer
+        Dim nAgency As Integer
+        Dim nOfficeAgen As Integer
+        Dim lclsBatch_param As eSchedule.Batch_param
+
+        Dim mclsAgl787 As eAgent.ValAgentRep
+        Dim mclsAgc816 As eAgent.ValAgentRep
+        Dim mclsAgc817 As eAgent.ValAgentRep
+        Dim mclsAgl845 As eAgent.ValAgentRep
+        Dim mclsAgl858 As eAgent.ValAgentRep
+        Dim mclsAgl703 As eAgent.ValAgentRep
+        Dim mclsPayComm As eAgent.pay_comm
+        Dim mclsCac940 As ePolicy.ValPolicyRep
+        Dim mclsCac988 As ePolicy.ValPolicyRep
+        Dim mclsCac1014 As ePolicy.ValPolicyRep
+        Dim mclsCac1110 As ePolicy.ValPolicyRep
+        Dim mclsCal1108 As ePolicy.ValPolicyRep
+        Dim mclsCal1151 As ePolicy.ValPolicyRep
+        Dim mclsCal1156 As ePolicy.ValPolicyRep
+        Dim mclsCal1078 As ePolicy.ValPolicyRep
+        Dim mclsCal1079 As ePolicy.ValPolicyRep
+        Dim mclsCal1080 As ePolicy.ValPolicyRep
+        Dim mclsCal1081 As ePolicy.ValPolicyRep
+        Dim mclsCal1082 As ePolicy.ValPolicyRep
+        Dim mclsCac929 As ePolicy.ValPolicyRep
+        Dim mclsLedgerAutDetail As eLedge.LedgerAutDetail
+        Dim mclsCoc897 As eCollection.ValCollectionRep
+        Dim mclsCal872 As ePolicy.ValPolicyRep
+        Dim mclsCal969 As ePolicy.ValPolicyRep
+        Dim mclsCal908 As ePolicy.ValPolicyRep
+        Dim mclsCac947 As ePolicy.ValPolicyRep
+        Dim mclsCac1005 As ePolicy.ValPolicyRep
+        Dim mclsLedgerAutDetail2 As eLedge.LedgerAutDetail
+        Dim mclsCol831 As eCollection.ValCollectionRep
+        Dim mclsCol870 As ePolicy.ValPolicyRep
+        Dim mclsCol895 As eCollection.ValCollectionRep
+        Dim mclsCol906 As ePolicy.ValPolicyRep
+        Dim mclsCol987 As ePolicy.ValPolicyRep
+        Dim mclsCol971 As eCollection.ValCollectionRep
+        Dim mclsCol999 As eCashBank.ValCashBankRep
+        Dim mclsCrl515 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsCrl706 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsCRL839 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsCrl846 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsCrl851 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsCrl852 As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsOpl823 As eCashBank.ValCashBankRep
+        Dim mclsOpl855 As eCashBank.ValCashBankRep
+        Dim mclsOpc920 As eCashBank.ValCashBankRep
+        Dim mclsOpc965 As eCashBank.ValCashBankRep
+        Dim mclsOpl945 As eCashBank.ValCashBankRep
+        Dim mclsOpl1059 As eCashBank.ValCashBankRep
+        Dim mclsOpl1063 As eCashBank.ValCashBankRep
+        Dim mclsSil1065 As eClaim.ValClaimRep
+        Dim mclsSil1066 As eClaim.ValClaimRep
+        Dim mclsSil1067 As eClaim.ValClaimRep
+        Dim mclsCoReinsuran As eCoReinsuran.ValCoReinsuranRep
+        Dim mclsSil1070 As eClaim.ValClaimRep
+        Dim mclsSil1072 As eClaim.ValClaimRep
+        Dim mclsSil1075 As eClaim.ValClaimRep
+        Dim mclsSil1076 As eClaim.ValClaimRep
+        Dim mclsLedgerAutDetail3 As eLedge.LedgerAutDetail
+        Dim mclsSil833 As eClaim.ValClaimRep
+        Dim mclsSil834 As eClaim.ValClaimRep
+        Dim mclsSil837 As eClaim.ValClaimRep
+        Dim mclsSil838 As eClaim.ValClaimRep
+        Dim mclsSil840 As eClaim.ValClaimRep
+        Dim mclsSil901 As eClaim.ValClaimRep
+        Dim mclsSil902 As eClaim.ValClaimRep
+        Dim mclsVil1078 As ePolicy.ValPolicyRep
+        Dim mclsCol1162 As eCollection.ValCollectionRep
+        Dim mclsCAC1024 As eClaim.ValClaimRep
+        Dim mclsVIL891 As ePolicy.ValPolicyRep
+        Select Case Request.QueryString("sCodispl")
+            Case "AGL787"
+                mclsAgl787 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgl787.insPostAGL787(mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong), Request.Form("P_PROCESO"))
+                Session("P_SKEY") = mclsAgl787.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgl787 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgl787 = Nothing
+
+            Case "AGC816_1"
+
+
+                If Request.Form("P_AGENCIA") <> "" Then
+                    nAgency = mobjValues.StringToType(Request.Form("P_AGENCIA"), eFunctions.Values.eTypeData.etdLong)
+                    nIntermed = 0
+                Else
+                    nAgency = 0
+                    nIntermed = mobjValues.StringToType(Request.Form("P_COD_INTERMED"), eFunctions.Values.eTypeData.etdDouble)
+                End If
+                mclsAgc816 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgc816.insPostAGC816(nAgency, nIntermed, Request.Form("P_TIPO_INFOR"), mobjValues.StringToType(Request.Form("P_COD_RAMO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_ANO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsAgc816.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgc816 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgc816 = Nothing
+
+            Case "AGC817"
+                mclsAgc817 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgc817.insPostAGC817(mobjValues.StringToType(Request.Form("P_INTER_ORIGIN"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_INTER_ACTUAL"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsAgc817.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgc817 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgc817 = Nothing
+
+            Case "AGL845"
+                mclsAgl845 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgl845.insPostAGL845(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_SUCURSAL"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_TIPO_INTERM"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_TIPO_ANTIC"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsAgl845.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgl845 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgl845 = Nothing
+
+            Case "AGL858"
+                mclsAgl858 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgl858.insPostAGL858(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_TIPO_VEND"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsAgl858.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgl858 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgl858 = Nothing
+
+            Case "AGL703"
+                mclsAgl703 = New eAgent.ValAgentRep
+                insPostRepMach = mclsAgl703.insPostAGL703(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_PROCESO"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsAgl703.P_SKEY
+                'UPGRADE_NOTE: Object mclsAgl703 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsAgl703 = Nothing
+
+            Case "AGL815"
+                mclsPayComm = New eAgent.pay_comm
+                insPostRepMach = mclsPayComm.Rea_AGL815(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsPayComm.P_SKEY
+                'UPGRADE_NOTE: Object mclsPayComm may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsPayComm = Nothing
+
+            Case "CAC940"
+                mclsCac940 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac940.insPostCAC940(Request.Form("P_TIPO_REG"), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCac940.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac940 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac940 = Nothing
+
+            Case "CAC988"
+                mclsCac988 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac988.insPostCAC988(mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCac988.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac988 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac988 = Nothing
+
+            Case "CAC1014"
+                mclsCac1014 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac1014.insPostCAC1014(mobjValues.StringToType(Request.Form("P_NUM_POL"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCac1014.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac1014 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac1014 = Nothing
+
+            Case "CAL1110"
+                mclsCac1110 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac1110.insPostCAL1110(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCac1110.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac1110 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac1110 = Nothing
+
+            Case "CAL1108"
+                mclsCal1108 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1108.insPostCAL1108(mobjValues.StringToType(Request.Form("P_COD_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCal1108.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1108 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1108 = Nothing
+
+            Case "CAL1151"
+                mclsCal1151 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1151.insPostCAL1151(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1151.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1151 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1151 = Nothing
+
+            Case "CAL1156"
+                mclsCal1156 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1156.insPostCAL1156(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1156.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1156 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1156 = Nothing
+
+            Case "CAL1078"
+                mclsCal1078 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1078.insPostCAL1078(mobjValues.StringToType(Request.Form("P_TIPO_MOV"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1078.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1078 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1078 = Nothing
+
+            Case "CAL1079"
+                mclsCal1079 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1079.insPostCAL1079(mobjValues.StringToType(Request.Form("P_TIPO_MOV"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1079.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1079 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1079 = Nothing
+
+            Case "CAL1080"
+                mclsCal1080 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1080.insPostCAL1080(mobjValues.StringToType(Request.Form("P_TIPO_MOV"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1080.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1080 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1080 = Nothing
+
+            Case "CAL1081"
+                mclsCal1081 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1081.insPostCAL1081(mobjValues.StringToType(Request.Form("P_TIPO_MOV"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1081.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1081 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1081 = Nothing
+
+            Case "CAL1082"
+                mclsCal1082 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal1082.insPostCAL1082(mobjValues.StringToType(Request.Form("P_TIPO_MOV"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal1082.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal1082 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal1082 = Nothing
+
+            Case "CAC929"
+
+                mclsCac929 = New ePolicy.ValPolicyRep
+
+                If Request.Form("P_COD_OFICINA") <> "" Then
+                    nOfficeAgen = mobjValues.StringToType(Request.Form("P_COD_OFICINA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nOfficeAgen = 0
+                End If
+
+                If Request.Form("P_COD_AGENCIA") <> "" Then
+                    nAgency = mobjValues.StringToType(Request.Form("P_COD_AGENCIA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nAgency = 0
+                End If
+
+                insPostRepMach = mclsCac929.insPostCAC929(mobjValues.StringToType(Request.Form("P_COD_SUCURSAL"), eFunctions.Values.eTypeData.etdLong), nOfficeAgen, nAgency, mobjValues.StringToType(Request.Form("P_COD_ESTADO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_TIPO_SOLICITUD"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCac929.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac929 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac929 = Nothing
+
+            Case "CAL503"
+                mclsLedgerAutDetail = New eLedge.LedgerAutDetail
+                insPostRepMach = mclsLedgerAutDetail.InsCreTmp_Cal503(mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nInsur_Area")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsLedgerAutDetail.P_SKEY
+                'UPGRADE_NOTE: Object mclsLedgerAutDetail may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsLedgerAutDetail = Nothing
+
+            Case "AGL776"
+                mclsLedgerAutDetail = New eLedge.LedgerAutDetail
+                insPostRepMach = mclsLedgerAutDetail.InsCreTmp_Agl776(mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsLedgerAutDetail.P_SKEY
+                'UPGRADE_NOTE: Object mclsLedgerAutDetail may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsLedgerAutDetail = Nothing
+
+            Case "COC897"
+                mclsCoc897 = New eCollection.ValCollectionRep
+                insPostRepMach = mclsCoc897.InsPostCOC897(mobjValues.StringToType(Request.Form("P_POLIZA"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCoc897.P_SKEY
+                'UPGRADE_NOTE: Object mclsCoc897 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCoc897 = Nothing
+
+            Case "CAL872"
+                mclsCal872 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal872.InsPostCAL872(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCal872.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal872 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal872 = Nothing
+
+            Case "CAL969"
+                mclsCal969 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal969.insPostCAL969(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCal969.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal969 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal969 = Nothing
+
+            Case "CAL908"
+                mclsCal908 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCal908.InsPostCAL908(Request.Form("P_RUT_ASEGURADO"), mobjValues.StringToType(Request.Form("P_NUMERO_PROPUESTA"), eFunctions.Values.eTypeData.etdDouble), Session("nUsercode"))
+                Session("P_SKEY") = mclsCal908.P_SKEY
+                'UPGRADE_NOTE: Object mclsCal908 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCal908 = Nothing
+
+
+            Case "CAC947_A"
+                mclsCac947 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac947.insPostCAC947(mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), Request.Form("P_RUT_CONTRATANTE"))
+                Session("P_SKEY") = mclsCac947.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac947 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac947 = Nothing
+
+            Case "CAC1005A"
+                mclsCac1005 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCac1005.insPostCAC1005(Request.Form("P_RUT_CONTRATANTE"))
+                Session("P_SKEY") = mclsCac1005.P_SKEY
+                'UPGRADE_NOTE: Object mclsCac1005 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCac1005 = Nothing
+
+            Case "COL504"
+                mclsLedgerAutDetail2 = New eLedge.LedgerAutDetail
+                insPostRepMach = mclsLedgerAutDetail2.InsCreTmp_Lrecaudacion(mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nInsur_Area")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_PERIODO_INI"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_PERIODO_FIN"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), eRemoteDB.Constants.strNull,eRemoteDB.Constants.intNull)
+
+                Session("P_SKEY") = mclsLedgerAutDetail2.P_SKEY
+                'UPGRADE_NOTE: Object mclsLedgerAutDetail2 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsLedgerAutDetail2 = Nothing
+
+            Case "COL831"
+                mclsCol831 = New eCollection.ValCollectionRep
+                insPostRepMach = mclsCol831.insPostCOL831(mobjValues.StringToType(Request.Form("P_FEC_INI_VIG_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FEC_INI_VIG_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_DESDE"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_DIA_COB_HASTA"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsCol831.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol831 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol831 = Nothing
+
+            Case "COL870"
+                mclsCol870 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCol870.insPostCOL870(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), Request.Form("P_IND_SOLO_RENOVACIONES"), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCol870.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol870 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol870 = Nothing
+
+            Case "COL895", "COL895_2", "COL895_3"
+                mclsCol895 = New eCollection.ValCollectionRep
+                insPostRepMach = mclsCol895.insPostCOL895(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCol895.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol895 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol895 = Nothing
+
+            Case "COL906"
+                mclsCol906 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCol906.insPostCOL906(mobjValues.StringToType(Request.Form("P_PERIODO_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_PERIODO_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCol906.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol906 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol906 = Nothing
+
+
+            Case "COL987"
+                mclsCol987 = New ePolicy.ValPolicyRep
+                insPostRepMach = mclsCol987.insPostCOL987(mobjValues.StringToType(Request.Form("P_FECHA_VENCIMIENTO"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCol987.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol987 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol987 = Nothing
+
+            Case "COL971"
+                mclsCol971 = New eCollection.ValCollectionRep
+                insPostRepMach = mclsCol971.InsPostCOL971(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCol971.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol971 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol971 = Nothing
+
+            Case "COL999"
+                mclsCol999 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsCol999.InsPostCOL999(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsCol999.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol999 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol999 = Nothing
+
+            Case "CRL515"
+                mclsCrl515 = New eCoReinsuran.ValCoReinsuranRep
+                insPostRepMach = mclsCrl515.InsPostCRL515(mobjValues.StringToType(Request.Form("P_FECHA_PROCESO"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_COD_RAMO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble), Request.Form("P_RUT_ASEGURADO"), CStr(Session("sNopayroll")), CStr(Session("sPolitype")))
+                Session("P_SKEY") = mclsCrl515.P_SKEY
+                'UPGRADE_NOTE: Object mclsCrl515 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCrl515 = Nothing
+
+            Case "CRL706"
+                mclsCrl706 = New eCoReinsuran.ValCoReinsuranRep
+
+                insPostRepMach = mclsCrl706.InsPostCRL706(mobjValues.StringToType(Request.Form("P_COD_CIA"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_PERIODO"), eFunctions.Values.eTypeData.etdDate))
+
+                'insPostRepMach = mclsCrl706.InsPostCRL706(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate ) , 			'				                          mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate ))
+
+                'Session("P_SKEY") = mclsCrl706.P_SKEY
+                'UPGRADE_NOTE: Object mclsCrl706 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCrl706 = Nothing
+
+            Case "CRL839"
+                mclsCRL839 = New eCoReinsuran.ValCoReinsuranRep
+
+                insPostRepMach = mclsCRL839.insPostCRL839(mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_COD_RAMO"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCRL839.P_SKEY
+                'UPGRADE_NOTE: Object mclsCRL839 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCRL839 = Nothing
+
+            Case "CRL846"
+                mclsCrl846 = New eCoReinsuran.ValCoReinsuranRep
+                insPostRepMach = mclsCrl846.insPostCRL846(Request.Form("P_TIPO_CUMULO"), mobjValues.StringToType(Request.Form("P_COD_COBERTURA"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsCrl846.P_SKEY
+                'UPGRADE_NOTE: Object mclsCrl846 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCrl846 = Nothing
+
+            Case "CRL851"
+                mclsCrl851 = New eCoReinsuran.ValCoReinsuranRep
+                insPostRepMach = mclsCrl851.insPostCRL851(mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsCrl851.P_SKEY
+                'UPGRADE_NOTE: Object mclsCrl851 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCrl851 = Nothing
+
+            Case "CRL852"
+                mclsCrl852 = New eCoReinsuran.ValCoReinsuranRep
+                insPostRepMach = mclsCrl852.insPostCRL852(mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_CONTRATO_REASEGURO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_RAMO_FECU"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_COD_COBER"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsCrl852.P_SKEY
+                'UPGRADE_NOTE: Object mclsCrl852 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCrl852 = Nothing
+
+            '        Case "OPL700" 
+            '		    Dim mclsOpl700
+            '			Set mclsOpl700 = Server.CreateObject("eCashBank.ValCashBankRep") 
+            '           insPostRepMach = mclsOpl700.InsPostOPL700(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate ) , '                                                                                mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate ), '                                                                                  mobjValues.StringToType(Request.Form("P_NUM_CAJA"), eFunctions.Values.eTypeData.etdLong))
+            '			Session("P_SKEY") = mclsOpl700.P_SKEY
+            '			Set mclsOpl700	= Nothing			
+
+            Case "OPL823"
+                mclsOpl823 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpl823.InsPostOPL823(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_SUCURSAL"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_NUM_CAJA"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsOpl823.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpl823 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpl823 = Nothing
+
+            Case "OPL855"
+                mclsOpl855 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpl855.InsPostOPL855(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsOpl855.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpl855 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpl855 = Nothing
+
+            Case "OPC920"
+                mclsOpc920 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpc920.InsPostOPC920(mobjValues.StringToType(Request.Form("P_NUM_POL"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CERTIF"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsOpc920.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpc920 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpc920 = Nothing
+
+            Case "OPC965"
+                mclsOpc965 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpc965.InsPostOPC965(mobjValues.StringToType(Request.Form("P_NUM_POL"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsOpc965.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpc965 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpc965 = Nothing
+
+            Case "OPL945"
+                mclsOpl945 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpl945.InsPostOPL945(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsOpl945.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpl945 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpl945 = Nothing
+
+            Case "OPL1059"
+                mclsOpl1059 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpl1059.Ins_PostOPL1059(mobjValues.StringToType(Request.Form("P_FECHA"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("sTypeCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsOpl1059.P_SKEY
+                'UPGRADE_NOTE: Object mclsOpl1059 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpl1059 = Nothing
+
+            Case "OPL1063"
+                mclsOpl1063 = New eCashBank.ValCashBankRep
+                insPostRepMach = mclsOpl1063.Ins_PostOPL1063(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+
+                Session("P_SKEY") = mclsOpl1063.P_SKEY
+                Session("P_DIS_CONC") = mclsOpl1063.P_DIS_CONC
+                'UPGRADE_NOTE: Object mclsOpl1063 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsOpl1063 = Nothing
+
+            Case "SIL1065"
+                mclsSil1065 = New eClaim.ValClaimRep
+                insPostRepMach = mclsSil1065.insPostSIL1065(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+
+                Session("P_SKEY") = mclsSil1065.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1065 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1065 = Nothing
+
+            Case "SIL1066"
+                mclsSil1066 = New eClaim.ValClaimRep
+                insPostRepMach = mclsSil1066.insPostSIL1066(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+
+                Session("P_SKEY") = mclsSil1066.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1066 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1066 = Nothing
+
+
+            Case "SIL1067"
+                mclsSil1067 = New eClaim.ValClaimRep
+                insPostRepMach = mclsSil1067.insPostSIL1067(mobjValues.StringToType(Request.Form("P_NUM_SINIESTRO"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_CASO"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_FECHA_PAGO"), eFunctions.Values.eTypeData.etdDate))
+
+                Session("P_SKEY") = mclsSil1067.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1067 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1067 = Nothing
+
+            '+ CRL002: Generación de cesiones de siniestros.
+            Case "SIL1068", "SIL1069"
+                mclsCoReinsuran = New eCoReinsuran.ValCoReinsuranRep
+                insPostRepMach = mclsCoReinsuran.UpdateCRL002(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), eRemoteDB.Constants.dtmNull, mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble), "2", mobjValues.StringToType(CStr(Session("nInsur_area")), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsCoReinsuran.sKey
+                'UPGRADE_NOTE: Object mclsCoReinsuran may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCoReinsuran = Nothing
+
+            Case "SIL1070"
+
+                mclsSil1070 = New eClaim.ValClaimRep
+                If Request.Form("P_RAMO") > 0 Then
+                    nBranch = mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nBranch = 0
+                End If
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nProduct = 0
+                End If
+
+                insPostRepMach = mclsSil1070.insPostSIL1070(mobjValues.StringToType(Request.Form("P_FECHA"), eFunctions.Values.eTypeData.etdDate), nBranch, nProduct)
+                Session("P_SKEY") = mclsSil1070.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1070 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1070 = Nothing
+
+            Case "SIL1072"
+                If Request.Form("P_NUM_POLIZA") <> "" Then
+                    P_Num_Poliza = mobjValues.StringToType(Request.Form("P_NUM_POLIZA"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    P_Num_Poliza = 0
+                End If
+
+                mclsSil1072 = New eClaim.ValClaimRep
+                insPostRepMach = mclsSil1072.insPostSIL1072(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), P_Num_Poliza, Request.Form("P_RUT_CONTRATANTE"), mobjValues.StringToType(Request.Form("P_TIPO_PERIODO"), eFunctions.Values.eTypeData.etdDouble))
+
+                Session("P_SKEY") = mclsSil1072.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1072 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1072 = Nothing
+
+            Case "SIL1075"
+
+                mclsSil1075 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil1075.insPostSIL1075(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble), nProduct, mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsSil1075.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1075 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1075 = Nothing
+
+            Case "SIL1076"
+
+                mclsSil1076 = New eClaim.ValClaimRep
+                If Request.Form("P_RAMO") > 0 Then
+                    nBranch = mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nBranch = 0
+                End If
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nProduct = 0
+                End If
+
+                insPostRepMach = mclsSil1076.insPostSIL1076(mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate), nBranch, nProduct)
+
+                Session("P_SKEY") = mclsSil1076.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil1076 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil1076 = Nothing
+
+            Case "SIL704"
+                If CStr(Session("BatchEnabled")) <> "1" Then
+                    mclsLedgerAutDetail3 = New eLedge.LedgerAutDetail
+                    insPostRepMach = mclsLedgerAutDetail3.InsCreTmp_Sil704(mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nInsur_Area")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_FEC_INI"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FEC_FIN"), eFunctions.Values.eTypeData.etdDate))
+                    Session("P_SKEY") = mclsLedgerAutDetail3.P_SKEY
+                    'UPGRADE_NOTE: Object mclsLedgerAutDetail3 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    mclsLedgerAutDetail3 = Nothing
+                Else
+                    lclsBatch_param = New eSchedule.Batch_param
+                    With lclsBatch_param
+                        .nBatch = 121
+                        .nUsercode = mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, .sKey)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(CStr(Session("nInsur_Area")), eFunctions.Values.eTypeData.etdDouble))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(Request.Form("P_FEC_INI"), eFunctions.Values.eTypeData.etdDate))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(Request.Form("P_FEC_FIN"), eFunctions.Values.eTypeData.etdDate))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, .nUsercode)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaRes, .sKey)
+                        .Save()
+                    End With
+                    Response.Write("<SCRIPT>alert('Se generó la clave de proceso: " & lclsBatch_param.sKey & "');</" & "Script>")
+                    'UPGRADE_NOTE: Object lclsBatch_param may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsBatch_param = Nothing
+                    insPostRepMach = True
+                    print_report = False
+                End If
+
+            Case "SIL705"
+                insPostRepMach = True
+                If CStr(Session("BatchEnabled")) = "1" Then
+                    lclsBatch_param = New eSchedule.Batch_param
+                    With lclsBatch_param
+                        .nBatch = 122
+                        .nUsercode = mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, .sKey)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(CStr(Session("nCompanyUser")), eFunctions.Values.eTypeData.etdDouble))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(Request.Form("P_PERIODO_INI"), eFunctions.Values.eTypeData.etdDate))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, mobjValues.StringToType(Request.Form("P_PERIODO_FIN"), eFunctions.Values.eTypeData.etdDate))
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaProc, .nUsercode)
+                        .Add(eSchedule.Batch_Param.enmBatchParArea.batchParAreaRes, .sKey)
+                        .Save()
+                    End With
+                    Response.Write("<SCRIPT>alert('Se generó la clave de proceso: " & lclsBatch_param.sKey & "');</" & "Script>")
+                    'UPGRADE_NOTE: Object lclsBatch_param may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                    lclsBatch_param = Nothing
+                    print_report = False
+                End If
+
+            Case "SIL833"
+
+                mclsSil833 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil833.insPostSIL833(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), nProduct, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil833.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil833 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil833 = Nothing
+
+            Case "SIL834"
+
+                mclsSil834 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil834.insPostSIL834(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), nProduct, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil834.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil834 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil834 = Nothing
+
+            Case "SIL837"
+
+                mclsSil837 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil837.insPostSIL837(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), nProduct, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil837.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil837 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil837 = Nothing
+
+            Case "SIL838"
+
+                mclsSil838 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil838.insPostSIL838(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), nProduct, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil838.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil838 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil838 = Nothing
+
+            Case "SIL840"
+
+                mclsSil840 = New eClaim.ValClaimRep
+                If Request.Form("P_PRODUCTO") <> "" Then
+                    nProduct = mobjValues.StringToType(Request.Form("P_PRODUCTO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nProduct = 0
+                End If
+                insPostRepMach = mclsSil840.insPostSIL840(mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdLong), nProduct, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil840.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil840 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil840 = Nothing
+
+            Case "SIL901"
+
+                mclsSil901 = New eClaim.ValClaimRep
+                If Request.Form("P_COD_OFICINA") <> "" Then
+                    nOfficeAgen = mobjValues.StringToType(Request.Form("P_COD_OFICINA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nOfficeAgen = 0
+                End If
+
+                If Request.Form("P_COD_AGENCIA") <> "" Then
+                    nAgency = mobjValues.StringToType(Request.Form("P_COD_AGENCIA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nAgency = 0
+                End If
+
+                insPostRepMach = mclsSil901.insPostSIL901(mobjValues.StringToType(Request.Form("P_COD_SUCURSAL"), eFunctions.Values.eTypeData.etdLong), nOfficeAgen, nAgency, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil901.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil901 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil901 = Nothing
+
+            Case "SIL902"
+
+                mclsSil902 = New eClaim.ValClaimRep
+                If Request.Form("P_COD_OFICINA") <> "" Then
+                    nOfficeAgen = mobjValues.StringToType(Request.Form("P_COD_OFICINA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nOfficeAgen = 0
+                End If
+
+                If Request.Form("P_COD_AGENCIA") <> "" Then
+                    nAgency = mobjValues.StringToType(Request.Form("P_COD_AGENCIA"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nAgency = 0
+                End If
+
+                If Request.Form("P_NUM_SINIESTRO") <> "" Then
+                    nClaim = mobjValues.StringToType(Request.Form("P_NUM_SINIESTRO"), eFunctions.Values.eTypeData.etdLong)
+                Else
+                    nClaim = 0
+                End If
+
+                insPostRepMach = mclsSil902.insPostSIL902(mobjValues.StringToType(Request.Form("P_COD_SUCURSAL"), eFunctions.Values.eTypeData.etdLong), nOfficeAgen, nAgency, nClaim, mobjValues.StringToType(Request.Form("P_MES"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(Request.Form("P_ANIO"), eFunctions.Values.eTypeData.etdLong))
+                Session("P_SKEY") = mclsSil902.P_SKEY
+                'UPGRADE_NOTE: Object mclsSil902 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsSil902 = Nothing
+
+            Case "VIL1078"
+
+                mclsVil1078 = New ePolicy.ValPolicyRep
+
+                If Request.Form("P_RAMO") > 0 Then
+                    nBranch = mobjValues.StringToType(Request.Form("P_RAMO"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nBranch = 0
+                End If
+                If Request.Form("P_NUM_PROP") <> "" Then
+                    nPolicy = mobjValues.StringToType(Request.Form("P_NUM_PROP"), eFunctions.Values.eTypeData.etdDouble)
+                Else
+                    nPolicy = 0
+                End If
+
+                insPostRepMach = mclsVil1078.insPostVIL1078(nBranch, nPolicy, mobjValues.StringToType(Request.Form("P_FECHA_DESDE"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_HASTA"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsVil1078.P_SKEY
+                'UPGRADE_NOTE: Object mclsVil1078 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsVil1078 = Nothing
+
+
+
+
+            Case "COL1162"
+                mclsCol1162 = New eCollection.ValCollectionRep
+                insPostRepMach = mclsCol1162.insPostCOL1162(mobjValues.StringToType(Request.Form("param_fecha"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_COD_SUCURSAL"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_COD_OFICINA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_COD_AGENCIA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_INTERMED"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCol1162.P_SKEY
+                'UPGRADE_NOTE: Object mclsCol1162 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCol1162 = Nothing
+
+
+            Case "CAC1024"
+                mclsCAC1024 = New eClaim.ValClaimRep
+
+                insPostRepMach = mclsCAC1024.insPostCAC1024(mobjValues.StringToType(Request.Form("P_NUM_POL"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_NUM_DENUN"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("P_COD_COB"), eFunctions.Values.eTypeData.etdDouble))
+                Session("P_SKEY") = mclsCAC1024.P_SKEY
+                'UPGRADE_NOTE: Object mclsCAC1024 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsCAC1024 = Nothing
+
+            Case "VIL891"
+                mclsVIL891 = New ePolicy.ValPolicyRep
+
+                insPostRepMach = mclsVIL891.insPostVIL891(mobjValues.StringToType(Request.Form("P_FECHA_INICIO"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form("P_FECHA_FIN"), eFunctions.Values.eTypeData.etdDate))
+                Session("P_SKEY") = mclsVIL891.P_SKEY
+                'UPGRADE_NOTE: Object mclsVIL891 may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+                mclsVIL891 = Nothing
+
+            Case Else
+                insPostRepMach = True
+
+        End Select
+
+    End Function
+
+    '--------------------------------------------------------------------------------------------
+    Function insShowReport() As Object
+        '--------------------------------------------------------------------------------------------
+
+        Dim mstrExportPath As Object
+        Dim mstrParameters As String
+        Dim lobjSpecRec As ADODB._Recordset
+        Dim lobjWRptRep As eWRpt.clsReport
+        Dim lstrCommAnd As String
+        Dim lstrCodispl As String
+
+        lstrCodispl = Request.QueryString("sCodisPl")
+
+        lobjWRptRep = New eWRpt.clsReport
+        lobjSpecRec = lobjWRptRep.GetSpecifications(lobjWRptRep.TranslateWebPath(Request.ServerVariables("PATH_TRANSLATED")) & "\" & Session("SpecificationFile"), lstrCodispl)
+        'UPGRADE_NOTE: Object lobjWRptRep may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+        lobjWRptRep = Nothing
+
+        If Not lobjSpecRec.EOF Then
+            lobjSpecRec.MoveFirst()
+        End If
+
+        '+Se carga nombre del reporte y el primer parametro que corresponde al cursor
+        mstrParameters = "URL=" & getFile(lobjSpecRec.Fields("esPlantillaRPT"))
+        'mstrParameters = mstrParameters & "&sp="
+        lobjSpecRec.MoveFirst()
+        While Not lobjSpecRec.EOF
+            If IIF(IsDBNull(lobjSpecRec.Fields.Item("prVisible").Value), Nothing, lobjSpecRec.Fields.Item("prVisible").Value) = 1 Then
+                If Not (IIF(IsDBNull(lobjSpecRec.Fields.Item("prAdicc").Value), Nothing, lobjSpecRec.Fields.Item("prAdicc").Value) = 0) Then
+
+                    mstrParameters = mstrParameters & "&sp=" & Request.Form(lobjSpecRec.Fields("prNombre"))
+                End If
+            Else
+                '		    If lobjSpecRec.Fields("prNombre") = "P_SKEY" Then
+                If IIF(IsDBNull(lobjSpecRec.Fields.Item("prAdicc").Value), Nothing, lobjSpecRec.Fields.Item("prAdicc").Value) = 2 Then
+                    mstrParameters = mstrParameters & "&sp=" & Session(lobjSpecRec.Fields("prNombre"))
+                Else
+                    mstrParameters = mstrParameters & "&sp=" & IIF(IsDBNull(lobjSpecRec.Fields.Item("prDefecto").Value), Nothing, lobjSpecRec.Fields.Item("prDefecto").Value)
+                End If
+            End If
+            lobjSpecRec.MoveNext()
+        End While
+
+        lobjSpecRec.Close()
+        'UPGRADE_NOTE: Object lobjSpecRec may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+        lobjSpecRec = Nothing
+
+        lstrCommAnd = "../../Common/Reports/Report.aspx?" & mstrParameters
+        Response.Write("<SCRIPT>window.open('" & lstrCommAnd & "','Rep" & lstrCodispl & "','toolbar=no + resizable=yes');</" & "Script>")
+
+    End Function
+
+    '
+    '    
+    Function getFile(ByRef sPath As Object) As String
+        Dim lintPos As Integer
+        Dim sFile As String
+        Dim arrTemp() As String
+
+        arrTemp = Microsoft.VisualBasic.Split(sPath, "\")
+
+
+        lintPos = UBound(arrTemp)
+
+        If lintPos >= 0 Then
+            sFile = arrTemp(lintPos)
+        End If
+
+
+        getFile = "Reports/" & sFile
+    End Function
+
+</script>
+<%Response.Expires = -1
+
+print_report = True
+
+mstrCommAnd = "&sModule=Reports&sProject=RepMach&sCodisplReload=" & Request.QueryString("sCodispl")
+%>
+<HTML>
+<HEAD>
+	<LINK REL="StyleSheet" TYPE="text/css" HREF="/VTimeNet/Common/Custom.css">
+    <SCRIPT src="/VTimeNet/scripts/GenFunctions.js"> </SCRIPT>
+	    <META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+    <!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/Constantes.aspx" -->
+
+    <!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/ConstBatch.aspx" -->
+
+    <!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/General.aspx" -->
+	
+    <!-- #INCLUDE FILE="Parameters.aspx" -->
+</HEAD>
+
+<%If Request.QueryString("nZone") = 1 Then
+	%><BODY><%	
+Else
+	%><BODY CLASS="Header"><%	
+End If
+%>
+
+<SCRIPT>
+//- Variable para el control de versiones
+    document.VssVersion="$$Revision: 160 $|$$Date: 20/10/04 11:36 $|$$Author: Nvaplat11 $"
+
+function CancelErrors(){self.history.go(-1)}
+function NewLocation(Source,Codisp){
+    var lstrLocation = "";
+    
+    lstrLocation += Source.location;
+    lstrLocation = lstrLocation.replace(/&OPENER=.*/,"") + "&OPENER=" + Codisp;
+    Source.location = lstrLocation
+}
+</SCRIPT>
+<%
+mobjValues = New eFunctions.Values
+
+'+ Si no se han validado los campos de la página
+If Request.Form("sCodisplReload") = vbNullString Then
+	mstrErrors = insvalRepMach
+	Session("sErrorTable") = mstrErrors
+	Session("sForm") = Request.Form
+Else
+	Session("sErrorTable") = vbNullString
+	Session("sForm") = vbNullString
+End If
+
+
+If mstrErrors > vbNullString Then
+	With Response
+		.Write("<SCRIPT LANGUAGE=JAVASCRIPT>")
+		.Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & server.URLEncode(mstrCommAnd) & "&sQueryString=" & server.URLEncode(Request.Params.Get("Query_String")) & """, ""RepMachError"",660,330);")
+		.Write(mobjValues.StatusControl(False, Request.QueryString("nZone"), Request.QueryString("WindowType")))
+		.Write("</SCRIPT>")
+	End With
+Else
+	If insPostRepMach Then
+		If print_report Then
+			insShowReport()
+		End If
+		Response.Write("<SCRIPT>top.document.location.reload();</SCRIPT>")
+	Else
+		Response.Write("<SCRIPT>alert('No se realizó proceso')</SCRIPT>")
+	End If
+	
+End If
+'UPGRADE_NOTE: Object mobjValues may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjValues = Nothing
+%>
+</BODY>
+</HTML>
+
+
+
+
+

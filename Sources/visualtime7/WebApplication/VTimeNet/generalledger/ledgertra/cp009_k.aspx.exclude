@@ -1,0 +1,285 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="eLedge" %>
+<script language="VB" runat="Server">
+
+Dim mobjValues As eFunctions.Values
+Dim mobjGrid As eFunctions.Grid
+Dim mobjMenu As eFunctions.Menues
+Dim lclsTab_cost_c As eLedge.Tab_cost_c
+Dim lclsAcc_transa As eLedge.Acc_transa
+Dim lclsLedger As eLedge.Ledger
+Dim mintLine As Byte
+Dim mblnDesabled As Boolean
+
+
+'----------------------------------------------------------------------------
+Private Sub insLoadCP009_k()
+	'----------------------------------------------------------------------------
+	Response.Write(mobjValues.ButtonLedCompan("LedCompan", Session("nLedCompan"), "Selección de compañías contables",  , "insLedCompan(this)"))
+End Sub
+
+'% insDefineHeader: Se definen los campos del grid
+'--------------------------------------------------------------------------------------------
+Private Sub insDefineHeader()
+	'--------------------------------------------------------------------------------------------
+	
+	'+ Se definen las columnas del grid
+	
+	With mobjGrid.Columns
+		Call .AddTextColumn(0, "Unidad Organizativa", "tctCost_cente", 8, "",  ,  ,  ,  ,  , CBool(mblnDesabled))
+		Call .AddTextColumn(0, "Descripciòn de la Unidad", "tctDescript", 30, "",  ,  ,  ,  ,  , CBool(mblnDesabled))
+		Call .AddButtonColumn(0, "Nota", "SCA2-C", 16, True, Request.QueryString.Item("nMainAction") = CStr(eFunctions.Menues.TypeActions.clngActionQuery))
+		Call .AddCheckColumn(0, "¿Bloquear debitos?", "chkBlock_deb", "",  ,  ,  , CBool(mblnDesabled))
+		Call .AddCheckColumn(0, "¿Bloquear creditos?", "chkBlock_cre", "",  ,  ,  , CBool(mblnDesabled))
+		Call .AddPossiblesColumn(0, "Estado", "cboStratregt", "Table26", eFunctions.Values.eValuesType.clngComboType, CStr(1), False,  ,  ,  ,  , CBool(mblnDesabled))
+		'*********************************************************************		
+		Call .AddHiddenColumn("tctAuxCost_cente", "")
+		Call .AddHiddenColumn("tctAuxDescript", "")
+		Call .AddHiddenColumn("btnAuxNotenum", CStr(0))
+		Call .AddHiddenColumn("chkAuxBlock_deb", "2")
+		Call .AddHiddenColumn("chkAuxBlock_cre", "2")
+		Call .AddHiddenColumn("tctAuxStratregt", CStr(0))
+		Call .AddHiddenColumn("sAuxSel", "2")
+		
+	End With
+	
+	'+ Se definen las propiedades generales del grid
+	With mobjGrid
+		If Request.QueryString.Item("Action") = "Update" Then
+			.Columns("Sel").GridVisible = True
+		End If
+		.nMainAction = CShort(IIf(Request.QueryString.Item("nMainAction") ="", 0, Request.QueryString.Item("nMainAction")))
+		.Codispl = "CP009"
+		.Codisp = "CP009_K"
+		.Width = 450
+		.Height = 300
+		.DeleteButton = True
+		.AddButton = True
+		If Session("bQuery") Then
+			.Columns("Sel").GridVisible = False
+			.bOnlyForQuery = True
+		End If
+		.Columns("tctCost_cente").EditRecord = True
+		.Columns("tctDescript").EditRecord = True
+		If Request.QueryString.Item("Reload") = "1" Then
+			.sReloadIndex = Request.QueryString.Item("ReloadIndex")
+		End If
+		mobjGrid.sEditRecordParam = "nLedCompan=' + self.document.forms[0].tcnLedCompan.value + '"
+		
+		.Columns("Sel").OnClick = "if(document.forms[0].sAuxSel.length>0)document.forms[0].sAuxSel[this.value].value =(this.checked?1:2); else document.forms[0].sAuxSel.value =(this.checked?1:2);insSelected(this);"
+	End With
+	
+End Sub
+'% insPreCP009: Se cargan los controles de la página, tanto de la parte fija como del grid
+'--------------------------------------------------------------------------------------------
+Private Sub insPreCP009()
+	'--------------------------------------------------------------------------------------------
+	Dim lclsTab_cost_c As eLedge.Tab_cost_c
+	Dim lcolTab_cost_cs As eLedge.Tab_cost_cs
+	Dim lintIndex As Integer
+	
+	With Server
+		lclsTab_cost_c = New eLedge.Tab_cost_c
+		lcolTab_cost_cs = New eLedge.Tab_cost_cs
+	End With
+	
+	Call insLoadCP009_k()
+	
+	If lcolTab_cost_cs.Find(mobjValues.StringToType(Session("nLedCompan"), eFunctions.Values.eTypeData.etdDouble)) Then
+		lintIndex = 1
+		'For Each lclsTab_cost_c In lcolTab_cost_cs
+		For lintIndex = 1 To lcolTab_cost_cs.Count
+        ' For lintIndex = 0 To lcolTab_cost_cs.Count -1
+			lclsTab_cost_c = lcolTab_cost_cs(lintIndex)
+			With mobjGrid
+				.Columns("tctCost_cente").DefValue = lclsTab_cost_c.sCost_cente
+				.Columns("tctDescript").DefValue = lclsTab_cost_c.sDescript
+				.Columns("btnNotenum").DefValue = CStr(lclsTab_cost_c.nNoteNum)
+				.Columns("chkBlock_deb").Checked = mobjValues.StringToType(lclsTab_cost_c.sBlock_deb, eFunctions.Values.eTypeData.etdDouble)
+				.Columns("chkBlock_cre").Checked = mobjValues.StringToType(lclsTab_cost_c.sBlock_cre, eFunctions.Values.eTypeData.etdDouble)
+				.Columns("cboStratregt").DefValue = lclsTab_cost_c.sStatregt
+				'-------------------------------------------------------------------------------------------------------------------------------------------------------------------		    	    
+				.Columns("tctAuxCost_cente").DefValue = lclsTab_cost_c.sCost_cente
+				.Columns("tctAuxDescript").DefValue = lclsTab_cost_c.sDescript
+				.Columns("btnAuxNotenum").DefValue = CStr(lclsTab_cost_c.nNoteNum)
+				.Columns("chkAuxBlock_deb").DefValue = lclsTab_cost_c.sBlock_deb
+				.Columns("chkAuxBlock_cre").DefValue = lclsTab_cost_c.sBlock_cre
+				.Columns("tctAuxStratregt").DefValue = lclsTab_cost_c.sStatregt
+				
+				
+				mobjGrid.sDelRecordParam = "sCost_cente=' + marrArray[lintIndex].tctAuxCost_cente + '&sDescript=' + marrArray[lintIndex].tctAuxDescript + '&nNoteNum=' + marrArray[lintIndex].btnAuxNotenum + '&sBlock_deb=' + marrArray[lintIndex].chkAuxBlock_deb + '&sBlock_cre=' + marrArray[lintIndex].chkAuxBlock_cre + ' &sStratregt=' + marrArray[lintIndex].tctAuxStratregt + ' &sSel=' + marrArray[lintIndex].sAuxSel + '"
+				Response.Write(.DoRow)
+			End With
+			
+		Next 
+	End If
+	
+	
+	Response.Write(mobjGrid.closeTable())
+	
+	'UPGRADE_NOTE: Object lclsTab_cost_c may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lclsTab_cost_c = Nothing
+	'UPGRADE_NOTE: Object lcolTab_cost_cs may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lcolTab_cost_cs = Nothing
+End Sub
+
+'% insPreCP009Upd: Se muetra la ventana Popup para efecto de actualización del Gird
+'--------------------------------------------------------------------------------------------
+Private Sub insPreCP009Upd()
+	'--------------------------------------------------------------------------------------------
+	Dim lclsTab_cost_c As eLedge.Tab_cost_c
+	Dim lclsErrors As eFunctions.Errors
+	Dim lblnPost As Boolean
+	lclsTab_cost_c = New eLedge.Tab_cost_c
+	lclsErrors = New eFunctions.Errors
+	
+	If Request.QueryString.Item("Action") = "Del" Then
+		Response.Write(mobjValues.ConfirmDelete())
+		
+		lblnPost = lclsTab_cost_c.insPostCP009("303", mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdDouble), "2", mobjValues.StringToType(Session("nLedCompan"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.QueryString.Item("nNoteNum"), eFunctions.Values.eTypeData.etdDouble), Request.QueryString.Item("sBlock_cre"), Request.QueryString.Item("sBlock_deb"), Request.QueryString.Item("sDescript"), Request.QueryString.Item("sStatregt"), mobjValues.StringToDate(Session("deffecdate")), Request.QueryString.Item("sCost_cente"))
+	End If
+	With Request
+		Response.Write(mobjGrid.DoFormUpd(.QueryString.Item("Action"), "valLedGerTra.aspx", "CP009", .QueryString.Item("nMainAction"), mobjValues.ActionQuery, CShort(.QueryString.Item("Index"))))
+		Response.Write(mobjValues.HiddenControl("nLedCompan", .QueryString.Item("nLedCompan")))
+	End With
+	
+	
+	'UPGRADE_NOTE: Object lclsTab_cost_c may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lclsTab_cost_c = Nothing
+	'UPGRADE_NOTE: Object lclsErrors may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lclsErrors = Nothing
+End Sub
+
+</script>
+<%'CONVERSION_ERROR: Invalid attributes in the page directive or more than one page directive into the same asp file.Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1013.htm%>
+<%@ Page Language="VB" explicit="true" %><% %>
+<%Response.Expires = -1
+
+mintLine = 0
+
+With Server
+	mobjValues = New eFunctions.Values
+	mobjGrid = New eFunctions.Grid
+	mobjMenu = New eFunctions.Menues
+	lclsTab_cost_c = New eLedge.Tab_cost_c
+	lclsAcc_transa = New eLedge.Acc_transa
+	lclsLedger = New eLedge.Ledger
+End With
+
+
+If Request.QueryString.Item("nMainAction") = CStr(eFunctions.Menues.TypeActions.clngActionQuery) Then
+	mobjValues.ActionQuery = True
+End If
+
+mobjValues.sCodisplPage = "CP009_K"
+
+%>
+
+<SCRIPT>
+//% insCancel: Ejecuta rutinas necesarias en el momento de cancelar la página
+//------------------------------------------------------------------------------------------
+function insCancel(){
+//------------------------------------------------------------------------------------------
+	top.close()
+   return (true);
+}
+
+//% insStateZone: Se controla el estado de los campos de la página
+//------------------------------------------------------------------------------------------
+function insStateZone(){
+//------------------------------------------------------------------------------------------
+    self.document.images["LedCompan"].disabled=false;
+}
+//% insStateZone: Se controla el estado de los campos de la página
+//------------------------------------------------------------------------------------------
+function insLedCompan(Field){
+//------------------------------------------------------------------------------------------
+	//alert("el ledCompan....")
+//	alert(self.document.forms[0].tcnLedCompan.value)
+		self.document.location.href="/VTimeNet/GeneralLedGer/LedGerTra/CP009_k.aspx?sCodispl=CP009&nLedCompan="+ self.document.forms[0].tcnLedCompan.value;
+		//Session("nLedCompan") == self.document.forms[0].tcnLedCompan.value;
+
+}
+//-------------------------------------------------------------------------------------------------------------------
+function insPreZone(llngAction){
+//-------------------------------------------------------------------------------------------------------------------
+	switch (llngAction){
+	    case 301:
+	    case 302:
+	    case 401:
+	        document.location.href = document.location.href.replace(/&nMainAction.*/,'') + '&nMainAction=' + llngAction
+	        break;
+	}
+}
+//------------------------------------------------------------------------------------------
+function insSelected(Field){
+//---------------------------------------------------------------------------
+    Field.checked = !Field.checked
+}
+
+
+</SCRIPT>
+
+<HTML>
+<HEAD>
+	<META NAME="GENERATOR" CONTENT="Microsoft Visual Studio 6.0"/>
+	<%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'VTimeNet/Includes/Constantes.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/Constantes.aspx" -->
+
+	<%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'VTimeNet/Includes/General.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/General.aspx" -->
+
+	<%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/GenFunctions.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
+	<%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/valFunctions.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/valFunctions.js"></SCRIPT>
+
+<%With Response
+	.Write(mobjValues.StyleSheet)
+	If Request.QueryString.Item("Type") <> "PopUp" Then
+		.Write("<SCRIPT>var nMainAction=top.frames[""fraSequence""].plngMainAction</SCRIPT>")
+		.Write("<SCRIPT LANGUAGE=""JavaScript"" SRC=""/VTimeNet/Scripts/tmenu.js""></SCRIPT>")
+		.Write(mobjMenu.MakeMenu("CP009", "CP009_k.aspx", 1, ""))
+	End If
+	.Write(mobjValues.WindowsTitle("CP009"))
+End With
+'UPGRADE_NOTE: Object mobjMenu may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjMenu = Nothing
+
+%>
+</HEAD>
+
+<BODY ONUNLOAD="closeWindows();">
+<FORM METHOD="POST" ID="FORM" NAME="frmUnitUpd" ACTION="ValLedGerTra.aspx?sTime=1">
+<BR>
+    <TABLE WIDTH="100%">
+        <%
+If (Not IsNothing(Request.QueryString.Item("nLedCompan")) Or CDbl(Request.QueryString.Item("nLedCompan")) <> 0) And (CStr(Session("nLedCompan")) = "" Or Session("nLedCompan") = 0) Then
+	Session("nLedCompan") = Request.QueryString.Item("nLedCompan")
+End If
+
+Call insDefineHeader()
+If Request.QueryString.Item("Type") <> "PopUp" Then
+	mblnDesabled = True
+	Call insPreCP009()
+Else
+	mblnDesabled = False
+	Call insPreCP009Upd()
+End If
+
+%>
+    </TABLE>
+
+</BODY>
+</FORM>
+</HTML>
+
+
+
+
+

@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Currency in which the amounts associated with the coverage are expressed</value>
+  </data>
+  <data name="valBillitemCaption" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="valBillitemToolTip" xml:space="preserve">
+    <value>Billing item where the coverage in process is billed</value>
+  </data>
+  <data name="cbeRetarifCaption" xml:space="preserve">
+    <value>Recalculation</value>
+  </data>
+  <data name="cbeRetarifToolTip" xml:space="preserve">
+    <value>It indicates when the coverage should be recalculated</value>
+  </data>
+  <data name="chkCover_useCaption" xml:space="preserve">
+    <value>Basic Coverage</value>
+  </data>
+  <data name="chkCover_useToolTip" xml:space="preserve">
+    <value>It indicates that the coverage in process is one of the basic coverages associated with the policies of the product</value>
+  </data>
+  <data name="tctCondSVSCaption" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="tctCondSVSToolTip" xml:space="preserve">
+    <value>Code conditioned upon the SVS</value>
+  </data>
+  <data name="AnchorRamos para interfacesCaption" xml:space="preserve">
+    <value>Lines of Business for Interface</value>
+  </data>
+  <data name="cbeBranch_ledCaption" xml:space="preserve">
+    <value>Accounting</value>
+  </data>
+  <data name="cbeBranch_ledToolTip" xml:space="preserve">
+    <value>Accounting line of business to which the coverage belongs</value>
+  </data>
+  <data name="chkControlCaption" xml:space="preserve">
+    <value>Accumulation Control by Insured Person</value>
+  </data>
+  <data name="chkControlToolTip" xml:space="preserve">
+    <value>The coverage must not be associated with a client more than once in another policy</value>
+  </data>
+  <data name="cbeBranch_reiCaption" xml:space="preserve">
+    <value>Reinsurance</value>
+  </data>
+  <data name="cbeBranch_reiToolTip" xml:space="preserve">
+    <value>Line of business to which the coverage belongs</value>
+  </data>
+  <data name="chkSurvCaption" xml:space="preserve">
+    <value>Coverage for Paid-up or ETI Insurance</value>
+  </data>
+  <data name="chkSurvToolTip" xml:space="preserve">
+    <value>Lets identify the coverage of survival for the settlement process and extended the time for updating</value>
+  </data>
+  <data name="cbeBranch_estCaption" xml:space="preserve">
+    <value>Solvency Margin Classification</value>
+  </data>
+  <data name="cbeBranch_estToolTip" xml:space="preserve">
+    <value>Cover classification according to the SVS (Superintendencia de Valores y Seguros)</value>
+  </data>
+  <data name="chkCalreinCaption" xml:space="preserve">
+    <value>Redistribute Reinsurance upon anniversary</value>
+  </data>
+  <data name="chkCalreinToolTip" xml:space="preserve">
+    <value>Indicate that in the process of anniversary coverage should make the distribution of reinsurance</value>
+  </data>
+  <data name="cbeBranch_genCaption" xml:space="preserve">
+    <value>Generic</value>
+  </data>
+  <data name="cbeBranch_genToolTip" xml:space="preserve">
+    <value>Generic line of business to which the coverage belongs</value>
+  </data>
+  <data name="chkDependCaption" xml:space="preserve">
+    <value>Main Insured Dependency</value>
+  </data>
+  <data name="chkDependToolTip" xml:space="preserve">
+    <value>It indicates if the additional insured must be excluded when the main insured is excluded</value>
+  </data>
+  <data name="chkReinOrigCondCaption" xml:space="preserve">
+    <value>Reinsurance Originals Terms &amp; Conditions</value>
+  </data>
+  <data name="chkReinOrigCondToolTip" xml:space="preserve">
+    <value>It indicates that the coverage always mantains the reinsurance conditions in force until it will be added to the policy</value>
+  </data>
+  <data name="AnchorSuma paraCaption" xml:space="preserve">
+    <value>Lines of Business for Interface</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Sum Insured</value>
+  </data>
+  <data name="OptAddsuini_CStr1Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddsuini_CStr1ToolTip" xml:space="preserve">
+    <value>It indicates if the sum insured of the coverage is accumulated in order to obtain the sum insured of the policy</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Reinsurance</value>
+  </data>
+  <data name="OptAddreini_CStr1Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddreini_CStr1ToolTip" xml:space="preserve">
+    <value>The coverage is not taken into account to calculate the reinsurance</value>
+  </data>
+  <data name="Anchor3Caption" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="OptAddtaxin_CStr1Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddtaxin_CStr1ToolTip" xml:space="preserve">
+    <value>The highest tax is the one to be applied to the policy</value>
+  </data>
+  <data name="OptAddsuini_CStr3Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddsuini_CStr3ToolTip" xml:space="preserve">
+    <value>It indicates if the sum insured of the coverage is accumulated in order to obtain the sum insured of the policy</value>
+  </data>
+  <data name="OptAddreini_CStr3Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddreini_CStr3ToolTip" xml:space="preserve">
+    <value>The coverage is not taken into account to calculate the reinsurance</value>
+  </data>
+  <data name="OptAddtaxin_CStr3Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddtaxin_CStr3ToolTip" xml:space="preserve">
+    <value>The highest tax is the one to be applied to the policy</value>
+  </data>
+  <data name="OptAddsuini_CStr2Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddsuini_CStr2ToolTip" xml:space="preserve">
+    <value>It indicates if the sum insured of the coverage is accumulated in order to obtain the sum insured of the policy</value>
+  </data>
+  <data name="OptAddreini_CStr2Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddreini_CStr2ToolTip" xml:space="preserve">
+    <value>The coverage is not taken into account to calculate the reinsurance</value>
+  </data>
+  <data name="OptAddtaxin_CStr2Caption" xml:space="preserve">
+    <value>Does not Apply</value>
+  </data>
+  <data name="OptAddtaxin_CStr2ToolTip" xml:space="preserve">
+    <value>The highest tax is the one to be applied to the policy</value>
+  </data>
+  <data name="txtNoteCaption" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="txtNoteToolTip" xml:space="preserve">
+    <value>Nota asociada a la cobertura</value>
+  </data>
+</root>

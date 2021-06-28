@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDeleteResource.ToolTip" xml:space="preserve">
+    <value>Delete information</value>
+  </data>
+  <data name="ClientIDColumnResource.Caption" xml:space="preserve">
+    <value>Client ID</value>
+  </data>
+  <data name="CommentColumnResource.Caption" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="CreationDateColumnResource.Caption" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="EmailColumnResource.Caption" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="IsApprovedColumnResource.Caption" xml:space="preserve">
+    <value>Is Approved</value>
+  </data>
+  <data name="IsLockedOutColumnResource.Caption" xml:space="preserve">
+    <value>Is Locked Out</value>
+  </data>
+  <data name="IsOnlineColumnResource.Caption" xml:space="preserve">
+    <value>Is Online</value>
+  </data>
+  <data name="LastActivityDateColumnResource.Caption" xml:space="preserve">
+    <value>Last Activity Date</value>
+  </data>
+  <data name="LastLockoutDateColumnResource.Caption" xml:space="preserve">
+    <value>Last Lockout Date</value>
+  </data>
+  <data name="LastLoginDateColumnResource.Caption" xml:space="preserve">
+    <value>Last Login Date</value>
+  </data>
+  <data name="LastPasswordChangedDateColumnResource.Caption" xml:space="preserve">
+    <value>Last Password Changed Date</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Users Manager</value>
+  </data>
+  <data name="PasswordQuestionColumnResource.Caption" xml:space="preserve">
+    <value>Password Question</value>
+  </data>
+  <data name="ASPxLabel1Resource.Text" xml:space="preserve">
+    <value>Are you sure want to delete the selected rows?</value>
+  </data>
+  <data name="popupMessageHeaderResource.Text" xml:space="preserve">
+    <value>Delete Confirmation</value>
+  </data>
+  <data name="ProducerIDColumnResource.Caption" xml:space="preserve">
+    <value>Producer ID</value>
+  </data>
+  <data name="RolesAssignedColumnResource.Caption" xml:space="preserve">
+    <value>Roles Assigned</value>
+  </data>
+  <data name="UserNameColumnResource.Caption" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Literal1Resource.Text" xml:space="preserve">
+    <value>Last Login Date</value>
+  </data>
+  <data name="Literal2Resource.Text" xml:space="preserve">
+    <value>Is LockedOut</value>
+  </data>
+  <data name="Literal3Resource.Text" xml:space="preserve">
+    <value>Is Online</value>
+  </data>
+  <data name="Literal4Resource.Text" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="Literal6Resource.Text" xml:space="preserve">
+    <value>STATUS</value>
+  </data>
+  <data name="Literal7Resource.Text" xml:space="preserve">
+    <value>AUDIT</value>
+  </data>
+  <data name="DetailsResource.Caption" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="InfoLinkResource.Text" xml:space="preserve">
+    <value>More Info...</value>
+  </data>
+  <data name="Literal10Resource.Text" xml:space="preserve">
+    <value>Last Password Changed</value>
+  </data>
+  <data name="Literal12Resource.Text" xml:space="preserve">
+    <value>Roles Assigned</value>
+  </data>
+  <data name="Literal5Resource.Text" xml:space="preserve">
+    <value>Last Activity Date</value>
+  </data>
+  <data name="Literal8Resource.Text" xml:space="preserve">
+    <value>Last Lockout Date</value>
+  </data>
+  <data name="popupResource.HeaderText" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="RoleMessage" xml:space="preserve">
+    <value>No role assigned</value>
+  </data>
+  <data name="EmailTextBoxResource.ToolTip" xml:space="preserve">
+    <value>In this email will be sent notice of the change / recovery password, if is empty will be sent to current e-mail.</value>
+  </data>
+  <data name="GetRecoverPasswordButtonResource.Text" xml:space="preserve">
+    <value>Recover</value>
+  </data>
+  <data name="PasswordLiteralResource.Text" xml:space="preserve">
+    <value>RECOVER PASSWORD</value>
+  </data>
+  <data name="RestorePasswordCheckBoxResource.Text" xml:space="preserve">
+    <value>Send new password</value>
+  </data>
+  <data name="RestorePasswordCheckBoxResource.ToolTip" xml:space="preserve">
+    <value>If is true will generate a new password, but will recover the current password.</value>
+  </data>
+  <data name="ClientIDMessageErrorResource" xml:space="preserve">
+    <value>You must select a client</value>
+  </data>
+  <data name="ProducerIDMessageErrorResource" xml:space="preserve">
+    <value>You must set a producer id</value>
+  </data>
+  <data name="IsInactiveColumnResource.Caption" xml:space="preserve">
+    <value>Is Inactive</value>
+  </data>
+  <data name="EmailChangeMessageErrorResource" xml:space="preserve">
+    <value>Email and there is bound to another user</value>
+  </data>
+  <data name="ClientExistentMessageErrorResource" xml:space="preserve">
+    <value>You must select a existent client</value>
+  </data>
+  <data name="ProducerExistentMessageErrorResource" xml:space="preserve">
+    <value>You must set a existent producer id</value>
+  </data>
+  <data name="AllowSchedulerColumnResource.Caption" xml:space="preserve">
+    <value>Allow Scheduler:</value>
+  </data>
+  <data name="IsAdministratorColumnResource.Caption" xml:space="preserve">
+    <value>Is Administrator:</value>
+  </data>
+  <data name="IsEmployeeColumnResource.Caption" xml:space="preserve">
+    <value>Is Employee:</value>
+  </data>
+  <data name="SecurityLevel.Caption" xml:space="preserve">
+    <value>Security Level.</value>
+  </data>
+  <data name="SecurityLevel.ToolTip" xml:space="preserve">
+    <value>Security of the Level</value>
+  </data>
+  <data name="IsInactiveOutIDMessageErrorResource" xml:space="preserve">
+    <value>The user is Inactive in BackOffice.</value>
+  </data>
+  <data name="IsLoockedOutIDMessageErrorResource" xml:space="preserve">
+    <value>The user is locked in BackOffice.</value>
+  </data>
+  <data name="lblSearchResource.Text" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="btnSeachResource.ToolTip" xml:space="preserve">
+    <value>Search information</value>
+  </data>
+  <data name="userPagerResource.PageSizeItemSettings.Caption" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="userPagerResource.Summary.AllPagesText" xml:space="preserve">
+    <value>Pages: {0} - {1} ({2} items)</value>
+  </data>
+  <data name="userPagerResource.Summary.Text" xml:space="preserve">
+    <value>Page {0} of {1} </value>
+  </data>
+  <data name="RoleIsBackOffice" xml:space="preserve">
+    <value>The relationship of the user with the role 'RoleName' can only be modified from the backoffice</value>
+  </data>
+  <data name="RoleAssegnedEmpty" xml:space="preserve">
+    <value>Unassigned</value>
+  </data>
+  <data name="USERCHANGEMESSAGEERRORRESOURCE" xml:space="preserve">
+    <value>A user with this name already exists</value>
+  </data>
+  <data name="PasswordNeverExpiresColumnResource.Caption" xml:space="preserve">
+    <value>Passsword never expires</value>
+  </data>
+</root>

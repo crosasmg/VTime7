@@ -1,0 +1,41 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="RenameFile sample test WF"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities"
+ xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts"
+ xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common"
+ xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common"
+ xmlns:igag="clr-namespace:InMotionGIT.General.Activities.General;assembly=InMotionGIT.General.Activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="Path" Type="InArgument(x:String)" />
+    <x:Property Name="NewName" Type="InArgument(x:String)" />
+    <x:Property Name="Result" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>262,358</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sap:VirtualizedContainerService.HintSize="222,318">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="message" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <igag:RenameFile FailedMessage="[message]" FileName="[NewName]" FilePath="[Path]" sap:VirtualizedContainerService.HintSize="200,22" NewFilePath="[Result]" urlMode="False" viewMode="False" />
+    <ica:ProcessIdentifier DisplayName="RenameFile test" sap:VirtualizedContainerService.HintSize="200,132">
+      <ica:ProcessIdentifier.Identifier>
+        <icd:LocalizedString Language="1" Value="{}{ Value /message }" />
+        <icd:LocalizedString Language="2" Value="{}{ Value /message }" />
+      </ica:ProcessIdentifier.Identifier>
+    </ica:ProcessIdentifier>
+  </Sequence>
+</Activity>

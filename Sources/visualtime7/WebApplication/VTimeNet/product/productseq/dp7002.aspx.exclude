@@ -1,0 +1,200 @@
+﻿<%@ Page Language="VB" Explicit="true" Inherits="InMotionGIT.Web.Page.BackOfficeCommon"
+    EnableViewState="false" %>
+
+<%@ Import Namespace="eFunctions" %>
+<%@ Import Namespace="eProduct" %>
+<script language="VB" runat="Server">
+
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
+    '- Objeto para el manejo del Grid de la ventana
+    Dim mobjGrid As eFunctions.Grid
+    '- Objeto para el manejo de las rutinas genéricas
+    Dim mobjMenu As eFunctions.Menues
+
+
+    '% insDefineHeader: Define las columnas del Grid
+    '-----------------------------------------------
+    Private Sub insDefineHeader()
+        '-----------------------------------------------
+        mobjGrid = New eFunctions.Grid
+        mobjGrid.sCodisplPage = "DP7002"
+		
+        '+ Se definen todas las columnas del Grid
+        With mobjGrid.Columns
+            
+            'Call .AddCheckColumn(41460, GetLocalResourceObject("chkSelColumnCaption"), "chkSel", "", , , , True, GetLocalResourceObject("chkSelToolTip"))
+            Call .AddNumericColumn(41461, GetLocalResourceObject("tcnSettlecodeColumnCaption"), "tcnSettlecode", 10, "", , GetLocalResourceObject("tcnSettlecodeColumnToolTip"), , , , , , )
+            Call .AddTextColumn(41462, GetLocalResourceObject("tctFormatNameColumnCaption"), "tctFormatName", 60, "", , GetLocalResourceObject("tctFormatNameColumnToolTip"))
+            Call .AddNumericColumn(41463, GetLocalResourceObject("tcnOrderColumnCaption"), "tcnOrder", 5, "", , GetLocalResourceObject("tcnOrderColumnToolTip"), , , , , , )
+            Call .AddHiddenColumn("hddnCovergen", "")
+            Call .AddHiddenColumn("hddnCover", "")
+            Call .AddHiddenColumn("hddnPay_concep", "")
+            Call .AddHiddenColumn("tcnChecked", "")
+            Call .AddHiddenColumn("sParam", vbNullString)
+        End With
+        With mobjGrid
+            
+            .DeleteButton = False
+            .AddButton = False
+            .Top = 70
+            .Codispl = "DP7002"
+            .Width = 500
+            .Height = 300
+            .ActionQuery = Session("bQuery")
+            .Columns("tcnSettlecode").EditRecord = True
+            .Columns("Sel").GridVisible = True
+            .Columns("Sel").OnClick = "insSelected(this); MarkRecord(this);"
+            .sDelRecordParam = "' + marrArray[lintIndex].sParam + '"
+         
+            If Request.QueryString.Item("Reload") = "1" Then
+                .sReloadIndex = Request.QueryString.Item("ReloadIndex")
+            End If
+                  
+        End With
+    End Sub
+    '% insPreDP7002: Carga los datos en le grid de la forma "Folder"
+    '--------------------------------------------------------------
+    Private Sub insPreDP7002()
+        '--------------------------------------------------------------
+        Dim lclsTab_Settlement As eClaim.Tab_Settlement
+        Dim lcolTab_Settlements As eClaim.Tab_Settlements
+        
+        lclsTab_Settlement = New eClaim.Tab_Settlement
+        lcolTab_Settlements = New eClaim.Tab_Settlements
+       
+        If lcolTab_Settlements.Find_DP7002(CShort(Session("nBranch")), CShort(Session("nProduct")), CDate(Session("dEffecdate"))) Then
+            For Each lclsTab_Settlement In lcolTab_Settlements
+                With mobjGrid
+                    .Columns("Sel").Checked = CShort(lclsTab_Settlement.sSel)
+                    '.Columns("chkSel").Checked = CShort(lclsTab_Settlement.sSel)
+                    .Columns("tcnSettlecode").DefValue = lclsTab_Settlement.nSettlecode
+                    .Columns("tctFormatName").DefValue = lclsTab_Settlement.sFormatname
+                    .Columns("tcnOrder").DefValue = lclsTab_Settlement.nOrder
+                    .Columns("hddnCovergen").DefValue = lclsTab_Settlement.nCovergen
+                    .Columns("hddnCover").DefValue = lclsTab_Settlement.nCover
+                    .Columns("hddnPay_concep").DefValue = lclsTab_Settlement.nPay_concep
+                    
+                    '+ Se "arma" un QueryString en la columna oculta sParam. Estos valores serán pasados a la 
+                    '+ función Delete cuando se eliminen los registros seleccionados 
+                    .Columns("sParam").DefValue = "nAction=" & Request.QueryString.Item("nMainAction") & "&nSettlecode=" & lclsTab_Settlement.nSettlecode & "&dEffecdate=" & Session("dEffecdate") & "&nCovergen=" & lclsTab_Settlement.nCovergen & "&nCover=" & lclsTab_Settlement.nCover & "&nPay_concep=" & lclsTab_Settlement.nPay_concep & "&nOrder=" & lclsTab_Settlement.nOrder
+
+                    Response.Write(.DoRow)
+                End With
+            Next lclsTab_Settlement
+        End If
+        '+ Se llama a la propiedad CloseTable, para dar por finalizada la creación de la tabla (Grid)
+        Response.Write(mobjGrid.closeTable())
+        
+        lcolTab_Settlements = Nothing
+        lclsTab_Settlement = Nothing
+    End Sub
+    
+    '% insPreDP7002Upd: Gestiona lo relacionado a la actualización de un registro de Grid
+    '-----------------------------------------------------------------------------------
+    Private Sub insPreDP7002Upd()
+        '-----------------------------------------------------------------------------------
+        Dim lclsPost As eProduct.Prodsettlement
+        Dim lblnPost As Boolean
+        
+        With Request
+            mobjGrid.Columns("tcnSettlecode").Disabled = True
+            mobjGrid.Columns("tctFormatName").Disabled = True
+        End With
+                       	
+        Select Request.QueryString.Item("Action")
+            Case "Del", "Delete"
+                '+ Muestra el mensaje para eliminar registros			
+                Response.Write(mobjValues.ConfirmDelete())
+			
+                lclsPost = New eProduct.Prodsettlement
+			
+                With Request
+                    If .QueryString.Item("nChecked") = "2" And (.QueryString.Item("nChecked") <> vbNullString Or .QueryString.Item("nChecked") <> "0") Then
+                        lblnPost = lclsPost.insPostDP7002("Del", "DP7002", mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("nSettlecode"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.QueryString.Item("nCovergen"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("nCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("nPay_concep"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("nOrder"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble))
+                    End If
+                End With
+			
+                lclsPost = Nothing
+        End Select
+        
+        With Request
+            Response.Write(mobjGrid.DoFormUpd(.QueryString.Item("Action"), "valProductSeq.aspx", .QueryString.Item("sCodispl"), .QueryString.Item("nMainAction"), , CShort(.QueryString.Item("Index"))))
+        End With
+
+    End Sub
+
+</script>
+<%Response.Expires = -1
+
+    mobjMenu = New eFunctions.Menues
+    mobjValues = New eFunctions.Values
+ 
+    mobjValues.sCodisplPage = "DP7002"
+
+    If Request.QueryString.Item("Type") <> "PopUp" Then
+        With Response
+            .Write(mobjMenu.setZone(2, "DP7002", "DP7002.aspx"))
+            .Write("<script>var nMainAction = top.frames['fraSequence'].plngMainAction</script>")
+        End With
+    End If
+    mobjMenu = Nothing
+%>
+<html>
+<head>
+    <script type="text/javascript" src="/VTimeNet/Scripts/GenFunctions.js"></script>
+    <script>
+        //% Verifica si está seleccionado el registro
+        //-------------------------------------------------------------------------------------------
+        function insSelected(Field) {
+            //-------------------------------------------------------------------------------------------
+            var lstrLocation = "";
+
+            with (document.forms[0]) {
+                if (elements["tcnChecked"].length == -1) {
+                    elements["tcnChecked"].value = (Field.checked ? 1 : 2)
+                }
+                else {
+                    elements["tcnChecked"][Field.value].value = (Field.checked ? 1 : 2)
+                }
+
+                if (self.document.forms[0].elements["tcnChecked"][Field.value].value == 1) {
+                    self.document.forms[0].elements["Sel"][Field.value].checked = true;
+                    EditRecord(Field.value, nMainAction);
+                    Field.checked = false;
+                    return (0);
+                }
+
+                if (self.document.forms[0].elements["tcnChecked"][Field.value].checked == false) {
+                    lstrLocation = lstrLocation + self.document.forms[0].elements["sParam"][Field.value].value;
+                    lstrLocation = lstrLocation.replace(/&nChecked.*/, "");
+                    lstrLocation = lstrLocation + "&nChecked=2";
+                    EditRecord(Field.value, 302, 'Del', lstrLocation);
+                    return (0);
+                }
+            }
+        }
+    </script>
+    <meta name="GENERATOR" content="Microsoft Visual Studio 6.0">
+    <%=mobjValues.StyleSheet()%>
+</head>
+<body onunload="closeWindows();">
+    <form method="POST" id="FORM" name="DP7002" action="valProductSeq.aspx?nMainAction=<%=Request.QueryString.Item("nMainAction")%>">
+    <%
+        Response.Write(mobjValues.ShowWindowsName(Request.QueryString.Item("sCodispl")))
+      
+        Call insDefineHeader()
+      
+        If Request.QueryString.Item("Type") <> "PopUp" Then
+            Call insPreDP7002()
+        Else
+            Call insPreDP7002Upd()
+        End If
+        
+        mobjGrid = Nothing
+        mobjMenu = Nothing
+        mobjValues = Nothing
+    %>
+    </form>
+</body>
+</html>

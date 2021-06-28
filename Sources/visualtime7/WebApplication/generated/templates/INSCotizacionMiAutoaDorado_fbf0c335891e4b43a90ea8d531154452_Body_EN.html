@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+  </title>
+  <style type="text/css">
+   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}
+   .cs218D61F2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:16pt;font-weight:bold;font-style:normal;}
+   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}
+   .cs162A16FE{}
+   .csF9B6B6FB{width:122.25pt;padding:0pt 5.4pt 0pt 5.4pt;border-top:1px #000000 solid;border-right:1px #000000 solid;border-bottom:1px #000000 solid;border-left:1px #000000 solid}
+   .cs6ACFC7E1{text-align:left;text-indent:0pt;margin:6pt 0pt 6pt 0pt;line-height:1.5}
+   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}
+   .cs9DCF8D0A{width:286.5pt;padding:0pt 5.4pt 0pt 5.4pt;border-top:1px #000000 solid;border-right:1px #000000 solid;border-bottom:1px #000000 solid;border-left:1px #000000 solid}
+   .cs776D833A{text-align:left;text-indent:0pt;margin:6pt 0pt 6pt 0pt}
+   .cs6B5B25FB{width:408.75pt;padding:0pt 5.4pt 0pt 5.4pt;border-top:1px #000000 solid;border-right:1px #000000 solid;border-bottom:1px #000000 solid;border-left:1px #000000 solid}
+   .csBCA9F8DD{text-align:center;text-indent:0pt;margin:6pt 0pt 6pt 0pt;line-height:1.5}
+   .csD8DB8AE4{text-align:right;text-indent:0pt;margin:6pt 0pt 6pt 0pt;line-height:1.5}
+   .cs5A2818B4{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:bold;font-style:normal;}
+   .cs8536F44F{width:838.5pt;padding:0pt 5.4pt 0pt 5.4pt;border-top:1px #000000 solid;border-right:1px #000000 solid;border-bottom:1px #000000 solid;border-left:1px #000000 solid}
+   .cs5B182DFA{color:#000000;background-color:#FFFFFF;font-family:Verdana;font-size:8pt;font-weight:normal;font-style:normal;}
+  </style>
+ </head>
+ <body>
+  <p class="cs2654AE3A"><span class="cs218D61F2">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resumen de cotizaci&oacute;n de Veh&iacute;culos</span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p><table class="cs162A16FE" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Plan/Producto</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /ProductMasterDescription }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Fecha de validez</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/EffectiveDate }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Asegurado</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs776D833A"><span class="cs63EB74B2">{ Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Fecha de nacimiento</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/PrimaryInsured/BirthDate }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Correo electr&oacute;nico</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/PrimaryInsured/Client/eMailAddressDefault }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Direcci&oacute;n</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">&nbsp;{ Value /AddressPhysicalAddressDLI/PhysicalAddress/AddressNormalized/StreetAddress1 } { Value /AddressPhysicalAddressDLI/PhysicalAddress/AddressNormalized/StreetAddress2 }</span></p></td></tr>
+   <tr>
+    <td class="cs6B5B25FB" colspan="2" valign="top" width="545"><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p></td></tr>
+   <tr>
+    <td class="cs6B5B25FB" colspan="2" valign="top" width="545"><p class="csBCA9F8DD"><span class="csEE62F6E">Capital y prima</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Valor del veh&iacute;culo</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="csD8DB8AE4"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/ValueOfTheVehicle }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Prima total anual</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="csD8DB8AE4"><span class="cs63EB74B2">{ Value /PrimaTotalAnual }</span></p></td></tr>
+   <tr>
+    <td class="cs6B5B25FB" colspan="2" valign="top" width="545"><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p></td></tr>
+   <tr>
+    <td class="cs6B5B25FB" colspan="2" valign="top" width="545"><p class="csBCA9F8DD"><span class="cs5A2818B4">Veh&iacute;culo asegurado</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Matr&iacute;cula</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/LicensePlate }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Serial motor</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/EngineSerialNumber }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Chasis</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/Chassis }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Color</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/Color }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">A&ntilde;o de fabricaci&oacute;n</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">{ Value /RiskInformation/AutomobileLineOfBusiness/YearOfManufactured }</span></p></td></tr>
+   <tr>
+    <td class="csF9B6B6FB" valign="top" width="163"><p class="cs6ACFC7E1"><span class="csEE62F6E">Kilometraje</span></p></td><td class="cs9DCF8D0A" valign="top" width="382"><p class="cs6ACFC7E1"><span class="cs63EB74B2">&nbsp;{ Value /RiskInformation/AutomobileLineOfBusiness/AutomobileInformation/Mileage }</span></p></td></tr>
+  </table>
+  <p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;&nbsp;</span></p><table class="cs162A16FE" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+   <tr>
+    <td class="cs8536F44F" valign="top" width="1118"><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span><span class="cs5B182DFA">Esta cotizaci&oacute;n se emite a modo puramente referencial, a partir de los datos suministrados en l&iacute;nea; por lo tanto, la suma asegurada, tasas y dem&aacute;s rubros aqu&iacute; previstos, pueden ser objeto de modificaci&oacute;n con base en la documentaci&oacute;n que efectivamente presente el Propuesto Tomador al solicitar formalmente la contrataci&oacute;n de la p&oacute;liza, la cual tambi&eacute;n depender&aacute; de los resultados de la evaluaci&oacute;n del asegurado.</span><span class="cs63EB74B2"> </span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p></td></tr>
+  </table>
+  <p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p><p class="cs2654AE3A"><span class="cs63EB74B2">&nbsp;</span></p></body>
+</html>

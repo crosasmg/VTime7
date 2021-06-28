@@ -1,0 +1,117 @@
+﻿<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icaa="clr-namespace:InMotionGIT.Chile.Activity.AACH;assembly=InMotionGIT.Chile.Activity" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:ilec="clr-namespace:InMotionGIT.LineOfBusiness.Entity.Contracts;assembly=InMotionGIT.LineOfBusiness.Entity.Contracts" xmlns:ipa="clr-namespace:InMotionGIT.PolicyManager.Activities;assembly=InMotionGIT.PolicyManager.Activities" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipeci="clr-namespace:InMotionGIT.Policy.Entity.Contracts.Interfaces;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s5="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Configuration;assembly=System" xmlns:sc1="clr-namespace:System.Configuration;assembly=System.Configuration" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="sads sap" x:Class="TratamientoMasivoAACH">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="PolicyCollection" Type="InArgument(ipec:PolicyCollection)" />
+    <x:Property Name="TypeOfTransaction" Type="InArgument(x:Int32)" />
+    <x:Property Name="InitialPolicy" Type="InArgument(x:Int32)" />
+    <x:Property Name="EndPolicy" Type="InArgument(x:Int32)" />
+    <x:Property Name="ProcessDate" Type="InArgument(s:DateTime)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>680,1271</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="TratamientoMasivoAACH" sap:VirtualizedContainerService.HintSize="640,1231">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">380,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">410,77.5 410,134</av:PointCollection>
+        <x:Double x:Key="Width">626</x:Double>
+        <x:Double x:Key="Height">1195</x:Double>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">328.5,134</av:Point>
+            <av:Size x:Key="ShapeSize">163,132</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">410,266 410,364.5</av:PointCollection>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,132">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="English" Value="TratamientoMasivoAACH. TipoTransaccion { Value /TypeOfTransaction }. Rango polizas { Value /InitialPolicy }-{ Value /EndPolicy }" />
+            <icd:LocalizedString Language="Spanish" Value="RecalculoMasivoPrimaAACH" />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg2:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">310,364.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ForEach x:TypeArguments="ipec:Policy" DisplayName="ForEach&lt;Policy&gt;" sap:VirtualizedContainerService.HintSize="761,554" Values="[PolicyCollection]">
+              <ActivityAction x:TypeArguments="ipec:Policy">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ipec:Policy" Name="poliza" />
+                </ActivityAction.Argument>
+                <If Condition="[poliza.OfficialPolicyID &lt;&gt; 0]" DisplayName="If TieneOrdenDeCompra" sap:VirtualizedContainerService.HintSize="731,446">
+                  <If.Then>
+                    <If Condition="[TypeOfTransaction = 1]" DisplayName="If TransaccionEsActualizar" sap:VirtualizedContainerService.HintSize="548,338">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="284,230">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteActualizacionPrimaAACH" sap:VirtualizedContainerService.HintSize="262,106" ModelId="1f01e52c-d5d2-49f9-a6dc-47e9673a1300" Release="1" WorkflowPath="ActualizacionPrimaAACH">
+                            <icag:ExecuteWorkflow.ChildArguments>
+                              <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="PurchaseOrder">[convert.toInt32(poliza.OfficialPolicyID)]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="PolicyID">[convert.toInt32(poliza.PolicyID)]</InArgument>
+                            </icag:ExecuteWorkflow.ChildArguments>
+                          </icag:ExecuteWorkflow>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="239,230">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteReImprimirPoliza" sap:VirtualizedContainerService.HintSize="217,106" ModelId="b2212089-68d4-464a-85f7-15785936094a" Release="3" WorkflowPath="ReImprimirPoliza">
+                            <icag:ExecuteWorkflow.ChildArguments>
+                              <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="PurchaseOrder" />
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="EnviarEmail" />
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="RegistrarFolio" />
+                              <InArgument x:TypeArguments="x:String" x:Key="Poliza" />
+                            </icag:ExecuteWorkflow.ChildArguments>
+                          </icag:ExecuteWorkflow>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </If.Then>
+                  <If.Else>
+                    <ica1:SendMail AttachFileName="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" DisplayName="Notificación de poliza sin orden de compra" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158,136" To="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList&quot;)]" cc="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList.Ext1&quot;)]">
+                      <ica1:SendMail.Body>
+                        <icd:LocalizedString Language="English" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error durante el proceso de actualizaci&amp;oacute;n masivo. La poliza indicada NO tiene orden de compra.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                        <icd:LocalizedString Language="Spanish" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error durante el proceso de actualizaci&amp;oacute;n masivo. La poliza indicada NO tiene orden de compra.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                      </ica1:SendMail.Body>
+                      <ica1:SendMail.Subject>
+                        <icd:LocalizedString Language="English" Value="SOAP 2015: Fallo actualización masiva { Value /poliza/PolicyID } sin orden de compra" />
+                        <icd:LocalizedString Language="Spanish" Value="SOAP 2015: Fallo actualización masiva { Value /poliza/PolicyID } sin orden de compra" />
+                      </ica1:SendMail.Subject>
+                    </ica1:SendMail>
+                  </If.Else>
+                </If>
+              </ActivityAction>
+            </ForEach>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

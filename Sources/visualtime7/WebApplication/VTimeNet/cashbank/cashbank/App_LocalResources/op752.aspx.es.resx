@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="valCompanyCaption" xml:space="preserve">
+    <value>Compañía</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="valCompanyToolTip" xml:space="preserve">
+    <value>Compañia a la que pertenece la información a registrar</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda del Cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnAmountCaption" xml:space="preserve">
+    <value>Monto</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnAmountToolTip" xml:space="preserve">
+    <value>Monto asociado al cheque/voucher pendiente por depositar/redepositar</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcdDateDocCaption" xml:space="preserve">
+    <value>Fecha del cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcdDateDocToolTip" xml:space="preserve">
+    <value>Fecha del Cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="chkPostChequeCaption" xml:space="preserve">
+    <value>Cheque a fecha</value>
+  </data>
+  <data name="tctBeneficiaryCaption" xml:space="preserve">
+    <value>Beneficiario</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tctBeneficiaryToolTip" xml:space="preserve">
+    <value>Beneficiario</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="valConceptCaption" xml:space="preserve">
+    <value>Concepto</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="valConceptToolTip" xml:space="preserve">
+    <value>Concepto por el cual se registra el cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnCashNumCaption" xml:space="preserve">
+    <value>Caja</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnCashNumToolTip" xml:space="preserve">
+    <value>Número de la caja del cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnBordereauxCaption" xml:space="preserve">
+    <value>Relación</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnBordereauxToolTip" xml:space="preserve">
+    <value>Número de la relación</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="AnchorReemplazoCaption" xml:space="preserve">
+    <value>Reemplazo</value>
+  </data>
+  <data name="optTypeReplace_CStr1Caption" xml:space="preserve">
+    <value>Otro cheque</value>
+  </data>
+  <data name="cbeBankReplaceCaption" xml:space="preserve">
+    <value>Banco</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeBankReplaceToolTip" xml:space="preserve">
+    <value>Banco al cual pertenece el cheque que reemplaza</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="optTypeReplace_CStr2Caption" xml:space="preserve">
+    <value>Efectivo</value>
+  </data>
+  <data name="tctChequeNumReplaceCaption" xml:space="preserve">
+    <value>Número de cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tctChequeNumReplaceToolTip" xml:space="preserve">
+    <value>Número del Cheque que reemplaza</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeChequeLocatCaption" xml:space="preserve">
+    <value>Plaza</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeChequeLocatToolTip" xml:space="preserve">
+    <value>Plaza de los cheques para los que se realiza el depósito/redepósito</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="AnchorPrórrogaCaption" xml:space="preserve">
+    <value>Prórroga</value>
+  </data>
+  <data name="cbeReasonCaption" xml:space="preserve">
+    <value>Causa</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeReasonToolTip" xml:space="preserve">
+    <value>Causa por la que se prorroga el cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcdDateProCaption" xml:space="preserve">
+    <value>Fecha</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcdDateProToolTip" xml:space="preserve">
+    <value>Fecha de Prórroga</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnIntAmountCaption" xml:space="preserve">
+    <value>Monto interés</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tcnIntAmountToolTip" xml:space="preserve">
+    <value>Monto Interés Financiero</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="AnchorDevoluciónCaption" xml:space="preserve">
+    <value>Devolución</value>
+  </data>
+  <data name="cbeReasonCaption" xml:space="preserve">
+    <value>Causa</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="cbeReasonToolTip" xml:space="preserve">
+    <value>Causa por la que se devuelve el cheque</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="tctChequeColumnCaption" xml:space="preserve">
+    <value>Número de cheque</value>
+  </data>
+  <data name="tctChequeColumnToolTip" xml:space="preserve">
+    <value>Tarjeta de crédito pendientes por depositar/redepositar</value>
+  </data>
+  <data name="valBankColumnCaption" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="valBankColumnToolTip" xml:space="preserve">
+    <value>Banco asociado a los cheques pendientes por depositar/redepositar</value>
+  </data>
+  <data name="valChequeLocatColumnCaption" xml:space="preserve">
+    <value>Plaza</value>
+  </data>
+  <data name="valChequeLocatColumnToolTip" xml:space="preserve">
+    <value>Plaza a la que pertenece el cheque</value>
+  </data>
+  <data name="tcnVoucherColumnCaption" xml:space="preserve">
+    <value>Nro. de voucher</value>
+  </data>
+  <data name="tcnVoucherColumnToolTip" xml:space="preserve">
+    <value>Número de voucher pendiente por depositar/redepositar</value>
+  </data>
+  <data name="valCard_typeColumnCaption" xml:space="preserve">
+    <value>Tipo de tarjeta</value>
+  </data>
+  <data name="valCard_typeColumnToolTip" xml:space="preserve">
+    <value>Tipo de tarjeta asociado al voucher pendiente por depositar/redepositar</value>
+  </data>
+  <data name="tcdDoc_dateColumnCaption" xml:space="preserve">
+    <value>Fecha de Vencimiento</value>
+  </data>
+  <data name="tcdDoc_dateColumnToolTip" xml:space="preserve">
+    <value>Fecha de Vencimiento del cheque</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Total operación</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>0</value>
+    <comment>ID=0 CLASS=""FIELD"" TITLE=""Número de cheques seleccionados para depositar/redepositar""</comment>
+  </data>
+  <data name="Anchor3Caption" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="Anchor4Caption" xml:space="preserve">
+    <value>0,00</value>
+    <comment>ID=0 CLASS=""FIELD"" TITLE=""Total de cheques seleccionados para depositar/redepositar""</comment>
+  </data>
+</root>

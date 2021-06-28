@@ -1,0 +1,923 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="ControlGeneralUWNNv2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:ica1="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica2="clr-namespace:InMotionGIT.Client.Activities;assembly=InMotionGIT.Client.Activities" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icce="clr-namespace:InMotionGIT.Common.Contracts.Errors;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:ilec="clr-namespace:InMotionGIT.LineOfBusiness.Entity.Contracts;assembly=InMotionGIT.LineOfBusiness.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipec1="clr-namespace:InMotionGIT.Product.Entity.Contracts;assembly=InMotionGIT.Product.Entity.Contracts" xmlns:ipeci="clr-namespace:InMotionGIT.Policy.Entity.Contracts.Interfaces;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:isa="clr-namespace:InMotionGIT.Seguridad.Activities;assembly=InMotionGIT.Seguridad.Activities" xmlns:iua="clr-namespace:InMotionGIT.Underwriting.Activities;assembly=InMotionGIT.Underwriting.Activities" xmlns:iuc="clr-namespace:InMotionGIT.Underwriting.Contracts;assembly=InMotionGIT.Underwriting.Contracts" xmlns:iuce="clr-namespace:InMotionGIT.Underwriting.Contracts.Enumerations;assembly=InMotionGIT.Underwriting.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s10="clr-namespace:System;assembly=InRule.Authoring" xmlns:s11="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s12="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=System.ServiceModel" xmlns:s4="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:s5="clr-namespace:System;assembly=System.AddIn" xmlns:s6="clr-namespace:System;assembly=System.Drawing.Design" xmlns:s7="clr-namespace:System;assembly=System.Design" xmlns:s8="clr-namespace:System;assembly=System.Configuration.Install" xmlns:s9="clr-namespace:System;assembly=System.DirectoryServices" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs2="clr-namespace:System.Runtime.Serialization;assembly=System.Workflow.ComponentModel" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="uwcaseid" Type="InArgument(x:Int64)" />
+    <x:Property Name="email" Type="InArgument(x:String)" />
+    <x:Property Name="MasaCorporal" Type="InArgument(x:Decimal)" />
+    <x:Property Name="UsingVT" Type="InArgument(x:Boolean)" />
+    <x:Property Name="RiskInformation" Type="InOutArgument(ipec:RiskInformation)" />
+    <x:Property Name="ProductMaster" Type="InArgument(ipec1:ProductMaster)" />
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="SendMailIndicator" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="PlanType" Type="InArgument(x:Int32)" />
+    <x:Property Name="MailToProducerIndicator" Type="InArgument(x:Boolean)" />
+    <x:Property Name="OnLinePrintIndicator" Type="InArgument(x:Boolean)" />
+    <x:Property Name="OnLinePrintResult" Type="OutArgument(x:Int32)" />
+    <x:Property Name="PolicyDocument" Type="OutArgument(x:String)" />
+    <x:Property Name="PreviousPayment" Type="InArgument(x:Boolean)" />
+    <x:Property Name="UsercodeFASI" Type="InArgument(x:Int32)" />
+    <x:Property Name="UsercodeBO" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1922.71698113208,3331.01886792453</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart DisplayName="ControlGeneralUWNNv2" sap:VirtualizedContainerService.HintSize="1882.8679245283,3291.16981132075" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="iuc:UnderwritingCase" Name="UnderwritingCase" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="CantidadVeces" />
+      <Variable x:TypeArguments="x:Int32" Default="3" Name="CantidadMaximaVeces" />
+      <Variable x:TypeArguments="x:String" Name="CausaDeclinacion" />
+      <Variable x:TypeArguments="iuc:RoleInCase" Name="PrimaryInsured" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="CantidadRequerimientoInicial" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">620,22.5</av:Point>
+        <av:Size x:Key="ShapeSize">59.7735849056604,75.1698113207547</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">650,97.5 650,183.5</av:PointCollection>
+        <x:Double x:Key="Height">3255.0796974589953</x:Double>
+        <x:Double x:Key="Width">1869.6</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">568.5,183.5</av:Point>
+            <av:Size x:Key="ShapeSize">163.018867924528,131.320754716981</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">650.009433962264,313.915094339623 650.009433962264,343.915094339623 649.867924528302,343.915094339623 649.867924528302,416.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica1:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.018867924528,131.320754716981">
+          <ica1:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="ControlGeneralUWNNv2. { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }. Caso { Value /uwcaseid } (Ramo-{ Value /RiskInformation/LineOfBusiness } Prod-{ Value /RiskInformation/ProductCode })" />
+            <icd:LocalizedString Language="2" Value="ProcessRequestOfLifePolicyStandard. { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }. Caso: { Value /UnderwritingCase/UnderwritingCaseID }" />
+          </ica1:ProcessIdentifier.Identifier>
+        </ica1:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowDecision x:Name="__ReferenceID22" Condition="[PreviousPayment = false]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <av:Point x:Key="ShapeLocation">615,416.5</av:Point>
+                <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                <av:PointCollection x:Key="TrueConnector">615,459.971698113208 511.939622641509,459.971698113208 511.939622641509,546.4</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">685.4,460.1 820,460.1 820,738.8</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">361.6,546.4</av:Point>
+                    <av:Size x:Key="ShapeSize">302.490566037736,105.056603773585</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">512.845283018868,651.456603773585 512.845283018868,681.456603773585 820.075471698113,681.456603773585 820.075471698113,738.8</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteVerifyInsuredPaymentInformationUW" sap:VirtualizedContainerService.HintSize="302.490566037736,105.056603773585" ModelId="fe413e36-d831-4949-bf2e-c5d767bd52ec" Release="12" Tracking="True" WorkflowPath="VerifyInsuredPaymentInformationUW">
+                  <icag:ExecuteWorkflow.ChildArguments>
+                    <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                    <InOutArgument x:TypeArguments="x:Int64" x:Key="uwcaseid">[uwcaseid]</InOutArgument>
+                    <InOutArgument x:TypeArguments="ipec1:ProductMaster" x:Key="ProductMaster">[ProductMaster]</InOutArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="UsercodeFASI">[UsercodeFASI]</InArgument>
+                  </icag:ExecuteWorkflow.ChildArguments>
+                </icag:ExecuteWorkflow>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">720,738.8</av:Point>
+                        <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">820.075471698113,761.441509433962 820.075471698113,791.441509433962 820,791.441509433962 820,806.528301886792</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <iua:RetrieveUWCase Requirement="{x:Null}" RequirementID="{x:Null}" RoleInCase="{x:Null}" ChangeRiskByAmendment="False" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" PrimaryInsured="[PrimaryInsured]" ReturnCaseLocked="False" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]" UnderwritingCaseID="[uwcaseid]" />
+                    <FlowStep.Next>
+                      <FlowDecision x:Name="__ReferenceID36" Condition="[CantidadVeces = 0]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">785.132075471698,806.528301886792</av:Point>
+                            <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">785.132075471698,850 580,850 580,930.566037735849</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">854.867924528302,850 1180,850 1180,876.528301886792</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID37">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">460,930.566037735849</av:Point>
+                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">580,989.433962264151 580,1019.43396226415 820,1019.43396226415 820,1186.52830188679</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="AssignCantidadRequerimientos" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[CantidadRequerimientoInicial]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[UnderwritingCase.Requirements.Count]</InArgument>
+                              </Assign.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Assign>
+                            <FlowStep.Next>
+                              <FlowDecision x:Name="__ReferenceID2" Condition="[UnderwritingCase.Decision&lt;&gt;2 andalso UnderwritingCase.Decision &lt;&gt;5]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">785.132075471698,1186.52830188679</av:Point>
+                                    <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                    <x:String x:Key="TrueLabel">EstaPendienteDeDecision</x:String>
+                                    <av:PointCollection x:Key="TrueConnector">785.132075471698,1230 640,1230 640,1316.52830188679</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">854.867924528302,1230 884.867924528302,1230 884.867924528302,1229.03396226415 1338.4,1229.03396226415</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <FlowDecision.True>
+                                  <FlowDecision x:Name="__ReferenceID4" Condition="[UnderwritingCase.RequirementCompleted=true]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">605.132075471698,1316.52830188679</av:Point>
+                                        <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                        <x:String x:Key="FalseLabel">FaltanRequerimientos</x:String>
+                                        <av:PointCollection x:Key="FalseConnector">674.867924528302,1360 830,1360 830,1476.52830188679</av:PointCollection>
+                                        <av:PointCollection x:Key="TrueConnector">605.132075471698,1360 575.132075471698,1360 575.132075471698,1379.03396226415 468.4,1379.03396226415</av:PointCollection>
+                                        <x:String x:Key="TrueLabel">RequerimientosCompletos</x:String>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <FlowDecision.True>
+                                      <FlowStep x:Name="__ReferenceID18">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">228.4,1349.6</av:Point>
+                                            <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">348.4,1408.4679245283 348.4,1438.4679245283 349,1438.4679245283 349,1470</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="AssignRiskLikeUCRisk" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="ipec:RiskInformation">[RiskInformation]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="ipec:RiskInformation">[UnderwritingCase.RiskInformation]</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <FlowStep.Next>
+                                          <FlowStep x:Name="__ReferenceID26">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">229,1470</av:Point>
+                                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">349,1528.8679245283 349,1590</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="Etapa10EnEsperaDecisión" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.Stage]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">10</InArgument>
+                                              </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Assign>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID34">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">229,1590</av:Point>
+                                                    <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">349,1648.8679245283 349,1710</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="Estado6RequerimientosRecibidos" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.Status]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">6</InArgument>
+                                                  </Assign.Value>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Assign>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID27">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">229,1710</av:Point>
+                                                        <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">349,1768.8679245283 349,1798.8679245283 350.075471698113,1798.8679245283 350.075471698113,1828.8</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign DisplayName="AssignCaseIsDirty" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Boolean">[UnderwritingCase.IsDirty]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                      </Assign.Value>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Assign>
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID28">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">250,1828.8</av:Point>
+                                                            <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">350.075471698113,1851.44150943396 350.075471698113,1881.44150943396 353.916981132075,1881.44150943396 353.916981132075,1926.4</av:PointCollection>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <iua:SaveUWCase RiskInformation="{x:Null}" AuditUserIdentify="[UsercodeFASI]" Decision="1" DisplayName="SaveUWCaseEnEsperaDecisión" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" HistoryType="Automatic" SaveTemporal="False" Status="0" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </iua:SaveUWCase>
+                                                        <FlowStep.Next>
+                                                          <FlowStep x:Name="__ReferenceID9">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">231.2,1926.4</av:Point>
+                                                                <av:Size x:Key="ShapeSize">245.433962264151,105.056603773585</av:Size>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteMakeDecisionRequestNN" sap:VirtualizedContainerService.HintSize="245.433962264151,105.056603773585" ModelId="85f9b52a-2946-47ca-a31a-b661e108a81c" Release="33" Tracking="True" WorkflowPath="MakeDecisionRequestNN">
+                                                              <icag:ExecuteWorkflow.ChildArguments>
+                                                                <InArgument x:TypeArguments="x:Decimal" x:Key="MasaCorporal">[MasaCorporal]</InArgument>
+                                                                <InOutArgument x:TypeArguments="iuc:UnderwritingCase" x:Key="UnderwritingCase">[UnderwritingCase]</InOutArgument>
+                                                                <InArgument x:TypeArguments="x:String" x:Key="eMail">[eMail]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Boolean" x:Key="UsingVT">[UsingVT]</InArgument>
+                                                                <InOutArgument x:TypeArguments="ipec:RiskInformation" x:Key="RiskInformation">[UnderwritingCase.RiskInformation]</InOutArgument>
+                                                                <InArgument x:TypeArguments="ipec1:ProductMaster" x:Key="ProductMaster">[ProductMaster]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Int64" x:Key="uwcaseid">[UnderwritingCase.UnderwritingCaseID]</InArgument>
+                                                                <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                                                                <InArgument x:TypeArguments="x:Boolean" x:Key="SendMailIndicator">[SendMailIndicator]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Int32" x:Key="PlanType">[PlanType]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Boolean" x:Key="MailToProducerIndicator">[MailToProducerIndicator]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Boolean" x:Key="OnLinePrintIndicator">[OnLinePrintIndicator]</InArgument>
+                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OnLinePrintResult">[OnLinePrintResult]</OutArgument>
+                                                                <OutArgument x:TypeArguments="x:String" x:Key="PolicyDocument">[PolicyDocument]</OutArgument>
+                                                                <InArgument x:TypeArguments="x:Int32" x:Key="UsercodeFASI">[UsercodeFASI]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Int32" x:Key="UsercodeBO">[UsercodeBO]</InArgument>
+                                                              </icag:ExecuteWorkflow.ChildArguments>
+                                                            </icag:ExecuteWorkflow>
+                                                          </FlowStep>
+                                                        </FlowStep.Next>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowDecision.True>
+                                    <FlowDecision.False>
+                                      <FlowDecision x:Name="__ReferenceID17" Condition="[OnLinePrintIndicator = True]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <av:Point x:Key="ShapeLocation">795.132075471698,1476.52830188679</av:Point>
+                                            <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                            <av:PointCollection x:Key="TrueConnector">795.132075471698,1520 759,1520 759,1700</av:PointCollection>
+                                            <x:String x:Key="TrueLabel">OnLinePrint</x:String>
+                                            <x:String x:Key="FalseLabel">PrintByMail</x:String>
+                                            <av:PointCollection x:Key="FalseConnector">864.867924528302,1520 1290,1520 1290,1566.52830188679</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <FlowDecision.True>
+                                          <FlowStep x:Name="__ReferenceID16">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">639,1700</av:Point>
+                                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">759,1758.8679245283 759,1820</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="AssignPrintResult1" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[OnLinePrintResult]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                              </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Assign>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID19">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">639,1820</av:Point>
+                                                    <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">759,1878.8679245283 759,1908.8679245283 760.075471698113,1908.8679245283 760.075471698113,1939</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="AssignDeleteCase" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[UnderwritingCase.IsDeletedMark]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Assign>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID20">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">660,1939</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <iua:SaveUWCase RiskInformation="{x:Null}" AuditUserIdentify="[UsercodeFASI]" Decision="0" DisplayName="SaveDeletedCase" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" HistoryType="Automatic" SaveTemporal="False" Status="0" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </iua:SaveUWCase>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowDecision.True>
+                                        <FlowDecision.False>
+                                          <FlowDecision x:Name="__ReferenceID5" Condition="[CantidadVeces &gt; CantidadMaximaVeces]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">1255.1320754717,1566.52830188679</av:Point>
+                                                <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                                <x:String x:Key="FalseLabel">FaltanVeces</x:String>
+                                                <av:PointCollection x:Key="FalseConnector">1324.8679245283,1610 1488.43396226415,1610 1488.43396226415,1726</av:PointCollection>
+                                                <av:PointCollection x:Key="TrueConnector">1255.1320754717,1610 1099,1610 1099,1770</av:PointCollection>
+                                                <x:String x:Key="TrueLabel">NoHayMasOportunidad</x:String>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <FlowDecision.True>
+                                              <FlowStep x:Name="__ReferenceID7">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">979,1770</av:Point>
+                                                    <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">1099,1828.8679245283 1099,1858.8679245283 1099.79245283019,1858.8679245283 1099.79245283019,1902</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[CausaDeclinacion]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[“No ha suministrado la información relacionada con los cuestionarios en el tiempo establecido”]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID3">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">1021,1902</av:Point>
+                                                        <av:Size x:Key="ShapeSize">157.584905660377,135.849056603774</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">1099.79245283019,2037.84905660377 1099.79245283019,2067.84905660377 1099.8679245283,2067.84905660377 1099.8679245283,2096.5</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ica:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="DeclinarLaSolicitud" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="157.584905660377,135.849056603774" To="[email]">
+                                                      <ica:SendMail.Body>
+                                                        <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csC0945934{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:normal;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;   .cs2A4A7CB2{text-align:center;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Reference: { Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Dear&lt;/span&gt;&lt;span class=&quot;csC0945934&quot;&gt; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csC0945934&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;We have examined carefully your life insurance application # &amp;nbsp;&lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, and we must inform you that we have decided to decline your case for the following reason: &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csC0945934&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2A4A7CB2&quot;&gt;&lt;span class=&quot;csC0945934&quot;&gt;&amp;ldquo;There has not provided information regarding the questionnaires on time&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csC0945934&quot;&gt;Missing information:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /UnderwritingCase/RequirementPendingLinks }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Seguros Internacionales C.A.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                        <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csC0945934{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:14pt;font-weight:normal;font-style:normal;}&#xA;   .csEE62F6E{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:bold;font-style:normal;}&#xA;   .cs2A4A7CB2{text-align:center;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Referencia: { Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado Sr./Sra. &lt;/span&gt;&lt;span class=&quot;csC0945934&quot;&gt;{ Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hemos examinado con atenci&amp;oacute;n su solicitud # &amp;nbsp;&lt;/span&gt;&lt;span class=&quot;csEE62F6E&quot;&gt;{ Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;, y lamentamos informarle que hemos decidido declinar su caso, por la siguiente raz&amp;oacute;n: &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2A4A7CB2&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2A4A7CB2&quot;&gt;&lt;span class=&quot;csC0945934&quot;&gt;&amp;ldquo;{ Value /CausaDeclinacion }&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Informaci&amp;oacute;n no suministrada:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /UnderwritingCase/RequirementPendingLinks }&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Atentamente,&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Seguros Internacionales C.A.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                      </ica:SendMail.Body>
+                                                      <ica:SendMail.Subject>
+                                                        <icd:LocalizedString Language="1" Value="Application Declined" />
+                                                        <icd:LocalizedString Language="2" Value="Se ha declinado la cotización" />
+                                                      </ica:SendMail.Subject>
+                                                    </ica:SendMail>
+                                                    <FlowStep.Next>
+                                                      <FlowDecision x:Name="__ReferenceID14" Condition="[MailToProducerIndicator]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">1065,2096.5</av:Point>
+                                                            <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                                            <x:String x:Key="TrueLabel">MailToProducer</x:String>
+                                                            <av:PointCollection x:Key="TrueConnector">1065,2139.97169811321 969.792452830189,2139.97169811321 969.792452830189,2232</av:PointCollection>
+                                                            <av:PointCollection x:Key="FalseConnector">1134.7358490566,2139.97169811321 1180.07547169811,2139.97169811321 1180.07547169811,2419</av:PointCollection>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <FlowDecision.True>
+                                                          <FlowStep x:Name="__ReferenceID15">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">891,2232</av:Point>
+                                                                <av:Size x:Key="ShapeSize">157.584905660377,135.849056603774</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">969.792452830189,2367.84905660377 969.792452830189,2430.32075471698 1080,2430.32075471698</av:PointCollection>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ica:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="157.584905660377,135.849056603774" To="[RiskInformation.PrimaryProducer.Client.eMailAddressDefault]">
+                                                              <ica:SendMail.Body>
+                                                                <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Reference: { Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Dear { Value /RiskInformation/PrimaryProducer/Client/CompleteClientName }&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;We have examined carefully the insurance application # &amp;nbsp;{ Value /UnderwritingCase/UnderwritingCaseID }, and we must inform you that we have decided to decline the case for the following reason: &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;ldquo;There has not provided information regarding the questionnaires on time&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Missing information:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /UnderwritingCase/RequirementPendingLinks }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Thank you,&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Seguros Internacionales C.A.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                                <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Referencia: { Value /UnderwritingCase/UnderwritingCaseID }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Estimado { Value /RiskInformation/PrimaryProducer/Client/CompleteClientName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Hemos examinado con atenci&amp;oacute;n su solicitud # &amp;nbsp;{ Value /UnderwritingCase/UnderwritingCaseID }, y lamentamos informarle que hemos decidido declinar el caso, por la siguiente raz&amp;oacute;n: &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;ldquo;{ Value /CausaDeclinacion }&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Informaci&amp;oacute;n no suministrada:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /UnderwritingCase/RequirementTranslatedLinks }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Atentamente,&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Seguros Internacionales C.A.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                              </ica:SendMail.Body>
+                                                              <ica:SendMail.Subject>
+                                                                <icd:LocalizedString Language="1" Value="Application denied" />
+                                                                <icd:LocalizedString Language="2" Value="Solicitud declinada" />
+                                                              </ica:SendMail.Subject>
+                                                            </ica:SendMail>
+                                                            <FlowStep.Next>
+                                                              <FlowStep x:Name="__ReferenceID0">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <av:Point x:Key="ShapeLocation">1080,2419</av:Point>
+                                                                    <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                                    <av:PointCollection x:Key="ConnectorLocation">1180.07547169811,2441.64150943396 1180.07547169811,2479</av:PointCollection>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <iua:CloseCase Remarks="{x:Null}" AuditUserIdentify="[UsercodeFASI]" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" RejectionReason="0" Token="[context.AccessToken]" UnderwritingCaseID="[UnderwritingCase.UnderwritingCaseId]">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </iua:CloseCase>
+                                                                <FlowStep.Next>
+                                                                  <FlowStep x:Name="__ReferenceID24">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <av:Point x:Key="ShapeLocation">1080,2479</av:Point>
+                                                                        <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">1180.07547169811,2501.64150943396 1180.07547169811,2531.64150943396 1179,2531.64150943396 1179,2540</av:PointCollection>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <iua:RetrieveUWCase Requirement="{x:Null}" RequirementID="{x:Null}" RoleInCase="{x:Null}" ChangeRiskByAmendment="False" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" PrimaryInsured="[PrimaryInsured]" ReturnCaseLocked="False" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]" UnderwritingCaseID="[uwcaseid]">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </iua:RetrieveUWCase>
+                                                                    <FlowStep.Next>
+                                                                      <FlowStep x:Name="__ReferenceID21">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <av:Point x:Key="ShapeLocation">1059,2540</av:Point>
+                                                                            <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                                            <av:PointCollection x:Key="ConnectorLocation">1179,2598.8679245283 1179,2620</av:PointCollection>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <Assign DisplayName="AssignCaseIsDirty" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                                          <Assign.To>
+                                                                            <OutArgument x:TypeArguments="x:Boolean">[UnderwritingCase.IsDirty]</OutArgument>
+                                                                          </Assign.To>
+                                                                          <Assign.Value>
+                                                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                          </Assign.Value>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </Assign>
+                                                                        <FlowStep.Next>
+                                                                          <FlowStep x:Name="__ReferenceID23">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <av:Point x:Key="ShapeLocation">1059,2620</av:Point>
+                                                                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                                                <av:PointCollection x:Key="ConnectorLocation">1179,2678.8679245283 1179,2720</av:PointCollection>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <Assign DisplayName="AssignWFInProgress2" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                                              <Assign.To>
+                                                                                <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.WFInProgress]</OutArgument>
+                                                                              </Assign.To>
+                                                                              <Assign.Value>
+                                                                                <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                                                                              </Assign.Value>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </Assign>
+                                                                            <FlowStep.Next>
+                                                                              <FlowStep x:Name="__ReferenceID25">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <av:Point x:Key="ShapeLocation">1059,2720</av:Point>
+                                                                                    <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                                                    <av:PointCollection x:Key="ConnectorLocation">1179,2778.8679245283 1179,2820</av:PointCollection>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <Assign DisplayName="AssignManualOrAutomatic1" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                                                  <Assign.To>
+                                                                                    <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.ManualOrAutomatic]</OutArgument>
+                                                                                  </Assign.To>
+                                                                                  <Assign.Value>
+                                                                                    <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                                                                  </Assign.Value>
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                </Assign>
+                                                                                <FlowStep.Next>
+                                                                                  <FlowStep x:Name="__ReferenceID29">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <av:Point x:Key="ShapeLocation">1059,2820</av:Point>
+                                                                                        <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                                                        <av:PointCollection x:Key="ConnectorLocation">1179,2878.8679245283 1179,2908.8679245283 1180.07547169811,2908.8679245283 1180.07547169811,2929</av:PointCollection>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <Assign DisplayName="AssignStage 11DecisiónTomada" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                                                      <Assign.To>
+                                                                                        <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.Stage]</OutArgument>
+                                                                                      </Assign.To>
+                                                                                      <Assign.Value>
+                                                                                        <InArgument x:TypeArguments="x:Int32">11</InArgument>
+                                                                                      </Assign.Value>
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </Assign>
+                                                                                    <FlowStep.Next>
+                                                                                      <FlowStep x:Name="__ReferenceID6">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <av:Point x:Key="ShapeLocation">1080,2929</av:Point>
+                                                                                            <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <iua:SaveUWCase RiskInformation="{x:Null}" AuditUserIdentify="[UsercodeFASI]" Decision="0" DisplayName="ActualizaCasoDeclinado" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" HistoryType="Automatic" SaveTemporal="False" Status="0" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]" />
+                                                                                      </FlowStep>
+                                                                                    </FlowStep.Next>
+                                                                                  </FlowStep>
+                                                                                </FlowStep.Next>
+                                                                              </FlowStep>
+                                                                            </FlowStep.Next>
+                                                                          </FlowStep>
+                                                                        </FlowStep.Next>
+                                                                      </FlowStep>
+                                                                    </FlowStep.Next>
+                                                                  </FlowStep>
+                                                                </FlowStep.Next>
+                                                              </FlowStep>
+                                                            </FlowStep.Next>
+                                                          </FlowStep>
+                                                        </FlowDecision.True>
+                                                        <FlowDecision.False>
+                                                          <x:Reference>__ReferenceID0</x:Reference>
+                                                        </FlowDecision.False>
+                                                      </FlowDecision>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowDecision.True>
+                                            <FlowDecision.False>
+                                              <FlowStep x:Name="__ReferenceID12">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">1363,1726</av:Point>
+                                                    <av:Size x:Key="ShapeSize">250.867924528302,105.056603773585</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">1488.43396226415,1831.05660377358 1488.43396226415,1861.05660377358 1490.07547169811,1861.05660377358 1490.07547169811,1869</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteControlGeneralMailsUWv2" sap:VirtualizedContainerService.HintSize="250.867924528302,105.056603773585" ModelId="6be6bf3d-4751-4a4b-a20e-b23bdb4bd856" Release="1" Tracking="True" WorkflowPath="ControlGeneralMailsUWv2">
+                                                  <icag:ExecuteWorkflow.ChildArguments>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="email">[email]</InArgument>
+                                                    <InOutArgument x:TypeArguments="ipec:RiskInformation" x:Key="RiskInformation">[UnderwritingCase.RiskInformation]</InOutArgument>
+                                                    <InOutArgument x:TypeArguments="iuc:UnderwritingCase" x:Key="UnderwritingCase">[UnderwritingCase]</InOutArgument>
+                                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="CantidadVeces">[CantidadVeces]</InOutArgument>
+                                                    <InArgument x:TypeArguments="iuc:RoleInCase" x:Key="PrimaryInsured">[PrimaryInsured]</InArgument>
+                                                    <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                                                  </icag:ExecuteWorkflow.ChildArguments>
+                                                </icag:ExecuteWorkflow>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID10">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">1390,1869</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">1490.07547169811,1891.64150943396 1490.07547169811,1939</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Delay DisplayName="Delay3Dias" Duration="00:02:00" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" />
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID35">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">1390,1939</av:Point>
+                                                            <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">1490.07547169811,1961.64150943396 1490.07547169811,1991.64150943396 1489,1991.64150943396 1489,2020</av:PointCollection>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <isa:RequestToken Email="[email]" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" Result="[context.AccessToken]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </isa:RequestToken>
+                                                        <FlowStep.Next>
+                                                          <FlowStep x:Name="__ReferenceID11">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">1369,2020</av:Point>
+                                                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">1609,2049.43396226415 1639,2049.43396226415 1639,750.120754716981 920.150943396226,750.120754716981</av:PointCollection>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <Assign DisplayName="AumentaCantidadDeVeces" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:Int32">[CantidadVeces]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:Int32">[CantidadVeces+1]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <FlowStep.Next>
+                                                              <x:Reference>__ReferenceID1</x:Reference>
+                                                            </FlowStep.Next>
+                                                          </FlowStep>
+                                                        </FlowStep.Next>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowDecision.False>
+                                          </FlowDecision>
+                                        </FlowDecision.False>
+                                      </FlowDecision>
+                                    </FlowDecision.False>
+                                  </FlowDecision>
+                                </FlowDecision.True>
+                                <FlowDecision.False>
+                                  <FlowStep x:Name="__ReferenceID30">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">1338.4,1199.6</av:Point>
+                                        <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">1458.4,1258.4679245283 1458.4,1289.6</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="AssignWFInProgress2" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.WFInProgress]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID31">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">1338.4,1289.6</av:Point>
+                                            <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">1458.4,1348.4679245283 1458.4,1379.6</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="AssignManualOrAutomatic1" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.ManualOrAutomatic]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <FlowStep.Next>
+                                          <FlowStep x:Name="__ReferenceID32">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">1338.4,1379.6</av:Point>
+                                                <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">1458.4,1438.4679245283 1458.4,1468.4679245283 1460.07547169811,1468.4679245283 1460.07547169811,1478.8</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="AssignStage11DecisionTomada" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[UnderwritingCase.Stage]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">11</InArgument>
+                                              </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Assign>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID33">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">1360,1478.8</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200.150943396226,22.6415094339623</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">1451.6,862.879697458995 1451.6,854.879697458995 1571.6,854.879697458995 1571.6,914.879697458995 1451.6,914.879697458995 1451.6,884.879697458995</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <iua:SaveUWCase RiskInformation="{x:Null}" AuditUserIdentify="[UsercodeFASI]" Decision="0" sap:VirtualizedContainerService.HintSize="200.150943396226,22.6415094339623" HistoryType="Automatic" SaveTemporal="False" Status="0" Token="[context.AccessToken]" UnderwritingCase="[UnderwritingCase]" />
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.False>
+                              </FlowDecision>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <FlowDecision x:Name="__ReferenceID38" Condition="[CantidadRequerimientoInicial &lt; UnderwritingCase.Requirements.Count]" sap:VirtualizedContainerService.HintSize="69.7358490566038,86.9433962264151">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">1145.1320754717,876.528301886792</av:Point>
+                                <av:Size x:Key="ShapeSize">69.7358490566038,86.9433962264151</av:Size>
+                                <av:PointCollection x:Key="TrueConnector">1145.1320754717,920 990,920 990,940.566037735849</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">1214.8679245283,920 1240,920 1240,1156.52830188679 820,1156.52830188679 820,1186.52830188679</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowStep x:Name="__ReferenceID39">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">870,940.566037735849</av:Point>
+                                    <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">990,999.433962264151 990,1040.56603773585</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="ReiniciaCantidadVeces" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[CantidadVeces]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID40">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">870,1040.56603773585</av:Point>
+                                        <av:Size x:Key="ShapeSize">240,58.8679245283019</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">990,1099.43396226415 990,1129.43396226415 820,1129.43396226415 820,1186.52830188679</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="AssignCantidadRequerimientos" sap:VirtualizedContainerService.HintSize="240,58.8679245283019">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[CantidadRequerimientoInicial]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[UnderwritingCase.Requirements.Count]</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <x:Reference>__ReferenceID2</x:Reference>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <x:Reference>__ReferenceID2</x:Reference>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <x:Reference>__ReferenceID1</x:Reference>
+            </FlowDecision.False>
+          </FlowDecision>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
+    <x:Reference>__ReferenceID17</x:Reference>
+    <x:Reference>__ReferenceID18</x:Reference>
+    <x:Reference>__ReferenceID19</x:Reference>
+    <x:Reference>__ReferenceID20</x:Reference>
+    <x:Reference>__ReferenceID21</x:Reference>
+    <x:Reference>__ReferenceID22</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID23</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID24</x:Reference>
+    <x:Reference>__ReferenceID25</x:Reference>
+    <x:Reference>__ReferenceID26</x:Reference>
+    <x:Reference>__ReferenceID27</x:Reference>
+    <x:Reference>__ReferenceID28</x:Reference>
+    <x:Reference>__ReferenceID29</x:Reference>
+    <x:Reference>__ReferenceID30</x:Reference>
+    <x:Reference>__ReferenceID31</x:Reference>
+    <x:Reference>__ReferenceID32</x:Reference>
+    <x:Reference>__ReferenceID33</x:Reference>
+    <x:Reference>__ReferenceID34</x:Reference>
+    <x:Reference>__ReferenceID35</x:Reference>
+    <x:Reference>__ReferenceID36</x:Reference>
+    <x:Reference>__ReferenceID37</x:Reference>
+    <x:Reference>__ReferenceID38</x:Reference>
+    <x:Reference>__ReferenceID39</x:Reference>
+    <x:Reference>__ReferenceID40</x:Reference>
+  </Flowchart>
+</Activity>

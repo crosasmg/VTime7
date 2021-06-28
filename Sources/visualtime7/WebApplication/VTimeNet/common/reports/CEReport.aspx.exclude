@@ -1,0 +1,128 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eRemoteDB" %>
+<%@ Import namespace="eFunctions" %>
+<script language="VB" runat="Server">
+
+
+'%getReportName: Recuerpa el nombre del reporte desde ruta
+'------------------------------------------------------------
+Function getReportName(ByVal sReportPath As String) As String
+	'------------------------------------------------------------
+	Dim arrTemp() As String
+	Dim lintPos As Integer
+	Dim sFile As String
+	
+	arrTemp = Split(sReportPath, "/")
+	
+	lintPos = UBound(arrTemp)
+	If lintPos >= 0 Then
+		sFile = arrTemp(lintPos)
+	End If
+	
+	arrTemp = Split(sFile, ".")
+	getReportName = arrTemp(0)
+End Function
+
+'% LoadDBInfo: Obtiene información para conectarse a la base de datos
+'------------------------------------------------------------
+Sub LoadDBInfo(ByRef sDatabase As String, ByRef sServer As String, ByRef sLogin As String, ByRef sPassword As String)
+	'------------------------------------------------------------
+	Dim lobjDBConnect As eRemoteDB.Connection
+	
+	lobjDBConnect = New eRemoteDB.Connection
+	With lobjDBConnect
+		.bErr_Module = CStr(Session("bErrorModule")) = "1"
+		.LoadConnectInfo()
+		
+		sDatabase = .Database
+		sServer = ""
+		
+		sLogin = .Login
+		sPassword = .Password
+	End With
+	'UPGRADE_NOTE: Object lobjDBConnect may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lobjDBConnect = Nothing
+	
+	Session("bErrorModule") = ""
+	
+End Sub
+
+'%Main: Proceso principal de la página
+'------------------------------------------------------------
+Public Sub Main()
+	'------------------------------------------------------------
+	Dim sFile As String
+	Dim sParamsSP As String
+	Dim sVar As String
+	Dim sPass As String
+	Dim sDummy As String
+	Dim sUser As String
+	Dim sDb As String
+	Dim lclsRegistry As eFunctions.Values
+	Dim lstrReportServer As String
+	
+	sFile = getReportName(Request.QueryString.Item("URL"))
+	
+	'+Se cargan parametros.
+	'+Debido a un bug en CE, se debe pasar algun valor cuando
+	'+el parámetro es blanco. Ver página CELoadReport.csp para detalles
+	
+	'+Parametros del reporte
+	If Not IsNothing(Request.QueryString.Item("p")) Then
+		For	Each sVar In Request.QueryString.Item("p")
+			If sVar = vbNullString Then
+				sVar = "@@"
+			End If
+			sParamsSP = sParamsSP & "&p=" & sVar
+		Next sVar
+	End If
+	
+	'+Parámetros del procedimiento en el reporte    
+	If Not IsNothing(Request.QueryString.Item("sp")) Then
+		For	Each sVar In Request.QueryString.Item("sp")
+			If sVar = vbNullString Then
+				sVar = "@@"
+			End If
+			sParamsSP = sParamsSP & "&sp=" & sVar
+		Next sVar
+	End If
+	
+	'+Obtiene informacipón de conexión    
+	LoadDBInfo(sDb, sDummy, sUser, sPass)
+	
+	'+Llama a página de reportes de Crystal Enterprise
+	lclsRegistry = New eFunctions.Values
+	lstrReportServer = lclsRegistry.insGetSetting("ReportServer", "", "Paths")
+	'UPGRADE_NOTE: Object lclsRegistry may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lclsRegistry = Nothing
+	
+	Response.Redirect(lstrReportServer & "CELoadReport.aspx?sDebug=" & Session("sDebug") & "&sParam1=" & sDb & "&sParam2=" & sUser & "&sParam3=" & sPass & "&sCodispl=" & sFile & sParamsSP)
+End Sub
+
+</script>
+<%
+'-------------------------------------------------------------------------------------
+'- Nombre     : CDReport.aspx
+'- Descripción: Invoca a página de reportes de Crystal Enterprise (CE).
+'-              Previamente, obtiene los datos de conexión a la BD (usuario/password),
+'-              el nombre del reporte y los parámetros a pasar al mismo.
+'- Parámetros QueryString:
+'-    URL <in>        :   Nombre del reporte a ejecutar.
+'-                        Puede tener el sgte formato:
+'-                        [Path]Archivo_Reporte[.rpt]
+'-    p   <in>        :   Colección de parametros creados en el reporte
+'-                        Son parametros de la forma &sp=valor1&sp=valor2&sp=valor3
+'-    sp  <in>        :   Colección de parametros del procedimiento asociado al reporte
+'-                        Son parametros de la forma &p=valor1&p=valor2&p=valor3
+'-------------------------------------------------------------------------------------
+Response.Expires = -1
+
+
+'+Se llama al proceso principal    
+Call Main()
+%>
+
+
+
+
+

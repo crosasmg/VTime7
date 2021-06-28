@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSourceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TIME" startingon="2012-08-31T09:17:11.2462446-06:00" endingon="2012-08-31T09:17:16.7925618-06:00" source="Oracle" xmlns="urn:InMotionGIT.Database.Model.Data">
+  <Schemas>
+    <ModelSchema name="INSUDB">
+      <Tables>
+		
+        <Table name="USERS">
+          <Constraints>
+            <Constraint name="USERS_TABLE5556" foreigntablename="TABLE5556" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NOFFICEAGEN" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NOFFICEAGEN" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="USERS_TABLE5555" foreigntablename="TABLE5555" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NAGENCY" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NAGENCY" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+        </Table>
+		
+        <Table name="ROLES">
+          <Columns>        
+            <Column name="SCONTINUED">
+              <Extend behavior="SwitchChar" />
+            </Column>
+          </Columns> 			
+        </Table>
+		
+        <Table name="MASTERSHEET">
+          <Columns>        
+            <Column name="SAUTOMATIC">
+              <Extend behavior="SwitchChar" />
+            </Column>
+            <Column name="SONLINE">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+            <Column name="SGROUPBY">
+              <Extend behavior="SwitchChar" />
+            </Column>            
+            <Column name="SHEADER">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+            <Column name="STOTAL">
+              <Extend behavior="SwitchChar" />
+            </Column>      
+            <Column name="SMASSIVE">
+              <Extend behavior="SwitchChar" />
+            </Column>
+            <Column name="SNOGRID">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+            <Column name="SVIEW_INTERFACE">
+              <Extend behavior="SwitchChar" />
+            </Column>            
+            <Column name="SVIEW_REPORT">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+            <Column name="SSHEET_FATHER">
+              <Extend behavior="SwitchChar" />
+            </Column> 
+            <Column name="SFILE_UNIQUE">
+              <Extend behavior="SwitchChar" />
+            </Column>
+            <Column name="SXSL">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+                                    
+          </Columns>                    
+          <Constraints>
+            <Constraint name="MASTERSHEET_TABLE5700" foreigntablename="TABLE5700" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NOPERTYPE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NOPERTYPE" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="MASTERSHEET_TABLE5701" foreigntablename="TABLE5701" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NFORMAT" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NFORMAT" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="MASTERSHEET_TABLE5705" foreigntablename="TABLE5705" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NSYSTEM" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NSYSTEM" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="MASTERSHEET_TABLE5710" foreigntablename="TABLE5710" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NPERIOD" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NPERIOD" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="MASTERSHEET_TABLE26" foreigntablename="TABLE26" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="SSTATUSSHEET" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NCODIGINT" />
+              </ForeignColumns>
+            </Constraint>                                    
+          </Constraints>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplate" />
+              <FriendlyName Language="Spanish" Value="PlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfacesTemplates"/>
+              <PluralFriendlyName Language="Spanish" Value="PlantillasDeInterfaces"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Templates for execution process interfaces." />
+              <Summary Language="Spanish" Value="Plantillas para ejecucion de procesos de interfaces"/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table>
+        <Table name="FIELDSHEET">
+         <Columns>        
+            <Column name="NOPERATOR" comment="Código de operador lógico de la condición. // Logical code of the condition." ordinal="17" kind="NUMBER" modelkind="Numeric" size="5" domain="Number">
+              <Extend lookupallow="1,2,3,4,5,6,7,8">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="Spanish" Value="CódigoOperadorDeLaCondición" />
+                  <FriendlyName Language="English" Value="Operator" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="Spanish" Value="Código de operador lógico de la condición." />
+                  <Summary Language="English" Value="Logical code of the condition." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="NCONDIT" comment="Código de operador lógico de la condición. // Logical code of the condition." ordinal="18" kind="NUMBER" modelkind="Numeric" size="5" domain="Number">
+              <Extend lookupexclude="1,2,3,4,5,6,7,8">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="Spanish" Value="Código de operador lógico de la condición." />
+                  <FriendlyName Language="English" Value="Condition" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="Spanish" Value="Código de operador lógico de la condición." />
+                  <Summary Language="English" Value="Logical code of the condition." />
+                </Summaries>
+              </Extend>
+            </Column>		 
+            <Column name="SOBLIGATORY">
+              <Extend behavior="SwitchChar" />
+            </Column>
+            <Column name="SLASTMOVE">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+          </Columns>
+         <Constraints>
+            <Constraint name="FIELDSHEET_TABLE5702" foreigntablename="TABLE5702" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NFIELDTYPE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NFIELDTYPE" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FIELDSHEET_TABLE5703" foreigntablename="TABLE5703" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NOBJTYPE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NOBJTYPE" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FIELDSHEET_TABLE324" foreigntablename="TABLE324" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NDATATYPE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NTYPE" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FIELDSHEET_TABLE5704" foreigntablename="TABLE5704" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NOPERATOR" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NOPERATOR" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FIELDSHEET_TABLE5704" foreigntablename="TABLE5704" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NCONDIT" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NOPERATOR" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FIELDSHEET_TABLE5706" foreigntablename="TABLE5706" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NTABLEHOMO" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NTABLE" />
+              </ForeignColumns>
+            </Constraint> 			
+          </Constraints>		  
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplateField" />
+              <FriendlyName Language="Spanish" Value="CampoDePlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfaceTemplateFields"/>
+              <PluralFriendlyName Language="Spanish" Value="CamposDePlantillasDeInterfaces"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Interfaces template fields." />
+              <Summary Language="Spanish" Value="Campos de plantillas de interfaces."/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table>      
+        <Table name="TABLESHEET">
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplateTable" />
+              <FriendlyName Language="Spanish" Value="TablaDeUnaPlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfaceTemplateTables"/>
+              <PluralFriendlyName Language="Spanish" Value="TablasDePlantillasDeInterfaces"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Tables of a template interface." />
+              <Summary Language="Spanish" Value="Tablas de una plantilla de interfaces."/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table>     
+        <Table name="CTRL_INTERFACE">
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplateControl" />
+              <FriendlyName Language="Spanish" Value="ControlDeUnaPlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfaceTemplateControl"/>
+              <PluralFriendlyName Language="Spanish" Value="ControlDePlantillasDeInterfaces"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Control information transmitted by the interface." />
+              <Summary Language="Spanish" Value="Tabla de control de informacion transmitida por la interfaz."/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table>  
+        
+        <Table name="DEPEND_SHEET">
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplateDependency" />
+              <FriendlyName Language="Spanish" Value="DependenciaDeUnaPlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfaceTemplateDependency"/>
+              <PluralFriendlyName Language="Spanish" Value="DependenciaDePlantillasDeInterfaces"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Dependence between interfaces." />
+              <Summary Language="Spanish" Value="Dependencia entre las interfaces."/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table> 
+                
+        <Table name="HOMOLOG_TABLE">
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="InterfaceTemplateHomologation" />
+              <FriendlyName Language="Spanish" Value="HomologaciónDeUnaPlantillaDeInterface" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="English" Value="InterfaceTemplateHomologation"/>
+              <PluralFriendlyName Language="Spanish" Value="HomologaciónDeUnaPlantillaDeInterface"/>
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Homologate information for interfaces." />
+              <Summary Language="Spanish" Value="Información para la homologación de datos de una plantilla."/>
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="MainInsuraneBusiness" />
+            </Modules>
+          </Extend>        
+        </Table> 
+                        
+        <Table name="WINDOWS">
+          <Columns>      
+            <Column name="SDIRECTGO">
+              <Extend behavior="SwitchChar" />
+            </Column>            
+            <Column name="SAUTOREP">
+              <Extend behavior="SwitchChar" />
+            </Column>
+            <Column name="SQUOTE">
+              <Extend behavior="SwitchChar" />
+            </Column>       
+            <Column name="SINDLETTER">
+              <Extend behavior="SwitchChar" />
+            </Column>                                                     
+          </Columns>  
+          <Constraints>
+            <Constraint name="WINDOWS_TABLE98" foreigntablename="TABLE98" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NTYPE_REPORT" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NTYPE_REPORT" />
+              </ForeignColumns>
+            </Constraint>                                    
+          </Constraints>         
+        </Table>    
+
+        <Table name="GROUPVARIABLES">
+          <Columns>      
+            <Column name="SALIASTABLE" comment="Alias a usar para recuperar los valores de las variables en el proceso de solicitud de correspondencia. // Alias to be used to get the variable value in correspondence request processing." ordinal="10" kind="CHAR" modelkind="Char" size="30" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="Spanish" Value="AliasDeLaTabla" />
+                  <FriendlyName Language="English" Value="TableAlias" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="Spanish" Value="Alias a usar para recuperar los valores de las variables en el proceso de solicitud de correspondencia." />
+                  <Summary Language="English" Value="Alias to be used to get the variable value in correspondence request processing." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="SALIASCOLUMN" comment="Alias con el que se devolverán los valores de las variables. // Alias to be used to return the variable values." ordinal="11" kind="CHAR" modelkind="Char" size="30" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="Spanish" Value="AliasDeLaColumna" />
+                  <FriendlyName Language="English" Value="ColumnAlias" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="Spanish" Value="Alias con el que se devolverán los valores de las variables." />
+                  <Summary Language="English" Value="Alias to be used to return the variable values." />
+                </Summaries>
+              </Extend>
+            </Column>   
+          </Columns> 			
+        </Table>  
+		
+		
+        <Table name="CLAIM">
+          <Columns>      
+            <Column name="NCLAIM" comment="Número que identifica al siniestro. // Claim number." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="Spanish" Value="Número del siniestro" />
+                  <FriendlyName Language="English" Value="ClaimID" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="Spanish" Value="Número que identifica al siniestro." />
+                  <Summary Language="English" Value="Claim number." />
+                </Summaries>
+              </Extend>
+            </Column>  
+          </Columns> 	  
+        </Table> 
+		
+        <Table name="NUMERATOR">
+          <Constraints>
+            <Constraint name="NUMERATOR_TABLE98" foreigntablename="TABLE297" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NTYPENUM" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NCODIGINT" />
+              </ForeignColumns>
+            </Constraint>                                    
+          </Constraints>         
+        </Table>  
+		
+        <Table name="CLIENT">
+          <Constraints>
+
+            <Constraint name="CLIENT_TABLE5530" foreigntablename="TABLE5530" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NCOMP_TYPE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NCOMP_TYPE" />
+              </ForeignColumns>
+            </Constraint>
+			
+            <Constraint name="CLIENT_TABLE5523" foreigntablename="TABLE5523" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NHEALTH_ORG" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NHEALTH_ORG" />
+              </ForeignColumns>
+            </Constraint>
+			
+            <Constraint name="CLIENT_TABLE5524" foreigntablename="TABLE5524" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NAFP" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NAFP" />
+              </ForeignColumns>
+            </Constraint>
+
+            <Constraint name="CLIENT_TABLE5521" foreigntablename="TABLE5521" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NLIMITDRIV" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NLIMITDRIV" />
+              </ForeignColumns>
+            </Constraint>			
+
+
+            <Constraint name="CLIENT_TABLE16" foreigntablename="TABLE16" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NSPECIALITY" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NSPECIALITY" />
+              </ForeignColumns>
+            </Constraint>
+			
+          </Constraints>         
+        </Table>  		  
+		  
+		
+        <Table name="CERTIFICAT">
+          <Constraints>
+<!--
+            <Constraint name="CERTIFICAT_TABLE9781" foreigntablename="TABLE9781" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NSYSTEM" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NSYSTEM" />
+              </ForeignColumns>
+            </Constraint>		  
+-->			
+            <Constraint name="CERTIFICAT_NOCONVERS" foreigntablename="NOCONVERS" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NNO_CONVERS" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NNO_CONVERS" />
+              </ForeignColumns>
+            </Constraint>
+
+            <Constraint name="CERTIFICAT_COLLECTOR" foreigntablename="COLLECTOR" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="NCOLLECTOR" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="NCOLLECTOR" />
+              </ForeignColumns>
+            </Constraint>
+
+          </Constraints>         
+        </Table> 
+		
+        <Table name="AUTO">
+          <Constraints>
+            <Constraint name="WINDOWS_TAB_AU_VEH" foreigntablename="TAB_AU_VEH" kind="Relationship" ondeleterule="NoAction" inmemory="true">
+              <KeyColumns>
+                <ConstraintColumn name="SVEHCODE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="SVEHCODE" />
+              </ForeignColumns>
+            </Constraint>                                    
+          </Constraints>         
+        </Table> 
+		
+      </Tables>
+    </ModelSchema>
+  </Schemas>
+</DataSourceModel>

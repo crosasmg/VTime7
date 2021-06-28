@@ -1,0 +1,207 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.BillManager.Service
+</name>
+</assembly>
+<members>
+<member name="F:InMotionGIT.BillManager.Service.Enumerations.EnumTypeOfProcess.IssueOfPolicy">
+ <summary>
+ Emisión de una nueva póliza-certificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.BillManager.Service.Enumerations.EnumTypeOfProcess.ModificationOfPolicy">
+ <summary>
+ Modificación de poliza-cdertificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.BillManager.Service.Enumerations.EnumTypeOfProcess.ReIssueOfPolicy">
+ <summary>
+ Re-emisión de póliza-certificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.BillManager.Service.Enumerations.EnumTypeOfProcess.RenovationOfPolicy">
+ <summary>
+ Renovación de póliza-certificado
+ </summary>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.CheckAccess(System.Object,System.Boolean,System.DateTime)">
+ <summary>
+ Valida los accesos a través de la información dada
+ </summary>
+ <param name="objectCollection"></param>
+ <param name="accessClient">Indica si la funcionalidad es valida para un usuario de tipo cliente/asegurado</param>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.GetUserCode">
+ <summary>
+ Obtiene el codigo de usuario contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.GetRole">
+ <summary>
+ Obtiene el rol contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.GetClientId">
+ <summary>
+ Obtiene el client id contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.GetInternalClientId(System.Int32)">
+ <summary>
+ Obtiene el client id contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.ValidateAccess(System.Object,System.Boolean,System.DateTime)">
+ <summary>
+  Valida los accesos del siniestro de acuerdo al rol.
+ </summary>
+ <param name="objectCollection"></param>
+ <param name="accessClient"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.CheckAssociatedBenefficiariesByClientID(System.Object,System.DateTime,System.String)">
+ <summary>
+ Verifica si el ClientID esta asociado al premium.
+ </summary>
+ <param name="objectCollection"></param>
+ <param name="atDate"></param>
+ <param name="clientID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.CheckAssociatedIntermediaresByClientID(System.Object,System.DateTime,System.String)">
+ <summary>
+ Verifica si el intermediario obtenido a través del ClientID se encuentra asociado al premium.
+ </summary>
+ <param name="objectCollection"></param>
+ <param name="AtDate"></param>
+ <param name="ClientID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.RetrieveAssociatedIntermediaryRoles(System.Object,System.DateTime,System.String)">
+ <summary>
+ Devuelve la lista de intermediarios relacionados.
+ </summary>
+ <param name="objectCollection">Objeto</param>
+ <param name="atDate"></param>
+ <param name="clientID">Código de cliente</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.RetrieveAssociatedBenefficiariesRoles(System.Object,System.DateTime,System.String)">
+ <summary>
+ Devuelve la lista de intermediarios relacionados.
+ </summary>
+ <param name="objectCollection">Objeto</param>
+ <param name="atDate"></param>
+ <param name="clientID">Código de cliente</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.RetrieveIntermediaByClientID(System.String,System.DateTime)">
+ <summary>
+ Devuelve una colección de intermediarios asociados a un clientid.
+ </summary>
+ <param name="clientID">Código de cliente a localizar</param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.RetrievePremiumByBillNumber(System.Int64)">
+ <summary>
+ 
+ </summary>
+ <param name="billNumber"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluateAssociatedIntermediaInPremiumCollection(InMotionGIT.Bill.Entity.Contracts.PremiumCollection,InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection)">
+ <summary>
+ 
+ </summary>
+ <param name="premiumCollection"></param>
+ <param name="intermediaCollection"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluatesAssociatedInsuredInPremiumCollection(InMotionGIT.Bill.Entity.Contracts.PremiumCollection,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="premiumCollection"></param>
+ <param name="clientID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluateAssociatedIntermediaInCommissionCollection(InMotionGIT.Bill.Entity.Contracts.CommissionBillCollection,InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection)">
+ <summary>
+ 
+ </summary>
+ <param name="commissionCollection"></param>
+ <param name="intermediaCollection"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluatesAssociatedInsuredInCommissionCollection(InMotionGIT.Bill.Entity.Contracts.CommissionBillCollection,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="commissionCollection"></param>
+ <param name="clientID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluateAssociatedIntermediaInPremiumBillCollection(InMotionGIT.Bill.Entity.Contracts.PremiumBillEntryCollection,InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection)">
+ <summary>
+ 
+ </summary>
+ <param name="premiumBillCollection"></param>
+ <param name="intermediaCollection"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.EvaluateAssociatedInsuredInPremiumBillCollection(InMotionGIT.Bill.Entity.Contracts.PremiumBillEntryCollection,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="premiumBillCollection"></param>
+ <param name="clientID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Validator.RetrieveUserByUsercode(System.Int32)">
+ <summary>
+ Devuelve un usuario por su usercode
+ </summary>
+ <param name="userCode">Código de usuario a localizar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Operations.GetPremiumBalancePending(System.String,System.Int32,System.Int32,System.Int64,System.Int32)">
+ <summary>
+ Obtiene la suma de los recibos pendientes.
+ </summary>
+ <param name="recordType">Identificador del tipo de registro.</param>
+ <param name="lineOfBusiness">Identificador del ramo comercial.</param>
+ <param name="productCode">Código del producto.</param>
+ <param name="policyId">Identificador de la póliza.</param>
+ <returns>Valor correspondiente a la suma de los recibos pendientes de una póliza.</returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Operations.GetPaidPremiumAfterClaim(System.String,System.Int32,System.Int32,System.Int64,System.DateTime,System.Int32)">
+ <summary>
+ Obtener la suma de las primas pagadas posteriores a la fecha de cálculo VP.
+ </summary>
+ <param name="recordType">Identificador del tipo de registro.</param>
+ <param name="lineOfBusiness">Identificador del ramo comercial.</param>
+ <param name="productCode">Código del producto.</param>
+ <param name="policyId">Identificador de la póliza.</param>
+ <param name="lossDate">Fecha de ocurrencia del sinestro.</param>
+ <returns>Valor correspondiente a la suma las primas pagadas posteriores a la fecha de cálculo VP.</returns>
+</member>
+<member name="M:InMotionGIT.BillManager.Service.Operations.RetrieveBillsWithFinancingContractDraftsByPolicyId(System.Int32,System.String,System.Boolean,System.Int32)">
+ <summary>
+ Obtiene todos los recibos asociados a un número de póliza, incluye todas las cuotas que posea un recibo.
+ </summary>
+ <param name="policyID">Identificador de la póliza.</param>
+ <param name="filter">Para incluir alguna tabla hijas.</param>
+ <param name="withLookups">Agregar descripciones.</param>
+ <param name="languageForLookups">Identificador del lenguaje para las descripciones.</param>
+ <returns>Colección de recibos asociados a un número de póliza con las respectivas cuotas de cada recibo.</returns>
+</member>
+</members>
+</doc>

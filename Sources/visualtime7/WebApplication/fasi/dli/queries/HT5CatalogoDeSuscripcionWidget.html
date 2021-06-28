@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="HT5CatalogoDeSuscripcionMainForm">
+        <input type="hidden" id="HT5CatalogoDeSuscripcionFormId" name="HT5CatalogoDeSuscripcionFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zoneHeader zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zoneHeader">
+    <!-- Container content -->
+                <!-- RecordEffectiveDate datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='RecordEffectiveDateLabel' class='control-label' for='RecordEffectiveDate'>Fecha de efecto</label><span id='RecordEffectiveDateRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='RecordEffectiveDate_group'>
+                                    <input id='RecordEffectiveDate' name='RecordEffectiveDate' type='text' class='form-control' title='' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- _AllowHistoryInfo checkbox -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='_AllowHistoryInfoLabel' class='control-label' for='_AllowHistoryInfo'>Información Histórica</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='checkbox'>
+                                    <label id='_AllowHistoryInfoLabel' >
+                                        <input id='_AllowHistoryInfo' name='_AllowHistoryInfo' type='checkbox' title=''   />
+                                    </label>
+                                </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Aceptar consulta' ><span class='ladda-label'>OK</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zoneHeader zone -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                            <!-- Lookups: Items Grid -->
+                            <select id='TabUnderwritingRuleRecordStatus' hidden='hidden'>
+                            </select>
+
+                            <!-- End Lookups: Items grid -->
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- TabUnderwritingRuleActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='TabUnderwritingRuleActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_TabUnderwritingRuleUnderwritingRuleIdDescContextMenu' class='dropdown-menu'>
+ <li data-item='Items_TabUnderwritingRuleUnderwritingRuleIdDesc_Item1'><a>Consultar</a></li>
+    </ul>
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190220111910400'></script>
+    <script src="/fasi/app/js/core.js?rel=20190220111910400"></script>
+    <script src="/fasi/app/js/general.js?rel=20190220111910400"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190220111910400'></script>
+    
+
+    <script src='/fasi/assets/js/spin.min.js'></script>
+    <script src='/fasi/assets/js/ladda.min.js'></script>
+    <script src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190220111910400'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190220111910400'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/HT5CatalogoDeSuscripcion.js?rel=20190220111910400"></script>
+</body>
+</html>

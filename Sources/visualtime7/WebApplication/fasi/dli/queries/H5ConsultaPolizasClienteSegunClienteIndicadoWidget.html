@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="H5ConsultaPolizasClienteSegunClienteIndicadoMainForm">
+        <input type="hidden" id="H5ConsultaPolizasClienteSegunClienteIndicadoFormId" name="H5ConsultaPolizasClienteSegunClienteIndicadoFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zoneHeader zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zoneHeader">
+    <!-- Container content -->
+                <!-- Client Client -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='ClientLabel' class='control-label' for='Client'>Client</label><span id='ClientRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='Client' name='Client' maxlength='80' size='80' title='' type='text' />
+                    </div>
+                  </div>
+                </div>
+                <!-- RecordEffectiveDate datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='RecordEffectiveDateLabel' class='control-label' for='RecordEffectiveDate'>Effective date</label><span id='RecordEffectiveDateRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='RecordEffectiveDate_group'>
+                                    <input id='RecordEffectiveDate' name='RecordEffectiveDate' type='text' class='form-control' title='' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Click to execute query' ><span class='ladda-label'>Accept</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zoneHeader zone -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- ClientActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='ClientActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_ClientSCLIENTContextMenu' class='dropdown-menu'>
+ <li data-item='Items_ClientSCLIENT_Item1'><a>Edit Credit Card of Client</a></li>
+ <li data-item='Items_ClientSCLIENT_Item2'><a>Edit Phone of Client</a></li>
+ <li data-item='Items_ClientSCLIENT_Item3'><a>Edit Address of Client</a></li>
+    </ul>
+    <ul id='FireContextMenu' class='dropdown-menu'>
+        <li data-item='Fire_Item1'><a>Claim declaration</a></li>
+    </ul>
+    <ul id='Fire_FirenConstCatDescContextMenu' class='dropdown-menu'>
+ <li data-item='Fire_FirenConstCatDesc_Item1'><a>Claim declaration</a></li>
+    </ul>
+    <ul id='ROLES2ContextMenu' class='dropdown-menu'>
+        <li data-item='ROLES2_Item1'><a>Claim declaration</a></li>
+    </ul>
+    <ul id='ROLES2_ROLES2NROLEDescContextMenu' class='dropdown-menu'>
+ <li data-item='ROLES2_ROLES2NROLEDesc_Item1'><a>Claim declaration</a></li>
+    </ul>
+    <ul id='DIR_DEBITContextMenu' class='dropdown-menu'>
+        <li data-item='DIR_DEBIT_Item1'><a>Change credit card of the policy</a></li>
+    </ul>
+    <ul id='DIR_DEBIT_DIR_DEBITNBANKEXTDescContextMenu' class='dropdown-menu'>
+ <li data-item='DIR_DEBIT_DIR_DEBITNBANKEXTDesc_Item1'><a>Change credit card of the policy</a></li>
+    </ul>
+    <ul id='CertificatContextMenu' class='dropdown-menu'>
+        <li data-item='Certificat_Item1'><a>Printing Policy</a></li>
+        <li data-item='Certificat_Item2'><a>Action_2</a></li>
+    </ul>
+    <ul id='Certificat_CertificatnPolicyContextMenu' class='dropdown-menu'>
+ <li data-item='Certificat_CertificatnPolicy_Item1'><a>Printing Policy</a></li>
+ <li data-item='Certificat_CertificatnPolicy_Item2'><a>Action_2</a></li>
+    </ul>
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190227111624342'></script>
+    <script src="/fasi/app/js/core.js?rel=20190227111624342"></script>
+    <script src="/fasi/app/js/general.js?rel=20190227111624342"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190227111624342'></script>
+    
+
+    <script src='/fasi/assets/js/spin.min.js'></script>
+    <script src='/fasi/assets/js/ladda.min.js'></script>
+    <script src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script src='/fasi/app/js/client.js?rel=20190227111624342'></script>
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190227111624342'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190227111624342'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/H5ConsultaPolizasClienteSegunClienteIndicado.js?rel=20190227111624342"></script>
+</body>
+</html>

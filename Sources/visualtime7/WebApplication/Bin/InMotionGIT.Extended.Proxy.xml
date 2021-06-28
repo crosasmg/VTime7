@@ -1,0 +1,459 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Extended.Proxy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Extended.Proxy.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Extended.Proxy.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:InMotionGIT.Extended.Proxy.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.ClientManager.ClientsRelationship_RetrieveByConditionSingle(System.String,System.Int32)">
+ <summary>
+ Consulting single row in table RELATIONS clause sql where expression to the database.
+ </summary>
+ <param name="clientr">code client</param>
+ <param name="relaship">numer relation</param>
+ <returns>OBJECT RELATIONS</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.ClientManager.ClientsRelationship_Synchronize(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract ClientsRelationship</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>OBJECT AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.ClientManager.ClientsRelationship_Synchronize_List(InMotionGIT.Client.Entity.Contracts.ClientsRelationshipCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List ClientsRelationship</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.Collecting.PaymentAgreement_RetrieveByConditionSingle(System.String)">
+ <summary>
+ Consulting single row in table AGREEMENT clause sql where expression to the database.
+ </summary>
+ <param name="client">code client</param>
+ <returns>OBJECT AGREEMENT</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.Collecting.PaymentAgreement_Synchronize(InMotionGIT.Collecting.Entity.Contracts.PaymentAgreement,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract PaymentAgreement</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>OBJECT AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.Collecting.PaymentAgreement_Synchronize_List(InMotionGIT.Collecting.Entity.Contracts.PaymentAgreementCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List PaymentAgreement</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table FIELDSHEET clause sql where expression to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <returns>OBJECT List FIELDSHEET</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_RetrieveByCondition_Q2(System.Int32,System.String)">
+ <summary>
+ Consulting rows in table FIELDSHEET clause sql where expression to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <param name="updateind">string value updateind</param>
+ <returns>OBJECT List FIELDSHEET</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_Synchronize(InMotionGIT.General.Entity.Contracts.Interfaces.FIELDSHEET,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract Fieldsheet</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_Synchronize_List(InMotionGIT.General.Entity.Contracts.Interfaces.FIELDSHEETCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List Fieldsheet</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_Synchronize_Dynamic_Screen(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be i updated  the appropriate command to implement the changes to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <param name="idrec">number id rec</param>
+ <param name="field">number field</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.FIELDSHEET_Synchronize_Dynamic_Screen_other_maps(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be i updated  the appropriate command to implement the changes to the database.
+ </summary>
+ <param name="deftype">number deftypec</param>
+ <param name="sheet">number sheet</param>
+ <param name="field">numer field</param>
+ <returns>boolean  true ok operation, false error</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.HOMOLOG_TABLE_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table HOMOLOG_TABLE clause sql where expression to the database.
+ </summary>
+ <param name="system">number system</param>
+ <returns>OBJECT List HOMOLOG_TABLET</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.HOMOLOG_TABLE_Synchronize(InMotionGIT.General.Entity.Contracts.Interfaces.HOMOLOG_TABLE,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract HOMOLOG_TABLE</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.HOMOLOG_TABLE_Synchronize_List(InMotionGIT.General.Entity.Contracts.Interfaces.HOMOLOG_TABLECollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List HOMOLOG_TABLE</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.TemplateInterface_RetrieveByConditionSingle(System.Int32)">
+ <summary>
+ Consulting single row in table MASTERSHEET clause sql where nsheet and ncod_agree expression to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <returns>OBJECT MASTERSHEET</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.MASTERSHEET_Retrieve_Template_Code_General">
+ <summary>
+ Retrieve cosecutive number template code of the table MASTERSHEET.
+ </summary>
+ <returns>Returns Integer Value  </returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.TemplateInterface_Synchronize(InMotionGIT.General.Entity.Contracts.Interfaces.TemplateInterface,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract TemplateInterface</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>OBJECT AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.TemplateInterface_Synchronize_List(InMotionGIT.General.Entity.Contracts.Interfaces.TemplateInterfaceCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List TemplateInterface</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.PHONES_RetrieveByCondition(System.String,System.Int32)">
+ <summary>
+ Consulting single row in table PHONES clause sql where nsheet and ncod_agree expression to the database.
+ </summary>
+ <param name="keyaddress">code keyaddress</param>
+ <param name="recowner">number recowner</param>
+ <returns>OBJECT PHONES</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.Phone_Synchronize_List(InMotionGIT.General.Entity.Contracts.Phones.PhoneCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List Phones</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.ADDRESS_RetrieveByConditionSingle(System.String)">
+ <summary>
+ Consulting row in table Address clause sql where skeyaddress expression to the database.
+ </summary>
+ <param name="keyaddress">key address</param>
+ <returns>OBJECT address</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.ADDRESS_Synchronize(InMotionGIT.General.Entity.Contracts.Address.Address,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract Object Address</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.TemplateColumnsUploadPolicy_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table TemplateColumnsUploadPolicy clause sql where nsheet expression to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <returns>OBJECT List TemplateColumnsUploadPolicy</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.General.GROUP_COLUMNS_Synchronize_Dynamic_Screen(System.Int32,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <param name="idrec">numer id rec</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.GeneralFunc.GenerateKey(System.Int64)">
+ <summary>
+ Función que retorna una llave única 
+ </summary>
+ <param name="userCode">Código de usuario</param>
+ <returns>String</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.GeneralFunc.AddTextClob(System.String,System.String,System.String,System.Int64,System.Int64,System.String)">
+ <summary>
+ Función que almacena un texto en un campo de tipo CLOB 
+ </summary>
+ <param name="filePath">Ruta de ubicación del archivo</param>
+ <param name="fileName">Nombre del archivo</param>
+ <param name="sKey">Llave única</param>
+ <param name="idTemplate">Código de la plantilla</param>
+ <param name="userCode">Código de usuario</param>
+ <param name="typeProcess">Tipo de proceso</param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.GeneralFunc.TransformationExcelToTxt(System.String,System.String)">
+ <summary>
+ Función que transforma un archivo de Excel (.xls o .xlsx) en formato .txt
+ </summary>
+ <param name="filePath">Ruta de ubicación del archivo</param>
+ <param name="fileName">Nombre del archivo</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.GeneralFunc.Generatekeyaddress(System.Int64,System.String)">
+ <summary>
+ Función que retorna una llave única keyaddress
+ </summary>
+ <param name="rectipe">numero rectipe</param>
+ <param name="client">Código de cliente</param>
+ <returns>String</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ExecPortfolioMassive(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Ejecuta proceso masivo de cartera.
+ </summary>
+ <param name="key">clave del proceso</param>
+ <param name="sheetCode">plantilla de mass_procc_sponsor</param>
+ <param name="userCode">codigo de usuario</param>
+ <param name="actionCode">accion del sponsor</param>
+ <param name="optionCode">1- preliminar- 2 definitivo</param>
+ <param name="effecdate">fecha de ejecucion</param>
+ <param name="keyProcess">clave que se tiene en mass_proc_sponsor</param>
+ <param name="lotCode">descripcion del lote</param>
+ <param name="lineOfBusiness">ramo</param>
+ <param name="productCode">producto</param>
+ <param name="policyID">poliza</param>
+ <param name="certificateID">certificado</param>
+ <param name="year">año</param>
+ <param name="month">mes</param>
+ <returns>retorna true si se ejecuto con exito, false si hubo un error</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ExecEndorsementMassive(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Ejecuta proceso masivo de endoso.
+ </summary>
+ <param name="key">clave del proceso</param>
+ <param name="sheetCode">plantilla de mass_procc_sponsor</param>
+ <param name="userCode">codigo de usuario</param>
+ <param name="actionCode">accion del sponsor</param>
+ <param name="optionCode">1- preliminar- 2 definitivo</param>
+ <param name="effecdate">fecha de ejecucion</param>
+ <param name="keyProcess">clave que se tiene en mass_proc_sponsor</param>
+ <param name="lotCode">descripcion del lote</param>
+ <param name="lineOfBusiness">ramo</param>
+ <param name="productCode">producto</param>
+ <param name="policyID">poliza</param>
+ <param name="certificateID">certificado</param>
+ <returns>retorna true si se ejecuto con exito, false si hubo un error</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ExecCollectionMassive(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Ejecuta proceso masivo de cobranza.
+ </summary>
+ <param name="key">clave del proceso</param>
+ <param name="sheetCode">plantilla de mass_procc_sponsor</param>
+ <param name="userCode">codigo de usuario</param>
+ <param name="actionCode">accion del sponsor</param>
+ <param name="optionCode">1- preliminar- 2 definitivo</param>
+ <param name="effecdate">fecha de ejecucion</param>
+ <param name="keyProcess">clave que se tiene en mass_proc_sponsor</param>
+ <param name="lotCode">descripcion del lote</param>
+ <param name="bordereaux">número de relación</param>
+ <param name="month">mes</param>
+ <param name="year">año</param>
+ <param name="certificateID">certificado</param>
+ <returns>retorna true si se ejecuto con exito, false si hubo un error</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ExecClaimsMassive(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Ejecuta proceso masivo de siniestro.
+ </summary>
+ <param name="key">clave del proceso</param>
+ <param name="sheetCode">plantilla de mass_procc_sponsor</param>
+ <param name="userCode">codigo de usuario</param>
+ <param name="actionCode">accion del sponsor</param>
+ <param name="optionCode">1- preliminar- 2 definitivo</param>
+ <param name="effecdate">fecha de ejecucion</param>
+ <param name="keyProcess">clave que se tiene en mass_proc_sponsor</param>
+ <param name="lotCode">descripcion del lote</param>
+ <param name="lineOfBusiness">ramo</param>
+ <param name="productCode">producto</param>
+ <param name="policyID">poliza</param>
+ <param name="certificateID">certificado</param>
+ <returns>retorna true si se ejecuto con exito, false si hubo un error</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ProcessConfigurationSponsor_RetrieveByConditionSingle(System.Int32,System.Int32)">
+ <summary>
+ Consulting single row in table MASTER_MASS_SPONSOR clause sql where expression to the database.
+ </summary>
+ <param name="cod_agree">cod agreement</param>
+ <param name="number_process">number of process</param>
+ <returns>OBJECT ProcessConfigurationSponsor</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ProcessConfigurationSponsor_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table MASTER_MASS_SPONSOR clause sql where expression to the database.
+ </summary>
+ <param name="cod_agree">string value cod agree</param>
+ <returns>OBJECT List ProcessConfigurationSponsor</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ProcessConfigurationSponsor_RetrieveByConditionSingle_NKEY(System.Int32,System.Int32)">
+ <summary>
+ Consulting single row column NKEY VALUE in table MASTER_MASS_SPONSOR clause sql where ncod_agree and nprocess expression to the database.
+ </summary>
+ <param name="cod_agree">cod agreement</param>
+ <param name="number_process">number of process</param>
+ <returns>NKEY VALUE</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.MASTER_MASS_SPONSOR_Retrieve_Number_Consecutive">
+ <summary>
+ Retrieve cosecutive number template code of the table MASTER_MASS_SPONSOR.
+ </summary>
+ <returns>Returns Integer Value  </returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ProcessConfigurationSponsor_Synchronize(InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="Value">Object ProcessConfigurationSponsor</param>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.ProcessConfigurationSponsor_Synchronize_List(InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List ProcessConfigurationSponsorCollection</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.SponsorProcessCalendar_RetrieveByConditionSingle(System.Int32)">
+ <summary>
+ Consulting single row in table CALENDAR_SPONSOR clause sql where expression to the database.
+ </summary>
+ <param name="key">number key</param>
+ <returns>OBJECT SponsorProcessCalendar</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.CALENDAR_SPONSOR_Retrieve_Number_Consecutive">
+ <summary>
+ Retrieve cosecutive number template code of the table CALENDAR_SPONSOR.
+ </summary>
+ <returns>Returns Integer Value  </returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.SponsorProcessCalendar_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table CALENDAR_SPONSOR clause sql where expression to the database.
+ </summary>
+ <param name="key">number  key proccess</param>
+ <returns>OBJECT List SponsorProcessCalendar</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.SponsorProcessCalendar_Synchronize(InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="Value">Object SponsorProcessCalendar</param>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.SponsorProcessCalendar_Synchronize_List(InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="Value">Object SponsorProcessCalendarCollection</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.MassiveProces_RetrieveByConditionSingle(System.Int32,System.Int32)">
+ <summary>
+ Consulting single row in table MASS_PROC_SPONSOR clause sql where nkey and nprocess expression to the database.
+ </summary>
+ <param name="key">number key</param>
+ <param name="process">number process</param>
+ <returns>OBJECT MassiveProces</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.MassiveProces_Synchronize(InMotionGIT.Massive.Entity.Contracts.MassiveProces,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="Value">Object MassiveProces</param>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <returns>Object AnswerService</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.MassiveHighLowProcess_ABCDIN(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+ <summary>
+ Massive process high/low information ABCDIN
+ </summary>
+ <param name="typeOfProcess">Type of process 1:High 2:Low</param>
+ <param name="userCode">User code</param>
+ <param name="atDateStart">Process start date</param>
+ <param name="atDateEnd">End date of the process</param>
+ <returns>Returns Object AnswerServiceMassive</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.TMP_FIELDSHEET_RetrieveByCondition(System.Int32)">
+ <summary>
+ Consulting rows in table TMP_FIELDSHEET clause sql where expression to the database.
+ </summary>
+ <param name="sheet">number sheet</param>
+ <returns>OBJECT List TMP_FIELDSHEET</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.TMP_FIELDSHEET_Synchronize(InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract Fieldsheet</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Extended.Proxy.MassiveProcesses.TMP_FIELDSHEET_Synchronize_List(InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="value">Object Contract List Fieldsheet</param>
+ <param name="auditUserIdentity">Code of the user creating or updating the information.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+</members>
+</doc>

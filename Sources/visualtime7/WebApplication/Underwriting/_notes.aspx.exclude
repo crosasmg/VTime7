@@ -1,0 +1,248 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="_notes.aspx.vb" Inherits="Underwriting_Controls_Partials_notes" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../../../Styles/font-awesome.css" rel="stylesheet" />
+    <link href="../../../Styles/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../../Styles/fasi.css" rel="stylesheet" />
+    <script src="../../../Scripts/jquery.min.js"></script>
+     <script src="../../../Scripts/jquery-ui.min.js"></script>
+            <script src="../../../Scripts/fasi.js"></script>
+        <script type="text/javascript">  
+            var index = -1;
+
+            function DisabledDesignView(s, e)
+            {
+                if (!isExplorer()) {
+                   s.Settings.AllowDesignView = true
+                } 
+            }
+
+            function ValidationHandler(s, e) {
+                if (s.GetHtml().length > 5000) {
+                    e.isValid = false;
+                    e.errorText = "Argument was out of range of valid values. top 5000/ La cantidad de caracteres de la nota excede el máximo. 5000"
+                } else
+                {
+                    e.isValid = true;
+                }
+            }
+            function HtmlChangedHandler(s, e) {
+                //ContentLength.SetText(s.GetHtml().length);
+            }
+
+            function OnInit(s, e) {
+                s.GetTextContainer().className += " glyphicon glyphicon-remove-circle";
+            }
+
+            function Delete(s, e) {
+                popup.Hide();
+                if (index > -1) {
+                    GridViewNotes.DeleteRow(index);
+                    index = -1;
+                }
+            }
+            function OnClickNo(s, e) {
+                popup.Hide();
+            }
+
+
+            function VerifySelectedDateIsGreaterThanToday(selectedDate)
+                 {
+                   var currentDate = new Date();
+                   //selectedDate = ExpirationDateTextId.GetDate();
+                   if (((selectedDate != null) && (selectedDate > currentDate)) || (selectedDate == null))
+                   {
+                       return true;
+                   }
+                   return false;          
+            }
+
+        </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--<dx:ASPxLabel ID='IdLabel' EncodeHtml='false' ClientInstanceName='IdLabel' runat='server' ClientIDMode='Static' meta:resourcekey="IdLabelResource" Text="Sequence id" ClientEnabled='true' ClientVisible='true' AssociatedControlID='Id'></dx:ASPxLabel>--%>
+        <%-- </td>   
+        <td style='width: 50%;' align='left'>--%>
+        <div class="filterBox">
+            <asp:Label ID="FilterLabel" runat="server" Text="Etiquetas: " style="display:inline;"  Height="26px" meta:resourcekey="LabelTags" />
+            <asp:Panel ID="tagFilterContainer" CssClass="tagFilterContainer" style="display:inline;"  runat="server"></asp:Panel>&nbsp;&nbsp;&nbsp; 
+            <asp:LinkButton ID="ButtonFilter" runat="server" OnClick="FilterButton" Text="Filtrar" Height="26px" meta:resourcekey="ButtonFilter" />
+        </div>
+        <div>
+<%--            <dx:ASPxHyperLink ID="AspxHyperLinkNew" runat="server" Cursor="pointer" Text="New Note" meta:resourcekey="HyperLinkNewResource">
+                <ClientSideEvents Click="function(s, e) { GridViewNotes.AddNewRow(); }" />
+            </dx:ASPxHyperLink>--%>
+             <dx:ASPxButton ID="AspxHyperLinkNew" AutoPostBack="false" runat="server" Cursor="pointer" Text="New Note" meta:resourcekey="HyperLinkNewResource">
+                <ClientSideEvents Click="function(s, e) { GridViewNotes.AddNewRow(); }" />
+            </dx:ASPxButton>
+        </div>
+        <asp:ObjectDataSource ID="DataSourceNotes" runat="server" SelectMethod="" TypeName="Inmotiongit.Datosnoestruct.Proxy.DNE.OperationContracts" DataObjectTypeName="Inmotiongit.datosnoestruct.contratodedatos.dtos.Notedto"></asp:ObjectDataSource>
+        <dx:ASPxGridView ID="GridViewNotes" Settings-EnableFilterControlPopupMenuScrolling="false" ClientInstanceName="GridViewNotes" runat="server" OnCustomUnboundColumnData="GridViewNotes_CustomUnboundColumnData" AutoGenerateColumns="false" Width="100%" KeyFieldName="Resource.SequenceId;Resource.ConsequenceId" OnRowInserting="GridViewNotes_rowinserting" OnRowUpdating="GridViewNotes_rowupdating" OnRowDeleting="GridViewNotes_rowdeleting"  meta:resourcekey="GridViewNotes" Enabled="True">
+                            <ClientSideEvents CustomButtonClick="function(s, e) {
+		if (e.buttonID == 'btnDelete')
+                    {
+                    index = e.visibleIndex;
+			popup.Show();
+                    }
+		}" />
+            <SettingsPager PageSize="5">
+            </SettingsPager>
+            <SettingsEditing EditFormColumnCount="3" Mode="editform" />
+            <Columns>
+                <dx:GridViewCommandColumn VisibleIndex="11">
+                    <%--<HeaderCaptionTemplate>
+                        <dx:ASPxHyperLink ID="AspxHyperLinkNew" runat="server" Text="Agregar nueva nota" meta:resourcekey="HyperLinkNewResource">
+                            <ClientSideEvents Click="function(s, e) { GridViewNotes.AddNewRow(); }" />
+                        </dx:ASPxHyperLink>
+                    </HeaderCaptionTemplate>--%>
+                    <EditButton Visible="true">
+                    </EditButton>
+                        <CustomButtons>
+                            <dx:GridViewCommandColumnCustomButton ID="btnDelete" Text="Eliminar" meta:resourcekey="DeleteCustomButton" />
+                        </CustomButtons>
+<%--                    <DeleteButton Visible="true">
+                    </DeleteButton>--%>
+                </dx:GridViewCommandColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.ConsequenceId"  Caption="Sequence Id" EditFormSettings-Visible="False" VisibleIndex="2" Visible="false" meta:resourcekey="GridViewDataTextColumnSequenceId">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.SequenceId" Caption="Consequence Id" EditFormSettings-Visible="False" VisibleIndex="1" Visible="false" meta:resourcekey="GridViewDataTextColumnConnsequenceId">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.Name" Caption="Note" Width="15%" VisibleIndex="3" CellStyle-Wrap="True" EditCellStyle-Wrap="True" EditFormCaptionStyle-Wrap="True" HeaderStyle-Wrap="True" PropertiesTextEdit-Style-Wrap="True" meta:resourcekey="GridViewDataTextColumnName">
+                    <DataItemTemplate>
+                        <div style="word-break:break-all">
+                                <%# Container.Text %>
+                        </div>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Content" Caption="Contenido" Width="30%" CellStyle-Wrap="True" EditCellStyle-Wrap="True" VisibleIndex="5" meta:resourcekey="GridViewDataTextColumnContent">
+                    <EditFormSettings RowSpan="50" />
+                    <DataItemTemplate>
+                        <dxhe:ASPxHtmlEditor ID="HtmlEditorEditId" ClientInstanceName="HtmlEditorEditId" runat="server" ActiveView="preview" Height="50px" Html='<%# eval("content") %>' Width="488px"  meta:resourcekey="HtmlEditorEditor">
+                            <Styles EnableDefaultAppearance="false">
+                                <ViewArea>
+                                    <Border BorderWidth="0px" />
+                                </ViewArea>
+                            </Styles>
+                            <Settings AllowContextMenu="false" AllowDesignView="false" AllowHtmlView="false" AllowInsertDirectImageUrls="false" />
+                            <Border BorderWidth="0px" />
+                        </dxhe:ASPxHtmlEditor>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.ExpirationDate" Caption="Fecha de Expiración" CellStyle-Wrap="True"  VisibleIndex="4" Width="10%" HeaderStyle-Wrap="True"  meta:resourcekey="GridViewDataTexColumnExpirationdate">                    
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.CreationDate" Caption="Fecha de Creación" Width="10%" VisibleIndex="6" CellStyle-Wrap="True" Name="resource.CreationDate" HeaderStyle-Wrap="True" meta:resourcekey="GridViewDataTexColumnCreationDate">
+                </dx:GridViewDataTextColumn> 
+                <dx:GridViewDataTextColumn FieldName="Resource.CreatorUserCode" Caption="Código Usuario Creador" VisibleIndex="7" Visible="False" Name="resource.CreatorUserCode" meta:resourcekey="GridViewDataTexColumnCreatorUserCode">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="CreatorUserName" Caption="Usuario Creador" VisibleIndex="8" Width="15%" Name="CreatorUserName"  CellStyle-Wrap="True" HeaderStyle-Wrap="True" UnboundType="String" meta:resourcekey="GridViewDataTexColumnCreatorUserName">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Resource.UpdateUserCode" Caption="Codigo Usuario Modificador" VisibleIndex="9" Visible="False" HeaderStyle-Wrap="True"  Name="CreatorUserName" UnboundType="String" meta:resourcekey="GridViewDataTexColumnUpdateUserCode">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="UpdateUserName" Caption="Usuario Modificador" VisibleIndex="10" Name="CreatorUserName" CellStyle-Wrap="True" Width="15%" HeaderStyle-Wrap="True" UnboundType="String" meta:resourcekey="GridViewDataTexColumnUpdateUserName">
+                </dx:GridViewDataTextColumn>
+            </Columns>
+            <SettingsBehavior ConfirmDelete="True" SortMode="value" />
+            <Settings ShowTitlePanel="false" ShowHeaderFilterButton="false" />
+            <SettingsText ConfirmDelete="Are you sure you want to delete the selected records?" />
+            <Templates>
+                <EditForm>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 122px; height: 24px;">
+                                <asp:Label ID="LabelNameId" runat="server" Text="Note" meta:resourcekey="LabelNameNotes"></asp:Label>
+                            </td>
+                            <td style="width: 275px; height: 24px;">
+                                <dx:ASPxTextBox ID="TextBoxNameId" runat="server" MaxLength="30" EnableClientSideAPI="true" Text='<%# eval("Resource.Name") %>' ValidationSettings-ValidationGroup='<%# Container.ValidationGroup %>' Width="170px" meta:resourcekey="TextBoxNameId">
+                                    <ValidationSettings Display="Static">
+                                        <RequiredField IsRequired="True" ErrorText="Name cannot be empty" />
+                                    </ValidationSettings>
+                                </dx:ASPxTextBox>
+                            </td>
+                            <td style="width: 144px; height: 24px;">
+                                <asp:Label ID="ExpirationDateLabelId" runat="server" Text="Fecha de Expiración" meta:resourcekey="ExpirationDateLabelNotes"></asp:Label>
+                            </td>
+                            <td style="height: 24px">
+                                <dx:ASPxDateEdit ID="ExpirationDateTextId" ClientInstanceName="ExpirationDateTextId" runat="server" ValidationSettings-ValidationGroup="<%# Container.ValidationGroup %>" EditFormat="datetime" AllowNull="true" AllowUserInput="false" Value='<%# eval("Resource.ExpirationDate") %>' meta:resourcekey="ExpirationDateTextId" MinDate="1/1/0001 12:00:00 AM">
+                                    <TimeSectionProperties Visible="true">
+                                    </TimeSectionProperties>             
+                                    <%--<ClientSideEvents Init="function(s,e){ s.SetDate(new Date());}" />--%>      
+                                     <%-- <ClientSideEvents Init="function(s,e){ 
+                                                               var dt1 = new Date();
+                                                               var dt2 = new Date(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()+1);    
+                                                               ExpirationDateTextId.SetMinDate(new Date(dt2));                                                                                                                 
+                                                            }" />    --%>
+                                    <ClientSideEvents Validation="function(s,e){e.isValid = (VerifySelectedDateIsGreaterThanToday(ExpirationDateTextId.GetDate()))}"/>  
+                                    <ValidationSettings CausesValidation="true" >                                        
+                                    </ValidationSettings>
+                                </dx:ASPxDateEdit>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 122px">&nbsp;</td>
+                            <td style="width: 275px">&nbsp;</td>
+                            <td style="width: 144px">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    <asp:Label ID="LabelUserMessage" runat="server" ForeColor="Red"/>
+                        <dxhe:ASPxHtmlEditor ID="HTMLEditorNotes" Enabled="true" ClientInstanceName="HTMLEditorNotes"  SettingsValidation-ValidationGroup="<%# Container.ValidationGroup %>" runat="server" Html='<%# bind("Content") %>' OnInit="notes_Callback"  Height="200px" Width="100%"  meta:resourcekey="HtmlEditorNotes">
+                            <ClientSideEvents Validation="ValidationHandler"  />
+                            <Settings AllowDesignView="false"/>
+                        </dxhe:ASPxHtmlEditor>
+                    <dx:ASPxGridViewTemplateReplacement ID="GridViewTemplateReplacementUpdateId" runat="server"  ReplacementType="editformupdatebutton" />
+                    <dx:ASPxGridViewTemplateReplacement ID="GridViewTemplateReplacementCancelId" runat="server" ReplacementType="editformcancelbutton" />
+                </EditForm>
+            </Templates>
+        </dx:ASPxGridView>
+         <dxpc:ASPxPopupControl ID="ASPxPopupControl1" Width="300px" Modal="True"  ShowHeader="False" CloseAction="None" runat="server"  ClientInstanceName="popup" AllowDragging="True" DragElement="Window" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="Above" >
+                <ContentCollection>
+                    <dxpc:PopupControlContentControl>
+                        <div>
+                           <div class="ui-jqdialog-titlebar modal-header" style="margin-top:1%;">
+                                <span class="ui-jqdialog-title" style=" margin-left:2%; float: left; font-size:small; font-weight:700">
+                                <% Response.Write(GetLocalResourceObject("Information"))%>
+                                </span>
+                                <a class="ui-jqdialog-titlebar-close " style="float: right;right: 0.3em; margin-right:2%; cursor:pointer" onclick="javascript: popup.Hide(); return false;">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </a>
+                               <br />
+                            </div>
+                            <div class="tinfo topinfo"></div>
+                                <div style="margin-left:7%; margin-top:2%; margin-bottom:8%;" >
+                                    <label>
+                                        <% Response.Write(GetLocalResourceObject("ConfirmDelete"))%>
+                                    </label>
+                                <br/>
+                               </div>
+                                <hr class="" style="margin:1px"/>
+                                <div style="margin-left:42%;margin-bottom:1%;margin-top:1%" >
+                                    <table style="height:auto" class="EditTable ui-common-table" >
+                                        <tbody>
+                                            <tr>
+                                                <td class="EditButton">
+                                                <dx:ASPxButton ID="yesButton" runat="server" EnableTheming="false"  CssClass="fm-button btn btn-default" AutoPostBack="false"  meta:resourcekey="AspxButtonYes">
+                                                     <ClientSideEvents Click="Delete" />
+                                                </dx:ASPxButton>
+                                                </td>
+                                                <td>
+                                               <dx:ASPxButton ID="noButton" runat="server" EnableTheming="false" CssClass="fm-button btn btn-default fm-button-icon-left" AutoPostBack="false" meta:resourcekey="AspxButtonNo">
+                                    <ClientSideEvents Click="OnClickNo" Init="OnInit"/>
+                                </dx:ASPxButton>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+
+                    </dxpc:PopupControlContentControl>
+                </ContentCollection>
+            </dxpc:ASPxPopupControl>
+    </form>
+</body>
+</html>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Agenda.Proxy
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Agenda.Proxy.Helpers.ManagerInstance.Instance">
+ <summary>
+ Obtiene una instancia de managerClient
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveTaskByOwnerUserId(InMotionGIT.Agenda.Contracts.Enumerations.EnumRecordType)">
+ <summary>
+ Retrieve task by owner user id. // Retorna las tareas por id de propietario.
+ </summary>
+ <returns>Collection TaskByOwnerView. // Colección tipo TaskByOwnerView.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveTaskStatusLookUp(System.Int32)">
+ <summary>
+ Retrieve task status look up. // Retornar estado de tarea en forma de look up.
+ </summary>
+ <param name="languageId">Language id. // Id del lenguaje.</param>
+ <returns>Collection TaskStatusView. // Colección TaskStatusView.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.CreateTask(InMotionGIT.Agenda.Contracts.Task,System.String)">
+ <summary>
+ Create task. // Crear tarea.
+ </summary>
+ <param name="taskInstance">Task instance. // Instancia de la tarea.</param>
+ <param name="auditUserIdentify">Audit user identify. // Identificador de usuario de auditoria.</param>
+ <returns>Boolean. // Boolean.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.UpdateTaskInformation(InMotionGIT.Agenda.Contracts.Task,System.String,System.Int32)">
+ <summary>
+ Update task information. // Actualizar información de tarea.
+ </summary>
+ <param name="taskInstance">Task instance. // Instancia de la tarea.</param>
+ <param name="auditUserIdentify">Audit user identify. // Identificador de usuario de auditoria.</param>
+ <param name="languageId">Current language. // Lenguaje actual.</param>
+ <returns>Boolean. // Boolean.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.UpdateTaskStatus(System.String,InMotionGIT.Agenda.Contracts.Enumerations.EnumStatus,System.String,System.Int32)">
+ <summary>
+ Update task status. // Actualizar estado de tarea.
+ </summary>
+ <param name="taskId">Task id. // Id de la tarea.</param>
+ <param name="status">Status. // Estado.</param>
+ <param name="userId">Audit user identify. // Identificador de usuario de auditoria.</param>
+ <param name="languageId">Current language. // Lenguaje actual.</param>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveTaskByTaskId(System.String)">
+ <summary>
+ Retrieve task by task id. // Obtener tarea por id.
+ </summary>
+ <param name="taskId">Task id. // Id de la tarea.</param>
+ <returns>Task. // Tarea.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.DeleteTask(System.String,System.String)">
+ <summary>
+ Delete task. // Borrar tarea.
+ </summary>
+ <param name="taskId">Task id. // Id de la tarea.</param>
+ <param name="auditUserIdentify">Audit user identify. // Identificador de usuario de auditoria.</param>
+ <returns>Boolean. // Boolean.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveTaskElements(System.String)">
+ <summary>
+ Retrieve task elements. // Obtener elementos de tarea.
+ </summary>
+ <param name="taskId">Task id. // Id de la tarea.</param>
+ <returns>TaskElement collection. // Colección TaskElement.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveRelationshipTask(System.Int64,System.Int32,System.Int64,System.Int32)">
+ <summary>
+ Retrieve relationship task. // Retorna relación de la tarea.
+ </summary>
+ <param name="userId">User id. // Id usuario.</param>
+ <param name="languageId">Current language. // Lenguaje actual.</param>
+ <param name="userFilter">User filter. // Filtro de usuario.</param>
+ <param name="statusFilter">Status filter. // Estado del filtro.</param>
+ <returns>TaskInfo collection. // Colección tipo TaskInfo.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RetrieveOwnerTasks(System.Int64,System.Int32,System.Int64,System.Int32)">
+ <summary>
+ Retrieve owner tasks. // Retornar propietarios de tarea.
+ </summary>
+ <param name="userId">User id. // Id usuario.</param>
+ <param name="languageId">Current language. // Lenguaje actual.</param>
+ <param name="userFilter">User filter. // Filtro de usuario.</param>
+ <param name="statusFilter">Status filter. // Estado del filtro.</param>
+ <returns>TaskInfo collection. // Colección tipo TaskInfo.</returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.Manager.RemoveAllTasks">
+ <summary>
+ Remove all tasks. // Remueve todas las tareas.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.CreateTask(InMotionGIT.Agenda.Contracts.Task,System.String)">
+ <summary>
+  Crea la tarea en el agenda.
+ </summary>
+ <param name="taskInstance"></param>
+ <param name="auditUserIdentify"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.UpdateTaskInformation(InMotionGIT.Agenda.Contracts.Task,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Actualiza una tarea ya existente
+ </summary>
+ <param name="taskInstance"></param>
+ <param name="auditUserIdentify"></param>
+ <param name="currentLanguage"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.UpdateTaskStatus(System.String,InMotionGIT.Agenda.Contracts.Enumerations.EnumStatus,System.String,System.Int32)">
+ <summary>
+ Actualiza el estado de una tarea
+ </summary>
+ <param name="taskID"></param>
+ <param name="status"></param>
+ <param name="userId"></param>
+ <param name="currentCultureToLanguage"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.IsComplete(System.String)">
+ <summary>
+ Verifica si la tarea esta competa
+ </summary>
+ <param name="TaskId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.SendMail(System.String,System.String,InMotionGIT.Common.DataType.LookUpValueExtend)">
+ <summary>
+ Envía notificación de email
+ </summary>
+ <param name="nameTamplateMail"></param>
+ <param name="taskShortDescription"></param>
+ <param name="value"></param>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.SendMail(System.String,System.String,InMotionGIT.Common.DataType.LookUpValueExtend,System.String,System.Int32)">
+ <summary>
+ Envía notificación de email
+ </summary>
+ <param name="nameTamplateMail"></param>
+ <param name="taskShortDescription"></param>
+ <param name="value"></param>
+</member>
+<member name="M:InMotionGIT.Agenda.Proxy.SchedulerManarge.SendMailTaskNew(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Envía una notificación de la tarea nueva
+ </summary>
+ <param name="taskShortDescription">Titulo de la tarea</param>
+ <param name="[to]">A usuario a quien dirigido</param>
+ <param name="FullName">Nombre completo del usuario a notificar</param>
+ <param name="Priority">Prioridad de la tarea</param>
+ <param name="Owner">Dueño de la tarea</param>
+ <param name="TaskLongDescription">Descripción de la tarea</param>
+</member>
+</members>
+</doc>

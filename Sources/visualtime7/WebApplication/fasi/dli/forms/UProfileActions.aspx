@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="UProfileActions.aspx.vb" Inherits="dli.forms.UProfileActions" %>

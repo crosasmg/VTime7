@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlarmActiveResource1.Text" xml:space="preserve">
+    <value>Activar alarma</value>
+  </data>
+  <data name="AlarmActiveResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="btnCallVTResource1.Text" xml:space="preserve">
+    <value>Invocar transacción...</value>
+  </data>
+  <data name="btnCancelResource1.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnDeleteResource1.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="btnOkResource1.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="cbPriorityResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="cbPriorityResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="cbReminderResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="cbReminderResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="cbTaskStatusResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="cbTaskStatusResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="cbTransactionResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="cbTransactionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="chkAllDayResource1.Text" xml:space="preserve">
+    <value>Actividad de todo el día</value>
+  </data>
+  <data name="chkAllDayResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="chkReminderResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtEndDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="edtEndDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="edtEndDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtLabelResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="edtLabelResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtResourceResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="edtResourceResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtStartDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="edtStartDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="edtStartDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="edtStatusResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="edtStatusResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="IndividualTaskIndicatorResource1.Text" xml:space="preserve">
+    <value>La tarea sólo puede ser realizada por una persona</value>
+  </data>
+  <data name="IndividualTaskIndicatorResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="lblAlarmDateTimeResource1.Text" xml:space="preserve">
+    <value>Fecha de alarma</value>
+  </data>
+  <data name="lblEndDateResource1.Text" xml:space="preserve">
+    <value>Hora fin:</value>
+  </data>
+  <data name="lblLabelResource1.Text" xml:space="preserve">
+    <value>Etiqueta:</value>
+  </data>
+  <data name="lblLocationResource1.Text" xml:space="preserve">
+    <value>Ubicación:</value>
+  </data>
+  <data name="lblPerCompletedResource1.Text" xml:space="preserve">
+    <value>% Completado:</value>
+  </data>
+  <data name="lblPriorityResource1.Text" xml:space="preserve">
+    <value>Prioridad:</value>
+  </data>
+  <data name="lblReminderResource1.Text" xml:space="preserve">
+    <value>Recordatorio</value>
+  </data>
+  <data name="lblRepeatEndingDateResource1.Text" xml:space="preserve">
+    <value>Fecha/hora finalización:</value>
+  </data>
+  <data name="lblRepeatFrecuencyResource1.Text" xml:space="preserve">
+    <value>Frecuencia</value>
+  </data>
+  <data name="lblRepeatStatingDateResource1.Text" xml:space="preserve">
+    <value>Fecha/hora inicio:</value>
+  </data>
+  <data name="lblRepeatTimesResource1.Text" xml:space="preserve">
+    <value>Veces</value>
+  </data>
+  <data name="lblResourceResource1.Text" xml:space="preserve">
+    <value>Asignado a:</value>
+  </data>
+  <data name="lblStartDateResource1.Text" xml:space="preserve">
+    <value>Hora de inicio:</value>
+  </data>
+  <data name="lblStatusResource1.Text" xml:space="preserve">
+    <value>Mostrar estado como:</value>
+  </data>
+  <data name="lblSubjectResource1.Text" xml:space="preserve">
+    <value>Asunto:</value>
+  </data>
+  <data name="lblTaskStatusResource1.Text" xml:space="preserve">
+    <value>Estado de la tarea:</value>
+  </data>
+  <data name="lblTransactionResource1.Text" xml:space="preserve">
+    <value>Transacción:</value>
+  </data>
+  <data name="lblVisualTimeTransactionActionResource1.Text" xml:space="preserve">
+    <value>Acción:</value>
+  </data>
+  <data name="ListEditItemResource1.Text" xml:space="preserve">
+    <value>Baja</value>
+  </data>
+  <data name="ListEditItemResource10.Text" xml:space="preserve">
+    <value>Tratamiento de pólizas</value>
+  </data>
+  <data name="ListEditItemResource11.Text" xml:space="preserve">
+    <value>Tratamiento de siniestros</value>
+  </data>
+  <data name="ListEditItemResource12.Text" xml:space="preserve">
+    <value>Diariamente</value>
+  </data>
+  <data name="ListEditItemResource13.Text" xml:space="preserve">
+    <value>Semanalmente</value>
+  </data>
+  <data name="ListEditItemResource14.Text" xml:space="preserve">
+    <value>Mensualmente</value>
+  </data>
+  <data name="ListEditItemResource15.Text" xml:space="preserve">
+    <value>Anualmente</value>
+  </data>
+  <data name="ListEditItemResource2.Text" xml:space="preserve">
+    <value>Estándar</value>
+  </data>
+  <data name="ListEditItemResource3.Text" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="ListEditItemResource4.Text" xml:space="preserve">
+    <value>No iniciada</value>
+  </data>
+  <data name="ListEditItemResource5.Text" xml:space="preserve">
+    <value>Pendiente</value>
+  </data>
+  <data name="ListEditItemResource6.Text" xml:space="preserve">
+    <value>Completada</value>
+  </data>
+  <data name="ListEditItemResource7.Text" xml:space="preserve">
+    <value>En espera</value>
+  </data>
+  <data name="ListEditItemResource8.Text" xml:space="preserve">
+    <value>Pospuesta</value>
+  </data>
+  <data name="ListEditItemResource9.Text" xml:space="preserve">
+    <value>Cancelada</value>
+  </data>
+  <data name="RepeatActiveResource1.Text" xml:space="preserve">
+    <value>Repetir activo</value>
+  </data>
+  <data name="RepeatActiveResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbDescriptionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbLocationResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbPerCompletedResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbRepeatFrecuencyResource1.LoadingPanelText" xml:space="preserve">
+    <value>Cargando&amp;hellip;</value>
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbRepeatTimesResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbSubjectResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="WarningWhenCompletedResource1.Text" xml:space="preserve">
+    <value>Mandar mensaje cuando la tarea sea completada</value>
+  </data>
+  <data name="WarningWhenCompletedResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Valor inválido</value>
+  </data>
+  <data name="tbSubjectResource1.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+    <value>Es requerido</value>
+  </data>
+</root>

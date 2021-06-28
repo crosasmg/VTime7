@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sequences>
+	<Sequence id="Client" image="0" module="1" validate="ValClientSeq">
+		<Fields>
+			<Field name="sClient" caption="Client ID" value="Session.ClientID"/>
+		</Fields>
+		<Commands>
+			<CommandGrid Kind="InsertRecord">
+				<Actions>
+					<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eClient.ClientWin.insUpdClient_win" Alias="insUpdClient_win" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\eClient.dll">
+						<Childs/>
+						<Parameters>
+							<ParameterMethod Name="sClient" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sClient" Caption="sClient"/>
+							<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+							<ParameterMethod Name="sContent" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="2" Caption="sContent"/>
+							<ParameterMethod Name="sV_WinClien" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="" Caption="sV_WinClien"/>
+							<ParameterMethod Name="sV_ConClien" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="" Caption="sV_ConClien"/>
+							<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="true" TypePassVariable="ByReference" Value="Session.nUsercode" Caption="nUsercode"/>
+						</Parameters>
+						<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+					</CallMethodAction>
+				</Actions>
+			</CommandGrid>
+			<CommandGrid Kind="DeleteRecord">
+				<Actions>
+					<IfAction Description="" Enabled="true" CheckErrors="false">
+						<Childs>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eClient.ClientWin.insUpdClient_win" Alias="insUpdClient_win" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\eClient.dll">
+								<Childs/>
+								<Parameters>
+									<ParameterMethod Name="sClient" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sClient" Caption="sClient"/>
+									<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+									<ParameterMethod Name="sContent" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="1" Caption="sContent"/>
+									<ParameterMethod Name="sV_WinClien" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="" Caption="sV_WinClien"/>
+									<ParameterMethod Name="sV_ConClien" Type="System.String" IsOptional="true" TypePassVariable="ByReference" Value="" Caption="sV_ConClien"/>
+									<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="true" TypePassVariable="ByReference" Value="Session.nUsercode" Caption="nUsercode"/>
+								</Parameters>
+								<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+							</CallMethodAction>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="InMotionGIT.BackOffice.Support.Navigation.SequenceReload" Alias="SequenceReload" StatementKind="Sub" IsShared="true" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\InMotionGIT.BackOffice.Support.dll">
+								<Childs/>
+								<Parameters/>
+							</CallMethodAction>
+						</Childs>
+						<ElseActions/>
+						<Conditions>
+							<Condition Name="{rowCountKey}" Expression="0" Operator="EqualTo" Type="System.Int32" RealTableName="" BeginGroup="" EndGroup="" LogicalOperator="None" Order="0"/>
+						</Conditions>
+					</IfAction>
+				</Actions>
+				<ParameterList>
+					<Parameter Name="rowCountKey" Type="System.Int32"/>
+				</ParameterList>
+			</CommandGrid>
+		</Commands>
+	</Sequence>
+	<Sequence id="Product" image="1" module="21" validate="ValProductSeq">
+		<Fields>
+			<Field name="nBranch" caption="Line Of Business" value="Session.LineOfBusiness"/>
+			<Field name="nProduct" caption="Product Code" value="Session.nProduct"/>
+		</Fields>
+		<Commands>
+			<CommandGrid Kind="InsertRecord">
+				<Actions>
+					<CallMethodAction Id="05ab19d1-9c7b-496e-b4f1-7a1b68d2e7ce" Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eProduct.Prod_win.Add_Prod_win" Alias="Add_Prod_win" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\eProduct.dll">
+						<Parameters>
+							<ParameterMethod Name="nBranch" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nBranch" Caption="nBranch"/>
+							<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+							<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+							<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+							<ParameterMethod Name="sContent" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="2" Caption="sContent"/>
+							<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUserCode" Caption="nUsercode"/>
+							<ParameterMethod Name="nAction" Type="System.Int32" IsOptional="true" TypePassVariable="ByReference" Value="0" Caption="nAction"/>
+							<ParameterMethod Name="bNotLoadTab" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bNotLoadTab"/>
+						</Parameters>
+						<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+					</CallMethodAction>
+				</Actions>
+			</CommandGrid>
+			<CommandGrid Kind="DeleteRecord">
+				<Actions>
+					<IfAction Description="" Enabled="true" CheckErrors="false">
+						<Childs>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eProduct.Prod_win.Add_Prod_win" Alias="Add_Prod_win" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\eProduct.dll">
+								<Parameters>
+									<ParameterMethod Name="nBranch" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nBranch" Caption="nBranch"/>
+									<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+									<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+									<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+									<ParameterMethod Name="sContent" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="1" Caption="sContent"/>
+									<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUserCode" Caption="nUsercode"/>
+									<ParameterMethod Name="nAction" Type="System.Int32" IsOptional="true" TypePassVariable="ByReference" Value="0" Caption="nAction"/>
+									<ParameterMethod Name="bNotLoadTab" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bNotLoadTab"/>
+								</Parameters>
+								<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+							</CallMethodAction>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="InMotionGIT.BackOffice.Support.Navigation.SequenceReload" Alias="SequenceReload" StatementKind="Sub" IsShared="true" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\InMotionGIT.BackOffice.Support.dll">
+								<Childs/>
+								<Parameters/>
+							</CallMethodAction>
+						</Childs>
+						<ElseActions/>
+						<Conditions>
+							<Condition Name="{rowCountKey}" Expression="0" Operator="EqualTo" Type="System.Int32" RealTableName="" BeginGroup="" EndGroup="" LogicalOperator="None" Order="0"/>
+						</Conditions>
+					</IfAction>
+				</Actions>
+			</CommandGrid>
+		</Commands>
+	</Sequence>
+	<Sequence id="Policy" image="2" module="5" validate="ValPolicySeq">
+		<Fields>
+			<Field name="sCertype" caption="Type of Record" value="Session.sCertype"/>
+			<Field name="nBranch" caption="Line Of Business" value="Session.LineOfBusiness"/>
+			<Field name="nProduct" caption="Code of the product." value="Session.nProduct"/>
+			<Field name="nPolicy" caption="Number identifying the Policy" value="Session.nPolicy"/>
+			<Field name="nCertif" caption="Number identifying the certificate" value="Session.nCertif"/>		
+		</Fields>
+		<Commands>
+			<CommandGrid Kind="InsertRecord">
+				<Actions>
+					<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="ePolicy.Policy_Win.Add_PolicyWin" Alias="Add_PolicyWin" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENet\WebApplication\Bin\ePolicy.dll">
+						<Parameters>
+							<ParameterMethod Name="sCertype" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sCertype" Caption="sCertype"/>
+							<ParameterMethod Name="nBranch" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nBranch" Caption="nBranch"/>
+							<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+							<ParameterMethod Name="nPolicy" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nPolicy"/>
+							<ParameterMethod Name="nCertif" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nCertif" Caption="nCertif"/>
+							<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+							<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUserCode" Caption="nUsercode"/>
+							<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+							<ParameterMethod Name="sContent" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="2" Caption="sContent"/>
+							<ParameterMethod Name="bNotLoadTab" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bNotLoadTab"/>
+							<ParameterMethod Name="bIndex" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="False" Caption="bIndex"/>
+							<ParameterMethod Name="bIsLife" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="False" Caption="bIsLife"/>
+							<ParameterMethod Name="bAddWindows" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bAddWindows"/>
+						</Parameters>
+						<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+					</CallMethodAction>
+				</Actions>
+			</CommandGrid>
+			<CommandGrid Kind="DeleteRecord">
+				<Actions>
+					<IfAction Description="" Enabled="true" CheckErrors="false">
+						<Childs>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="ePolicy.Policy_Win.Add_PolicyWin" Alias="Add_PolicyWin" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\VisualTIMENet\WebApplication\Bin\ePolicy.dll">
+								<Parameters>
+									<ParameterMethod Name="sCertype" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sCertype" Caption="sCertype"/>
+									<ParameterMethod Name="nBranch" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nBranch" Caption="nBranch"/>
+									<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+									<ParameterMethod Name="nPolicy" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nPolicy"/>
+									<ParameterMethod Name="nCertif" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nCertif" Caption="nCertif"/>
+									<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+									<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUserCode" Caption="nUsercode"/>
+									<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+									<ParameterMethod Name="sContent" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="2" Caption="sContent"/>
+									<ParameterMethod Name="bNotLoadTab" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bNotLoadTab"/>
+									<ParameterMethod Name="bIndex" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="False" Caption="bIndex"/>
+									<ParameterMethod Name="bIsLife" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="False" Caption="bIsLife"/>
+									<ParameterMethod Name="bAddWindows" Type="System.Boolean" IsOptional="true" TypePassVariable="ByReference" Value="True" Caption="bAddWindows"/>
+								</Parameters>
+								<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+							</CallMethodAction>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="InMotionGIT.BackOffice.Support.Navigation.SequenceReload" Alias="SequenceReload" StatementKind="Sub" IsShared="true" AssignNullResult="false" AssemblyPath="C:\VisualTIMENet\WebApplication\Bin\InMotionGIT.BackOffice.Support.dll">
+								<Childs/>
+								<Parameters/>
+							</CallMethodAction>
+						</Childs>
+						<ElseActions/>
+						<Conditions>
+							<Condition Name="{rowCountKey}" Expression="0" Operator="EqualTo" Type="System.Int32" RealTableName="" BeginGroup="" EndGroup="" LogicalOperator="None" Order="0"/>
+						</Conditions>
+					</IfAction>
+				</Actions>
+			</CommandGrid>
+		</Commands>
+	</Sequence>
+	<Sequence id="Loans" image="3" module="600" validate="ValLoanSeq">
+		<Fields>
+			<Field name="sCertype" caption="Type of record" value="Session.sCertype"/>
+			<Field name="nTypeProd" caption="Loans Product Type" value="Session.nTypeProd"/>
+			<Field name="nProduct" caption="Loans Product Code" value="Session.nProduct"/>
+			<Field name="nLoans" caption="Lonas ID" value="Session.nLoans"/>
+			<Field name="nItem" caption="Item Number" value="Session.nItem"/>
+		</Fields>
+		<Commands>
+			<CommandGrid Kind="InsertRecord">
+				<Actions>
+					<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eLoans.Loans_Win.InsupdRequiredWin" Alias="InsupdRequiredWin" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\Mutualidad\WebApplication\Bin\eLoans.dll">
+						<Parameters>
+							<ParameterMethod Name="sCertype" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sCertype" Caption="sCertype"/>
+							<ParameterMethod Name="nTypeprod" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nTypeprod" Caption="nTypeprod"/>
+							<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+							<ParameterMethod Name="nLoans" Type="System.Double" IsOptional="false" TypePassVariable="ByReference" Value="Session.nLoans" Caption="nLoans"/>
+							<ParameterMethod Name="nItem" Type="System.Double" IsOptional="false" TypePassVariable="ByReference" Value="Session.nItem" Caption="nItem"/>
+							<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+							<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+							<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUsercode" Caption="nUsercode"/>
+							<ParameterMethod Name="sConten" Type="System.String" IsOptional="false" TypePassVariable="ByReference" value="2" Caption="sConten"/>
+						</Parameters>
+						<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+					</CallMethodAction>
+				</Actions>
+			</CommandGrid>
+			<CommandGrid Kind="DeleteRecord">
+				<Actions>
+					<IfAction Description="" Enabled="true" CheckErrors="false">
+						<Childs>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="eLoans.Loans_Win.InsupdRequiredWin" Alias="InsupdRequiredWin" StatementKind="Function" IsShared="false" AssignNullResult="false" AssemblyPath="C:\Mutualidad\WebApplication\Bin\eLoans.dll">
+								<Parameters>
+									<ParameterMethod Name="sCertype" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="Session.sCertype" Caption="sCertype"/>
+									<ParameterMethod Name="nTypeprod" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nTypeprod" Caption="nTypeprod"/>
+									<ParameterMethod Name="nProduct" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nProduct" Caption="nProduct"/>
+									<ParameterMethod Name="nLoans" Type="System.Double" IsOptional="false" TypePassVariable="ByReference" Value="Session.nLoans" Caption="nLoans"/>
+									<ParameterMethod Name="nItem" Type="System.Double" IsOptional="false" TypePassVariable="ByReference" Value="Session.nItem" Caption="nItem"/>
+									<ParameterMethod Name="dEffecdate" Type="System.DateTime" IsOptional="false" TypePassVariable="ByReference" Value="Session.dEffecdate" Caption="dEffecdate"/>
+									<ParameterMethod Name="sCodispl" Type="System.String" IsOptional="false" TypePassVariable="ByReference" Value="QueryString.sCodispl" Caption="sCodispl"/>
+									<ParameterMethod Name="nUsercode" Type="System.Int32" IsOptional="false" TypePassVariable="ByReference" Value="Session.nUsercode" Caption="nUsercode"/>
+									<ParameterMethod Name="sConten" Type="System.String" IsOptional="false" TypePassVariable="ByReference" value="2" Caption="sConten"/>
+								</Parameters>
+								<Result Name="System.Boolean" Type="System.Boolean" IsOptional="false" TypePassVariable="ByValue" Value="" Caption=""/>
+							</CallMethodAction>
+							<CallMethodAction Description="" Enabled="true" CheckErrors="false" Source="Assembly" Name="InMotionGIT.BackOffice.Support.Navigation.SequenceReload" Alias="SequenceReload" StatementKind="Sub" IsShared="true" AssignNullResult="false" AssemblyPath="C:\VisualTIMENetCrossBrowser\WebApplication\Bin\InMotionGIT.BackOffice.Support.dll">
+								<Childs/>
+								<Parameters/>
+							</CallMethodAction>
+						</Childs>
+						<ElseActions/>
+						<Conditions>
+							<Condition Name="{rowCountKey}" Expression="0" Operator="EqualTo" Type="System.Int32" RealTableName="" BeginGroup="" EndGroup="" LogicalOperator="None" Order="0"/>
+						</Conditions>
+					</IfAction>
+				</Actions>
+				<ParameterList>
+					<Parameter Name="rowCountKey" Type="System.Int32"/>
+				</ParameterList>
+			</CommandGrid>
+		</Commands>
+	</Sequence>
+</Sequences>

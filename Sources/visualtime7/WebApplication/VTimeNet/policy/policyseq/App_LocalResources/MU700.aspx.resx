@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RiskIdentification_Title" xml:space="preserve">
+    <value>Identificación del riesgo</value>
+  </data>
+  <data name="NCODKID_MultiRisk_Caption" xml:space="preserve">
+    <value>Giro del negocio</value>
+  </data>
+  <data name="NCODKID_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Giro del negocio</value>
+  </data>
+  <data name="NCONSCAT_MultiRisk_Caption" xml:space="preserve">
+    <value>Categoría de la construcción</value>
+  </data>
+  <data name="NCONSCAT_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Tipo de construcción del local que se está asegurando</value>
+  </data>
+  <data name="NSISMICZONE_MultiRisk_Caption" xml:space="preserve">
+    <value>Zona del riesgo</value>
+  </data>
+  <data name="NSISMICZONE_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Corresponde a la zona en la cual está ubicado el riesgo</value>
+  </data>
+  <data name="ParticularlyTheft_MultiRisk_Title" xml:space="preserve">
+    <value>Información particular de Robo</value>
+  </data>
+  <data name="NINSURED_MultiRisk_Caption" xml:space="preserve">
+    <value>% Asegurado por primer riesgo relativo</value>
+  </data>
+  <data name="NINSURED_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Este campo indica cuanto representa el valor asegurado sobre el valor total de los bienes que se aseguran o un porcentaje de ellos. (Información particular de robo - % asegurado ( si es 100% es el valor total), si es menos del 100% es a valor relativo)</value>
+  </data>
+  <data name="NTHEFTCAPITAL_MultiRisk_Caption" xml:space="preserve">
+    <value>Valor asegurado por primer riesgo absoluto</value>
+  </data>
+  <data name="NTHEFTCAPITAL_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Valor asegurado por primer riesgo absoluto</value>
+  </data>
+  <data name="EquipElect_Title" xml:space="preserve">
+    <value>Equipo electrónico</value>
+  </data>
+  <data name="NSECTION_EquipElect_Caption" xml:space="preserve">
+    <value>Tipo de sección</value>
+  </data>
+  <data name="NSECTION_EquipElect_ToolTip" xml:space="preserve">
+    <value>Indica la sección a la que pertenece el elemento contenido en la línea de tratamiento.</value>
+  </data>
+  <data name="NTYPE_EquipElect_Caption" xml:space="preserve">
+    <value>Tipo de elemento</value>
+  </data>
+  <data name="NTYPE_EquipElect_ToolTip" xml:space="preserve">
+    <value>Corresponde al tipo de elemento asegurado</value>
+  </data>
+  <data name="SDESCRIPTION_EquipElect_Caption" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="SDESCRIPTION_EquipElect_ToolTip" xml:space="preserve">
+    <value>Breve descripción del bien asegurado</value>
+  </data>
+  <data name="NCAPITAL_EquipElect_Caption" xml:space="preserve">
+    <value>Valor asegurado</value>
+  </data>
+  <data name="NCAPITAL_EquipElect_ToolTip" xml:space="preserve">
+    <value>Corresponde al valor del bien asegurado contenido en la línea en tratamiento</value>
+  </data>
+  <data name="MASSIVECHARGE_EquipElect_Caption" xml:space="preserve">
+    <value>Carga Masiva</value>
+  </data>
+  <data name="MASSIVECHARGE_EquipElect_ToolTip" xml:space="preserve">
+    <value>Si el usuario selecciona esta opción el sistema muestra la ventana que permite realizar la carga de cada uno de los equipos electrónicos de manera masiva</value>
+  </data>
+  <data name="Show_EquipElect_Caption" xml:space="preserve">
+    <value>Consultar detalle de la información</value>
+  </data>
+  <data name="Show_EquipElect_ToolTip" xml:space="preserve">
+    <value>Consulta el detalle de la información de los equipos electrónicos</value>
+  </data>
+  <data name="RotMaqui_Title" xml:space="preserve">
+    <value>Rotura de maquinaria</value>
+  </data>
+  <data name="STRADEMARK_RotMaqui_Caption" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="STRADEMARK_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Indica la marca del bien asegurado</value>
+  </data>
+  <data name="SMODEL_RotMaqui_Caption" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="SMODEL_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Corresponde al modelo del bien asegurado</value>
+  </data>
+  <data name="NYEAR_RotMaqui_Caption" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="NYEAR_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Corresponde al año del bien asegurado</value>
+  </data>
+  <data name="SORIGIN_RotMaqui_Caption" xml:space="preserve">
+    <value>Procedencia</value>
+  </data>
+  <data name="SORIGIN_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Permite registrar la procedencia del bien asegurado</value>
+  </data>
+  <data name="SSERIALNUMBER_RotMaqui_Caption" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="SSERIALNUMBER_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Número de serie que identifica al bien asegurado</value>
+  </data>
+  <data name="NCAPITAL_RotMaqui_Caption" xml:space="preserve">
+    <value>Valor asegurado</value>
+  </data>
+  <data name="NCAPITAL_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Valor asegurado de la máquina contenida en la linea en tratamiento</value>
+  </data>
+  <data name="NRATE_RotMaqui_Caption" xml:space="preserve">
+    <value>Tasa</value>
+  </data>
+  <data name="NRATE_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Tasa a aplicar para el cálculo de la prima</value>
+  </data>
+  <data name="NPREMIUM_RotMaqui_Caption" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="NPREMIUM_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Prima de tarifa para la maquinaria contenida en la linea de tratamiento</value>
+  </data>
+  <data name="MASSIVECHARGE_RotMaqui_Caption" xml:space="preserve">
+    <value>Carga Masiva</value>
+  </data>
+  <data name="MASSIVECHARGE_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Si el usuario selecciona esta opción el sistema muestra la ventana que permite realizar la carga de cada una de las maquinarias de manera masiva</value>
+  </data>
+  <data name="Show_RotMaqui_Caption" xml:space="preserve">
+    <value>Consultar detalle de la información</value>
+  </data>
+  <data name="Show_RotMaqui_ToolTip" xml:space="preserve">
+    <value>Consulta el detalle de la información de las maquinarias de contratistas</value>
+  </data>
+  <data name="EquipMaquiContr_Title" xml:space="preserve">
+    <value>Equipo y maquinaria de contratistas</value>
+  </data>
+  <data name="STRADEMARK_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="STRADEMARK_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Indica la marca del bien asegurado</value>
+  </data>
+  <data name="SMODEL_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="SMODEL_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Corresponde al modelo del bien asegurado</value>
+  </data>
+  <data name="NYEAR_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="NYEAR_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Corresponde al año del bien asegurado</value>
+  </data>
+  <data name="SORIGIN_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Procedencia</value>
+  </data>
+  <data name="SORIGIN_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Permite registrar la procedencia del bien asegurado</value>
+  </data>
+  <data name="SSERIALNUMBER_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Número de serie</value>
+  </data>
+  <data name="SSERIALNUMBER_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Número de serie que identifica al bien asegurado</value>
+  </data>
+  <data name="NCAPITAL_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Valor asegurado</value>
+  </data>
+  <data name="NCAPITAL_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Valor asegurado de la máquina contenida en la linea en tratamiento</value>
+  </data>
+  <data name="NRATE_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Tasa</value>
+  </data>
+  <data name="NRATE_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Tasa a aplicar para el cálculo de la prima</value>
+  </data>
+  <data name="NPREMIUM_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="NPREMIUM_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Prima de tarifa para la maquinaria contenida en la linea de tratamiento</value>
+  </data>
+  <data name="MASSIVECHARGE_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Carga Masiva</value>
+  </data>
+  <data name="MASSIVECHARGE_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Si el usuario selecciona esta opción el sistema muestra la ventana que permite realizar la carga de cada una de las maquinarias de manera masiva</value>
+  </data>
+  <data name="Show_EquipMaquiContr_Caption" xml:space="preserve">
+    <value>Consultar detalle de la información</value>
+  </data>
+  <data name="Show_EquipMaquiContr_ToolTip" xml:space="preserve">
+    <value>Consulta el detalle de la información de las maquinarias de contratistas</value>
+  </data>
+  <data name="Fidelity_Title" xml:space="preserve">
+    <value>Fidelidad</value>
+  </data>
+  <data name="SCLIENT_Fidelity_Caption" xml:space="preserve">
+    <value>Código del empleado</value>
+  </data>
+  <data name="SCLIENT_Fidelity_ToolTip" xml:space="preserve">
+    <value>Código del empleado contenido en la línea en tratamiento</value>
+  </data>
+  <data name="SCLIENAME_Fidelity_Caption" xml:space="preserve">
+    <value>Nombre del empleado</value>
+  </data>
+  <data name="SCLIENAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Nombre del empleado de la empresa que contrata el seguro</value>
+  </data>
+  <data name="NPOSITION_Fidelity_Caption" xml:space="preserve">
+    <value>Cargo</value>
+  </data>
+  <data name="NPOSITION_Fidelity_ToolTip" xml:space="preserve">
+    <value>Cargo del empleado de la empresa que contrata el seguro</value>
+  </data>
+  <data name="NSALARY_Fidelity_Caption" xml:space="preserve">
+    <value>Sueldo</value>
+  </data>
+  <data name="NSALARY_Fidelity_ToolTip" xml:space="preserve">
+    <value>Sueldo del empleado de la empresa que contrata el seguro</value>
+  </data>
+  <data name="MASSIVECHARGE_Fidelity_Caption" xml:space="preserve">
+    <value>Carga Masiva</value>
+  </data>
+  <data name="MASSIVECHARGE_Fidelity_ToolTip" xml:space="preserve">
+    <value>Carga masiva de fidelidad privada</value>
+  </data>
+  <data name="Show_Fidelity_Caption" xml:space="preserve">
+    <value>Consultar detalle de la información</value>
+  </data>
+  <data name="MoneyValues_Title" xml:space="preserve">
+    <value>Dinero y valores</value>
+  </data>
+  <data name="NMONEYTRANSIT_MoneyValues_Caption" xml:space="preserve">
+    <value>Estimado de movilización anual</value>
+  </data>
+  <data name="NMONEYTRANSIT_MoneyValues_ToolTip" xml:space="preserve">
+    <value>Corresponde al dinero que va a ser transportado de un lugar a otro</value>
+  </data>
+  <data name="NMONEYPERMANENCE_MoneyValues_Caption" xml:space="preserve">
+    <value>Dinero en permanencia</value>
+  </data>
+  <data name="NMONEYPERMANENCE_MoneyValues_ToolTip" xml:space="preserve">
+    <value>Es el dinero que se encuentra dentro de los predios y uno de los objetos asegurados</value>
+  </data>
+  <data name="NCONSEC_Caption" xml:space="preserve">
+    <value>NCONSEC</value>
+  </data>
+  <data name="NCONSEC_ToolTip" xml:space="preserve">
+    <value>Número consecutivo</value>
+  </data>
+  <data name="NCONSEC.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NCONSEC" es requerido.</value>
+  </data>
+  <data name="SCERTYPE_Caption" xml:space="preserve">
+    <value>SCERTYPE</value>
+  </data>
+  <data name="SCERTYPE_ToolTip" xml:space="preserve">
+    <value>Tipo de registro.</value>
+  </data>
+  <data name="SCERTYPE.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "SCERTYPE" es requerido.</value>
+  </data>
+  <data name="cbeBranch_Caption" xml:space="preserve">
+    <value>NBRANCH</value>
+  </data>
+  <data name="cbeBranch_ToolTip" xml:space="preserve">
+    <value>Código del ramo comercial.</value>
+  </data>
+  <data name="cbeBranch.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NBRANCH" es requerido.</value>
+  </data>
+  <data name="valProduct_Caption" xml:space="preserve">
+    <value>NPRODUCT</value>
+  </data>
+  <data name="valProduct_ToolTip" xml:space="preserve">
+    <value>Código del producto.</value>
+  </data>
+  <data name="valProduct.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NPRODUCT" es requerido.</value>
+  </data>
+  <data name="NPOLICY_Caption" xml:space="preserve">
+    <value>NPOLICY</value>
+  </data>
+  <data name="NPOLICY_ToolTip" xml:space="preserve">
+    <value>Número que identifica la póliza/cotización/solicitud.</value>
+  </data>
+  <data name="NPOLICY.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NPOLICY" es requerido.</value>
+  </data>
+  <data name="NCERTIF_Caption" xml:space="preserve">
+    <value>NCERTIF</value>
+  </data>
+  <data name="NCERTIF_ToolTip" xml:space="preserve">
+    <value>Número del certificado.</value>
+  </data>
+  <data name="NCERTIF.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NCERTIF" es requerido.</value>
+  </data>
+  <data name="NTYPE_Caption" xml:space="preserve">
+    <value>Tipo de elemento</value>
+  </data>
+  <data name="NTYPE_ToolTip" xml:space="preserve">
+    <value>Tipo de elemento.</value>
+  </data>
+  <data name="DEFFECTDATE_Caption" xml:space="preserve">
+    <value>DEFFECTDATE</value>
+  </data>
+  <data name="DEFFECTDATE_ToolTip" xml:space="preserve">
+    <value>Fecha de Efecto</value>
+  </data>
+  <data name="DEFFECTDATE.PropertiesDateEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "DEFFECTDATE" es requerido.</value>
+  </data>
+  <data name="SDESCRIPTION_Caption" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="SDESCRIPTION_ToolTip" xml:space="preserve">
+    <value>Descripcion del equipo electronico.</value>
+  </data>
+  <data name="NCAPITAL_Caption" xml:space="preserve">
+    <value>Valor asegurado</value>
+  </data>
+  <data name="NCAPITAL_ToolTip" xml:space="preserve">
+    <value>Capital asegurado por la maquinaria.</value>
+  </data>
+  <data name="DCOMPDATE_Caption" xml:space="preserve">
+    <value>DCOMPDATE</value>
+  </data>
+  <data name="DCOMPDATE_ToolTip" xml:space="preserve">
+    <value>Computer date</value>
+  </data>
+  <data name="DCOMPDATE.PropertiesDateEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "DCOMPDATE" es requerido.</value>
+  </data>
+  <data name="NUSERCODE_Caption" xml:space="preserve">
+    <value>NUSERCODE</value>
+  </data>
+  <data name="NUSERCODE_ToolTip" xml:space="preserve">
+    <value>Code of the user</value>
+  </data>
+  <data name="NUSERCODE.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>El "NUSERCODE" es requerido.</value>
+  </data>
+  <data name="DNULLDATE_Caption" xml:space="preserve">
+    <value>DNULLDATE</value>
+  </data>
+  <data name="DNULLDATE_ToolTip" xml:space="preserve">
+    <value>Fecha </value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorGeneralValidator0Resource" xml:space="preserve">
+    <value>La llave primaria ya existe en otro registro.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired1Resource" xml:space="preserve">
+    <value>El "NCONSEC" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired2Resource" xml:space="preserve">
+    <value>El "SCERTYPE" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired3Resource" xml:space="preserve">
+    <value>El "NBRANCH" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired4Resource" xml:space="preserve">
+    <value>El "NPRODUCT" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired5Resource" xml:space="preserve">
+    <value>El "NPOLICY" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired6Resource" xml:space="preserve">
+    <value>El "NCERTIF" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired7Resource" xml:space="preserve">
+    <value>El "DEFFECTDATE" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired8Resource" xml:space="preserve">
+    <value>El "DCOMPDATE" es requerido.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired9Resource" xml:space="preserve">
+    <value>El "NUSERCODE" es requerido.</value>
+  </data>
+  <data name="NAREA_MultiRisk_Caption" xml:space="preserve">
+    <value>Area de vigilancia.</value>
+  </data>
+  <data name="NAREA_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Área de vigilancia ( metros cuadrados ).</value>
+  </data>
+  <data name="NSECURITYMEN_MultiRisk_Caption" xml:space="preserve">
+    <value>Número de vigilantes</value>
+  </data>
+  <data name="NSECURITYMEN_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Número de vigilantes</value>
+  </data>
+  <data name="NFI_POLICYTYPE_Fidelity_Caption" xml:space="preserve">
+    <value>Tipo de póliza</value>
+  </data>
+  <data name="NFI_POLICYTYPE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Tipo de póliza de Fdelidad</value>
+  </data>
+  <data name="NINSURTYPE_Fidelity_Caption" xml:space="preserve">
+    <value>Tipo de seguro</value>
+  </data>
+  <data name="NINSURTYPE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Tipo de seguro</value>
+  </data>
+  <data name="NNUMBEROFEMPLOYEES_Fidelity_Caption" xml:space="preserve">
+    <value>Número de empleados</value>
+  </data>
+  <data name="NNUMBEROFEMPLOYEES_Fidelity_Tooltip" xml:space="preserve">
+    <value>Número de empleados</value>
+  </data>
+  <data name="NFACTOR_Fidelity_Caption" xml:space="preserve">
+    <value>Factor de caución</value>
+  </data>
+  <data name="NFACTOR_Fidelity_ToolTip" xml:space="preserve">
+    <value>Corresponde al factor el cual se multiplica la caución para obtener la prima a pagar por el empleado contenido en la linea de tratamiento</value>
+  </data>
+  <data name="NVALUE_Fidelity_Caption" xml:space="preserve">
+    <value>Valor de la caución</value>
+  </data>
+  <data name="NVALUE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Corresponde al valor por el cual se multiplica el factor de caución para obtener la prima a pagar por el empleado contenido en a linea en tratamiento</value>
+  </data>
+  <data name="SFIRSTNAME_Fidelity_Caption" xml:space="preserve">
+    <value>Primer nombre</value>
+  </data>
+  <data name="SFIRSTNAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Primer nombre</value>
+  </data>
+  <data name="SLASTNAME2_Fidelity_Caption" xml:space="preserve">
+    <value>Segundo apellido</value>
+  </data>
+  <data name="SLASTNAME2_Fidelity_ToolTip" xml:space="preserve">
+    <value>Segundo apellido</value>
+  </data>
+  <data name="SLASTNAME_Fidelity_Caption" xml:space="preserve">
+    <value>Primer apellido</value>
+  </data>
+  <data name="SLASTNAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Primer apellido</value>
+  </data>
+  <data name="SMIDDLENAME_Fidelity_Caption" xml:space="preserve">
+    <value>Segundo nombre</value>
+  </data>
+  <data name="SMIDDLENAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Segundo nombre</value>
+  </data>
+  <data name="SDIGIT_Fidelity_Caption" xml:space="preserve">
+    <value>Dígito Verificador</value>
+  </data>
+  <data name="SCLIENT_Fidelity_Digit_Caption" xml:space="preserve">
+    <value>Dígito verificador</value>
+  </data>
+  <data name="NPREMIUM_EquipElect_Caption" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="NPREMIUM_EquipElect_ToolTip" xml:space="preserve">
+    <value>Prima</value>
+  </data>
+  <data name="NRATE_EquipElect_Caption" xml:space="preserve">
+    <value>Tasa</value>
+  </data>
+  <data name="NRATE_EquipElect_ToolTip" xml:space="preserve">
+    <value>Tasa</value>
+  </data>
+  <data name="SDAMAGE_EquipElect_Caption" xml:space="preserve">
+    <value>Siniestrado</value>
+  </data>
+  <data name="AnchorDatos del colectivoCaption" xml:space="preserve">
+    <value>Datos del colectivo</value>
+  </data>
+  <data name="cbovalGroupCaption" xml:space="preserve">
+    <value>Grupo colectivo</value>
+  </data>
+  <data name="cbovalGroupToolTip" xml:space="preserve">
+    <value>Número que identifica al grupo al que pertenece el certificado</value>
+    <comment>ID=12879</comment>
+  </data>
+  <data name="cbovalSituationCaption" xml:space="preserve">
+    <value>Situación de riesgo</value>
+  </data>
+  <data name="cbovalSituationToolTip" xml:space="preserve">
+    <value>Número que identifica la situación a la que pertenece el certificado</value>
+    <comment>ID=13531</comment>
+  </data>
+  <data name="cboArticleCaption" xml:space="preserve">
+    <value>Sector del mercado</value>
+  </data>
+  <data name="cboArticleToolTip" xml:space="preserve">
+    <value>Tipo de negocio al que pertenece el riesgo en tratamiento.</value>
+  </data>
+</root>

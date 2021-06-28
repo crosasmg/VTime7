@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<LayerSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <enumerations>
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumRateType" domain="" lookup="TABLE5584" column="nType_Tar" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumCriteriaToDetermineDuplicationInUpload" domain="" lookup="Table5677" column="nRepInsured" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumCoverageChange" domain="" lookup="" column="sChanCove" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumCoveragePermittedUse" domain="" lookup="" column="sCoveruse" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeOfInsurancePeriod" domain="" lookup="" column="NTYPDURPAY" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumRole" domain="" lookup="Table12" column="nRole" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumRole" domain="" lookup="Table12" column="nRolCap" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumRateType" domain="" lookup="TABLE5584" column="nTypeTar" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumRiskType" domain="" lookup="Table5639" column="nTypeRisk" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumRecordStatus" domain="" lookup="Table26" column="sStatRecord" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumRecordStatus" domain="" lookup="Table26" column="SSTATREGT" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumTypeOfRecord" domain="" lookup="" column="sCertype" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumSmokingStatus" domain="sSmoking" lookup="" column="sSmoking" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Errors.Enumerations.EnumErrorStatus" domain="" lookup="" column="Errors.sStat_Error" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Errors.Enumerations.EnumPriority" domain="" lookup="" column="Errors.nPriority" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeMinimumAge" domain="" lookup="" column="NTYP_AGEMINM" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeMinimumAge" domain="" lookup="" column="NTYP_AGEMINF" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Security.Enumerations.EnumPhysicalModules" domain="" lookup="" column="nModuleS" />
+    <enumeration name="InMotionGIT.Client.Entity.Contracts.Enumerations.EnumTypeOfPerson" domain="" lookup="Table5006" column="nPerson_typ" />
+    <enumeration name="InMotionGIT.Client.Entity.Contracts.Enumerations.EnumTypeOfPerson" domain="" lookup="Table5006" column="nPersonTyp" />
+    <enumeration name="InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumInsuredStatus" domain="" lookup="Table5561" column="nStatusRol" />
+    <enumeration name="InMotionGIT.Policy.Entity.Contracts.Enumerations.EnumCommissionType" domain="" lookup="Table47" column="SCOMMITYP" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumOptionInGroups" domain="" lookup="Table92" column="sTypVar" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Phones.Enumerations.EnumTelephoneType" domain="" lookup="" column="nPhone_type" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumGender" domain="" lookup="Table18" column="sSexCli" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumGender" domain="" lookup="" column="nSex" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Security.Enumerations.EnumWindowType" domain="" lookup="" column="nWindowTy" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumPaymentFrequency" domain="" lookup="Table36" column="nPayFreq" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumPolicyType" domain="" lookup="Table17" column="sPoliType" />
+    <enumeration name="InMotionGIT.Common.Contracts.Enumerations.EnumStatusOfPolicyCertificate" domain="" lookup="Table181" column="sStaDataCer" />
+    <enumeration name="InMotionGIT.General.Entity.Contracts.Address.Enumerations.EnumTypeOfAddress" domain="" lookup="" column="ADDRESS.SRECTYPE" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeOfInsurancePeriod" domain="" lookup="Table5589" column="" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeOfInsurancePeriod" domain="" lookup="" column="NTYPDURINS" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeOfLineOfBusiness" domain="" lookup="TABLE37" column="" />
+    <enumeration name="InMotionGIT.Product.Entity.Contracts.Enumerations.EnumTypeOfPremiumRecalculation" domain="" lookup="Table5559" column="nRetariff" />
+  </enumerations>
+  <Inherits>
+    <Inherit name="CoverageRelated" childs="CoverageGroup,CoveragePolicy" memberoverrides="CoverageChangeIndicator,OriginalInsuredAmount,OriginalAnnualPremium,OriginalRatePerThousand,InsuredAmount,AnnualPremium,RatePerThousand,TypeOfInsuranceDuration,CoverageDuration,TypeOfDurationOfPayments,DurationOfPayments,TypeOfPremiumRecalculation,MinimumInsuredAmount,MaximumInsuredAmount,MinimumPremium,MaximumPremium,FranchiseOrDeductible,FixedAmountOfFranchiseOrDeductible,MaximumAmountOfFranchiseOrDeductible,MinimumAmountOfFranchiseOrDeductible,FranchiseOrDeductiblePercentage,DiscountPercentageBecauseFranchiseOrDeductible" />
+  </Inherits>
+</LayerSettings>

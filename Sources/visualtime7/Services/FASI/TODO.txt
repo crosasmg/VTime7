@@ -1,0 +1,19 @@
+1. constrains sobre WIDGETSINROLES para role y para widget
+2. SOBRE WIDGETINSTANCE AGREGAR EL FK DE PAGEID
+3. SE AGREGO EN WIDGETINTANCETRANS PARA EL FK
+4. Cambiar longitud de page trans de language id a 9
+5. Cambiar longitud de versionno de widgetinstance para que se tome como un short de 3 a 9
+6. Cambiar el varchar2 a nvarchar2 en culturecode de tablanguage
+7. Agregar un fk en la table mailbox esto con el objetivo de relacionarce a si mismo  FKMailBox
+
+
+Remove operations
+	ChangePasswordQuestionAndAnswer
+	ResetPassword
+	UserNameByEmail
+	UserFindUserIdByUserName
+	UserGetAllUserByEmail
+	UserByUserId
+	UserStatusChangeById
+	UserGetPassword
+

@@ -1,0 +1,168 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="eProduct" %>
+<script language="VB" runat="Server">
+
+Dim mobjValues As eFunctions.Values
+Dim mobjMenu As eFunctions.Menues
+Dim mobjGrid As eFunctions.Grid
+
+Dim mintCount As Object
+
+	%>
+	
+End Sub
+
+'% insDefineHeader: Se definen los campos del grid.
+'--------------------------------------------------------------------------------------------
+Private Sub insDefineHeader()
+	'--------------------------------------------------------------------------------------------
+	'+ Se definen las columnas del grid.
+	
+	With mobjGrid.Columns
+		If Request.QueryString.Item("Type") <> "PopUp" Then
+			Call .AddTextColumn(0, "Código-Nombre", "valCodCodispl", 8, CStr(0), False, "Código",  ,  ,  , True)
+			.AddAnimatedColumn(0, "Secciones Reporte", "sLink", "/VTimeNet/Images/clfolder.png", "Secciones del Reporte")
+		Else
+			Call .AddPossiblesColumn(0, "Código", "valCodispl", "TABWINDOWS_SAUTOREP", eFunctions.Values.eValuesType.clngWindowType, "", True,  ,  ,  ,  ,  , 8, "Código", eFunctions.Values.eTypeCode.eString)
+			mobjGrid.Columns("valCodispl").Parameters.Add("nBranch", Session("nBranch"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 0, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			mobjGrid.Columns("valCodispl").Parameters.Add("nProduct", Session("nProduct"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 0, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+		End If
+		Call .AddHiddenColumn("hddvalCodispl", "")
+	End With
+	'+ Se definen las propiedades generales del grid.
+	With mobjGrid
+		.AddButton = False
+		.DeleteButton = False
+		.Height = 150
+		.Width = 350
+		.Codispl = "CA659"
+		.nMainAction = CShort(IIf(Request.QueryString.Item("nMainAction") ="", 0, Request.QueryString.Item("nMainAction")))
+		If Request.QueryString.Item("Reload") = "1" Then
+			.sReloadIndex = Request.QueryString.Item("ReloadIndex")
+		End If
+		.Columns("Sel").GridVisible = Not .ActionQuery
+		'        .Columns("Sel").GridVisible = Not Session("bQuery")
+		.sDelRecordParam = "sDelCodispl='+ marrArray[lintIndex].hddvalCodispl + '"
+	End With
+End Sub
+'% insPreDP809: Se cargan los controles de la página.
+'--------------------------------------------------------------------------------------------
+Private Sub insPreCA659()
+	'--------------------------------------------------------------------------------------------
+	Dim lintIndex As Short
+	Dim lclsreport_prod As Object
+	Dim lcolreport_prods As eProduct.report_prods
+	
+	lcolreport_prods = New eProduct.report_prods
+	
+	If lcolreport_prods.Findreport_prod(mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate)) Then
+		lintIndex = 0
+		For	Each lclsreport_prod In lcolreport_prods
+			If lclsreport_prod.nType_Report = 1 Then
+				With mobjGrid
+					.Columns("valCodCodispl").DefValue = lclsreport_prod.sCodCodispl & " - " & lclsreport_prod.sDescript
+					.Columns("hddvalCodispl").DefValue = lclsreport_prod.sCodCodispl
+					.Columns("Sel").Disabled = CBool("2")
+					.Columns("sLink").HRefScript = "ShowSubSequence(" & lintIndex & ")"
+					Response.Write(.DoRow)
+				End With
+				lintIndex = lintIndex + 1
+			End If
+		Next lclsreport_prod
+	End If
+	
+	Response.Write(mobjGrid.closeTable())
+	'UPGRADE_NOTE: Object lcolreport_prods may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lcolreport_prods = Nothing
+	'UPGRADE_NOTE: Object lclsreport_prod may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	lclsreport_prod = Nothing
+End Sub
+
+</script>
+<%Response.Expires = -1
+
+mobjValues = New eFunctions.Values
+mobjValues.sCodisplPage = "CA659"
+
+mobjMenu = New eFunctions.Menues
+
+mobjGrid = New eFunctions.Grid
+mobjGrid.sCodisplPage = "CA659"
+
+mobjGrid.ActionQuery = Session("bQuery")
+mobjValues.ActionQuery = Session("bQuery")
+%>
+<HTML>
+<HEAD>
+    <META NAME = "GENERATOR" CONTENT = "Microsoft Visual Studio 6.0">
+    <%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/GenFunctions.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
+    <%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'VTime/Includes/Constantes.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/Constantes.aspx" -->
+
+    <%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'Vtime/Includes/General.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/General.aspx" -->
+
+ 
+<%
+If Request.QueryString.Item("Type") <> "PopUp" Then
+	Response.Write(mobjMenu.setZone(2, "CA659", "CA659.aspx"))
+	'UPGRADE_NOTE: Object mobjMenu may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	mobjMenu = Nothing
+	Response.Write("<SCRIPT>var nMainAction=top.frames['fraSequence'].plngMainAction</SCRIPT>")
+End If
+Response.Write(mobjValues.StyleSheet())
+%>
+<SCRIPT>
+//- Variable para el control de versiones
+       document.VssVersion="$$Revision: 2 $|$$Date: 15/10/03 17:02 $"
+</SCRIPT>
+<SCRIPT>
+//% ShowSubSequence: abre el pop up del cuadro de pólizas
+//--------------------------------------------------------------------------------------------
+function ShowSubSequence(Index){
+//--------------------------------------------------------------------------------------------
+	ShowPopUp('CA659A.aspx?scodispl_orig='+ marrArray[Index].hddvalCodispl+'&Type=PopUp','DP809A',580,500,'no','no',200,80);
+	//window.open('CA659.aspx?scodispl_orig='+ marrArray[Index].hddvalCodispl+'&Type=PopUp', 'DP809A');
+}
+
+</SCRIPT>
+</HEAD>
+<BODY ONUNLOAD="closeWindows();">
+<FORM METHOD="POST" ID="FORM" NAME="DP809" ACTION="valPolicySeq.aspx?nMainAction=<%=Request.QueryString.Item("nMainAction")%>">
+<%
+Response.Write(mobjValues.ShowWindowsName("CA659"))
+Call insDefineHeader()
+Call insPreCA659()
+
+'UPGRADE_NOTE: Object mobjValues may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjValues = Nothing
+%>
+</FORM>
+</BODY>
+</HTML>
+<%
+'% insPreCA659Upd: Permite realizar el llamado a la ventana PopUp, cuando se está eliminando
+'% un registro. 
+'-----------------------------------------------------------------------------------------
+'Private Sub insPreCA659Upd()
+'-----------------------------------------------------------------------------------------
+'	Dim lclsreport_prod
+'	Set lclsreport_prod = Server.CreateObject("eProduct.report_prod")
+'   If Request.QueryString("Action") = "Del" Then
+'		Response.Write mobjValues.ConfirmDelete()
+'        If lclsreport_prod.insPostCA659("Delete",_'
+'										mobjValues.StringToType(Session("nBranch"),eFunctions.Values.eTypeData.etdDouble), '									    mobjValues.StringToType(Session("nProduct"),eFunctions.Values.eTypeData.etdDouble), '									    mobjValues.StringToType(Session("dEffecdate"),eFunctions.Values.eTypeData.etdDate), '									    "DP809", '										Request.QueryString("sDelCodispl"), '									    mobjValues.StringToType(Session("nUsercode"),eFunctions.Values.eTypeData.etdDouble)) Then
+'			Response.Write "<NOTSCRIPT>top.opener.top.frames['fraSequence'].document.location='/VTimeNet/Product/ProductSeq/Sequence.aspx?nAction=" & Request.QueryString("nMainAction") & "&nOpener=" & Request.QueryString("sCodispl") & "&sGoToNext=NO" & "';</SCRIPT>"
+' 		End If
+'    End If
+'    Response.Write mobjGrid.DoFormUpd(Request.QueryString("Action"),"ValProductSeq.aspx","CA659",Request.QueryString("nMainAction"),mobjValues.ActionQuery,Request.QueryString("Index"))
+'    Set lclsreport_prod  = Nothing
+
+
+
+

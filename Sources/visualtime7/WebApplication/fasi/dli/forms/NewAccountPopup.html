@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html id="app" lang='es' xml:lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <title data-i18n="app.title" ></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="/fasi/assets/font-awesome/css/font-awesome.css" />
+    <link rel='stylesheet' href='/fasi/assets/css/jquery-ui.css' />
+    <link rel='stylesheet' href="/fasi/app/css/master.css?rel=20180604085335837" />
+    <link rel='stylesheet' href="/fasi/assets/css/sweetalert.css" />
+    <link rel='stylesheet' href="/fasi/assets/css/toastr.min.css" />
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+
+    <link rel='stylesheet' href='/fasi/app/css/fasi-html5.css?rel=20180604085335837' />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+   <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg" style="margin: 0;">
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+		                <div class="ibox">
+                            <div class="ibox-content">
+                                <form id="NewAccountMainForm">
+                                    <input type="hidden" id="NewAccountFormId" name="NewAccountFormId" value="" />
+                                    <div id="alerts-container"></div>
+							        <div class="row">
+            <!-- Container content -->
+                        <!-- Container: UserTypeSelection zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="UserTypeSelection">
+    <!-- Container content -->
+                <!-- UserType radiobuttonlist -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='UserTypeLabel' class='control-label' for='UserType'>Yo soy un</label>
+                    </div>
+                    <div class='col-md-8'>
+                                    <label class='radio-inline'>
+                  <input type='radio' name='UserType' id='UserType_1' value='1' title='radiobuttonlist2' />Cliente
+                </label>
+                <label class='radio-inline'>
+                  <input type='radio' name='UserType' id='UserType_2' value='2' />Agente
+                </label>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- label5 label -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group text-left'>
+                                  <label id='label5' title='label5'>La información que ingresará a continuación dependerá de acuerdo al tipo de usuario</label>
+
+                  </div>
+                </div>
+                <!-- CancelBtn button -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-16 text-center'>
+                    <button id='CancelBtn' class='ladda-button btn center-block btn-Default' data-style='expand-right' title='button3'><span class='ladda-label'>Cancelar</span><span class='ladda-spinner'></span></button>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- ContinueBtn button -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-16 text-center'>
+                    <button id='ContinueBtn' class='ladda-button btn center-block btn-Default' data-style='expand-right' title='button4'><span class='ladda-label'>Continuar</span><span class='ladda-spinner'></span></button>
+
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: UserTypeSelection zone -->
+                        <!-- Container: UserInfo zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="UserInfo" class='hidden' >
+    <!-- Container content -->
+                <!-- Container: zoneAccount zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zoneAccount">
+                    <div class='col-md-12'><h5 class='sectionTitle-dashed'>Información de la Cuenta</h5></div>
+    <!-- Container content -->
+                <!-- UserName text -->
+                <div class='col-md-6 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='UserNameLabel' class='control-label' data-i18n="app.form.UserNameLabel" for='UserName'><span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='UserName' name='UserName' data-i18n="[title]app.form.UserNameTooltip;[placeholder]app.form.UserNameWatermark"  type='text' />
+                    </div>
+                  </div>
+                </div>
+                <!-- Email text -->
+                <div class='col-md-6 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='EmailLabel' class='control-label' for='Email'>Correo electrónico<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='Email' name='Email' title='Email' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- EmailVerification text -->
+                <div class='col-md-6 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='EmailVerificationLabel' class='control-label' for='EmailVerification'>Verificación del correo electrónico<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='EmailVerification' name='EmailVerification' title='Verificación del correo electrónico' type='text'/>
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zoneAccount zone -->
+                <!-- Container: zonePersonal zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zonePersonal">
+                    <div class='col-md-12'><h5 class='sectionTitle-dashed'>Información Personal</h5></div>
+    <!-- Container content -->
+                <!-- FirstName text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='FirstNameLabel' class='control-label' for='FirstName'>Primer nombre<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='FirstName' name='FirstName' title='text10' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- SurName text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='SurNameLabel' class='control-label' for='SurName'>Segundo nombre</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='SurName' name='SurName' title='text13' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- LastName text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='LastNameLabel' class='control-label' for='LastName'>Primer apellido<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='LastName' name='LastName' title='text11' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- SecondLastName text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='SecondLastNameLabel' class='control-label' for='SecondLastName'>Segundo apellido</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='SecondLastName' name='SecondLastName' title='text12' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- DateOfBirth datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='DateOfBirthLabel' class='control-label' for='DateOfBirth'>Fecha de nacimiento</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='DateOfBirth_group'>
+                                    <input id='DateOfBirth' name='DateOfBirth' type='text' class='form-control' title='datepicker14' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Gender dropdownlist -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='GenderLabel' class='control-label' for='Gender'>Género</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <select id='Gender' name='Gender' class='form-control' title='dropdownlist15'>
+                                    <option value='Male'>Male</option>
+                                    <option value='Female'>Female</option>
+                                </select>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- AddressHome Notes -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='AddressHomeLabel' class='control-label' for='AddressHome'>Dirección</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <textarea class='form-control' id='AddressHome' name='AddressHome' rows='3' title='notes16'></textarea>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- Country dropdownlist -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='CountryLabel' class='control-label' for='Country'>País<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <select id='Country' name='Country' class='form-control' title='text19'>
+                                </select>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- City text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='CityLabel' class='control-label' for='City'>Ciudad</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='City' name='City' title='text17' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- State text -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='StateLabel' class='control-label' for='State'>Estado</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='State' name='State' title='text18' type='text'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- TelephoneNumber numeric -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='TelephoneNumberLabel' class='control-label' for='TelephoneNumber'>Teléfono</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='TelephoneNumber' name='TelephoneNumber' title='' type='number' min='0' max='99' step='1'/>
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zonePersonal zone -->
+                <!-- Container: zoneIntermediary zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zoneIntermediary" class='hidden' >
+                    <div class='col-md-12'><h5 class='sectionTitle-dashed'>Información del intermediario</h5></div>
+    <!-- Container content -->
+                <!-- text1 text -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='text1Label' class='control-label' for='text1'>Identificación del agente<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='text1' name='text1' title='Código de identificador del agente' type='text'/>
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zoneIntermediary zone -->
+                <!-- Container: zoneClient zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zoneClient">
+                    <div class='col-md-12'><h5 class='sectionTitle-dashed'>Información del contrato propietario</h5></div>
+    <!-- Container content -->
+                <!-- text3 text -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='text3Label' class='control-label' for='text3'>Identificación del cliente<span class='required-mark'>*</span></label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='text3' name='text3' title='Código de identificación del cliente' type='text'/>
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zoneClient zone -->
+                <!-- Container: zoneTerm zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zoneTerm">
+    <!-- Container content -->
+                <!-- AcceptConditions checkbox -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-12 text-center'>
+                        <div class='checkbox'>
+                                    <label id='AcceptConditionsLabel'>
+                                        <input id='AcceptConditions' name='AcceptConditions' type='checkbox' title='Haga clic para ver los términos y condiciones de uso'  />
+                                        Acepto los Términos y Condiciones de Uso
+                                    </label>
+                                </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- btnSeeTerms button -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnSeeTerms' class='ladda-button btn center-block btn-link' data-style='expand-right' title='Ver los términos'><span class='ladda-label'>Ver Términos y Condiciones de Uso</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zoneTerm zone -->
+                <!-- Container: zone32 zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zone32">
+    <!-- Container content -->
+                <!-- btnRegister button -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnRegister' class='ladda-button btn center-block btn-primary' data-style='expand-right' title='' disabled='disabled'><span class='ladda-label'>Registrar</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone32 zone -->
+                <!-- lblResult label -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group text-center'>
+                                  <label id='lblResult' title='label7' class='hidden' >lblResult</label>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: UserInfo zone -->
+            <!-- End Container content -->
+
+                                    </div>
+                            </form>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src="/fasi/assets/js/jquery-1.11.3.min.js"></script>
+    <script type='text/javascript' src="/fasi/assets/js/jquery-ui.js"></script>
+    <script type='text/javascript' src="/fasi/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/fasi/assets/js/i18next.min.js"></script>
+    <script type='text/javascript' src='/fasi/assets/js/moment-with-locales.min.js'></script>
+    <script type='text/javascript' src="/fasi/assets/js/jquery.validate.min.js"></script>
+    <script type='text/javascript' src='/fasi/assets/js/loadingoverlay.min.js'></script>
+    <script type='text/javascript' src="/fasi/app/js/general.js?rel=20180604085335837"></script>
+    <script type='text/javascript' src="/fasi/assets/js/sweetalert.min.js"></script>
+    <script type='text/javascript' src="/fasi/assets/js/toastr.min.js"></script>
+    <script type='text/javascript' src='/fasi/assets/js/spin.min.js'></script>
+    <script type='text/javascript' src='/fasi/assets/js/ladda.min.js'></script>
+    <script type='text/javascript' src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script type='text/javascript' src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+
+    <script type='text/javascript' src="NewAccount.js?rel=20180604085335837"></script>
+</body>
+</html>

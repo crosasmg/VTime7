@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="valOriginColumnCaption" xml:space="preserve">
+    <value>Saving concept</value>
+  </data>
+  <data name="valOriginColumnToolTip" xml:space="preserve">
+    <value>Account Source</value>
+  </data>
+  <data name="tcnPercentColumnCaption" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="tcnPercentColumnToolTip" xml:space="preserve">
+    <value>Percent Savings</value>
+  </data>
+  <data name="tcnPremDeal_anuColumnCaption" xml:space="preserve">
+    <value>Divided</value>
+  </data>
+  <data name="tcnPremDeal_anuColumnToolTip" xml:space="preserve">
+    <value>Annual contribution amount</value>
+  </data>
+  <data name="tcnPremDealColumnCaption" xml:space="preserve">
+    <value>Accounts Frequency</value>
+  </data>
+  <data name="tcnPremDealColumnToolTip" xml:space="preserve">
+    <value>Semi-annual contribution amount</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Collection method modification data</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Type of modification</value>
+  </data>
+  <data name="tcdDateCaption" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="tcdDateToolTip" xml:space="preserve">
+    <value>Date when the collection procedure will be modified</value>
+  </data>
+  <data name="optChangeway_1Caption" xml:space="preserve">
+    <value>Total change of payment method</value>
+  </data>
+  <data name="cbeCauseCaption" xml:space="preserve">
+    <value>Reason of the change</value>
+  </data>
+  <data name="cbeCauseToolTip" xml:space="preserve">
+    <value>Reason why the collection procedure is changed for the bill or policy in question</value>
+  </data>
+  <data name="optChangeway_2Caption" xml:space="preserve">
+    <value>Changing data in the current payment method</value>
+  </data>
+  <data name="Anchor3Caption" xml:space="preserve">
+    <value>Bills/Drafts to affect</value>
+  </data>
+  <data name="Anchor4Caption" xml:space="preserve">
+    <value>Current payment mehtod data</value>
+  </data>
+  <data name="optChangepremium_1Caption" xml:space="preserve">
+    <value>All outstanding</value>
+  </data>
+  <data name="cbeWay_payCaption" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="cbeWay_payToolTip" xml:space="preserve">
+    <value>Payment means</value>
+  </data>
+  <data name="optChangepremium_2Caption" xml:space="preserve">
+    <value>What is generated from the date of change</value>
+  </data>
+  <data name="cbePayfreqCaption" xml:space="preserve">
+    <value>Payment Frequency</value>
+  </data>
+  <data name="cbePayfreqToolTip" xml:space="preserve">
+    <value>Payment Frequency</value>
+  </data>
+  <data name="optChangepremium_3Caption" xml:space="preserve">
+    <value>Only the document indicated</value>
+  </data>
+  <data name="optindpolicy_1mclsCertificat.sDirindCaption" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="optindpolicy_mclsCertificat.sDirindCaption" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="AnchorDomiciliación bancariaCaption" xml:space="preserve">
+    <value>Direct Debit (PAC)</value>
+  </data>
+  <data name="AnchorTarjeta de créditoCaption" xml:space="preserve">
+    <value>Direct Debit (Transbank)</value>
+  </data>
+  <data name="cbeBankPACCaption" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="cbeBankPACToolTip" xml:space="preserve">
+    <value>The bill will be collected through a bank transfer</value>
+  </data>
+  <data name="cbeCardTypeTbkCaption" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="cbeCardTypeTbkToolTip" xml:space="preserve">
+    <value>It indicates the type of credit card</value>
+  </data>
+  <data name="tctTitularPACCaption" xml:space="preserve">
+    <value>Policy holder</value>
+  </data>
+  <data name="tctTitularPACToolTip" xml:space="preserve">
+    <value>It indicates the current bank acount where the direct debit is executed</value>
+  </data>
+  <data name="tctCardNumberTbkCaption" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="tctCardNumberTbkToolTip" xml:space="preserve">
+    <value>Number identifying the credit card where the bill of the policy is charged</value>
+  </data>
+  <data name="tctAccountPACCaption" xml:space="preserve">
+    <value>Collection Method</value>
+  </data>
+  <data name="tctAccountPACToolTip" xml:space="preserve">
+    <value>It indicates the bank account where the direct debit is performed</value>
+  </data>
+  <data name="tcdCardExpirTbkCaption" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="tcdCardExpirTbkToolTip" xml:space="preserve">
+    <value>Expiration date of the credit card</value>
+  </data>
+  <data name="tctBankAuthPACCaption" xml:space="preserve">
+    <value>Mandate</value>
+  </data>
+  <data name="tctBankAuthPACToolTip" xml:space="preserve">
+    <value>Indicates the number of command which will load the recovery of the receipt or receipts of the policy</value>
+  </data>
+  <data name="dtcClientCaption" xml:space="preserve">
+    <value>Policy holder</value>
+  </data>
+  <data name="dtcClientToolTip" xml:space="preserve">
+    <value>Ruth's contracting policy</value>
+  </data>
+  <data name="AnchorDomiciliación bancaria2Caption" xml:space="preserve">
+    <value>Payroll Discount</value>
+  </data>
+  <data name="AnchorTarjeta de crédito2Caption" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="dtcClientPayCaption" xml:space="preserve">
+    <value>Ruth paying</value>
+  </data>
+  <data name="dtcClientPayToolTip" xml:space="preserve">
+    <value>Ruth Payer</value>
+  </data>
+  <data name="dtcClientEmpCaption" xml:space="preserve">
+    <value>Ruth Employer</value>
+  </data>
+  <data name="dtcClientEmpToolTip" xml:space="preserve">
+    <value>Ruth Employer</value>
+  </data>
+  <data name="valAgreementCaption" xml:space="preserve">
+    <value>Payment Agreement</value>
+  </data>
+  <data name="valAgreementToolTip" xml:space="preserve">
+    <value>Deduction /payment agreement associated with the policy</value>
+  </data>
+  <data name="Anchor5Caption" xml:space="preserve">
+    <value>New Payment Method</value>
+  </data>
+  <data name="optWayNewPay_1Caption" xml:space="preserve">
+    <value>PAC</value>
+  </data>
+  <data name="optDirect_2Caption" xml:space="preserve">
+    <value>Accepted Coinsurance</value>
+  </data>
+  <data name="optWayNewPay_2Caption" xml:space="preserve">
+    <value>Transbank</value>
+  </data>
+  <data name="optWayNewPay_4Caption" xml:space="preserve">
+    <value>Require Cancelation Notice</value>
+  </data>
+  <data name="optWayNewPay_3Caption" xml:space="preserve">
+    <value>Collection Convention</value>
+  </data>
+  <data name="optWayNewPay_7Caption" xml:space="preserve">
+    <value>PFA</value>
+  </data>
+  <data name="Anchor6Caption" xml:space="preserve">
+    <value>Direct Debit (PAC)</value>
+  </data>
+  <data name="Anchor7Caption" xml:space="preserve">
+    <value>Direct Debit (Transbank)</value>
+  </data>
+  <data name="cbeBankPACNewCaption" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="cbeBankPACNewToolTip" xml:space="preserve">
+    <value>The bill will be collected through a bank transfer</value>
+  </data>
+  <data name="cbeCardTypeNewCaption" xml:space="preserve">
+    <value>Type of Credit Card</value>
+  </data>
+  <data name="cbeCardTypeNewToolTip" xml:space="preserve">
+    <value>It indicates the type of credit card</value>
+  </data>
+  <data name="tctClientPACNewCaption" xml:space="preserve">
+    <value>Policy holder</value>
+  </data>
+  <data name="tctClientPACNewToolTip" xml:space="preserve">
+    <value>It indicates the current bank acount where the direct debit is executed</value>
+  </data>
+  <data name="tctCardNumberNewCaption" xml:space="preserve">
+    <value>Card number</value>
+  </data>
+  <data name="tctCardNumberNewToolTip" xml:space="preserve">
+    <value>Number identifying the credit card where the bill of the policy is charged</value>
+  </data>
+  <data name="tctAccountPACNewCaption" xml:space="preserve">
+    <value>Collection Method</value>
+  </data>
+  <data name="tctAccountPACNewToolTip" xml:space="preserve">
+    <value>It indicates the bank account where the direct debit is performed</value>
+  </data>
+  <data name="tcdCardExpirNewCaption" xml:space="preserve">
+    <value>Due date</value>
+  </data>
+  <data name="tcdCardExpirNewToolTip" xml:space="preserve">
+    <value>Expiration date of the credit card</value>
+  </data>
+  <data name="tctBankAuthPACNewCaption" xml:space="preserve">
+    <value>Mandate</value>
+  </data>
+  <data name="tctBankAuthPACNewToolTip" xml:space="preserve">
+    <value>Indicates the number of command which will load the recovery of the receipt or receipts of the policy</value>
+  </data>
+  <data name="tctClientCreditNewCaption" xml:space="preserve">
+    <value>Policy holder</value>
+  </data>
+  <data name="tctClientCreditNewToolTip" xml:space="preserve">
+    <value>It indicates the current bank acount where the direct debit is executed</value>
+  </data>
+  <data name="Anchor8Caption" xml:space="preserve">
+    <value>AFP/INP</value>
+  </data>
+  <data name="Anchor9Caption" xml:space="preserve">
+    <value>Payroll Discount</value>
+  </data>
+  <data name="AnchorDomiciliación bancaria3Caption" xml:space="preserve">
+    <value>Payroll Discount</value>
+  </data>
+  <data name="AnchorTarjeta de crédito3Caption" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="dtcClientPayNewCaption" xml:space="preserve">
+    <value>Ruth paying</value>
+  </data>
+  <data name="dtcClientPayNewToolTip" xml:space="preserve">
+    <value>Ruth Payer</value>
+  </data>
+  <data name="tcnAFPCommiNewCaption" xml:space="preserve">
+    <value>PFA Commission</value>
+  </data>
+  <data name="tcnAFPCommiNewToolTip" xml:space="preserve">
+    <value>Amount of commission charged by the AFP client to relocate the funds to the insurance company</value>
+  </data>
+  <data name="valOriginNewCaption" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="valOriginNewToolTip" xml:space="preserve">
+    <value>Origin account</value>
+  </data>
+  <data name="cbeCurrencyNewCaption" xml:space="preserve">
+    <value>Ruth Employer</value>
+  </data>
+  <data name="cbeCurrencyNewToolTip" xml:space="preserve">
+    <value>Currency in which the amount of the commission is expressed</value>
+  </data>
+  <data name="dtcClientEmpNewToolTip" xml:space="preserve">
+    <value>Ruth Employer</value>
+  </data>
+  <data name="valAgreementNewCaption" xml:space="preserve">
+    <value>Payment Agreement</value>
+  </data>
+  <data name="valAgreementNewToolTip" xml:space="preserve">
+    <value>Deduction /payment agreement associated with the policy</value>
+  </data>
+</root>

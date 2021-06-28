@@ -1,0 +1,4526 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Actions.Designer
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.ActionCallPageCode">
+<summary>
+  Looks up a localized string similar to @@TRANSFER_PARAMETERS@@    
+_webtransfer = @@PATH_CODE@@ .
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.ActionCallPopupPageCode">
+<summary>
+  Looks up a localized string similar to @@TRANSFER_PARAMETERS@@    
+ScriptManager.RegisterStartupScript(Page, Page.GetType(), &quot;FormData@@INDEX@@&quot;, @@PATH_CODE@@, False).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.CommandBody">
+<summary>
+  Looks up a localized string similar to With New DataManagerFactory(&quot;@@QUERY@@&quot;, &quot;@@TABLE_NAME@@&quot;, &quot;@@CONNECTION_STRING@@&quot;)
+             @@PARAMETERS_QUERY@@ 
+            .CommandExecute()
+        End With.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.CommandProcedureBody">
+<summary>
+  Looks up a localized string similar to With New DataManagerFactory(True, &quot;@@PROCEDURE_NAME@@&quot;, &quot;@@CONNECTION_STRING@@&quot;)
+             @@PARAMETERS_PROCEDURE@@ 
+             @@EXECUTE_COMMAND@@@@IN/OUT PARAMETERS@@
+        End With.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.CommandQueryBody">
+<summary>
+  Looks up a localized string similar to With New DataManagerFactory(&quot;@@QUERY@@&quot;, &quot;@@TABLE_NAME@@&quot;, &quot;@@CONNECTION_STRING@@&quot;)
+             @@PARAMETERS_QUERY@@ 
+             @@EXECUTE_COMMAND@@  
+        End With.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.JavaScriptCommandQueryBody">
+<summary>
+  Looks up a localized string similar to     &lt;WebMethod()&gt;
+    Public Shared Function @@FUNCTION_NAME@@(@@INPUT_PARAMETERS@@) As Object
+        Dim selectDataTableItem As DataTable
+        Dim response As Object = New With {@@PARAMETERS_STRUCTURE@@}
+      
+        With New DataManagerFactory(&quot;@@QUERY@@&quot;, &quot;@@TABLE_NAME@@&quot;, &quot;@@CONNECTION_STRING@@&quot;)
+             @@PARAMETERS_QUERY@@ 
+             @@EXECUTE_COMMAND@@
+        End With
+
+        With selectDataTableItem
+            If Not IsNothing(.Rows) AndAlso .Rows.Count &gt; 0 Then
+@@OUTPUT [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.JavaScriptFunctionBody">
+<summary>
+  Looks up a localized string similar to     $.ajax({
+        type: &quot;POST&quot;,
+        url: window.location.protocol + &quot;//&quot; + window.location.host + &quot;/generated/form/@@PAGE_NAME@@Popup.aspx/@@FUNCTION_NAME@@&quot;,
+        contentType: &quot;application/json; charset=utf-8&quot;,
+        dataType: &quot;json&quot;,
+        data: JSON.stringify({ @@INPUT_PARAMETERS@@ }),
+        success: function (data) {
+        @@OUTPUT_PARAMETERS@@
+        @@ACTIONS_CODE@@
+        },
+        error: function (error) {
+            alert(error.responseJSON.Message);
+        }
+    [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.JavaScriptMethodBody">
+<summary>
+  Looks up a localized string similar to     &lt;WebMethod()&gt;
+    Public Shared Function @@FUNCTION_NAME@@(@@INPUT_PARAMETERS@@) As Object        
+        Dim response As Object = New With {@@PARAMETERS_STRUCTURE@@}      
+             
+        @@BODY@@
+        
+        Return response
+    End Function.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.JavaScriptMethodBodyFuntion">
+<summary>
+  Looks up a localized string similar to &lt;WebMethod()&gt;
+    Public Shared Function  @@FUNCTION_NAME@@(@@INPUT_PARAMETERS@@)   As String     
+        @@BODY@@ 
+    End Function.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.JavaScriptRESTBody">
+<summary>
+  Looks up a localized string similar to $.ajax({
+            type: &apos;@@METHOD_TYPE@@&apos;,
+            url: @@URL_PARAMETERS@@,
+            dataType: &apos;json&apos;,
+            success: function (response) {
+@@OUTPUT_PARAMETERS@@
+            },            
+            error: function (xhr, ajaxOptions, thrownError) {              
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.ParameterInstanceCode">
+<summary>
+  Looks up a localized string similar to           If IsNothing(_formData.@@NAME@@) Then
+              _formData.@@NAME@@ = New @@TYPE@@
+          End If.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.SentenceForCode">
+<summary>
+  Looks up a localized string similar to             If _formData.@@NAME@@.Count &lt; (@@MAX_INDEX@@ + 1) Then
+                 For indexInstance As Integer = _formData.@@NAME@@.Count To @@MAX_INDEX@@
+                       _formData.@@NAME@@.Add(New @@SUBTYPE@@)
+                 Next
+            End If.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.ServiceTransationCode">
+<summary>
+  Looks up a localized string similar to Using service##CONTROL_NAME## As InMotionGIT.FrontOffice.Proxy.MenuService.MenuClient = New InMotionGIT.FrontOffice.Proxy.MenuService.MenuClient()
+            With service##CONTROL_NAME##
+                lastURL = .MakeURL(&quot;##TRANSACTION##&quot;, UserInfo.CompanyId)
+                ##PARAMETERS##
+                .Close()
+            End With
+        End Using.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.ASPXWebForm.VisualBasicRESTBody">
+<summary>
+  Looks up a localized string similar to Dim client@@ACTION_ID@@ As New Http.HttpClient()
+
+client@@ACTION_ID@@.DefaultRequestHeaders.Accept.Clear()
+client@@ACTION_ID@@.DefaultRequestHeaders.Accept.Add(New Http.Headers.MediaTypeWithQualityHeaderValue(&quot;application/json&quot;))
+
+Dim response@@ACTION_ID@@ As Http.HttpResponseMessage = client@@ACTION_ID@@.GetAsync(@@URL_PARAMETERS@@).Result
+Dim instance@@ACTION_ID@@ = Newtonsoft.Json.Linq.JObject.Parse(response@@ACTION_ID@@.Content.ReadAsStringAsync().Result)
+
+@@OUTPUT_PARAMETERS@@.
+</summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._and">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._assembly">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._class">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._condition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._elseIf">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._endIf">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._error">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._function">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._if">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._in">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._message">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._module">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._next">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._on">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._or">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._property">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources._select">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.accept">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.actionComment">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.actionIf">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.actionIfCustom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.actions">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.activateruleset">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.activaterulesetbycategory">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.activeTab">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addcollectionmember">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addControlProperty">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addExpressionColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addExpressionIcoColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addHyperlink">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addItemIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addLibrary">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addMenuItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addParameters">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.address">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.addRptParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.advancedSettings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.allCatalog">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.asc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.assignParameters">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.assignSubPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.attachFile">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.autoComplete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.backOffice">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.barCode">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.bcc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.beforePopup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.beginGroup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.beginPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.bodyText">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.browser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.btnAddGridView">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.businessRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.calculation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.callRest">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.callRestAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.cancel">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.cancelEdition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.catalog">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.cc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.change">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.checkbox">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.checkBoxList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.checkComboBox">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.childs">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.claimImage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.cleanSelection">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.clear">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.clearcollection">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.clearFilter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.clearValidation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.client">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.clientScript">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.closePopup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.codeVB">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.collection">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.collectionItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.collections">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.colorStyle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.column">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.comment">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.comments">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.company">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.condition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.configuration">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.configureSource">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.container">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.contains">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.control">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.controlLayout">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.controlsLayout">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.copy">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.copycollection">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.copyentity">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.coverage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.custom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.data">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dataBase">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dataSource">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dataSource1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dataView">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.datepicker">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dateRange">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dateRangeAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.deactivateruleset">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.deactivaterulesetbycategory">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.decisiontable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.deleteDependency">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.deleteItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.deleteParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dependency">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.desc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.design">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.detailCatalog">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disableComment">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disableControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disabledAddExpressionColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disabledExpressionColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disabledExpressionColumnData">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disabledRefresh">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.disabledSqlExpression">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.down">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.downCondition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.dropdownlist">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.duplicateLibrary">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editBrowser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editControlProperty">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editFilter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editHyperlink">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editLibrary">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editLinkSettings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editStyle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.editTableQuery">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.elseIfCustom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.email">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.enable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.enableControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.endGroup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.endIfCustom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.endPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.entities">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.entity">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.errorsList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.es">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.executemethod">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.executeruleset">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.executesqlquery">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.execution">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.exeProcedure">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.explorer">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.expression">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.expressionColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.expressionColumnData">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.expressionIcoColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.expressionIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.favorite">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.field">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.fileBox">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.files">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.filter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.find">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.findLibrary">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.firenotification">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.folder">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.folderForm">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.folderRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.forEach">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.forEachIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.form">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.formIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.grid">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.group">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.halt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.help">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.hiddenField">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.hide">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.hideControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.hidePopup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.html">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.htmleditor">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.hyperlink">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.icoBrowser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.icoJavaScript">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.ifthen">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.ifthenelse">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.imageControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.in_out">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.information">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.initializeColIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.initializeColl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.inParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.insert">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.insertCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.intermeds">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isDisableAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isEmpty">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isEnableAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isEnabled">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isEquals">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isGreater">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isGreaterOrEqual">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isLess">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isLessOrEqual">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isNotEmpty">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.isVisible">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.items">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.javaScript">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.keyboard">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.label">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.labelControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.languageRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.layoutEdit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.layoutSettings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.legend">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.libraryPackage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.lineBusiness">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.listBox">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.loadPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.locationByAddress">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.locationByCoordinates">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.locationByLatitude">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.locationByLongitude">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.lookupTable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.map">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.mapParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.measure">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.menuItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.message">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.messageAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.method">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.methodIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.money">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.mouseClick">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.netherlands">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.newDependency">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.newItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.newParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.nl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notContains">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.note">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notEquals">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notes">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notification">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notificationIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notifyAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.notifyActionIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.numeric">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.numericRange">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.numericRangeAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.off">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.openAssembly">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.openedFolder">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.openFolderForm">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.orderNone">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.out">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.outParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.owners">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.package">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.page">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.page1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.pageIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.pageInicialize">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.pagination">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.parameterEditor">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.parameterElement">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.parameterFunction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.parenthesis">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.parents">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.paste">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.pointSymbol">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.policiesImage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.policy">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.popup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.popupControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.popupList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.popupMenuIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.portugal">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.precondition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.predefined">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.premiums">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.preview">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.previewSql">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.procedure">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.procedureAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.processDesigner">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.product">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.providers">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.pt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.query">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.querypreview">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.radioButtonList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.raiseeventRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.refresh">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.refreshAll">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.refreshAllPar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.refreshParFunc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.refreshRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.relation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.relationshipTable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.remove">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.remove1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeAt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeAtIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removecollectionmember">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.removeRptParameter">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.report">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.reportIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.required">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.requiredAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.rules">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.ruleset">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.selectAllItems">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.selectedTable">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.selectedView">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sendEmail">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.separator">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.separatorItem">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setfieldinvalid">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setLanguageText">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.settings">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setValue">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setvalue1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setValues">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.setValues1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.show">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.showControl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.showPopup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.smartlibrary">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sortcollection">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sortColumn">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sortPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.source">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.spain">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.special">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.splash">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sqlExp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.sqlExpression">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.standard">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.standardList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.styleIco">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.subPage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.synWorkflow">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.tab">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.tabcontainer">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.table">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.tableList">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.tableQuery">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.templateLabel">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.templateView">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.text">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.time">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.UnCheckBox">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.unitedStates">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.up">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.upCondition">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.update">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.updateCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.url">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.us">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.variableRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.vehicle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.viewData">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.warning">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.webservice">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.whileRule">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.workflow">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.workflowIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.My.Resources.Resources.zone">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionBase">
+ <summary>
+ Base class. Base of all actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.Id">
+ <summary>
+ Unique identification of the action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.Description">
+ <summary>
+ Brief description to explain the action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.ActionIfDescription">
+ <summary>
+ Brief description to explain the 'Else' of the action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.Enabled">
+ <summary>
+ Indicates whether the action is enabled or disabled for generate.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.CheckErrors">
+ <summary>
+ Indicates for generate the code for check errors in the action's execution.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.Childs">
+ <summary>
+ List of available actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.ControlName">
+ <summary>
+ Name of the control that was assigned the action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.HandleException">
+ <summary>
+ Indicates for generate the code for show some exception in the action's execution.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBase.Position">
+ <summary>
+ Number of the position of the action.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.DisplayDescription(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.ClearStructureByRemovedColumn(System.String,System.String,System.Boolean,System.String@,System.Boolean@)">
+ <summary>
+ Clean the structure so that no errors occur when opening the action.
+ </summary>
+ <param name="tableName">Current table.</param>
+ <param name="columnName">Current column.</param>
+ <param name="isDelete">Indicate if the column was deleted</param>
+ <param name="message">Error message.</param>
+ <param name="deleteAction">Indicate if the action will be eliminated</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBase.ChangeParametersStructure(System.Collections.Generic.KeyValuePair{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+  Clean the structure so that no errors occur when show the parameters.
+ </summary>
+ <param name="parameterData">Added parameters in the layout.</param>
+ <param name="behaviorList">Parameter type (input - output)</param>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionBaseList">
+ <summary>
+ List of actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBaseList.HasBusinessRuleAction(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Validate the existence the actions of type BusinessRuleAction
+ </summary>
+ <param name="actions">Action's list.</param>
+ <returns>If is true exist is some action of type BusinessRuleAction</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBaseList.HasSameNameCommandTable(InMotionGIT.Actions.Designer.Base.ActionBaseList,System.String)">
+ <summary>
+ Validate the existence the actions with the same name of type Table (Select).
+ </summary>
+ <param name="actions">Action's list.</param>
+ <param name="actionName">Name of the action.</param>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBaseList.HasErrorAction(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Validate the existence the actions of type ErrorAction
+ </summary>
+ <param name="actions">Action's list.</param>
+ <returns>If is true exist is some action of type ErrorAction</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBaseList.HasInsertAction(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Validate the existence the actions of type Insert
+ </summary>
+ <param name="actions">Action's list.</param>
+ <returns>If is true exist is some action of type Insert</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionBaseList.HasUpdateAction(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Validate the existence the actions of type Update
+ </summary>
+ <param name="actions">Action's list.</param>
+ <returns>If is true exist is some action of type Update</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBaseList.SetNewIdentifications(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Set new identification to all actions.
+ </summary>
+ <param name="actions">Action's list.</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBaseList.GetAllProse">
+ <summary>
+ Get all the proses of each action from the list.
+ </summary>
+ <returns>All proses of the actions list.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBaseList.GetEnabledActions(InMotionGIT.Actions.Designer.Base.ActionBaseList)">
+ <summary>
+ Get all enabled actions.
+ </summary>
+ <param name="actions">Action's list.</param>
+ <returns>Number of actions enabled.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Base.ActionBaseList.GetChildProse(InMotionGIT.Actions.Designer.Base.ActionBaseList,System.String@,System.Int32@)">
+ <summary>
+ Get all the proses of each child action from the list.
+ </summary>
+ <param name="actions">Action's list.</param>
+ <param name="prose">Description of the action.</param>
+ <param name="index">Accumulated position of the action.</param>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionByEvent">
+ <summary>
+ Base class. Base that defines the action in client side by events.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionByEvent.EventName">
+ <summary>
+ Event name of the control/container
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionByEvent.ActionsClientScript">
+ <summary>
+ Actions specification
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionConditionBase">
+ <summary>
+ Base class. Base of all action condition.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionConditionBase.ElseActions">
+ <summary>
+ List of available actions.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionScript">
+ <summary>
+ Base class. Base that defines the action in client side.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionScript.Actions">
+ <summary>
+ List of available actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionScript.CreatedParameters">
+ <summary>
+ Standard parameters defined for use in the actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionScript.ParameterList">
+ <summary>
+ Conversion of standard parameters defined for use in actions.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionServer">
+ <summary>
+ Base class. Base that defines the action in server side.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionServer.ParameterList">
+ <summary>
+ Conversion of standard parameters defined for use in actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionServer.InitializationParameterList">
+ <summary>
+ Conversion of standard parameters defined for use in actions in the page's Initialization.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionValidation">
+ <summary>
+ Base class. Base that defines the validation's action.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionValidation.Actions">
+ <summary>
+ List of available actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionValidation.CreatedParameters">
+ <summary>
+ Standard parameters defined for use in the actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Base.ActionValidation.ParameterList">
+ <summary>
+ Conversion of standard parameters defined for use in actions.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Base.ActionTable">
+ <summary>
+ Base class. Base that defines the structure of the action of type database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.StyleAction">
+ <summary>
+ Allows define a style (color, font, size, underline) to a control, container, or column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.ColumnName">
+ <summary>
+Çontrol or column name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.Font">
+ <summary>
+ Font used to display.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.FontStyle">
+ <summary>
+ Style (Regular - Oblique - Bold)
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.Size">
+ <summary>
+ Letter size.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.ForegroundColor">
+ <summary>
+ Letter color.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.BackgroundColor">
+ <summary>
+ Background color.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.Underline">
+ <summary>
+ If true a line is placed below the text.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.StyleAction.Strikeout">
+ <summary>
+ If true a horizontal line is placed in the text.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.StyleAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.StyleAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction">
+ <summary>
+ Allows execute a business rule defined by user.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.ModelId">
+ <summary>
+ Identification of the selected model.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.ModelName">
+ <summary>
+ Name of the selected model.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.Release">
+ <summary>
+ Release of the selected model.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.Parameters">
+ <summary>
+ List of parameters defined in the rule.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.Title">
+ <summary>
+ Entity rule title.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.EntityRuleName">
+ <summary>
+ Entity rule name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.SelectedType">
+ <summary>
+ Rule Type (entity - independent).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.ParameterData">
+ <summary>
+ Name and type of entity
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.BusinessRuleAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallMethodAction">
+ <summary>
+ Allows execute a method from available in the catalog, or assembly or predefined.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Source">
+ <summary>
+ Type of source, the possibles values are =   Predefined, FromParameters, Catalog, Assembly.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Name">
+ <summary>
+ Method name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Alias">
+ <summary>
+  Method alias (Friendly name).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Summary">
+ <summary>
+ Summary of the method.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.StatementKind">
+ <summary>
+ Kind of statement (Function or Sub).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.IsShared">
+ <summary>
+ If is true means that need not be instantiated method.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Parameters">
+ <summary>
+Parameters list of selected method.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.AssignNullResult">
+ <summary>
+  If is true to be assigned the value to be returned from the method.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Result">
+ <summary>
+ Name and type of method result.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Script">
+ <summary>
+ Script body (optional).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.AssemblyPath">
+ <summary>
+ Path of assembly file.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.TypeResult">
+ <summary>
+ Result type, the possible values are = OneRecord, ManyRecords, OneValue.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.BackOfficeBehavior">
+ <summary>
+  If is true return the loaded instance for the method.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.CodeProperty">
+ <summary>
+ Selected code property of the collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.DescriptionProperty">
+ <summary>
+ Selected description property of the collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallMethodAction.IsCollection">
+ <summary>
+  If is true the result returns a collection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallMethodAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallMethodAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallMethodAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallMethodActionCollection">
+ <summary>
+ List of the actions of type CallMethodAction
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallPageAction">
+ <summary>
+ This action allows execute a form (created with Form Designer), a query (created with Query Designer), a transaction (from the BackOffice) or a Url defined by user.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Identification">
+ <summary>
+ Identification of the selected model (form - query).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Name">
+ <summary>
+ Name of the selected model (form - query).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Release">
+ <summary>
+ Release of the selected model (form - query).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Title">
+ <summary>
+ Title of the selected model (form - query).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.TransferParameters">
+ <summary>
+ Transfer parameters To another form, query, url, etc.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Type">
+ <summary>
+ Type of call = Forms, Transactions, Special, Url, Queries.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.UrlPath">
+ <summary>
+ Url of page web; or another property or settings.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.UrlParameterMode">
+ <summary>
+ The url have parameters as settings.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.SettingsPopup">
+ <summary>
+ Show the call as popup.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Parameters">
+ <summary>
+ List of parameters used in the call.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.IsStandaloneVersion">
+ <summary>
+ Without header and footer on the web page.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.EmbeddedPopup">
+ <summary>
+ The popup will be embedded.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.WithHeader">
+ <summary>
+ Show header in the embedded popup.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallPageAction.Target">
+ <summary>
+ Determines where to open the linked document (page).
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParametersBySession(InMotionGIT.Actions.Designer.ParametersCollection)">
+ <summary>
+ Builds the string of the assignment of the parameter type Session.
+ </summary>
+ <param name="parametersList">Parameters list.</param>
+ <returns>The parameter assigned to the respective value.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParametersByQueryString(System.String@,System.Int32,InMotionGIT.Actions.Designer.ParametersCollection,InMotionGIT.Actions.Designer.Actions.Enumerations.EnumCallPageType)">
+ <summary>
+ Builds the string of the assignment of the parameter type QueryString.
+ </summary>
+ <param name="values">List of values in order with respect to the parameters.</param>
+ <param name="index">Index that increases by the number of parameters.</param>
+ <param name="parametersList">Parameters list.</param>
+ <returns>The parameter assigned to the respective value.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParameterType(System.String)">
+ <summary>
+ Depending on the type of value of parameter builds the correct value.
+ </summary>
+ <param name="value">Current value.</param>
+ <returns>Real value of the parameter.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.SetActionCallPageCode(System.String,System.Boolean)">
+ <summary>
+ Builds the code javascript for open the web window from client side.
+ </summary>
+ <param name="urlPage">Web page</param>
+ <param name="withPostParameters">Is true if in the list of parameters have the attribute FormPost.</param>
+ <returns>Code for open the web window from client side.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetAppSetting(System.String,System.String)">
+ <summary>
+ Replace the url path if there the symbol '#'.
+ </summary>
+ <returns>The cleaned web page without symbols.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.RealValueAppSetting(InMotionGIT.Actions.Designer.Parameter)">
+ <summary>
+  Replace the value if there the symbol '#'.
+ </summary>
+ <param name="parameterItem">Current parameter</param>
+ <returns>Real value using appsettings in the web.config.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.LookupParameter(InMotionGIT.Actions.Designer.ParametersCollection)">
+ <summary>
+ Find parameter value with the symbol '#'
+ </summary>
+ <param name="parametersCollection">List of parameters.</param>
+ <returns>Returns true if there is a value with the symbol '#'</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.FindSpecialParameterConstant(System.String,System.String@,System.String@,System.Int32@)">
+ <summary>
+ Builds the value and replace by the concatenated real value.
+ </summary>
+ <param name="parameterValue">Parameter value.</param>
+ <param name="queryString">List of queryString in order with respect to the parameters.</param>
+ <param name="values">List of values in order with respect to the parameters.</param>
+ <param name="index">Index that increases by the number of parameters.</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParameterConstantValue(System.String,System.String@,System.String@,System.Int32@)">
+ <summary>
+ Clear the parameter value and replace by the concatenated real value.
+ </summary>
+ <param name="parameter">Parameter name.</param>
+ <param name="queryString">List of queryString in order with respect to the parameters.</param>
+ <param name="values">List of values in order with respect to the parameters.</param>
+ <param name="index">Index that increases by the number of parameters.</param>
+ <returns>Value concatenated with the symbol '+'</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetProcessOnlyParameter(InMotionGIT.Actions.Designer.ParametersCollection)">
+ <summary>
+ Clear the values and replace by the real value.
+ </summary>
+ <returns>Real values using appsettings in the web.config.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetProcessParameters(System.Collections.Generic.List{System.String})">
+ <summary>
+ Concatenate the values in the current string.
+ </summary>
+ <param name="valueList">Value's list of the parameters.</param>
+ <returns>String of parameter values.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.ClearUrlValues(InMotionGIT.Actions.Designer.ParametersCollection)">
+ <summary>
+ Clear the values and replace by the real value.
+ </summary>
+ <returns>Real values using appsettings in the web.config.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.ClearUrlParameters(System.String)">
+ <summary>
+ Clear the values and replace by the real value.
+ </summary>
+ <param name="values">List of values in the url.</param>
+ <returns>Real values using appsettings in the web.config.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.BuildingUrlFormat(System.Data.DataTable)">
+ <summary>
+ Builds the address of the call by to the type in client side.
+ </summary>
+ <param name="controls">Controls list of the layout</param>
+ <returns>Correct url</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParameterValue(InMotionGIT.Actions.Designer.Parameter)">
+ <summary>
+ Builds the real value for the parameter in client side.
+ </summary>
+ <param name="parameterItem">Current prameter</param>
+ <returns>Selected value in the parameter</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallPageAction.GetParameterConstantValue(System.String)">
+ <summary>
+ Builds the constant value for the parameter in client side.
+ </summary>
+ <param name="parameter">Parameter name</param>
+ <returns>Selected constant in the parameter</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallReportAction">
+ <summary>
+ Allows select some report (*.rpt) for execute in the server.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.FileName">
+ <summary>
+ Selected crystal report file path (*.rpt).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.UrlMode">
+ <summary>
+ Indicates whether the route to be returned must be the URL type or a physical path on the server.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.ViewMode">
+ <summary>
+ Indicates whether the file is downloaded or displayed in the selected editor
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.ReportParameters">
+ <summary>
+ Parameters list of the report.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.StoredProcedureParameters">
+ <summary>
+ Parameters list of the stored procedure.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallReportAction.Result">
+ <summary>
+ Parameter name to store the result.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallReportAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallReportAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallReportAction.BuildingParametersList(InMotionGIT.Actions.Designer.ParametersCollection,System.String)">
+ <summary>
+ Get iteration of table data.
+ </summary>
+ <param name="parameters">Parameters list.</param>
+ <param name="listName">Table name.</param>
+ <returns>Generated code for iterate in the parameters.</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction">
+ <summary>
+ Allows execute a  stored procedure located in the database.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Owner">
+ <summary>
+ Owner of the selected procedure.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Name">
+ <summary>
+ Name of the selected procedure.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Caption">
+ <summary>
+ Caption of the selected procedure.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Source">
+ <summary>
+ Source of the selected procedure.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Parameters">
+ <summary>
+ List of parameters (input).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.SelectedCollection">
+ <summary>
+ Selected collection to use it in the assignment of values. 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Elements">
+ <summary>
+ List of parameters (output).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.ResultKind">
+ <summary>
+ Result type (One Record - ManyRecords - OneValue).
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parametersDataTable">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.ChangeParametersStructure(System.Collections.Generic.KeyValuePair{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ Replace the expression or the value by the settings's parameter.
+ </summary>
+ <param name="parameterData">Selected parameter.</param>
+ <param name="behaviorList">Structure behavior.</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.ChangeParameterValue(System.Collections.Generic.KeyValuePair{System.String,System.String},System.String)">
+ <summary>
+ Replace the value by the current parameter.
+ </summary>
+ <param name="parameterData">Selected parameter.</param>
+ <param name="parameterType">Selected type</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.ChangeElementValue(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+ <summary>
+ Replace the expression by the current parameter.
+ </summary>
+ <param name="parameterData">Selected parameter.</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.ChangeStructureParameterValue(System.Collections.Generic.KeyValuePair{System.String,System.String},System.String)">
+ <summary>
+ Replace the value and the expression by the current parameter.
+ </summary>
+ <param name="parameterData">Selected parameter.</param>
+ <param name="structureName">Value of current structure.</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallStoredProcedureAction.SetParameterDirectionCode(InMotionGIT.Database.Model.Enumerations.EnumArgumentDirection)">
+ <summary>
+ Set the parameter direction.
+ </summary>
+ <param name="direction">current value.</param>
+ <returns>Type of argument direction.</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction">
+ <summary>
+ Allows execute a workflow created in the Workflow Designer defined by the user. 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.WorkFlowTitle">
+ <summary>
+ Title of the selected workflow.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.WorkFlowName">
+ <summary>
+ Name of the selected workflow.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.WorkflowId">
+ <summary>
+ Identification of the selected workflow.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.LastRelease">
+ <summary>
+ Release of the selected workflow.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.Synchronous">
+ <summary>
+ Indicate if is Synchronous.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.Tracking">
+ <summary>
+ Indicate if want the tracking.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.Parameters">
+ <summary>
+ Parameters list (input).
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallWorkflowAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parametersData">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CallRESTAction">
+ <summary>
+ Especificación de un servicio tipo REST.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.Method">
+ <summary>
+ Tipo de verbo usando en el request.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.URL">
+ <summary>
+ Punto de acceso a la operación.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.InputParameters">
+ <summary>
+ Input parameters of the function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.Result">
+ <summary>
+ Kind of result, the posibles values are = OneRecord, ManyRecords, OneValue.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.OutputParameters">
+ <summary>
+ Output parameters  of the function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.Entities">
+ <summary>
+ Entities list used for set properties.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.CodeProperty">
+ <summary>
+ Selected code property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.DescriptionProperty">
+ <summary>
+ Selected description property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.CustomAuthorization">
+ <summary>
+ Allows indicate the function name for returns the for authorization text.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.LookupDataPath">
+ <summary>
+ Allows indicate the output parameter name for display as property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.CallRESTAction.DescriptionExpression">
+ <summary>
+ Allows create an expression for show the description property.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallRESTAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.CallRESTAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction">
+ <summary>
+ Base class. Base that defines the JavaScript's function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.FunctionName">
+ <summary>
+ Current function name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.ExternalJavaScriptFiles">
+ <summary>
+ External JavaScript files.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.InputParameters">
+ <summary>
+ Input parameters of the function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.OutputParameters">
+ <summary>
+ Output parameters  of the function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.Script">
+ <summary>
+ Script code of the function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.Result">
+ <summary>
+ Kind of result, the posibles values are = OneRecord, ManyRecords, OneValue.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.Entities">
+ <summary>
+ Entities list used for set properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.JavaScriptFunctionAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.AddToAction">
+ <summary>
+ Allows add an item to a selected collection and this element to add can be an element of another collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.AddToAction.CollectionName">
+ <summary>
+ Selected collection of the parameters list.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.AddToAction.InstanceType">
+ <summary>
+ Type of the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.AddToAction.InstanceToAdd">
+ <summary>
+ Instance for add in the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.AddToAction.AggregateInstance">
+ <summary>
+ Property to initialize collection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.AddToAction.Prose(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.AddToAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.ForEachAction">
+ <summary>
+ Allows start the cycle of inspection of a collection, validate some conditions and execute actions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ForEachAction.VariableName">
+ <summary>
+ Variable name declared by the user.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ForEachAction.VariableType">
+ <summary>
+ Variable type declared by the user.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ForEachAction.CollectionName">
+ <summary>
+ Selected collection of the parameters list.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ForEachAction.ParameterName">
+ <summary>
+ Parameter name declared by the user.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ForEachAction.ParameterType">
+ <summary>
+ Parameter type declared by the user.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ForEachAction.Prose(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ForEachAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.InitializeAction">
+ <summary>
+ Allows initialize a collection of the parameters.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.InitializeAction.CollectionName">
+ <summary>
+ Selected collection of the parameters list.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.InitializeAction.CollectionType">
+ <summary>
+ Type of the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.InitializeAction.AssignNull">
+ <summary>
+ If is true, assign to the collection the value Null.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.InitializeAction.Prose(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.InitializeAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.RemoveFromAction">
+ <summary>
+ Delete an item from a selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.CollectionName">
+ <summary>
+ Selected collection of the parameters list.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.InstanceName">
+ <summary>
+ Instance for remove in the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.InstanceType">
+ <summary>
+ Type of the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.NumericVariable">
+ <summary>
+ Index for remove in the selected collection.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.ClearData">
+ <summary>
+ If is true, clear the current collection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.Prose(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.RemoveFromAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction">
+ <summary>
+ Allows establish the behavior that will have the controls or containers, in moments of the execution of the form. 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.Type">
+ <summary>
+ BehaviorType (Disable - Enable - Hide - Show).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.ControlListNames">
+ <summary>
+ Control name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.ControlCaption">
+ <summary>
+ Caption name of current language.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.IsForm">
+ <summary>
+ Indicate if is a form or a control.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.Prose(System.Int32)">
+ <summary>
+ Show the description or prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Description or prose.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.BehaviorTypeName(System.Boolean)">
+ <summary>
+ Set the respective property.
+ </summary>
+ <param name="isCode">If is true the code is server side, otherwise is client side.</param>
+ <returns>Control property</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlBehaviorAction.HaveControlLabel(System.Data.DataTable)">
+ <summary>
+ Find the label associated with the current control.
+ </summary>
+ <param name="controls">Control's list in the layout.</param>
+ <returns>If is true the control has a label</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction">
+ <summary>
+ Allows establish the behavior that will have the controls or containers, in moments of the execution of the form. 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.Controls">
+ <summary>
+ List of controls.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controlsDataTable">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.FindControlByProperty(System.Data.DataTable,System.String,System.String,System.String)">
+ <summary>
+ Find the label associated with the current control.
+ </summary>
+ <param name="controlsDataTable">Control's list in the layout.</param>
+ <param name="controlName">Current control name.</param>
+ <param name="propertyName">Current property name.</param>
+ <returns>Control label.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.FindTabByName(System.Data.DataTable,System.String)">
+ <summary>
+ Find the tab container associated with the current tab.
+ </summary>
+ <param name="controlsDataTable">Control's list in the layout.</param>
+ <param name="controlName">Current control name.</param>
+ <returns>Tab control.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ControlPropertiesAction.FindGridByName(System.Data.DataTable,System.String,System.String,System.String)">
+ <summary>
+ Find the gridview associated for add button's code.
+ </summary>
+ <param name="controlsDataTable">Control's list in the layout.</param>
+ <param name="controlName">Current control name.</param>
+ <param name="propertyName">Current property name.</param>
+ <param name="expression">Expression's value.</param>
+ <returns>Grid container.</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.ExpressionAction">
+ <summary>
+ Allows define an expression for execute in client side or server side.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.ExpressionAction.Expression">
+ <summary>
+ Expression for execute in client or server side.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ExpressionAction.Prose(System.Int32)">
+ <summary>
+ Show the prose of the action.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <returns>Prose by action.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ExpressionAction.GenerateCode(System.Int32,System.Boolean,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in server side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="isDraft">Indicates if is generated with resource files.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Actions.ExpressionAction.GenerateScriptCode(System.Int32,System.Data.DataTable,System.Data.DataTable,System.String@)">
+ <summary>
+ Logic code depending on the action in client side.
+ </summary>
+ <param name="currentLanguage">Selected language.</param>
+ <param name="controls">Control's list in the layout.</param>
+ <param name="parameters">Added parameters in the layout.</param>
+ <param name="functionCode">Generated code in the client side.</param>
+ <returns>Generated code</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumNotifySeverity">
+ <summary>
+ Behavior of the severity.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumStatementKind">
+ <summary>
+ Kind of statement (Function or Sub).
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumCallMethodSource">
+ <summary>
+ Type of source for call methods
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumCallPageType">
+ <summary>
+ Type of call for call page action
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumControlBehaviorType">
+ <summary>
+ Behavior type for control property action.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.enumExcludeActions">
+ <summary>
+ Checklist for controlling share exclusions
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumLogicalOperator">
+ <summary>
+ Indicates the logical operator for conditions.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumMessageType">
+ <summary>
+ Type of message to be displayed.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumOperator">
+ <summary>
+ Operator to perform the condition (Is Empty - Equal To - Less Than, etc.).
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.EnumNotifyShowAs">
+ <summary>
+ Behavior for show the notify.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.enumModeParameter">
+ <summary>
+ Mode of sending the parameter during the call to another page.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.Enumerations.enumPassVariable">
+ <summary>
+ Indicates how the parameter receives a function.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.CommentAction">
+ <summary>
+ Base class. Base that defines informative comment for user help.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.IfAction">
+ <summary>
+ Base class. Base that define a condition(s) for execute others actions.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.LibraryAction">
+ <summary>
+ Base class. Base that define an action of type JavaScript - StoredProcedure or Method saved in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.MessageAction">
+ <summary>
+ Base class. Base that define an action for show some message.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Actions.MessageAction.Type">
+ <summary>
+ Type of message to be displayed.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.SendEmailAction">
+ <summary>
+ Base class. This action allows send e-mail.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.SetValuesCollection">
+ <summary>
+ List of the actions of type SetValues
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.SetValuesAction">
+ <summary>
+ Base class. This action allows set value to a parameter or control.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.AssignParametersAction">
+ <summary>
+ Base class. This action allows set value to a parameter or control.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.ErrorAction">
+ <summary>
+ Base class. Base that define an action for show some notification's message or error's message.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.DateRangeValidationAction">
+ <summary>
+ Base class. Base that define an action for validate date range.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.NotifyValidationAction">
+ <summary>
+ Base class. Base that define an action for notify some error in the code.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.NumericRangeValidationAction">
+ <summary>
+ Base class. Base that define an action for validate numeric range.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Actions.RequiredValidationAction">
+ <summary>
+ Base class. Base that define an action for validate some property as required.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.SettingsPopup">
+ <summary>
+ Base class. Base that defines the settings in mode popup.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Left">
+ <summary>
+ Location on the left side where the screen shows.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Top">
+ <summary>
+ Location on the top where the screen shows.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Height">
+ <summary>
+ Height of the screen.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Width">
+ <summary>
+ Width of the screen.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Resizable">
+ <summary>
+ Resizable of the screen.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.Scrollbars">
+ <summary>
+ Shows the scrollbars in the screen.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.SettingsPopup.ShowType">
+ <summary>
+ Show the popup according to the selected type.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.SettingsPopup.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Settings Popup</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ControlSettings">
+ <summary>
+ Base class. Base that defines the control's characteristics.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.FormName">
+ <summary>
+ Current control name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.ControlName">
+ <summary>
+ Current control name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.ControlType">
+ <summary>
+ Current control type.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.PropertyType">
+ <summary>
+ Current property type (Enabled - Visible - SetValue, etc.).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.Value">
+ <summary>
+ Associated value to property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ControlSettings.Kind">
+ <summary>
+ Type of property (String, Decimal, Integer, Boolean, DateTime).
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Expression.GetXPath(System.String)">
+ <summary>
+ Retrieves the XPath field when the the user does double click on the object browser
+ </summary>
+ <param name="xPath"></param>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Condition">
+ <summary>
+ Base class. Base that defines the condition's settings.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.BeginGroup">
+ <summary>
+ Indicates the parenthesis to open '('.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.EndGroup">
+ <summary>
+ Indicates the parenthesis to close ')'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.LogicalOperator">
+ <summary>
+ Indicates the logical operator (AND - OR) for separate over others conditions.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.Order">
+ <summary>
+ Number indicating the order of the condition.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.FullPath">
+ <summary>
+ Gets or sets the condition’s full path.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Condition.FullName">
+ <summary>
+ The full name associated with the condition.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.Condition.#ctor">
+ <summary>
+ Create a new condition
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.Condition.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Condition</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.ConditionCollection">
+ <summary>
+ List of conditions.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Conditions list</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.AddConditionField">
+ <summary>
+ Add some condition in the current list.
+ </summary>
+ <returns>Condition</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.AddCondition(System.String,InMotionGIT.Actions.Designer.Actions.Enumerations.EnumOperator,System.String,InMotionGIT.Actions.Designer.Actions.Enumerations.EnumLogicalOperator,System.String,System.String)">
+ <summary>
+ Add new instance of type 'Field'.
+ </summary>
+ <param name="name">Field name (can be some control).</param>
+ <param name="[operator]">Operator to perform the condition (Is Empty - Equal To - Less Than, etc.).</param>
+ <param name="expression">Assigned value to the condition.</param>
+ <param name="logicalOperator">Indicates the logical operator (AND - OR) for separate over others conditions.</param>
+ <param name="beginGroup">Indicates the parenthesis to open '('.</param>
+ <param name="endGroup">Indicates the parenthesis to close ')'</param>
+ <returns>Field data</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.BuildingConditions">
+ <summary>
+ Builds the condition's list
+ </summary>
+ <returns>Conditions for the action 'If'.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.BuildingScriptConditions(System.Data.DataTable)">
+ <summary>
+ Builds the condition's list
+ </summary>
+ <param name="controls">Control's list in the layout.</param>
+ <returns>Conditions for the action 'If' of client side.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.ConditionCollection.GetLogicalOperator(InMotionGIT.Actions.Designer.Actions.Enumerations.EnumLogicalOperator)">
+ <summary>
+ Return the logical operator for the server side.
+ </summary>
+ <param name="logical">Indicates the logical operator (AND - OR) for separate over others conditions.</param>
+ <returns>Logical operator.</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Delete">
+ <summary>
+ Base class. Base that defines the structure of the action for delete data in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Field">
+ <summary>
+ Base class. Base that defines the field's settings.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Name">
+ <summary>
+ Field name.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Expression">
+ <summary>
+ Assigned value for the condition.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.ExpressionKind">
+ <summary>
+ Type of current value.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Operator">
+ <summary>
+ Operator to perform the condition (Is Empty - Equal To - Less Than, etc.).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Type">
+ <summary>
+ Type of current field.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Size">
+ <summary>
+ Size of current field.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.Scale">
+ <summary>
+ Scale of current field.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.RealTableName">
+ <summary>
+ Table name if the field is some column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.GetDataReaderMethod(System.String)">
+ <summary>
+ Get data reader method for convert the value.
+ </summary>
+ <param name="providerKind">Provider type of database (Sql - Oracle).</param>
+ <returns>Correct method of parameter.</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.ParameterKindDB">
+ <summary>
+ Get DbType property.
+ </summary>
+ <returns>Correct type of parameter.</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.ParameterStandarKind">
+ <summary>
+ Find the real type by the standard kind.
+ </summary>
+ <returns>Real type of parameter in database</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Command.Field.ValueNullCondition(System.String)">
+ <summary>
+ Set the null value for parameter in database.
+ </summary>
+ <param name="expression">Assigned value for the condition.</param>
+ <returns>Null value to assign to field.</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.Field.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Field</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.FieldCollection">
+ <summary>
+ List of fields.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.FieldCollection.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Fields list</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.FieldCollection.AddField">
+ <summary>
+ Add some field in the current list.
+ </summary>
+ <returns>Field data</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Command.FieldCollection.AddField(System.String,InMotionGIT.Actions.Designer.Actions.Enumerations.EnumOperator,System.String)">
+ <summary>
+ Add some field in the current list.
+ </summary>
+ <param name="name">Field name.</param>
+ <param name="[operator]">Operator to perform the condition (Is Empty - Equal To - Less Than, etc.).</param>
+ <param name="expression">Assigned value for the condition.</param>
+ <returns>Field data</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Insert">
+ <summary>
+ Base class. Base that defines the structure of the action for insert data in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Table">
+ <summary>
+ Base class. Base that defines the structure of the action for select data in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.TableCollection">
+ <summary>
+ List of the table objects
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Command.Update">
+ <summary>
+ Base class. Base that defines the structure of the action for update data in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.Column">
+ <summary>
+ Base class. Base that defines the layout characteristics of column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Alias">
+ <summary>
+ The name associated of the column for table.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.AliasTable">
+ <summary>
+ The alias associated of the table.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Name">
+ <summary>
+ The name associated of the column, sample: table.column, client.sClient
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Operator">
+ <summary>
+ Operator to perform the column (Is Empty - Equal To - Less Than, etc.).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Visible">
+ <summary>
+ If the true the column is show.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Grouping">
+ <summary>
+ Define if group the column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Default">
+ <summary>
+ The value default for the column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Aggregate">
+ <summary>
+ Type of aggregate, the possible values are = Sum - Average - Count - Min - Max -
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.DataColumn">
+ <summary>
+ Column data from the database.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.DataViewColumn">
+ <summary>
+ Column data of the view from the database.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Position">
+ <summary>
+ Number of position.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.EntityType">
+ <summary>
+ Kind of entity (Table - View - Stored Procedure).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.EntitySource">
+ <summary>
+ Source of entity.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Trim">
+ <summary>
+ Removes all spaces at the end of the data.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Expression">
+ <summary>
+ Assigned value for the condition.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.ExpressionKind">
+ <summary>
+ Type of current value.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Kind">
+ <summary>
+ Type of column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.ElementKind">
+ <summary>
+ Type of element (column or function).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Parameters">
+ <summary>
+ This property is used when the element is function.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.SortPosition">
+ <summary>
+ Position of column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.SortType">
+ <summary>
+ Sort type of column (Ascendant, Descendant).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Uppercase">
+ <summary>
+ Returns a copy of this column'data converted to uppercase.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Lowercase">
+ <summary>
+ Returns a copy of this column'data converted to lowercase.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Initcap">
+ <summary>
+ Returns a copy of this column'data converted the first character in each word to uppercase and the rest to lowercase.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.PadKind">
+ <summary>
+ Pads the left-side or right-side of a string with a specific set of characters.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.PadLength">
+ <summary>
+ The number of characters to return
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.PadFill">
+ <summary>
+ Optional, this is the string that will be padded to the left-hand or right-hand side of data.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.ExpressionData">
+ <summary>
+ The assigned expression for the column.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.NVL">
+ <summary>
+ If the column returns a null value the text of the property 'NVL Expression' is returned.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.NVLExpression">
+ <summary>
+ Expression to show for property 'NVL'
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Searchable">
+ <summary>
+ The column will be used in the pagination.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Encrypted">
+ <summary>
+ The column will be used in the pagination.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Trunc">
+ <summary>
+ The column will be used in the pagination.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.RealFieldName">
+ <summary>
+ The column will be used in the pagination.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Precision">
+ <summary>
+ Whole part of the number.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.Scale">
+ <summary>
+ Decimal part of the number.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldTrim(System.String,System.String)">
+ <summary>
+ Return the column with the function of database LTRIM or TRIM.
+ </summary>
+ <param name="tableName">Current table.</param>
+ <param name="providerKind">Provider of database.</param>
+ <returns>TRIM(Column) or LTRIM(Column)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldUppercase(System.String)">
+ <summary>
+ Return the column with the function of database UPPER.
+ </summary>
+ <param name="fieldName">current field name</param>
+ <returns>UPPER(Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldLowercase(System.String)">
+ <summary>
+ Return the column with the function of database LOWER.
+ </summary>
+ <param name="fieldName">current field name</param>
+ <returns>LOWER(Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldInitcap(System.String)">
+ <summary>
+ Return the column with the function of database INITCAP .
+ </summary>
+ <param name="fieldName">current field name</param>
+ <returns>INITCAP (Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldPad(System.String)">
+ <summary>
+ Return the column with the function of database LPAD or RPAD .
+ </summary>
+ <param name="fieldName">current field name</param>
+ <returns>LPAD(Field) or RPAD(Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldTrunc(System.String)">
+ <summary>
+ Returns date with the time portion of the day truncated.
+ </summary>
+ <param name="fieldName">current field name</param>
+ <returns>TRUNC (Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FunctionTrim(System.String,System.String)">
+ <summary>
+ Return the function of database LTRIM or TRIM.
+ </summary>
+ <param name="functionBody">current function</param>
+ <param name="providerKind">Provider of database.</param>
+ <returns>TRIM(Function) or LTRIM(Function)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FunctionUppercase(System.String)">
+ <summary>
+ Return the function of database UPPER.
+ </summary>
+ <param name="functionBody">current function</param>
+ <returns>UPPER (Function)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FunctionLowercase(System.String)">
+ <summary>
+ Return the function of database LOWER.
+ </summary>
+ <param name="functionBody">current function</param>
+ <returns>LOWER (Function)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FunctionInitcap(System.String)">
+ <summary>
+ Return the function of database INITCAP.
+ </summary>
+ <param name="functionBody">current function</param>
+ <returns>INITCAP (Function)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FunctionPad(System.String)">
+ <summary>
+ Return the column with the function of database LPAD or RPAD.
+ </summary>
+ <param name="functionBody">current function</param>
+ <returns>LPAD(Field) or RPAD(Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.RealName">
+ <summary>
+ Real name of column using the property Alias.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.GetDataReaderMethod(System.String,System.String,InMotionGIT.Actions.Designer.Enumerations.EnumTypeResult)">
+ <summary>
+ Return data reader Method by type of field.
+ </summary>
+ <param name="tableName">table name.</param>
+ <param name="providerKind">Provider of database.</param>
+ <param name="typeResult"> result type (OneRecord - ManyRecords - OneValue).</param>
+ <returns>Method used in database.</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.GetDataReaderMethod(System.String)">
+ <summary>
+ Return data reader Method by type of field.
+ </summary>
+ <param name="providerKind">Provider of database.</param>
+ <returns>Method used in database.</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldAggregateKind(System.String,System.String)">
+ <summary>
+ Return the function of database (AVERAGE - COUNT - MAX - MIN - SUM)
+ </summary>
+ <param name="fieldName">column name.</param>
+ <param name="defaultValueWord">default value.</param>
+ <returns>FUNCTION(Field)</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.IsStringKind">
+ <summary>
+ Validate if the column is String.
+ </summary>
+ <returns>If the column is type String, return True</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.IsNumericKind">
+ <summary>
+ Validate if the column is Numeric.
+ </summary>
+ <returns>If the column is type Numeric, return True</returns>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Column.FieldSpecialBehavior(System.String)">
+ <summary>
+ Returns the field with an alias
+ </summary>
+ <param name="fieldName">colum name</param>
+ <returns>FIELD (Real column name)</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Query.Column.Clone">
+ <summary>
+ Create a new instance
+ </summary>
+ <returns>Column</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Query.Column.FunctionNVL(System.String,System.String,System.String@)">
+ <summary>
+ Return the default value by provider.
+ </summary>
+ <param name="fieldName">column name.</param>
+ <param name="providerKind">Provider of database.</param>
+ <param name="defaultValueWord">default value.</param>
+ <returns>ISNULL(Field, value) or NVL(Field, value)</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Query.Column.GetStandardColumnType(System.String,System.String@)">
+ <summary>
+ Return the standard type of column.
+ </summary>
+ <param name="providerKind">Provider of database.</param>
+ <param name="defaultValue">default value.</param>
+ <returns>Standard Type</returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.ColumnCollection">
+ <summary>
+ List of the column objects
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.JoinContraint">
+ <summary>
+ Base class. Base that defines the characteristics of JOIN.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.Pagination">
+ <summary>
+ Base class. Base that defines the pagination characteristics of the query.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Pagination.BeginIndex">
+ <summary>
+ Parameter indicate Begin index.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Pagination.EndIndex">
+ <summary>
+ Parameter indicate Begin index.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Pagination.BeginIndexName">
+ <summary>
+ Caption of Begin index.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Pagination.EndIndexName">
+ <summary>
+ Caption of Begin index.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Query.Pagination.OrderColumns">
+ <summary>
+ List of ordered columns.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.Table">
+ <summary>
+ Base class. Base that defines the structure of the table in database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Query.TableCollection">
+ <summary>
+ List of the table objects
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumAggregate">
+ <summary>
+ Aggregate list available for a column
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumElementKind">
+ <summary>
+ Purpose of the column
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumElementPadType">
+ <summary>
+ Type of function = LPAD or RPAD 
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumEmailEditionMode">
+ <summary>
+ Mode of use, for the editor for sending mail
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumEntityKind">
+ <summary>
+ Entity Type (table or view)
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumJoinType">
+ <summary>
+ Join type for a select command
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumRequestMethod">
+ <summary>
+ Define los tipos de verbos usandos para un request
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Enumerations.EnumTypeResult">
+ <summary>
+ Number of rows and / or columns returned by a select
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Helpers.LibraryParameter">
+ <summary>
+ Base class. Base that defines the structure of the parameter in the library.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Helpers.Support.SetParameterValue(System.String,System.String,InMotionGIT.Actions.Designer.ParametersCollection)">
+ <summary>
+ Function for search for the parameter with the same type - Función para buscar el parámetro con el mismo tipo
+ </summary>
+ <param name="name">Name of parameter - Nombre del parámetro</param>
+ <param name="type">Type of parameter - Type del parámetro</param>
+ <param name="oldParameters">List of asigned old parameters - Lista de parámetros que han sido asignados anteriormente</param>
+ <returns>Name of parameter - Nombre del parámetro</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Helpers.Support.ValidateAbstractClass(System.String)">
+ <summary>
+ Function for validate if the type is abstract - Función para validar si el tipo es abstracto
+ </summary>
+ <param name="currentType"> Type for validate - Tipo a validar</param>
+ <returns>If the class is abstract - Devueleve verdadero si la clase es abstracta</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Helpers.Support.FindDataEntity(System.String)">
+ <summary>
+ Function for find some entity using the type - Función para buscar alguna entidad usando un tipo
+ </summary>
+ <param name="currentType">Type for search the entity - Tipo para buscar la entidad </param>
+ <returns>Entity Data - Entidad</returns>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Helpers.Support.ShowXtraMessageBox(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+ <summary>
+Show DevExpress MessageBox
+ </summary>
+ <param name="text">Description Box</param>
+ <param name="caption">Title Box</param>
+ <param name="buttons">Buttons Box</param>
+ <param name="icon">Icon Box</param>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ObjectBrowserTags">
+ <summary>
+ Administrates the object browser tags
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserTags.AssemblyType">
+ <summary>
+ Gets or sets the assembly type
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserTags.IsCollection">
+ <summary>
+ Gets or sets if the node is or not a collection type
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserTags.PropertyType">
+ <summary>
+ Gets or sets the property information object
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserTags.IsAttribute">
+ <summary>
+ Gets or sets if the node is or not a attribute
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserTags.IsInterface">
+ <summary>
+ Gets or sets if the node is or not a interface
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ParametersMethodCollection">
+ <summary>
+ List of data types related to a class
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ParameterMethod">
+ <summary>
+ Defines a data type related to a class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.Message.GetXPath(System.String)">
+ <summary>
+ Retrieves the XPath field when the the user does double click on the object browser
+ </summary>
+ <param name="xPath"></param>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.LookupSettings.ItemCollection">
+ <summary>
+ List of items using a fixed list for a list of values.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.LookupSettings.Item">
+ <summary>
+ Define an item using a fixed list for a list of values.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ParametersCollection">
+ <summary>
+ List of the characteristics of parameters
+ </summary>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.Parameter">
+ <summary>
+ Defines the characteristics of a parameter
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.Parameter.Mode">
+ <summary>
+ Mode of sending the parameter during the call to another page.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Actions.Designer.ObjectBrowserUserControl">
+ <summary>
+ Object browser class to get the objects types
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.#ctor">
+ <summary>
+ Brows deep down the parameters workflow objects
+ </summary>
+</member>
+<member name="F:InMotionGIT.Actions.Designer.ObjectBrowserUserControl._nodeSelected">
+ <summary>
+ Gets or sets the node selected in the tree list
+ </summary>
+</member>
+<member name="E:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.TreeList_OnDoubleClick">
+ <summary>
+ Raise the tree list on double click
+ </summary>
+ <param name="xPath">Sets the xpath</param>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.ObjectName">
+ <summary>
+ Gets or sets the workflow name
+ </summary>
+</member>
+<member name="P:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.XPath">
+ <summary>
+ Gets or sets the XPath
+ </summary>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.LoadObjectBrowser(System.Boolean)">
+ <summary>
+ When the form startup gets the first level of the tree from the types
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.ObjectsTreeList_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Fills the XPath when the user does double click on the treelist control
+ </summary>
+ <param name="sender">Sets the object sender</param>
+ <param name="e">Sets the object behavior</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.ObjectsTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Fills the navigation text when the user does click on the treelist control
+ </summary>
+ <param name="sender">Sets the object sender</param>
+ <param name="e">Sets the object behavior</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.FillNavigationText(DevExpress.XtraTreeList.Nodes.TreeListNode,System.Boolean)">
+ <summary>
+ Fills the navigation XPath
+ </summary>
+ <param name="node">Sets the treelist node</param>
+ <param name="isRelativePath">Sets if true if the xpath to insert is in relative position, otherwise false</param>
+</member>
+<member name="M:InMotionGIT.Actions.Designer.ObjectBrowserUserControl.GetParentNode(DevExpress.XtraTreeList.Nodes.TreeListNode,System.Boolean)">
+ <summary>
+ Gets the parent node
+ </summary>
+ <param name="node">Sets the child node</param>
+ <param name="isRelativePath">Sets if true if the xpath to insert is in relative position, otherwise false</param>
+ <returns>Returns the parents node</returns>
+</member>
+</members>
+</doc>

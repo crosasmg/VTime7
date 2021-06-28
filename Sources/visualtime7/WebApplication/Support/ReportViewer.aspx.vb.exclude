@@ -1,0 +1,45 @@
+﻿Imports DevExpress.Data.XtraReports.DataProviders
+
+Partial Class Support_ReportViewer
+    Inherits System.Web.UI.Page
+
+
+    Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+
+
+        Dim x2 As New DevExpress.XtraReports.UI.XtraReport
+        x2.LoadLayout("C:\FrontOffice\WebApplication\XtraReport2.xrpt")
+
+
+
+        x2.DataSource = New ArrayList _
+                    From {InMotionGIT.Common.Helpers.Serialize.DeserializeFromFile(Of InMotionGIT.Product.Entity.Contracts.ProductMaster)("C:\FrontOffice\WebApplication\Support\ProductMaster_9_2.xml")}
+
+        Dim ne As New DataSourceInfo()
+
+
+
+
+        x2.DataSource = New ArrayList _
+                    From {InMotionGIT.Common.Helpers.Serialize.DeserializeFromFile(Of InMotionGIT.Product.Entity.Contracts.ProductMaster)("C:\FrontOffice\WebApplication\Support\ProductMaster_9_2.xml")}
+
+        Viewer.Report = x2
+
+    End Sub
+
+    'Protected Sub Viewer_DataBinding(sender As Object, e As System.EventArgs) Handles Viewer.DataBinding
+    '    Dim x As InMotionGIT.Product.Entity.Contracts.ProductMaster = InMotionGIT.Common.Helpers.Serialize.DeserializeFromFile(Of InMotionGIT.Product.Entity.Contracts.ProductMaster)("C:\FrontOffice\WebApplication\Support\ProductMaster_9_2.xml")
+    '    Dim c As New InMotionGIT.Product.Entity.Contracts.ProductMasterCollection
+    '    Dim ds As New ArrayList
+
+    '    ds.Add(x)
+
+    '    c.Add(x)
+
+    '    Viewer.Report.DataSource = ds
+    'End Sub
+
+    Protected Sub Viewer_Unload(sender As Object, e As System.EventArgs) Handles Viewer.Unload
+        Viewer.Report = Nothing
+    End Sub
+End Class

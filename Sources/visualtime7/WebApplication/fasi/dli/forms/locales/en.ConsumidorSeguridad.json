@@ -1,0 +1,162 @@
+﻿{
+  "app": {
+    "title": "Consumer client application",
+    "form": {
+             "Consumidor_Grid_Message_Notify_insert4": "Se agregó correctamente el registro",
+             "Consumidor_Grid_Title_Notify_insert4": "Agregar registro",
+             "Consumidor_Grid_Message_Notify_insert5": "No se pudo agregar el registro",
+             "Consumidor_Grid_Title_Notify_insert5": "Agregar registro",
+             "Consumidor_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "Consumidor_Grid_Title_Notify_update4": "Actualizar registro",
+             "Consumidor_Grid_Message_Notify_update5": "No se pudo actualizar el registro",
+             "Consumidor_Grid_Title_Notify_update5": "Actualizar registro",
+             "Consumidor_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "Consumidor_Grid_Title_Notify_delete4": "Eliminar registro",
+             "Consumidor_Grid_Message_Notify_delete5": "No se puede eliminar el registro",
+             "Consumidor_Grid_Title_Notify_delete5": "Eliminar registro",
+             "label0_Label": "Only the access token lifetime (in seconds) is able to be updated for the consumer.",
+             "label0_Tooltip": "Only the access token lifetime (in seconds) is able to be updated for the consumer.",
+             "label0_Prefix": "",
+             "label1_Label": "There is no maximum or minimum time allowed for the token duration, but it is recommended between 300 and 3600 seconds.",
+             "label1_Tooltip": "There is no maximum or minimum time allowed for the token duration, but it is recommended between 300 and 3600 seconds.",
+             "label1_Prefix": "",
+             "Consumidor_Grid_Title": "",
+             "Consumidor_Grid_AddButtonCaption": "Add",
+             "Consumidor_Grid_DeleteButtonCaption": "Delete",
+             "Id_Consumidor_Label": "Consumer Id",
+             "Consumidor_GridTbl_Id_Consumidor_Title": "Consumer Id",
+             "Id_Consumidor_Tooltip": "Code of the application.",
+             "Id_Consumidor_Measure": "",
+             "Id_Consumidor_Legend": "",
+             "Id_Consumidor_Prefix": "",
+             "Id_Consumidor_RequiredMessage": "The field is required.",
+             "Id_Compania_Label": "Company Id",
+             "Consumidor_GridTbl_Id_Compania_Title": "Company Id",
+             "Id_Compania_Tooltip": "Code that identifies the user company owner of the information.",
+             "Id_Compania_Measure": "",
+             "Id_Compania_Legend": "",
+             "Id_Compania_Prefix": "",
+             "Id_Compania_RequiredMessage": "The field is required.",
+             "Codigo_Secreto_Label": "Secret Code",
+             "Consumidor_GridTbl_Codigo_Secreto_Title": "Secret Code",
+             "Codigo_Secreto_Tooltip": "Secret code.",
+             "Codigo_Secreto_Measure": "",
+             "Codigo_Secreto_Legend": "",
+             "Codigo_Secreto_Prefix": "",
+             "Codigo_Secreto_Watermark": "",
+             "Codigo_Secreto_RequiredMessage": "The field is required.",
+             "Nombre_Consumidor_Label": "Consumer Name",
+             "Consumidor_GridTbl_Nombre_Consumidor_Title": "Consumer Name",
+             "Nombre_Consumidor_Tooltip": "Application name.",
+             "Nombre_Consumidor_Measure": "",
+             "Nombre_Consumidor_Legend": "",
+             "Nombre_Consumidor_Prefix": "",
+             "Nombre_Consumidor_Watermark": "",
+             "Nombre_Consumidor_RequiredMessage": "The field is required.",
+             "Identificador_Consumidor_Label": "Consumer Identifier",
+             "Consumidor_GridTbl_Identificador_Consumidor_Title": "Consumer Identifier",
+             "Identificador_Consumidor_Tooltip": "Unique name of the application. (Identifier).",
+             "Identificador_Consumidor_Measure": "",
+             "Identificador_Consumidor_Legend": "",
+             "Identificador_Consumidor_Prefix": "",
+             "Identificador_Consumidor_Watermark": "",
+             "Identificador_Consumidor_RequiredMessage": "The field is required.",
+             "Vida_Token_Acceso_Label": "Access Token Lifetime (seconds)",
+             "Consumidor_GridTbl_Vida_Token_Acceso_Title": "Access Token Lifetime (seconds)",
+             "Vida_Token_Acceso_Tooltip": "Lifetime of access token in seconds",
+             "Vida_Token_Acceso_Measure": "",
+             "Vida_Token_Acceso_Legend": "",
+             "Vida_Token_Acceso_Prefix": "",
+             "Vida_Token_Acceso_RequiredMessage": "The field is required.",
+             "Estado_Registro_Label": "Record Status",
+             "Consumidor_GridTbl_Estado_Registro_Title": "Record Status",
+             "Estado_Registro_Tooltip": "Status of the record.",
+             "Estado_Registro_Measure": "",
+             "Estado_Registro_Legend": "",
+             "Estado_Registro_Prefix": "",
+             "Estado_Registro_RequiredMessage": "The field is required.",
+             "CreationDate_Label": "Creation Date",
+             "Consumidor_GridTbl_CreationDate_Title": "Creation Date",
+             "CreationDate_Tooltip": "Computer date when the record is created.",
+             "CreationDate_Measure": "",
+             "CreationDate_Legend": "",
+             "CreationDate_Prefix": "",
+             "CreationDate_RequiredMessage": "The field is required.",
+             "CreatorUserCode_Label": "Creator User Code",
+             "Consumidor_GridTbl_CreatorUserCode_Title": "Creator User Code",
+             "CreatorUserCode_Tooltip": "Code of the user creating  the record.",
+             "CreatorUserCode_Measure": "",
+             "CreatorUserCode_Legend": "",
+             "CreatorUserCode_Prefix": "",
+             "CreatorUserCode_RequiredMessage": "The field is required.",
+             "UpdateDate_Label": "Update Date",
+             "Consumidor_GridTbl_UpdateDate_Title": "Update Date",
+             "UpdateDate_Tooltip": "Computer date when the record is updated or created.",
+             "UpdateDate_Measure": "",
+             "UpdateDate_Legend": "",
+             "UpdateDate_Prefix": "",
+             "UpdateDate_RequiredMessage": "The field is required.",
+             "UpdateUserCode_Label": "Update User Code",
+             "Consumidor_GridTbl_UpdateUserCode_Title": "Update User Code",
+             "UpdateUserCode_Tooltip": "Code of the user creating or updating the record.",
+             "UpdateUserCode_Measure": "",
+             "UpdateUserCode_Legend": "",
+             "UpdateUserCode_Prefix": "",
+             "UpdateUserCode_RequiredMessage": "The field is required.",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "Id_Consumidor": {
+             "AutoNumericMinValue": "The minimum value allowed is -9999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 9999999999",
+             "required": "The field is required."
+        },
+        "Id_Compania": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999",
+             "required": "The field is required."
+        },
+        "Codigo_Secreto": {
+             "maxlength": "The field allows 50 maximum characters",
+             "required": "The field is required."
+        },
+        "Nombre_Consumidor": {
+             "maxlength": "The field allows 50 maximum characters",
+             "required": "The field is required."
+        },
+        "Identificador_Consumidor": {
+             "maxlength": "The field allows 50 maximum characters",
+             "required": "The field is required."
+        },
+        "Vida_Token_Acceso": {
+             "AutoNumericMinValue": "The minimum value allowed is -999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 999999",
+             "required": "The field is required."
+        },
+        "Estado_Registro": {
+             "required": "The field is required."
+        },
+        "CreationDate": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "CreatorUserCode": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999",
+             "required": "The field is required."
+        },
+        "UpdateDate": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "UpdateUserCode": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999",
+             "required": "The field is required."
+        }
+    }
+  }
+}

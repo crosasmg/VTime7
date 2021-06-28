@@ -1,0 +1,629 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.DatosNoEstruct.ContratoDeDatos
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagListDTO">
+ <summary>
+ This class defines TagListDTO. // Esta clase define TagListDTO.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ShortTagDTO">
+ <summary>
+ This class defines ShortTagDTO. // Esta clase define ShortTagDTO.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ShortTagDTO.#ctor(InMotionGIT.DatosNoEstruct.ContratoDeDatos.Enums.TagTypeEnum,System.String)">
+ <summary>
+ ShortTagDTO constructor. // Constructor ShortTagDTO.
+ </summary>
+ <param name="tagTypeId">tag type id. // Id tipo etiqueta. </param>
+ <param name="content">Content. // Contenido.</param>
+</member>
+<member name="M:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ShortTagDTO.#ctor">
+ <summary>
+ ShortTagDTO constructor. // Constructor ShortTagDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ShortTagDTO.Content">
+ <summary>
+ Content. // Contenido. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ShortTagDTO.TagTypeId">
+ <summary>
+ Tag type id. // It tipo etiqueta. 
+ </summary>e
+ <returns>TagTypeEnum. // TagTypeEnum.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.NoteDTO">
+ <summary>
+ This class defines NoteDTO. // Esta clase define NoteDTO.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.NoteDTO.#ctor">
+ <summary>
+ NoteDTO constructor. // Constructor NoteDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.NoteDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.NoteDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.NoteDTO.Content">
+ <summary>
+ Content. // Contenido. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.AudioDTO">
+ <summary>
+ This class defines AudioDTO. // Esta clase define AudioDTO.
+ </summary>s
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.AudioDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.AudioDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.AudioDTO.Sound">
+ <summary>
+ Sound. // Sonido. 
+ </summary>
+ <returns>Byte(). // Byte()</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO">
+ <summary>
+ This class defines LabelDTO. // Esta clase define LabelDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO.Id">
+ <summary>
+ Id. // Identificador. 
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia. 
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecuencia. 
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO.Content">
+ <summary>
+ Content. // Contenido. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagDTO.TagTypeId">
+ <summary>
+ Tag type id. // Id tipo de tag. 
+ </summary>
+ <returns>Short. // Short</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO">
+ <summary>
+ This class defines ResourceDTO. // Esta clase define ResourceDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Name">
+ <summary>
+ Name. // Nombre
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Description">
+ <summary>
+ Description. // Descripción. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ResourceTypeId">
+ <summary>
+ Resource Type Id. // Id tipo de recurso. 
+ </summary>
+ <returns>Short. // Short.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ResourceTypeName">
+ <summary>
+ Resource Type Id. // Id tipo de recurso. 
+ </summary>
+ <returns>Short. // Short.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ExpirationDate">
+ <summary>
+ Expiration date. // Fecha de expiación.
+ </summary>
+ <returns>Nullable(Of DateTime). // Nullable(Of DateTime).</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ClientAssociatedPerson">
+ <summary>
+ Client associated person. // Cliente asociado persona.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ClientAssociatedCompany">
+ <summary>
+ Cliente associated company. // Cliente asociado compañía.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.LocationId">
+ <summary>
+ Location Id. // Id Localización. 
+ </summary>
+ <returns>Short. // Short.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Thumbnail">
+ <summary>
+ Thumbnail. // Miniatura. 
+ </summary>
+ <returns>Byte(). // Byte()</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ResourceType">
+ <summary>
+ Resource type id. // Id tipo de recurso. 
+ </summary>
+ <returns>ResourceTypeDTO. // ResourceTypeDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Tags">
+ <summary>
+ Tags. // Etiquetas. 
+ </summary>
+ <returns>HashSet(Of TagDTO). // HashSet(Of TagDTO)</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Location">
+ <summary>
+ Location. // Ubicación.
+ </summary>
+ <returns>LocationDTO. // LocationDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Note">
+ <summary>
+ Note. // Nota. 
+ </summary>
+ <returns>NoteDTO. // NoteDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Image">
+ <summary>
+ Image. // Imagen. 
+ </summary>
+ <returns>ImageDTO. // ImageDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Video">
+ <summary>
+ Video. // Video.
+ </summary>
+ <returns>VideoDTO. // VideoDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Audio">
+ <summary>
+ Sound. // Sonido. 
+ </summary>
+ <returns>AudioDTO. // AudioDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Document">
+ <summary>
+ Document. // Documento
+ </summary>
+ <returns>DocumentDTO. // DocumentDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.UserAuthorizedResource">
+ <summary>
+ UserAuthorized Resource. // Usuario autorizado recurso. 
+ </summary>
+ <returns>UserAuthorizedResourceDTO. // UserAuthorizedResourceDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.Sequence">
+ <summary>
+ Sequence. // Secuencia. 
+ </summary>
+ <returns>SequenceDTO. // SequenceDTO.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.CreationDate">
+ <summary>
+ CreationDate. // CreationDate. 
+ </summary>
+ <returns>DateTime. // DateTime.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.CreatorUserCode">
+ <summary>
+ CreatorUserCode. // CreatorUserCode. 
+ </summary>
+ <returns>DateTime. // DateTime.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.UpdateDate">
+ <summary>
+ UpdateDate. // UpdateDate. 
+ </summary>
+ <returns>DateTime. // DateTime.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.UpdateUserCode">
+ <summary>
+ UpdateUserCode. // UpdateUserCode. 
+ </summary>
+ <returns>DateTime. // DateTime.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.UpdateUserName">
+ <summary>
+ Update user name. // Nombre Usuario Modificador.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.CreatorUserName">
+ <summary>
+ Creator user name. // Nombre Usuario Creador.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.BackupResourceId">
+ <summary>
+ IdRespaldoRecurso. // BackupRecordId. 
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceDTO.ExternalSystemId">
+ <summary>
+ IdSistemaExterno. // ExtenalSystemId. 
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO">
+ <summary>
+ This class defines SequenceDTO. // Esta clase define SequenceDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO.Id">
+ <summary>
+ Id. // Identificador.
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO.BlockedToExternalUsers">
+ <summary>
+ Blocked to external users. // Bloquead a usuarios externos
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO.AdditionalAuthorizedUsers">
+ <summary>
+ Adicional authorized users. // Usuarios autorizados adicionales. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO.Resource">
+ <summary>
+ Resource. // Recurso.
+ </summary>
+ <returns>List(Of ResourceDTO). // List(Of ResourceDTO)</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.SequenceDTO.UserAuthorizedSequence">
+ <summary>
+ User authorized sequence. // Secuencia de usuarios autorizados. 
+ </summary>
+ <returns>List(Of UserAuthorizedResourceDTO). // List(Of UserAuthorizedResourceDTO)</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagTypeDTO">
+ <summary>
+ This class defines LabelDTO. // Esta clase define LabelDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagTypeDTO.Id">
+ <summary>
+ Id. // Identificador. 
+ </summary>
+ <returns>Short. // Short.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagTypeDTO.LanguageId">
+ <summary>
+ Language id. // Id lenguaje.
+ </summary>
+ <returns>Short. // Short.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagTypeDTO.ShortDescription">
+ <summary>
+ Short description. Descripción corta. 
+ </summary>
+ <returns>String. // String</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.TagTypeDTO.LongDescription">
+ <summary>
+ Long description. // Descripción larga. 
+ </summary>
+ <returns>String. // String</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceTypeDTO">
+ <summary>
+ This class defines ResourceTypeDTO. // Esta clase define ResourceTypeDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceTypeDTO.Id">
+ <summary>
+ Id. // Identificador. 
+ </summary>
+ <returns>Short. // Short</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceTypeDTO.ShortDescription">
+ <summary>
+ Short description. // Descripción corta. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceTypeDTO.LongDescription">
+ <summary>
+ Long description. // descripción larga. 
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ResourceTypeDTO.LanguageId">
+ <summary>
+ Language id. // Id lenguaje.
+ </summary>
+ <returns>Short. // Short</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedSequenceDTO">
+ <summary>
+ This class defines UserAuthorazedSequenceDTO. // Esta clase define UserAuthorazedSequenceDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedSequenceDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedSequenceDTO.UserId">
+ <summary>
+ User id. // Id usuario. 
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedSequenceDTO.Sequence">
+ <summary>
+ Sequence. // Secuencia. 
+ </summary>
+ <returns>SequenceDTO. // SequenceDTO.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedResourceDTO">
+ <summary>
+ This class defines UserAuthorazedResourceDTO. // Esta clase define UserAuthorazedResourceDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedResourceDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedResourceDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedResourceDTO.UserId">
+ <summary>
+ User id. // Id usuario. 
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.UserAuthorizedResourceDTO.Resource">
+ <summary>
+ Resource. // Recurso. 
+ </summary>
+ <returns>ResourceDTO. // ResourceDTO.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.VideoDTO">
+ <summary>
+ This class defines VideoDTO. // Esta clase define VideoDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.VideoDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.VideoDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.VideoDTO.Video">
+ <summary>
+ Video. // Video.
+ </summary>
+ <returns>Byte(). // Byte()</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO">
+ <summary>
+ This class defines LocationDTO. // Esta clase define LocationDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO.Id">
+ <summary>
+ Id. // Identificador.
+ </summary>
+ <returns>Short. // Short</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO.LanguageId">
+ <summary>
+ Language id. // Id lenguaje
+ </summary>
+ <returns>Short. // Short</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO.ShortDescription">
+ <summary>
+ Short description. // Description corta
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO.LongDescription">
+ <summary>
+ Long description. // Descripción larga.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.LocationDTO.Resource">
+ <summary>
+ Resource. // Recurso. 
+ </summary>
+ <returns>List(Of ResourceDTO). // List(Of ResourceDTO).</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ImageDTO">
+ <summary>
+ This class defines ImageDTO. // Esta clase define ImageDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ImageDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ImageDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ImageDTO.WebQualityImage">
+ <summary>
+ Web quality image. // Imagen calidad web. 
+ </summary>
+ <returns>Byte(). // Byte().</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.ImageDTO.OriginalImage">
+ <summary>
+ Original image. // Imagen original. 
+ </summary>
+ <returns>Byte(). // Byte().</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.DocumentDTO">
+ <summary>
+ This class defines DocumentDTO. // Esta clase define DocumentoDTO.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.DocumentDTO.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.DocumentDTO.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.DTOs.DocumentDTO.Document">
+ <summary>
+ Document. // Documento.
+ </summary>
+ <returns>Byte(). // Byte()</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Enums.TagTypeEnum">
+ <summary>
+ Enum that defines the codes for tag types. // Enum que define los códigos para los tipos de tags. 
+ </summary>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Enums.FileTypeEnum">
+ <summary>
+ Enum that defines the codes associated to the resources that are handled by DNE. // Enum que define los códigos asociados a los recursos manejados en DNE
+ </summary>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Modelo.ComposedResourceKey">
+ <summary>
+ This class defines ComposedResourceKey that contains SequenceId and ConsequenceId as its attributes. // Esta clase define ComposedResourceKey la cual contiene Id Secuencia e Id Consecutivo como sus atributos. 
+ </summary>
+</member>
+<member name="M:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Modelo.ComposedResourceKey.#ctor">
+ <summary>
+ ComposedResourceKey constructor. // Constructor ComposedResourceKey.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Modelo.ComposedResourceKey.#ctor(System.Int32,System.Int32)">
+ <summary>
+ ComposedResourceKey constructor. // Constructor ComposedResourceKey.
+ </summary>
+ <param name="sequenceId">Sequence id. // Id secuencia</param>
+ <param name="consequenceId">Consequence id. // Id consecutivo</param>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Modelo.ComposedResourceKey.SequenceId">
+ <summary>
+ Sequence id. // Id secuencia
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.DatosNoEstruct.ContratoDeDatos.Modelo.ComposedResourceKey.ConsequenceId">
+ <summary>
+ Consequence id. // Id consecutivo
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.ResponseFASIData">
+ <summary>
+ Estructura de respuesta de la llamada FASI para los nombres de los usuarios.
+ </summary>
+</member>
+<member name="T:InMotionGIT.DatosNoEstruct.ContratoDeDatos.UserData">
+ <summary>
+ Estructura interna que contiene código y descripción del usuario en la respuesta del api de FASI.
+ </summary>
+</member>
+</members>
+</doc>

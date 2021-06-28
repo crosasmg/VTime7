@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Security.Services
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Security.Services.TypeForm">
+ <summary>
+ Enumerator type form. // Numerador tipo de forma.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.Enumerations.eUserStatus">
+ <summary>
+ Enumerator user status. // Numerador estado de usuario.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.Enumerations.EnumUserSecurity">
+ <summary>
+ Enumerator user security. // Numerador usuario de seguridad.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.Enumerations.EnumPortaUserType">
+ <summary>
+ Enumerator portal user type. // Numerador tipo de usuario del portal.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.SecurityException">
+ <summary>
+ SecurityException class. // Clase SecurityException.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.Helpers.Enumerations.SelectEnumValue``1(``0,System.Int32)">
+ <summary>
+ Allow get value from enumm list from selected value a DropDownList
+ </summary>
+ <typeparam name="T">Enum type</typeparam>
+ <param name="value">Selected Item</param>
+ <returns>Enum value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Helpers.Enumerations.SelectEnumValue``1(``0,System.String)">
+ <summary>
+ Allow get value from enumm list from selected value a DropDownList
+ </summary>
+ <typeparam name="T">Enum type</typeparam>
+ <param name="value">Selected Item</param>
+ <returns>Enum value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Helpers.Enumerations.LanguageFromCurrentThreadCulture">
+ <summary>
+ Return the language by current thread culture
+ </summary>
+ <returns>EnumLanguage value</returns>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.UserName">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Email">
+ <summary>
+ Email address
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.RealUserName">
+ <summary>
+ Internal User Name
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.UserType">
+ <summary>
+ Assigned User Type
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.OldEmail">
+ <summary>
+ Old E-mail of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.FirstName">
+ <summary>
+ First name of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.SurName">
+ <summary>
+ Middle name of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LastName">
+ <summary>
+ Last name of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.SecondLastName">
+ <summary>
+ Second last name of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.DateOfBirth">
+ <summary>
+ Date of birth of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Gender">
+ <summary>
+ Gender of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Password">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.PasswordQuestion">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.PasswordAnswer">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.CompanyName">
+ <summary>
+ Company name of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.UserNamePlusEmail">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.FullName">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.AddressHome">
+ <summary>
+ Address of home of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.City">
+ <summary>
+ City of location of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.State">
+ <summary>
+ State of location of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Country">
+ <summary>
+ Country of location of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.ExtensionNumber">
+ <summary>
+ Extension number of telephone of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.AreaNumber">
+ <summary>
+ Area number of telephone of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.TelephoneNumber">
+ <summary>
+ Telephone number of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.CreationDate">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LastLoginDate">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LastActivityDate">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsLockedOut">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LastLockoutDate">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LastPasswordChangedDate">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Comment">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsApproved">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsInactive">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.ClientID">
+ <summary>
+ Code of the client
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.UserID">
+ <summary>
+ Code of the VisualTIME's user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.ProducerID">
+ <summary>
+ Code of the producer
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.RolesAssigned">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsEmployee">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.FirstTimePasswordChange">
+ <summary>
+ First time password change of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.AccountLockoutNotification">
+ <summary>
+ Account lockout notification of the user
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsAdministrator">
+ <summary>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.AllowScheduler">
+ <summary>
+ This property is associated with the field 'AllowScheduler' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsClient">
+ <summary>
+ This property is associated with the field 'IsClient' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsProducer">
+ <summary>
+ This property is associated with the field 'IsProducer' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.SecurityLevel">
+ <summary>
+ Security Level
+ </summary>
+ <remarks>
+ This property is associated with the field 'SecurityLevel' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsOnline">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.IsFirstVisit">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Language">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LanguageName">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.Theme">
+ <summary>
+
+ </summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.Contracts.UserInformation.LanguageID">
+ <summary>
+ Code of the language
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.Interfaces.ISecurityContext.Setup(System.String,System.String,System.Int32,InMotionGIT.Common.Enumerations.EnumApplicationVersion)">
+ <summary>
+ Setup. // Setup.
+ </summary>
+ <param name="userInitials">User initials. // Iniciales del usuario.</param>
+ <param name="userPassword">User password. // Clave del usuario.</param>
+ <param name="companyId">Company id. // Id de la compañía.</param>
+ <param name="version">Version. // Versión.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Interfaces.ISecurityContext.Context(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Context. // Contexto.
+ </summary>
+ <param name="consumer">Consumer. // Consumidor.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Interfaces.ISecurityContext.ValidateAccess(InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String)">
+ <summary>
+ Validate the access to the method. // Valida el acceso al método.
+ </summary>
+ <param name="consumer">Consumer. // Consumidor.</param>
+ <param name="methodName">Method name. // Nombre del método.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="T:InMotionGIT.Security.Services.OAuth.OAuthBase.SignatureTypes">
+ <summary>
+ Provides a predefined set of algorithms that are supported officially by the protocol
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.OAuth.OAuthBase.QueryParameter">
+ <summary>
+ Provides an internal structure to sort the query parameter
+ </summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.OAuth.OAuthBase.QueryParameterComparer">
+ <summary>
+ Comparer class used to perform the sorting of the query parameters
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.ComputeHash(System.Security.Cryptography.HashAlgorithm,System.String)">
+ <summary>
+ Helper function to compute a hash value
+ </summary>
+ <param name="hashAlgorithm">The hashing algoirhtm used. If that algorithm needs some initialization, like HMAC and its derivatives, they should be initialized prior to passing it to this function</param>
+ <param name="data">The data to hash</param>
+ <returns>a Base64 string of the hash value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GetQueryParameters(System.String)">
+ <summary>
+ Internal function to cut out all non oauth query string parameters (all parameters not begining with "oauth_")
+ </summary>
+ <param name="parameters">The query string part of the Url</param>
+ <returns>A list of QueryParameter each containing the parameter name and value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.UrlEncode(System.String)">
+ <summary>
+ This is a different Url Encode implementation since the default .NET one outputs the percent encoding in lower case.
+ While this is not a problem with the percent encoding spec, it is used in upper case throughout OAuth
+ </summary>
+ <param name="value">The value to Url encode</param>
+ <returns>Returns a Url encoded string</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.NormalizeRequestParameters(System.Collections.Generic.IList{InMotionGIT.Security.Services.OAuth.OAuthBase.QueryParameter})">
+ <summary>
+ Normalizes the request parameters according to the spec
+ </summary>
+ <param name="parameters">The list of parameters already sorted</param>
+ <returns>a string representing the normalized parameters</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateSignatureBase(System.Uri,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+ <summary>
+ Generate the signature base that is used to produce the signature
+ </summary>
+ <param name="url">The full url that needs to be signed including its non OAuth url parameters</param>
+ <param name="consumerKey">The consumer key</param>        
+ <param name="token">The token, if available. If not available pass null or an empty string</param>
+ <param name="tokenSecret">The token secret, if available. If not available pass null or an empty string</param>
+ <param name="httpMethod">The http method used. Must be a valid HTTP method verb (POST,GET,PUT, etc)</param>
+ <param name="signatureType">The signature type. To use the default values use <see cref="T:InMotionGIT.Security.Services.OAuth.OAuthBase.SignatureTypes">OAuthBase.SignatureTypes</see>.</param>
+ <returns>The signature base</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateSignatureUsingHash(System.String,System.Security.Cryptography.HashAlgorithm)">
+ <summary>
+ Generate the signature value based on the given signature base and hash algorithm
+ </summary>
+ <param name="signatureBase">The signature based as produced by the GenerateSignatureBase method or by any other means</param>
+ <param name="hash">The hash algorithm used to perform the hashing. If the hashing algorithm requires initialization or a key it should be set prior to calling this method</param>
+ <returns>A base64 string of the hash value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateSignature(System.Uri,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+ <summary>
+ Generates a signature using the HMAC-SHA1 algorithm
+ </summary>		
+ <param name="url">The full url that needs to be signed including its non OAuth url parameters</param>
+ <param name="consumerKey">The consumer key</param>
+ <param name="consumerSecret">The consumer seceret</param>
+ <param name="token">The token, if available. If not available pass null or an empty string</param>
+ <param name="tokenSecret">The token secret, if available. If not available pass null or an empty string</param>
+ <param name="httpMethod">The http method used. Must be a valid HTTP method verb (POST,GET,PUT, etc)</param>
+ <returns>A base64 string of the hash value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateSignature(System.Uri,System.String,System.String,System.String,System.String,System.String,System.String,System.String,InMotionGIT.Security.Services.OAuth.OAuthBase.SignatureTypes,System.String@,System.String@)">
+ <summary>
+ Generates a signature using the specified signatureType 
+ </summary>		
+ <param name="url">The full url that needs to be signed including its non OAuth url parameters</param>
+ <param name="consumerKey">The consumer key</param>
+ <param name="consumerSecret">The consumer seceret</param>
+ <param name="token">The token, if available. If not available pass null or an empty string</param>
+ <param name="tokenSecret">The token secret, if available. If not available pass null or an empty string</param>
+ <param name="httpMethod">The http method used. Must be a valid HTTP method verb (POST,GET,PUT, etc)</param>
+ <param name="signatureType">The type of signature to use</param>
+ <returns>A base64 string of the hash value</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateTimeStamp">
+ <summary>
+ Generate the timestamp for the signature        
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.OAuth.OAuthBase.GenerateNonce">
+ <summary>
+ Generate a nonce
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Security.Services.My.Resources.Resource">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerBlack">
+<summary>
+  Looks up a localized string similar to Black.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerBlue">
+<summary>
+  Looks up a localized string similar to Blue.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerGreen">
+<summary>
+  Looks up a localized string similar to Green.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerRed">
+<summary>
+  Looks up a localized string similar to Red.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerWhite">
+<summary>
+  Looks up a localized string similar to White.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretAnswerYellow">
+<summary>
+  Looks up a localized string similar to Yellow.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resource.SecretQuestionColor">
+<summary>
+  Looks up a localized string similar to What&apos;s your favorite color ?.
+</summary>
+</member>
+<member name="T:InMotionGIT.Security.Services.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.companyIDGreaterToZero">
+<summary>
+  Looks up a localized string similar to The company identificacion must be greater to zero.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.initialsCanNotBeEmpty">
+<summary>
+  Looks up a localized string similar to The initials can not be empty.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.MessageBySchemaSecurity">
+<summary>
+  Looks up a localized string similar to Access not permitted by security scheme..
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.MessageBySchemaSheduler">
+<summary>
+  Looks up a localized string similar to Access time not allowed by security scheme..
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.MessageBytTansactionsSheduler">
+<summary>
+  Looks up a localized string similar to Access not allowed by schedule transactions..
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.passwordCanNotBeEmpty">
+<summary>
+  Looks up a localized string similar to The password can not be empty.
+</summary>
+</member>
+<member name="P:InMotionGIT.Security.Services.My.Resources.Resources.windowLogicalCodeCanNotBeEmpty">
+<summary>
+  Looks up a localized string similar to The code of the window can not be empty.
+</summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.SecurityContext.Setup(System.String,System.String,System.Int32,InMotionGIT.Common.Enumerations.EnumApplicationVersion)">
+ <summary>
+ Setup. // Setup.
+ </summary>
+ <param name="userInitials">User initials. // Iniciales del usuario.</param>
+ <param name="userPassword">User password. // Clave del usuario.</param>
+ <param name="companyId">Company id. // Id de la compañía.</param>
+ <param name="version">Version. // Versión.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.SecurityContext.Context(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Context. // Contexto.
+ </summary>
+ <param name="consumer">Consumer. // Consumidor.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.SecurityContext.SetupContext(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Setup context. // Setup del contexto.
+ </summary>
+ <param name="consumer">Consumer. // Consumidor.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.SecurityContext.ValidateAccess(InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String)">
+ <summary>
+ Validate the access to the method. // Valida el acceso al método.
+ </summary>
+ <param name="consumer">Consumer. // Consumidor.</param>
+ <param name="methodName">Method name. // Nombre del método.</param>
+ <returns>ConsumerInformation. // ConsumerInformation.</returns>
+</member>
+<member name="T:InMotionGIT.Security.Services.Settings">
+ <summary>
+ Settings class. // Clase settings.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.Settings.IsMultiCompany">
+ <summary>
+  Validate the multiCompany using settings of eFunctions. // Valida la multi compañía usando la configuración de eFunctions.
+ </summary>
+ <returns>True if multiCompany is equals to 1 or it's equals to YES; otherwise, false. // Verdadero si multi compañía es 1 o TRUE, de otra forma FALSE.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Settings.MultiCompanyList">
+ <summary>
+  Build the list of the multiCompanies. // Construye la lista de multi compañías.
+ </summary>
+ <returns>List of the companies VT. // Lista de compañías de VT.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Security.Services.ISettings">
+ <summary>
+ Interface for ISettings. // Interfaz para ISettings.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.ISettings.IsMultiCompany">
+ <summary>
+  Validate the multiCompany using settings of eFunctions. // Valida la multi compañía usando la configuración de eFunctions.
+ </summary>
+ <returns>True if multiCompany is equals to 1 or it's equals to YES; otherwise, false. // Verdadero si multi compañía es 1 o TRUE, de otra forma FALSE.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.ISettings.MultiCompanyList">
+ <summary>
+  Build the list of the multiCompanies. // Construye la lista de multi compañías.
+ </summary>
+ <returns>List of the companies VT. // Lista de compañías de VT.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Encryption.Decryption(System.String)">
+ <summary>
+ Decrypt the user's password. // Descifra la clave del usuario.
+ </summary>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema</param>   
+ <returns>Password decrypted. // Clave descifrada.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Security.Services.IEncryption">
+ <summary>
+ Interface for IEncryption. // Interfaz para IEncryption.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.IEncryption.Decryption(System.String)">
+ <summary>
+ Decrypt the user's password. // Descifra la clave del usuario.
+ </summary>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema</param>   
+ <returns>Password decrypted. // Clave descifrada.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Security.Services.IMenu">
+ <summary>
+ Interface for IMenu. // Interfaz para IMenu.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.IMenu.MakeURL(System.String,System.Int32)">
+ <summary>
+ Build the url of the transaction. // Construye el URL de la transacción.
+ </summary>
+ <param name="windowLogicalCode">Code of the window (logical code). // Código de la ventana (código lógico).</param>
+ <param name="CompanyId">Company Id. // Identificador de compañía.</param>
+ <returns>Transaction's URL. // URL de la transacción.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IMenu.FullMenuInformation(System.String,System.String,System.Int32)">
+ <summary>
+ Retrieves the full menu information. // Retorna la información completa del menú.
+ </summary>
+ <param name="menuCode">Code of the menu. // Código del menú.</param>
+ <param name="schemaCode">Schema code. // Código de esquema.</param>
+ <param name="CompanyId">Company Id. // Identificador de compañía.</param>
+ <returns>Information items of the current menu (module). // Items de información del menú actual (módulo).</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IMenu.FullWindowsList(System.String,System.String,System.Int32)">
+ <summary>
+ Retrieves the full menu information. // Retorna la información completa del menú.
+ </summary>
+ <param name="filter">Filter. // Filtros.</param>
+ <param name="schemaCode">Schema code. // Código de esquema.</param>
+ <param name="CompanyId">Company Id. // Identificador de compañía.</param>
+ <returns>List information items of the current menu (module). // Lista de items de información del menú actual (módulo).</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.IMenu.FullWindowsListPage(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Method that returns the list page menus. // Método que retorna la lista menús por página.
+ </summary>
+ <param name="filter">Filter. // Filtros.</param>
+ <param name="schemaCode">Schema code. // Código de esquema.</param>
+ <param name="CompanyId">Company Id. // Identificador de compañía.</param>
+ <param name="startIndex">Index start page. // Inicio de indice de paginación.</param>
+ <param name="endIndex">Index end page. // Fin de indice de paginación.</param>
+ <returns>List information items of the current menu (module). // Lista de items de información del menú actual (módulo).</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IMenu.IsAllowed(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Validates if the operation is allowed. // Se valida si la operación es permitida.
+ </summary>
+ <param name="userCode">User code. // Código del usuario.</param>
+ <param name="userSchema">User Schema. // Esquema del usuario.</param>
+ <param name="transactionCode">Transaction code. // Código de la transacción.</param>
+ <param name="languageId">Language id. // Código del lenguaje.</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Security.Services.IUsers">
+ <summary>
+ Interface for IUsers. // Interfaz para IUsers.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.PortalAuthentication(System.String,System.String,System.Int32,System.String)">
+ <summary>
+ Portal authentication. // Autenticación del portal.
+ </summary>
+ <param name="email">Email of user. / Email del usuario.</param>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema.</param>
+ <param name="companyId">Code of the company. // Código de la compañía.</param>
+ <param name="IP">IP. // IP.</param>
+ <returns>AuthenticationInformation. // AuthenticationInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.Authentication(System.String,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Validate user credentials. // Valida las credenciales del usuario.
+ </summary>
+ <param name="userInitials">Initials of the User. // Iniciales del usuario.</param>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema.</param>
+ <param name="companyId">Code of the company. // Código de la compañía.</param>
+ <param name="isPortal">Indicate if the user is authenticated by FrontOffice(True) or for the BackOffice(False). // Indica si el usuario es autenticado por el Portal(True) por el BackOffice(False).</param>
+ <returns>User information authenticated</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.GetPortalUsers">
+ <summary>
+ Get all information of user in the portal. // Obtiene toda la información del usuario en el portal.
+ </summary>
+ <returns>All Portal Users. // Todos los usuarios del portal.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.RetrieveUserInformation(System.String)">
+ <summary>
+ Get all information of user in the portal. // Obtiene toda la información del usuario en el portal.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <returns>Portal User Information. // Información del usuario del portal. </returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.GetRecoverPassword(System.String,System.String,System.Boolean,System.String)">
+ <summary>
+ Recover the actual password or create new password. // Recupera la clave actual o crea una nueva.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="email">Email of user. // Email del usuario.</param>
+ <param name="isRecoverPassword">Indicate if recover the current password. // Indica si se recupera el password actual.</param>
+ <param name="currentLanguageId">Current language. // Lenguaje actual.</param>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.CreatePortalUser(InMotionGIT.Security.Services.Contracts.UserInformation)">
+ <summary>
+ Create a user in asp.net security tables using the Membership class (System.Web.Security). // Crea un usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="user">User. // Usuario.</param>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.UpdatePortalUser(InMotionGIT.Security.Services.Contracts.UserInformation,System.String,System.String)">
+ <summary>
+ Update the informations of a user in asp.net security tables using the Membership class (System.Web.Security).// Actualiza un usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="user">User. // Usuario.</param>
+ <param name="currentUserName"></param>
+ <param name="rolesList"></param>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.DeletePortalUser(System.String,System.Boolean)">
+ <summary>
+ Deletes a user in asp.net security tables using the Membership class (System.Web.Security). // Borra el usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="deleteRelatedData">Security Answer. // Respuesta de seguridad.</param>
+ <returns>Indicator if executed properly the function</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.ChangePasswordPortalUser(System.String,System.String,System.String)">
+ <summary>
+ Change the password of the user in the portal. // Cambia el password del usuario en el portal.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="oldPassword">Current password of the user..</param>
+ <param name="newPassword">New password of the user..</param>
+ <returns>true if the password has been changed; otherwise, false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.UserChangeRolToUser(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ User change rol to user. // Usuario cambia rol a usuario.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="listRol">Role list. // Lista de roles.</param>
+ <returns>Boolean. // Boolean.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.UserSetRol(System.String,System.String,System.Boolean)">
+ <summary>
+ Changes state to idle and locked property of a user in addition to establishing a specific role. // 
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="rolName">The name of the role to be assigned to the user. // Nombre del rol asignado al usuario.</param>
+ <param name="Active">State in which you want to stop the user. // Estado en que detener al usuario.</param>
+ <returns>Returns the status of the action. // Retorna el estado de la acción.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.Exist(System.String)">
+ <summary>
+ Checks whether a user exists or not, by the user name. // Verifica si un usuario existe o no, por medio del nombre de usuario.
+ </summary>
+ <param name="userName">UserName of user. / Nombre de usuario.</param>
+ <returns>Boolean. // Boolean.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.IUsers.ExistEmail(System.String)">
+ <summary>
+ Checks whether a user exists or not, by the email. // Verifica si un usuario existe o no por medio del email.
+ </summary>
+ <param name="email">Email of user. // Email del usuario.</param>
+ <returns>Boolean. // Boolean.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.MakeURL(System.String,System.Int32)">
+ <summary>
+  Build the URL of the transaction
+ </summary>
+ <param name="windowLogicalCode">Code of the window (logical code)..</param>
+ <returns>Transaction's URL</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.FullMenuInformation(System.String,System.String,System.Int32)">
+ <summary>
+  Return the items information of the current menu (module)
+ </summary>
+ <param name="menuCode">Code of the menu..</param>
+ <param name="schemaCode">Code of the schema..</param>
+ <param name="CompanyId">Identification of the company..</param>
+ <returns>List of the items</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.FullWindowsListPage(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Method that returns the list page menus / Método que retorna la lista menús por paginación
+ </summary>
+ <param name="filter">Filter / Filtros</param>
+ <param name="schemaCode">Schema code / Codigo de esquema </param>
+ <param name="CompanyId">Company Id / Identificador de compañia</param>
+ <param name="startIndex">Index start page/ Inicio de indice de paginación </param>
+ <param name="endIndex">Index end page/ Fin de indice de paginación</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.IsAllowed(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Se valida la operación
+ </summary>
+ <param name="userCode">User code</param>
+ <param name="userSchema">User Schema</param>
+ <param name="transactionCode">Transaction code</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.IsAllowedGlobalTransaction(System.String,System.String,System.Int32)">
+ <summary>
+  Verifica si a nivel de 'Modulo' existe mas que alguna operación no permitida
+ </summary>
+ <param name="menuCode">Code of the menu..</param>
+ <param name="schemaCode">Code of the schema..</param>
+ <param name="CompanyId">Identification of the company..</param>
+ <returns>List of the items</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.IsAllowedGlobalTransactionInternal(InMotionGIT.Security.Services.MenuInformation,InMotionGIT.Security.Services.MenuInformationList)">
+ <summary>
+ Método recursive para interaction sobre colecciones de menus
+ </summary>
+ <param name="root"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.LoadSubMenues(System.String,System.String,InMotionGIT.Security.Services.MenuInformation@,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="sCodispl"></param>
+ <param name="sSche_Code"></param>
+ <param name="currentMenu"></param>
+ <param name="companyId"></param>
+</member>
+<member name="M:InMotionGIT.Security.Services.Menu.IsAllowTransaction(System.String)">
+ <summary>
+ Validación a nivel de transacción
+ </summary>
+ <param name="transactionCode">Código de transacción</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Security.Services.Users">
+ <summary>
+ Users class. // Clase Users.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.PortalAuthentication(System.String,System.String,System.Int32,System.String)">
+ <summary>
+ Portal authentication. // Autenticación del portal.
+ </summary>
+ <param name="email">Email of user. / Email del usuario.</param>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema.</param>
+ <param name="companyId">Code of the company. // Código de la compañía.</param>
+ <param name="IP">IP. // IP.</param>
+ <returns>AuthenticationInformation. // AuthenticationInformation.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.AuthenticationInternal(System.String,System.String,System.Int32,System.Boolean,InMotionGIT.Core.Configuration.Enumerations.EnumSecurityMode)">
+ <summary>
+ Validate user credentials. // Valida las credenciales del usuario.
+ </summary>
+ <param name="userInitials">Initials of the User. // Iniciales del usuario.</param>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema.</param>
+ <param name="companyId">Code of the company. // Código de la compañía.</param>
+ <param name="isPortal">Indicate if the user is authenticated by FrontOffice(True) or for the BackOffice(False). // Indica si el usuario es autenticado por el Portal(True) por el BackOffice(False).</param>
+ <param name="securityMode">Type security mode. // Modo de seguridad.</param>
+ <returns>User information authenticated. // Información del usuario autenticado.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.Authentication(System.String,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Validate user credentials. // Valida las credenciales del usuario.
+ </summary>
+ <param name="userInitials">Initials of the User. // Iniciales del usuario.</param>
+ <param name="password">Password for access to the system. // Clave para acceder al sistema.</param>
+ <param name="companyId">Code of the company. // Código de la compañía.</param>
+ <param name="isPortal">Indicate if the user is authenticated by FrontOffice(True) or for the BackOffice(False). // Indica si el usuario es autenticado por el Portal(True) por el BackOffice(False).</param>
+ <returns>User information authenticated</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.GetPortalUsers">
+ <summary>
+ Get all information of user in the portal. // Obtiene toda la información del usuario en el portal.
+ </summary>
+ <returns>All Portal Users. // Todos los usuarios del portal.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.GetBasicInformationOfPortalUsers">
+ <summary>
+ Get all information of user in the portal. // Obtiene toda la información del usuario en el portal.
+ </summary>
+ <returns>All Portal Users. // Todos los usuarios del portal.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.Exist(System.String)">
+ <summary>
+ Checks whether a user exists or not, by the user name. // Verifica si un usuario existe o no, por medio del nombre de usuario.
+ </summary>
+ <param name="userName">UserName of user. / Nombre de usuario.</param>
+ <returns>Boolean. // Boolean.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.ExistEmail(System.String)">
+ <summary>
+ Checks whether a user exists or not, by the email. // Verifica si un usuario existe o no por medio del email.
+ </summary>
+ <param name="email">Email of user. // Email del usuario.</param>
+ <returns>Boolean. // Boolean.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.RetrieveUserInformation(System.String)">
+ <summary>
+ Get all information of user in the portal. // Obtiene toda la información del usuario en el portal.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <returns>Portal User Information. // Información del usuario del portal. </returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.GetRecoverPassword(System.String,System.String,System.Boolean,System.String)">
+ <summary>
+ Recover the actual password or create new password. // Recupera la clave actual o crea una nueva.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="email">Email of user. // Email del usuario.</param>
+ <param name="isNewPassword">Indicate if recover the current password. // Indica si se recupera el password actual.</param>
+ <param name="currentLanguage">Current language. // Lenguaje actual.</param>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.SendMailAsincro">
+ <summary>
+ Send mail async. // Envía un mail de forma asíncrona.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.UserSetRol(System.String,System.String,System.Boolean)">
+ <summary>
+ Changes state to idle and locked property of a user in addition to establishing a specific role. // 
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="rolName">The name of the role to be assigned to the user. // Nombre del rol asignado al usuario.</param>
+ <param name="Active">State in which you want to stop the user. // Estado en que detener al usuario.</param>
+ <returns>Returns the status of the action. // Retorna el estado de la acción.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.IsRolSystem(System.String)">
+ <summary>
+ Indicates if the user is contained in the roles of system. // Indica si el rol del usuario está contenido en los roles del sistema.
+ </summary>
+ <param name="rolName">The name of the role to be assigned to the user. // Nombre del rol asignado al usuario.</param>
+ <returns>Returns the status of the action. // Retorna el estado de la acción.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.LockedUser(System.String,System.Boolean)">
+ <summary>
+ Changes state to idle and locked property of a specific user. // Cambia el estado de un usuario específico.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="Active">State in which you want to stop the user. // Estado en que detener al usuario.</param>
+ <returns>Returns the status of the action</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.UserChangeRolToUser(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ User change rol to user. // Usuario cambia rol a usuario.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="listRol">Role list. // Lista de roles.</param>
+ <returns>Boolean. // Boolean.</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.CreatePortalUser(InMotionGIT.Security.Services.Contracts.UserInformation)">
+ <summary>
+ Create a user in asp.net security tables using the Membership class (System.Web.Security). // Crea un usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="user">User. // Usuario.</param>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.UpdatePortalUser(InMotionGIT.Security.Services.Contracts.UserInformation,System.String,System.String)">
+ <summary>
+ Update the informations of a user in asp.net security tables using the Membership class (System.Web.Security).// Actualiza un usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="user">User. // Usuario.</param>
+ <param name="currentUserName"></param>
+ <param name="rolesList"></param>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.DeletePortalUser(System.String,System.Boolean)">
+ <summary>
+ Deletes a user in asp.net security tables using the Membership class (System.Web.Security). // Borra el usuario en las tablas de seguridad de asp.net usando la clase Membership (System.Web.Security).
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="deleteRelatedData">Security Answer. // Respuesta de seguridad.</param>
+ <returns>Indicator if executed properly the function</returns>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.ChangePasswordPortalUser(System.String,System.String,System.String)">
+ <summary>
+ Change the password of the user in the portal. // Cambia el password del usuario en el portal.
+ </summary>
+ <param name="userName">User name. // Nombre del usuario.</param>
+ <param name="oldPassword">Current password of the user..</param>
+ <param name="newPassword">New password of the user..</param>
+ <returns>true if the password has been changed; otherwise, false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Security.Services.Users.GetCurrenPageId(System.Int32)">
+ <summary>
+ Get curren page id. // Obtiene el id actual de la página.
+ </summary>
+ <param name="userId">User id. // Id del usuario.</param>
+ <returns>Page id. // Id de la página.</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

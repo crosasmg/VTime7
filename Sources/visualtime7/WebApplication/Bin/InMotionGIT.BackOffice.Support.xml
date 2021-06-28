@@ -1,0 +1,249 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.BackOffice.Support
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.BackOffice.Support.BackOfficeProcess.GetUrlTransaction(System.String,System.String,System.String)">
+ <summary>
+ Método que retorna la URL para direccional a una operación de back office
+ </summary>
+ <param name="windowLogicalCode"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.BackOfficeProcess.GetTransaction(System.String)">
+ <summary>
+ Obtiene las operaciones que tiene acceso el usuario
+ </summary>
+ <param name="prefix"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.BackOfficeProcess.IsAllowed(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Define si es o no permitido la operación
+ </summary>
+ <param name="userCode"></param>
+ <param name="userSchema"></param>
+ <param name="windowLogicalCode"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.BackOfficeProcess.getUsers">
+ <summary>
+ Obtiene toda la información de los usuarios de BO
+ </summary>
+ <returns>Lista de usuarios y sus propiedades</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ 
+ </summary>
+ <param name="queryString">Lista de las variables del contexto web, accesibles por 'Request.QueryString'.</param>
+ <param name="form">Lista de las variables del contexto web, accesibles por 'Request.Form'.</param>
+ <param name="session">Lista de las variables del contexto web, accesibles por 'Session.QueryString'.</param>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.QueryString">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Request.QueryString'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.Form">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Request.Form'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.Session">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Session'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.RequestPath">
+ <summary>
+ Ruta completa de la página que se está procesando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.WindowLogicalCode">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.MainAction">
+ <summary>
+ Acción seleccionada por el usuario en el menú principal.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.PopupAction">
+ <summary>
+ Acción seleccionada  por el usuario en el Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.IsPopup">
+ <summary>
+ Indica si el contexto de ejecución se encuentra procesando la ventana 'Popup' de un Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.IsHeader">
+ <summary>
+ Indica si el contexto de ejecución  se encuentra procesando la cabecera de una página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.Loading">
+ <summary>
+ Indica si en el contexto de ejecución se esta cargando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.Validating">
+ <summary>
+ Indica si en el contexto de ejecución se esta validando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.Posting">
+ <summary>
+ Indica si en el contexto de ejecución se esta procesando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BackOffice.Support.Contracts.ContextExecute.PostingResult">
+ <summary>
+ Permite retornar el resultado del posteo
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicFactory.Validating(System.String)">
+ <summary>
+ Permite extender las validaciones de una transacción del backoffice.
+ </summary>
+ <param name="validateErrors">Listado de errores detectado por el backoffice</param>
+ <returns>Listado de errores detectado por el api de logic</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicFactory.Posting(System.Boolean)">
+ <summary>
+ Permite extender el procesamiento de una transacción del backoffice.
+ </summary>
+ <param name="postResult">Indicador del resultado del procesamiendo de una transacción del backoffice</param>
+ <returns>Resultado del procesamiendo de un api de logic</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicFactory.URLPrepare(System.String,System.String,System.String,System.String,InMotionGIT.BackOffice.Support.Contracts.ContextExecute)">
+ <summary>
+ Prepara la URL para realizar el llamado al api de logic.
+ </summary>
+ <param name="url">Dirección base del api</param>
+ <param name="parameters">Lista con los nombres de los parametros a ser enviados al api</param>
+ <param name="typeInfo">Información de los tipos de los parametros a ser enviados al api</param>
+ <param name="contextInfo">Información complementaria de los parametros a ser enviados al api</param>
+ <param name="contextInstance">Información del contexto de ejecución en el servidor, datos de request.QueryString, request.Form y de la session del servidor</param>
+ <returns>URL completa a ser invocada</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicFactory.ReadCallSetting(System.String,System.String@,System.String@,System.Boolean@,System.String@,System.String@)">
+ <summary>
+ Lee la configuración para la llama de api de logic
+ </summary>
+ <param name="fileName">Nombre del archivo de configuración</param>
+ <param name="url">Dirección base del api</param>
+ <param name="parameters">Lista con los nombres de los parametros a ser enviados al api</param>
+ <param name="enable">Indica si la operación esta habilitada o no</param>
+ <param name="contextInfo">Información complementaria de los parametros a ser enviados al api</param>
+ <param name="typeInfo">Información de los tipos de los parametros a ser enviados al api</param>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicFactory.NotifyProcess(System.String,System.Collections.Generic.List{InMotionGIT.Common.DataType.Notify})">
+ <summary>
+ Convierte las notificaciones del api de logic al formato del backoffice
+ </summary>
+ <param name="windowLogicalCode">Código lógico de la transacción del backoffice</param>
+ <param name="notifyList">Listado de errores detectado por el api de logic</param>
+ <returns>Listado de errores detectados en formato usado por el backoffice</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.WindowLogicalCode(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.WindowLogicalCode">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.MainAction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Acción seleccionada por el usuario en el menú principal.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.PopupAction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Acción seleccionada  por el usuario en el Grid.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.IsPopup(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Indica si el contexto de ejecución se encuentra procesando la ventana 'Popup' de un Grid.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.IsHeader(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Indica si el contexto de ejecución  se encuentra procesando la cabecera de una página.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.QueryStringToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para el QueryString en forma de diccionario
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.FormToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para el Form en forma de diccionario
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.LogicSupport.SessionToDictionary">
+ <summary>
+ Retorna el contenido del contexto web para las variable de sesión en forma de diccionario
+ </summary>
+</member>
+<member name="T:InMotionGIT.BackOffice.Support.Navigation">
+ <summary>
+ Method commonly used for navigation between pages and behavior between different areas of the same.
+ </summary>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Navigation.SequenceReload">
+ <summary>
+ Reload the tree showing the sequence.
+ </summary>
+ <remarks>Is responsible for generating the javascript necessary to recharge the tree in the sequence.</remarks>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Connection.Client.CompleteClientName(System.String,System.Boolean)">
+ <summary>
+ Permite recuperar el nombre completo de un cliente a partir de su código
+ </summary>
+ <param name="clientID">Código de cliente</param> 
+ <returns>Nombre completo del cliente</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Connection.Client.Lookup(System.String)">
+ <summary>
+ Retorna una lista filtrada y paginada de los clientes del Backoffice
+ </summary>
+ <param name="filter">Filtro de búsqueda si es numérico se busca por código y si es texto por el nombre del cliente</param>
+ <returns>Lista de clientes</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Connection.Client.Lookup(System.String,System.Int32,System.Int32)">
+ <summary>
+ Retorna una lista filtrada y paginada de los clientes del Backoffice
+ </summary>
+ <param name="filter">Filtro de búsqueda si es numérico se busca por código y si es texto por el nombre del cliente</param>
+ <param name="beginIndex">Número de registro inicial</param>
+ <param name="endIndex">Número de registro final</param>
+ <returns>Lista de clientes</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Connection.Client.ExpandClientId(System.String)">
+ <summary>
+ Transforma el código de un cliente en el formato requerido.
+ </summary>
+ <param name="clientId">Código de cliente.</param>
+ <returns>Código de un cliente en el formato requerido.</returns>
+</member>
+<member name="M:InMotionGIT.BackOffice.Support.Tracking.Track(System.String)">
+ <summary>
+ Método para conocer las diferentes transacciones a las que accede un usuario en particular
+ </summary>
+ <param name="AppRelativeVirtualPath"></param>
+</member>
+</members>
+</doc>

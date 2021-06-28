@@ -1,0 +1,718 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Activities.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate">
+ <summary>
+ 
+ </summary>
+ <remarks>
+ This class is associated with the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceCode">
+ <summary>
+ Interface Code
+ </summary>
+ <remarks>
+ This property is associated with the field 'NSHEET' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceType">
+ <summary>
+ Type of interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NINTERTYPE' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ProcessRoutineNameExecutedBefore">
+ <summary>
+ Name of the process or routine that must be executed before the interfaces execution generic process
+ </summary>
+ <remarks>
+ This property is associated with the field 'SPROCESS' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceFormat">
+ <summary>
+ Formats of the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NFORMAT' on the table 'MASTERSHEET'. Lookup information from table 'TABLE5701'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceFormatDescript">
+ <summary>
+ Formats of the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5701'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ExternalSystemCode">
+ <summary>
+ Code of the external system.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NSYSTEM' on the table 'MASTERSHEET'. Lookup information from table 'TABLE5705'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ExternalSystemCodeDescript">
+ <summary>
+ Code of the external system.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5705'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.SelectInstructionOfTheInterface">
+ <summary>
+ 'Select' Instruction related to the interface
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSELECT' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceExecutionPeriod">
+ <summary>
+ Frequency of execution of the automatic interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NPERIOD' on the table 'MASTERSHEET'. Lookup information from table 'TABLE5710'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceExecutionPeriodDescript">
+ <summary>
+ Frequency of execution of the automatic interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5710'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.TemplateDescription">
+ <summary>
+ Description of the template
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.OperatorUserCode">
+ <summary>
+ Code of the user who executes the process (automatic interface)
+ </summary>
+ <remarks>
+ This property is associated with the field 'NUSEROPER' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.AutomaticExecution">
+ <summary>
+ Indicator of automatic execution of the interface
+ </summary>
+ <remarks>
+ This property is associated with the field 'SAUTOMATIC' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ShortDescription">
+ <summary>
+ Short description of the Interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSHORTDESC' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.GroupingIndicator">
+ <summary>
+ It indicates that the interface is generated from the grouping of the selected information
+ </summary>
+ <remarks>
+ This property is associated with the field 'SGROUPBY' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.GeneralStatusofTheRecord">
+ <summary>
+ General status of the record
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSTATUSSHEET' on the table 'MASTERSHEET'. Lookup information from table 'TABLE26'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.GeneralStatusofTheRecordDescript">
+ <summary>
+ General status of the record
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE26'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.OperationType">
+ <summary>
+ Type of Vtime operation.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NOPERTYPE' on the table 'MASTERSHEET'. Lookup information from table 'TABLE5700'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.OperationTypeDescript">
+ <summary>
+ Type of Vtime operation.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5700'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ExecutedOnline">
+ <summary>
+ It indicates if the interface is executed online
+ </summary>
+ <remarks>
+ This property is associated with the field 'SONLINE' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.NoteNumber">
+ <summary>
+ Number of the note containing the comments.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NNOTENUM' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ProcessRoutineNameExecutedAfter">
+ <summary>
+ Name of the process or routine that must be executed after the interfaces execution generic process
+ </summary>
+ <remarks>
+ This property is associated with the field 'SPROCESS_END' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.FilePrefixName">
+ <summary>
+ Prefix for the name of the output file
+ </summary>
+ <remarks>
+ This property is associated with the field 'SPREFIX_FNAME' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.Header">
+ <summary>
+ Interface - header
+ </summary>
+ <remarks>
+ This property is associated with the field 'SHEADER' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.Interface">
+ <summary>
+ Interface - Management of total amounts
+ </summary>
+ <remarks>
+ This property is associated with the field 'STOTAL' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ColumnIndicator">
+ <summary>
+ Column indicator of the type of record
+ </summary>
+ <remarks>
+ This property is associated with the field 'NPOSITION' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.MassiveProcessingIndicator">
+ <summary>
+ Indicator of massive processing.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SMASSIVE' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.OutputInterfaceFile">
+ <summary>
+ Fill in of blanks for the output interface file
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSPACE' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.AlignmentType">
+ <summary>
+ Type of alignment
+ </summary>
+ <remarks>
+ This property is associated with the field 'NTYPE_ALIGN' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.PathOfTheOutputFile">
+ <summary>
+ Path of the output file
+ </summary>
+ <remarks>
+ This property is associated with the field 'SPATH' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.FieldSeparator">
+ <summary>
+ Definition of the field separator
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSEPARATOR' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.RoutineName">
+ <summary>
+ Name of the routine to name files
+ </summary>
+ <remarks>
+ This property is associated with the field 'SROUTINE' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.GridIndicator">
+ <summary>
+ It indicates whether the grid of the window must be shown
+ </summary>
+ <remarks>
+ This property is associated with the field 'SNOGRID' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ViewOutput">
+ <summary>
+ Indicator of generation of output interface view
+ </summary>
+ <remarks>
+ This property is associated with the field 'SVIEW_INTERFACE' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ReportIndicator">
+ <summary>
+ Indicator of generation of .
+ </summary>
+ <remarks>
+ This property is associated with the field 'SVIEW_REPORT' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.FileNameGeneratedByTheInterface">
+ <summary>
+ Name of the .
+ </summary>
+ <remarks>
+ This property is associated with the field 'SREPORT' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.ParentInterfaceIndicator">
+ <summary>
+ Indicator of parent interface
+ </summary>
+ <remarks>
+ This property is associated with the field 'SSHEET_FATHER' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.GeneratedUniqueFile">
+ <summary>
+ It indicates that the interface is generated in one file.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SFILE_UNIQUE' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceQuery">
+ <summary>
+ Query of interface generation
+ </summary>
+ <remarks>
+ This property is associated with the field 'SQUERY' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.XSLFileIndicator">
+ <summary>
+ It indicates that the interface generates a XSL file
+ </summary>
+ <remarks>
+ This property is associated with the field 'SXSL' on the table 'MASTERSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.QueryToGenerateXSLFile">
+ <summary>
+ Query to generate the .
+ </summary>
+ <remarks>
+ This property is associated with the field 'SQUERY_XSL' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.RoutineForOutputName">
+ <summary>
+ Name of the routine to generate the name of the output interface
+ </summary>
+ <remarks>
+ This property is associated with the field 'SNAME_ROUTINE' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.OutputRoutine">
+ <summary>
+ Name of the routine to generate the output
+ </summary>
+ <remarks>
+ This property is associated with the field 'SOUT_ROUTINE' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.WorkflowName">
+ <summary>
+ Workflow name
+ </summary>
+ <remarks>
+ This property is associated with the field 'SWORKFLOWNAME' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.NameOfTheWorkflowFolder">
+ <summary>
+ Name of the Workflow Folder
+ </summary>
+ <remarks>
+ This property is associated with the field 'SFOLDER' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceTemplateFields">
+ <summary>
+ Campos de plantillas de interfaces.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceTemplateTables">
+ <summary>
+ Tablas de base de datos asociada a una plantilla de interfaz.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.InterfaceTypeDescript">
+ <summary>
+ Description for type of interface.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplate.AlignmentTypeDescript">
+ <summary>
+ Description for Type of alignment.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField">
+ <summary>
+ 
+ </summary>
+ <remarks>
+ This class is associated with the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.InterfaceCode">
+ <summary>
+ Interface Code
+ </summary>
+ <remarks>
+ This property is associated with the field 'NSHEET' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.FieldCode">
+ <summary>
+ Code of the field in the template interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NFIELD' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.FieldType">
+ <summary>
+ Type of field for the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NFIELDTYPE' on the table 'FIELDSHEET'. Lookup information from table 'TABLE5702'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.FieldTypeDescript">
+ <summary>
+ Type of field for the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5702'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.TableName">
+ <summary>
+ Name of the table to which the field belongs.
+ </summary>
+ <remarks>
+ This property is associated with the field 'STABLE' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.FieldName">
+ <summary>
+ Name or description field.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SFIELDDESC' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.ColumnName">
+ <summary>
+ Name of the column in the database
+ </summary>
+ <remarks>
+ This property is associated with the field 'SCOLUMNNAME' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DafaultValue">
+ <summary>
+ Default Value
+ </summary>
+ <remarks>
+ This property is associated with the field 'SVALUE' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.RoutineName">
+ <summary>
+ Name of the routine that calculates the value of the field.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SRUTINE' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.Order">
+ <summary>
+ Order to generate the output data of the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NROWORDER' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.OrderOfAppearance">
+ <summary>
+ Order of appearance of the column in the template
+ </summary>
+ <remarks>
+ This property is associated with the field 'NFIELDORDER' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.TableNameOrProcess">
+ <summary>
+ Table name or process (Store Procedure) from which the list of values is generated.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SVALUESLIST' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.FieldLength">
+ <summary>
+ Length of the field.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NFIELDLARGE' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DeploymentObjectTypes">
+ <summary>
+ Object Types deployment.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NOBJTYPE' on the table 'FIELDSHEET'. Lookup information from table 'TABLE5703'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DeploymentObjectTypesDescript">
+ <summary>
+ Object Types deployment.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5703'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.HomologousTableCode">
+ <summary>
+ Homologous table code
+ </summary>
+ <remarks>
+ This property is associated with the field 'NTABLEHOMO' on the table 'FIELDSHEET'. Lookup information from table 'TABLE5706'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.HomologousTableCodeDescript">
+ <summary>
+ Homologous table code
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5706'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.Operator">
+ <summary>
+ Logical code of the condition.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NOPERATOR' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.Condition">
+ <summary>
+ Logical code of the condition.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NCONDIT' on the table 'FIELDSHEET'. Lookup information from table 'TABLE5704'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.ConditionDescript">
+ <summary>
+ Logical code of the condition.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5704'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.CommentRelatedToTheField">
+ <summary>
+ Comment related to the field
+ </summary>
+ <remarks>
+ This property is associated with the field 'SFIELDCOMMEN' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.TextRelatedByTheCondition">
+ <summary>
+ Text related by the condition.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SFIELDREL' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.RequiredField">
+ <summary>
+ It indicates whether the field is required.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SOBLIGATORY' on the table 'FIELDSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.LastEntry">
+ <summary>
+ It Indicates whether to prosecute from the last entry reported by the interface.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SLASTMOVE' on the table 'FIELDSHEET'. The values of this property are stored in the table as follows, true it is 1 and false as 2 for the case where the value in the table is null property will have the value false.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.TypeOfField">
+ <summary>
+ Type of Field.
+ </summary>
+ <remarks>
+ This property is associated with the field 'NDATATYPE' on the table 'FIELDSHEET'. Lookup information from table 'TABLE324'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.TypeofFieldDescript">
+ <summary>
+ Type of Field.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE324'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.RightParenthesisIndicator">
+ <summary>
+ Indicator of right parenthesis
+ </summary>
+ <remarks>
+ This property is associated with the field 'SRPARENTH' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.LeftParenthesisIndicator">
+ <summary>
+ Indicator of left parenthesis
+ </summary>
+ <remarks>
+ This property is associated with the field 'SLPARENTH' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DecimalsOfTheField">
+ <summary>
+ Number of decimal digits in the field
+ </summary>
+ <remarks>
+ This property is associated with the field 'NDECIMAL' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.ReportIndicator">
+ <summary>
+ It indicates that a report will be generated
+ </summary>
+ <remarks>
+ This property is associated with the field 'SREPORT' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DummyLPADVAR">
+ <summary>
+ 
+ </summary>
+ <remarks>
+ This property is associated with the field 'LPADVAR' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.DummyRPADVAR">
+ <summary>
+ 
+ </summary>
+ <remarks>
+ This property is associated with the field 'RPADVAR' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateField.Level">
+ <summary>
+ Level to the field
+ </summary>
+ <remarks>
+ This property is associated with the field 'NLEVEL' on the table 'FIELDSHEET'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateTable">
+ <summary>
+ 
+ </summary>
+ <remarks>
+ This class is associated with the table 'TABLESHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateTable.InterfaceCode">
+ <summary>
+ Code of the interface template
+ </summary>
+ <remarks>
+ This property is associated with the field 'NSHEET' on the table 'TABLESHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateTable.Name">
+ <summary>
+ Name of the database table
+ </summary>
+ <remarks>
+ This property is associated with the field 'STABLE' on the table 'TABLESHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateTable.Alias">
+ <summary>
+ Alias of the name of the database table
+ </summary>
+ <remarks>
+ This property is associated with the field 'SALIAS' on the table 'TABLESHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.InterfaceTemplateTable.TableLocation">
+ <summary>
+ Location of the table in the 'FROM' instruction
+ </summary>
+ <remarks>
+ This property is associated with the field 'NORDER' on the table 'TABLESHEET'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Activities.Contracts.FileProcessing.Settings.InterfaceCode">
+ <summary>
+ Interface Code
+ </summary>
+ <remarks>
+ This property is associated with the field 'NSHEET' on the table 'MASTERSHEET'.
+ </remarks>
+</member>
+</members>
+</doc>

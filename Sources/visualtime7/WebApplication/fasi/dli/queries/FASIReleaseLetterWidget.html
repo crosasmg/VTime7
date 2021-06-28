@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+</head>
+<body>
+    <form id="FASIReleaseLetterMainForm">
+        <input type="hidden" id="FASIReleaseLetterFormId" name="FASIReleaseLetterFormId" value="" />
+        <div id="alerts-container"></div>
+        <!-- Container content -->
+        <!-- Container: zoneHeader zone -->
+        <div class='col-md-12'>
+
+            <div id="zoneHeader">
+                <!-- Container content -->
+                <!-- inicio datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                    <div class='form-group'>
+                        <div class='col-md-4 text-left'>
+                            <label id='inicioLabel' class='control-label' for='inicio'>Inicio</label><span id='inicioRequired' class='required-mark'>*</span>
+                        </div>
+                        <div class='col-md-8'>
+                            <div class='input-group date' id='inicio_group'>
+                                <input id='inicio' name='inicio' type='text' class='form-control' title='Inicio del rango' size='10' maxlength='10' />
+                                <span class='input-group-addon'>
+                                    <span class='glyphicon glyphicon-calendar'></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                    <div class='form-group'>
+                        <div class='col-md-4 text-left'>
+                            <label id='finLabel' class='control-label' for='fin'>Fin</label><span id='finRequired' class='required-mark'>*</span>
+                        </div>
+                        <div class='col-md-8'>
+                            <div class='input-group date' id='fin_group'>
+                                <input id='fin' name='fin' type='text' class='form-control' title='Fin del rango' size='10' maxlength='10' />
+                                <span class='input-group-addon'>
+                                    <span class='glyphicon glyphicon-calendar'></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                    <div class='form-group'>
+                        <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Aceptar consulta'><span class='ladda-label'>OK</span><span class='ladda-spinner'></span></button>
+                    </div>
+                </div>
+                <!-- End Container content -->
+            </div>
+        </div>
+        <!-- End Container: zoneHeader zone -->
+        <!-- Container: Items grid -->
+        <div class='col-md-12'>
+
+            <div id='ItemsContainer'>
+                <div id='ItemsTblPlaceHolder'></div>
+            </div>
+        </div>
+        <!-- End Container: Items grid -->
+        <!-- End Container content -->
+    </form>
+
+    <!--<script src='/fasi/app/js/constants.js?rel=20190903033749340'></script>-->
+    <script src="/fasi/app/js/core.js?rel=20190903033749340"></script>
+    <script src="/fasi/app/js/general.js?rel=20190903033749340"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190903033749340'></script>
+
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190903033749340'></script>
+
+    <script src="/fasi/dli/queries/FASIReleaseLetter.js?rel=20190903033749340"></script>
+</body>
+</html>

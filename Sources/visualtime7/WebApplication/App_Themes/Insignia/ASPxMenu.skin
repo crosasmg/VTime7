@@ -1,0 +1,38 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<dxm:ASPxPopupMenu runat="server" CssFilePath="~/App_Themes/Office2010Silver/{0}/styles.css" 
+                            CssPostfix="Office2010Silver" ShowPopOutImages="True" 
+                            SpriteCssFilePath="~/App_Themes/Office2010Silver/{0}/sprite.css">
+<ItemSubMenuOffset FirstItemX="2" LastItemX="2" X="2" />
+<LoadingPanelImage Url="~/App_Themes/Office2010Silver/Web/Loading.gif">
+</LoadingPanelImage>
+<RootItemSubMenuOffset FirstItemX="2" LastItemX="2" X="2" />
+<SubMenuStyle GutterWidth="17px" />
+</dxm:ASPxPopupMenu>
+
+<dxm:ASPxMenu SkinId="MainMenu" runat="server" AutoPostBack="True" AllowSelectItem="True"
+              ItemLinkMode="TextOnly" ShowPopOutImages="True" AutoSeparators="RootOnly" 
+              EnableDefaultAppearance="False" Font-Underline="False"  LinkStyle-HoverColor="#FFFFFF"
+              SeparatorWidth="1px" SeparatorColor="#FFFFFF" ForeColor="#FFFFFF" SeparatorHeight="10px">
+    <ItemSubMenuOffset FirstItemX="2" LastItemX="2" X="2" />
+    <ItemStyle DropDownButtonSpacing="6px" PopOutImageSpacing="6px" />
+    <SubMenuStyle GutterImageSpacing="5px" GutterWidth="5px"  Border-BorderColor="White" Border-BorderWidth="1px"/>
+    <Paddings Padding="0px" />
+    <SeparatorPaddings PaddingLeft="14px" PaddingRight="14px" PaddingTop="1px" />
+    <LinkStyle>
+        <HoverFont Underline="True" />
+    </LinkStyle>
+</dxm:ASPxMenu>

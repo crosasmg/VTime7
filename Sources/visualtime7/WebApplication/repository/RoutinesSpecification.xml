@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Routines>
+   <Routine id="AnnualPremium" name="Annual Premium" procedure="INSROUTINEPREMIUM" variable="SROUPREMIAUX" kind="2">
+      <InputParameters> 
+         <Parameter name="NCERTIF"        dbtype="COVER.NCERTIF"          type="Int32"       required="False"      caption="Certificate ID"/>
+	 <Parameter name="SCLIENT"        dbtype="COVER.SCLIENT"          type="String"      required="False"      caption="Client ID"/> 
+      	 <Parameter name="NROLE"          dbtype="COVER.NROLE"            type="Int32"       required="False"      caption="Client Role"/>
+         <Parameter name="NCOVER"         dbtype="COVER.NCOVER"           type="Int32"       required="False"      caption="Coverage Code"/>		  
+         <Parameter name="NMODULEC"       dbtype="COVER.NMODULEC"         type="Int32"       required="False"      caption="Coverage Module"/>
+         <Parameter name="NCURRENCYORI"   dbtype="COVER.NCURRENCYORI"     type="Int32"       required="False"      caption="Currency of Product"/>
+	 <Parameter name="NCURRENCYDES"   dbtype="COVER.NCURRENCYDES"     type="Int32"       required="False"      caption="Currency of Policy"/>
+         <Parameter name="DEFFECDATE"     dbtype="COVER.DEFFECDATE"       type="DateTime"    required="False"      caption="Effective Date"/> 
+         <Parameter name="NCAPITAL"       dbtype="COVER.NCAPITAL"         type="Int32"       required="True"       caption="Insured Amount"/>
+      	 <Parameter name="NBRANCH"        dbtype="COVER.NBRANCH"          type="Int32"       required="False"      caption="Line of Business"/>
+	 <Parameter name="NPOLICY"        dbtype="COVER.NPOLICY"          type="Int32"       required="False"      caption="Policy ID"/>
+	 <Parameter name="NPRODUCT"       dbtype="COVER.NPRODUCT"         type="Int32"       required="False"      caption="Product Code"/>
+      	 <Parameter name="SCERTYPE"       dbtype="COVER.SCERTYPE"         type="String"      required="False"      caption="Record Type"/>
+     </InputParameters>
+     <Variables>
+         <Variable name="ActuarialAge"         type="Int32"     caption="Actuarial Age"/>
+         <Variable name="DurationOfInsurance"  type="Int32"     caption="Duration of Insurance"/>
+         <Variable name="DurationOfPayments"   type="Int32"     caption="Duration of Payments"/> 
+         <Variable name="InsuredAge"           type="Int32"     caption="Insured Age"/>     
+         <Variable name="RiskType"             type="Int32"     caption="Risk Type"/>         
+     </Variables>   
+     <OuputParameters>
+         <Parameter name="NPREMIUM"        dbtype="COVER.NPREMIUM"    type="Int32"     required="True"       caption="Annual Premium"/>
+         <Parameter name="NRATECOVE/100"   dbtype="COVER.NRATECOVE"   type="Int32"     required="True"       caption="Coverage Rate DIV 100"/>
+         <Parameter name="NRATECOVE/1000"  dbtype="COVER.NRATECOVE"   type="Int32"     required="True"       caption="Coverage Rate DIV 1000"/>
+     </OuputParameters>
+  </Routine>
+  <Routine id="InsuranceAmount" name="Insurance Amount" procedure="INSROUTINECAPITAL" variable="SROUTINE" kind="1">
+     <InputParameters>
+        <Parameter name="NCERTIF"    dbtype="COVER.NCERTIF"      type="Int32"          required="False"             caption="Certificate ID"/>
+      	<Parameter name="NCOVER"     dbtype="COVER.NCOVER"       type="Int32"          required="False"             caption="Coverage Code"/>
+        <Parameter name="NMODULEC"   dbtype="COVER.NMODULEC"     type="Int32"          required="False"             caption="Coverage Module"/>
+	<Parameter name="SCLIENT"    dbtype="COVER.SCLIENT"      type="String"         required="False"             caption="Client ID"/> /> 
+        <Parameter name="NROLE"      dbtype="COVER.NROLE"        type="Int32"          required="False"             caption="Client Role"/>
+	<Parameter name="NCURRENCY"  dbtype="COVER.NCURRENCY"    type="Int32"          required="True"              caption="Currency"/> 
+	<Parameter name="DEFFECDATE" dbtype="COVER.DEFFECDATE"   type="DateTime"       required="True"              caption="Effective Date"/>
+        <Parameter name="NBRANCH"    dbtype="COVER.NBRANCH"      type="Int32"          required="False"             caption="Line of Business"/>	    
+        <Parameter name="NPOLICY"    dbtype="COVER.NPOLICY"      type="Int32"          required="False"             caption="Policy ID"/>
+        <Parameter name="NPRODUCT"   dbtype="COVER.NPRODUCT"     type="Int32"          required="False"             caption="Product Code"/> 
+        <Parameter name="SCERTYPE"   dbtype="COVER.SCERTYPE"     type="String"         required="False"             caption="Record Type"/>
+     </InputParameters>
+     <Variables>
+         <Variable name="ActuarialAge"         type="Int32"     caption="Actuarial Age"/>
+         <Variable name="DurationOfInsurance"  type="Int32"     caption="Duration of Insurance"/>
+         <Variable name="DurationOfPayments"   type="Int32"     caption="Duration of Payments"/>
+         <Variable name="InsuredAge"           type="Int32"     caption="Insured Age"/>     
+         <Variable name="RiskType"             type="Int32"     caption="Risk Type"/>         
+     </Variables> 
+     <OuputParameters>
+       <Parameter name="NCAPITAL"   dbtype="COVER.NCAPITAL"      type="Int32"    required="True"      caption="Insured Amount"/>
+     </OuputParameters>
+  </Routine>
+</Routines>

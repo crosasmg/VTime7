@@ -1,0 +1,1220 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: '';
+	content: none;
+}
+
+table,
+table.grdData {
+	border-spacing: 1px;
+	border-collapse: separate;
+}
+
+#left_frame > table,
+div > table {
+	border-spacing: 0;
+}
+ 
+/*+ Cuerpo de la página */
+BODY {
+    background-color: white;/*#F5FDF5;*/
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 14px;
+	margin: 8px;
+}
+
+/*+ Define un encabezado de nivel 2 */
+H2 {
+    color: Red; /*#0B614B;*/
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+	font-weight: bold;
+	margin: 0;
+}
+
+/*+ Linea horizontal */
+HR {
+    color: #0D7B60;
+	border: 1px solid #0D7B60;
+}
+
+/*+ Establece la etiqueta para un control en la página */
+LABEL {
+    color: #0038A1;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+	font-weight: normal;
+}
+
+/*+ Características de la caja de texto */
+input {
+    font-family: Verdana, Arial, Tahoma; 
+	font-size: 13px;
+	margin: 2px 0;
+	padding: 2px;
+    border: solid 1px #BABABA;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+}
+
+/*+ Características de la caja de texto, al seleccionarlo con el cursor */
+input: focus {
+    border-color: #868686;
+    -webkit-box-shadow: rgba(0, 0, 0, 5) 0 0 8px;
+}   
+
+/*+ Características de la lista de valores (ComboList) */
+select[multiple], 
+select[size], 
+select {
+	/*min-width: 140px;*/
+	height: auto;
+	font-family: Verdana, Arial, Tahoma; 
+	font-size: 13px;
+	margin: 2px 0;
+	padding: 2px;
+
+    border: solid 1px #BABABA;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+}
+
+/*+ Elementos dentro de la lista de valores (ComboList) */
+OPTION {
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+	margin: 2px;
+	padding: 2px;
+}	
+
+/*+ Características de los enlaces en el grid */
+.FIELD > a {
+	font-size: 11px;
+	color: #063E75;
+	text-decoration: underline;
+}
+
+/*+ Características de la caja de texto de lineas múltiples */
+textarea {
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+	max-width: 100%;
+	padding: 2px;
+    border: solid 1px #BABABA;
+    outline: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px;
+}
+
+/*+ Características de la caja de texto de lineas múltiples, al seleccionarlo con el cursor */
+textarea: focus {
+    border-color: #868686;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 8px;
+}  
+
+/*+ Contenedor de la lista de transacciones a mostrar en la secuencia (fraSequence) */
+TD.folderSeq {
+	color: #FFFFFF;
+    font-family: Verdana, Arial, Tahoma;
+    FONT-SIZE: 13pt;
+}
+
+/*+ Lista de transacciones a mostrar en la secuencia */
+A.linkSeq {
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/*+ Lista de transacciones a mostrar en la secuencia, al pasar el mouse sobre ellas */
+A.linkSeq:hover {
+    background-color: #E5ECFF;
+	color: #000000;
+}
+
+/*+ Títulos de secciones */
+.HighLighted {
+    color: #0038A1;
+    font-size: 13px;
+    text-align: right;
+}
+
+/*+ Títulos de secciones */
+.HighLighted > label > a,
+.HighLighted > div > label > a {
+	text-decoration: none;
+	color: #0038A1;
+}
+
+/*+ Etiqueta resaltada en "negrita" */
+.HighLighted LABEL {
+    color: #0038A1;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+    font-weight: bolder;
+    text-align: right;
+}
+
+/*+ Linea que se muestra bajo los títulos de secciones */
+.HorLine {
+    background-color: #005EA1;
+    height: 2px;
+}
+
+/*+ Información de los campos cuando se muestran en modo consulta */
+.Field {
+    color: #2C7BCA; 
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+    font-style: normal;
+}
+
+/*+ Características de la zona vertical que se muestra a la izquierda de cada transacción (fraSeqeunce) */
+#left_frame {
+    background: #2D7C19;
+	filter: none;	/* IE9 SVG, needs conditional override of 'filter' to 'none' */	
+    background: -moz-linear-gradient(left, #2D7C19 35%, #79B41C 100%);	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(35%, #2D7C19), color-stop(100%, #79B41C));	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #2D7C19 35%, #79B41C 100%);	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #2D7C19 35%, #79B41C 100%);	/* Opera 11.10+ */	
+    background: -ms-linear-gradient(left, #2D7C19 35%, #79B41C 100%);	/* IE10+ */
+	background: linear-gradient(to right, #2D7C19 35%, #79B41C 100%);	/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#2D7C19', endColorstr='#79B41C');   /* For IE7-8-9 */
+}
+
+/*+ Características de la linea que se muestra bajo el nombre de la transacción */
+.DIVHRWindowsName
+{
+    width:100%; 
+    border: 1px solid #005EA1;
+    height: 2px; 
+    margin: 0 5px 15px 0;
+}
+
+/*+ Caracteristicas del DIV que contiene el nombre de la ventana */
+.DIVWindowsName
+{
+    margin: 0 0 5px 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/*+ Caracteristicas de las letras del nombre de la ventana */
+.DIVWindowsName h2 {
+    margin: 0 5px 0 0;
+    color: #005EA1;
+	font-size: 14pt;
+    font-family: Verdana, Arial, Tahoma;
+}
+
+/*+ Caracteristicas de las letras del nombre de la ventana cuando la clase "DIVWindowsName h2" no existe */
+.WindowsName {
+    COLOR: #005EA1;
+    FLOAT: right;
+    font-family: Verdana, Arial, Tahoma;
+    FONT-SIZE: 12pt;
+    POSITION: static;
+    TEXT-ALIGN: left;
+}
+
+/*+ Características del contenedor de la marquesina en el encabezado */
+.MarqueeHeader {
+    width: 50%;
+    float: left;
+    margin: 0 0 0 0;
+    list-style: none;
+}
+
+/*+ Marquesina en el encabezado ("Procesando, por favor espere...") */
+.MarqueeHeader marquee { 
+    width: 60%;
+    float: right;
+    margin: 0;
+    color: #005EA1;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+/******************* Formato del grid ********************/
+    
+.grdData {
+    font-size: 8pt;
+}
+
+/*+ Encabezado del grid */
+.grdData TH {
+    background-color: #005EA1; 
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Tahoma; 
+    font-size: 12px;
+    font-weight: lighter;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*+ Información no editable del grid */
+.grdData TD .field {
+    color: #005EA1; 
+    font-family: Verdana, Arial, Tahoma; 
+    font-size: 12px; 
+    margin: 0 10px 0 10px
+}
+
+/*+ Lineas impares del grid */
+.grdData TD {
+	background-color: #D4EEFF;
+	height: 30px;	
+}
+
+.grdData .UNEVEN {
+    background-color: #E5ECFF; 
+}
+
+/*+ Lineas pares del grid */
+.grdData .UNEVEN TD {
+    background-color: #E7F6FF;
+}
+
+.grdData TH LABEL {
+    background-color: #FFFFFF;
+    color: #6F0000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/*+ Linea que separa los campos de las PopUp de los botones Aceptar/Cancelar */
+.DIVHRGrid
+{
+    width:98%; 
+    border: 1px solid #0D7B60;
+    height: 1px; 
+    margin: 10 5px 10 5px;
+    float: left;
+}
+
+.DIVAlignLeftGrid
+{
+    margin: 0 5px 0 5px;
+    float: left;
+    color: #005EA1;
+}
+
+/*+ Marquesina en las ventanas PopUp ("Procesando, por favor espere...") */
+.DIVAlignLeftGrid marquee { 
+    margin: 0;
+    width:100%;
+    color: #005EA1;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.DIVAlignRightGrid
+{
+    margin: 0 5px 0 5px;
+    float: right;
+}
+
+.DIVActionGrid
+{
+    float: right;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
+    vertical-align: middle;
+	text-align: right;
+}
+
+.DIVActionGrid a img {
+    float: left;
+}
+
+/******************* Formato del menú de cada transacción ********************/
+
+#tabNavAll 
+{
+    width: 100%;
+    margin: 0;
+}
+
+#tabNav 
+{
+    position: relative; 
+    width: 100%;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+/*+ Opciones principales del menú */
+#nav {
+	background: #005EA1; /*+ Color de fondo */
+	padding: 0; 
+	margin: 0; 
+	list-style: none; 
+	height: 22px;
+	position: relative; 
+	z-index: 500;
+	font-family: Verdana, Arial, Tahoma; 
+}
+
+#nav li.top {
+	display: block; 
+	float: left; 
+	height: 22px; 
+}
+
+/*+ Opciones principales del menú */
+#nav li a.top_link {
+	display: block; 
+	float: left; 
+	height: 19px; 
+	line-height: 20px; 
+	color: #FFFFFF; /*+ Color de las letras */
+	text-decoration: none;    
+	font-size: 11px; 
+	font-weight: bold; 
+	padding: 0 24px 0 12px; 
+	cursor: pointer; 
+}
+
+/*+ Color al pasar el mouse sobre las opciones principales del menú */
+#nav li:hover {
+	position: relative; 
+	z-index: 200;
+	background: #98D5FF;
+}
+
+/*+ Color de la letra al pasar el mouse sobre las opciones principales del menú */
+#nav li:hover a.top_link span.down {
+	color: #000000;
+} 
+
+/*+ Opciones secundarias del menú */
+#nav li:hover ul.sub {
+	background: #005EA1; /*+ Color de fondo */
+	left: 1px; 
+	top: 22px; 
+	padding: 0 3px 3px 3px;
+	border: 0px; 
+	white-space: nowrap; 
+	width: 163px; 
+	height: auto; 
+	z-index: 300;
+} 
+
+/*+ Características generales de las opciones secundarias del menú */
+#nav li:hover ul.sub li {
+	display: block; 
+	height: 22px; 
+	position: relative; 
+	float: left; 
+	width: 156px; 
+	font-weight: bold;
+}
+
+/*+ Opciones secundarias del menú */
+#nav li:hover ul.sub li a {
+	display: block; 
+	font-size: 11px; 
+	height: 18px; 
+	width: 156px; 
+	line-height: 18px; 
+	text-indent: 5px; 
+	color: #FFFFFF; /*+ Color de la letra */
+	text-decoration: none;
+	border: 0;
+} 
+
+/* Características de las imágenes que se muestran en el menú */
+#nav li:hover ul.sub li a img {
+	height: 17px; 
+	width: 17px;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+}
+
+/*+ Colores al pasar el mouse sobre las opciones secundarias del menú */
+#nav li:hover ul.sub li a:hover {
+	height: 22px; 
+	background: #98D5FF;
+	color: #000000; 
+}
+
+/*+ Características generales de las opciones del menú */
+#nav ul, 
+#nav li:hover ul ul,
+#nav li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover li:hover ul ul {
+	position: absolute; 
+	left: -9999px; 
+	top: -9999px; 
+	width: 0; 
+	height: 0; 
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+}
+
+/******************* Barra de herramientas ********************/
+
+/*+ Linea inicial, a la izquierda de las acciones */
+#ToolbarHeader {
+    width: 50%;
+    float: right; 
+    padding: 0;
+    margin: 0 0 1em 0;
+    background-color: #FFFFFF;
+    filter: none;	/* IE9 SVG, needs conditional override of 'filter' to 'none' */	
+
+    background: -moz-linear-gradient(left, #FFFFFF 5%, #63AB51 100%);	/* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(5%,#FFFFFF), color-stop(100%,#63AB51));	/* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #FFFFFF 5%,#63AB51  100%);	/* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #FFFFFF 5%,#63AB51  100%);	/* Opera 11.10+ */	
+    background: -ms-linear-gradient(left, #FFFFFF 5%,#63AB51  100%);	/* IE10+ */
+    background: linear-gradient(to right, #FFFFFF 5%,#63AB51  100%);	/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#FFFFFF', endColorstr='#63AB51');   /* For IE7-8-9 */
+}
+
+/*+ Contenedor (dentro de él se crean las acciones) */
+#ToolbarHeader ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: yellow;
+}
+ 
+/* Características de la lista de acciones */
+#ToolbarHeader li {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+  
+/* Características de la lista de acciones */
+#ToolbarHeader li a {
+    display: block;
+    padding: 2px 10px; 
+    text-decoration: none;
+    font-weight: bold;
+    border-left: 1px solid #ccc; 
+}
+    
+/*+ Imagen habilitada */
+.ToolbarHeaderEnabled 
+{
+    background-color: #79C566; 
+}
+
+/*+ Imagen deshabilitada */
+.ToolbarHeaderDisabled
+{
+    background-color: #3E9E27; 
+}
+    
+/*+ Imagen habilitada, al pasar el mouse sobre ella */
+.ToolbarHeaderHover
+{
+    background-color: #C6E7BE;
+}
+
+/********************************************************************************/
+
+/*+ Nombre de los módulos en el menú principal del BackOffice*/
+.Tiny {
+    color: #6F0000;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#left_frame  .Tiny {
+	color: #FFFFFF;
+}
+
+iframe td {
+	width: 200px;
+}
+
+.POSSVALUE {
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 7pt;
+}
+
+.HeightRow {
+    HEIGHT: 8px;
+}
+
+.TransNode {
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    COLOR: #4E4B4B;
+    font-family: Verdana, Arial, Tahoma;
+    /*FONT-SIZE: smaller;*/
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+    font-size: 13px;
+}
+
+.ThinNode {
+	color: #6F0000;
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    HEIGHT: 22px;
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+    WIDTH: 16px;
+}
+
+.WideNode {
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    HEIGHT: 22px;
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+    WIDTH: 24px;
+}
+
+.Calendar TD.Hollidays {
+    font-size: 13px;
+}
+
+BODY.module {
+    BACKGROUND: url(/vtime/images/framemodulesRedWineAndBlue.jpg) #0080b1 fixed no-repeat;
+}
+
+.Work {
+    BORDER-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    BORDER-LEFT: 1px;
+    BORDER-BOTTOM: 1px;
+}
+
+.NWork {
+    COLOR: #6F0000;
+    BACKGROUND-COLOR: transparent;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A.NWork:link {
+    COLOR: #6F0000;
+}
+
+.Calendar A.NWork:visited {
+    COLOR: #6F0000;
+}
+
+.TableWName {
+	width: 100%;
+	color: #FFFFFF;
+	height: 42px;
+	padding: 0;
+	TEXT-ALIGN: right;	
+	background: url(/VTimeNetLat/images/WNbg1.bmp);
+	background-repeat: repeat-x;
+}
+
+.TableWNameLeft {
+	padding-right: 0;
+	padding: 0;
+	width: 14px;	
+}
+
+.TableWNameCenter {
+	padding: 0;
+	vertical-align: top;
+}
+
+.TableWNameRight {
+	padding: 0;
+	width: 14px;
+}
+
+/****************************************************************************************/
+
+textarea:disabled, 
+select[multiple]:disabled, 
+select[size]:disabled, 
+select:disabled, 
+option:disabled,
+input:not([type]):disabled, 
+input[type="color"]:disabled, 
+input[type="date"]:disabled, 
+input[type="datetime"]:disabled, 
+input[type="datetime-local"]:disabled, 
+input[type="email"]:disabled, 
+input[type="month"]:disabled, 
+input[type="password"]:disabled, 
+input[type="number"]:disabled, 
+input[type="search"]:disabled, 
+input[type="tel"]:disabled, 
+input[type="text"]:disabled, 
+input[type="time"]:disabled, 
+input[type="url"]:disabled, 
+input[type="week"]:disabled 
+{
+    background-color:#F0F0F0; 
+	color: #676767;
+}
+
+#form1 td > a {
+	/*top: -5px;*/
+	position: relative;
+}
+
+body#left_frame {
+	margin: 0;
+}
+
+#left_frame.leftMainMenu {
+	background: none;
+}
+
+iframe {
+	width: 100%;
+}
+	
+div#Scroll {
+	height: 240px;
+	overflow: hidden;
+}
+
+#left_frame>img {
+	display: none;
+}
+
+
+/***********************************************************************/
+/***************************** Misceláneos *****************************/
+/***********************************************************************/
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.has-error .help-block, 
+.has-error .control-label, 
+.has-error .radio, 
+.has-error .checkbox, 
+.has-error .radio-inline, 
+.has-error .checkbox-inline {
+	font-size: 12px;
+}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+	color: #292929;
+}
+
+.form-control {
+	height: 28px;
+	padding: 4px 6px;
+	border-radius: 0;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.ui-jqgrid td input, .ui-jqgrid td select .ui-jqgrid td textarea {
+  margin: 2px 0;
+}
+
+span.confirmation-popup {
+    font-size: 14px;
+}
+/***********************************************************************/
+/************** Datepicker, styles for the holidays*********************/
+/***********************************************************************/
+.holidays {
+    background-image: none;
+}
+
+.holidays>.ui-state-default.ui-state-highlight, 
+.holidays>.ui-state-default {
+	background: #FFFFFF;
+	color: #FF0000 !important;
+	font-weight: bold;
+}
+
+.ui-datepicker-week-end a {
+    color: #FF0000 !important;
+}
+
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year {
+	width: auto;
+	min-width: 65px;
+	color: black;
+	font-weight: normal;
+}
+
+.ui-dialog {
+	z-index: 999;
+}
+
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight {
+	background: #D5D5D5;
+	border: 1px solid #3C3C3C;
+	color: #363636;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+	border: 1px solid #EBEBEB;
+	background: #FFFFFF;
+	border-radius: 0;
+}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+	border: 1px solid #DDDDDD;
+	border-radius: 0;
+	font-size: 13px;
+}
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active {
+	border: 1px solid #D1D1D1;
+	background: #DADADA;
+	border-radius: 0;
+}
+
+.ui-state-hover, 
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+}
+
+.ui-state-hover.ui-datepicker-prev-hover,
+.ui-state-hover.ui-datepicker-next-hover {
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+}
+
+.ui-jqgrid-titlebar.ui-widget-header {
+	background: #005EA1;
+	border: none;
+	opacity: 0.9;
+	border-radius: 0;
+}
+
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix {
+	padding: 5px 10px;
+	background: #005EA1;
+	border: none;
+	opacity: 0.9;
+	margin-bottom: 5px;
+	font-size: 13px;
+    border-radius: 0;
+} 
+
+.ui-widget-content,
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+	border: none;
+	background: #ffffff;
+	color: #222222;
+}
+
+.ui-widget-content {
+	border: 1px solid #EBEBEB;
+	border-radius: 0;
+}
+
+a.ui-datepicker-next.ui-corner-all > span.ui-icon-circle-triangle-e {
+	background-image: url(/Styles/images/ui-icons_222222_256x240.png);
+	background-position: -48px -192px;
+}
+
+a.ui-datepicker-prev.ui-corner-all > span.ui-icon-circle-triangle-w {
+	background-image: url(/Styles/images/ui-icons_222222_256x240.png);
+	background-position: -80px -192px;
+}
+
+td.ui-widget-content.subgrid-data {
+	padding: 20px 0;
+}
+
+.ui-datepicker.ui-widget-content {
+	border: 1px solid #B9B5B5;
+	padding: 0 2px 1px 0;
+}
+
+.ui-datepicker-calendar .ui-state-default{
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+	color: #333;
+	font-weight: normal;
+	padding: 0;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+	color: #333;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+	color: #333;
+}
+
+.ui-datepicker-calendar .ui-state-highlight {
+	background: #D5D5D5;
+	border: 1px solid #3C3C3C;
+	color: #363636;
+}
+
+.ui-datepicker th {
+    padding: 1px 0;
+    font-weight: normal;
+}
+
+.ui-datepicker table {
+    font-size: 12px;
+    margin: 0;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    font-size: 13px;
+}
+/***************************************************************/
+/****************** jqueryui custom styles *********************/
+/***************************************************************/
+.ui-jqgrid-title {
+    font-size: 12px;
+}
+
+.ui-widget,
+.ui-jqgrid .ui-jqgrid-htable th div {	
+	font-size: 12px;
+    height: auto;
+}
+
+.ui-widget-overlay {
+	opacity: 0.6;
+	background: darkgray;
+}
+
+td.ui-widget-content.subgrid-data {
+	overflow: hidden;
+}
+
+.ui-widget.ui-widget-content.ui-corner-all.ui-jqdialog {
+	width: 360px !important;
+}
+
+.ui-jqgrid .ui-pg-input {
+	height: 22px;
+}
+
+.ui-jqgrid tr.jqgrow td {
+	padding: 4px 2px;
+	font-size: 12px; 
+}
+
+.ui-jqgrid-titlebar-close.HeaderButton {
+	display: none;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+	font-size: 13px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+	margin: -8px;
+}
+
+td.checkboxGrid > input[type="checkbox"] {
+	float: none;
+}
+
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr {
+	background: #E4E4E4;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	background: none;
+	border: none;
+	background-image: url(/Styles/images/ui-icons_FFFFFF_256x240.png);
+	background-position: -96px -126px;
+	opacity: 1;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover {
+	opacity: 0.7;
+}
+
+.ui-accordion .ui-accordion-content {
+	padding: 15px;
+}
+
+.ui-widget-overlay {
+	position: fixed;
+}
+
+.ui-jqgrid .loading, 
+.loadingDiv {
+    background: url(../images/loader-green.gif);
+    background-position-x: 47%;
+    background-position-y: 47%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+    position: fixed;
+    background-size: 64px 64px;
+    z-index: 10000;
+}
+
+.ui-jqgrid .loading {
+    left: -6px;
+    top: -4px;
+}
+
+.loadingDiv {
+    left: 0;
+    top: 0;
+}
+/***********************************************************************/
+/******************************* Buttons *******************************/
+/***********************************************************************/
+.btn {	
+	/*border: none !important;*/
+	/*margin: 3px !important;*/
+	/*cursor: pointer;*/
+}
+
+/* important attr is added to overwrite the contents of the ui css */
+.btnAccept {
+	width: 25px;
+	height: 25px;
+	background: #FFFFFF url('../Images/btnacceptoff.png') no-repeat !important;
+}
+
+.btnAccept:active {
+	background: #FFFFFF url('../Images/btnacceptoff.png') no-repeat !important;
+}
+	
+.btnAccept:hover {
+	background: #FFFFFF url('../Images/btnAcceptOn.png') no-repeat !important;
+}
+
+.btnCancel {
+	width: 25px;
+	height: 25px;
+	background: #FFFFFF url('../Images/btnCancelOff.png') no-repeat !important;
+}
+
+.btnCancel:active {
+	background: #FFFFFF url('../Images/btnCancelOff.png') no-repeat !important;
+}
+	
+.btnCancel:hover {
+	background: #FFFFFF url('../Images/btnCancelOn.png') no-repeat !important;
+}
+
+.btnAdd {
+	width: 35px;
+	height: 20px;
+	background: #FFFFFF url('../Images/btnAddOff.png') no-repeat;
+}
+
+.btnAdd:active {
+	background: #FFFFFF url('../Images/btnAddOff.png') no-repeat;
+}
+	
+.btnAdd:hover {
+	background: #FFFFFF url('../Images/btnAddOn.png') no-repeat;
+}
+
+/***************************************************************/
+/********************** Grid and Subgrid ***********************/
+/***************************************************************/
+#mapa {
+    width: 100%; 
+    height: 300px;
+}
+
+#grid-address {
+	border-collapse: inherit;
+}
+
+.grid-address-wrapper,
+.grid-phone-wrapper {
+	width: 100%; 
+	/*height: 30px; */
+	padding: 10px 0;
+}
+
+#keyword {
+	margin: 3px 0;
+	width: 100%;
+}
+
+
+/***************************************************************/
+/************************* Bootstrap ***************************/
+/***************************************************************/
+.form-horizontal .form-group {
+	margin-left: -14px;
+	margin-right: -14px;
+}
+
+.row {
+	margin-left: -12px;
+	margin-right: -12px;
+}
+
+.alert{
+    clear: both;
+}
+
+/**************************************************************/
+
+.Button 
+{
+}
+
+.Button INPUT {
+    BACKGROUND-COLOR: #0080b1;
+    BORDER-BOTTOM: thin outset;
+    BORDER-LEFT: thin outset;
+    BORDER-RIGHT: thin outset;
+    BORDER-TOP: thin outset;
+    COLOR: #005EA1;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+    FONT-WEIGHT: bolder;
+}
+
+.Collapsed {
+    display: none;
+}
+
+.Expandable {
+    cursor: hand;
+}
+
+.Calendar {
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 13px;
+}
+
+.Calendar select {
+	min-width: 50px;
+}
+
+.Calendar TH {
+    BACKGROUND-COLOR: #FFFFFF;
+    COLOR: #6F0000;
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 8pt;
+}
+
+.Calendar A:visited {
+    COLOR: #6F0000;
+    font-family: Verdana, Arial, Tahoma;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A:link {
+    COLOR: #6F0000;
+    font-family: Verdana, Arial, Tahoma;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A:active {
+    COLOR: #6F0000;
+    TEXT-DECORATION: none
+}
+
+.Values {
+}
+
+.Values TABLE {
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    COLOR: #FFFFFF
+}
+
+.Values TABLE TH {
+    BACKGROUND-COLOR: #6F0000;
+    COLOR: #FFFFFF;
+}
+
+.Header {
+    BACKGROUND-COLOR: #F5FDF5;
+}
+
+.down {
+	font-size: 11px;
+}

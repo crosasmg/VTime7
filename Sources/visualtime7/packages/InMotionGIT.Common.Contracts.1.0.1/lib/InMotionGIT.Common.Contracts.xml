@@ -1,0 +1,533 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Common.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Common.Contracts.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.AmountBothCurrency.AdministrationCurrency">
+ <summary>
+ Amount (in the administration currency).
+ //
+ Importe (en la moneda de administración)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.AmountBothCurrency.InstallationCurrency">
+ <summary>
+ Amount (in the installation currency).
+ //
+ Importe (en la moneda del instalación)
+ </summary>
+ <remarks>Datasource is 'Cl_bill_pa.nAmount'</remarks>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Context">
+ <summary>
+ It provides information on the execution context of a workflow.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.FormId">
+ <summary>
+ Identification of the running instance to a form.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Language">
+ <summary>
+ Language used in the user session connected.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.CallerId">
+ <summary>
+ Identification of who makes execution.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.UserId">
+ <summary>
+ Connected user code.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.UserCode">
+ <summary>
+ User code to the back office.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.SecuritySchemeCode">
+ <summary>
+ Security Scheme Code.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.RoleName">
+ <summary>
+ Role associated with the user connected.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Errors">
+ <summary>
+ List of errors.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.AccessToken">
+ <summary>
+ Object encapsulating the security identity of a process 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.CompanyId">
+ <summary>
+ Company code used during user authentication.
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Context.QueryString">
+ <summary>
+ List of web context variables, accessible by 'Request.QueryString'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Form">
+ <summary>
+ List of web context variables, accessible by 'Request.Form'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Session">
+ <summary>
+ List of web context variables, accessible by 'Session'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.RequestPath">
+ <summary>
+ Ruta completa de la página que se está procesando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.WindowLogicalCode">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.MainAction">
+ <summary>
+ Acción seleccionada por el usuario en el menú principal.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.PopupAction">
+ <summary>
+ Acción seleccionada  por el usuario en el Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.IsPopup">
+ <summary>
+ Indica si el contexto de ejecución se encuentra procesando la ventana 'Popup' de un Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.IsHeader">
+ <summary>
+ Indica si el contexto de ejecución  se encuentra procesando la cabecera de una página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Loading">
+ <summary>
+ Indica si en el contexto de ejecución se esta cargando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Validating">
+ <summary>
+ Indica si en el contexto de ejecución se esta validando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Context.Posting">
+ <summary>
+ Indica si en el contexto de ejecución se esta procesando.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Context.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Context.#ctor(System.Int32,System.String)">
+ <summary>
+ Constructor.
+ </summary>
+ <param name="language">Language used in the user session connected.</param>
+ <param name="formInternalId">Identification of the running instance to a form.</param>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Context.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Constructor.
+ </summary>
+ <param name="language">Language used in the user session connected.</param>
+ <param name="formInternalId">Identification of the running instance to a form.</param>
+ <param name="UserId">Connected user code.</param>
+ <param name="userCode">User code to the back office (nUsercode).</param>
+ <param name="securitySchemeCode">Security Scheme Code.</param>
+ <param name="roleName">Role associated with the user connected.</param>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Context.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Constructor.
+ </summary>
+ <param name="language">Language used in the user session connected.</param>
+ <param name="formInternalId">Identification of the running instance to a form.</param>
+ <param name="UserId">Connected user code.</param>
+ <param name="userCode">User code to the back office (nUsercode).</param>
+ <param name="securitySchemeCode">Security Scheme Code.</param>
+ <param name="roleName">Role associated with the user connected.</param>
+ <param name="accessToken">Object encapsulating the security identity of a process.</param>   
+</member>
+<member name="P:InMotionGIT.Common.Contracts.MultiCurrencyAmount.OriginalCurrency">
+ <summary>
+ Amount (in the original currency).
+ //
+ Importe (en la moneda original).
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.MultiCurrencyAmount.OriginalCurrencyId">
+ <summary>
+ Original currency.
+ //
+ Moneda original.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.MultiCurrencyAmount.ExchangeTransactionID">
+ <summary>
+ Code that identifies the used exchange rates.
+ //
+ Código que identifica el factor de cambio utilizado.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest">
+ <summary>
+ PlaceOfInterest class. // Clase PlaceOfInterest.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.Country">
+<summary>
+Code of the country. (CountryID).
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.PlaceOfInterestID">
+<summary>
+Place of interest code.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.AddressID">
+<summary>
+Access Key of The Address Record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.Description">
+<summary>
+Description of the code.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.PlaceOfInterestType">
+<summary>
+Type of place of interest.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.PhoneID">
+<summary>
+Access Key of the phone Record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest.ShortDescription">
+<summary>
+Abbreviated description of the code.
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterestCollection">
+ <summary>
+ Collection for PlaceOfInterest class. // Colección para la clase PlaceOfInterest.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Process.ConsumerInformation">
+ <summary>
+ Consumer information. // Información del consumidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.Version">
+ <summary>
+ Application version. // Versión de la aplicación.
+ </summary>
+ <returns>EnumApplicationVersion. // EnumApplicationVersion.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.Country">
+ <summary>
+ Country. // País.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.Site">
+ <summary>
+ Site. // Sitio.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.UserInitials">
+ <summary>
+ User initials. // Iniciales del usuario.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.UserPassword">
+ <summary>
+ User password. // Clave del usuario.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.CompanyId">
+ <summary>
+ Company id. // Id de la compañía.
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.ConsumerInformation.Security">
+ <summary>
+ Security information. // Información de seguridad.
+ </summary>
+ <returns>SecurityInformation. // SecurityInformation.</returns>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Process.SecurityInformation">
+ <summary>
+ Security information of the user. // Información de seguridad el usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.SecurityInformation.Usercode">
+ <summary>
+ User code. // Código del usuario.
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.SecurityInformation.Schema">
+ <summary>
+ User schema. // Esquema del usuario.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.SecurityInformation.BranchOffice">
+ <summary>
+ Branch office. // Sucursal.
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.SecurityInformation.SecurityLevel">
+ <summary>
+ Security level. // Nivel de seguridad.
+ </summary>
+ <returns>Integer. // Integer.</returns>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Process.SecurityInformation.CompanyType">
+ <summary>
+ Company type. // Tipo de compañía.
+ </summary>
+ <returns>String. // String.</returns>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Table">
+ <summary>
+ General tables.
+ //
+ Tablas generales.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Table.RecordStatus">
+ <summary>
+ General status of the record.
+ //
+ Estado general del registro.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Table.Language">
+ <summary>
+ Language in which the description is indicated.
+ //
+ Idioma en el que se encuentra la descripción.
+ </summary>
+ <remarks>Table9000</remarks>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.TableCollection">
+ <summary>
+ General tables.
+ //
+ Tablas generales.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumApplicationOfFranchiseDeductible.None">
+ <summary>    
+Desconocido    
+ </summary>    
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumApplicationOfFranchiseDeductible.NotApplicable">
+ <summary>    
+No aplica    
+ </summary>    
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumApplicationOfFranchiseDeductible.Capital">
+ <summary>    
+Capital    
+ </summary>    
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumApplicationOfFranchiseDeductible.Claim">
+ <summary>    
+Siniestro    
+ </summary>    
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumFranchiseOrDeductible.None">
+ <summary>
+ Desconocido
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumFranchiseOrDeductible.NotApplicable">
+ <summary>
+ No aplica
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumFranchiseOrDeductible.Franchise">
+ <summary>
+ Franquicia
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumFranchiseOrDeductible.Deductible">
+ <summary>
+ Deducible
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumGender.Female">
+ <summary>
+ Femenino
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumGender.Male">
+ <summary>
+ Masculino
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumGender.NotInformed">
+ <summary>
+ No informado
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumInsuredStatus.None">
+ <summary>
+ Desconocido
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumInsuredStatus.InForce">
+ <summary>
+ Vigente
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumInsuredStatus.Excluded">
+ <summary>
+ Excluido
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumInsuredStatus.PendingSubscription">
+ <summary>
+ Pendiente por suscripción
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumRole.Complainant">
+ <summary>
+ Denunciante
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Enumerations.EnumSmokingStatus">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Enumerations.EnumStatusOfPolicyCertificate">
+ <summary>
+ Tabla de estado del registro de la poliza/certificado y recibo.
+ </summary>
+ <remarks>DataSource: Table181</remarks>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumUnitsOfWaitingPeriod.None">
+ <summary>
+ Desconocido
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumUnitsOfWaitingPeriod.Hours">
+ <summary>
+ Horas
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumUnitsOfWaitingPeriod.Days">
+ <summary>
+ Días
+ </summary>
+</member>
+<member name="F:InMotionGIT.Common.Contracts.Enumerations.EnumUnitsOfWaitingPeriod.Months">
+ <summary>
+ Meses
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Errors.Error.HasErrors(System.Collections.Generic.List{InMotionGIT.Common.Contracts.Errors.Error})">
+ <summary>
+ Permite saber si existe un error en la colección de notificación.
+ </summary>
+ <param name="notify">colección de notificación</param>
+ <returns>Verdadero en caso de existir un error, falso en caso contrario</returns>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Errors.Error.HasWarnings(System.Collections.Generic.List{InMotionGIT.Common.Contracts.Errors.Error})">
+ <summary>
+ Permite saber si existe una advertencia en la colección de notificación.
+ </summary>
+ <param name="notify">colección de notificación</param>
+ <returns>Verdadero en caso de existir una advertencia, falso en caso contrario</returns>
+</member>
+<member name="M:InMotionGIT.Common.Contracts.Errors.Error.HasMessages(System.Collections.Generic.List{InMotionGIT.Common.Contracts.Errors.Error})">
+ <summary>
+ Permite saber si existe un mensaje en la colección de notificación.
+ </summary>
+ <param name="notify">colección de notificación</param>
+ <returns>Verdadero en caso de existir un mensaje, falso en caso contrario</returns>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Faults.ServiceError">
+ <summary>
+ Used to send an error message from a service to a client
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Faults.ServiceError.Message">
+ <summary>
+ The error message to be displayed 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Contracts.Faults.ServiceError.ErrorCode">
+ <summary>
+ The error code
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Contracts.Faults.CustomServiceFault">
+ <summary>
+ Fault contract for sending a list of errors from a service to a client
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

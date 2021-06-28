@@ -1,0 +1,105 @@
+﻿{
+  "app": {
+    "title": "Correos enviados",
+    "form": {
+             "zone0_Footer": "",
+             "zone0_Instruction": "",
+             "zone0_Title": "zona",
+             "zone0_Tooltip": "zona",
+             "StartDP_Label": "Inicio",
+             "StartDP_Tooltip": "Inicio",
+             "StartDP_Measure": "",
+             "StartDP_Legend": "",
+             "StartDP_Prefix": "",
+             "StartDP_RequiredMessage": "La fecha Inicio es rquerida",
+             "FinishDP_Label": "Fin",
+             "FinishDP_Tooltip": "Fin",
+             "FinishDP_Measure": "",
+             "FinishDP_Legend": "",
+             "FinishDP_Prefix": "",
+             "FinishDP_RequiredMessage": "La fecha Fin es rquerida",
+             "FinishDP_Validate1": "El valor debe ser superior a la Fecha de Inicio",
+             "OkButton_Caption": "OK",
+             "OkButton_Tooltip": "OK",
+             "OkButton_ConfirmationMessage": "",
+             "OkButton_InformationMessage": "Por favor espere...",
+             "Client_Title": "",
+             "Client_AddButtonCaption": "Agregar",
+             "Client_DeleteButtonCaption": "Eliminar",
+             "text4_Label": "Identificación",
+             "ClientTbl_ClientID_Title": "Identificación",
+             "text4_Tooltip": "Identificación",
+             "text4_Measure": "",
+             "text4_Legend": "",
+             "text4_Prefix": "",
+             "text4_Watermark": "",
+             "DateOfIngress_Label": "Enviado",
+             "ClientTbl_DateOfIngress_Title": "Enviado",
+             "DateOfIngress_Tooltip": "Fecha en que la información se ingresó por primera vez en el sistema.",
+             "DateOfIngress_Measure": "",
+             "DateOfIngress_Legend": "",
+             "DateOfIngress_Prefix": "",
+             "CustomDate_Label": "Visto",
+             "ClientTbl_CustomDate_Title": "Visto",
+             "CustomDate_Tooltip": "Visto",
+             "CustomDate_Measure": "",
+             "CustomDate_Legend": "",
+             "CustomDate_Prefix": "",
+             "eMailAddressDefault_Label": "Correo electrónico",
+             "ClientTbl_eMailAddressDefault_Title": "Correo electrónico",
+             "eMailAddressDefault_Tooltip": "Correo electrónico",
+             "eMailAddressDefault_Measure": "",
+             "eMailAddressDefault_Legend": "",
+             "eMailAddressDefault_Prefix": "",
+             "eMailAddressDefault_Watermark": "",
+             "CustomString_Label": "Asunto",
+             "ClientTbl_CustomString_Title": "Asunto",
+             "CustomString_Tooltip": "Asunto",
+             "CustomString_Measure": "",
+             "CustomString_Legend": "",
+             "CustomString_Prefix": "",
+             "CustomString_Watermark": "",
+             "LanguageDescription_Label": "Estado",
+             "ClientTbl_LanguageDescription_Title": "Estado",
+             "LanguageDescription_Tooltip": "Estado",
+             "LanguageDescription_Measure": "",
+             "LanguageDescription_Legend": "",
+             "LanguageDescription_Prefix": "",
+             "LanguageDescription_Watermark": "",
+             "CustomStringEx_Label": "Observación",
+             "ClientTbl_CustomStringEx_Title": "Observación",
+             "CustomStringEx_Tooltip": "Observación",
+             "CustomStringEx_Measure": "",
+             "CustomStringEx_Legend": "",
+             "CustomStringEx_Prefix": "",
+             "CustomStringEx_Watermark": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "text4": {
+             "maxlength": "El campo permite 0 caracteres máximo"
+        },
+        "DateOfIngress": {
+             "DatePicker": "The indicated date is not valid"
+        },
+        "CustomDate": {
+             "DatePicker": "The indicated date is not valid"
+        },
+        "eMailAddressDefault": {
+             "maxlength": "El campo permite 60 caracteres máximo"
+        },
+        "CustomString": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "LanguageDescription": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "CustomStringEx": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        }
+    }
+  }
+}

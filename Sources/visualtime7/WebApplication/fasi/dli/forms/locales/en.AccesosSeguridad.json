@@ -1,0 +1,135 @@
+﻿{
+  "app": {
+    "title": "Access table to the resources of the system",
+    "form": {
+             "Acceso_Grid_Message_Notify_insert5": "Se agregó correctamente el registro",
+             "Acceso_Grid_Title_Notify_insert5": "Agregar registro",
+             "Acceso_Grid_Message_Notify_insert7": "No se pudo agregar el registro",
+             "Acceso_Grid_Title_Notify_insert7": "Agregar registro",
+             "Acceso_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "Acceso_Grid_Title_Notify_update4": "Actualizar registro",
+             "Acceso_Grid_Message_Notify_update6": "No se pudo actualizar el registro",
+             "Acceso_Grid_Title_Notify_update6": "Actualizar registro",
+             "Acceso_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "Acceso_Grid_Title_Notify_delete4": "Eliminar registro",
+             "Acceso_Grid_Message_Notify_delete6": "No se puede eliminar el registro",
+             "Acceso_Grid_Title_Notify_delete6": "Eliminar registro",
+             "label0_Label": "Paths to system resources",
+             "label0_Tooltip": "Paths to system resources",
+             "label0_Prefix": "",
+             "Acceso_Grid_Title": "",
+             "Acceso_Grid_AddButtonCaption": "Add",
+             "Acceso_Grid_DeleteButtonCaption": "Delete",
+             "Id_Acceso_Label": "Access Id",
+             "Acceso_GridTbl_Id_Acceso_Title": "Access Id",
+             "Id_Acceso_Tooltip": "Access code to the resources.",
+             "Id_Acceso_Measure": "",
+             "Id_Acceso_Legend": "",
+             "Id_Acceso_Prefix": "",
+             "Id_Acceso_RequiredMessage": "The field is required.",
+             "Id_Tipo_Acceso_Label": "Type of access Id",
+             "Acceso_GridTbl_Id_Tipo_Acceso_Title": "Type of access Id",
+             "Id_Tipo_Acceso_Tooltip": "Type of access code.",
+             "Id_Tipo_Acceso_Measure": "",
+             "Id_Tipo_Acceso_Legend": "",
+             "Id_Tipo_Acceso_Prefix": "",
+             "Id_Tipo_Acceso_RequiredMessage": "The field is required.",
+             "Descripcion_Label": "Description",
+             "Acceso_GridTbl_Descripcion_Title": "Description",
+             "Descripcion_Tooltip": "Description of the code.",
+             "Descripcion_Measure": "",
+             "Descripcion_Legend": "",
+             "Descripcion_Prefix": "",
+             "Descripcion_Watermark": "",
+             "Descripcion_RequiredMessage": "The field is required.",
+             "Descripcion_Corta_Label": "Short Description",
+             "Acceso_GridTbl_Descripcion_Corta_Title": "Short Description",
+             "Descripcion_Corta_Tooltip": "Abbreviated description of the code.",
+             "Descripcion_Corta_Measure": "",
+             "Descripcion_Corta_Legend": "",
+             "Descripcion_Corta_Prefix": "",
+             "Descripcion_Corta_Watermark": "",
+             "Descripcion_Corta_RequiredMessage": "The field is required.",
+             "Estado_Registro_Label": "Record Status",
+             "Acceso_GridTbl_Estado_Registro_Title": "Record Status",
+             "Estado_Registro_Tooltip": "Status of the record.",
+             "Estado_Registro_Measure": "",
+             "Estado_Registro_Legend": "",
+             "Estado_Registro_Prefix": "",
+             "Estado_Registro_RequiredMessage": "The field is required.",
+             "CreationDate_Label": "Creation Date",
+             "Acceso_GridTbl_CreationDate_Title": "Creation Date",
+             "CreationDate_Tooltip": "Computer date when the record is created.",
+             "CreationDate_Measure": "",
+             "CreationDate_Legend": "",
+             "CreationDate_Prefix": "",
+             "CreationDate_RequiredMessage": "The field is required.",
+             "CreatorUserCode_Label": "Creator User Code",
+             "Acceso_GridTbl_CreatorUserCode_Title": "Creator User Code",
+             "CreatorUserCode_Tooltip": "Code of the user creating  the record.",
+             "CreatorUserCode_Measure": "",
+             "CreatorUserCode_Legend": "",
+             "CreatorUserCode_Prefix": "",
+             "CreatorUserCode_RequiredMessage": "The field is required.",
+             "UpdateDate_Label": "Update Date",
+             "Acceso_GridTbl_UpdateDate_Title": "Update Date",
+             "UpdateDate_Tooltip": "Computer date when the record is updated or created.",
+             "UpdateDate_Measure": "",
+             "UpdateDate_Legend": "",
+             "UpdateDate_Prefix": "",
+             "UpdateDate_RequiredMessage": "The field is required.",
+             "UpdateUserCode_Label": "Update User Code",
+             "Acceso_GridTbl_UpdateUserCode_Title": "Update User Code",
+             "UpdateUserCode_Tooltip": "Code of the user creating or updating the record.",
+             "UpdateUserCode_Measure": "",
+             "UpdateUserCode_Legend": "",
+             "UpdateUserCode_Prefix": "",
+             "UpdateUserCode_RequiredMessage": "The field is required.",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "Id_Acceso": {
+             "AutoNumericMinValue": "The minimum value allowed is -9999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 9999999999",
+             "required": "The field is required."
+        },
+        "Id_Tipo_Acceso": {
+             "AutoNumericMinValue": "The minimum value allowed is -9999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 9999999999",
+             "required": "The field is required."
+        },
+        "Descripcion": {
+             "maxlength": "The field allows 200 maximum characters",
+             "required": "The field is required."
+        },
+        "Descripcion_Corta": {
+             "maxlength": "The field allows 200 maximum characters",
+             "required": "The field is required."
+        },
+        "Estado_Registro": {
+             "required": "The field is required."
+        },
+        "CreationDate": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "CreatorUserCode": {
+             "AutoNumericMinValue": "The minimum value allowed is -999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 999999999",
+             "required": "The field is required."
+        },
+        "UpdateDate": {
+             "DatePicker": "La fecha indicada no es válida",
+             "required": "The field is required."
+        },
+        "UpdateUserCode": {
+             "AutoNumericMinValue": "The minimum value allowed is -999999999",
+             "AutoNumericMaxValue": "The maximum value allowed is 999999999",
+             "required": "The field is required."
+        }
+    }
+  }
+}

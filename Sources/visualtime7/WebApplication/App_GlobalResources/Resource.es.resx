@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddingItem" xml:space="preserve">
+    <value>Haga click en cualquiera de los ítems para agregarlo a la página</value>
+  </data>
+  <data name="AddStuff" xml:space="preserve">
+    <value>Agregar Items »</value>
+  </data>
+  <data name="ChangeColumns" xml:space="preserve">
+    <value>Cambiar columnas</value>
+  </data>
+  <data name="ChangeSettings" xml:space="preserve">
+    <value>Configurar  »</value>
+  </data>
+  <data name="ChangeTabTitle" xml:space="preserve">
+    <value>Cambiar título de la pestaña</value>
+  </data>
+  <data name="ChooseColumnLayout" xml:space="preserve">
+    <value>Por favor elija un tipo de distribución</value>
+  </data>
+  <data name="DeleteTab" xml:space="preserve">
+    <value>Borrar pestaña</value>
+  </data>
+  <data name="DeleteTabConfirmation" xml:space="preserve">
+    <value>¿Desea borrar la pestaña?</value>
+  </data>
+  <data name="HelpLink" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="HideSettings" xml:space="preserve">
+    <value>Ocultar Configuración »</value>
+  </data>
+  <data name="HideStuff" xml:space="preserve">
+    <value>Ocultar Item  »</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Desconectar</value>
+  </data>
+  <data name="NewTab" xml:space="preserve">
+    <value>Pestaña Nueva</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Política de privacidad</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="StartOver" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="TermsService" xml:space="preserve">
+    <value>Términos de servicio</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnInsert" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="btnNew" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar la contraseña</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>@2016 InMotion GIT. Todos los derechos reservados</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Preferencias</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Msj" xml:space="preserve">
+    <value>¿Esta seguro que quiere eliminar este registro?</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="AdminTab" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="SchedulerTab" xml:space="preserve">
+    <value>Calendario</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="ActionTaskNone" xml:space="preserve">
+    <value>Finalizar tarea</value>
+  </data>
+  <data name="Deny" xml:space="preserve">
+    <value>Denegar</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>Revision</value>
+  </data>
+  <data name="TitleZoneAgendaTask" xml:space="preserve">
+    <value>Revisión de tarea</value>
+  </data>
+  <data name="DeleteWidget" xml:space="preserve">
+    <value>¿Está seguro de querer eliminar el widget?</value>
+  </data>
+  <data name="DeleteWidgetTitle" xml:space="preserve">
+    <value>Borrar widget</value>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Procesando...</value>
+  </data>
+  <data name="PortalSubTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PortalTitle" xml:space="preserve">
+    <value>VisualTIME 7</value>
+  </data>
+  <data name="ChangePasswordFooterText" xml:space="preserve">
+    <value>Aquí podrá modificar su contraseña</value>
+  </data>
+  <data name="ChangePasswordHeaderText" xml:space="preserve">
+    <value>Cambio de contraseña</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>¿Ha olvidado su contraseña?</value>
+  </data>
+  <data name="LogInHeaderText" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
+  <data name="ForgotPasswordHeaderText" xml:space="preserve">
+    <value>Olvido de contraseña</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
+  <data name="ExpiredMessage" xml:space="preserve">
+    <value>Su sesión ha expirado, por favor ingrese nuevamente</value>
+  </data>
+  <data name="SessionExpired" xml:space="preserve">
+    <value>Sesión Expirada</value>
+  </data>
+  <data name="CopyrightExtend" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WebSiteTitle" xml:space="preserve">
+    <value>VisualTIME 7</value>
+  </data>
+  <data name="SecretAnswerBlack" xml:space="preserve">
+    <value>Negro</value>
+  </data>
+  <data name="SecretAnswerBlue" xml:space="preserve">
+    <value>Azul</value>
+  </data>
+  <data name="SecretAnswerGreen" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="SecretAnswerRed" xml:space="preserve">
+    <value>Rojo</value>
+  </data>
+  <data name="SecretAnswerWhite" xml:space="preserve">
+    <value>Blanco</value>
+  </data>
+  <data name="SecretAnswerYellow" xml:space="preserve">
+    <value>Amarillo</value>
+  </data>
+  <data name="SecretQuestionColor" xml:space="preserve">
+    <value>¿Cuál es tu color favorito ?</value>
+  </data>
+  <data name="Portuguese" xml:space="preserve">
+    <value>Portugués</value>
+  </data>
+  <data name="UploadFilesHeaderText" xml:space="preserve">
+    <value>Cargar archivos</value>
+  </data>
+  <data name="ComboBoxErrorText" xml:space="preserve">
+    <value>El valor '@Value@' es invalido. Intente de nuevo.</value>
+  </data>
+  <data name="FirstTimePassword" xml:space="preserve">
+    <value>Por política de seguridad debe indicar una nueva contraseña</value>
+  </data>
+  <data name="PasswordExpiration" xml:space="preserve">
+    <value>Su contraseña ha caducado, debe renovarla</value>
+  </data>
+  <data name="SecretEmailQuestion" xml:space="preserve">
+    <value>¿Cuál es su dirección de correo electrónico de trabajo ?</value>
+  </data>
+  <data name="MenuHelperTitle" xml:space="preserve">
+    <value>Sitio Ayuda.</value>
+  </data>
+  <data name="StartUpMessage" xml:space="preserve">
+    <value>Usted está autorizado para usar este sistema únicamente para propósitos aprobados de negocio. Cualquier otro uso está prohibido. Todos los registros de transacciones, reportes, correos electrónicos, software, y cualquier otra información generada y/o que reside en este sistema, hasta lo permitido por la ley, son propiedad de Citigroup Inc. o una de sus subsidiarias o sus afiliadas (individual o colectivamente "Citigroup") y puede ser usada por Citigroup para cualquier propósito autorizado y permitido en su país. Las actividades en este sistema están monitoreadas hasta los límites permitidos por la ley.</value>
+  </data>
+  <data name="RevelationHeaderText" xml:space="preserve">
+    <value>Revelación</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errores</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="AcceptBtnResource" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="CancelButtonResource" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnGoText" xml:space="preserve">
+    <value>Ir a</value>
+  </data>
+  <data name="ContentWatermarkText" xml:space="preserve">
+    <value>Ingresar código o nombre de transacción</value>
+  </data>
+  <data name="FirstTab" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="SecondTab" xml:space="preserve">
+    <value>Nueva página</value>
+  </data>
+  <data name="AlertDangerMessage" xml:space="preserve">
+    <value>Ha ocurrido un error, por favor, intente de nuevo.</value>
+  </data>
+  <data name="AlertSuccessMessage" xml:space="preserve">
+    <value>Operación exitosa.</value>
+  </data>
+  <data name="DeniedAccess" xml:space="preserve">
+    <value>Acceso denegado</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Seleccionar todo</value>
+  </data>
+  <data name="UnCheckAll" xml:space="preserve">
+    <value>Deseleccionar todo</value>
+  </data>
+  <data name="DeniedAccessMethod" xml:space="preserve">
+    <value>Acceso denegado, no se encontro el método de inicialización '{0}'.</value>
+  </data>
+  <data name="WidgetReloadPageTitle" xml:space="preserve">
+    <value>Refrescar página</value>
+  </data>
+  <data name="WidgetReloadPageBody" xml:space="preserve">
+    <value>La página será recargada en su navegador</value>
+  </data>
+</root>

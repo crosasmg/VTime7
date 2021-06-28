@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='Windows-1252'?>
+<Modules>
+
+ <Module id='1' name='Clients' prefix='BC'>
+  <Parameter  name='sClient' alias='ClientName' summary='Code of the client.' type='String' />	
+ </Module>
+
+ <Module id='5' name='Policies' prefix='CA'>
+  <Parameter  name='sCertype' alias='TypeofRecord'     summary='Type or Record.' type='String' />	
+  <Parameter  name='nBranch'  alias='LineOfBusiness'   summary='Code of the line of business of the policy.' type='Int32' />	
+  <Parameter  name='nProduct' alias='ProductCode'      summary='Code of the product of the policy.' type='Int32' />	
+  <Parameter  name='nPolicy'  alias='PolicyNumber'     summary='Number identifying the policy/ quotation/ proposal.' type='Int32' />	
+  <Parameter  name='nCertif'  alias='CertificatNumber' summary='Number identifying the certificate.' type='Int32' />
+ </Module>
+
+ <Rutine id='100' name='Coverage'>
+  <Parameter  name='Coverage' summary='Coverages of a policy.' assembly='GIT.BackOffice.Services.Policy.dll;GIT.DataAccessLayer.Oracle.dll' type='GIT.BackOffice.Services.Policy.DataAccessLayer.Coverage' />	
+ </Rutine>
+  
+ <Rutine id='200' name='DiscountExtraPremiumTaxOfPolicy'>
+  <Parameter  name='DiscountExtraPremiumTaxOfPolicy' summary='Extra-premiums/technical discounts/taxes of a policy/certificate.' assembly='GIT.BackOffice.Services.Policy.dll;GIT.DataAccessLayer.Oracle.dll' type='GIT.BackOffice.Services.Policy.DataAccessLayer.DiscountExtraPremiumTaxOfPolicy' />	
+ </Rutine>
+</Modules>

@@ -1,0 +1,972 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlarmActiveResource1.Text" xml:space="preserve">
+    <value>Alarm Active</value>
+  </data>
+  <data name="AlarmActiveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AlarmActiveResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="AppointmentRecurrenceForm1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCallVTResource1.Image.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCallVTResource1.Image.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCallVTResource1.Text" xml:space="preserve">
+    <value>Call Transaction...</value>
+  </data>
+  <data name="btnCallVTResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelResource1.Image.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelResource1.Image.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteResource1.Image.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteResource1.Image.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteResource1.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnDeleteResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnOkResource1.Image.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnOkResource1.Image.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnOkResource1.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnOkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="cbPriorityResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPriorityResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="cbReminderResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="cbReminderResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbReminderResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="cbTaskStatusResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="cbTaskStatusResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTaskStatusResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="cbTransactionResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="cbTransactionResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTransactionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualTimeTransactionActionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="chkAllDayResource1.Text" xml:space="preserve">
+    <value>All day activity</value>
+  </data>
+  <data name="chkAllDayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkAllDayResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="chkReminderResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkReminderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkReminderResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="edtAlarmDateTimeResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.EditFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAlarmDateTimeResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtEndDateResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="edtEndDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="edtEndDateResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.EditFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEndDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtLabelResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="edtLabelResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtLabelResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="edtRepeatEndingDateResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.EditFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatEndingDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="edtRepeatStatingDateResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.EditFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtRepeatStatingDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtResourceResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="edtResourceResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtResourceResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtStartDateResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.CalendarProperties.ClearButtonText" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="edtStartDateResource1.CalendarProperties.TodayButtonText" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="edtStartDateResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.EditFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStartDateResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="edtStatusResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="edtStatusResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtStatusResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="imgWorkFlowResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWorkFlowResource1.EmptyImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWorkFlowResource1.EmptyImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWorkFlowResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IndividualTaskIndicatorResource1.Text" xml:space="preserve">
+    <value>The task is to be done by one person only</value>
+  </data>
+  <data name="IndividualTaskIndicatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IndividualTaskIndicatorResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="lblAlarmDateTimeResource1.Text" xml:space="preserve">
+    <value>Alarm Date</value>
+  </data>
+  <data name="lblAlarmDateTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEndDateResource1.Text" xml:space="preserve">
+    <value>End time:</value>
+  </data>
+  <data name="lblEndDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLabelResource1.Text" xml:space="preserve">
+    <value>Label:</value>
+  </data>
+  <data name="lblLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocationResource1.Text" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="lblLocationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPerCompletedResource1.Text" xml:space="preserve">
+    <value>% Completed:</value>
+  </data>
+  <data name="lblPerCompletedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPriorityResource1.Text" xml:space="preserve">
+    <value>Priority:</value>
+  </data>
+  <data name="lblPriorityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReminderResource1.Text" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="lblReminderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRepeatEndingDateResource1.Text" xml:space="preserve">
+    <value>End time:</value>
+  </data>
+  <data name="lblRepeatEndingDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRepeatFrecuencyResource1.Text" xml:space="preserve">
+    <value>Frecuency</value>
+  </data>
+  <data name="lblRepeatFrecuencyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRepeatStatingDateResource1.Text" xml:space="preserve">
+    <value>Star time:</value>
+  </data>
+  <data name="lblRepeatStatingDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRepeatTimesResource1.Text" xml:space="preserve">
+    <value>Times</value>
+  </data>
+  <data name="lblRepeatTimesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblResourceResource1.Text" xml:space="preserve">
+    <value>Resource:</value>
+  </data>
+  <data name="lblResourceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStartDateResource1.Text" xml:space="preserve">
+    <value>Start time:</value>
+  </data>
+  <data name="lblStartDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusResource1.Text" xml:space="preserve">
+    <value>Show time as:</value>
+  </data>
+  <data name="lblStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSubjectResource1.Text" xml:space="preserve">
+    <value>Subject:</value>
+  </data>
+  <data name="lblSubjectResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTaskStatusResource1.Text" xml:space="preserve">
+    <value>Task Status:</value>
+  </data>
+  <data name="lblTaskStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTransactionResource1.Text" xml:space="preserve">
+    <value>Transaction:</value>
+  </data>
+  <data name="lblTransactionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVisualTimeTransactionActionResource1.Text" xml:space="preserve">
+    <value>Action:</value>
+  </data>
+  <data name="lblVisualTimeTransactionActionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListEditItemResource1.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="ListEditItemResource10.Text" xml:space="preserve">
+    <value>Tratamiento de pólizas</value>
+  </data>
+  <data name="ListEditItemResource11.Text" xml:space="preserve">
+    <value>Tratamiento de siniestros</value>
+  </data>
+  <data name="ListEditItemResource12.Text" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="ListEditItemResource13.Text" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="ListEditItemResource14.Text" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="ListEditItemResource15.Text" xml:space="preserve">
+    <value>Annually</value>
+  </data>
+  <data name="ListEditItemResource2.Text" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ListEditItemResource3.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="ListEditItemResource4.Text" xml:space="preserve">
+    <value>Not Initiated</value>
+  </data>
+  <data name="ListEditItemResource5.Text" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="ListEditItemResource6.Text" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="ListEditItemResource7.Text" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="ListEditItemResource8.Text" xml:space="preserve">
+    <value>Deferred</value>
+  </data>
+  <data name="ListEditItemResource9.Text" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="RepeatActiveResource1.Text" xml:space="preserve">
+    <value>Repeat Active</value>
+  </data>
+  <data name="RepeatActiveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RepeatActiveResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="schedulerStatusInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbDescriptionResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbDescriptionResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbDescriptionResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbLocationResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbLocationResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbLocationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbLocationResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbPerCompletedResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbPerCompletedResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbPerCompletedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbPerCompletedResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ButtonEditEllipsisImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ButtonEditEllipsisImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.DropDownButton.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.DropDownButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ItemImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ItemImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.LoadingPanelImage.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.LoadingPanelImage.DescriptionUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.LoadingPanelText" xml:space="preserve">
+    <value>Loading&amp;hellip;</value>
+  </data>
+  <data name="tbRepeatFrecuencyResource1.TextFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatFrecuencyResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbRepeatTimesResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatTimesResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatTimesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbRepeatTimesResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbSubjectResource1.DisplayFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbSubjectResource1.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbSubjectResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbSubjectResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="WarningWhenCompletedResource1.Text" xml:space="preserve">
+    <value>Send a message when the task is completed</value>
+  </data>
+  <data name="WarningWhenCompletedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WarningWhenCompletedResource1.ValidationSettings.ErrorText" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
+  <data name="tbSubjectResource1.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+    <value>Is required</value>
+  </data>
+</root>

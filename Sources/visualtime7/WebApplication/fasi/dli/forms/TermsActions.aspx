@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="TermsActions.aspx.vb" Inherits="dli.forms.TermsActions" %>

@@ -1,0 +1,23 @@
+<%
+
+'====================================================================================
+' Retrieve the Records and Create the "Page on Demand" Engine Object
+'====================================================================================
+On Error Resume Next
+
+session("oRpt").ReadRecords()
+
+If Err.Number <> 0 Then
+	Response.Write("Error." & Err.Number & " " & Err.Description & "<BR>")
+Else
+	If Not IsNothing(session("oPageEngine")) Then
+		'UPGRADE_NOTE: Object session() may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+		session("oPageEngine") = Nothing
+	End If
+	session("oPageEngine") = session("oRpt").PageEngine
+End If
+%>
+
+
+
+

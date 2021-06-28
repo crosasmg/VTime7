@@ -1,0 +1,33 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+    <dxrp:ASPxRoundPanel SkinID="GroupBoxSquareBorder" runat="server" View="GroupBox" ShowDefaultImages="False" BackColor="White" CssPostfix="Office2010Silver">
+        <BottomRightCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/BottomRightCorner.png" />
+        <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+        <NoHeaderTopRightCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/NoHeaderTopRightCorner.png" />
+        <Border BorderStyle="Solid" BorderColor="#7C7C7C" BorderWidth="1px" />
+        <HeaderStyle BackColor="#E8E8E8" Font-Bold="True">
+            <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" PaddingRight="2px" />
+        </HeaderStyle>
+        <TopRightCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/TopRightCorner.png" />
+        <DisabledStyle ForeColor="Gray">
+        </DisabledStyle>
+        <NoHeaderTopEdge BackColor="#E2E8C9">
+        </NoHeaderTopEdge>
+        <NoHeaderTopLeftCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/NoHeaderTopLeftCorner.png" />
+        <TopLeftCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/TopLeftCorner.png" />
+        <BottomLeftCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteBlueBestDoctors/Zone/GroupBoxSquare/BottomLeftCorner.png" />
+    </dxrp:ASPxRoundPanel>

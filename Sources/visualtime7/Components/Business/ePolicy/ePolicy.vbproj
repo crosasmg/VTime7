@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69AA7A27-5164-4A15-8824-3262A0850986}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ePolicy</RootNamespace>
+    <AssemblyName>ePolicy</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>ePolicy.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AJAXASMXHandler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=34c6e5f8262cde4c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\AJAXASMXHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10920.912, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="App_Licenses, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\App_Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Artem.Google, Version=6.0.0.0, Culture=neutral, PublicKeyToken=fc8d6190a3aeb01c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Artem.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.70.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CRVsPackageLib, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\CRVsPackageLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomDragDrop, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\CustomDragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomTextMessageEncoder, Version=4.0.0.0, Culture=neutral, PublicKeyToken=57d1021b889143bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\CustomTextMessageEncoder.dll</HintPath>
+    </Reference>
+    <Reference Include="DashboardBusiness, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f160d9e71b7e618a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\DashboardBusiness.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\EnvDTE.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\EnvDTE80.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel.Net45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\IdentityModel.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="InRule.Common, Version=4.6.30.572, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\InRule.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="InRule.Common.XmlSerializers, Version=4.1.4.8478, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\InRule.Common.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="InRule.Repository, Version=4.6.30.572, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\InRule.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="InRule.Repository.XmlSerializers, Version=4.6.30.572, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\InRule.Repository.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="InRule.Runtime, Version=4.6.30.572, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\InRule.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Interop.ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Interop.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.8.4.28, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.scripting.core, Version=4.1.4.8478, Culture=neutral, PublicKeyToken=1feb8dd25b1ceb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\microsoft.scripting.core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Designer.Interfaces, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.VisualStudio.Designer.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="Segured, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Segured.dll</HintPath>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSoft.PdfLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\SmartSoft.PdfLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Client.Net45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Thinktecture.IdentityModel.Client.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\VSLangProj.dll</HintPath>
+    </Reference>
+    <Reference Include="VsWebSite.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\packages\CHI-VT-ExternalDependencies.1.1.9\lib\net472\VsWebSite.Interop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account_Pol.vb" />
+    <Compile Include="Activelife.vb" />
+    <Compile Include="Activ_Group.vb" />
+    <Compile Include="Activ_Groups.vb" />
+    <Compile Include="Agreement_pol.vb" />
+    <Compile Include="Agreement_pols.vb" />
+    <Compile Include="Annuities.vb" />
+    <Compile Include="Annuitiess.vb" />
+    <Compile Include="Apv_origin.vb" />
+    <Compile Include="Apv_origins.vb" />
+    <Compile Include="APV_Transfer.vb" />
+    <Compile Include="APV_Transfers.vb" />
+    <Compile Include="Auto.vb" />
+    <Compile Include="AutoCharge.vb" />
+    <Compile Include="Auto_db.vb" />
+    <Compile Include="Auto_dbs.vb" />
+    <Compile Include="Aviat_marit.vb" />
+    <Compile Include="Aviat_marits.vb" />
+    <Compile Include="Beneficiar.vb" />
+    <Compile Include="Beneficiars.vb" />
+    <Compile Include="BillingItem.vb" />
+    <Compile Include="BillingItems.vb" />
+    <Compile Include="Branchr.vb" />
+    <Compile Include="Branchrs.vb" />
+    <Compile Include="Certificat.vb" />
+    <Compile Include="Change_mod.vb" />
+    <Compile Include="Change_mods.vb" />
+    <Compile Include="Civil.vb" />
+    <Compile Include="Civils.vb" />
+    <Compile Include="Cond_cover_premium.vb" />
+    <Compile Include="Cond_cover_premiums.vb" />
+    <Compile Include="ConstLanguage.vb" />
+    <Compile Include="Cover_Detail.vb" />
+    <Compile Include="Cover_Details.vb" />
+    <Compile Include="Creditor_Information.vb" />
+    <Compile Include="Creditor_Informations.vb" />
+    <Compile Include="Credits.vb" />
+    <Compile Include="DepreciatedCapital.vb" />
+    <Compile Include="DepreciatedCapitals.vb" />
+    <Compile Include="DetailsAllowed.vb" />
+    <Compile Include="DetailsAllowedses.vb" />
+    <Compile Include="Detail_1890.vb" />
+    <Compile Include="Detail_Machine.vb" />
+    <Compile Include="Detail_Machines.vb" />
+    <Compile Include="Dynamics_Table_Certificat.vb" />
+    <Compile Include="FactorByCharge.vb" />
+    <Compile Include="FactorByCharges.vb" />
+    <Compile Include="FinancialInstrument.vb" />
+    <Compile Include="Fund_Distribution.vb" />
+    <Compile Include="Fund_distributions.vb" />
+    <Compile Include="HomeOwner.vb" />
+    <Compile Include="HomeOwners.vb" />
+    <Compile Include="Machine.vb" />
+    <Compile Include="multi_risk.vb" />
+    <Compile Include="multi_risks.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="Ship.vb" />
+    <Compile Include="Soap_Sell_Period.vb" />
+    <Compile Include="Soap_Sell_Periods.vb" />
+    <Compile Include="Table5708.vb" />
+    <Compile Include="Table5708s.vb" />
+    <Compile Include="Tab_intproy.vb" />
+    <Compile Include="Tab_intproys.vb" />
+    <Compile Include="Theft.vb" />
+    <Compile Include="Thefts.vb" />
+    <Compile Include="Tmp_Vil7700.vb" />
+    <Compile Include="Tmp_Vil7700s.vb" />
+    <Compile Include="transport.vb" />
+    <Compile Include="transports.vb" />
+    <Compile Include="Tran_merch.vb" />
+    <Compile Include="Class_ap.vb" />
+    <Compile Include="Class_aps.vb" />
+    <Compile Include="Clause.vb" />
+    <Compile Include="Clauses.vb" />
+    <Compile Include="Claus_co_gp.vb" />
+    <Compile Include="Client_tmp.vb" />
+    <Compile Include="Client_tmps.vb" />
+    <Compile Include="client_typ.vb" />
+    <Compile Include="Coinsuran.vb" />
+    <Compile Include="Coinsurans.vb" />
+    <Compile Include="Commission.vb" />
+    <Compile Include="Commissions.vb" />
+    <Compile Include="Cond_cover.vb" />
+    <Compile Include="Cond_covers.vb" />
+    <Compile Include="Constantes.vb" />
+    <Compile Include="Contrproc_Cover_co_g.vb" />
+    <Compile Include="Contrproc_cover_co_gs.vb" />
+    <Compile Include="Cover.vb" />
+    <Compile Include="Covers.vb" />
+    <Compile Include="Cover_co_gp.vb" />
+    <Compile Include="Cover_life.vb" />
+    <Compile Include="Cover_quota.vb" />
+    <Compile Include="Cover_quotas.vb" />
+    <Compile Include="Cov_prembas.vb" />
+    <Compile Include="Cov_prembass.vb" />
+    <Compile Include="Credit.vb" />
+    <Compile Include="CreditSales.vb" />
+    <Compile Include="CreditSaless.vb" />
+    <Compile Include="Curren_Pol.vb" />
+    <Compile Include="Decla_benef.vb" />
+    <Compile Include="Decla_benefs.vb" />
+    <Compile Include="Detail_pre.vb" />
+    <Compile Include="Det_comgen.vb" />
+    <Compile Include="DirDebit.vb" />
+    <Compile Include="Disc_xprem.vb" />
+    <Compile Include="Disc_xprems.vb" />
+    <Compile Include="Disc_xpre_gp.vb" />
+    <Compile Include="Doc_Quotation.vb" />
+    <Compile Include="Fire.vb" />
+    <Compile Include="Folios_Agent.vb" />
+    <Compile Include="Folios_Agents.vb" />
+    <Compile Include="Folios_comp.vb" />
+    <Compile Include="Folios_comps.vb" />
+    <Compile Include="Franchise.vb" />
+    <Compile Include="Franchises.vb" />
+    <Compile Include="Funds.vb" />
+    <Compile Include="Fundss.vb" />
+    <Compile Include="Funds_pol.vb" />
+    <Compile Include="Funds_pols.vb" />
+    <Compile Include="Fund_inv.vb" />
+    <Compile Include="Fund_invs.vb" />
+    <Compile Include="Fund_move.vb" />
+    <Compile Include="Fund_moves.vb" />
+    <Compile Include="Fund_stock.vb" />
+    <Compile Include="Fund_stocks.vb" />
+    <Compile Include="Fund_value.vb" />
+    <Compile Include="Fund_values.vb" />
+    <Compile Include="Groups.vb" />
+    <Compile Include="Groupss.vb" />
+    <Compile Include="Guarant_val.vb" />
+    <Compile Include="Guarant_vals.vb" />
+    <Compile Include="Guar_Saving_Pol.vb" />
+    <Compile Include="Guar_Saving_Pols.vb" />
+    <Compile Include="Health.vb" />
+    <Compile Include="Improve_lo.vb" />
+    <Compile Include="Insured_expdis.vb" />
+    <Compile Include="Insured_expdiss.vb" />
+    <Compile Include="Life.vb" />
+    <Compile Include="Life_docu.vb" />
+    <Compile Include="Life_docus.vb" />
+    <Compile Include="life_educ.vb" />
+    <Compile Include="life_levels.vb" />
+    <Compile Include="life_levelss.vb" />
+    <Compile Include="Life_p_speci.vb" />
+    <Compile Include="Life_p_specis.vb" />
+    <Compile Include="Loans.vb" />
+    <Compile Include="Loanss.vb" />
+    <Compile Include="Modules.vb" />
+    <Compile Include="Modul_co_gp.vb" />
+    <Compile Include="Move_accpol.vb" />
+    <Compile Include="Move_accpols.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Noconvers.vb" />
+    <Compile Include="Noconverss.vb" />
+    <Compile Include="Nopayroll.vb" />
+    <Compile Include="Nopayrolls.vb" />
+    <Compile Include="Null_condi.vb" />
+    <Compile Include="Obs_proposal.vb" />
+    <Compile Include="Obs_proposals.vb" />
+    <Compile Include="Officeins.vb" />
+    <Compile Include="Out_moveme.vb" />
+    <Compile Include="Out_movemes.vb" />
+    <Compile Include="Pay_Fracti.vb" />
+    <Compile Include="Pay_fractis.vb" />
+    <Compile Include="Per_deposit.vb" />
+    <Compile Include="Per_deposits.vb" />
+    <Compile Include="Per_deposit_month.vb" />
+    <Compile Include="Per_deposit_months.vb" />
+    <Compile Include="Policy.vb" />
+    <Compile Include="Policys.vb" />
+    <Compile Include="Policy_his.vb" />
+    <Compile Include="Policy_hiss.vb" />
+    <Compile Include="Policy_win.vb" />
+    <Compile Include="PolReport.vb" />
+    <Compile Include="PolReports.vb" />
+    <Compile Include="Prem_annuities.vb" />
+    <Compile Include="Prem_annuitiess.vb" />
+    <Compile Include="Prev_Capital.vb" />
+    <Compile Include="Process.vb" />
+    <Compile Include="Projectlife.vb" />
+    <Compile Include="Projectvul.vb" />
+    <Compile Include="Projectvuls.vb" />
+    <Compile Include="Property.vb" />
+    <Compile Include="Propertys.vb" />
+    <Compile Include="Protection.vb" />
+    <Compile Include="Protections.vb" />
+    <Compile Include="Reinsuran.vb" />
+    <Compile Include="Reinsurans.vb" />
+    <Compile Include="Relations.vb" />
+    <Compile Include="Renewal_guaran_val.vb" />
+    <Compile Include="Renewal_guaran_vals.vb" />
+    <Compile Include="Request.vb" />
+    <Compile Include="Roles.vb" />
+    <Compile Include="Roleses.vb" />
+    <Compile Include="Section_pol.vb" />
+    <Compile Include="Section_pols.vb" />
+    <Compile Include="Situation.vb" />
+    <Compile Include="Situations.vb" />
+    <Compile Include="Soap_entry.vb" />
+    <Compile Include="Sum_insur.vb" />
+    <Compile Include="Sum_insurs.vb" />
+    <Compile Include="Surr_Origins.vb" />
+    <Compile Include="Surr_Originss.vb" />
+    <Compile Include="Suspend.vb" />
+    <Compile Include="Tab_am_exc.vb" />
+    <Compile Include="Tab_am_excs.vb" />
+    <Compile Include="Tab_bk_age.vb" />
+    <Compile Include="Tab_goods.vb" />
+    <Compile Include="Tab_goodses.vb" />
+    <Compile Include="Tab_modul.vb" />
+    <Compile Include="Tab_relat.vb" />
+    <Compile Include="Tab_reqexc.vb" />
+    <Compile Include="Tab_waitPo.vb" />
+    <Compile Include="Tab_waitPos.vb" />
+    <Compile Include="Tar_auto.vb" />
+    <Compile Include="Tar_autos.vb" />
+    <Compile Include="TConvertions.vb" />
+    <Compile Include="TConvertionss.vb" />
+    <Compile Include="TCover.vb" />
+    <Compile Include="TCovers.vb" />
+    <Compile Include="TDetail_pre.vb" />
+    <Compile Include="TDetail_pres.vb" />
+    <Compile Include="TMovprev_Capital.vb" />
+    <Compile Include="TMovprev_Capitals.vb" />
+    <Compile Include="tmp_Funds_pol.vb" />
+    <Compile Include="tmp_Funds_pols.vb" />
+    <Compile Include="Tmp_val669.vb" />
+    <Compile Include="Tmp_val669s.vb" />
+    <Compile Include="Tran_merchs.vb" />
+    <Compile Include="Tran_rate.vb" />
+    <Compile Include="Tran_rates.vb" />
+    <Compile Include="Tran_route.vb" />
+    <Compile Include="Tran_routes.vb" />
+    <Compile Include="Tran_stage.vb" />
+    <Compile Include="Tran_stagedet.vb" />
+    <Compile Include="Tran_stagedets.vb" />
+    <Compile Include="Tran_stages.vb" />
+    <Compile Include="tran_way.vb" />
+    <Compile Include="tran_ways.vb" />
+    <Compile Include="TRCM.vb" />
+    <Compile Include="TRCMs.vb" />
+    <Compile Include="TRehabilitate.vb" />
+    <Compile Include="TRehabilitates.vb" />
+    <Compile Include="Type_amend.vb" />
+    <Compile Include="Type_amends.vb" />
+    <Compile Include="ul_curr_acc_pol.vb" />
+    <Compile Include="Ul_Daily_Balances.vb" />
+    <Compile Include="ul_move_acc_pol.vb" />
+    <Compile Include="ul_move_acc_pols.vb" />
+    <Compile Include="UpgradeSupport.vb" />
+    <Compile Include="ValPolicyRep.vb" />
+    <Compile Include="ValPolicySeq.vb" />
+    <Compile Include="ValPolicySeq_MU700.vb" />
+    <Compile Include="ValPolicyTra.vb" />
+    <Compile Include="VPolicyQuery.vb" />
+    <Compile Include="VPolicyQuerys.vb" />
+    <Compile Include="wait_code_hist.vb" />
+    <Compile Include="wait_code_hists.vb" />
+    <Compile Include="Warranty.vb" />
+    <Compile Include="WarrantyQuotes.vb" />
+    <Compile Include="WarrantyQuotess.vb" />
+    <Compile Include="Warrantys.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="ePolicy.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eGeneral\eGeneral.vbproj">
+      <Project>{67208FC2-FE0A-4D94-9FD0-28DA643EDF03}</Project>
+      <Name>eGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eAgent\eAgent.vbproj">
+      <Project>{EAADFD20-AC4B-4EDA-A340-B939958DA3E3}</Project>
+      <Name>eAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eBranches\eBranches.vbproj">
+      <Project>{37BE667A-C9D0-469B-A9D6-4C70CE30C15D}</Project>
+      <Name>eBranches</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eCashBank\eCashBank.vbproj">
+      <Project>{60287AC0-F351-44DD-A0C4-D2BA4DF1B8AB}</Project>
+      <Name>eCashBank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eClient\eClient.vbproj">
+      <Project>{30582942-2DF4-4212-AB9D-DF0C18291AAE}</Project>
+      <Name>eClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eCollection\eCollection.vbproj">
+      <Project>{EF68F326-E6A6-493B-A864-C43D2B642FE7}</Project>
+      <Name>eCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eGeneralForm\eGeneralForm.vbproj">
+      <Project>{05C3F80E-B222-41E4-BCF4-9AE774BA9EF9}</Project>
+      <Name>eGeneralForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eLedge\eLedge.vbproj">
+      <Project>{AA9CEE20-19A5-4A0D-839C-E59BF5C1D430}</Project>
+      <Name>eLedge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eProduct\eProduct.vbproj">
+      <Project>{E4EF1C50-30F8-4EB0-9D9C-8CFD624B6B0A}</Project>
+      <Name>eProduct</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

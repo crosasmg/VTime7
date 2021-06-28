@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60287AC0-F351-44DD-A0C4-D2BA4DF1B8AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eCashBank</RootNamespace>
+    <AssemblyName>eCashBank</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eCashBank.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bank_acc.vb" />
+    <Compile Include="Bank_accs.vb" />
+    <Compile Include="Bank_mov.vb" />
+    <Compile Include="Bank_trans.vb" />
+    <Compile Include="Cash_acc.vb" />
+    <Compile Include="cash_concepts.vb" />
+    <Compile Include="cash_conceptss.vb" />
+    <Compile Include="Cash_conclass.vb" />
+    <Compile Include="Cash_conclasss.vb" />
+    <Compile Include="Cash_mov.vb" />
+    <Compile Include="Cash_movs.vb" />
+    <Compile Include="Cash_stat.vb" />
+    <Compile Include="Cash_stats.vb" />
+    <Compile Include="Cheque.vb" />
+    <Compile Include="Cheques.vb" />
+    <Compile Include="Cheque_mov.vb" />
+    <Compile Include="Cheq_book.vb" />
+    <Compile Include="Collectagre.vb" />
+    <Compile Include="Comm_det.vb" />
+    <Compile Include="Comm_dets.vb" />
+    <Compile Include="Constantes.vb" />
+    <Compile Include="Curr_acc.vb" />
+    <Compile Include="Curr_accs.vb" />
+    <Compile Include="Move_acc.vb" />
+    <Compile Include="Move_accs.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="pay_ord_concepts.vb" />
+    <Compile Include="pay_ord_conceptss.vb" />
+    <Compile Include="Tab_acc_mov.vb" />
+    <Compile Include="Tab_acc_movs.vb" />
+    <Compile Include="Tab_bk_age.vb" />
+    <Compile Include="Tab_bk_ages.vb" />
+    <Compile Include="User_cashnum.vb" />
+    <Compile Include="User_cashnums.vb" />
+    <Compile Include="ValCashBankRep.vb" />
+    <Compile Include="Valdatconditions.vb" />
+    <Compile Include="Valdatconditionss.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eCashBank.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eGeneral\eGeneral.vbproj">
+      <Project>{67208FC2-FE0A-4D94-9FD0-28DA643EDF03}</Project>
+      <Name>eGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eAgent\eAgent.vbproj">
+      <Project>{EAADFD20-AC4B-4EDA-A340-B939958DA3E3}</Project>
+      <Name>eAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eClient\eClient.vbproj">
+      <Project>{30582942-2DF4-4212-AB9D-DF0C18291AAE}</Project>
+      <Name>eClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eLedge\eLedge.vbproj">
+      <Project>{AA9CEE20-19A5-4A0D-839C-E59BF5C1D430}</Project>
+      <Name>eLedge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

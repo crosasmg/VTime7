@@ -1,0 +1,227 @@
+﻿<Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icaa="clr-namespace:InMotionGIT.Chile.Activity.Acepta;assembly=InMotionGIT.Chile.Activity" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:ilec="clr-namespace:InMotionGIT.LineOfBusiness.Entity.Contracts;assembly=InMotionGIT.LineOfBusiness.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipeci="clr-namespace:InMotionGIT.Policy.Entity.Contracts.Interfaces;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s5="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Configuration;assembly=System" xmlns:sc1="clr-namespace:System.Configuration;assembly=System.Configuration" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="sads sap" x:Class="ImpresionEnvioSOAP">
+  <x:Members>
+    <x:Property Name="context" Type="InArgument(icc:Context)" />
+    <x:Property Name="risk" Type="InArgument(ipec:RiskInformation)" />
+    <x:Property Name="autoInfo" Type="InArgument(ilec:AutomobileLineOfBusiness)" />
+    <x:Property Name="PurchaseOrder" Type="InArgument(x:Int64)" />
+    <x:Property Name="SendEmail" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>766,1105</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="726,1065">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="CallStatus" />
+      <Variable x:TypeArguments="x:String" Name="CallMessage" />
+      <Variable x:TypeArguments="x:String" Name="FileName" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <x:Double x:Key="Height">1029</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,94</av:PointCollection>
+        <x:Double x:Key="Width">712.5</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">218.5,94</av:Point>
+            <av:Size x:Key="ShapeSize">163,130</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,224 300,247</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,130">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="English" Value="Imprimir y enviar póliza ({ Value /autoInfo/LicensePlate } / { Value /PurchaseOrder } / { Value /risk/PolicyID })" />
+            <icd:LocalizedString Language="Spanish" Value="Imprimir y enviar póliza ({ Value /autoInfo/LicensePlate } / { Value /PurchaseOrder } / { Value /risk/PolicyID })" />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,247</av:Point>
+                <av:Size x:Key="ShapeSize">200,102</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,349 300,376.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ica1:Report FileNameFormat="{x:Null}" FormatParameter1="{x:Null}" FormatParameter2="{x:Null}" FormatParameter3="{x:Null}" DisplayName="Se genera el cuadro de la póliza" FailedExecution="[CallStatus]" FailedMessage="[CallMessage]" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="200,102" PDFFileName="[FileName]" RemoteHandler="True" ReportFileName="CAL0111" URLResultMode="False">
+              <ica1:Report.ProcedureParameters>
+                <InArgument x:TypeArguments="x:String" x:Key="SCERTYPE">[risk.RecordType]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="NBRANCH">[risk.LineOfBusiness]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="NPRODUCT">[risk.ProductCode]</InArgument>
+                <InArgument x:TypeArguments="x:Int64" x:Key="NPOLICY">[risk.PolicyID]</InArgument>
+                <InArgument x:TypeArguments="x:Int64" x:Key="NCERTIF">[risk.CertificateID]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="DEFFECDATE">[risk.EffectiveDate.tostring("yyyyMMdd")]</InArgument>
+              </ica1:Report.ProcedureParameters>
+              <ica1:Report.ReportParameters>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ica1:Report.ReportParameters>
+            </ica1:Report>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID8" Condition="[CallStatus]" sap:VirtualizedContainerService.HintSize="70,87">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">265,376.5</av:Point>
+                    <av:Size x:Key="ShapeSize">70,87</av:Size>
+                    <x:String x:Key="TrueLabel">Falló</x:String>
+                    <x:String x:Key="FalseLabel">Exitoso</x:String>
+                    <av:PointCollection x:Key="TrueConnector">265,420 100,420 100,442</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">335,420 440,420 440,489</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <FlowDecision.True>
+                  <FlowStep x:Name="__ReferenceID9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">21,442</av:Point>
+                        <av:Size x:Key="ShapeSize">158,136</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">209,700 461,700</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ica1:SendMail AttachFileName="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" DisplayName="Notificación de falla en el cuadro de póliza" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158,136" To="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList&quot;)]" cc="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList.Ext1&quot;)]">
+                      <ica1:SendMail.Body>
+                        <icd:LocalizedString Language="English" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al tratar de generar el cuadro de p&amp;oacute;liza, el detalle del error es el siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                        <icd:LocalizedString Language="Spanish" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al tratar de generar el cuadro de p&amp;oacute;liza, el detalle del error es el siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                        <icd:LocalizedString Language="Portuguese" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al tratar de generar el cuadro de p&amp;oacute;liza, el detalle del error es el siguiente:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                      </ica1:SendMail.Body>
+                      <ica1:SendMail.Subject>
+                        <icd:LocalizedString Language="English" Value="SOAP 2015: Falla al ejecutar el cuadro de póliza ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                        <icd:LocalizedString Language="Spanish" Value="SOAP 2015: Falla al ejecutar el cuadro de póliza ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                        <icd:LocalizedString Language="Portuguese" Value="SOAP 2015: Falla al ejecutar el cuadro de póliza ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                      </ica1:SendMail.Subject>
+                    </ica1:SendMail>
+                  </FlowStep>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <FlowStep x:Name="__ReferenceID3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">340,489</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">440,511 440,566.5</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <icaa:FirmarPDF DisplayName="Firma electrónica" FailedExecution="[CallStatus]" sap:VirtualizedContainerService.HintSize="200,22" Message="[CallMessage]" PDFFullPath="[FileName]" PDFSigned="[FileName]" PolicyNumber="[risk.PolicyID]" YearOfSale="[risk.EffectiveDate.Year]" />
+                    <FlowStep.Next>
+                      <FlowDecision x:Name="__ReferenceID6" Condition="[CallStatus]" sap:VirtualizedContainerService.HintSize="70,87">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">405,566.5</av:Point>
+                            <av:Size x:Key="ShapeSize">70,87</av:Size>
+                            <x:String x:Key="TrueLabel">Falló</x:String>
+                            <x:String x:Key="FalseLabel">Exitoso</x:String>
+                            <av:PointCollection x:Key="TrueConnector">405,610 270,610 270,642</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">475,610 547.5,610 547.5,726.5</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">191,642</av:Point>
+                                <av:Size x:Key="ShapeSize">158,136</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">349,710 512.5,710 512.5,726.5</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ica1:SendMail AttachFileName="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" DisplayName="Notificación de falla en la firma electrónica" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158,136" To="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList&quot;)]" cc="[ConfigurationManager.AppSettings(&quot;SOAP.Notify.EMailList.Ext1&quot;)]">
+                              <ica1:SendMail.Body>
+                                <icd:LocalizedString Language="English" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al ejecutar el servicio de acepta para la firma electr&amp;iacute;nica del cuadro de p&amp;oacute;lizas, el detalle del error es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                <icd:LocalizedString Language="Spanish" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al ejecutar el servicio de acepta para la firma electr&amp;iacute;nica del cuadro de p&amp;oacute;lizas, el detalle del error es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                <icd:LocalizedString Language="Portuguese" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Ha ocurrido un error al ejecutar el servicio de acepta para la firma electr&amp;iacute;nica del cuadro de p&amp;oacute;lizas, el detalle del error es:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;{ Value /CallMessage }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;@@WEBAPPLICATION@@&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                              </ica1:SendMail.Body>
+                              <ica1:SendMail.Subject>
+                                <icd:LocalizedString Language="English" Value="SOAP 2015: Falla en la firma electrónica ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                                <icd:LocalizedString Language="Spanish" Value="SOAP 2015: Falla en la firma electrónica ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                                <icd:LocalizedString Language="Portuguese" Value="SOAP 2015: Falla en la firma electrónica ({ Value /risk/PolicyID } / { Value /PurchaseOrder } / { Value /autoInfo/LicensePlate })" />
+                              </ica1:SendMail.Subject>
+                            </ica1:SendMail>
+                            <FlowStep.Next>
+                              <FlowDecision x:Name="__ReferenceID1" Condition="[SendEmail]" sap:VirtualizedContainerService.HintSize="70,87">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">495,726.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                    <av:PointCollection x:Key="FalseConnector">565,770 600,770 600,909</av:PointCollection>
+                                    <av:PointCollection x:Key="TrueConnector">495,770 370,770 370,852</av:PointCollection>
+                                    <x:String x:Key="TrueLabel">Enviar Email</x:String>
+                                    <x:String x:Key="FalseLabel"></x:String>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <FlowDecision.True>
+                                  <FlowStep x:Name="__ReferenceID5">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">291,852</av:Point>
+                                        <av:Size x:Key="ShapeSize">158,136</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">449,920 500,920</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ica1:SendMail FailedExecution="{x:Null}" FailedMessage="{x:Null}" cc="{x:Null}" AttachFileName="[FileName]" DisplayName="Envio de poliza por email" EditSource="True" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158,136" To="[risk.PrimaryInsured.Client.eMailAddressDefault]">
+                                      <ica1:SendMail.Body>
+                                        <icd:LocalizedString Language="English" Value="&lt;!DOCTYPE html&gt;&#xA;&#xA;&lt;html lang=&quot;es&quot;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xA;    &lt;title&gt;La Mutual&lt;/title&gt;&#xA;    &lt;style type=&quot;text/css&quot;&gt;&#xA; body {&#xA;        width: 730px;&#xA;        margin: 0 auto;&#xA;        font-family: helvetica,arial,sans-serif;&#xA;        font-size: 12px;&#xA;      }&#xA;&#xA;     table {&#xA;        width: 730px;&#xA;      }&#xA;    &lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&#xA;&lt;body&gt;&#xA;    &lt;table&gt;&#xA;        &lt;tbody&gt;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;&lt;img class=&quot;header&quot; src=&quot;@@WEBAPPLICATION@@/images/mutual/header_mail.png&quot;&gt;&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;Estimado Asegurado:&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td style=&quot; text-align: justify; padding: 10px 0;&quot;&gt;&#xA;                    Junto con darle la bienvenida y agradecer su preferencia, Mutual de Seguros de Chile le envía en este correo una copia&#xA;                    digital de la póliza de Seguro Obligatorio de Accidentes Personales (SOAP) que ha contratado con nosotros, &lt;strong&gt;la&#xA;                    cual deberá imprimir y presentar al momento de obtener su permiso de circulación.&lt;/strong&gt; Si usted requiere reimprimir&#xA;                    su póliza, podrá hacerlo a través de nuestra &lt;a href=&#xA;                    &quot;@@WEBAPPLICATION@@/generated/ConsultaPatentePopup.aspx?buscar=y&amp;amp;patente={ Value /autoInfo/LicensePlate }&quot;&gt;página web&lt;/a&gt;.&#xA;                &lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 40px; padding-bottom: 0px;&quot;&gt;Le saluda atentamente,&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 30px; padding-top: 0;&quot;&gt;Mutual de Seguros de Chile&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;        &lt;/tbody&gt;&#xA;    &lt;/table&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+                                        <icd:LocalizedString Language="Spanish" Value="&lt;!DOCTYPE html&gt;&#xA;&#xA;&lt;html lang=&quot;es&quot;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xA;    &lt;title&gt;La Mutual&lt;/title&gt;&#xA;    &lt;style type=&quot;text/css&quot;&gt;&#xA; body {&#xA;        width: 730px;&#xA;        margin: 0 auto;&#xA;        font-family: helvetica,arial,sans-serif;&#xA;        font-size: 12px;&#xA;      }&#xA;&#xA;     table {&#xA;        width: 730px;&#xA;      }&#xA;    &lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&#xA;&lt;body&gt;&#xA;    &lt;table&gt;&#xA;        &lt;tbody&gt;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;&lt;img class=&quot;header&quot; src=&quot;@@WEBAPPLICATION@@/images/mutual/header_mail.png&quot;&gt;&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;Estimado Asegurado:&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td style=&quot; text-align: justify; padding: 10px 0;&quot;&gt;&#xA;                    Junto con darle la bienvenida y agradecer su preferencia, Mutual de Seguros de Chile le envía en este correo una copia&#xA;                    digital de la póliza de Seguro Obligatorio de Accidentes Personales (SOAP) que ha contratado con nosotros, &lt;strong&gt;la&#xA;                    cual deberá imprimir y presentar al momento de obtener su permiso de circulación.&lt;/strong&gt; Si usted requiere reimprimir&#xA;                    su póliza, podrá hacerlo a través de nuestra &lt;a href=&#xA;                    &quot;@@WEBAPPLICATION@@/generated/ConsultaPatentePopup.aspx?buscar=y&amp;amp;patente={ Value /autoInfo/LicensePlate }&quot;&gt;página web&lt;/a&gt;.&#xA;                &lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 40px; padding-bottom: 0px;&quot;&gt;Le saluda atentamente,&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 30px; padding-top: 0;&quot;&gt;Mutual de Seguros de Chile&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;        &lt;/tbody&gt;&#xA;    &lt;/table&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+                                        <icd:LocalizedString Language="Portuguese" Value="&lt;!DOCTYPE html&gt;&#xA;&#xA;&lt;html lang=&quot;es&quot;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xA;    &lt;title&gt;La Mutual&lt;/title&gt;&#xA;    &lt;style type=&quot;text/css&quot;&gt;&#xA; body {&#xA;        width: 730px;&#xA;        margin: 0 auto;&#xA;        font-family: helvetica,arial,sans-serif;&#xA;        font-size: 12px;&#xA;      }&#xA;&#xA;     table {&#xA;        width: 730px;&#xA;      }&#xA;    &lt;/style&gt;&#xA;&lt;/head&gt;&#xA;&#xA;&lt;body&gt;&#xA;    &lt;table&gt;&#xA;        &lt;tbody&gt;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;&lt;img class=&quot;header&quot; src=&quot;@@WEBAPPLICATION@@/images/mutual/header_mail.png&quot;&gt;&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td&gt;Estimado Asegurado:&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr&gt;&#xA;                &lt;td style=&quot; text-align: justify; padding: 10px 0;&quot;&gt;&#xA;                    Junto con darle la bienvenida y agradecer su preferencia, Mutual de Seguros de Chile le envía en este correo una copia&#xA;                    digital de la póliza de Seguro Obligatorio de Accidentes Personales (SOAP) que ha contratado con nosotros, &lt;strong&gt;la&#xA;                    cual deberá imprimir y presentar al momento de obtener su permiso de circulación.&lt;/strong&gt; Si usted requiere reimprimir&#xA;                    su póliza, podrá hacerlo a través de nuestra &lt;a href=&#xA;                    &quot;@@WEBAPPLICATION@@/generated/ConsultaPatentePopup.aspx?buscar=y&amp;amp;patente={ Value /autoInfo/LicensePlate }&quot;&gt;página web&lt;/a&gt;.&#xA;                &lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 40px; padding-bottom: 0px;&quot;&gt;Le saluda atentamente,&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;&#xA;            &lt;tr class=&quot;centered&quot; style=&quot; text-align: right;&quot;&gt;&#xA;                &lt;td style=&quot; padding-right: 30px; padding-top: 0;&quot;&gt;Mutual de Seguros de Chile&lt;/td&gt;&#xA;            &lt;/tr&gt;&#xA;        &lt;/tbody&gt;&#xA;    &lt;/table&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+                                      </ica1:SendMail.Body>
+                                      <ica1:SendMail.Subject>
+                                        <icd:LocalizedString Language="English" Value="Mutual le da la bienvenida y envía copia de póliza SOAP" />
+                                        <icd:LocalizedString Language="Spanish" Value="Mutual le da la bienvenida y envía copia de póliza SOAP" />
+                                        <icd:LocalizedString Language="Portuguese" Value="Mutual le da la bienvenida y envía copia de póliza SOAP" />
+                                      </ica1:SendMail.Subject>
+                                    </ica1:SendMail>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID0">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">500,909</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <icaa:GuardarPDF Result="{x:Null}" DisplayName="Almacena el PDF en la BD" FullPath="[FileName]" sap:VirtualizedContainerService.HintSize="200,22" LicensePlate="[autoInfo.LicensePlate]" PurchaseOrder="[Convert.ToInt32(PurchaseOrder)]" Usercode="654" />
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.True>
+                                <FlowDecision.False>
+                                  <x:Reference>__ReferenceID0</x:Reference>
+                                </FlowDecision.False>
+                              </FlowDecision>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <x:Reference>__ReferenceID1</x:Reference>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.False>
+              </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

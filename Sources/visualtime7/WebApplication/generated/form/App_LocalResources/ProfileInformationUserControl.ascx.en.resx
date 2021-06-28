@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader><data name="UserNameLabelResource.Text" xml:space="preserve">
+  <value>Username</value>
+</data>
+<data name="UserNameLabelResource.ToolTip" xml:space="preserve">
+  <value>User name</value>
+</data>
+<data name="UserNameResource.ToolTip" xml:space="preserve">
+  <value>User name</value>
+</data>
+<data name="UserNameResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="EmailLabelResource.Text" xml:space="preserve">
+  <value>Email</value>
+</data>
+<data name="EmailLabelResource.ToolTip" xml:space="preserve">
+  <value>User Email</value>
+</data>
+<data name="EmailResource.ToolTip" xml:space="preserve">
+  <value>User Email</value>
+</data>
+<data name="EmailResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="userNameTemporalLabelResource.Text" xml:space="preserve">
+  <value>userNameTemporal</value>
+</data>
+<data name="userNameTemporalLabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="userNameTemporalResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="userNameTemporalResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="userEmailLabelResource.Text" xml:space="preserve">
+  <value>userEmailTemporal</value>
+</data>
+<data name="userEmailLabelResource.ToolTip" xml:space="preserve">
+  <value>text1</value>
+</data>
+<data name="userEmailResource.ToolTip" xml:space="preserve">
+  <value>text1</value>
+</data>
+<data name="userEmailResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone1Resource.HeaderText" xml:space="preserve">
+  <value>Account Information</value>
+</data>
+<data name="zone1Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="FirstNameLabelResource.Text" xml:space="preserve">
+  <value>Firstname</value>
+</data>
+<data name="FirstNameLabelResource.ToolTip" xml:space="preserve">
+  <value>Firstname</value>
+</data>
+<data name="FirstNameResource.ToolTip" xml:space="preserve">
+  <value>Firstname</value>
+</data>
+<data name="FirstNameResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="SurNameLabelResource.Text" xml:space="preserve">
+  <value>Surname</value>
+</data>
+<data name="SurNameLabelResource.ToolTip" xml:space="preserve">
+  <value>Surname</value>
+</data>
+<data name="SurNameResource.ToolTip" xml:space="preserve">
+  <value>Surname</value>
+</data>
+<data name="SurNameResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameLabelResource.Text" xml:space="preserve">
+  <value>Lastname</value>
+</data>
+<data name="LastNameLabelResource.ToolTip" xml:space="preserve">
+  <value>Lastname</value>
+</data>
+<data name="LastNameResource.ToolTip" xml:space="preserve">
+  <value>Lastname</value>
+</data>
+<data name="LastNameResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="SecondLastNameLabelResource.Text" xml:space="preserve">
+  <value>Second Lastname</value>
+</data>
+<data name="SecondLastNameLabelResource.ToolTip" xml:space="preserve">
+  <value>text7</value>
+</data>
+<data name="SecondLastNameResource.ToolTip" xml:space="preserve">
+  <value>text7</value>
+</data>
+<data name="SecondLastNameResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="DateofBirthLabelResource.Text" xml:space="preserve">
+  <value>Date of birth</value>
+</data>
+<data name="DateofBirthLabelResource.ToolTip" xml:space="preserve">
+  <value>User date of birth</value>
+</data>
+<data name="DateofBirthResource.ToolTip" xml:space="preserve">
+  <value>User date of birth</value>
+</data>
+<data name="DateofBirthResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="GenderListItemValue1Resource.Text" xml:space="preserve">
+  <value>Male</value>
+</data>
+<data name="GenderListItemValue2Resource.Text" xml:space="preserve">
+  <value>Female</value>
+</data>
+<data name="GenderLabelResource.Text" xml:space="preserve">
+  <value>Gender</value>
+</data>
+<data name="GenderLabelResource.ToolTip" xml:space="preserve">
+  <value>User gender</value>
+</data>
+<data name="GenderResource.ToolTip" xml:space="preserve">
+  <value>User gender</value>
+</data>
+<data name="AddressLabelResource.Text" xml:space="preserve">
+  <value>Address</value>
+</data>
+<data name="AddressLabelResource.ToolTip" xml:space="preserve">
+  <value>User address</value>
+</data>
+<data name="AddressResource.ToolTip" xml:space="preserve">
+  <value>User address</value>
+</data>
+<data name="AddressResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CityLabelResource.Text" xml:space="preserve">
+  <value>City</value>
+</data>
+<data name="CityLabelResource.ToolTip" xml:space="preserve">
+  <value>User town</value>
+</data>
+<data name="CityResource.ToolTip" xml:space="preserve">
+  <value>User town</value>
+</data>
+<data name="CityResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StateLabelResource.Text" xml:space="preserve">
+  <value>State</value>
+</data>
+<data name="StateLabelResource.ToolTip" xml:space="preserve">
+  <value>User state</value>
+</data>
+<data name="StateResource.ToolTip" xml:space="preserve">
+  <value>User state</value>
+</data>
+<data name="StateResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CountryLabelResource.Text" xml:space="preserve">
+  <value>Country</value>
+</data>
+<data name="CountryLabelResource.ToolTip" xml:space="preserve">
+  <value>User country</value>
+</data>
+<data name="CountryResource.ToolTip" xml:space="preserve">
+  <value>User country</value>
+</data>
+<data name="TelephoneNumberLabelResource.Text" xml:space="preserve">
+  <value>Telephone number</value>
+</data>
+<data name="TelephoneNumberLabelResource.ToolTip" xml:space="preserve">
+  <value>User phone number</value>
+</data>
+<data name="TelephoneNumberResource.ToolTip" xml:space="preserve">
+  <value>User phone number</value>
+</data>
+<data name="TelephoneNumberResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone0Resource.HeaderText" xml:space="preserve">
+  <value>Personal Information</value>
+</data>
+<data name="zone0Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ThemeLabelResource.Text" xml:space="preserve">
+  <value>Theme</value>
+</data>
+<data name="ThemeLabelResource.ToolTip" xml:space="preserve">
+  <value>List of available themes</value>
+</data>
+<data name="ThemeResource.ToolTip" xml:space="preserve">
+  <value>List of available themes</value>
+</data>
+<data name="LanguageIDLabelResource.Text" xml:space="preserve">
+  <value>Language</value>
+</data>
+<data name="LanguageIDLabelResource.ToolTip" xml:space="preserve">
+  <value>List of available languages</value>
+</data>
+<data name="LanguageIDResource.ToolTip" xml:space="preserve">
+  <value>List of available languages</value>
+</data>
+<data name="zone2Resource.HeaderText" xml:space="preserve">
+  <value>Preferences</value>
+</data>
+<data name="zone2Resource.ToolTip" xml:space="preserve">
+  <value>User preferences</value>
+</data>
+<data name="PasswordQuestionLabelResource.Text" xml:space="preserve">
+  <value>PasswordQuestion</value>
+</data>
+<data name="PasswordQuestionLabelResource.ToolTip" xml:space="preserve">
+  <value>Assigns secret question</value>
+</data>
+<data name="PasswordQuestionResource.ToolTip" xml:space="preserve">
+  <value>Assigns secret question</value>
+</data>
+<data name="PasswordQuestionResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PasswordAnswerLabelResource.Text" xml:space="preserve">
+  <value>PasswordAnswer</value>
+</data>
+<data name="PasswordAnswerLabelResource.ToolTip" xml:space="preserve">
+  <value>Assigns secret answer</value>
+</data>
+<data name="PasswordAnswerResource.ToolTip" xml:space="preserve">
+  <value>Assigns secret answer</value>
+</data>
+<data name="PasswordAnswerResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btnSaveQuestionResource.Text" xml:space="preserve">
+  <value>Save</value>
+</data>
+<data name="btnSaveQuestionResource.ToolTip" xml:space="preserve">
+  <value>Save the secret question and answer</value>
+</data>
+<data name="btnSaveQuestionConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btnSaveQuestionInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtnSaveQuestionConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtnSaveQuestionInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btnSaveQuestion0_MessageActionResource" xml:space="preserve">
+  <value>Secret question and answer correctly modified</value>
+</data>
+<data name="btnSaveQuestion1_MessageActionResource" xml:space="preserve">
+  <value>No secret question and answer correctly modified</value>
+</data>
+<data name="SecurityRoundPanelResource.HeaderText" xml:space="preserve">
+  <value>Security</value>
+</data>
+<data name="SecurityRoundPanelResource.ToolTip" xml:space="preserve">
+  <value>Section to change security aspects</value>
+</data>
+<data name="btnCanResource.Text" xml:space="preserve">
+  <value>Cancel</value>
+</data>
+<data name="btnCanResource.ToolTip" xml:space="preserve">
+  <value>It redirects to start</value>
+</data>
+<data name="btnCanConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btnCanInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtnCanConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtnCanInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btnSaResource.Text" xml:space="preserve">
+  <value>Save changes</value>
+</data>
+<data name="btnSaResource.ToolTip" xml:space="preserve">
+  <value>Makes the save profile changes</value>
+</data>
+<data name="btnSaConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btnSaInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtnSaConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtnSaInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btnSa4_MessageActionResource" xml:space="preserve">
+  <value>Could not save changes to the user</value>
+</data>
+<data name="zone3Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone3Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="tabInformationGeneralResource.Text" xml:space="preserve">
+  <value>General information</value>
+</data>
+<data name="tabInformationGeneralResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastLoginDateLabelResource.Text" xml:space="preserve">
+  <value>Last login date</value>
+</data>
+<data name="LastLoginDateLabelResource.ToolTip" xml:space="preserve">
+  <value>text5</value>
+</data>
+<data name="LastLoginDateResource.ToolTip" xml:space="preserve">
+  <value>text5</value>
+</data>
+<data name="LastLoginDateResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastActivityDateLabelResource.Text" xml:space="preserve">
+  <value>Last activity date</value>
+</data>
+<data name="LastActivityDateLabelResource.ToolTip" xml:space="preserve">
+  <value>text6</value>
+</data>
+<data name="LastActivityDateResource.ToolTip" xml:space="preserve">
+  <value>text6</value>
+</data>
+<data name="LastActivityDateResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastLockoutDateLabelResource.Text" xml:space="preserve">
+  <value>Last lockout date</value>
+</data>
+<data name="LastLockoutDateLabelResource.ToolTip" xml:space="preserve">
+  <value>text7</value>
+</data>
+<data name="LastLockoutDateResource.ToolTip" xml:space="preserve">
+  <value>text7</value>
+</data>
+<data name="LastLockoutDateResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone4Resource.HeaderText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone4Resource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="UserSecurityTraceGridBtnResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="UserSecurityTraceEditGridResource.Text" xml:space="preserve">
+  <value>Edit</value>
+</data>
+<data name="UserSecurityTraceDeleteGridResource.Text" xml:space="preserve">
+  <value>Delete</value>
+</data>
+<data name="UserSecurityTraceUpdateGridResource.Text" xml:space="preserve">
+  <value>Update</value>
+</data>
+<data name="UserSecurityTraceCancelBtnGridResource.Text" xml:space="preserve">
+  <value>Cancel</value>
+</data>
+<data name="EffectDateFieldResource.Caption" xml:space="preserve">
+  <value>Effect date</value>
+</data>
+<data name="EffectDateFieldResource.ToolTip" xml:space="preserve">
+  <value>Effect date of the action</value>
+</data>
+<data name="EffectDateFieldResource.PropertiesTextEdit.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="HostFieldResource.Caption" xml:space="preserve">
+  <value>Host</value>
+</data>
+<data name="HostFieldResource.ToolTip" xml:space="preserve">
+  <value>Host</value>
+</data>
+<data name="HostFieldResource.PropertiesTextEdit.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StateFieldResource.Caption" xml:space="preserve">
+  <value>State</value>
+</data>
+<data name="StateFieldResource.ToolTip" xml:space="preserve">
+  <value>State of the action</value>
+</data>
+<data name="StateFieldResource.PropertiesTextEdit.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ResultFieldResource.Caption" xml:space="preserve">
+  <value>Result</value>
+</data>
+<data name="ResultFieldResource.ToolTip" xml:space="preserve">
+  <value>Result of the action</value>
+</data>
+<data name="ResultFieldResource.PropertiesTextEdit.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="UserSecurityTraceResource.Caption" xml:space="preserve">
+  <value>Record</value>
+</data>
+<data name="zone5Resource.HeaderText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone5Resource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="tabInformationAccesLogResource.Text" xml:space="preserve">
+  <value>User login information</value>
+</data>
+<data name="tabInformationAccesLogResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ProfileInformationInstructionResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+</root>

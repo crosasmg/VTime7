@@ -1,0 +1,46 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+    <dxrp:ASPxRoundPanel SkinID="RoundedBorderAndNotCaption" runat="server" ShowDefaultImages="False" BackColor="White" ShowHeader="False" CssPostfix="Office2010Silver">
+            <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />           
+            <Border BorderStyle="Solid" BorderColor="#7B7B7B" BorderWidth="1px" />
+            <HeaderStyle BackColor="#D4D4D4" Font-Bold="true">
+                <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" PaddingRight="2px" />
+                <BorderBottom BorderStyle="None" />
+            </HeaderStyle>
+            <DisabledStyle ForeColor="Gray">
+            </DisabledStyle>
+            <TopLeftCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/TopLeftCorner.png"
+                Width="8px">
+            </TopLeftCorner>
+            <NoHeaderTopLeftCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/NoHeaderTopLeftCorner.png"
+                Width="8px">
+            </NoHeaderTopLeftCorner>
+            <TopRightCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/TopRightCorner.png"
+                Width="8px">
+            </TopRightCorner>
+            <NoHeaderTopRightCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/NoHeaderTopRightCorner.png"
+                Width="8px">
+            </NoHeaderTopRightCorner>
+            <BottomRightCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/BottomRightCorner.png"
+                Width="8px">
+            </BottomRightCorner>
+            <BottomLeftCorner Height="8px" Url="~/App_Themes/HorizontalWhitePurple/Zone/CaptionRoundedBorder/BottomLeftCorner.png"
+                Width="8px">
+            </BottomLeftCorner>
+            <NoHeaderTopEdge>
+            </NoHeaderTopEdge>
+        </dxrp:ASPxRoundPanel>

@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/fasi/assets/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <center>
+        <!-- RxList Drug LookUp starts -->
+        <div>
+            <div style="float: left;">
+                <img src="https://www.rxlist.com/images/rxlist/bg_rx_search.gif" alt="RxList" width="150" height="50" />
+            </div>
+            <div style="clear: both; float: left; width: 100%;">
+                <input id="src" name="src" type="text" size="18" />
+                <input id="search" type="image" value="Search" src="https://www.rxlist.com/images/rxlist/btnSearch.gif" alt="Search for a Drug" align="top" />
+            </div>
+        </div>
+        <!-- RxList Drug LookUp Ends -->
+    </center>
+    <script>
+        $(document).ready(function () {
+            $("#search").on( "click", function() {
+                window.open('https://www.rxlist.com/search/rxl/' + $("#src").val(),'_blank');
+            }); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcnChUserLevCaption" xml:space="preserve">
+    <value>User level / changes in the emission</value>
+  </data>
+  <data name="tcnChUserLevToolTip" xml:space="preserve">
+    <value>Level of the user to change automatic responses in the treatment of policyholders</value>
+  </data>
+  <data name="tcnCopyCaption" xml:space="preserve">
+    <value>Number of Copies</value>
+  </data>
+  <data name="tcnCopyToolTip" xml:space="preserve">
+    <value>Number of policy copies that must be printed for the company</value>
+  </data>
+  <data name="AnchorRenovación de la pólizaCaption" xml:space="preserve">
+    <value>Policy Renewal</value>
+  </data>
+  <data name="tcnTimeCaption" xml:space="preserve">
+    <value>Months of Duration</value>
+  </data>
+  <data name="tcnTimeToolTip" xml:space="preserve">
+    <value>Months to be used to calculate the policy's effective period</value>
+  </data>
+  <data name="chkAutoreneawCaption" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="chkAutoreneawToolTip" xml:space="preserve">
+    <value>It indicates if the policy is renewed automatically</value>
+  </data>
+  <data name="tcnCancelnoticeCaption" xml:space="preserve">
+    <value>Cancellation Notice</value>
+  </data>
+  <data name="tcnCancelnoticeToolTip" xml:space="preserve">
+    <value>Number of days required before cancelling the policy</value>
+  </data>
+  <data name="cbeGrouprenewCaption" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="cbeGrouprenewToolTip" xml:space="preserve">
+    <value>It indicates how certificates will be renewed</value>
+  </data>
+  <data name="tcnMonth_surrCaption" xml:space="preserve">
+    <value>Automatic Paid-Up</value>
+  </data>
+  <data name="tcnMonth_surrToolTip" xml:space="preserve">
+    <value>Cancellation months associated with the automatic paid-up</value>
+  </data>
+  <data name="AnchorDatos para la cobranzaCaption" xml:space="preserve">
+    <value>Billing Options</value>
+  </data>
+  <data name="chkDeclapolicyCaption" xml:space="preserve">
+    <value>Reporting Policy</value>
+  </data>
+  <data name="chkDeclapolicyToolTip" xml:space="preserve">
+    <value>It indicates if the policies to be issued are of the declaration type</value>
+  </data>
+  <data name="cbePayfrequenCaption" xml:space="preserve">
+    <value>Payment Frequency</value>
+  </data>
+  <data name="cbePayfrequenToolTip" xml:space="preserve">
+    <value>Payment frequency to be assigned to the policy</value>
+  </data>
+  <data name="cbeTypepolicyCaption" xml:space="preserve">
+    <value>Type of Policy</value>
+  </data>
+  <data name="cbeTypepolicyToolTip" xml:space="preserve">
+    <value>Type of policy</value>
+  </data>
+  <data name="tcnQuotasCaption" xml:space="preserve">
+    <value>Installments</value>
+  </data>
+  <data name="tcnQuotasToolTip" xml:space="preserve">
+    <value>Number of installments to be paid for the policy</value>
+  </data>
+  <data name="chksLegCaption" xml:space="preserve">
+    <value>Guaranteed Underwriting Limit Calculation</value>
+  </data>
+  <data name="chksLegToolTip" xml:space="preserve">
+    <value>Indicates to the calculation of the guaranteed issue limit</value>
+  </data>
+  <data name="cbeway_payCaption" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="cbeway_payToolTip" xml:space="preserve">
+    <value>Payment method to be assigned to the policy</value>
+  </data>
+  <data name="tcnNotCancelDayCaption" xml:space="preserve">
+    <value>Grace Period</value>
+  </data>
+  <data name="tcnNotCancelDayToolTip" xml:space="preserve">
+    <value>Grace period</value>
+  </data>
+  <data name="tcnbill_dayCaption" xml:space="preserve">
+    <value>Payment Day</value>
+  </data>
+  <data name="tcnbill_dayToolTip" xml:space="preserve">
+    <value>Due date of the bills of the policy</value>
+  </data>
+  <data name="tcnQDays_DifQuoCaption" xml:space="preserve">
+    <value>Number of days in between (1st and 2nd installment)</value>
+  </data>
+  <data name="tcnQDays_DifQuoToolTip" xml:space="preserve">
+    <value>Minimum number of days between the first draft and the second one</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Policy Renewal</value>
+  </data>
+  <data name="optTyp_dom_1Caption" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="optTyp_dom_1ToolTip" xml:space="preserve">
+    <value>It indicates if the client will be responsible for the direct billing</value>
+  </data>
+  <data name="optTyp_dom_2Caption" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="optTyp_dom_2ToolTip" xml:space="preserve">
+    <value>It indicates if the client will be responsible for the direct billing</value>
+  </data>
+  <data name="chksFirst_payCaption" xml:space="preserve">
+    <value>First Premium</value>
+  </data>
+  <data name="chksFirst_payToolTip" xml:space="preserve">
+    <value>It's necessary to have the first premium of every proposal in order to convert the proposal in question into a policy</value>
+  </data>
+  <data name="cbeInvoceholdCaption" xml:space="preserve">
+    <value>Bill Owner</value>
+  </data>
+  <data name="cbeInvoceholdToolTip" xml:space="preserve">
+    <value>It identifies the person who will be responsible for paying the bills associated with the policy</value>
+  </data>
+  <data name="chksDatecollCaption" xml:space="preserve">
+    <value>Policy Effective Date Must Be As Bill Effective Date</value>
+  </data>
+  <data name="chksDatecollToolTip" xml:space="preserve">
+    <value>It indicates that the effective date of the policy must be the same than the premium collection date</value>
+  </data>
+  <data name="cbeReinsuranCaption" xml:space="preserve">
+    <value>Reinsurance</value>
+  </data>
+  <data name="cbeReinsuranToolTip" xml:space="preserve">
+    <value>Type of reinsurance to be assigned to the policy</value>
+  </data>
+  <data name="chksTarQuo_IndCaption" xml:space="preserve">
+    <value>Keep contribution rate / proposal</value>
+  </data>
+  <data name="chksTarQuo_IndToolTip" xml:space="preserve">
+    <value>Indicates that the product required to maintain the rate of contribution.</value>
+  </data>
+  <data name="AnchorMoneda del reciboCaption" xml:space="preserve">
+    <value>Policy Renewal</value>
+  </data>
+  <data name="tcnQdays_quoCaption" xml:space="preserve">
+    <value>Days for Duration of Quotations</value>
+  </data>
+  <data name="tcnQdays_quoToolTip" xml:space="preserve">
+    <value>Number of days before the quotations expire</value>
+  </data>
+  <data name="cbePremiumCaption" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="cbePremiumToolTip" xml:space="preserve">
+    <value>Currency in which the premium is billed</value>
+  </data>
+  <data name="tcnQdays_proCaption" xml:space="preserve">
+    <value>Days for Duration of Applications</value>
+  </data>
+  <data name="tcnQdays_proToolTip" xml:space="preserve">
+    <value>Number of days before the proposals expire</value>
+  </data>
+  <data name="cbeTaxesCaption" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="cbeTaxesToolTip" xml:space="preserve">
+    <value>It indicates the currency in which taxes are billed</value>
+  </data>
+  <data name="chkSetpremCaption" xml:space="preserve">
+    <value>Premium Saldación</value>
+  </data>
+  <data name="chkSetpremToolTip" xml:space="preserve">
+    <value>Indicates that receipts be annulled by the payment pendientesde</value>
+  </data>
+  <data name="cbeCommissionCaption" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="cbeCommissionToolTip" xml:space="preserve">
+    <value>Currency in which the commission is billed</value>
+  </data>
+  <data name="tcnMonth_SetprCaption" xml:space="preserve">
+    <value>Months saldación</value>
+  </data>
+  <data name="tcnMonth_SetprToolTip" xml:space="preserve">
+    <value>Months for the receipt is offset by premium saldación</value>
+  </data>
+  <data name="chkFracReceipCaption" xml:space="preserve">
+    <value>First Bill Prorated</value>
+  </data>
+  <data name="chkFracReceipToolTip" xml:space="preserve">
+    <value>Indicates proportion is generated first receipt of the policy</value>
+  </data>
+  <data name="chkRecSecCaption" xml:space="preserve">
+    <value>Receipt to issue the 2nd generate</value>
+  </data>
+  <data name="chkRecSecToolTip" xml:space="preserve">
+    <value>Indicates that in issuing the policy or quotation / proposal for the issuance, if it is monthly, the 2nd is immediately generated receipt.</value>
+  </data>
+  <data name="tcnPayableCaption" xml:space="preserve">
+    <value>Time / Billing expired</value>
+  </data>
+  <data name="tcnPayableToolTip" xml:space="preserve">
+    <value>Grace period expired collection</value>
+  </data>
+  <data name="tcnAdvanceCaption" xml:space="preserve">
+    <value>Term / Early Collection</value>
+  </data>
+  <data name="tcnAdvanceToolTip" xml:space="preserve">
+    <value>Grace period of advance billing</value>
+  </data>
+  <data name="AnchorRevalorización de la pólizaCaption" xml:space="preserve">
+    <value>Indexing</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Type of Direct Debit</value>
+  </data>
+  <data name="cbeRevalformCaption" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="cbeRevalformToolTip" xml:space="preserve">
+    <value>Way in which the system is instructed to apply the indexation</value>
+  </data>
+  <data name="chkRetarifCaption" xml:space="preserve">
+    <value>Retarifica premium as effective date of the transaction</value>
+  </data>
+  <data name="chkRetarifToolTip" xml:space="preserve">
+    <value>Retarifica by date of policy issue</value>
+  </data>
+  <data name="cbeRevalTypeCaption" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="cbeRevalTypeToolTip" xml:space="preserve">
+    <value>Type of indexation that the policies will have</value>
+  </data>
+  <data name="tcnrevalfactorCaption" xml:space="preserve">
+    <value>Factor</value>
+  </data>
+  <data name="tcnrevalfactorToolTip" xml:space="preserve">
+    <value>Indexation percertange to be applied</value>
+  </data>
+  <data name="AnchorRehabilitaciónCaption" xml:space="preserve">
+    <value>Reinstatement</value>
+  </data>
+  <data name="AnchorReactivaciónCaption" xml:space="preserve">
+    <value>Suspension</value>
+  </data>
+  <data name="chksReinstCaption" xml:space="preserve">
+    <value>It Allows to Reinstate</value>
+  </data>
+  <data name="chksReinstToolTip" xml:space="preserve">
+    <value>It indicates that the policies associated with the product may be reinstated</value>
+  </data>
+  <data name="chkReactivationCaption" xml:space="preserve">
+    <value>Lets revive</value>
+  </data>
+  <data name="chkReactivationToolTip" xml:space="preserve">
+    <value>Flag to allow reactivation of the policy</value>
+  </data>
+  <data name="tcnRehabperiodCaption" xml:space="preserve">
+    <value>Reinstatement Period</value>
+  </data>
+  <data name="tcnRehabperiodToolTip" xml:space="preserve">
+    <value>Maximum number of days given to reinstate the policy</value>
+  </data>
+  <data name="tcnReactPeriodCaption" xml:space="preserve">
+    <value>Recovery period (not automatic)</value>
+  </data>
+  <data name="tcnReactPeriodToolTip" xml:space="preserve">
+    <value>Include maximum for the reactivation of the policy / certificate</value>
+  </data>
+  <data name="tcnRehabperiod_autCaption" xml:space="preserve">
+    <value>Rehabilitation period (Automatic)</value>
+  </data>
+  <data name="tcnRehabperiod_autToolTip" xml:space="preserve">
+    <value>Maximum number of days given to reinstate the policy</value>
+  </data>
+  <data name="tcnReactPeriod_AutCaption" xml:space="preserve">
+    <value>Recovery period (Automatic)</value>
+  </data>
+  <data name="tcnReactPeriod_AutToolTip" xml:space="preserve">
+    <value>Include maximum for the reactivation of the policy / certificate automatically</value>
+  </data>
+  <data name="tctRehaut_rCaption" xml:space="preserve">
+    <value>Automatic Reinstatement Routine</value>
+  </data>
+  <data name="tctRehaut_rToolTip" xml:space="preserve">
+    <value>It indicates the name of the routine that verifies if the policy/certificate allows automatic reinstatement</value>
+  </data>
+  <data name="tctRoutReactCaption" xml:space="preserve">
+    <value>Automatic recovery routine</value>
+  </data>
+  <data name="tctRoutReactToolTip" xml:space="preserve">
+    <value>Include name of the routine that calculates what the customer has to pay to reactivate the policy / certificate</value>
+  </data>
+  <data name="AnchorRenovación de la póliza2Caption" xml:space="preserve">
+    <value>Policy Renewal</value>
+  </data>
+  <data name="AnchorMoneda del recibo2Caption" xml:space="preserve">
+    <value>Policy Renewal</value>
+  </data>
+  <data name="AnchorRevalorización de la póliza2Caption" xml:space="preserve">
+    <value>Indexing</value>
+  </data>
+  <data name="AnchorDatos para la cobranza2Caption" xml:space="preserve">
+    <value>Data collections</value>
+  </data>
+  <data name="tctRou_warning_chargCaption" xml:space="preserve">
+    <value>Routine Warning renewal</value>
+  </data>
+  <data name="tctRou_warning_chargToolTip" xml:space="preserve">
+    <value>Routine Warning renewal</value>
+  </data>
+
+  <data name="tctCurrencyCaption" xml:space="preserve">
+    <value>Moneda del recibo</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda del recibo</value>
+  </data>
+  <data name="tctRou_coverCaption" xml:space="preserve">
+    <value>Rutina Validacion coberturas</value>
+  </data>
+  <data name="tctRou_coverCaptionToolTip" xml:space="preserve">
+    <value>Rutina Validacion coberturas</value>
+  </data>
+
+</root>

@@ -1,0 +1,972 @@
+﻿<metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Repository="LatCombined" UserInput="AUTO_DB.SREGIST,License Plate/Licencia,Char,Vehículo|RecordEffectiveDate,Effective date/Fecha de efecto,datetime,today" version="2.1.0">
+  <titles />
+  <summaries />
+  <root name="Auto_db" Key="0" EntityType="Table" Identify="sLicense_ty,sRegist" PageSize="10" DetailView="Card">
+    <captions>
+      <caption Language="1" Value="Automobile Information" />
+      <caption Language="2" Value="Consulta de Auto " />
+      <caption Language="3" Value="Automobile Information" />
+    </captions>
+    <QueryStatements>
+      <RetrieveAll>SELECT AUTO_DB.ROWID AS RECORDID, AUTO_DB.SLICENSE_TY,AUTO_DB.SREGIST, AUTO_DB.SLICENSE_TY, AUTO_DB.SREGIST, TABLE801.SDESCRIPT AS SLICENSE_TYDESC, AUTO_DB.SREGIST, AUTO_DB.SCHASSIS, AUTO_DB.SMOTOR, AUTO_DB.NYEAR, TABLE2202.SDESCRIPT AS NVESTATUSDESC, CLIENT3.SCLIENAME AS SVEH_OWNDESC, AUTO_DB.SCOLOR, TABLE2264.SDESCRIPT AS NVEHTYPEDESC, AUTO_DB.SVEHCODE, AUTO_DB.NNOTENUM FROM AUTO_DB LEFT JOIN TABLE80 TABLE801 ON TABLE801.SLICENSE_TY = AUTO_DB.SLICENSE_TY LEFT JOIN TABLE220 TABLE2202 ON TABLE2202.NVESTATUS = AUTO_DB.NVESTATUS LEFT JOIN CLIENT CLIENT3 ON CLIENT3.SCLIENT = AUTO_DB.SCLIENT LEFT JOIN TABLE226 TABLE2264 ON TABLE2264.NVEHTYPE = AUTO_DB.NVEHTYPE WHERE ((AUTO_DB.SREGIST = '[VEHÍCULO]'))  ORDER BY AUTO_DB.SLICENSE_TY, AUTO_DB.SREGIST</RetrieveAll>
+      <AllParameters>[VEHÍCULO]</AllParameters>
+      <RetrieveByKey>SELECT AUTO_DB.ROWID AS RECORDID, AUTO_DB.SLICENSE_TY,AUTO_DB.SREGIST, AUTO_DB.SLICENSE_TY, AUTO_DB.SREGIST, TABLE801.SDESCRIPT AS SLICENSE_TYDESC, AUTO_DB.SREGIST, AUTO_DB.SCHASSIS, AUTO_DB.SMOTOR, AUTO_DB.NYEAR, TABLE2202.SDESCRIPT AS NVESTATUSDESC, CLIENT3.SCLIENAME AS SVEH_OWNDESC, AUTO_DB.SCOLOR, TABLE2264.SDESCRIPT AS NVEHTYPEDESC, AUTO_DB.SVEHCODE, AUTO_DB.NNOTENUM FROM AUTO_DB LEFT JOIN TABLE80 TABLE801 ON TABLE801.SLICENSE_TY = AUTO_DB.SLICENSE_TY LEFT JOIN TABLE220 TABLE2202 ON TABLE2202.NVESTATUS = AUTO_DB.NVESTATUS LEFT JOIN CLIENT CLIENT3 ON CLIENT3.SCLIENT = AUTO_DB.SCLIENT LEFT JOIN TABLE226 TABLE2264 ON TABLE2264.NVEHTYPE = AUTO_DB.NVEHTYPE WHERE AUTO_DB.SLICENSE_TY = '{SLICENSE_TY}' AND AUTO_DB.SREGIST = '{SREGIST}'</RetrieveByKey>
+      <KeyParameters>{SLICENSE_TY},{SREGIST}</KeyParameters>
+      <IsExist>SELECT COUNT(*) FROM AUTO_DB WHERE ((AUTO_DB.SREGIST = '[VEHÍCULO]')) </IsExist>
+      <ParameterToChilds>SLICENSE_TY,SREGIST</ParameterToChilds>
+    </QueryStatements>
+    <Parameters />
+    <pluralcaptions>
+      <pluralcaption Language="1" Value="Automobile Informations" />
+      <pluralcaption Language="2" Value="Consulta de Auto " />
+      <pluralcaption Language="3" Value="Automobile Informations" />
+    </pluralcaptions>
+    <columns>
+      <columnquery name="Auto_db.sLicense_ty" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="License Plate Type" />
+          <caption Language="2" Value="Tipo de Matrícula" />
+          <caption Language="3" Value="License Plate Type" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Type of License Plate." />
+          <ToolTip Language="2" Value="Tipo de matrícula." />
+          <ToolTip Language="3" Value="Type of License Plate." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="TABLE80" RelationshipColumns="SLICENSE_TY" Columns="SLICENSE_TY" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.sRegist" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="License Plate" />
+          <caption Language="2" Value="Licencia" />
+          <caption Language="3" Value="License Plate" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Number of the License Plate." />
+          <ToolTip Language="2" Value="Número de la licencia." />
+          <ToolTip Language="3" Value="Number of the License Plate." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.sChassis" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="Chassis" />
+          <caption Language="2" Value="Chasis" />
+          <caption Language="3" Value="Chassis" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Number of the vehicle chassis." />
+          <ToolTip Language="2" Value="Número del chasis del vehículo asegurado." />
+          <ToolTip Language="3" Value="Number of the vehicle chassis." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.sMotor" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="Engine Serial Number" />
+          <caption Language="2" Value="Serial del Motor" />
+          <caption Language="3" Value="Engine Serial Number" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Number identifying the engine of the insured vehicle." />
+          <ToolTip Language="2" Value="Número del motor del vehículo asegurado." />
+          <ToolTip Language="3" Value="Number identifying the engine of the insured vehicle." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.nYear" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="1" Value="Year of Manufactured" />
+          <caption Language="2" Value="Año de Fabricación" />
+          <caption Language="3" Value="Year of Manufactured" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Year when the vehicle was manufactured." />
+          <ToolTip Language="2" Value="Año de fabricación del vehículo." />
+          <ToolTip Language="3" Value="Year when the vehicle was manufactured." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.nVestatus" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="1" Value="Status" />
+          <caption Language="2" Value="Estado" />
+          <caption Language="3" Value="nV estatus" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Staus of the Automobile" />
+          <ToolTip Language="2" Value="Estado del vehículo&#xD;&#xA;Valores únicos según tabla 220&#xD;&#xA;//&#xD;&#xA;Vehicle´s status&#xD;&#xA;Sole values as per table 220" />
+          <ToolTip Language="3" Value="Estado del vehículo&#xD;&#xA;Valores únicos según tabla 220&#xD;&#xA;//&#xD;&#xA;Vehicle´s status&#xD;&#xA;Sole values as per table 220" />
+        </ToolTips>
+        <ColumnSource RelationshipTable="TABLE220" RelationshipColumns="NVESTATUS" Columns="NVESTATUS" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.sVeh_own" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="Vehicle Owner" />
+          <caption Language="2" Value="Cliente Propietario del Vehículo" />
+          <caption Language="3" Value="Vehicle Owner" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Code of the Client owner of the Vehicle." />
+          <ToolTip Language="2" Value="Código de identificación del propietario del vehículo." />
+          <ToolTip Language="3" Value="Code of the Client owner of the Vehicle." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="CLIENT" RelationshipColumns="SCLIENT" Columns="SCLIENT" Description="SCLIENAME" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.sColor" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="Color" />
+          <caption Language="2" Value="Color" />
+          <caption Language="3" Value="Color" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Color of the vehicle." />
+          <ToolTip Language="2" Value="Color del vehículo." />
+          <ToolTip Language="3" Value="Color of the vehicle." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.nVehType" xmlType="xmlNumeric" precision="5" Visible="true">
+        <captions>
+          <caption Language="1" Value="Vehicle Type" />
+          <caption Language="2" Value="Tipo de Vehículo" />
+          <caption Language="3" Value="Vehicle Type" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Vehicle type." />
+          <ToolTip Language="2" Value="Tipo de vehículo." />
+          <ToolTip Language="3" Value="Vehicle type." />
+        </ToolTips>
+        <ColumnSource RelationshipTable="TABLE226" RelationshipColumns="NVEHTYPE" Columns="NVEHTYPE" Description="SDESCRIPT" StyleValue="Description" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.SVEHCODE" xmlType="xmlChar" Visible="true">
+        <captions>
+          <caption Language="1" Value="Vehicle Code" />
+          <caption Language="2" Value="Código del Vehículo" />
+          <caption Language="3" Value="Vehicle Code" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Code of The Insured Vehicle" />
+          <ToolTip Language="2" Value="Código del vehículo asegurado." />
+          <ToolTip Language="3" Value="Code of The Insured Vehicle" />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+      <columnquery name="Auto_db.nNotenum" xmlType="xmlNumeric" precision="10" Visible="true">
+        <captions>
+          <caption Language="1" Value="Note ID" />
+          <caption Language="2" Value="Número de Nota" />
+          <caption Language="3" Value="Note ID" />
+        </captions>
+        <ToolTips>
+          <ToolTip Language="1" Value="Number of the note containing the comments." />
+          <ToolTip Language="2" Value="Número de la nota que contiene el texto libre." />
+          <ToolTip Language="3" Value="Number of the note containing the comments." />
+        </ToolTips>
+        <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+        <AggregateLabels />
+      </columnquery>
+    </columns>
+    <childs>
+      <child name="Auto" Key="1" isHistorical="true" EntityType="Table" Identify="nPolicy,ncertif" PageSize="10" DetailView="Card">
+        <captions>
+          <caption Language="1" Value="Automobile Line of Business" />
+          <caption Language="2" Value="Póliza" />
+          <caption Language="3" Value="Automobile Line of Business" />
+        </captions>
+        <QueryStatements>
+          <RetrieveAll>SELECT DISTINCT AUTO.ROWID AS RECORDID, AUTO.SCERTYPE,AUTO.NBRANCH,AUTO.NPRODUCT,AUTO.NPOLICY,AUTO.NCERTIF,AUTO.DEFFECDATE, TABLE101.SDESCRIPT AS NBRANCHDESC, PRODMASTER2.SDESCRIPT AS NPRODUCTDESC, AUTO.NPOLICY, AUTO.NCERTIF, AUTO.NVEH_VALOR, AUTO.NPREMIUM, AUTO.NCAPITAL, AUTO.DSTARTDATE, AUTO.DEXPIRDAT, TABLE2243.SDESCRIPT AS NAUTOZONEDESC, DECODE(AUTO.SN_INFRAC, '1', 1, '2', 0, NULL, 0) AS SN_INFRAC, AUTO.DLASTCLAIM FROM AUTO LEFT JOIN TABLE10 TABLE101 ON TABLE101.NBRANCH = AUTO.NBRANCH LEFT JOIN PRODMASTER PRODMASTER2 ON PRODMASTER2.NBRANCH = AUTO.NBRANCH AND PRODMASTER2.NPRODUCT = AUTO.NPRODUCT LEFT JOIN TABLE224 TABLE2243 ON TABLE2243.NAUTOZONE = AUTO.NAUTOZONE WHERE ((AUTO.SCERTYPE = '2'))  AND AUTO.SLICENSE_TY = '{SLICENSE_TY}' AND AUTO.SREGIST = '{SREGIST}' AND AUTO.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (AUTO.DNULLDATE IS NULL OR AUTO.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]') ORDER BY AUTO.SCERTYPE, AUTO.NBRANCH, AUTO.NPRODUCT, AUTO.NPOLICY, AUTO.NCERTIF, AUTO.DEFFECDATE</RetrieveAll>
+          <AllParameters>{SLICENSE_TY},{SREGIST},[RECORDEFFECTIVEDATE]</AllParameters>
+          <RetrieveByKey>SELECT DISTINCT AUTO.ROWID AS RECORDID, AUTO.SCERTYPE,AUTO.NBRANCH,AUTO.NPRODUCT,AUTO.NPOLICY,AUTO.NCERTIF,AUTO.DEFFECDATE, TABLE101.SDESCRIPT AS NBRANCHDESC, PRODMASTER2.SDESCRIPT AS NPRODUCTDESC, AUTO.NPOLICY, AUTO.NCERTIF, AUTO.NVEH_VALOR, AUTO.NPREMIUM, AUTO.NCAPITAL, AUTO.DSTARTDATE, AUTO.DEXPIRDAT, TABLE2243.SDESCRIPT AS NAUTOZONEDESC, DECODE(AUTO.SN_INFRAC, '1', 1, '2', 0, NULL, 0) AS SN_INFRAC, AUTO.DLASTCLAIM FROM AUTO LEFT JOIN TABLE10 TABLE101 ON TABLE101.NBRANCH = AUTO.NBRANCH LEFT JOIN PRODMASTER PRODMASTER2 ON PRODMASTER2.NBRANCH = AUTO.NBRANCH AND PRODMASTER2.NPRODUCT = AUTO.NPRODUCT LEFT JOIN TABLE224 TABLE2243 ON TABLE2243.NAUTOZONE = AUTO.NAUTOZONE WHERE AUTO.SCERTYPE = '{SCERTYPE}' AND AUTO.NBRANCH = {NBRANCH} AND AUTO.NPRODUCT = {NPRODUCT} AND AUTO.NPOLICY = {NPOLICY} AND AUTO.NCERTIF = {NCERTIF} AND AUTO.DEFFECDATE = '{DEFFECDATE:D}' AND AUTO.SLICENSE_TY = '{SLICENSE_TY}' AND AUTO.SREGIST = '{SREGIST}' AND AUTO.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (AUTO.DNULLDATE IS NULL OR AUTO.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]')</RetrieveByKey>
+          <KeyParameters>{SCERTYPE},{NBRANCH},{NPRODUCT},{NPOLICY},{NCERTIF},{DEFFECDATE:D},{SLICENSE_TY},{SREGIST},[RECORDEFFECTIVEDATE]</KeyParameters>
+          <IsExist>SELECT DISTINCT COUNT(*) FROM AUTO WHERE ((AUTO.SCERTYPE = '2'))  AND AUTO.SLICENSE_TY = '{SLICENSE_TY}' AND AUTO.SREGIST = '{SREGIST}' AND AUTO.DEFFECDATE &lt;= '[RECORDEFFECTIVEDATE]' AND (AUTO.DNULLDATE IS NULL OR AUTO.DNULLDATE &gt; '[RECORDEFFECTIVEDATE]')</IsExist>
+          <ParameterToChilds>SCERTYPE,NBRANCH,NPRODUCT,NPOLICY,NCERTIF,DEFFECDATE:D</ParameterToChilds>
+        </QueryStatements>
+        <Parameters />
+        <pluralcaptions>
+          <pluralcaption Language="1" Value="Automobile Line of Business" />
+          <pluralcaption Language="2" Value="Pólizas" />
+          <pluralcaption Language="3" Value="Automobile Line of Business" />
+        </pluralcaptions>
+        <columns>
+          <columnquery name="Auto.nBranch" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="1" Value="Line of Business" />
+              <caption Language="2" Value="Ramo" />
+              <caption Language="3" Value="Line of Business" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Code of the line of business." />
+              <ToolTip Language="2" Value="Código del ramo comercial." />
+              <ToolTip Language="3" Value="Code of the line of business." />
+            </ToolTips>
+            <ColumnSource RelationshipTable="TABLE10" RelationshipColumns="NBRANCH" Columns="NBRANCH" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nProduct" xmlType="xmlNumeric" precision="5" Visible="true">
+            <captions>
+              <caption Language="1" Value="Product Code" />
+              <caption Language="2" Value="Producto" />
+              <caption Language="3" Value="Product Code" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Code of the product." />
+              <ToolTip Language="2" Value="Código del producto." />
+              <ToolTip Language="3" Value="Code of the product." />
+            </ToolTips>
+            <ColumnSource RelationshipTable="PRODMASTER" RelationshipColumns="NBRANCH,NPRODUCT" Columns="NBRANCH,NPRODUCT" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nPolicy" xmlType="xmlNumeric" precision="10" Visible="true">
+            <captions>
+              <caption Language="1" Value="Policy ID" />
+              <caption Language="2" Value="Póliza" />
+              <caption Language="3" Value="Policy ID" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Number identifying the Policy/Quotation/Application." />
+              <ToolTip Language="2" Value="Número que identifica la póliza/cotización/solicitud." />
+              <ToolTip Language="3" Value="Number identifying the Policy/Quotation/Application." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nCertif" xmlType="xmlNumeric" precision="10" Visible="true">
+            <captions>
+              <caption Language="1" Value="Certificate ID" />
+              <caption Language="2" Value="Certificado" />
+              <caption Language="3" Value="Certificate ID" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Number identifying the certificate." />
+              <ToolTip Language="2" Value="Número del certificado." />
+              <ToolTip Language="3" Value="Number identifying the certificate." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nVeh_valor" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+            <captions>
+              <caption Language="1" Value="Value of The Vehicle" />
+              <caption Language="2" Value="Valor del Vehículo" />
+              <caption Language="3" Value="Value of The Vehicle" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Value of the insured vehicle." />
+              <ToolTip Language="2" Value="Valor del vehículo asegurado." />
+              <ToolTip Language="3" Value="Value of the insured vehicle." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nPremium" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+            <captions>
+              <caption Language="1" Value="Premium" />
+              <caption Language="2" Value="Prima" />
+              <caption Language="3" Value="Premium" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Premium amount." />
+              <ToolTip Language="2" Value="Monto de prima." />
+              <ToolTip Language="3" Value="Premium amount." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.nCapital" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+            <captions>
+              <caption Language="1" Value="Sum Insured" />
+              <caption Language="2" Value="Capital Asegurado" />
+              <caption Language="3" Value="Sum Insured" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Sum insured amount of the policy/certificate." />
+              <ToolTip Language="2" Value="Monto de capital asegurado." />
+              <ToolTip Language="3" Value="Sum insured amount of the policy/certificate." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.dStartdate" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="1" Value="Effective Date" />
+              <caption Language="2" Value="Fecha de Inicio de Vigencia de la Póliza" />
+              <caption Language="3" Value="Effective Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Effective date of the policy/certificate." />
+              <ToolTip Language="2" Value="Fecha de efecto (inicio de vigencia) de la póliza o certificado." />
+              <ToolTip Language="3" Value="Effective date of the policy/certificate." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+          <columnquery name="Auto.dExpirdat" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="1" Value="Ending Date" />
+              <caption Language="2" Value="Fecha de Vencimiento de la Póliza" />
+              <caption Language="3" Value="Ending Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Ending date of the policy/certificate (end of the effective period)." />
+              <ToolTip Language="2" Value="Fecha de vencimiento de la póliza o certificado." />
+              <ToolTip Language="3" Value="Ending date of the policy/certificate (end of the effective period)." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+          <columnquery name="Auto.nAutoZone" xmlType="xmlNumeric" precision="10" Visible="true">
+            <captions>
+              <caption Language="1" Value="Driving Zone" />
+              <caption Language="2" Value="Zona de Circulación" />
+              <caption Language="3" Value="Driving Zone" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Driving Zone" />
+              <ToolTip Language="2" Value="Zona de circulación." />
+              <ToolTip Language="3" Value="Circulation zone." />
+            </ToolTips>
+            <ColumnSource RelationshipTable="TABLE224" RelationshipColumns="NAUTOZONE" Columns="NAUTOZONE" Description="SDESCRIPT" StyleValue="Description" />
+            <AggregateLabels />
+          </columnquery>
+          <columnquery name="Auto.sN_infrac" xmlType="xmlChar" Style="CheckBox" Visible="true">
+            <captions>
+              <caption Language="1" Value="No driving violations  in twelve months" />
+              <caption Language="2" Value="Sin Infracción en Doce Meses" />
+              <caption Language="3" Value="No Tickects in Twelve Months" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Indicates that the policy hasn't had a traffic ticket in the last twelve months." />
+              <ToolTip Language="2" Value="Indicador de &quot;sin infracción&quot; en los últimos" />
+              <ToolTip Language="3" Value="Indicates that the policy hasn't had a traffic ticket in the last twelve months." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <checkboxstyle FalseValue="2" TrueValue="1" />
+          </columnquery>
+          <columnquery name="Auto.dLastClaim" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+            <captions>
+              <caption Language="1" Value="Last Claim Date" />
+              <caption Language="2" Value="Fecha de Último Siniestro" />
+              <caption Language="3" Value="Last Claim Date" />
+            </captions>
+            <ToolTips>
+              <ToolTip Language="1" Value="Date when the vehicle was last involved in a claim." />
+              <ToolTip Language="2" Value="Fecha del último siniestro del vehículo." />
+              <ToolTip Language="3" Value="Date when the vehicle was last involved in a claim." />
+            </ToolTips>
+            <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+            <AggregateLabels />
+            <datetimestyle Format="Date" />
+          </columnquery>
+        </columns>
+        <childs>
+          <child name="CLAIM" Key="2" EntityType="Table" Identify="NCLAIM" PageSize="10" DetailView="Card">
+            <captions>
+              <caption Language="1" Value="Claim" />
+              <caption Language="2" Value="Siniestro" />
+              <caption Language="3" Value="Claim" />
+            </captions>
+            <QueryStatements>
+              <RetrieveAll>SELECT CLAIM.ROWID AS RECORDID, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM_CAUS1.SDESCRIPT AS NCAUSECODDESC, TABLE1352.SDESCRIPT AS SSTACLAIMDESC, CLAIM.DOCCURDAT, CLAIM.DDECLADAT, CLAIM.NLOC_RESERV, CLAIM.NLOC_OUT_AM, CLAIM.NLOC_REC_AM, CLAIM.NLOC_PAY_AM, CLAIM.NLOC_COS_RE FROM CLAIM LEFT JOIN CLAIM_CAUS CLAIM_CAUS1 ON CLAIM_CAUS1.NBRANCH = CLAIM.NBRANCH AND CLAIM_CAUS1.NPRODUCT = CLAIM.NPRODUCT AND CLAIM_CAUS1.NCAUSECOD = CLAIM.NCAUSECOD LEFT JOIN TABLE135 TABLE1352 ON TABLE1352.SSTACLAIM = CLAIM.SSTACLAIM WHERE CLAIM.NBRANCH = {NBRANCH} AND CLAIM.NPRODUCT = {NPRODUCT} AND CLAIM.NPOLICY = {NPOLICY} AND CLAIM.NCERTIF = {NCERTIF} ORDER BY CLAIM.NCLAIM</RetrieveAll>
+              <AllParameters>{NBRANCH},{NPRODUCT},{NPOLICY},{NCERTIF}</AllParameters>
+              <RetrieveByKey>SELECT CLAIM.ROWID AS RECORDID, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM.NCLAIM, CLAIM_CAUS1.SDESCRIPT AS NCAUSECODDESC, TABLE1352.SDESCRIPT AS SSTACLAIMDESC, CLAIM.DOCCURDAT, CLAIM.DDECLADAT, CLAIM.NLOC_RESERV, CLAIM.NLOC_OUT_AM, CLAIM.NLOC_REC_AM, CLAIM.NLOC_PAY_AM, CLAIM.NLOC_COS_RE FROM CLAIM LEFT JOIN CLAIM_CAUS CLAIM_CAUS1 ON CLAIM_CAUS1.NBRANCH = CLAIM.NBRANCH AND CLAIM_CAUS1.NPRODUCT = CLAIM.NPRODUCT AND CLAIM_CAUS1.NCAUSECOD = CLAIM.NCAUSECOD LEFT JOIN TABLE135 TABLE1352 ON TABLE1352.SSTACLAIM = CLAIM.SSTACLAIM WHERE CLAIM.NCLAIM = {NCLAIM} AND CLAIM.NBRANCH = {NBRANCH} AND CLAIM.NPRODUCT = {NPRODUCT} AND CLAIM.NPOLICY = {NPOLICY} AND CLAIM.NCERTIF = {NCERTIF}</RetrieveByKey>
+              <KeyParameters>{NCLAIM},{NBRANCH},{NPRODUCT},{NPOLICY},{NCERTIF}</KeyParameters>
+              <IsExist>SELECT COUNT(*) FROM CLAIM WHERE CLAIM.NBRANCH = {NBRANCH} AND CLAIM.NPRODUCT = {NPRODUCT} AND CLAIM.NPOLICY = {NPOLICY} AND CLAIM.NCERTIF = {NCERTIF}</IsExist>
+              <ParameterToChilds>NCLAIM</ParameterToChilds>
+            </QueryStatements>
+            <Parameters />
+            <pluralcaptions>
+              <pluralcaption Language="1" Value="Claims" />
+              <pluralcaption Language="2" Value="Siniestros" />
+              <pluralcaption Language="3" Value="Claims" />
+            </pluralcaptions>
+            <columns>
+              <columnquery name="CLAIM.NCLAIM" xmlType="xmlNumeric" precision="10" ShowDecimalSymbol="false" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Claim ID" />
+                  <caption Language="2" Value="Siniestro" />
+                  <caption Language="3" Value="Claim ID" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Claim number." />
+                  <ToolTip Language="2" Value="Número que identifica al siniestro." />
+                  <ToolTip Language="3" Value="Claim number." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.NCAUSECOD" xmlType="xmlNumeric" precision="5" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Cause of Loss" />
+                  <caption Language="2" Value="Causa" />
+                  <caption Language="3" Value="Cause of Loss" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Code of cause of the claim." />
+                  <ToolTip Language="2" Value="Código de la causa del siniestro." />
+                  <ToolTip Language="3" Value="Code of cause of the claim." />
+                </ToolTips>
+                <ColumnSource RelationshipTable="CLAIM_CAUS" RelationshipColumns="NBRANCH,NPRODUCT,NCAUSECOD" Columns="NBRANCH,NPRODUCT,NCAUSECOD" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.SSTACLAIM" xmlType="xmlChar" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Claim Status" />
+                  <caption Language="2" Value="Estado" />
+                  <caption Language="3" Value="Claim Status" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Claim status." />
+                  <ToolTip Language="2" Value="Estado del siniestro." />
+                  <ToolTip Language="3" Value="Claim status." />
+                </ToolTips>
+                <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE135" RelationshipColumns="SSTACLAIM" Columns="SSTACLAIM" Description="SDESCRIPT" StyleValue="Description" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.DOCCURDAT" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Loss Date" />
+                  <caption Language="2" Value="Fecha de Ocurrencia" />
+                  <caption Language="3" Value="Loss Date" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Date and hour when the loss occurred." />
+                  <ToolTip Language="2" Value="Fecha y hora de ocurrencia del siniestro." />
+                  <ToolTip Language="3" Value="Date and hour when the loss occurred." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <datetimestyle Format="Date" />
+              </columnquery>
+              <columnquery name="CLAIM.DDECLADAT" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Claim Date" />
+                  <caption Language="2" Value="Fecha de Declaración" />
+                  <caption Language="3" Value="Claim Date" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Date when the Claim was made." />
+                  <ToolTip Language="2" Value="Fecha de declaración." />
+                  <ToolTip Language="3" Value="Date when the Claim was made." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+                <datetimestyle Format="Date" />
+              </columnquery>
+              <columnquery name="CLAIM.NLOC_RESERV" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Current Reserve Amount" />
+                  <caption Language="2" Value="Reserva Actual" />
+                  <caption Language="3" Value="Current Reserve Amount" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Current reserve amount (in local currency)." />
+                  <ToolTip Language="2" Value="Monto de reserva actual (en moneda local)." />
+                  <ToolTip Language="3" Value="Current reserve amount (in local currency)." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.NLOC_OUT_AM" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Outstanding Reserve Amount" />
+                  <caption Language="2" Value="Reserva Pendiente" />
+                  <caption Language="3" Value="Outstanding Reserve Amount" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Outstanding reserve amount  (in local currency)." />
+                  <ToolTip Language="2" Value="Monto pendiente de la reserva (en moneda local)." />
+                  <ToolTip Language="3" Value="Outstanding reserve amount  (in local currency)." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.NLOC_REC_AM" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Recovered Amount" />
+                  <caption Language="2" Value="Monto Recuperado" />
+                  <caption Language="3" Value="Recovered Amount" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Amount recovered (in local currency)." />
+                  <ToolTip Language="2" Value="Monto total recuperado (en moneda local)." />
+                  <ToolTip Language="3" Value="Amount recovered (in local currency)." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.NLOC_PAY_AM" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Paid Amount" />
+                  <caption Language="2" Value="Monto Pagado" />
+                  <caption Language="3" Value="Paid Amount" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Amount paid on the reserve (in local currency)." />
+                  <ToolTip Language="2" Value="Monto pagado (en moneda local)." />
+                  <ToolTip Language="3" Value="Amount paid on the reserve (in local currency)." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+              <columnquery name="CLAIM.NLOC_COS_RE" xmlType="xmlNumeric" scale="6" precision="18" Visible="true">
+                <captions>
+                  <caption Language="1" Value="Total Recovery Expenses" />
+                  <caption Language="2" Value="Total de Gastos de Recuperación" />
+                  <caption Language="3" Value="Total Recovery Expenses" />
+                </captions>
+                <ToolTips>
+                  <ToolTip Language="1" Value="Total amount of recovery expenses (in local currency)." />
+                  <ToolTip Language="2" Value="Monto total de gastos de recuperación (en moneda local)." />
+                  <ToolTip Language="3" Value="Total amount of recovery expenses (in local currency)." />
+                </ToolTips>
+                <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                <AggregateLabels />
+              </columnquery>
+            </columns>
+            <childs>
+              <child name="CLAIM_AUTO" Key="3" EntityType="Table" Identify="NCLAIM,NCASE_NUM,NDEMAN_TYPE" PageSize="10" DetailView="Horizontal">
+                <captions>
+                  <caption Language="1" Value="Automobile Claim" />
+                  <caption Language="2" Value="Datos del Siniestro " />
+                  <caption Language="3" Value="Automobile Claim" />
+                </captions>
+                <QueryStatements>
+                  <RetrieveAll>SELECT CLAIM_AUTO.ROWID AS RECORDID, CLAIM_AUTO.NCLAIM,CLAIM_AUTO.NCASE_NUM,CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NCLAIM, CLAIM_AUTO.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_AUTO.NAUTO_QUANT, TABLE2042.SDESCRIPT AS NBLAMEDESC, CLAIM_AUTO.DDEMAND_DATE, TABLE2053.SDESCRIPT AS NINFRACTIONDESC, CLAIM_AUTO.SDRIVER_CLAIM, CLAIM_AUTO.SDRIVERNAME, CLAIM_AUTO.NAGE, CLAIM_AUTO.SSEXCLIEN, DECODE(CLAIM_AUTO.SALCOHOLIC, '1', 1, '2', 0, NULL, 0) AS SALCOHOLIC, DECODE(CLAIM_AUTO.SPOLICEDEM, '1', 1, '2', 0, NULL, 0) AS SPOLICEDEM, CLAIM_AUTO.DPOLDOC_DATE, CLAIM_AUTO.NPOLICEDOC, CLAIM_AUTO.SPOL_STATION, CLAIM_AUTO.NPARAGRAPH, CLAIM_AUTO.NPAGE, CLAIM_AUTO.SPOLSTAT_DEMAN, CLAIM_AUTO.SCOURT, DECODE(CLAIM_AUTO.SIND_EIR, '1', 1, '2', 0, NULL, 0) AS SIND_EIR, DECODE(CLAIM_AUTO.SSUMMARY, '1', 1, '2', 0, NULL, 0) AS SSUMMARY FROM CLAIM_AUTO LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_AUTO.NDEMAN_TYPE LEFT JOIN TABLE204 TABLE2042 ON TABLE2042.NBLAME = CLAIM_AUTO.NBLAME LEFT JOIN TABLE205 TABLE2053 ON TABLE2053.NINFRACTION = CLAIM_AUTO.NINFRACTION WHERE CLAIM_AUTO.NCLAIM = {NCLAIM} ORDER BY CLAIM_AUTO.NCLAIM, CLAIM_AUTO.NCASE_NUM, CLAIM_AUTO.NDEMAN_TYPE</RetrieveAll>
+                  <AllParameters>{NCLAIM}</AllParameters>
+                  <RetrieveByKey>SELECT CLAIM_AUTO.ROWID AS RECORDID, CLAIM_AUTO.NCLAIM,CLAIM_AUTO.NCASE_NUM,CLAIM_AUTO.NDEMAN_TYPE, CLAIM_AUTO.NCLAIM, CLAIM_AUTO.NDEMAN_TYPE, TABLE6921.SDESCRIPT AS NDEMAN_TYPEDESC, CLAIM_AUTO.NAUTO_QUANT, TABLE2042.SDESCRIPT AS NBLAMEDESC, CLAIM_AUTO.DDEMAND_DATE, TABLE2053.SDESCRIPT AS NINFRACTIONDESC, CLAIM_AUTO.SDRIVER_CLAIM, CLAIM_AUTO.SDRIVERNAME, CLAIM_AUTO.NAGE, CLAIM_AUTO.SSEXCLIEN, DECODE(CLAIM_AUTO.SALCOHOLIC, '1', 1, '2', 0, NULL, 0) AS SALCOHOLIC, DECODE(CLAIM_AUTO.SPOLICEDEM, '1', 1, '2', 0, NULL, 0) AS SPOLICEDEM, CLAIM_AUTO.DPOLDOC_DATE, CLAIM_AUTO.NPOLICEDOC, CLAIM_AUTO.SPOL_STATION, CLAIM_AUTO.NPARAGRAPH, CLAIM_AUTO.NPAGE, CLAIM_AUTO.SPOLSTAT_DEMAN, CLAIM_AUTO.SCOURT, DECODE(CLAIM_AUTO.SIND_EIR, '1', 1, '2', 0, NULL, 0) AS SIND_EIR, DECODE(CLAIM_AUTO.SSUMMARY, '1', 1, '2', 0, NULL, 0) AS SSUMMARY FROM CLAIM_AUTO LEFT JOIN TABLE692 TABLE6921 ON TABLE6921.NDEMAN_TYPE = CLAIM_AUTO.NDEMAN_TYPE LEFT JOIN TABLE204 TABLE2042 ON TABLE2042.NBLAME = CLAIM_AUTO.NBLAME LEFT JOIN TABLE205 TABLE2053 ON TABLE2053.NINFRACTION = CLAIM_AUTO.NINFRACTION WHERE CLAIM_AUTO.NCLAIM = {NCLAIM} AND CLAIM_AUTO.NCASE_NUM = {NCASE_NUM} AND CLAIM_AUTO.NDEMAN_TYPE = {NDEMAN_TYPE}</RetrieveByKey>
+                  <KeyParameters>{NCLAIM},{NCASE_NUM},{NDEMAN_TYPE}</KeyParameters>
+                  <IsExist>SELECT COUNT(*) FROM CLAIM_AUTO WHERE CLAIM_AUTO.NCLAIM = {NCLAIM}</IsExist>
+                  <ParameterToChilds>NCLAIM,NCASE_NUM,NDEMAN_TYPE</ParameterToChilds>
+                </QueryStatements>
+                <Parameters />
+                <pluralcaptions>
+                  <pluralcaption Language="1" Value="Automobile Claims" />
+                  <pluralcaption Language="2" Value="Datos del Siniestro" />
+                  <pluralcaption Language="3" Value="Automobile Claims" />
+                </pluralcaptions>
+                <columns>
+                  <columnquery name="CLAIM_AUTO.NDEMAN_TYPE" xmlType="xmlNumeric" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Claim Type" />
+                      <caption Language="2" Value="Tipo de Reclamo" />
+                      <caption Language="3" Value="Claim Type" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Claim Type." />
+                      <ToolTip Language="2" Value="Tipo de reclamo." />
+                      <ToolTip Language="3" Value="Claim Type." />
+                    </ToolTips>
+                    <ColumnSource RelationshipTable="TABLE692" RelationshipColumns="NDEMAN_TYPE" Columns="NDEMAN_TYPE" Description="SDESCRIPT" StyleValue="Description" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NAUTO_QUANT" xmlType="xmlNumeric" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Number of Vehicles" />
+                      <caption Language="2" Value="Número de Vehículos Envueltos" />
+                      <caption Language="3" Value="Number of Vehicles" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Number of vehicles involved in the claim." />
+                      <ToolTip Language="2" Value="Número de vehículos implicados en el siniestro." />
+                      <ToolTip Language="3" Value="Number of vehicles involved in the claim." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NBLAME" xmlType="xmlNumeric" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Insured driver fault" />
+                      <caption Language="2" Value="Culpabilidad" />
+                      <caption Language="3" Value="Blame" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Driver's fault indicator." />
+                      <ToolTip Language="2" Value="Indicador de culpabilidad del conductor." />
+                      <ToolTip Language="3" Value="Driver's fault indicator." />
+                    </ToolTips>
+                    <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE204" RelationshipColumns="NBLAME" Columns="NBLAME" Description="SDESCRIPT" StyleValue="Description" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.DDEMAND_DATE" xmlType="xmlDateTime" Style="DateTime" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Date of Reporting to Authorities" />
+                      <caption Language="2" Value="Fecha de Denuncia" />
+                      <caption Language="3" Value="Date of Reporting to Authorities" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Reporting date to transit authorities" />
+                      <ToolTip Language="2" Value="Fecha de la denuncia." />
+                      <ToolTip Language="3" Value="Reporting date to transit authorities" />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <datetimestyle Format="Date" />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NINFRACTION" xmlType="xmlNumeric" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Traffic Ofense" />
+                      <caption Language="2" Value="Indicador de Infracción" />
+                      <caption Language="3" Value="Traffic Ofense" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Indicator of traffic offense." />
+                      <ToolTip Language="2" Value="Código indicador de infracción de tránsito." />
+                      <ToolTip Language="3" Value="Indicator of traffic offense." />
+                    </ToolTips>
+                    <ColumnSource IsAutomaticGenerated="true" RelationshipTable="TABLE205" RelationshipColumns="NINFRACTION" Columns="NINFRACTION" Description="SDESCRIPT" StyleValue="Description" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SDRIVER_CLAIM" xmlType="xmlChar" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Driver Client ID" />
+                      <caption Language="2" Value="Código de Cliente del Conductor" />
+                      <caption Language="3" Value="Driver Client ID" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Client ID of the driver at the moment of the accident." />
+                      <ToolTip Language="2" Value="Código del conductor al momento del siniestro." />
+                      <ToolTip Language="3" Value="Client ID of the driver at the moment of the accident." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SDRIVERNAME" xmlType="xmlChar" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Driver Name" />
+                      <caption Language="2" Value="Nombre del Conductor" />
+                      <caption Language="3" Value="Driver Name" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Name of the driver of the vehicle (SOAT)." />
+                      <ToolTip Language="2" Value="Nombre del conductor del vehículo (SOAT)." />
+                      <ToolTip Language="3" Value="Name of the driver of the vehicle (SOAT)." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NAGE" xmlType="xmlNumeric" SummaryVisible="false" precision="2" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Age of The Driver" />
+                      <caption Language="2" Value="Edad del Conductor" />
+                      <caption Language="3" Value="Age of The Driver" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Age of the driver of the automobile involved in the claim (SOAT)." />
+                      <ToolTip Language="2" Value="Edad del conductor del automóvil siniestrado (SOAT)." />
+                      <ToolTip Language="3" Value="Age of the driver of the automobile involved in the claim (SOAT)." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SSEXCLIEN" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Gender" />
+                      <caption Language="2" Value="Sexo del Conductor" />
+                      <caption Language="3" Value="Gender" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Gender of the client ()." />
+                      <ToolTip Language="2" Value="Sexo del cliente" />
+                      <ToolTip Language="3" Value="Gender of the client ()." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SALCOHOLIC" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="DUII ndicator" />
+                      <caption Language="2" Value="Exceso de Alcohol" />
+                      <caption Language="3" Value="DUII ndicator" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Driving under influence of alcohol indicator." />
+                      <ToolTip Language="2" Value="Indicador de exceso de alcohol." />
+                      <ToolTip Language="3" Value="Driving under influence of alcohol indicator." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <checkboxstyle FalseValue="2" TrueValue="1" />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SPOLICEDEM" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Police Report Indicator" />
+                      <caption Language="2" Value="Denuncia Policial" />
+                      <caption Language="3" Value="Police Report Indicator" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="It indicates whether a police report was done." />
+                      <ToolTip Language="2" Value="Indicador de que se realizó una denuncia policial." />
+                      <ToolTip Language="3" Value="It indicates whether a police report was done." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <checkboxstyle FalseValue="2" TrueValue="1" />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.DPOLDOC_DATE" xmlType="xmlDateTime" SummaryVisible="false" Style="DateTime" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Date of Document From Authorities" />
+                      <caption Language="2" Value="Fecha de Constancia Policial" />
+                      <caption Language="3" Value="Date of Document From Authorities" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Date of the document from the transit authorities." />
+                      <ToolTip Language="2" Value="Fecha de la constancia policial." />
+                      <ToolTip Language="3" Value="Date of the document from the transit authorities." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <datetimestyle Format="Date" />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NPOLICEDOC" xmlType="xmlNumeric" SummaryVisible="false" precision="10" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Police Certificate Number" />
+                      <caption Language="2" Value="Constancia Policial" />
+                      <caption Language="3" Value="Police Certificate Number" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Police certificate number." />
+                      <ToolTip Language="2" Value="Número de constancia policial." />
+                      <ToolTip Language="3" Value="Police certificate number." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SPOL_STATION" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Police Office Nose" />
+                      <caption Language="2" Value="Comisaría constancia policial." />
+                      <caption Language="3" Value="Police Office Nose" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Police Office issuing the police certificate." />
+                      <ToolTip Language="2" Value="Comisaría de la constancia policial." />
+                      <ToolTip Language="3" Value="Police Office issuing the police certificate." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NPARAGRAPH" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Paragraph" />
+                      <caption Language="2" Value="Párrafo" />
+                      <caption Language="3" Value="Paragraph" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Paragraph (police certificate)" />
+                      <ToolTip Language="2" Value="Párrafo (constancia policial)." />
+                      <ToolTip Language="3" Value="Paragraph (police certificate)" />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.NPAGE" xmlType="xmlNumeric" SummaryVisible="false" precision="5" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Folio" />
+                      <caption Language="2" Value="Folio" />
+                      <caption Language="3" Value="Folio" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Folio (police certificate)" />
+                      <ToolTip Language="2" Value="Folio (constancia policial)." />
+                      <ToolTip Language="3" Value="Folio (police certificate)" />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SPOLSTAT_DEMAN" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Police Office" />
+                      <caption Language="2" Value="Comisaría" />
+                      <caption Language="3" Value="Police Office" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Police office where the accident report was filed." />
+                      <ToolTip Language="2" Value="Comisaría donde se hizo la denuncia." />
+                      <ToolTip Language="3" Value="Police office where the accident report was filed." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SCOURT" xmlType="xmlChar" SummaryVisible="false" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Court " />
+                      <caption Language="2" Value="Juzgado" />
+                      <caption Language="3" Value="sC ourt" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="Name of the court taking the case" />
+                      <ToolTip Language="2" Value="Juzgado que lleva la denuncia" />
+                      <ToolTip Language="3" Value="Juzgado que lleva la denuncia" />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SIND_EIR" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Quick Operation Group Participation" />
+                      <caption Language="2" Value="Participación de Equipo de Intervención Rápida" />
+                      <caption Language="3" Value="Quick Operation Group Participation" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="The &quot;Quick Operation Group&quot; took part in the accident service." />
+                      <ToolTip Language="2" Value="Indicador de que participó en el accidente el &quot;Equipo de intervención rápida&quot;." />
+                      <ToolTip Language="3" Value="The &quot;Quick Operation Group&quot; took part in the accident service." />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <checkboxstyle FalseValue="2" TrueValue="1" />
+                  </columnquery>
+                  <columnquery name="CLAIM_AUTO.SSUMMARY" xmlType="xmlChar" SummaryVisible="false" Style="CheckBox" Visible="true">
+                    <captions>
+                      <caption Language="1" Value="Reported" />
+                      <caption Language="2" Value="Informe Realizado" />
+                      <caption Language="3" Value="Reported" />
+                    </captions>
+                    <ToolTips>
+                      <ToolTip Language="1" Value="It indicates whether a report about the accident was written" />
+                      <ToolTip Language="2" Value="Indicador de que se realizó un informe acerca del accidente." />
+                      <ToolTip Language="3" Value="It indicates whether a report about the accident was written" />
+                    </ToolTips>
+                    <ColumnSource RelationshipColumns="" Description="" StyleValue="Code" />
+                    <AggregateLabels />
+                    <checkboxstyle FalseValue="2" TrueValue="1" />
+                  </columnquery>
+                </columns>
+                <childs />
+                <Relationship IsAutomaticGenerated="true" RelationshipTable="CLAIM" RelationshipColumns="NCLAIM" Columns="NCLAIM" />
+                <titles>
+                  <title Language="1" />
+                  <title Language="2" />
+                  <title Language="3" />
+                </titles>
+                <titlesQuery>
+                  <titleQuery Language="2" />
+                  <titleQuery Language="1" />
+                </titlesQuery>
+                <descriptionsQuery>
+                  <descriptionQuery Language="2" />
+                  <descriptionQuery Language="1" />
+                </descriptionsQuery>
+                <Remarks>
+                  <Remark Language="1" Value="Data on automobile claims." />
+                  <Remark Language="2" Value="Datos de siniestros de automóvil." />
+                  <Remark Language="3" Value="Data on automobile claims." />
+                </Remarks>
+                <ContextMenu />
+                <ActionFilters />
+              </child>
+            </childs>
+            <Relationship RelationshipTable="Auto" RelationshipColumns="NBRANCH,NPRODUCT,NPOLICY,NCERTIF" Columns="NBRANCH,NPRODUCT,NPOLICY,NCERTIF" />
+            <titles>
+              <title Language="1" />
+              <title Language="2" />
+              <title Language="3" />
+            </titles>
+            <titlesQuery>
+              <titleQuery Language="2" />
+              <titleQuery Language="1" />
+            </titlesQuery>
+            <descriptionsQuery>
+              <descriptionQuery Language="2" />
+              <descriptionQuery Language="1" />
+            </descriptionsQuery>
+            <Remarks>
+              <Remark Language="1" Value="General information of a  claim." />
+              <Remark Language="2" Value="Datos generales del siniestro." />
+              <Remark Language="3" Value="General information of a  claim." />
+            </Remarks>
+            <ContextMenu />
+            <ActionFilters />
+          </child>
+        </childs>
+        <Relationship IsAutomaticGenerated="true" RelationshipTable="Auto_db" RelationshipColumns="sLicense_ty,sRegist" Columns="sLicense_ty,sRegist" RelationshipList="CERTIFICAT" />
+        <Conditions Element="AUTO.SCERTYPE" Operator="IsEqualTo" ParameterType="Constant" Default="2" Logical="None" />
+        <titles>
+          <title Language="1" />
+          <title Language="2" />
+          <title Language="3" />
+        </titles>
+        <titlesQuery>
+          <titleQuery Language="2" />
+          <titleQuery Language="1" />
+        </titlesQuery>
+        <descriptionsQuery>
+          <descriptionQuery Language="2" />
+          <descriptionQuery Language="1" />
+        </descriptionsQuery>
+        <Remarks>
+          <Remark Language="1" Value="Particular information on automobile policies." />
+          <Remark Language="2" Value="Datos particulares del ramo de automóvil." />
+          <Remark Language="3" Value="Particular information on automobile policies." />
+        </Remarks>
+        <ContextMenu />
+        <ActionFilters />
+      </child>
+    </childs>
+    <Conditions Element="Auto_db.sRegist" Operator="IsEqualTo" ParameterType="UserInput" Default="Vehículo" Logical="None" />
+    <titles>
+      <title Language="1" />
+      <title Language="2" Value="Consulta de Auto" />
+      <title Language="3" />
+    </titles>
+    <titlesQuery>
+      <titleQuery Language="1" Value="Automobiles Query" />
+      <titleQuery Language="2" Value="Consulta de Vehículos " />
+      <titleQuery Language="3" Value="Consulta de Auto" />
+    </titlesQuery>
+    <descriptionsQuery>
+      <descriptionQuery Language="1" Value="Automobile Query" />
+      <descriptionQuery Language="2" Value="Consulta de Vehículos " />
+      <descriptionQuery Language="3" Value="Consulta de Autos ED" />
+    </descriptionsQuery>
+    <Remarks>
+      <Remark Language="1" Value="Contains all information from the automobile." />
+      <Remark Language="2" Value="Muestra la información de los vehículos existentes en la base de datos de vehículos de la compañía" />
+      <Remark Language="3" Value="Contains all information from the automobile." />
+    </Remarks>
+    <ContextMenu />
+    <ActionFilters />
+  </root>
+  <roles>Administrador, EASE1, Empleado</roles>
+  <HaveChildrenWithHistory>true</HaveChildrenWithHistory>
+  <Parameters>
+    <QueryParameters Name="Vehículo" CustomName="" Type="Vehicle" Behavior="" Length="" Default="" Required="true">
+      <Captions>
+        <Caption Language="1" Value="Automobile" />
+        <Caption Language="2" Value="Vehículo" />
+        <Caption Language="3" Value="Parameter2" />
+      </Captions>
+      <ToolTips>
+        <ToolTip Language="1" />
+        <ToolTip Language="2" />
+        <ToolTip Language="3" />
+      </ToolTips>
+    </QueryParameters>
+    <QueryParameters Name="RecordEffectiveDate" CustomName="" Type="DatePicker" Behavior="" Length="" Default="today" Required="false">
+      <Captions>
+        <Caption Language="1" Value="Effective date" />
+        <Caption Language="2" Value="Fecha de efecto" />
+        <Caption Language="3" Value="Effective date" />
+      </Captions>
+      <ToolTips>
+        <ToolTip Language="1" />
+        <ToolTip Language="2" />
+        <ToolTip Language="3" />
+      </ToolTips>
+    </QueryParameters>
+  </Parameters>
+</metadata>

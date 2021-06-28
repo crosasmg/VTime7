@@ -1,0 +1,62 @@
+﻿<div style="position:relative;float:right;"><i class="fa fa-pencil" aria-hidden="true" style="padding-right: 3px;"></i><a href="#" onclick="menuvtcustomSupport.editLinkClick(); return false;">Editar</a></div>
+<div id="menuVtCustom"></div>
+<script type='text/javascript'>
+    var menuvtcustomSupport = new function () {
+        var childTab;
+        this.load = function (widgetData) {
+            if (widgetData.State && widgetData.State !== null) {
+                var state = JSON.parse(widgetData.State);
+                var treeViewName = widgetData.Id + 'TreeView';
+                $('#' + widgetData.Id + ' .ibox-content #menuVtCustom').append('<div id="' + treeViewName + '"></div>');
+                //carga la información del menú
+                ajaxJsonHelper.get(constants.fasiApi.backoffice + 'LoadCustomMenues', null,
+                function (data) {
+                    items = menuvtcustomSupport.BuildTreeItems(data);
+
+                    $('#' + treeViewName).jstree({
+                        "plugins": ["wholerow"],
+                        'core': {
+                            'themes': { 'name': 'default' },
+                            "check_callback": true,
+                            'data': items
+                        }
+                    }).on("changed.jstree", function (e, data) {
+                        if (data.selected.length) {
+                            var node = data.instance.get_node(data.selected[0]);
+
+                            window.open(node.data.url, '_blank');
+                        }
+                    });
+                });
+            }
+        };
+        // Crea los artículos del arból del menú
+        this.BuildTreeItems = function (data) {
+            var items = new Array();
+            $.each(data, function (index, item) {
+                var treeNode = {
+                    data: { url: item.URLAccessLink },
+                    text: item.ShortDescription,
+                    icon: 'fa fa-database',
+                    a_attr: item.Path
+                };
+
+                // Si un artículo contiene artículos hijos, entonces se llama el método de forma recursiva
+                if (item.Items && item.Items.length > 0)
+                    treeNode.children = menuvtcustomSupport.BuildTreeItems(item.Items);
+
+                items.push(treeNode);
+            });
+            return items;
+        };
+        this.editLinkClick = function (e) {
+            childTab = window.open('/fasi/dli/forms/CustomMenu.aspx', '_blank');
+            setInterval(menuvtcustomSupport.checkChildReloaded, 1000);
+        };
+        this.checkChildReloaded = function () {
+            if (childTab.closed) {
+                window.location.reload(true);
+            }
+        };
+    };
+</script>

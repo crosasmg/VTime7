@@ -1,0 +1,185 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eNetFrameWork" %>
+<%@ Import namespace="eFunctions" %>
+<%@ Import namespace="eCollection" %>
+<script language="VB" runat="Server">
+'^Begin Header Block VisualTimer Utility 1.1 7/4/03 10.47.59
+Dim mobjNetFrameWork As eNetFrameWork.Layout
+'~End Header Block VisualTimer Utility
+
+'- Objeto para el manejo de las funciones generales de carga de valores
+Dim mobjValues As eFunctions.Values
+
+'- Objeto para el manejo del grid de la página
+Dim mobjGrid As eFunctions.Grid
+
+'- Objeto para el manejo del menú
+Dim mobjMenu As eFunctions.Menues
+
+'- Objeto para el manejo particular de los datos de la página
+Dim mcolBills As eCollection.Billss
+
+
+'% insDefineHeader: se definen las propiedades del grid
+'--------------------------------------------------------------------------------------------
+Private Sub insDefineHeader()
+	'--------------------------------------------------------------------------------------------
+	mobjGrid = New eFunctions.Grid
+	'^Begin Body Block VisualTimer Utility 1.1 7/4/03 10.47.59
+	mobjGrid.sSessionID = Session.SessionID
+	mobjGrid.nUsercode = Session("nUsercode")
+	'~End Body Block VisualTimer Utility
+	
+	mobjGrid.sCodisplPage = "col700a"
+	Call mobjGrid.SetWindowParameters(Request.QueryString.Item("sCodispl"), Request.QueryString.Item("sWindowDescript"), Request.QueryString.Item("nWindowTy"))
+	
+	'+ Se definen las columnas del grid    
+	With mobjGrid.Columns
+		'**+ Modificar los parámetros "Title" y "FieldName" de cada columna
+		Call .AddHiddenColumn ("tcnSel",vbNullString)     'Ramo
+		Call .AddClientColumn(0, "Contratante", "tctClient", vbNullString,  , "Contratante de la póliza")
+		Call .AddPossiblesColumn(0, "Ramo", "tcnBranch", "Table10", eFunctions.Values.eValuesType.clngComboType, CStr(0))
+		Call .AddHiddenColumn ("tctDescBranch",vbNullString)     'Ramo
+		Call .AddTextColumn(40284, "Producto", "tctProduct", 20, CStr(eRemoteDB.Constants.strNull),  ,  ,  ,  ,  , True)
+		Call .AddHiddenColumn("tcnProduct", CStr(eRemoteDB.Constants.strNull)) 'Código del Producto
+		Call .AddNumericColumn(0, "Póliza", "tcnPolicy", 10, vbNullString)
+		Call .AddNumericColumn(0, "Boletín", "tcnBulletin", 10, vbNullString)
+		Call .AddPossiblesColumn(0, "Moneda", "tcnCurrency", "Table11", eFunctions.Values.eValuesType.clngComboType, CStr(0))
+		Call .AddNumericColumn(0, "Monto afecto", "tcnAmountAfe", 18, vbNullString,  ,  , True, 6)
+		Call .AddNumericColumn(0, "Monto exento", "tcnAmountExe", 18, vbNullString,  ,  , True, 6)
+		Call .AddNumericColumn(0, "Monto iva", "tcnAmountIva", 18, vbNullString,  ,  , True, 6)
+		Call .AddDateColumn(0, "Fecha Efecto", "tcdEffecDate", CStr(Today),  ,  ,  ,  ,  , True)
+		Call .AddDateColumn(0, "Vencimiento", "tcdExpirdate", CStr(Today),  ,  ,  ,  ,  , True)
+	End With
+	
+	'+ Se definen las propiedades generales del grid
+	With mobjGrid
+		.Codispl = "COL700"
+		.ActionQuery = mobjValues.ActionQuery
+		.Height = 350
+		.Width = 280
+		.nMainAction = CShort(IIf(Request.QueryString.Item("nMainAction") ="", 0, Request.QueryString.Item("nMainAction")))
+		.Columns("Sel").GridVisible = Not .ActionQuery
+		If Request.QueryString.Item("Reload") = "1" Then
+			.sReloadIndex = Request.QueryString.Item("ReloadIndex")
+		End If
+	End With
+End Sub
+
+'% insPreCOL700: se realiza el manejo del grid
+'--------------------------------------------------------------------------------------------
+Private Sub insPreCOL700()
+	'--------------------------------------------------------------------------------------------
+	'*++ Modificar nombre del objeto. Modificar "Class" por el nombre de la clase con la cual se trabaja
+	Dim lclsBills As eCollection.Bills
+	
+	lclsBills = New eCollection.Bills
+	mcolBills = New eCollection.Billss
+	
+	If mcolBills.Find() Then
+		For	Each lclsBills In mcolBills
+			With mobjGrid
+				.Columns("tcdField").DefValue = lclsBills.Propiedad
+				.Columns("tcnField").DefValue = lclsBills.Propiedad
+				.Columns("tctField").DefValue = lclsBills.Propiedad
+				.Columns("hddField").DefValue = lclsBills.Propiedad
+				
+				Response.Write(.DoRow)
+			End With
+		Next lclsBills
+	End If
+	
+	Response.Write(mobjGrid.closeTable())
+End Sub
+
+'*++ Modificar nombre de la función. Modificar "Codispl" por el código lógico de la transacción
+'% insPreCOL700Upd: Se realiza el manejo de la ventana PopUp asociada al grid
+'--------------------------------------------------------------------------------------------
+Private Sub insPreCOL700Upd()
+	'--------------------------------------------------------------------------------------------
+	'*++ Modificar nombre del objeto. Modificar "Class" por el nombre de la clase con la cual se trabaja
+	Dim lobjClass As Object
+	lobjClass = Server.CreateObject("eDll.Class")
+	
+	With Request
+		If Request.QueryString.Item("Action") = "Del" Then
+			Response.Write(mobjValues.ConfirmDelete())
+			If lobjClass.insPostCOL700() Then
+			End If
+		End If
+		
+		Response.Write(mobjGrid.DoFormUpd(.QueryString.Item("Action"), "Página_de_validaciones.aspx", "COL700", .QueryString.Item("nMainAction"), mobjValues.ActionQuery, CShort(.QueryString.Item("Index"))))
+	End With
+End Sub
+
+</script>
+<%Response.Expires = -1441
+mobjNetFrameWork = New eNetFrameWork.Layout
+mobjNetFrameWork.sSessionID = Session.SessionID
+mobjNetFrameWork.nUsercode = Session("nUsercode")
+Call mobjNetFrameWork.BeginPage("col700a")
+
+mobjValues = New eFunctions.Values
+'^Begin Body Block VisualTimer Utility 1.1 7/4/03 10.47.59
+mobjValues.sSessionID = Session.SessionID
+mobjValues.nUsercode = Session("nUsercode")
+'~End Body Block VisualTimer Utility
+
+mobjValues.sCodisplPage = "col700a"
+mobjMenu = New eFunctions.Menues
+'^Begin Body Block VisualTimer Utility 1.1 7/4/03 10.47.59
+mobjMenu.sSessionID = Session.SessionID
+mobjMenu.nUsercode = Session("nUsercode")
+'~End Body Block VisualTimer Utility
+
+mobjValues.ActionQuery = CDbl(IIf(Request.QueryString.Item("nMainAction")="",0,Request.QueryString.Item("nMainAction"))) = 401
+%>
+<HTML>
+<HEAD>
+	<META NAME="GENERATOR" CONTENT="Microsoft Visual Studio 6.0"/>
+    <%'UPGRADE_NOTE: Language element '#INCLUDE' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file 'VTimeNet/Includes/Constantes.aspx' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<!-- #INCLUDE VIRTUAL="~/VTimeNet/Includes/Constantes.aspx" -->
+
+    <%'UPGRADE_NOTE: Language element 'SCRIPT' was migrated to the same language element but still may have a different behavior. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1011.htm  %>
+<%'UPGRADE_NOTE: The file '/VTimeNet/Scripts/GenFunctions.js' was not found in the migration directory. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1003.htm  %>
+<SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
+<SCRIPT>
+//+ Variable para el control de versiones
+     document.VssVersion="$$Revision: 1 $|$$Date: 2/09/03 19:01 $|$$Author: Iusr_llanquihue $"
+</SCRIPT>    
+	<%
+Response.Write(mobjValues.StyleSheet())
+If Request.QueryString.Item("Type") <> "PopUp" Then
+	Response.Write(mobjMenu.setZone(2, "COL700A", Request.QueryString.Item("sWindowDescript"), CShort(Request.QueryString.Item("nWindowTy"))))
+	'UPGRADE_NOTE: Object mobjMenu may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+	mobjMenu = Nothing
+	Response.Write("<SCRIPT>var nMainAction=top.frames['fraSequence'].plngMainAction</SCRIPT>")
+End If
+%>
+</HEAD>
+<BODY ONUNLOAD="closeWindows();">
+<FORM METHOD="POST" NAME="COL700" ACTION="valCollectionRep.aspx?sMode=2<%=Request.Params.Get("Query_String")%>">
+    <%Response.Write(mobjValues.ShowWindowsName("COL700A", Request.QueryString.Item("sWindowDescript")))
+
+Call insDefineHeader()
+
+If Request.QueryString.Item("Type") = "PopUp" Then
+	Call insPreCOL700Upd()
+Else
+	Call insPreCOL700()
+End If
+%>
+</FORM> 
+</BODY>
+</HTML>
+
+<%'^Begin Footer Block VisualTimer Utility 1.1 7/4/03 10.47.59
+Call mobjNetFrameWork.FinishPage("col700a")
+'UPGRADE_NOTE: Object mobjNetFrameWork may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+mobjNetFrameWork = Nothing
+'^End Footer Block VisualTimer%>
+
+
+
+

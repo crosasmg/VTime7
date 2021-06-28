@@ -1,0 +1,446 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.PolicyReinsuranceManager.Service
+</name>
+</assembly>
+<members>
+<member name="F:InMotionGIT.PolicyReinsuranceManager.Service.Enumerations.EnumTypeOfProcess.IssueOfPolicy">
+ <summary>
+ Emisión de una nueva póliza-certificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.PolicyReinsuranceManager.Service.Enumerations.EnumTypeOfProcess.ModificationOfPolicy">
+ <summary>
+ Modificación de poliza-cdertificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.PolicyReinsuranceManager.Service.Enumerations.EnumTypeOfProcess.ReIssueOfPolicy">
+ <summary>
+ Re-emisión de póliza-certificado
+ </summary>
+</member>
+<member name="F:InMotionGIT.PolicyReinsuranceManager.Service.Enumerations.EnumTypeOfProcess.RenovationOfPolicy">
+ <summary>
+ Renovación de póliza-certificado
+ </summary>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.RecordType">
+<summary>
+Type of Record. (SCERTYPE).
+</summary>
+<remarks>Datasource is 'REINSURAN.SCERTYPE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH).
+</summary>
+<remarks>Datasource is 'REINSURAN.NBRANCH' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.ProductCode">
+<summary>
+Code of the product. (NPRODUCT).
+</summary>
+<remarks>Datasource is 'REINSURAN.NPRODUCT' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application. (NPOLICY).
+</summary>
+<remarks>Datasource is 'REINSURAN.NPOLICY' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.CertificateID">
+<summary>
+Number identifying the certificate. (NCERTIF).
+</summary>
+<remarks>Datasource is 'REINSURAN.NCERTIF' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.ClientID">
+<summary>
+Code of the client. (SCLIENT).
+</summary>
+<remarks>Datasource is 'REINSURAN.SCLIENT' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.RecordEffectiveDate">
+<summary>
+Date from which the record is valid. (DEFFECDATE).
+</summary>
+<remarks>Datasource is 'REINSURAN.DEFFECDATE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.AcceptanceDate">
+<summary>
+Date of acceptance of the facultative reinsurance. (DACCEDATE).
+</summary>
+<remarks>Datasource is 'REINSURAN.DACCEDATE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE).
+</summary>
+<remarks>Datasource is 'REINSURAN.DCOMPDATE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.Cumulus">
+<summary>
+Code of cumulus. (SHEAP_CODE).
+</summary>
+<remarks>Datasource is 'REINSURAN.SHEAP_CODE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE).
+</summary>
+<remarks>Datasource is 'REINSURAN.NUSERCODE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.InsuredAmount">
+<summary>
+Insured amount of the policy-certificate
+</summary>
+<remarks>Datasource is 'REINSURAN.NUSERCODE' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.ManualEntryIndicator">
+<summary>
+Manual entry indicator. (SMANUALMOV).
+</summary>
+<remarks>Datasource is 'REINSURAN.SMANUALMOV' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="P:InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier.Company">
+ <summary>
+ Code of the company.
+ Cuando se trata de un contrato, se coloca la compañía a la que pertenece la información, en caso de facultativo puro, se coloca el código de la compañía que acepta el riesgo.
+ </summary>
+ <remarks>Datasource is 'REINSURAN.NCOMPANY' from 'C:\VisualTimeNet\FrontOffice\ApplicationSuite\VisualTIME_LatinaCombinada.v2.erwin' version.</remarks>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.GetUserCode">
+ <summary>
+ Obtiene el codigo de usuario contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.GetRole">
+ <summary>
+ Obtiene el rol contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.GetClientId">
+ <summary>
+ Obtiene el client id contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.GetInternalClientId(System.Int32)">
+ <summary>
+ Obtiene el client id contenido en los claims.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.ValidateAccess">
+ <summary>
+ Valida los accesos a reinsurance si es empleado.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.ReinsuranceHelpers.Validator.RetrieveUserByUsercode(System.Int32)">
+ <summary>
+ Devuelve un usuario por su usercode
+ </summary>
+ <param name="userCode">Código de usuario a localizar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Interfaces.IReinsuranceManagerService.CalculateReinsuranceDistribution(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="riskInformation">
+ Object "RiskInformation" related to the policy-certificate in treatment.
+ //
+ Objeto "RiskInformation" relacionado con la póliza-certificdao en tratamiento.
+ </param>
+ <param name="productMaster">
+ Object "ProductMaster" related to the policy-certificate in treatment.
+ //
+ Objeto "ProductMaster" relacionado con la póliza-certificado en tratamiento.
+ </param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Interfaces.IReinsuranceManagerService.GetFacultativePureOfPolicy(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="riskInformation">
+ Object "RiskInformation" related to the policy-certificate in treatment.
+ //
+ Objeto "RiskInformation" relacionado con la póliza-certificdao en tratamiento.
+ </param>
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Interfaces.IReinsuranceManagerService.GetReinsuranceAmountByLinesOfBusiness(System.DateTime,InMotionGIT.Policy.Entity.Contracts.CoverageCollection,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <summary>
+ Obtiene los ramos de reaseguro involucrados
+ </summary>
+ <param name="coverages">Coberturas asociadas a la póliza-certificado en tratamiento</param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Interfaces.IReinsuranceManagerService.SynchronizeReinsuranceDistribution(System.DateTime,System.Int32,System.Int32,System.Int64,System.Int64,System.Int32,System.Int32,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="currency">Moneda en la que se encuentra la distribución</param>
+ <param name="reinsuranceDistributions">Distribución de reaseguro a actualizar</param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Interfaces.IReinsuranceManagerService.SynchronizeReinsuranceDistributionParaRevisar(System.DateTime,System.Int32,System.Int32,System.Int64,System.Int64,System.Int32,System.Int32,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="currency">Moneda en la que se encuentra la distribución</param>
+ <param name="reinsuranceDistributions">Distribución de reaseguro a actualizar</param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateReinsuranceDistribution(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="riskInformation">
+ Object "RiskInformation" related to the policy-certificate in treatment.
+ //
+ Objeto "RiskInformation" relacionado con la póliza-certificdao en tratamiento.
+ </param>
+ <param name="productMaster">
+ Object "ProductMaster" related to the policy-certificate in treatment.
+ //
+ Objeto "ProductMaster" relacionado con la póliza-certificado en tratamiento.
+ </param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetReinsuranceTreaties(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetReinsuranceAmountByLinesOfBusiness(System.DateTime,InMotionGIT.Policy.Entity.Contracts.CoverageCollection,InMotionGIT.Product.Entity.Contracts.ProductMaster,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <summary>
+ Obtiene los ramos de reaseguro involucrados
+ </summary>
+
+ <param name="coverages">Coberturas asociadas a la póliza-certificado en tratamiento</param>
+
+
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateRetentionAndQuoteShareAmount(System.DateTime,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,System.String,System.String,System.String,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumPoliciesForAccumulation@,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection@,System.Decimal@,System.Int32@,System.Int32@)">
+ <summary>
+ Calcula los importes de retención y cuota parte
+ </summary>
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+ <param name="reinsuranceDistributionCollection">Colección de los elementos que componen la distribución de reaseguro</param>
+ <param name="shortfallAmount">Importe faltante por distribuir en el reaseguro</param>
+ <returns>Importe de retención calculado</returns>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateSurplusAmounts(System.DateTime,System.Decimal,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,System.String,System.String,System.String,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumPoliciesForAccumulation@,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection@,System.Decimal@,System.Int32@,System.Int32@)">
+ <summary>
+ Calcula el importe de excedente de cada uno de los contratos de excedentes definidos en el ramo de reaseguro
+ </summary>
+
+ <param name="retentionAmount">Importe de retención</param>
+ <param name="reinsuranceIdentifier">Información básica del elemento de la distribución de reaseguro</param>
+
+
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+
+
+ <param name="reinsuranceDistributionCollection">Colección de los elementos que componen la distribución de reaseguro</param>
+
+
+ <param name="shortfallAmount">Importe faltante por distribuir en el reaseguro</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateObligatoryFacultatives(System.DateTime,System.Decimal,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,System.String,System.String,System.String,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumPoliciesForAccumulation@,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection@,System.Decimal@,System.Int32@,System.Int32@)">
+ <summary>
+ Calcula el importe de cada uno de los contratos de facultativo obligatorio definidos en el ramo de reaseguro
+ </summary>
+
+ <param name="reinsuranceIdentifier">Información básica del elemento de la distribución de reaseguro</param>
+
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+
+ <param name="reinsuranceDistributionCollection">Colección de los elementos que componen la distribución de reaseguro</param>
+
+ <param name="shortfallAmount">Importe faltante por distribuir en el reaseguro</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetAmountOfAccumulationByReinsuranceLineOfBusiness(System.DateTime,System.Int32,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumTypeOfTreaty,System.String,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,System.Int32,System.Int32@)">
+ <summary>
+ Obtiene el importe del contrato de todas la pólizas relacionadas con el mismo ramo de reaseguro e igual código de cúmulo
+ </summary>
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="cumulCode">Código del cúmulo relacionado</param>
+ <param name="reinsuranceLineOfBusiness">Código del ramo de reaseguro</param>
+ <param name="quantityOfPolicies">Cantidad de pólizas que se encuentran formando cúmulo</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetAmountOfAccumulationByAllPolicies(System.DateTime,System.Int32,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumTypeOfTreaty,System.String,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,System.Int32@)">
+ <summary>
+ Obtiene el importe del contrato de todas la pólizas con igual código de cúmulo
+ </summary>
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="cumulCode">Código del cúmulo relacionado</param>
+ <param name="quantityOfPolicies">Cantidad de pólizas que se encuentran formando cúmulo</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetAmountOfAccumulationByLineOfBusinessAnProduct(System.DateTime,System.Int32,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumTypeOfTreaty,System.String,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,System.Int32@)">
+ <summary>
+ Obtiene el importe del contrato de todas la pólizas relacionadas con el mismo ramo comercial, producto e igual código de cúmulo
+ </summary>
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="cumulCode">Código del cúmulo relacionado</param>
+ <param name="quantityOfPolicies">Cantidad de pólizas que se encuentran formando cúmulo</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetAmountOfAccumulation(System.DateTime,System.Int32,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumTypeOfTreaty,System.String,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.Product.Entity.Contracts.Enumerations.EnumReinsuranceOptionInCaseOfAccumulations,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumPoliciesForAccumulation,System.Int32,System.Int32@,System.Decimal@)">
+ <summary>
+ Obtiene el importe del contrato de todas la pólizas relacionadas con el mismo ramo comercial, producto e igual código de cúmulo
+ </summary>
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="cumulCode">Código del cúmulo relacionado</param>
+ <param name="quantityOfPolicies">Cantidad de pólizas que se encuentran formando cúmulo</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateNewLimitBasedOnLimitsAndFullRetention(System.DateTime,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,InMotionGIT.CoReinsurance.Entity.Contracts.ReinsuranceContractMaster,InMotionGIT.CoReinsurance.Entity.Contracts.ProportionalReinsuranceContract@)">
+ <summary>
+ Calcula el importe de retención tomando en cuenta las restricciones de plenos y limites de retención, o excluye el riesgo del contrato
+ </summary>
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.AssignPreviousFacultative(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,InMotionGIT.CoReinsurance.Entity.Contracts.Enumerations.EnumPoliciesForAccumulation@,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection@,System.Int32@,System.Int32@)">
+ <summary>
+ Completa la distribución de reaseguro con el facultativo puro previamente registrado en la póliza
+ </summary>
+ <param name="reinsuranceIdentifier">Información básica del elemento de la distribución de reaseguro</param>
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+ <param name="reinsuranceDistributionCollection">Colección de los elementos que componen la distribución de reaseguro</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetFacultativePureOfPolicy(System.DateTime,InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="riskInformation">
+ Object "RiskInformation" related to the policy-certificate in treatment.
+ //
+ Objeto "RiskInformation" relacionado con la póliza-certificdao en tratamiento.
+ </param>
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.SynchronizeReinsuranceDistributionParaRevisar(System.DateTime,System.Int32,System.Int32,System.Int64,System.Int64,System.Int32,System.Int32,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="currency">Moneda en la que se encuentra la distribución</param>
+
+ <param name="reinsuranceDistributions">Distribución de reaseguro a actualizar</param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetCapitalToBeReinsured(System.DateTime,InMotionGIT.Policy.Entity.Contracts.Coverage,System.Boolean,InMotionGIT.Product.Entity.Contracts.ProductMaster)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="coverage">cobertura en tratamiento</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.GetMathematicalReserveOfCoverage(System.DateTime,InMotionGIT.Policy.Entity.Contracts.Coverage,InMotionGIT.Product.Entity.Contracts.ProductMaster)">
+ <summary>
+ Obtiene la reserva matemática de la cobertura
+ </summary>
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+ <param name="coverage">cobertura en tratamiento</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.CalculateExcessLoss(System.DateTime,InMotionGIT.PolicyReinsuranceManager.Service.General.ReinsuranceIdentifier,InMotionGIT.PolicyReinsuranceManager.Contract.General.ReinsuranceAmountByLineOfBusiness,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection@,System.Decimal@,System.Int32@)">
+ <summary>
+ Calcula el importe de cada uno de los contratos de exceso de pérdidas definidos en el ramo de reaseguro
+ </summary>
+
+ <param name="reinsuranceIdentifier">Información básica del elemento de la distribución de reaseguro</param>
+
+ <param name="reinsuranceLineOfBusiness">Ramo de reaseguro en tratamiento</param>
+
+ <param name="reinsuranceDistributionCollection">Colección de los elementos que componen la distribución de reaseguro</param>
+
+ <param name="shortfallAmount">Importe faltante por distribuir en el reaseguro</param>
+</member>
+<member name="M:InMotionGIT.PolicyReinsuranceManager.Service.Operations.SynchronizeReinsuranceDistribution(System.DateTime,System.Int32,System.Int32,System.Int64,System.Int64,System.Int32,System.Int32,InMotionGIT.Policy.Entity.Contracts.ReinsuranceDistributionCollection,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.Int32)">
+ <param name="processDate">
+ Process execution date
+ //
+ Fecha de ejecución del proceso
+ </param>
+
+ <param name="reinsuranceLineOfBusiness">
+ Reinsurance line of business
+ //
+ Ramo de reaseguro
+ </param>
+ <param name="currency">Moneda en la que se encuentra la distribución</param>
+
+ <param name="reinsuranceDistributions">Distribución de reaseguro a actualizar</param>
+ <param name="consumer">Consumer information</param>
+</member>
+</members>
+</doc>

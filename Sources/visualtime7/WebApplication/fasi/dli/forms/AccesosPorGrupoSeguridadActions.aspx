@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AccesosPorGrupoSeguridadActions.aspx.vb" Inherits="dli.forms.AccesosPorGrupoSeguridadActions" %>

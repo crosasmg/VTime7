@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transactions> 
+  <Transaction id="CA001">
+	<Parameters>
+	  <Parameter id="cbeTransactio" caption="Transaction" type="Integer" mode="QueryString" default="" datasource="table221" condition=""
+                 description="Transaction that must be being executed to originate the task or automatic message."/>
+    <Parameter id="tcnPolicy" caption="Policy" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the policy/ quotation/ proposal."/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="CA001_K">
+	<Parameters>
+	  <Parameter id="cbeTransactio" caption="Transaction" type="Integer" mode="QueryString" default="" datasource="table221" condition=""
+                 description="Transaction that must be being executed to originate the task or automatic message."/>
+      <Parameter id="tcdEffecdate" caption="Effective date" type="DateTime" mode="QueryString" default="" datasource="" condition=""
+                 description="Date when the activity starts."/>
+      <Parameter id="cbeOffice" caption="Branch office" type="Integer" mode="Session" default="" datasource="Table9" condition=""
+                 description="Code of the branch office where claim declare."/>
+      <Parameter id="cbeBranch" caption="Branch" type="Integer" mode="QueryString" default="" datasource="Table10"
+                 description="Code of The Line of Business."/>
+      <Parameter id="valProduct" caption="Product" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Product to which the policy or certificate belongs."/>
+      <Parameter id="tcnQuotProp" caption="Proposal" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number of the proposal/quotation originating the movement."/>
+      <Parameter id="tcnPolicy" caption="Policy" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the policy/ quotation/ proposal."/>
+      <Parameter id="tcnCertificat" caption="Certificate" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the Certificate."/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="SI001">
+    <Parameters>
+      <Parameter id="cbeTransactio" caption="Transaction" type="Integer" mode="QueryString" default="" datasource="Table192" condition=""
+                 description="Transaction that must be being executed to originate the task or automatic message."/>
+      <Parameter id="tcdEffecdate" caption="Declaration Date" type="DateTime" mode="QueryString" default="" datasource=""
+                 description="Date when the report of the claim is executed"/>
+      <Parameter id="tcnClaim" caption="Claim" type="Integer" mode="QueryString" default="" datasource="" condition=""
+                 description="Number identifying the claim. "/>
+      <Parameter id="cbeOffice" caption="Branch office" type="Integer" mode="QueryString" default="" datasource="Table9" condition=""
+                 description="Code of the branch office where claim declare."/>
+      <Parameter id="cbeBranch" caption="Branch" type="Integer" mode="QueryString" default="" datasource="Table10"
+                description="Code of The Line of Business."/>
+      <Parameter id="valProduct" caption="Product" type="Integer" mode="QueryString" default="" datasource="Table10"
+                description="Product to which the policy or certificate belongs."/>
+      <Parameter id="tcnPolicy" caption="Policy" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the policy/ quotation/ proposal."/>
+      <Parameter id="tcnCertificat" caption="Certificate" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the Certificate."/>
+      <Parameter id="dtcClient" caption="Code of client" type="String" mode="QueryString" default="" datasource=""
+                 description="Code of the client."/>
+      <Parameter id="tcdBirthdat" caption="Date of Birth" type="DateTime" mode="QueryString" default="" datasource=""
+                 description=""/>
+      <Parameter id="tcdOccurrdat" caption="Loss date" type="DateTime" mode="QueryString" default="" datasource=""
+                 description="Date and hour when the claim occurred."/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="SI008">
+    <Parameters>
+      <Parameter id="nClaim" caption="Internal Claim" type="Integer" mode="QueryString" default="" datasource="" condition=""
+                 description="Number identifying the claim. "/>
+      <Parameter id="tcdEffecdate" caption="Payment Date" type="DateTime" mode="QueryString" default="" datasource=""
+                 description="Effective date in which the payment was made"/>
+      <Parameter id="tcnClaim" caption="Claim" type="Integer" mode="QueryString" default="" datasource="" condition=""
+                 description="Number identifying the claim. "/>
+      <Parameter id="nCaseNum" caption="Case number" type="Integer" mode="QueryString" default="" datasource="" condition=""
+                 description="Number identifying the case. "/>
+      <Parameter id="nDeman_type" caption="type of demand" type="Integer" mode="QueryString" default="" datasource="" condition=""
+                 description="type of demand."/>
+      <Parameter id="sClient" caption="Code of client" type="String" mode="QueryString" default="" datasource=""
+                 description="Code of the client."/>
+      <Parameter id="cbePay_Type" caption="Type of Payment" type="Integer" mode="QueryString" default="" datasource="Table192" condition=""
+                 description="Type of payment to be made to the claim."/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="CA033">
+    <Parameters>
+      <Parameter id="cbeBranch" caption="Branch" type="Integer" mode="QueryString" default="" datasource="Table10"
+                 description="Code of The Line of Business."/>
+      <Parameter id="valProduct" caption="Product" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Product to which the policy or certificate belongs."/>
+      <Parameter id="tcnPolicy" caption="Policy" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the policy/ quotation/ proposal."/>
+      <Parameter id="tcnCertif" caption="Certificate" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the Certificate."/>
+      <Parameter id="optExecute" caption="type of execution" type="Integer" mode="QueryString" default="" datasource=""
+                 description="type of execution Proof=0 Definitive = 1"/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="CA034">
+    <Parameters>
+      <Parameter id="cbeBranch" caption="Branch" type="Integer" mode="QueryString" default="" datasource="Table10"
+                 description="Code of The Line of Business."/>
+      <Parameter id="valProduct" caption="Product" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Product to which the policy or certificate belongs."/>
+      <Parameter id="tcnPolicy" caption="Policy" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the policy/ quotation/ proposal."/>
+      <Parameter id="tcnCertif" caption="Certificate" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the Certificate."/>
+      <Parameter id="optExecute" caption="type of execution" type="Integer" mode="QueryString" default="" datasource=""
+                 description="type of execution Proof=0 Definitive = 1"/>
+    </Parameters>
+  </Transaction>
+  <Transaction id="BC003_K">
+    <Parameters>
+      <Parameter id="sOriginalForm" caption="Origin" type="String" mode="QueryString" default="CA025" datasource="" condition=""
+                 description="Code of the form (logical code)."/>
+      <Parameter id="nMainAction" caption="Action" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Number identifying the action."/>
+      <Parameter id="tctClient" caption="Code of client" type="String" mode="QueryString" default="" datasource=""
+                 description="Code of the client."/>
+      <Parameter id="tctClient_Digit" caption="Digit" type="String" mode="QueryString" default="" datasource=""
+                 description="Digit number."/>
+      <Parameter id="cbePerson_typ" caption="Type of person" type="Integer" mode="QueryString" default="" datasource=""
+                 description="Code of the person type."/>
+    </Parameters>
+  </Transaction>
+</Transactions>

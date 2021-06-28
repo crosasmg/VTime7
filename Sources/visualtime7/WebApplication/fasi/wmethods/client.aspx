@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="client.aspx.vb" Inherits="fasihtml5_wmethods_client" %>

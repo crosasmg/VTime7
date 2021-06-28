@@ -1,0 +1,3294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSourceModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="VTIMEDEV" startingon="2015-11-27T14:25:00.6994021-06:00" endingon="2015-11-27T14:35:47.8096061-06:00" source="Oracle" xmlns="urn:InMotionGIT.Database.Model.Data">
+  <Schemas>
+    <ModelSchema name="FRONTOFFICE">
+      <Tables>
+        <Table name="ASSEMBLY" createon="2015-06-23T04:05:18" lastupdateon="2015-06-23T04:05:37">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" scale="5" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="NVARCHAR2" modelkind="NVarChar" size="50" collation="NCHAR_CS" />
+            <Column name="NAMESPACE" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="128" collation="NCHAR_CS" />
+            <Column name="PROJECTID" ordinal="4" kind="NUMBER" modelkind="Numeric" size="22" scale="5" />
+            <Column name="NAMESPACEINDENTY" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="50" collation="NCHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052852" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052877" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052878" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052913" foreigntablename="PROJECT">
+              <KeyColumns>
+                <ConstraintColumn name="PROJECTID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052878" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="AUTHORIZED" comment="Authorized//Authorized" createon="2014-07-16T17:40:04" lastupdateon="2014-07-16T17:46:03">
+          <Columns>
+            <Column name="NAME" comment="Name//Name" ordinal="1" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028553" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028655" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028656" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXAUTHORIZEDINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="NAME" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="BIGTYPES" createon="2014-07-16T17:40:06" lastupdateon="2014-07-16T17:46:03">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="XMLTYPECOL" ordinal="2" kind="XMLTYPE" modelkind="None" size="2000" />
+            <Column name="TDS_TEXT" ordinal="3" kind="LONG" modelkind="AnyText" collation="CHAR_CS" />
+            <Column name="B_POLICY_FILE" ordinal="4" kind="BLOB" modelkind="Binary" size="4000" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028554" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028657" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028657" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="CATEGORY" comment="Category//Category" createon="2014-07-16T17:40:17" lastupdateon="2014-07-16T17:46:05">
+          <Columns>
+            <Column name="CATEGORYID" comment="CategoryId//CategoryId" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NAME" comment="Name//Name" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028558" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CATEGORYID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028662" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CATEGORYID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028663" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CATEGORYID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXCATEGORYINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="CATEGORYID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="CLIENT" comment="Clientes.&#xA;Un registro por cada cliente registrado en el sistema.&#xA;//&#xA;Clients.&#xA;A record per client registered in the system." createon="2015-06-23T04:05:19" lastupdateon="2015-06-23T04:05:33">
+          <Columns>
+            <Column name="SCLIENT" comment="Código que identifica al cliente. // Code of the client." ordinal="1" kind="CHAR" modelkind="Char" size="14" collation="CHAR_CS" nullable="false" />
+            <Column name="SACCOUNT_IN" comment="Indicador de que el cliente tiene una cuenta corriente asociada. // It indicates that the client has a current account." ordinal="2" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="NINVOICING" comment="Campo desincorporado. // FIELD DELETED FROM THE SYSTEM." ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NCIVILSTA" comment="Estado civil del cliente. // Marital status of the client." ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="DAPROBDATE" comment="Fecha de aprobación del balance del cliente. // Date when the balance statement of the client is approved." ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="DBIRTHDAT" comment="Fecha de nacimiento del cliente. // Date of birth of the client." ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SBLOCKADE" comment="Indicador de cliente bloqueado. // Blocked client indicator." ordinal="7" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="NCLASS" comment="Clasificación del cliente. // Classification of the client." ordinal="8" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="SFIRSTNAME" comment="Nombre(s) del cliente. // First name and middle name of the client." ordinal="9" kind="CHAR" modelkind="Char" size="20" collation="CHAR_CS" />
+            <Column name="SLASTNAME" comment="Apellido paterno del cliente. // Last name of the client." ordinal="10" kind="CHAR" modelkind="Char" size="20" collation="CHAR_CS" />
+            <Column name="DCOMPDATE" comment="Fecha del computador en que se crea o actualiza el registro. // Computer date when the record is updated or created." ordinal="11" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="DDEATHDAT" comment="Fecha de muerte, en caso que el cliente haya fallecido. // Date when the client died, in case he/she did." ordinal="12" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="DDRIVERDAT" comment="Fecha de efecto de la licencia de conducir. // Effective date of the driver's license." ordinal="13" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NHEIGHT" comment="Altura del cliente. // Height of the client." ordinal="14" kind="NUMBER" modelkind="Numeric" size="4" scale="2" />
+            <Column name="DINPDATE" comment="Fecha de ingreso al sistema. // Date when the information was first entered into the system." ordinal="15" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NHOUSE_TYPE" comment="Tipo de vivienda.&#xA;Valores posibles según tabla 149.&#xA;//&#xA;Type of housing.&#xA;Sole values as per table 149." ordinal="16" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="SLICENSE" comment="Número de la licencia de conducir. // Number of the driver license." ordinal="17" kind="CHAR" modelkind="Char" size="10" collation="CHAR_CS" />
+            <Column name="NNOTENUM" comment="Número de la nota que contiene el texto libre asociado al cliente. // Number of the note containing the comments related to the client." ordinal="18" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NOFFICE" comment="Código de la sucursal. // Code of the Branch Office." ordinal="19" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NQ_CARS" comment="Cantidad de carros que posee el cliente. // Number of vehicles owned by the client." ordinal="20" kind="NUMBER" modelkind="Numeric" size="2" />
+            <Column name="NQ_CHILD" comment="Cantidad de hijos que tiene el cliente. // Number of children of the client." ordinal="21" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NRATE" comment="Pormilaje de cálculo de la prima (a ser aplicada en las pólizas de crédito y caución). // Rate of calculation (0/000 - per thousand) of the premium ( to be applied in credit policies)." ordinal="22" kind="NUMBER" modelkind="Numeric" size="9" scale="6" />
+            <Column name="STAX_CODE" comment="Código del impuesto. // Tax Code." ordinal="23" kind="CHAR" modelkind="Char" size="12" collation="CHAR_CS" />
+            <Column name="SSEXCLIEN" comment="Sexo del cliente. // Gender of the client." ordinal="24" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="SSMOKING" comment="Indicador de cliente fumador. // Smoker client indicator." ordinal="25" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="SCUIT" comment="Número único de identificación tributaria. // Tax identification number." ordinal="26" kind="CHAR" modelkind="Char" size="14" collation="CHAR_CS" />
+            <Column name="NTITLE" comment="Profesión del cliente. // Profession of the client." ordinal="27" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NUSERCODE" comment="Código del usuario que crea o actualiza el registro. // Code of the user creating or updating the record." ordinal="28" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NWEIGHT" comment="Peso del cliente. // Weight of the client." ordinal="29" kind="NUMBER" modelkind="Numeric" size="5" scale="2" />
+            <Column name="SAUTO_CHAR" comment="Campo desincorporado. // FIELD DELETED FROM THE SYSTEM." ordinal="30" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="SCREDIT_CARD" comment="Indicador de uso de tarjeta de crédito. // Use of credit card indicator ." ordinal="31" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="NECONOMIC_L" comment="Nivel económico del cliente. // Economic standing of the client." ordinal="32" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NEMPL_QUA" comment="Campo desincorporado. // FIELD DELETED FROM THE SYSTEM." ordinal="33" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NIMAGENUM" comment="Número de imagen asociada al siniestro. // Number of the image related to the claim." ordinal="34" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NPERSON_TYP" comment="Código del tipo de persona. // Code of the person type." ordinal="35" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NAREA" comment="Rubro económico del cliente. // Economic area of the client." ordinal="36" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="DDRIVEXPDAT" comment="Fecha de vencimiento de la licencia de conducir. // Expiration date of the driver's license." ordinal="37" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NTYPDRIVER" comment="Código de la clase de licencia de conducir. // Code of the driving license type." ordinal="38" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NDISABILITY" comment="Impedimento físico. // Disability." ordinal="39" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NLIMITDRIV" comment="Restricciones de la licencia de conducir. // Driving license restrictions." ordinal="40" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="SLEGALNAME" comment="Nombre legal del cliente jurídico. // Legal name of the business client." ordinal="41" kind="VARCHAR2" modelkind="VarChar" size="60" collation="CHAR_CS" />
+            <Column name="SLASTNAME2" comment="Apellido materno del cliente. // Last name (2) of the client." ordinal="42" kind="CHAR" modelkind="Char" size="20" collation="CHAR_CS" />
+            <Column name="NHEALTH_ORG" comment="Institución de salud a la que se encuentra afiliado el cliente. // Institution of health to which the client is affiliated." ordinal="43" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NAFP" comment="Campo desincorporado. // FIELD DELETED FROM THE SYSTEM." ordinal="44" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="DWEDD" comment="Fecha de matrimonio del cliente. // Date of wedding of the client." ordinal="45" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SBILL_IND" comment="Indicador de entrega de facturas. // Indicator of delivery of bills." ordinal="46" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="NINCAPACITY" comment="Código del tipo de incapacidad del cliente. // Code of type of disability of the client." ordinal="47" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="DINCAPACITY" comment="Fecha de invalidez del cliente. // Date of disability of the client." ordinal="48" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NINCAP_COD" comment="Causa de invalidez del cliente. // Cause of disability of the client." ordinal="49" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NNATIONALITY" comment="Código de la nacionalidad. // Nationality code." ordinal="50" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="SDIGIT" comment="Digito verificador del codigo de cliente&#xA;//&#xA;Verificator digit of the client code" ordinal="51" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" nullable="false" />
+            <Column name="DRETIREMENT" comment="Fecha en que el cliente pasó de tener estatus de trabajador Activo a trabajador Jubilado. // Date when the status of the client changed from Employed to Retired." ordinal="52" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="DINDEPENDANT" comment="Fecha a partir de la cual el trabajador es Independiente. // Date from which worker is Independent." ordinal="53" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="DDEPENDANT" comment="Fecha a partir de la cual el trabajador es 'dependiente' (está en la nómina de una empresa). // Date from which worker is 'dependent' (works for a company)." ordinal="54" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NMAILINGPREF" comment="Número que identifica la preferencia para el correo. // Number that identifies the mailing preference of the client." ordinal="55" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NLANGUAGE" comment="Lenguaje en que se muestra la información del sistema. // Language in which the system shows the information." ordinal="56" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NSPECIALITY" comment="Actividad laboral del cliente persona natural. // Occupation of the client." ordinal="57" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NCOMP_TYPE" comment="Tipo de compa?ia. Valores posibles segun Table 5530" ordinal="58" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="SCLIENAME" comment="Apellidos y nombres del cliente (en caso de personas) o nombre de la empresa. // Complete name of the client." ordinal="59" kind="CHAR" modelkind="Char" size="63" collation="CHAR_CS" />
+            <Column name="SLEDGERPROCESS" ordinal="60" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="SCOMPLCOD" comment="Concatenación de los campos asociados al giro de negocio ( nBusinessTy + nCommerGrp + nCodKind ). // Concatenation of the fields related to the business draft (nBusinessTy + nCommerGrp + nCodKind)." ordinal="61" kind="CHAR" modelkind="Char" size="6" collation="CHAR_CS" />
+            <Column name="NTYPECOMPANY" comment="Tipo de empresa.&#xA;Valores posibles según tabla de tipo de empresa (TAB_BUSINESS)&#xA;//&#xA;TYPE OF COMPANY.&#xA;Possible VALUES according TO TABLE OF TYPE OF COMPANY (TAB_BUSINESS).&#xA;" ordinal="62" kind="NUMBER" modelkind="Numeric" size="2" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052853" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SCLIENT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052854" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DCOMPDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052855" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NUSERCODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052856" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SDIGIT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052879" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SCLIENT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052880" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DCOMPDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052881" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NUSERCODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052882" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SDIGIT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052883" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SCLIENT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052884" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DCOMPDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052885" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NUSERCODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052886" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SDIGIT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052887" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="SCLIENT" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XIE2CLIENT">
+              <Columns>
+                <IndexColumn name="DBIRTHDAT" />
+              </Columns>
+            </Index>
+            <Index name="XIE3CLIENT">
+              <Columns>
+                <IndexColumn name="SFIRSTNAME" />
+                <IndexColumn name="SLASTNAME" />
+                <IndexColumn name="SLASTNAME2" />
+              </Columns>
+            </Index>
+            <Index name="SYS_C0052887" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="SCLIENT" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="COMPANY" createon="2015-06-23T04:05:28" lastupdateon="2015-06-23T04:05:33">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052857" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052858" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052888" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052889" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052890" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052890" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="DOCUMENTCACHE" createon="2014-11-07T17:59:03" lastupdateon="2014-11-07T19:13:48">
+          <Columns>
+            <Column name="FORMID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="MODELID" ordinal="2" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="USERID" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" nullable="false" />
+            <Column name="PAGE" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="CONTENT" ordinal="5" kind="XMLTYPE" modelkind="None" size="2000" />
+            <Column name="CREATIONDATE" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEDATE" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036444" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="FORMID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036445" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036446" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036447" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="DOCUMENTCACHE_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="FORMID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="DOCUMENTCACHE_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="FORMID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="EVENTLOG" createon="2015-09-02T17:05:03" lastupdateon="2015-09-02T17:05:05">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="FACTTIME" ordinal="2" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="HOSTSOURCE" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="124" collation="NCHAR_CS" />
+            <Column name="TYPETRACE" ordinal="4" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="SOURCE" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="124" collation="NCHAR_CS" />
+            <Column name="ENTRY" ordinal="6" kind="NVARCHAR2" modelkind="NVarChar" size="512" collation="NCHAR_CS" />
+            <Column name="CODE" ordinal="7" kind="NVARCHAR2" modelkind="NVarChar" size="128" collation="NCHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0057840" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057842" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057843" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057844" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057845" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0057845" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="EVENTLOGDETAIL" createon="2015-09-02T17:05:04" lastupdateon="2015-09-02T17:05:06">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="DETAIL" ordinal="2" kind="CLOB" modelkind="AnyText" size="4000" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0057841" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057846" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057847" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057848" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057849" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0057850" foreigntablename="EVENTLOG">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0057849" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="FORM1STORAGE" createon="2015-06-23T04:05:29" lastupdateon="2015-06-23T04:05:34">
+          <Columns>
+            <Column name="FIRSTNAME" ordinal="1" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="LASTNAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="FORMID" ordinal="3" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="MODELID" ordinal="4" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="USERID" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATIONDATE" ordinal="6" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="UPDATEDATE" ordinal="7" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="PAGE" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="CONTENT" ordinal="9" kind="XMLTYPE" modelkind="None" size="2000" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052859" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="FORMID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052860" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052861" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052862" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATIONDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052863" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="UPDATEDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052864" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052891" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="FORMID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052892" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052893" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052894" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATIONDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052895" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="UPDATEDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052896" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052865" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="SYS_NC00010$" />
+                <ConstraintColumn name="CONTENT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052897" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="FORMID" />
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052897" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="FORMID" />
+                <IndexColumn name="MODELID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="GROUPMEMBERS" createon="2014-07-16T17:42:10" lastupdateon="2014-07-16T17:46:07">
+          <Columns>
+            <Column name="GROUPID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="USERID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="CREATORUSERCODE" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="4" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="UPDATEDATE" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028566" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028567" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028673" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028674" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028675" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028675" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="GROUPID" />
+                <IndexColumn name="USERID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="JOBS" createon="2014-07-16T17:42:23" lastupdateon="2015-09-02T12:36:14">
+          <Columns>
+            <Column name="JOBID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="EMAIL" ordinal="2" kind="NCHAR" modelkind="NChar" size="255" collation="NCHAR_CS" />
+            <Column name="SUBJECT" ordinal="3" kind="NCHAR" modelkind="NChar" size="255" collation="NCHAR_CS" />
+            <Column name="BODY" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="1024" collation="NCHAR_CS" />
+            <Column name="FAIL" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="1024" collation="NCHAR_CS" />
+            <Column name="CREATEDBY" ordinal="6" kind="NCHAR" modelkind="NChar" size="255" collation="NCHAR_CS" />
+            <Column name="CREATEDON" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="LASTUPDATEDBY" ordinal="8" kind="NCHAR" modelkind="NChar" size="255" collation="NCHAR_CS" />
+            <Column name="LASTUPDATEDON" ordinal="9" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="STATUS" ordinal="10" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="VIEWEDDATE" ordinal="11" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028572" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="JOBID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028680" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="JOBID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028680" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="JOBID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="LOOKUP" comment="Administra el idioma de aplicativo//Manages application language" createon="2014-07-16T17:42:57" lastupdateon="2014-07-16T17:46:25">
+          <Columns>
+            <Column name="LOOKUPID" comment="Indificador del Lenguaje//Indificador del Lenguaje" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="LANGUAGEID" comment="Nombre de  Languaje//Nombre de  Languaje" ordinal="2" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="CODE" comment="Codigo del lenguaje//Codigo del lenguaje" ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="DESCRIPTION" comment="Descripción del Lenguaje//Descripción" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="QUERYORDER" comment="Orden de la Consulta//Orden de la Consulta" ordinal="5" kind="NUMBER" modelkind="Numeric" size="8" />
+            <Column name="RECORDSTATUS" comment="Estado del registro//Status of the record" ordinal="6" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="LASTUPDATEBY" comment="Actulizado por//Actulizado por" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDON" comment="Ultima actualización//Ultima actualización" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028573" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028574" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028575" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028681" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028682" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028683" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028684" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+                <ConstraintColumn name="LANGUAGEID" />
+                <ConstraintColumn name="CODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028784" foreigntablename="LOOKUPMASTER">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXLOOKUPINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="LOOKUPID" />
+                <IndexColumn name="LANGUAGEID" />
+                <IndexColumn name="CODE" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="LOOKUPMASTER" comment="LookUp Master//LookUp Master" createon="2014-07-16T17:43:03" lastupdateon="2014-07-16T17:46:09">
+          <Columns>
+            <Column name="LOOKUPID" comment="Look Up Id//Look Up Id" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="DESCRIPTION" comment="Description//Description" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="RECORDSTATUS" comment="Record Status//Record Status" ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="LASTUPDATEDBY" comment="Usuario que actualizo por última vez el registro.//Code of the user creating or updating the record." ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDON" comment="Fecha que se actualizo por última vez el registro.//Computer date when the record is updated or created." ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="KEY" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028576" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028577" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DESCRIPTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028685" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028686" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DESCRIPTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028687" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="LOOKUPID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXLOOKUPMASTERINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="LOOKUPID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="METADATA" createon="2015-06-23T04:05:29" lastupdateon="2015-10-11T16:45:51">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="METADATA" ordinal="2" kind="BLOB" modelkind="Binary" size="4000" />
+            <Column name="PROJECTID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="EFFECTIVEDATE" ordinal="4" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SUMMARY" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052866" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052898" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052899" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052914" foreigntablename="PROJECT">
+              <KeyColumns>
+                <ConstraintColumn name="PROJECTID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052899" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="MODEL" comment="test.//Model" createon="2014-11-13T16:37:22" lastupdateon="2014-11-13T16:37:32">
+          <Columns>
+            <Column name="MODELID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" nullable="false" />
+            <Column name="TITLE" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="DESCRIPTION" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="KIND" ordinal="5" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="OWNERID" ordinal="6" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="CATEGORYID" ordinal="7" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="LASTRELEASE" ordinal="8" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="SUMMARY" ordinal="9" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="ISLOCKED" ordinal="10" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="LOCKEDBY" ordinal="11" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="LOCKEDON" ordinal="12" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="CREATEDBY" ordinal="13" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATEDON" ordinal="14" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATEDBY" ordinal="15" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="LASTUPDATEDON" ordinal="16" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="ISDELETED" ordinal="17" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="DELETEDBY" ordinal="18" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="DELETEDON" ordinal="19" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="PUBLISHEDBY" ordinal="20" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="PUBLISHEDON" ordinal="21" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="PASSWORDFORCHANGE" ordinal="22" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036837" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036838" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036839" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="KIND" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036840" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTRELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036841" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036842" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036843" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036844" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="PKMODEL" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXMODELINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="MODELID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="MODELAUDIT" comment="ModelAudit//ModelAudit" createon="2014-07-16T17:43:11" lastupdateon="2014-11-13T16:37:18">
+          <Columns>
+            <Column name="MODELID" comment="ModelId//ModelId" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="CONSECUTIVE" comment="Consecutive//Consecutive" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="CREATEDBY" comment="CreatedBy//CreatedBy" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATEDON" comment="CreatedOn//CreatedOn" ordinal="4" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="OPERATION" comment="Operation//Operation" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="RELEASE" comment="Release//Release" ordinal="6" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="SUMMARY" comment="Comment//Summary" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="LABEL" comment="Label//Label" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028586" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028587" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CONSECUTIVE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028588" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028589" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028590" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPERATION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028697" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028698" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CONSECUTIVE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028699" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028700" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028701" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPERATION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028702" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+                <ConstraintColumn name="CONSECUTIVE" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXMODELAUDITINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="MODELID" />
+                <IndexColumn name="CONSECUTIVE" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="MODELDEPENDENCY" comment="ModelDependency//ModelDependency" createon="2014-07-16T17:31:18" lastupdateon="2014-07-16T17:31:18">
+          <Columns>
+            <Column name="MODELID" comment="ModelId//ModelId" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="RELEASE" comment="Release//Release" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="CONSECUTIVE" comment="Consecutive//Consecutive" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="RELATEDKIND" comment="RelatedKind//RelatedKind" ordinal="4" kind="NUMBER" modelkind="Numeric" size="3" nullable="false" />
+            <Column name="RELATEDMODELID" comment="RelatedModelId//RelatedModelId" ordinal="5" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" />
+            <Column name="RELATEDRELEASE" comment="RelatedRelease//RelatedRelease" ordinal="6" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="RELATEDLINK" comment="RelatedLink//RelatedLink" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDBY" comment="LastUpdatedBy//LastUpdatedBy" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="LASTUPDATEDON" comment="LastUpdatedOn//LastUpdatedOn" ordinal="9" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028538" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028539" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028540" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CONSECUTIVE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028541" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELATEDKIND" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028542" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028543" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes />
+        </Table>
+        <Table name="MODELSPECIFICATION" comment="ModelSpecification//ModelSpecification" createon="2014-07-16T17:31:22" lastupdateon="2014-10-28T18:05:39">
+          <Columns>
+            <Column name="MODELID" comment="ModelId//ModelId" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="RELEASE" comment="Release//Release" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="SUMMARY" comment="Comment//Summary" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="LABEL" comment="Label//Label" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDBY" comment="LastUpdatedBy//LastUpdatedBy" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="LASTUPDATEDON" comment="LastUpdatedOn//LastUpdatedOn" ordinal="6" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="PUBLISHEDBY" comment="PublishedBy//PublishedBy" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="PUBLISHEDON" comment="PublishedOn//PublishedOn" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SPECIFICATION" ordinal="9" kind="BLOB" modelkind="Binary" size="4000" />
+            <Column name="EXTEND" ordinal="10" kind="BLOB" modelkind="Binary" size="4000" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028544" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028545" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028546" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028547" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes />
+        </Table>
+        <Table name="MODELTAGS" comment="ModelTags//ModelTags" createon="2014-07-16T17:43:15" lastupdateon="2014-11-13T16:37:18">
+          <Columns>
+            <Column name="MODELID" comment="ModelId//ModelId" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="TAGID" comment="TagId//TagId" ordinal="2" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028591" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028592" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028703" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028704" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028705" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028789" foreigntablename="TAGS">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="TAGID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXMODELTAGSINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="MODELID" />
+                <IndexColumn name="TAGID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="NAVIGATIONDIRECTORY" comment="Navigation Directory//Navigation Directory" createon="2014-07-16T17:43:17" lastupdateon="2014-11-26T10:52:37">
+          <Columns>
+            <Column name="ID" comment="ID//ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="NAME" comment="Nombre//Name Navigation Directory" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="URLPATH" comment="Ruta//Url Path" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="DOCUMENTTYPE" comment="Tipo de Documento//Document Type" ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="CATEGORYCODE" comment="Codigo de Categoria//Category Code" ordinal="5" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="IMAGEFILE" comment="Archivo Imagen//Imagen File" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+            <Column name="DATAPUBLISHED" comment="Fecha de Publicacion//Data Published" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="ALLOWROLES" comment="Roles Permitidos//Allow Roles" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="STATUS" comment="Estatus//Status" ordinal="9" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="CREATORUSERCODE" comment="Codigo de Usuario de Creacion//Creator User Date" ordinal="10" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="CREATIONDATE" comment="Fecha de Actualizacion//Creation Date" ordinal="11" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" comment="Codigo del Usuario que actualizo//Update User Code" ordinal="12" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="UPDATEDATE" comment="Fecha de Actualizacion//Update Date" ordinal="13" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028593" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028706" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028707" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDNAVINDIINX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="NAVIGATIONDIRECTORYDESC" comment="Navigation Directory Desc//Navigation Directory Desc" createon="2014-07-16T17:43:20" lastupdateon="2014-07-16T17:46:26">
+          <Columns>
+            <Column name="ID" comment="Identificador//ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="LANGUAGEID" comment="Identificador del Lenguaje//Languaje ID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="1" nullable="false" />
+            <Column name="TITLE" comment="Titulo//Title" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="120" collation="CHAR_CS" />
+            <Column name="DESCRIPTION" comment="Descripcion//Description" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="CREATIONDATE" comment="Fecha de Creacion//Creation Date" ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="CREATORUSERCODE" comment="Codigo del Usuario de Creacion//Creator User Code" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="UPDATEUSERCODE" comment="Codigo del Usuario de Actualizacion//Update User Code" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="UPDATEDATE" comment="Fecha de Actualizacion//Update Date" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028594" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028595" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028708" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028709" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028710" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028790" foreigntablename="NAVIGATIONDIRECTORY">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINNAVIGATIONDIDESCIN" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="OPERATIONLOG" comment="Registro de Operaciónes//Registro de Operaciónes" createon="2014-07-16T17:43:23" lastupdateon="2014-07-16T17:46:13">
+          <Columns>
+            <Column name="ID" comment="Identificación//Identificación" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="WHEN" comment="Fecha de la operación//Fecha de la operación" ordinal="2" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="OPERATION" comment="Tipo de operación reailzada//Tipo de operación reailzada" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="40" collation="CHAR_CS" />
+            <Column name="ENTRY" comment="Detalle de la operación//Detalle de la operación" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="100" collation="CHAR_CS" />
+            <Column name="WITHERRORS" comment="Resutado con error//Resutado con error" ordinal="5" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="FILENAME" comment="Archivo XML usado//Archivo XML Usado" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="200" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028596" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028711" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028712" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXOPERATIONLOGINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="OWNERS" comment="Owners//Owners" createon="2014-11-13T16:34:28" lastupdateon="2014-11-13T16:34:35">
+          <Columns>
+            <Column name="OWNERID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036835" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OWNERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036836" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="OWNERID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXOWNERSINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="OWNERID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="PAGE" comment="Información de las paginas diseñadas.//Información de las paginas diseñadas." createon="2014-07-16T17:43:39" lastupdateon="2015-09-28T02:16:57">
+          <Columns>
+            <Column name="ID" comment="Consecutivo//Identificator of Page" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="TITLE" comment="Titulo de Pagina//Title of Page" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="USERID" comment="Identificador de Usuario//Identificator of the User" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="CREATEDDATE" comment="Fecha Creación//Create Date ot Page" ordinal="4" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATE" comment="Ultima Actualizacion//Last Update of Page" ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="VERSIONNO" comment="Version Numéro//Version Number" ordinal="6" kind="NUMBER" modelkind="Numeric" size="8" nullable="false" />
+            <Column name="LAYOUTTYPE" comment="Tipo de Disposición//Layout Type of Page" ordinal="7" kind="NUMBER" modelkind="Numeric" size="8" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028598" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028600" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028601" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028602" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="VERSIONNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028603" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LAYOUTTYPE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028715" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028716" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TITLE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028717" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028718" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028719" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="VERSIONNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028720" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LAYOUTTYPE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028721" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028791" foreigntablename="USERMEMBER">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="USERID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXPAGEINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="PAGETRANS" comment="Información de las paginas diseñadas.//Información de las paginas diseñadas." createon="2015-09-21T13:45:54" lastupdateon="2015-09-21T13:46:32">
+          <Columns>
+            <Column name="ID" comment="Consecutivo//Identificator of Page" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="LANGUAGEID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="3" nullable="false" />
+            <Column name="TITLE" comment="Titulo de Pagina//Title of Page" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATEDDATE" comment="Fecha Creación//Create Date ot Page" ordinal="4" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATE" comment="Ultima Actualizacion//Last Update of Page" ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0059125" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059126" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059127" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TITLE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059128" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059129" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059130" foreigntablename="PAGE">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKPAGETRANS" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="POLL" createon="2014-10-14T15:35:57" lastupdateon="2014-10-14T15:36:01">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="STARDATE" ordinal="2" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="EXPIRDATE" ordinal="3" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="PROFILE" ordinal="4" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="RESPONSE1" ordinal="5" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="RESPONSE2" ordinal="6" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="RESPONSE3" ordinal="7" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="RESPONSE4" ordinal="8" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="RESPONSE5" ordinal="9" kind="NUMBER" modelkind="Numeric" size="22" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0034816" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034817" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="STARDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034818" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PROFILE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034824" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034825" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="STARDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034826" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PROFILE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034827" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034828" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="STARDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034829" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PROFILE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034830" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0034830" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="POLLDETAIL" createon="2014-10-14T15:35:59" lastupdateon="2014-10-14T15:36:03">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="LANGUAGE" ordinal="2" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="QUESTION" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="200" collation="NCHAR_CS" nullable="false" />
+            <Column name="OPTION1" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="60" collation="NCHAR_CS" nullable="false" />
+            <Column name="OPTION2" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="60" collation="NCHAR_CS" nullable="false" />
+            <Column name="OPTION3" ordinal="6" kind="NVARCHAR2" modelkind="NVarChar" size="60" collation="NCHAR_CS" />
+            <Column name="OPTION4" ordinal="7" kind="NVARCHAR2" modelkind="NVarChar" size="60" collation="NCHAR_CS" />
+            <Column name="OPTION5" ordinal="8" kind="NVARCHAR2" modelkind="NVarChar" size="60" collation="NCHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0034819" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034820" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034821" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="QUESTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034822" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION1" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034823" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION2" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034831" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034832" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034833" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="QUESTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034834" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION1" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034835" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION2" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034836" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034837" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034838" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="QUESTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034839" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION1" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034840" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="OPTION2" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034841" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="LANGUAGE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034842" foreigntablename="POLL">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0034841" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="LANGUAGE" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="PRODUCTO" createon="2015-06-23T04:00:44" lastupdateon="2015-08-05T18:03:50">
+          <Columns>
+            <Column name="Id" ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="NOMBRE" ordinal="2" kind="NVARCHAR2" modelkind="NVarChar" size="200" collation="NCHAR_CS" nullable="false" />
+            <Column name="Price" ordinal="3" kind="NUMBER" modelkind="Numeric" size="18" scale="2" />
+            <Column name="Category" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="200" collation="NCHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052817" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="Id" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052818" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NOMBRE" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes />
+        </Table>
+        <Table name="PROJECT" createon="2015-06-23T04:05:29" lastupdateon="2015-10-10T23:37:14">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="NVARCHAR2" modelkind="NVarChar" size="50" collation="NCHAR_CS" nullable="false" />
+            <Column name="COMPANYID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052867" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052868" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052869" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="COMPANYID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052900" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052901" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052902" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="COMPANYID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052903" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052915" foreigntablename="COMPANY">
+              <KeyColumns>
+                <ConstraintColumn name="COMPANYID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052903" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="PROJECTMODELEXTEND" createon="2015-06-23T04:05:30" lastupdateon="2015-11-27T13:35:55">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="MODELEXTEND" ordinal="2" kind="BLOB" modelkind="Binary" size="4000" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052870" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052904" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052905" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="PROJECTMODELEXTEND_R01" foreigntablename="PROJECT">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052905" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="PROJECTSETTINGS" createon="2015-06-23T04:05:30" lastupdateon="2015-10-11T16:46:50">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="PSCOLUMN" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="LOOKUP" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="PROJECTID" ordinal="5" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="DOMAIN" ordinal="6" kind="NVARCHAR2" modelkind="NVarChar" size="128" collation="NCHAR_CS" />
+            <Column name="TYPE" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="CHILDS" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="1024" collation="CHAR_CS" />
+            <Column name="MEMBEROVERRIDES" ordinal="9" kind="VARCHAR2" modelkind="VarChar" size="1024" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052871" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052872" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052906" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052907" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052908" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052916" foreigntablename="PROJECT">
+              <KeyColumns>
+                <ConstraintColumn name="PROJECTID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052908" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="ROLE" comment="Tabla que administra los roles del membership en InMotionGIT//Table containing the application role" createon="2014-07-16T17:43:42" lastupdateon="2014-10-16T13:56:39">
+          <Columns>
+            <Column name="ROLEID" comment="Identificación Rol//Id Rol" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="ROLENAME" comment="Nombre del rol//Role Name" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="ISBACKOFFICESOURCE" comment="Es Rol de Backoffice//Is BackOffice Source" ordinal="3" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="SECURITYLEVEL" ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028604" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028605" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLENAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028722" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028723" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLENAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028724" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXROLEINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ROLEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="SMARTLIBRARY" createon="2015-05-28T19:10:32" lastupdateon="2015-10-13T21:05:25">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="TYPEID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="3" />
+            <Column name="NAME" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="120" collation="CHAR_CS" />
+            <Column name="DESCRIPTION" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDBY" ordinal="5" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="LASTUPDATEDFROM" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" />
+            <Column name="LASTUPDATEDON" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SPECIFICATION" ordinal="8" kind="LONG" modelkind="AnyText" collation="CHAR_CS" />
+            <Column name="RECORDSTATUS" ordinal="9" kind="NUMBER" modelkind="Numeric" size="3" />
+            <Column name="READOPERATION" ordinal="10" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="CALCULATEOPERATION" ordinal="11" kind="NUMBER" modelkind="Numeric" size="1" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SMARTLIBRARY_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SMARTLIBRARY_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="SPECIALPAGE" createon="2014-10-16T13:51:34" lastupdateon="2014-10-16T13:52:36">
+          <Columns>
+            <Column name="PAGEID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="LINK" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="300" collation="CHAR_CS" />
+            <Column name="CREATEDBY" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATEDON" ordinal="4" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATEDBY" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="LASTUPDATEDON" ordinal="6" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="ISDELETED" ordinal="7" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="DELETEDBY" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" />
+            <Column name="DELETEDON" ordinal="9" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0034924" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034925" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034926" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034927" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034928" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034945" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034946" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034947" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034948" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034949" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034950" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0034950" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="PAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="SPECIALPAGETRANS" createon="2014-10-16T13:51:36" lastupdateon="2014-10-16T13:52:39">
+          <Columns>
+            <Column name="PAGEID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="LANGUAGEID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="DESCRIPTION" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="60" collation="CHAR_CS" nullable="false" />
+            <Column name="SHORTDESCRIPTION" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="60" collation="CHAR_CS" />
+            <Column name="CREATEDBY" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="CREATEDON" ordinal="6" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATEDBY" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="128" collation="CHAR_CS" nullable="false" />
+            <Column name="LASTUPDATEDON" ordinal="8" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0034929" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034930" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034931" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DESCRIPTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034932" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034933" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034934" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034935" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034951" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034952" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034953" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="DESCRIPTION" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034954" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034955" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034956" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDBY" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034957" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATEDON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034958" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0034964" foreigntablename="SPECIALPAGE">
+              <KeyColumns>
+                <ConstraintColumn name="PAGEID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="PAGEID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0034958" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="PAGEID" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TABCATEGORY" createon="2015-09-22T17:54:32" lastupdateon="2015-09-22T17:58:17">
+          <Columns>
+            <Column name="CategoryCode" comment="&lt;s lang='en' comment='Code that identifies the role associated to the document.'/&gt;&#xA;   &lt;s lang='sp' comment='Código que identifica el rol asociado al documento. '/&gt;" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="ReservedValue" comment="&lt;s lang='en' comment='It indicates that this value is reserved. If it is changed, it will have consequences in the normal behavior of the system. It allows to restrict the use of the information in the system.'/&gt;&#xA;   &lt;s lang='sp' comment='Indica que el valor es reservado. Si se cambia, puede influir en el correcto funcionamiento del sistema. Permite restringir el uso de la información en el sistema.'/&gt;&#xA;   &lt;lookup table='RecordStatus' type='FixedReserved'/&gt;" ordinal="2" kind="NUMBER" modelkind="Numeric" size="4" nullable="false" />
+            <Column name="RecordStatus" comment="&lt;s lang='en' comment='Status of the record. It allows to restrict the use of the information in the system.'/&gt;&#xA;   &lt;s lang='sp' comment='Estado del registro. Permite restringir el uso de la información en el sistema.'/&gt;" ordinal="3" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="CreatorUserCode" comment="&lt;s lang='en' comment='Code of the user who creates the information. Information for audit.' friendlyname='Creator user code'/&gt;&#xA;   &lt;s lang='sp' comment='Código del usuario que crea la información. Información para auditoria.' friendlyname='Código del usuario que creó los datos'/&gt;&#xA;   &lt;settings sequence='no' audit='author'/&gt;" ordinal="4" kind="CHAR" modelkind="Char" size="20" collation="CHAR_CS" nullable="false" />
+            <Column name="CreationDate" comment="&lt;s lang='en' comment='Date when the information is created. Information for audit.' friendlyname='Data creation date'/&gt;&#xA;   &lt;s lang='sp' comment='Fecha en que se crea la información. Información para auditoría.' friendlyname='Fecha de creación de los datos'/&gt;&#xA;   &lt;settings sequence='no' audit='DateCreated'/&gt;" ordinal="5" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="UpdateUserCode" comment="&lt;s lang='en' comment='Code of the user who updates the information. Information for audit. When the record is created, this field has the code of the user who creates the information.' friendlyname='Update user code'/&gt;&#xA;   &lt;s lang='sp' comment='Código del usuario que actualiza la información.  Información para auditoria. Cuando el registro se crea, este campo tiene el código del usuario que crea la información.' friendlyname='Código del usuario que modificó los datos'/&gt;&#xA;   &lt;settings sequence='no' audit='update'/&gt;" ordinal="6" kind="CHAR" modelkind="Char" size="20" collation="CHAR_CS" nullable="false" />
+            <Column name="UpdateDate" comment="&lt;s lang='en' comment='Date when the information is updated. Information for audit. When the record is created, this field has the date of creation.' friendlyname='Data update date'/&gt;&#xA;   &lt;s lang='sp' comment='Fecha en la que se modifica la información. Información para auditoría. Cuando el registro se crea, este campo tiene la fecha de creación.' friendlyname='Fecha de modificación de los datos'/&gt;&#xA;   &lt;settings sequence='no' audit='DateUpdate'/&gt;" ordinal="7" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0059202" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CategoryCode" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059203" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ReservedValue" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059204" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RecordStatus" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059205" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CreatorUserCode" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059206" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CreationDate" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059207" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="UpdateUserCode" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059208" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="UpdateDate" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059211" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CategoryCode" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0059211" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="CategoryCode" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TABLANGUAGE" createon="2015-09-22T17:55:29" lastupdateon="2015-09-22T18:22:39">
+          <Columns>
+            <Column name="LANGUAGECODE" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="RECORDSTATUS" ordinal="2" kind="NUMBER" modelkind="Numeric" size="22" />
+            <Column name="CREATORUSERCODE" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="4" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="UPDATEDATE" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="CULTURECODE" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="5" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0059213" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059214" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0059214" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="LANGUAGECODE" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TABLEORIGIEN" createon="2015-06-23T04:05:30" lastupdateon="2015-11-27T13:15:26">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="ASSEMBLYID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="NAME" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="128" collation="NCHAR_CS" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052873" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052874" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ASSEMBLYID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052875" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052909" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052910" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="ASSEMBLYID" />
+                <ConstraintColumn name="NAME" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="TABLEORIGIEN_R01" foreigntablename="ASSEMBLY">
+              <KeyColumns>
+                <ConstraintColumn name="ASSEMBLYID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052910" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="ASSEMBLYID" />
+                <IndexColumn name="NAME" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TAGS" comment="Tags//Tags" createon="2014-07-16T17:43:47" lastupdateon="2014-07-16T17:46:18">
+          <Columns>
+            <Column name="TAGID" comment="TagId//TagId" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="NAME" comment="Name//Name" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028606" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028725" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028726" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="TAGID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXTAGSINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="TAGID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TESTTYPE" createon="2015-09-25T08:49:16" lastupdateon="2015-09-25T08:55:46">
+          <Columns>
+            <Column name="SCALE" ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="ID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" />
+          </Columns>
+          <Constraints />
+          <Indexes />
+        </Table>
+        <Table name="TRACKING" createon="2015-06-23T04:05:30" lastupdateon="2015-06-23T04:05:36">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="FACTTIME" ordinal="2" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="HOSTSOURCE" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="124" collation="CHAR_CS" />
+            <Column name="FORMPATH" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="URLREFERRER" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="USERAGENT" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+            <Column name="FORMID" ordinal="7" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0052876" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052911" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0052912" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0052912" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="TRANSLANGUAGE" createon="2015-09-22T17:55:56" lastupdateon="2015-09-22T18:07:12">
+          <Columns>
+            <Column name="LANGUAGECODE" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="LANGUAGEID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="DESCRIPTION" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="40" collation="NCHAR_CS" />
+            <Column name="SHORTDESCRIPTION" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATORUSERCODE" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" ordinal="7" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="UPDATEDATE" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0059215" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059216" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059217" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0059218" foreigntablename="TABLANGUAGE">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="LANGUAGECODE" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0059217" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="LANGUAGECODE" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERGROUPS" createon="2014-07-16T17:43:49" lastupdateon="2014-07-16T17:46:18">
+          <Columns>
+            <Column name="GROUPID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="OWNERID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="DESCRIPTION" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="40" collation="CHAR_CS" />
+            <Column name="CREATORUSERCODE" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" ordinal="6" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="UPDATEDATE" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028607" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028727" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028728" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="GROUPID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028728" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="GROUPID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERMEMBER" comment="Usuarios registrados//Table containing the information of the user in the memberships" createon="2014-07-16T17:43:50" lastupdateon="2014-10-16T13:55:50">
+          <Columns>
+            <Column name="USERID" comment="Identificación del Usuario//User ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="REALUSERNAME" comment="Nombre Real de Usuario//Real User Name" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="USERNAME" comment="Nombre Usuario//User Name" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="USERPWD" comment="Clave de acceso//Password" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="EMAIL" comment="E-Mail del Usuario//E-Mail the User" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="PWDQUESTION" comment="Pregunta Secreta//Password Question" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="PWDANSWER" comment="Repuesta Secreta//Password Answare" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="LASTPWDCHANGEDDATE" comment="Ultimo Cambio de Clave de Usuario//Last Password Change Date the User" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="LASTLOGINDATE" comment="Ultimo Inicio de Seccion  de Usuario//Last Login Date the User" ordinal="9" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="LASTLOCKEDOUTDATE" comment="Ultimo Bloqueo de Usuario//Last Lockedout Date the User" ordinal="10" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="LASTACTIVITYDATE" comment="Ultima Actividad de Usuario//Last Activity Date  the User" ordinal="11" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="CREATIONDATE" comment="Fecha de Creacion de Usuario//Create Date the User" ordinal="12" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="ISONLINE" comment="Está Linea el Usuario//Is Online the User" ordinal="13" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISLOCKEDOUT" comment="Está Bloqueada el Usuario//Is Lockedout the User" ordinal="14" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISAPPROVED" comment="Está Aprobado el Usuario//Is Approved the User" ordinal="15" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="FAILEDPWDAPTWDSSRT" comment="Fecha Fallo Inicio de Seccion del Usuario//Failed Passsword Attempt Windows Start the User" ordinal="16" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="FAILEDPWDAPTCOUNT" comment="Intentos Fallidos de Clave del Usuario//Failed Password Attempt Count the User" ordinal="17" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="FAILEDPWDANSWERAPTWDSSTR" comment="Fecha de Fallo Respuesta Secreta del Usuario//Failed Password Answer Attempt Windows Start the User" ordinal="18" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="FAILEDPWDANSWERAPTCOUNT" comment="Intentos Fallidos de Respuesta Secreta del Usuario//Failed Password Answer Attemp Count" ordinal="19" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="ISFIRSTVISIT" comment="Primera Visita del Usuario//Is Firt Visit the User" ordinal="20" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="USERTYPE" comment="Tipo de Usuario//User Type" ordinal="21" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="USERLANGUAGE" comment="Lenguaje //Language" ordinal="22" kind="VARCHAR2" modelkind="VarChar" size="100" collation="CHAR_CS" />
+            <Column name="LANGUAGENAME" comment="Nombre del Lenguaje//Language Name" ordinal="23" kind="VARCHAR2" modelkind="VarChar" size="100" collation="CHAR_CS" />
+            <Column name="LANGUAGEID" comment="Identificación Lenguaje//Language ID" ordinal="24" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="THEME" comment="Tema//Theme for the User Application" ordinal="25" kind="VARCHAR2" modelkind="VarChar" size="100" collation="CHAR_CS" />
+            <Column name="CLIENTID" comment="Identificación del Cliente //Client ID" ordinal="26" kind="CHAR" modelkind="Char" size="14" collation="CHAR_CS" />
+            <Column name="PRODUCERID" comment="Identificación Productor//Producer ID" ordinal="27" kind="CHAR" modelkind="Char" size="14" collation="CHAR_CS" />
+            <Column name="OLDEMAIL" comment="Correo Electrónico Viejo//Old E-Email the User" ordinal="28" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="FIRSTTIMEPASSWORDCHANGE" comment="Fecha de primer cambio de clave//Firt Time Password Chage the User" ordinal="29" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ACCOUNTLOCKOUTNOTIFICATION" comment="Notificación de bloqueo de cuentas//Acount Lockout Notification" ordinal="30" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="FIRSTNAME" comment="Primer Nombre//Firts Name the User" ordinal="31" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="SURNAME" comment="Apellido//Sour Name the User" ordinal="32" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="SECONDLASTNAME" comment="Segundo Apellido//Segundo Apellido" ordinal="33" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="LASTNAME" comment="Apellidos//Last Name the User" ordinal="34" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="FULLNAME" comment="Nombre Completo//Full Name the User" ordinal="35" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="DATEOFBIRTH" comment="Cumpleaños//Date of Birth the User" ordinal="36" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="GENDER" comment="Genero//Gender" ordinal="37" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="COMPANYNAME" comment="Nombre Compañia//Company Name" ordinal="38" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="ADDRESSHOME" comment="Direccion de domicilio//Andress Home" ordinal="39" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="CITY" comment="Ciudad//Cidade" ordinal="40" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="STATE" comment="Estado//State" ordinal="41" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="COUNTRY" comment="País//Country" ordinal="42" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="EXTENSIONNUMBER" comment="Número Extensión//Extension Number" ordinal="43" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="AREANUMBER" comment="Número Area//Area Number" ordinal="44" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="TELEPHONENUMBER" comment="Número Teléfono//Telephone Number" ordinal="45" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="ISINACTIVE" comment="Inactivo//Is Inactive" ordinal="46" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="PASSWORDONE" comment="Clave Uno//Password One the User" ordinal="47" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="PASSWORDTWO" comment="Clave Dos//Password Two the User" ordinal="48" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="PASSWORDTHREE" comment="Clave Tres//Password Three the User" ordinal="49" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="CURRENTPAGEID" comment="Identificador página actual //Identificador página actual " ordinal="50" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="ISADMINISTRATOR" comment="Indica si el usuario posee privilegios de admniistración//Is Administrator" ordinal="51" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISEMPLOYEE" comment="Indica si el usuario posee privilegios de empleado//Is Employee" ordinal="52" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ALLOWSCHEDULER" comment="Indica si el usuario posee puede usar el calendario//Allow Scheduler" ordinal="53" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISANONYMOUS" comment="Indica si el usuario es anonimo//Indica si el usuario es anonimo" ordinal="54" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="SECURITYLEVEL" ordinal="55" kind="NUMBER" modelkind="Numeric" size="5" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028608" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028729" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028730" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXUSERMEMBERINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="USERID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERMEMBERROLE" comment="Roles asociados a un usuario//Tabla que contiene la vinculacion de los usuario y los roles de un aplicacion" createon="2014-07-16T17:43:58" lastupdateon="2014-07-16T17:46:26">
+          <Columns>
+            <Column name="USERID" comment="Indentificación del Usuario//User Id" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="ROLEID" comment="Identificación del Rol//Rol Id" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028609" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028610" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028731" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028732" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028733" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028792" foreigntablename="ROLE">
+              <KeyColumns>
+                <ConstraintColumn name="ROLEID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ROLEID" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028793" foreigntablename="USERMEMBER">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="USERID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXUSERMEMBERROLEINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="USERID" />
+                <IndexColumn name="ROLEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERRELATIONSHIP" createon="2014-07-16T17:44:01" lastupdateon="2014-07-16T17:46:19">
+          <Columns>
+            <Column name="USERID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="USERINDICATOR" ordinal="2" kind="NUMBER" modelkind="Numeric" size="1" nullable="false" />
+            <Column name="RELATIONSHIPUSERID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="RELATIONSHIPTYPE" ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="ALLOWQUERY" ordinal="5" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ALLOWCREATE" ordinal="6" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ALLOWCANCEL" ordinal="7" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ALLOWCOMPLETED" ordinal="8" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ALLOWREASSIGN" ordinal="9" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="CREATORUSERCODE" ordinal="10" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="11" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" ordinal="12" kind="NVARCHAR2" modelkind="NVarChar" size="20" collation="NCHAR_CS" />
+            <Column name="UPDATEDATE" ordinal="13" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028611" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028612" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERINDICATOR" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028613" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELATIONSHIPUSERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028734" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028735" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERINDICATOR" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028736" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELATIONSHIPUSERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028737" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+                <ConstraintColumn name="USERINDICATOR" />
+                <ConstraintColumn name="RELATIONSHIPUSERID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028737" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="USERID" />
+                <IndexColumn name="USERINDICATOR" />
+                <IndexColumn name="RELATIONSHIPUSERID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERSETTING" comment="Gestiona la información En cuanto a la página actual, el usuario//Manages information regarding the current page the user" createon="2014-07-16T17:44:03" lastupdateon="2014-07-16T17:46:26">
+          <Columns>
+            <Column name="USERID" comment="Identificator //Identificator of UserSetting" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="CURRENTPAGEID" comment="Identificador de Pagina Actual del Usuario//Identificator of Current Page of the User" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028614" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028738" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028739" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028794" foreigntablename="USERMEMBER">
+              <KeyColumns>
+                <ConstraintColumn name="USERID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="USERID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXUSERSETTINGINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="USERID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="USERSSECURITYTRACE" comment="Usuarios de Seguridad Rastro//Users Security Trace" createon="2014-07-16T17:44:05" lastupdateon="2014-07-16T17:46:20">
+          <Columns>
+            <Column name="ID" comment="Identificador//Identifier" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="IPADDRESS" comment="Direccion IP//IP Address" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="EMAIL" comment="Email//Email" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="STATE" comment="Estado//State" ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="RESULT" comment="Resultado//Result" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="EFFECTDATE" comment="Fecha Efectiva//Effect Date" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028615" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028740" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028741" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXUSERSSECURITYTRACEINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="VERSION" comment="Version//Version" createon="2014-07-16T17:44:26" lastupdateon="2014-07-16T17:46:20">
+          <Columns>
+            <Column name="RELEASE" comment="Release//Release" ordinal="1" kind="NUMBER" modelkind="Numeric" size="5" nullable="false" />
+            <Column name="EFFECTIVEDATE" comment="EffectiveDate//EffectiveDate" ordinal="2" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="CANCELLATIONDATE" comment="CancellationDate//CancellationDate" ordinal="3" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="COMMENTS" comment="CancellationDate//Comments" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028616" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028617" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="EFFECTIVEDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028742" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028743" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="EFFECTIVEDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028744" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXVERSIONINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="RELEASE" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WEBAPIAUTHENTICATION" createon="2015-07-16T09:33:25" lastupdateon="2015-07-16T09:35:49">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="HOST" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="56" collation="CHAR_CS" />
+            <Column name="STATE" ordinal="3" kind="NUMBER" modelkind="Numeric" size="1" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0054379" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054380" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0054380" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WEBAPIAUTHORIZATION" createon="2015-07-16T09:45:13" lastupdateon="2015-07-16T10:02:52">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="WEBAPIAUTHENTICATIONID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="WEBAPISTOREDPROCEDUREID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="STATE" ordinal="4" kind="NUMBER" modelkind="Numeric" size="1" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0054383" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054384" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="WEBAPIAUTHENTICATIONID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054385" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="WEBAPISTOREDPROCEDUREID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054386" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="WEBAPIAUTHENTICATIONID" />
+                <ConstraintColumn name="WEBAPISTOREDPROCEDUREID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="FK_AUTHORIZACION" foreigntablename="WEBAPIAUTHENTICATION">
+              <KeyColumns>
+                <ConstraintColumn name="WEBAPIAUTHENTICATIONID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="FK_STOREDPROCEDURE" foreigntablename="WEBAPISTOREDPROCEDURE">
+              <KeyColumns>
+                <ConstraintColumn name="WEBAPISTOREDPROCEDUREID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0054386" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="WEBAPIAUTHENTICATIONID" />
+                <IndexColumn name="WEBAPISTOREDPROCEDUREID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WEBAPILOG" createon="2015-07-23T16:33:15" lastupdateon="2015-07-30T08:51:34">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="HOST" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" />
+            <Column name="TIME" ordinal="3" kind="NVARCHAR2" modelkind="NVarChar" size="256" collation="NCHAR_CS" />
+            <Column name="STATUS" ordinal="4" kind="NVARCHAR2" modelkind="NVarChar" size="256" collation="NCHAR_CS" />
+            <Column name="STOREDPROCEDURENAME" ordinal="5" kind="NVARCHAR2" modelkind="NVarChar" size="256" collation="NCHAR_CS" />
+            <Column name="CREATIONDATE" ordinal="6" kind="TIMESTAMP(0)" modelkind="None" size="7" />
+            <Column name="COUNTROW" ordinal="7" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="PARAMETERS" ordinal="8" kind="NVARCHAR2" modelkind="NVarChar" size="1024" collation="NCHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0054865" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054866" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0054866" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WEBAPISTOREDPROCEDURE" createon="2015-07-16T09:38:25" lastupdateon="2015-07-16T09:39:16">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="STOREDPROCEDURENAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="156" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0054381" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0054382" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0054382" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WIDGET" comment="Administra los widget en la aplicacion//Administra los widget en la aplicacion" createon="2014-07-16T17:44:28" lastupdateon="2014-07-16T17:46:22">
+          <Columns>
+            <Column name="ID" comment="Identificador//Identifier of Wiget" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="NAME" comment="Nombre del Widget//Name of Widget" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="URL" comment="Url del Widget//Url of Widget" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" nullable="false" />
+            <Column name="DESCRIPTION" comment="Descripcion del Widget//Description of Widget" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="VERSIONNO" comment="Número de Version//Number Version of  Widget" ordinal="5" kind="NUMBER" modelkind="Numeric" size="3" nullable="false" />
+            <Column name="ISDEFAULT" comment="Es Default del Widget//Is Default of Widget" ordinal="6" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" nullable="false" />
+            <Column name="ICON" comment="Icono del Widget//Icon of Widget" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="4000" collation="CHAR_CS" nullable="false" />
+            <Column name="ORDERNO" comment="Número Orden//Orden Number of Widget" ordinal="8" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="ISANONYMOUALLOW" comment="Permitido Anonimo //Is Anonymou Allow of Widget" ordinal="9" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="MODELID" comment="Id Modelo//Id Modelo" ordinal="10" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" />
+            <Column name="DEFAULTSTATE" comment="Estado Default del Widget//Default State of Widget" ordinal="11" kind="VARCHAR2" modelkind="VarChar" size="4000" collation="CHAR_CS" />
+            <Column name="CREATEDDATE" comment="Fecha de Creación del Widget//Create Date of Widget " ordinal="12" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="LASTUPDATE" comment="Ultima Actualización del Widget//Las Update of Widget" ordinal="13" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028618" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028619" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="URL" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028620" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="VERSIONNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028621" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ISDEFAULT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028622" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ICON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028623" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ORDERNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028624" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028625" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028745" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028746" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="URL" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028747" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="VERSIONNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028748" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ISDEFAULT" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028749" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ICON" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028750" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ORDERNO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028751" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="CREATEDDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028752" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LASTUPDATE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028753" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXWIDGETINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WIDGETINSTANCE" comment="Administra las intancia de los widget que pertenesen a los widgetinstance//Manages the widget intancia pertenesen to widgetinstance" createon="2014-11-10T11:55:03" lastupdateon="2014-11-25T13:27:20">
+          <Columns>
+            <Column name="ID" comment="Identificador del WidgetInstance//Identifier WidgetInstance" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="TITLE" comment="Titulo del WidgetInstance//Title WidgetInstance" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="PAGEID" comment="Identificador de Pagina //Page ID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="WIDGETID" comment="Identificador del WidgetInstance//Widget ID" ordinal="4" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="COLUMNNO" comment="Numero de Columan//Number Columan" ordinal="5" kind="NUMBER" modelkind="Numeric" size="2" />
+            <Column name="ORDERNO" comment="Numéro de Orden//Order Number" ordinal="6" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="EXPANDED" comment="Expandido//Expanded" ordinal="7" kind="NUMBER" modelkind="Numeric" size="4" />
+            <Column name="STATE" comment="Estado del WidgetIntance//State of WidgetIntance" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="4000" collation="CHAR_CS" />
+            <Column name="VERSIONNO" comment="Numero de Version del WidgetInstance//Version Number of WidgetInstance" ordinal="9" kind="NUMBER" modelkind="Numeric" size="3" />
+            <Column name="CREATEDDATE" comment="Fecha de Creación del WidgetInstance//Create Date of  WidgetInstance" ordinal="10" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="LASTUPDATE" comment="Fecha de Ultima Actualizacion//Last Update of WidgetInstance" ordinal="11" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036684" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="PKWIDGETINSTANCE" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="FKWIDGETINSTANCEWIDGET" foreigntablename="WIDGET">
+              <KeyColumns>
+                <ConstraintColumn name="WIDGETID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXWIDGETINSTANCEINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WIDGETINSTANCETRANS" comment="Tabla de Traduccion de las Instancias  de widget&#xA;//Translation Table Instances widget" createon="2014-07-16T17:44:40" lastupdateon="2014-11-10T11:54:57">
+          <Columns>
+            <Column name="ID" comment="Identificador de WidgetInstanceTrans//Identificator of the WidgetInstanceTrans" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="PAGEID" comment="Identificador del pagina//Identificator of the Page" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="WIDGETID" comment="Identificador del Widget//Identificator of the Widget" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="LANGUAGEID" comment="Identificador del Languaje//Identificator of the Language" ordinal="4" kind="NUMBER" modelkind="Numeric" size="3" nullable="false" />
+            <Column name="TITLE" comment="Titulo de la Instancia del Widget//Title of Instance Widget" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="CREATORUSERCODE" comment="Codigo de Usuario de Creacion//Creator User Code" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="CREATIONDATE" comment="Fecha de Creacion//Creation Date " ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" comment="Ultimo Usuario que Actualizo//Update User Code" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="UPDATEDATE" comment="Fecha de Actualizacion//Update Data" ordinal="9" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028627" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028628" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028756" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028757" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028758" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEINSTTRANSINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WIDGETSINROLES" createon="2014-07-16T17:44:45" lastupdateon="2014-07-16T17:46:22">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="WIDGETID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" />
+            <Column name="ISDEFAULT" ordinal="3" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISEDITALLOW" ordinal="4" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="ISALLOWEDTOEDITTHETITLE" ordinal="5" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="SEQUENCE" ordinal="6" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="ROLEID" ordinal="7" kind="NUMBER" modelkind="Numeric" size="9" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028629" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028759" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028759" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WIDGETTRANS" comment="Tabla que administra la traducción de los widget//Table administered translating widget" createon="2014-07-16T17:44:53" lastupdateon="2014-07-16T17:46:27">
+          <Columns>
+            <Column name="ID" comment="Identificador de WidgetTrans//Identificator of WidgetTrans" ordinal="1" kind="NUMBER" modelkind="Numeric" size="9" nullable="false" />
+            <Column name="LANGUAGEID" comment="Identificador del Lenguaje//Identificator of Language" ordinal="2" kind="NUMBER" modelkind="Numeric" size="3" nullable="false" />
+            <Column name="NAME" comment="Nombre del Widget Traducido//In Name Widget" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="DESCRIPTION" comment="Descripción del Widget Traducido//Description In Widget" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <Column name="CREATORUSERCODE" comment="Codigo Usuario que lo creo//User who created Code" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="CREATIONDATE" comment="Fecha de creacion//Date added" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATEUSERCODE" comment="Codigo del usuario que  actualizo//User Code update" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="UPDATEDATE" comment="Fecha Actualización//Date Updated" ordinal="8" kind="DATE" modelkind="DateTime" size="7" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028630" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028631" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028760" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028761" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028762" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+                <ConstraintColumn name="LANGUAGEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028797" foreigntablename="WIDGET">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="PKINDEXWIDGETTRANSINDEX" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+                <IndexColumn name="LANGUAGEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WORKFLOWCUSTOMTRACK" createon="2014-11-11T09:46:04" lastupdateon="2014-11-11T09:46:32">
+          <Columns>
+            <Column name="WORKFLOWINSTANCEID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="RECORDNUMBER" ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="ACTIVITYINSTANCEID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="DATA" ordinal="4" kind="CLOB" modelkind="AnyText" size="4000" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036744" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+                <ConstraintColumn name="RECORDNUMBER" />
+                <ConstraintColumn name="ACTIVITYINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0036744" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="WORKFLOWINSTANCEID" />
+                <IndexColumn name="RECORDNUMBER" />
+                <IndexColumn name="ACTIVITYINSTANCEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WORKFLOWEXCEPTION" createon="2014-11-25T13:22:40" lastupdateon="2014-11-25T13:22:45">
+          <Columns>
+            <Column name="WORKFLOWINSTANCEID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="RECORDNUMBER" ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="ACTIVITYINSTANCEID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="10" nullable="false" />
+            <Column name="DATA" ordinal="4" kind="CLOB" modelkind="AnyText" size="4000" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0037712" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037713" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RECORDNUMBER" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037714" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ACTIVITYINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037715" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037716" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RECORDNUMBER" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037717" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="ACTIVITYINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0037718" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+                <ConstraintColumn name="RECORDNUMBER" />
+                <ConstraintColumn name="ACTIVITYINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0037718" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="WORKFLOWINSTANCEID" />
+                <IndexColumn name="RECORDNUMBER" />
+                <IndexColumn name="ACTIVITYINSTANCEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WORKFLOWINSTANCE" createon="2014-11-07T19:41:07" lastupdateon="2014-11-25T13:27:52">
+          <Columns>
+            <Column name="WORKFLOWINSTANCEID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="NAME" ordinal="2" kind="VARCHAR2" modelkind="VarChar" size="50" collation="CHAR_CS" />
+            <Column name="MODELID" ordinal="3" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="RELEASE" ordinal="4" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="CALLERKIND" ordinal="5" kind="CHAR" modelkind="Char" size="10" collation="CHAR_CS" />
+            <Column name="CALLERNAME" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="80" collation="CHAR_CS" />
+            <Column name="CALLERID" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="40" collation="CHAR_CS" />
+            <Column name="IDENTIFY" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="160" collation="CHAR_CS" />
+            <Column name="TIMECREATED" ordinal="9" kind="DATE" modelkind="DateTime" size="7" nullable="false" />
+            <Column name="WORKFLOWSTATE" ordinal="10" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="STARTDATE" ordinal="11" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="FINISHDATE" ordinal="12" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="REASON" ordinal="13" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036449" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036450" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="MODELID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036451" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="RELEASE" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0036452" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="TIMECREATED" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="WORKFLOWINSTANCE_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="WORKFLOWINSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="WORKFLOWINSTANCE_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="WORKFLOWINSTANCEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WORKFLOWREFERENCE" createon="2014-07-16T17:46:00" lastupdateon="2014-07-16T17:46:25">
+          <Columns>
+            <Column name="INSTANCEID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" nullable="false" />
+            <Column name="SCERTYPE" ordinal="2" kind="CHAR" modelkind="Char" size="1" collation="CHAR_CS" />
+            <Column name="NBRANCH" ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NPRODUCT" ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" />
+            <Column name="NPOLICY" ordinal="5" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NCERTIF" ordinal="6" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="DEFFECDATE" ordinal="7" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="SCLIENT" ordinal="8" kind="CHAR" modelkind="Char" size="14" collation="CHAR_CS" />
+            <Column name="NINTERMED" ordinal="9" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NPREMIUM" ordinal="10" kind="NUMBER" modelkind="Numeric" size="18" scale="6" />
+            <Column name="DISSUEDAT" ordinal="11" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="NRECEIPT" ordinal="12" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="NCLAIM" ordinal="13" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="UNDERWRITINGCASEID" ordinal="14" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="REASON" ordinal="15" kind="VARCHAR2" modelkind="VarChar" size="1024" collation="CHAR_CS" />
+            <Column name="COMPLETED" ordinal="16" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="TERMINATED" ordinal="17" kind="NUMBER" modelkind="Numeric" size="1" />
+            <Column name="CREATED" ordinal="18" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="UPDATED" ordinal="19" kind="DATE" modelkind="DateTime" size="7" />
+            <Column name="INDENTIFY" ordinal="20" kind="VARCHAR2" modelkind="VarChar" size="512" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0028648" kind="Check">
+              <KeyColumns>
+                <ConstraintColumn name="INSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="SYS_C0028783" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="INSTANCEID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0028783" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="INSTANCEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="WORKFLOWTRACKING" createon="2014-11-10T12:57:56" lastupdateon="2015-11-19T12:25:25">
+          <Columns>
+            <Column name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" nullable="false" />
+            <Column name="WORKFLOWINSTANCEID" ordinal="2" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" />
+            <Column name="RECORDNUMBER" ordinal="3" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="ACTIVITYINSTANCEID" ordinal="4" kind="NUMBER" modelkind="Numeric" size="10" />
+            <Column name="ACTIVITYID" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="10" collation="CHAR_CS" />
+            <Column name="ACTIVITYNAME" ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" />
+            <Column name="ACTIVITYSTATE" ordinal="7" kind="VARCHAR2" modelkind="VarChar" size="20" collation="CHAR_CS" />
+            <Column name="STARTDATE" ordinal="8" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="FINISHDATE" ordinal="9" kind="TIMESTAMP(3)" modelkind="None" size="11" />
+            <Column name="ACTIVITYTYPE" ordinal="10" kind="VARCHAR2" modelkind="VarChar" size="1024" collation="CHAR_CS" />
+          </Columns>
+          <Constraints>
+            <Constraint name="SYS_C0036688" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="SYS_C0036688" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID" />
+              </Columns>
+            </Index>
+            <Index name="IDXTRACKUPDATE">
+              <Columns>
+                <IndexColumn name="ACTIVITYINSTANCEID" />
+                <IndexColumn name="WORKFLOWINSTANCEID" />
+              </Columns>
+            </Index>
+          </Indexes>
+        </Table>
+        <Table name="XPObjectType" createon="2014-10-16T13:51:38" lastupdateon="2014-10-16T13:52:37">
+          <Columns />
+          <Constraints />
+          <Indexes />
+        </Table>
+        <Table name="XpoInstanceKey" createon="2014-10-16T13:51:43" lastupdateon="2014-10-16T13:52:38">
+          <Columns />
+          <Constraints />
+          <Indexes />
+        </Table>
+        <Table name="XpoTrackingRecord" createon="2014-11-14T19:00:46" lastupdateon="2014-11-14T19:00:48">
+          <Columns />
+          <Constraints />
+          <Indexes />
+        </Table>
+        <Table name="XpoWorkflowInstance" createon="2014-10-16T13:52:14" lastupdateon="2015-10-26T15:25:46">
+          <Columns />
+          <Constraints />
+          <Indexes />
+        </Table>
+      </Tables>
+      <Views>
+        <View name="ACTIVITYDURATION" createon="2014-07-16T17:48:27" lastupdateon="2014-07-16T17:48:27">
+          <Columns>
+            <ViewColumn name="WORKFLOWINSTANCEID" ordinal="1" kind="CHAR" modelkind="Char" size="36" collation="CHAR_CS" />
+            <ViewColumn name="ACTIVITYID" ordinal="2" kind="NUMBER" modelkind="Numeric" size="9" />
+            <ViewColumn name="ACTIVITYINSTANCEID" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="256" collation="CHAR_CS" />
+            <ViewColumn name="STATE" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <ViewColumn name="TIMESTART" ordinal="5" kind="DATE" modelkind="DateTime" size="7" />
+            <ViewColumn name="TIMEFINISH" ordinal="6" kind="DATE" modelkind="DateTime" size="7" />
+            <ViewColumn name="DURATION" ordinal="7" kind="NUMBER" modelkind="Numeric" size="22" />
+          </Columns>
+        </View>
+        <View name="GCW_WGINROLESMANAGER" createon="2014-07-16T17:49:02" lastupdateon="2014-07-18T13:04:00">
+          <Columns>
+            <ViewColumn name="ID" ordinal="1" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="ISCHECKED" ordinal="2" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="WIDGETID" ordinal="3" kind="NUMBER" modelkind="Numeric" size="9" />
+            <ViewColumn name="NAME" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <ViewColumn name="DESCRIPTION" ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="255" collation="CHAR_CS" />
+            <ViewColumn name="ISDEFAULT" ordinal="6" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="ISEDITALLOW" ordinal="7" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="ROLEID" ordinal="8" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="ISALLOWEDTOEDITTHETITLE" ordinal="9" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="SEQUENCE" ordinal="10" kind="NUMBER" modelkind="Numeric" size="22" />
+            <ViewColumn name="LANGUAGEID" ordinal="11" kind="NUMBER" modelkind="Numeric" size="3" />
+          </Columns>
+        </View>
+      </Views>
+    </ModelSchema>
+  </Schemas>
+</DataSourceModel>

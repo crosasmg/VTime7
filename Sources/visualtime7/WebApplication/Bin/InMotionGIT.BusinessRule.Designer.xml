@@ -1,0 +1,748 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.BusinessRule.Designer
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner">
+	<summary>
+BusinessRuleDesigner
+</summary>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRule.#ctor">
+	<summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.BusinessRule.Designer.Activity.BusinessRule"/> class.
+ </summary>
+</member><member name="P:InMotionGIT.BusinessRule.Designer.Activity.BusinessRule.Parameters">
+	<summary>
+ Gets or sets the arguments of the child workflow.
+ </summary>
+	<value>The child arguments.</value>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRule.Execute(System.Activities.NativeActivityContext)">
+	<summary>
+ Execute the child workflow through to completion.
+ </summary>
+	<param name="context">The execution context in which the activity executes.</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRule.Validate(System.Activities.NativeActivityMetadata,System.Activities.DynamicActivity)">
+	<summary>
+ Validates the arguments in ChildArguments property against the arguments of specified dynamicActivity instance by adding a validation error
+ to supplied metadata if the argument is wrong type, direction or does not exist.
+ </summary>
+	<param name="metadata">The metadata.</param>
+	<param name="dynamicActivity">The dynamic activity.</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Execute.ApplyRules(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.Object})">
+	<summary>
+ Prepares to execute the rules on EDW catalog
+ </summary>
+	<param name="ModelId"></param>
+	<param name="Release"></param>
+	<param name="parameters"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Execute.ApplyRules(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+	<summary>
+ Prepares to execute the rules on repository on file system
+ </summary>
+	<param name="repositoryServiceUri"></param>
+	<param name="username"></param>
+	<param name="password"></param>
+	<param name="ruleAppName"></param>
+	<param name="parameters"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Execute.ExecuteRules(InRule.Runtime.RuleApp,System.Collections.Generic.Dictionary{System.String,System.Object})">
+	<summary>
+ Execute the rules on parameters
+ </summary>
+	<param name="ruleApplication"></param>
+	<param name="parameters"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Execute.tracking(System.Object)">
+	<summary>
+ Is called when a notification o validation doesnt have an asociated entity
+ </summary>
+	<param name="source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.Helper.GenerateTypeInfoList(System.Activities.Presentation.Services.ModelService,System.Activities.Presentation.Model.ModelItem)">
+	<summary>
+	</summary>
+	<param name="ms"></param>
+	<param name="current"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.Helper.AddItemsToList(System.Collections.Generic.IEnumerable{System.Activities.Presentation.Model.ModelItem},System.Collections.Generic.Dictionary{System.String,System.Type})">
+	<summary>
+	</summary>
+	<param name="Items"></param>
+	<param name="TypeInfoList"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.Helper.ObjectsToList(System.Activities.Presentation.Services.ModelService,System.Activities.Presentation.Model.ModelItem)">
+	<summary>
+	</summary>
+	<param name="ms"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.#ctor">
+	<summary>
+ Main ctor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.BusinessRuleEditForm_Shown(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.AcceptSimpleButton_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.btnSave_Click(System.Object,System.EventArgs)">
+	<summary>
+ Saves the current editor
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.EditParameters_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.CancelSimpleButton_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.Open(InMotionGIT.Factory.Repository.Specification)">
+	<summary>
+	</summary>
+	<param name="specification"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.SettingsBarButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.ValidateBarButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.TestBarButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.AssemblyButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.EndPointButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.DataButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.InlineTableButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleEditForm.InlineValueListButtonItem_ItemClick(System.Object,DevExpress.XtraBars.ItemClickEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.ObjectSelected.#ctor(System.String,System.Type,System.Boolean)">
+	<summary>
+	</summary>
+	<param name="name"></param>
+	<param name="type"></param>
+	<param name="isMarked"></param>
+	<remarks></remarks>
+</member><member name="P:InMotionGIT.BusinessRule.Designer.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:InMotionGIT.BusinessRule.Designer.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:InMotionGIT.BusinessRule.Designer.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.currentlyLoadedTitle">
+	<summary>
+ The file path of a the currently specified child workflow.
+ </summary>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.ExecuteWorkflowDesigner_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+	<summary>
+ Handles the Loaded event of the ExecuteXamlWorkflowDesigner control.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.DefineArgsButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+	<summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.FileDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+	<summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Activity.BusinessRuleDesigner.InitDynamicArgumentDialog(System.Collections.Generic.Dictionary{System.String,System.Type})">
+	<summary>
+ Initialises the DynamicArgumentDialog instance with child workflow arguments by loading the specified child workflow then deriving its arguments.
+ </summary>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.ObjectSelection.BusinessRuleObjectSelection_Load(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.ObjectSelection.btnAccept_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.ObjectSelection.btnDelete_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.ObjectSelection.btnCancel_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Populate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Reset">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SetCurrentEditor(InRule.Repository.RuleRepositoryDefBase)">
+	<summary>
+	</summary>
+	<param name="item"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SaveEditor">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ShowNodeEditor(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+	<summary>
+	</summary>
+	<param name="node"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Notify(System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="message"></param>
+	<param name="command"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.panelContainer1_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.OpenRuleApplicationFromFileSystem">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SaveRuleApplicationFromFileSystem">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.LoadFromParameters(System.Collections.Generic.Dictionary{System.String,System.Type})">
+	<summary>
+	</summary>
+	<param name="parameters"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Build">
+	<summary>
+ This method is responsible for creating the rule in the first execution application or if any load it for editing
+ </summary>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Open(InMotionGIT.Factory.Repository.Specification)">
+	<summary>
+	</summary>
+	<param name="specification"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.Save">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.EntityTreeList_BeforeExpand(System.Object,DevExpress.XtraTreeList.BeforeExpandEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.EntityTreeListPopulate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.RuleTreeListPopulate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.VocabularyTreeListPopulate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.EndPointsTreeListPopulate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DataTreeListPopulate">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.EntityTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.RuleTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.VocabularyTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.EndPointTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DataTreeList_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddRuleSet_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteRuleSetRootMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddConstraintToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddVocEntityMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddFieldToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddCalculationToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddCollectionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteEntityMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddEntityMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteFieldMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ConvertToCollectionMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ConvertToFieldMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ConvertToCalculationMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddVocRuleSetMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.LanguageRuleToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.IfThenToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.IfTheElseToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.WhileToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DecisionTableToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteRuleSetMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.FireNotificationToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeclareVariableToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ExecuteRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SetFieldInvalidToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SetValueToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ExecuteMethodToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.RaiseEventToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.RefreshFieldsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ActivateRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.HaltRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeactivateRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ActivateRuleSetByCategoryToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeactivateRuleSetByCategoryToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.AddCollectionMemberToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.RemoveCollectionMemberToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ClearCollectionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.CopyCollectionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.SortCollectionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ExecuteMemberRuleSetToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.CopyEntityToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteVocabularyMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteEndPointMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteDataMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.DeleteRuleMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.BusinessRuleCtrl.ResearchToolStripMenuItem_Click(System.Object,System.EventArgs)">
+	<summary>
+	</summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.ParametersToEditInRule(InRule.Repository.RuleApplicationDef,System.Collections.Generic.Dictionary{System.String,System.Type},System.Boolean)">
+	<summary>
+ Validates the parameters to be added or deleted
+ </summary>
+	<param name="ruleAppDef">Contains the ruleApp</param>
+	<param name="parameters">Contains the collection of parameters</param>
+	<param name="isToAddParameters">Indicates if the parameters are to be added</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.RemoveParameterFromRule(System.Collections.Generic.Dictionary{System.String,System.Type},InMotionGIT.BusinessRule.Designer.Maker.Notify,InRule.Repository.RuleApplicationDef)">
+	<summary>
+ Removes the parameters from the ruleApp
+ </summary>
+	<param name="parameters"></param>
+	<param name="addressNotify"></param>
+	<param name="ruleAppDef"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.RemoveFromSchema(InRule.Repository.RuleApplicationDef,InRule.Repository.EndPoints.AssemblyDef)">
+	<summary>
+	</summary>
+	<param name="ruleAppDef"></param>
+	<param name="assemblyDef"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.IsContainedInOtherAssemblies(System.String[]@,InRule.Repository.RuleApplicationDef,System.Collections.Generic.Dictionary{System.String,System.Type})">
+	<summary>
+	</summary>
+	<param name="schemaShared"></param>
+	<param name="ruleAppDef"></param>
+	<param name="parameters"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.DoWork(System.Collections.Generic.Dictionary{System.String,System.Type},InMotionGIT.BusinessRule.Designer.Maker.Notify,InRule.Repository.RuleApplicationDef)">
+	<summary>
+ Allows creation of a rule application based on a list of parameters
+ </summary>
+	<param name="parameters"></param>
+	<param name="addressNotify"></param>
+	<param name="ruleAppDef"></param>
+ 1) Imports the necessary schemes based on the libraries used by the parameters.
+ 2) Change the display name to be friendly based on the data dictionary.
+ 3) Add the documentation for each entity and field.
+ 4) Create a special entity which includes all the parameters to be used in conjunction.
+ <returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.BuildAssemblyDef(InRule.Repository.RuleApplicationDef@,System.String,InMotionGIT.BusinessRule.Designer.Maker.ParameterAssist,InMotionGIT.BusinessRule.Designer.Maker.Notify)">
+	<summary>
+ It is responsible for adding the reference to the assembly referenced Catalog
+ </summary>
+	<param name="ruleAppDef">Rule Application definition</param>
+	<param name="name">Name used by the parameter</param>
+	<param name="itemAssist">Parameter information support</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.EntityPrepare(InRule.Repository.RuleApplicationDef@,System.Collections.Generic.Dictionary{System.String,InMotionGIT.BusinessRule.Designer.Maker.ParameterAssist})">
+	<summary>
+ Prepare the information related entities rRule application
+ </summary>
+	<param name="ruleAppDef">Rule Application definition</param>
+	<param name="parameters">List of main parameter used by the rule application</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.AddContextExecute(InRule.Repository.RuleApplicationDef@,System.Collections.Generic.Dictionary{System.String,InMotionGIT.BusinessRule.Designer.Maker.ParameterAssist},System.Collections.Generic.Dictionary{System.String,System.Type})">
+	<summary>
+ It is responsible for adding the entity which brings together all under one entity parameter
+ </summary>
+	<param name="ruleAppDef">Rule Application definition</param>
+	<param name="parameters">List of main parameter used by the rule application</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.isClassCollection(System.Type)">
+	<summary>
+ Returns true is the class is a collection
+ </summary>
+	<param name="myObject"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.ConvertDataType(System.Type)">
+	<summary>
+ Allows conversion between data types. NET data type for fields inrule
+ </summary>
+	<param name="currentType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.IsNotPrimitive(System.Type)">
+	<summary>
+ Returns True if a non primitive type is trying to be invoked
+ </summary>
+	<param name="objectType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.SpecialNames(System.String)">
+	<summary>
+ Converts an entity or field name to a valid name and not reserved for inrule
+ </summary>
+	<param name="name">Transform name</param>
+</member><member name="M:InMotionGIT.BusinessRule.Designer.Maker.SpecialNameToNormal(System.String)">
+	<summary>
+ Converts an entity or field name to a valid name and not reserved for inrule
+ </summary>
+	<param name="name">Transform name</param>
+</member><member name="T:InMotionGIT.BusinessRule.Designer.Maker.ParameterAssist">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

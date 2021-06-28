@@ -1,0 +1,31 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+--%>
+<dxwgv:ASPxGridView runat="server" 
+    CssFilePath="~/App_Themes/Office2010Silver/{0}/styles.css" 
+    CssPostfix="Office2010Silver">
+    <Styles CssFilePath="~/App_Themes/Office2010Silver/{0}/styles.css" CssPostfix="Office2010Silver">
+  	    <Header ImageSpacing="5px" SortingImageSpacing="5px"></Header>
+        <LoadingPanel ImageSpacing="10px"></LoadingPanel>
+    </Styles>	
+    <ImagesFilterControl>
+        <LoadingPanel Url="~/App_Themes/Office2010Silver/Editors/Loading.gif"></LoadingPanel>
+    </ImagesFilterControl>
+    <Images SpriteCssFilePath="~/App_Themes/Office2010Silver/{0}/sprite.css">
+        <LoadingPanelOnStatusBar Url="~/App_Themes/Office2010Silver/GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+        <LoadingPanel Url="~/App_Themes/Office2010Silver/GridView/Loading.gif"></LoadingPanel>
+		<FilterRowButton Height="13px" Width="13px" />
+  </Images>
+  <StylesEditors>
+  	<ProgressBar Height="25px"></ProgressBar>
+  </StylesEditors>
+</dxwgv:ASPxGridView>

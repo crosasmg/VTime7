@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='UTF-8' />
+    <title>VisualTIME | 500 Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+
+    <link rel="stylesheet" href="/fasi/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fasi/assets/font-awesome/css/font-awesome.css" />
+
+    <link rel="stylesheet" href="/fasi/app/css/master.css?rel=1526062220941" />    
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box-error text-center animated fadeInDown">
+        <h1>500</h1>
+        <h3 id="UnexpectedError" class="font-bold trn" data-trn-key="UnexpectedError"></h3>
+        <div id="UnexpectedErrorDetail" class="error-desc trn" data-trn-key="UnexpectedErrorDetail"></div>
+    </div>   
+
+    <script type="text/javascript" src="/fasi/app/js/constants.js?rel=1526062220941"></script>
+    <script type="text/javascript" src="/fasi/app/js/master.translate.js?rel=1526062220941"></script>
+
+    <script type="text/javascript">
+
+        var languageName = localStorage.getItem('languageName');
+        if (!languageName)
+            languageName = constants.defaultLanguageName;
+
+        if (document.scripts.length > 6)
+            translator.initialize(languageName);
+        else {
+            document.getElementById('UnexpectedError').innerHTML = dict.UnexpectedError[languageName];
+            document.getElementById('UnexpectedErrorDetail').innerHTML = dict.UnexpectedErrorDetail[languageName];
+        }
+    </script>
+
+</body>
+</html>

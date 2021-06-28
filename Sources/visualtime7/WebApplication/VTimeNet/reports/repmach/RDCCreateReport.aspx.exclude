@@ -1,0 +1,95 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eWRpt" %>
+<%@ Import namespace="CRAXDRT" %>
+<%@ Import namespace="eRemoteDB" %>
+<script language="VB" runat="Server">
+
+Dim mstrParameters As String
+Dim mstrExportPath As String
+Dim lobjDBConnect As eRemoteDB.Connection
+Dim lobjSpecRec As ADODB.Recordset
+Dim lobjWRptRep As eWRpt.clsReport
+Dim lobjRecordSource As ADODB.Recordset
+
+
+</script>
+<!-- #INCLUDE FILE="Parameters.aspx" -->
+<%
+lobjWRptRep = New eWRpt.clsReport
+
+lobjSpecRec = lobjWRptRep.GetSpecifications(lobjWRptRep.TranslateWebPath(Request.ServerVariables("PATH_TRANSLATED")) & "\" & session("SpecificationFile"), Request.QueryString("sCodisPl"))
+
+If Not lobjSpecRec.EOF Then
+	lobjSpecRec.MoveFirst()
+	session("wrptName") = Request.ServerVariables("APPL_PHYSICAL_PATH") & IIF(IsDBNull(lobjSpecRec.Fields.Item("esPlantillaRPT").Value), Nothing, lobjSpecRec.Fields.Item("esPlantillaRPT").Value)
+	session("wrptStoreProc") = IIF(IsDBNull(lobjSpecRec.Fields.Item("esProcAlmacenado").Value), Nothing, lobjSpecRec.Fields.Item("esProcAlmacenado").Value)
+	session("wrptCursorName") = IIF(IsDBNull(lobjSpecRec.Fields.Item("esNombreCursor").Value), Nothing, lobjSpecRec.Fields.Item("esNombreCursor").Value)
+End If
+
+session("wOutputType") = Request.Form("txtOutputType")
+
+mstrParameters = ""
+lobjSpecRec.MoveFirst()
+While Not lobjSpecRec.EOF
+	If IIF(IsDBNull(lobjSpecRec.Fields.Item("prVisible").Value), Nothing, lobjSpecRec.Fields.Item("prVisible").Value) = 1 Then
+		mstrParameters = mstrParameters & Request.Form(lobjSpecRec.Fields("prNombre")) & session("wParametersSeparator")
+	Else
+		mstrParameters = mstrParameters & session(lobjSpecRec.Fields("prNombre")) & session("wParametersSeparator")
+	End If
+	lobjSpecRec.MoveNext()
+End While
+lobjSpecRec.Close()
+'UPGRADE_NOTE: Object lobjSpecRec may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+lobjSpecRec = Nothing
+%>
+
+<!-- #INCLUDE FILE="AlwaysRequiredSteps.aspx" -->
+
+<%
+lobjDBConnect = New eRemoteDB.Connection
+'lobjDBConnect.LoadConnectInfo()
+lobjRecordSource = lobjWRptRep.GetOracleRecordset(lobjDBConnect.Database, lobjDBConnect.Login, lobjDBConnect.Password, CStr(session("wrptStoreProc")), CStr(session("wrptCursorName")), mstrParameters, CStr(session("wParametersSeparator")))
+'UPGRADE_NOTE: Object lobjWRptRep may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+lobjWRptRep = Nothing
+'UPGRADE_NOTE: Object lobjDBConnect may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+lobjDBConnect = Nothing
+
+If Not lobjRecordSource.EOF Then
+	lobjRecordSource.MoveFirst()
+End If
+
+session("owRpt").DiscardSavedData()
+
+session("owRpt").EnableParameterPrompting = False
+'+Como no todos los reportes tienen estos dos parametros se controla si hay error
+On Error Resume Next
+session("owRpt").ParameterFields.Item(1).AddCurrentValue(session("p_cod_cia"))
+session("owRpt").ParameterFields.Item(2).AddCurrentValue(session("p_area_seguro"))
+On Error GoTo 0
+session("owRpt").Database.SetDataSource(lobjRecordSource)
+
+lobjRecordSource.Close()
+'UPGRADE_NOTE: Object lobjRecordSource may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+lobjRecordSource = Nothing
+
+
+
+Select Case session("wOutputType")
+	Case "Crystal Report"%>
+			<!-- #INCLUDE FILE="MoreRequiredSteps.aspx" -->
+			<script>window.open("SmartViewerActiveX.aspx","Report","toolbar=no");</script>
+<%	Case "HTML"%>
+			<!-- #INCLUDE FILE="MoreRequiredSteps.aspx" -->
+
+<%		'Response.Redirect("htmstart.aspx") %>
+            <script>window.open("htmstart.aspx","Report","toolbar=no");</script>
+<%	Case "Texto"
+		mstrExportPath = session("wExportPath")%>
+			<!-- #INCLUDE FILE="ExportReport.aspx" -->
+<%		
+End Select
+%>
+
+
+
+

@@ -1,0 +1,362 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Common.Service
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Common.Service.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Service.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Service.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.ICommonService.SynchronizePlaceOfInterest(InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Synchronizes the place of interest.
+ //
+ Sincroniza el lugar de interés.
+ </summary>
+ <param name="placeOfInterest">
+ Place of interest
+ //
+ Lugar de interés
+ </param>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.ICommonService.RetrievePlaceOfInterestByPlaceOfInterestId(InMotionGIT.Common.DataType.LookUpValueExtend,System.String,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Gets the information associated with the specified place of interest.
+ //
+ Obtiene la información asociada al lugar de interés indicado.
+ </summary>
+ <param name="country">
+ Country that belongs to the place of interest to search.
+ //
+ País al que pertenece el lugar de interés a buscar.
+ </param>
+ <param name="placeOfInterestId">
+ Place of interest identifier.
+ //
+ Identificador del lugar de interés.
+ </param>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfRecordOwnerTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values ​​of the owner type from the table "EnumRecordOwner".
+ //
+ Obtiene los valores posibles para los tipos de propietario de la tabla "EnumRecordOwner".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfRecordStatusTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values ​​of the record status from the table "EnumRecordStatus".
+ //
+ Obtiene los valores posibles para los estados del registro de la tabla "EnumRecordStatus".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfUsePostalCodeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of the postal code ​​from the table "EnumUsePostalCode".
+ //
+ Obtiene los valores posibles para el código postal de la tabla "EnumUsePostalCode".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfCompanyTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of the companies from the table "TabCompany".
+ //
+ Obtiene los valores posibles de las compañías de la tabla "TabCompany".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfCountryTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of the countries from the table "TabCountry".
+ //
+ Obtiene los valores posibles de países de la tabla "TabCountry".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfLanguageTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of language from the table "TabLanguage".
+ //
+ Obtiene los valores posibles de lenguaje de la tabla "TabLanguage".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfPlaceOfInterestTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of places of interest from the table "EnumPlaceOfInterest".
+ //
+ Obtiene los valores posibles de lugares de interés de la tabla "EnumPlaceOfInterest".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfFranchiseOrDeductibleTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of the franchises or deductibles from the table "EnumFranchiseOrDeductible".
+ //
+ Obtiene los valores posibles para franquicias o deducibles de la tabla "EnumFranchiseOrDeductible".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfLineOfBusinessTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of line of business from the table "EnumLineOfBusinessType".
+ //
+ Obtiene los valores posibles para la línea de negocio de la tabla "EnumLineOfBusinessType".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.Interfaces.IMaintenance.LookUpPossibleValuesOfOfficeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Retrieves the possible values of the office from the table "TabOffice".
+ //
+ Obtiene los valores posibles de oficina de la tabla "TabOffice".
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="T:InMotionGIT.Common.Service.Interfaces.IPublic">
+ <summary>
+ Interface needed to make all other interfaces publics
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfCompanyTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "TabCompany"
+ //
+ Obtener los valores posibles de la tabla "TabCompany"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfRecordOwnerTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "EnumRecordOwner"
+ //
+ Obtener los valores posibles de la tabla "EnumRecordOwner"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfRecordStatusTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "EnumRecordStatus"
+ //
+ Obtener los valores posibles de la tabla "EnumRecordStatus"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfCountryTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "TabCountry"
+ //
+ Obtener los valores posibles de la tabla "TabCountry"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfLanguageTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "TabLanguage"
+ //
+ Obtener los valores posibles de la tabla "TabLanguage"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfUsePostalCodeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "EnumUsePostalCode"
+ //
+ Obtener los valores posibles de la tabla "EnumUsePostalCode"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfPlaceOfInterestTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values ​​of the table "EnumPlaceOfInterest"
+ //
+ Obtener los valores posibles de la tabla "EnumPlaceOfInterest"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.SynchronizePlaceOfInterest(InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <param name="placeOfInterest">Objeto "PlaceOfInterest"</param>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfFranchiseOrDeductibleTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values of the table "EnumFranchiseOrDeductible"
+ //
+ Obtener los valores posibles de la tabla "EnumFranchiseOrDeductible"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfLineOfBusinessTypeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values of the table "EnumLineOfBusinessType"
+ //
+ Obtener los valores posibles de la tabla "EnumLineOfBusinessType"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.LookUpPossibleValuesOfOfficeTable(InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the possible values of the table "TabOffice"
+ //
+ Obtener los valores posibles de la tabla "TabOffice"
+ </summary>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.RetrievePlaceOfInterestByPlaceOfInterestId(InMotionGIT.Common.DataType.LookUpValueExtend,System.String,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Get the information associated with the specified place of interest.
+ //
+ Obtiene la información asociada al lugar de interés indicado.
+ </summary>
+ <param name="country">
+ Country that belongs to the place of interest to search.
+ //
+ País al que pertenece el lugar de interés a buscar.
+ </param>
+ <param name="placeOfInterestId">
+ Place of interest identifier.
+ //
+ Identificador del lugar de interés.
+ </param>
+ <param name="consumer">
+ Consumer information.
+ //
+ Información del consumidor.
+ </param>
+</member>
+<member name="M:InMotionGIT.Common.Service.General.CommonService.MapPlaceOfInterestFromDBToClass(InMotionGIT.Common.DataAccess.PlaceOfInterest)">
+ <summary>
+ Fill out the class based on what exists in the database
+ //
+ LLena la clase en base a lo existente en la Base de datos
+ </summary>
+ <param name="placeOfInterestDB">Object "PlaceOfInterest" según la capa de persistencia.</param>
+ <returns>Object "PlaceOfInterest"</returns>
+</member>
+<member name="M:InMotionGIT.Common.Service.Utilities.CopyPlaceOfInterestContractToDataAccess(InMotionGIT.Common.Contracts.PlaceOfInterest.PlaceOfInterest,System.String,InMotionGIT.Common.DataAccess.PlaceOfInterest,System.Boolean)">
+ <summary>
+ Copia los atributos del objeto placeOfInterest del contrato 
+ a los atributos placeOfInterest del persistencia
+ </summary>
+ <param name="placeOfInterestContract">Contiene la informacion del objeto del contrato</param>
+ <param name="userCode">Codigo del usuario</param>
+ <param name="placeOfInterestDB"></param>
+ <returns>El objeto placeOfInterest que maneja persistencia con los nuevos datos</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,260 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Integration.Acepta
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Integration.Acepta.Contracts.Documento">
+ <summary>
+ Información de un documento existente
+ </summary>
+ <remarks>Respuesta de tipo 'CDocResp' al servicios 'wsGetDoc'.</remarks>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Contracts.Documento.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.Resultado">
+ <summary>
+ Código y detalle del resultado
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.nFirmados">
+ <summary>
+ Cantidad de firmas
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.EstadoFirma">
+ <summary>
+ Estado del firmante
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.NroAudit">
+ <summary>
+ Número de auditoría
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.NombreArchivo">
+ <summary>
+ Nombre documento
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.ContenidoBase64">
+ <summary>
+ Contenido del archivo en base64
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.Documento.NombreArchivoLocal">
+ <summary>
+ Nombre del archivo local, creado por medio de un parámetro.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Integration.Acepta.Contracts.DocumentoAgregado">
+ <summary>
+ Resultado de una operación de carga de un documento
+ </summary>
+ <remarks>Respuesta de tipo 'CDocsResp' al servicios 'wsAddDoc'.</remarks>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Contracts.DocumentoAgregado.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.DocumentoAgregado.Resultado">
+ <summary>
+ Código y detalle del resultado
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.DocumentoAgregado.CodigoDoc">
+ <summary>
+ Código del documento
+ </summary>
+</member>
+<member name="T:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse">
+ <summary>
+ Firma de un documento (ladrillo).
+ </summary>
+ <remarks>Respuesta de tipo 'FirmarDocResponse' al servicio 'Firmador'.</remarks>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse.Err">
+ <summary>
+ Código de error
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse.Glosa">
+ <summary>
+ Descripción del error
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse.CodigoArchivo">
+ <summary>
+ Código del archivo
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.FirmarDocResponse.Archivo64">
+ <summary>
+ Base64 del archivo
+ </summary>
+</member>
+<member name="T:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento">
+ <summary>
+ Estado de un documento
+ </summary>
+ <remarks>Respuesta de tipo 'InfoDoctoResponse' al servicios 'InfoDocto'.</remarks>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento.Resultado">
+ <summary>
+ Código y detalle del resultado
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento.Estado">
+ <summary>
+ Estado del documento
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento.NroAudit">
+ <summary>
+ Número de auditoría
+ </summary>
+</member>
+<member name="P:InMotionGIT.Integration.Acepta.Contracts.EstadoDelDocumento.FechaFirma">
+ <summary>
+ Fecha de firma del documento
+ </summary>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.Common.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.Envelopes.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Integration.Acepta.Extend.wsdocs4">
+ <summary>
+ Utilitario para el llamado a la operaciones de los servicios de Acepta.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.#ctor">
+ <summary>
+ Constructor.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.CrearDocumentoPendiente(System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Carga de un documento asociado a un firmante quedando pendiente de firma
+ </summary>
+ <param name="tipoDocumento">Tipo documento definido por Acepta.</param>
+ <param name="descripcion">Descripción del documento.</param>
+ <param name="archivo">Nombre del archivo a ser subido a Acepta.</param>
+ <param name="rutFirmante">RUT del firmarte.</param>
+ <param name="emailFirmante">Email del firmante.</param>
+ <returns>Código del documento agregado</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.CrearDocumentoFirmado(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+ Carga de un documento asociado a una firma.
+ </summary>
+ <param name="tipoDocumento">Tipo documento definido por Acepta.</param>
+ <param name="descripcion">Descripción del documento.</param>
+ <param name="archivo">Nombre del archivo a ser subido a Acepta.</param>
+ <param name="rutFirmante">RUT del firmarte.</param>
+ <param name="emailFirmante">Email del firmante.</param>
+ <param name="audit">Numero de auditoría</param>
+ <param name="fechafirma">Fecha de la firma</param>
+ <param name="comment">Comentario</param>
+ <returns>Confirmación de documento agregado</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.CrearDocumento(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+ Carga de un documento asociado a un firmante, quedando pendiente de firma o firmado.
+ </summary>
+ <param name="tipoDocumento">Tipo documento definido por Acepta.</param>
+ <param name="descripcion">Descripción del documento.</param>
+ <param name="archivo">Nombre del archivo a ser subido a Acepta.</param>
+ <param name="rutFirmante">RUT del firmarte.</param>
+ <param name="emailFirmante">Email del firmante.</param>
+ <param name="audit">Numero de auditoría</param>
+ <param name="fechafirma">Fecha de la firma</param>
+ <param name="comment">Comentario</param>
+ <returns>Confirmación de documento agregado</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.AgregarFirmante(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+ Agregar un firmante a documento
+ </summary>
+ <param name="codigoDoc">Código del documento.</param>
+ <param name="rutFirmante">RUT del firmarte.</param>
+ <param name="emailFirmante">Email del firmante.</param>
+ <returns>Confirmación de la firma</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.FirmarDocumento(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+ Permite firmar un documento.
+ </summary>
+ <param name="codigoDoc">Código del documento.</param>
+ <param name="rutFirmante">RUT del firmarte.</param>
+ <param name="emailFirmante">Email del firmante.</param>
+ <param name="audit">Numero de auditoría</param>
+ <param name="fechafirma">Fecha de la firma</param>
+ <param name="comment">Comentario</param>
+ <returns>Confirmación de la firma</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.InformacionDeUnDocumento(System.String,System.Boolean)">
+ <summary>
+ Recupera un documento
+ </summary>
+ <param name="codigoDoc">Código del documento</param>
+ <param name="createLocalFile">Indica si se debe crear el archivo con el contenido del documento.</param>
+ <remarks>Operación 'wsGetDoc' del servicio de Acepta.</remarks>
+ <returns>Información del documento</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.InformacionDeUnDocumento(System.String)">
+ <summary>
+ Recupera un documento y crea un versión en disco del mismo.
+ </summary>
+ <param name="codigoDoc">Código del documento</param>
+ <remarks>Operación 'wsGetDoc' del servicio de Acepta.</remarks>
+ <returns>Nombre del archivo generado local</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.EstadoDeUnDocumento(System.String)">
+ <summary>
+ Consulta el estado de un documento
+ </summary>
+ <param name="codigoDoc">Código del documento</param>
+ <remarks>Operación 'wsInfoDoc' del servicio de Acepta.</remarks>
+ <returns>Estado del documento</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.EstadoDeUnDocumentoSimple(System.String)">
+ <summary>
+ Consulta el estado de un documento, retorna valor simple con el estado
+ </summary>
+ <param name="codigoDoc">Código del documento</param>
+ <remarks>Operación 'wsInfoDoc' del servicio de Acepta.</remarks>
+ <returns>Estado del documento</returns>
+</member>
+<member name="M:InMotionGIT.Integration.Acepta.Extend.wsdocs4.FirmaLadrilloEnDocumento(System.String)">
+ <summary>
+ Estampa el ladrillo de firma en un documento. El documento debe estar previamente firmado.
+ </summary>
+ <param name="codigoDoc">Código del documento</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

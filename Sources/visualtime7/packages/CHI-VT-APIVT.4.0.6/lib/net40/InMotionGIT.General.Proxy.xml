@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.General.Proxy
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.General.Proxy.Address.TabSeisMicFloodZoneRetrieve(System.Int64,System.DateTime,System.String)">
+ <summary>
+ Método que retorna una entidad tipo TabSeisMicFloodZone
+ </summary>
+ <param name="ZipCode">Código zip</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="filter">Filtro aplicar en el query</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.TabSeisMicFloodZoneRetrieve(System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Método que retorna una entidad tipo TabSeisMicFloodZone
+ </summary>
+ <param name="ZipCode">Código zip</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="filter">Filtro aplicar en el query</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrievePolicyAddress(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.String)">
+ <summary>
+ Return the address information of a policy. // Retorna la información de dirección de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <returns>Address information of a client. // Información de dirección de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrievePolicyAddress(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Return the address information of a policy. // Retorna la información de dirección de una póliza.
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Address information of a client. // Información de dirección de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveClientAddress(System.String,System.DateTime,System.String)">
+ <summary>
+ Return the address information of a client. // Retorna la información de dirección de un cliente.
+ </summary>
+ <param name="clientCode">Client id. // Código de cliente.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <returns>Address information of a client. // Información de dirección de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveClientAddress(System.String,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Return the address information of a client. // Retorna la información de dirección de un cliente.
+ </summary>
+ <param name="clientCode">Client id. // Código de cliente.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Address information of a client. // Información de dirección de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveByPOBOX(System.String,System.DateTime,System.String,System.Data.Common.DbConnection,System.String,System.String)">
+ <summary>
+ Return the address information of a client filtering by POBOX. // Retorna la información de dirección de un cliente filtrando por POBOX.
+ </summary>
+ <param name="POBOX">Postal Code. // Código postal.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <param name="currentConnection">DB Connection, server connection for default. // Conexion a DB, por defecto se usa la del servidor.</param>
+ <param name="provider">Provider of the operation. // Proveedor de la operación.</param>
+ <returns>Address Collection. // Colección de direcciones.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveAddressInsured(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.String)">
+ <summary>
+ Return the address of a Insured client // Retorna la dirección de un cliente asegurado.)
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <returns>Address information of a insured client. // Información de dirección de un cliente asegurado.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveAddressInsured(System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Return the address of a Insured client // Retorna la dirección de un cliente asegurado.)
+ </summary>
+ <param name="recordType">Record type. // Tipo de registro.</param>
+ <param name="lineOfBusiness">Line of business code. // Código de linea de negocios.</param>
+ <param name="productCode">Product code. // Código de producto.</param>
+ <param name="policyID">Policy id. // Id de póliza.</param>
+ <param name="certificateID">Certificate id. // Código de certificado.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Filter for the address information. // Filtro de la información de dirección.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Address information of a insured client. // Información de dirección de un cliente asegurado.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveQueryEmailAndRecordOwner(System.String,System.Int32)">
+ <summary>
+ Método que retorna en una colección de direcciones en relación de RecordOwner
+ </summary>
+ <param name="RecordOwner">Tipo de Dueño // Type owner.</param>
+ <param name="eMail">Tipo de Dueño // Type owner.</param>
+ <returns>Retorna una colección de direcciones en base a el tipo de dueño</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.RetrieveQueryEmailAndRecordOwner(System.String,System.Int32,System.String,System.String)">
+ <summary>
+ Método que retorna en una colección de direcciones en relación de RecordOwner
+ </summary>
+ <param name="RecordOwner">Tipo de Dueño // Type owner.</param>
+ <param name="eMail">Tipo de Dueño // Type owner.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna una colección de direcciones en base a el tipo de dueño</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.Synchronize(InMotionGIT.General.Entity.Contracts.Address.Address,System.String,System.DateTime)">
+ <summary>
+ Permite sincronizar un objeto tipo dirección
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.Synchronize(InMotionGIT.General.Entity.Contracts.Address.Address,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo dirección
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.SynchronizeCollection(InMotionGIT.General.Entity.Contracts.Address.AddressCollection,System.String,System.DateTime,System.Boolean,System.Boolean)">
+ <summary>
+ Permite sincronizar una colección objeto tipo dirección
+ </summary>
+ <param name="items">Objetos a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el items y un false sino logro sincronizar el items</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Address.SynchronizeCollection(InMotionGIT.General.Entity.Contracts.Address.AddressCollection,System.String,System.DateTime,System.Boolean,System.Boolean,System.String,System.String)">
+ <summary>
+ Permite sincronizar una colección objeto tipo dirección
+ </summary>
+ <param name="items">Objetos a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el items y un false sino logro sincronizar el items</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewManagerClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del underwriting.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewAddressClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios de address de backoffice.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewNoteClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios de address de backoffice.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewServiceOrderClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios de address de backoffice.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewErrorClientInstance">
+ <summary>
+ Retorna una instancia de error para el servicios de address de backoffice.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewGeneralClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del General.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewPhoneClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del Phone.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.NewImageClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del Image.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Helpers.Support.GetRealDeployWeb(System.String)">
+ <summary>
+ Build the real deploy web - Construye la dirección del deploy
+ </summary>
+ <param name="path">Current deploy web - Dirección del deploy </param>
+ <returns>Real Deploy Web - Dirección real del deploy </returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Retrieve(System.Int32,System.DateTime,InMotionGIT.General.Entity.Contracts.Errors.Enumerations.EnumSystemErrorChild)">
+ <summary>
+ Retrieve a system error information. // Retorna la información de un error de sistema.
+ </summary>
+ <param name="ErrorNumber">Error code. // Código de error.</param>
+ <param name="atDate">Fecha de consulta. //Fecha de consulta.</param>
+ <param name="filter">Filter code. // Filtro aplicar en el query</param>
+ <returns>System error information. // Información de un error de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Retrieve(System.Int32,System.DateTime,InMotionGIT.General.Entity.Contracts.Errors.Enumerations.EnumSystemErrorChild,System.String,System.String)">
+ <summary>
+ Retrieve a system error information. // Retorna la información de un error de sistema.
+ </summary>
+ <param name="ErrorNumber">Error code. // Código de error.</param>
+ <param name="atDate">Fecha de consulta. //Fecha de consulta.</param>
+ <param name="filter">Filter code. // Filtro aplicar en el query</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>System error information. // Información de un error de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RetrieveSystemErrorInformation(System.Int32,System.String)">
+ <summary>
+ Retrieve a system error information. // Retorna la información de un error de sistema.
+ </summary>
+ <param name="ErrorNumber">Error code. // Código de error.</param>
+ <param name="format">Error format. // Formato de error.</param>
+ <returns>System error information. // Información de un error de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RetrieveSystemErrorInformation(System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Retrieve a system error information. // Retorna la información de un error de sistema.
+ </summary>
+ <param name="ErrorNumber">Error code. // Código de error.</param>
+ <param name="format">Error format. // Formato de error.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>System error information. // Información de un error de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RetrieveSystemErrorInformationByWindowPhysicalCode(System.String,System.Boolean)">
+ <summary>
+ Retrieve a system error information by windows physical code. // Retorna la información de un error de sistema por código de ventana.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana</param>
+ <param name="summary">True to returns summarized information. False to complete information. // True para retornar información resumida. False para recibir la información completa.</param>
+ <returns>Collection of system error information related to the windows physical codes. // Colección de errores relacionados a los códigos de ventana.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RetrieveSystemErrorInformationByWindowPhysicalCode(System.String,System.Boolean,System.String,System.String)">
+ <summary>
+ Retrieve a system error information by windows physical code. // Retorna la información de un error de sistema por código de ventana.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana</param>
+ <param name="summary">True to returns summarized information. False to complete information. // True para retornar información resumida. False para recibir la información completa.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Collection of system error information related to the windows physical codes. // Colección de errores relacionados a los códigos de ventana.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Create(System.String,InMotionGIT.General.Entity.Contracts.Errors.SystemError)">
+ <summary>
+ Creates a new system error information instance. // Crea una nueva instancia de información de errores de sistema.
+ </summary>
+ <param name="auditUserIdentify">Usercode. // Código del usuario que realiza la operación.</param>
+ <param name="systemError">System error information. // Información de error del sistema.</param>
+ <returns>New system error information instance. // Nueva instancia de información de errores de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Create(System.String,InMotionGIT.General.Entity.Contracts.Errors.SystemError,System.String,System.String)">
+ <summary>
+ Creates a new system error information instance. // Crea una nueva instancia de información de errores de sistema.
+ </summary>
+ <param name="auditUserIdentify">Usercode. // Código del usuario que realiza la operación.</param>
+ <param name="systemError">System error information. // Información de error del sistema.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>New system error information instance. // Nueva instancia de información de errores de sistema.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Update(System.String,InMotionGIT.General.Entity.Contracts.Errors.SystemError)">
+ <summary>
+ Updates a system error information. // Actualiza la información de un error de sistema.
+ Not functional.
+ </summary>
+ <param name="auditUserIdentify">Usercode. // Código del usuario que realiza la operación.</param>
+ <param name="systemError">System error information. // Información del error de sistema.</param>
+ <returns>In case of error, return the same inputs including a list under the property Errors that explain the execution and validation errors. // En caso de existir error de validación, los mismo se retornas en forma de una lista de error bajo la propiedad errors.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Update(System.String,InMotionGIT.General.Entity.Contracts.Errors.SystemError,System.String,System.String)">
+ <summary>
+ Updates a system error information. // Actualiza la información de un error de sistema.
+ Not functional.
+ </summary>
+ <param name="auditUserIdentify">Usercode. // Código del usuario que realiza la operación.</param>
+ <param name="systemError">System error information. // Información del error de sistema.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>In case of error, return the same inputs including a list under the property Errors that explain the execution and validation errors. // En caso de existir error de validación, los mismo se retornas en forma de una lista de error bajo la propiedad errors.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Delete(System.Int32)">
+ <summary>
+ Delete a error information with the error code. // Elimina la información de un error de sistema con el código de error.
+ Not functional.
+ </summary>
+ <param name="errorNumber">Error code. // Código de error.</param>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.Delete(System.Int32,System.String)">
+ <summary>
+ Delete a error information with the error code. // Elimina la información de un error de sistema con el código de error.
+ Not functional.
+ </summary>
+ <param name="errorNumber">Error code. // Código de error.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RssFeed(System.String)">
+ <summary>
+ Create a RssFeed by status using a Windows physical code chain. // Crea un RssFeed con el estatus de la cadena de códigos de ventana.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana.</param>
+ <returns>returns information in RssFeed format. // Retorna la información en formato RssFeed.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RssFeed(System.String,System.String,System.String)">
+ <summary>
+ Create a RssFeed by status using a Windows physical code chain. // Crea un RssFeed con el estatus de la cadena de códigos de ventana.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>returns information in RssFeed format. // Retorna la información en formato RssFeed.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RssFeedByStatus(System.String,System.String)">
+ <summary>
+ Create a RssFeed by status using a Windows physical code chain and theirs status. // Crea un RssFeed con el estatus de la cadena de códigos de ventana y sus estados.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana</param>
+ <param name="status">Status code. // Código de estado.</param>
+ <returns>returns information in RssFeed format. // Retorna la información en formato RssFeed.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Error.RssFeedByStatus(System.String,System.String,System.String,System.String)">
+ <summary>
+ Create a RssFeed by status using a Windows physical code chain and theirs status. // Crea un RssFeed con el estatus de la cadena de códigos de ventana y sus estados.
+ </summary>
+ <param name="windowPhysicalCodeList">Windows physical code chain. // Cadena de códigos de ventana</param>
+ <param name="status">Status code. // Código de estado.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>returns information in RssFeed format. // Retorna la información en formato RssFeed.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.ServiceOrder.ProfessionalServiceOrderRetrieve(System.Int64,System.DateTime,InMotionGIT.General.Entity.Contracts.ServiceOrders.Enumerations.EnumProfessionalServiceOrderChild)">
+ <summary>
+ Permite realizar un retorno de un PrefecionalServicesOrder un objeto tipo imagen
+ </summary>
+ <param name="ServiceOrderID">Id de la note</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.ServiceOrder.ProfessionalServiceOrderRetrieve(System.Int64,System.DateTime,InMotionGIT.General.Entity.Contracts.ServiceOrders.Enumerations.EnumProfessionalServiceOrderChild,System.String,System.String)">
+ <summary>
+ Permite realizar un retorno de un PrefecionalServicesOrder un objeto tipo imagen
+ </summary>
+ <param name="ServiceOrderID">Id de la note</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.ServiceOrder.RetrieveVendorInformation(System.Int32,System.DateTime,System.String,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="vendorCode"></param>
+ <param name="atDate"></param>
+ <param name="filter"></param>
+ <param name="withLookups"></param>
+ <param name="accessToken"></param>
+ <param name="provider"></param>
+ <param name="companyID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Synchronize(InMotionGIT.General.Entity.Contracts.Notes.Note,System.String,System.DateTime)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Synchronize(InMotionGIT.General.Entity.Contracts.Notes.Note,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Synchronize(InMotionGIT.General.Entity.Contracts.Notes.NoteCollection,System.String,System.DateTime,System.Boolean,System.Boolean,System.Int64)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="items">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Synchronize(InMotionGIT.General.Entity.Contracts.Notes.NoteCollection,System.String,System.DateTime,System.Boolean,System.Boolean,System.Int64,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="items">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Retrieve(System.Int64,System.DateTime,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo imagen
+ </summary>
+ <param name="NoteID">Id de la image</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Note.Retrieve(System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo imagen
+ </summary>
+ <param name="NoteID">Id de la image</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NextNumeratorNumber(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Generates the next numerator. // Genera el próximo numerador.
+ </summary>
+ <param name="recordType">Type of record to which the numbering pertains. // Tipo de registro a la que pertenece la numeración.</param>
+ <param name="key">Complementary key to obtain the appropriate numerator. // clave complementaria para obtener el numerador apropiado.</param>
+ <param name="auditUserIdentify">Code of the user creating or updating the information. // Código de usuario que crea o actualiza la información.</param>
+ <returns>Next numerator. // Próximo numerador.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NextNumeratorNumber(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Generates the next numerator. // Genera el próximo numerador.
+ </summary>
+ <param name="recordType">Type of record to which the numbering pertains. // Tipo de registro a la que pertenece la numeración.</param>
+ <param name="key">Complementary key to obtain the appropriate numerator. // clave complementaria para obtener el numerador apropiado.</param>
+ <param name="auditUserIdentify">Code of the user creating or updating the information. // Código de usuario que crea o actualiza la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Next numerator. // Próximo numerador.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.UserRetrieve(System.String)">
+ <summary>
+ This is Method return one entity of the type InMotionGIT.General.Entity.Contracts.Security.User, by client id. // Retorna una entidad de tipo InMotionGIT.General.Entity.Contracts.Security.User usando el código del cliente.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <returns>Entity InMotionGIT.General.Entity.Contracts.Security.User // Entidad InMotionGIT.General.Entity.Contracts.Security.User</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.UserRetrieve(System.String,System.String,System.String)">
+ <summary>
+ This is Method return one entity of the type InMotionGIT.General.Entity.Contracts.Security.User, by client id. // Retorna una entidad de tipo InMotionGIT.General.Entity.Contracts.Security.User usando el código del cliente.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Entity InMotionGIT.General.Entity.Contracts.Security.User // Entidad InMotionGIT.General.Entity.Contracts.Security.User</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.UserSynchonize(InMotionGIT.General.Entity.Contracts.Security.User,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Synchronize an entity type InMotionGIT.General.Entity.Contracts.Security.User
+ </summary>
+ <param name="userInstance">User information. // Información del usuario.</param>
+ <param name="auditUserIdentify">Usercode. // Código de usuario.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <param name="atDate">Operation date. // fecha de transacción.</param>
+ <returns>User information. // Información del usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.UserSynchonize(InMotionGIT.General.Entity.Contracts.Security.User,System.String,System.Boolean,System.DateTime,System.String,System.String)">
+ <summary>
+ Synchronize an entity type InMotionGIT.General.Entity.Contracts.Security.User
+ </summary>
+ <param name="userInstance">User information. // Información del usuario.</param>
+ <param name="auditUserIdentify">Usercode. // Código de usuario.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <param name="atDate">Operation date. // fecha de transacción.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>User information. // Información del usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.SecuritySchemeRetrieve(System.String,System.DateTime)">
+ <summary>
+ Retrieve the security scheme. // Retorna la información de un esquema de seguridad.
+ </summary>
+ <param name="securitySchemeCode">Security scheme code. // Código de esquema de seguridad.</param>
+ <param name="atDate">Operation date. // fecha de transacción.</param>
+ <returns>Security scheme information. // Security scheme information.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.SecuritySchemeRetrieve(System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Retrieve the security scheme. // Retorna la información de un esquema de seguridad.
+ </summary>
+ <param name="securitySchemeCode">Security scheme code. // Código de esquema de seguridad.</param>
+ <param name="atDate">Operation date. // fecha de transacción.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Security scheme information. // Security scheme information.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableLkp(System.String,System.String)">
+ <summary>
+ Lista de valores simple según la tabla genérica que se indique.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="emptyOption">Si está lleno indica que se debe agregar un elemento a la lista normalmente usando para indicar un valor vacío.</param>
+ <returns>Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableLkp(System.String,System.String,System.String,System.String)">
+ <summary>
+ Lista de valores simple según la tabla genérica que se indique.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="emptyOption">Si está lleno indica que se debe agregar un elemento a la lista normalmente usando para indicar un valor vacío.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableValueDescription(System.String,System.String)">
+ <summary>
+ Descripción asociada a un valor según la tabla genérica que se indique.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="code">Código usado para determinar la descripción.</param>
+ <returns>Descripción asociada.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableValueDescription(System.String,System.String,System.String,System.String)">
+ <summary>
+ Descripción asociada a un valor según la tabla genérica que se indique.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="code">Código usado para determinar la descripción.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Descripción asociada.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableFindValue(System.String,System.Int32)">
+ <summary>
+ Verifica si un valor se encuentra en la llave primaria de una tabla genérica.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="tableValue">Valor a buscar en la tabla genérica.</param>
+ <returns>True si el valor existe y False de lo contrario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.TableFindValue(System.String,System.Int32,System.String,System.String)">
+ <summary>
+ Verifica si un valor se encuentra en la llave primaria de una tabla genérica.
+ </summary>
+ <param name="tableName">Nombre de la tabla genérica.</param>
+ <param name="tableValue">Valor a buscar en la tabla genérica.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True si el valor existe y False de lo contrario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CountryLkp">
+ <summary>
+ Lista de valores simple de los países.
+ </summary>
+ <returns>Lista de países.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CountryLkp(System.String,System.String)">
+ <summary>
+ Lista de valores simple de los países.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de países.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.ProvinceLkp">
+ <summary>
+ Lista de valores simple de las provincias.
+ </summary>
+ <returns>Lista de provincias.</returns>
+ <remarks>En Chile representa la región.</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.ProvinceLkp(System.String,System.String)">
+ <summary>
+ Lista de valores simple de las provincias.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de provincias.</returns>
+ <remarks>En Chile representa la región.</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CityLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las ciudades según la provincia.
+ </summary>
+ <returns>Lista de ciudades.</returns>
+ <remarks>En Chile representa la provincia</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CityLkp(System.Int32,System.String,System.String)">
+ <summary>
+ Lista de valores simple de las ciudades según la provincia.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de ciudades.</returns>
+ <remarks>En Chile representa la provincia</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.MunicipalityLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los municipios según la ciudad.
+ </summary>
+ <returns>Lista de municipios.</returns>
+ <remarks>En Chile representa la comuna</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.MunicipalityLkp(System.Int32,System.String,System.String)">
+ <summary>
+ Lista de valores simple de los municipios según la ciudad.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de municipios.</returns>
+ <remarks>En Chile representa la comuna</remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CurrencyExchangeConvertion(System.Decimal,System.Decimal,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Convierte el monto de una moneda a otra
+ </summary>
+ <returns>Monto en la moneda de destino.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CurrencyExchangeConvertion(System.Decimal,System.Decimal,System.Int32,System.Int32,System.DateTime,System.String,System.String)">
+ <summary>
+ Convierte el monto de una moneda a otra
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Monto en la moneda de destino.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CurrencyExchangeRetrieveByCondition(System.String,System.DateTime,InMotionGIT.General.Entity.Contracts.General.Enumerations.EnumCurrencyExchangeRateChild)">
+ <summary>
+ Convierte el monto de una moneda a otra
+ </summary>
+ <returns>Monto en la moneda de destino.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.CurrencyExchangeRetrieveByCondition(System.String,System.DateTime,InMotionGIT.General.Entity.Contracts.General.Enumerations.EnumCurrencyExchangeRateChild,System.String,System.String)">
+ <summary>
+ Convierte el monto de una moneda a otra
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Monto en la moneda de destino.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieveByRecordTypeAndKey(System.Int32,System.Int32,System.DateTime,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieveByRecordTypeAndKey(System.Int32,System.Int32,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieveByRecordType(System.Int32,System.DateTime,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieveByRecordType(System.Int32,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieve(System.DateTime,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorRetrieve(System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Retorna el registro actual acorde a el key solicitado
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna el numerador actual</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.GetClaimNumberFromNumerator(System.Int32,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation)">
+ <summary>
+ Obtiene y actualiza el numerador de siniestros correspondiente
+ </summary>
+ <param name="RecordType">Tipo de registro</param>
+ <param name="lineOfBusiness">Código del ramo</param>
+ <param name="consumer">Consumer information</param>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.GetClaimNumberFromNumerator(System.Int32,System.Int32,InMotionGIT.Common.Contracts.Process.ConsumerInformation,System.String,System.String)">
+ <summary>
+ Obtiene y actualiza el numerador de siniestros correspondiente
+ </summary>
+ <param name="RecordType">Tipo de registro</param>
+ <param name="lineOfBusiness">Código del ramo</param>
+ <param name="consumer">Consumer information</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorSynchronize(InMotionGIT.General.Entity.Contracts.General.Numerator,System.String,System.DateTime)">
+ <summary>
+ Sincroniza ala entidad de numerator
+ </summary>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.NumeratorSynchronize(InMotionGIT.General.Entity.Contracts.General.Numerator,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Sincroniza ala entidad de numerator
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.INSREAUPDNUMERATOR(System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+  NOMBRE    : INSREAUPDNUMERATOR_SP
+ OBJETIVO  : OBTENER LOS CONSECUTIVOS. EJPLO: POLICY.NPOLICY
+ </summary>
+ <param name="RecordType">
+ Tipo de registro.
+ //
+ Type of Record.
+ </param>
+ <param name="Key">
+ Clave complementaria para obtener el numerador correspondiente.
+ //
+ Complementary key to obtain the appropriate numerator.
+ </param>
+ <param name="recordEffectiveDate">
+ Fecha de vigencia de la póliza / certificado.
+ //
+ Effective date of the policy/certificate.
+ </param>
+ <param name="auditUserIdentify">
+ Código del usuario que realiza la operación.
+ //
+ User Code that performs the operation.
+ </param>
+ <param name="CertificateID">
+ Número del certificado (solo para colectivos, si la factura pertenece a un certificado).
+ //
+ Number identifying the certificate (only for Groups, if the bill belongs to a single certificate).
+ </param>
+ <param name="InstallmentNumber">
+ Número que identifica la parte del convenio de pago de la factura.
+ //
+ Number of the installment related to the bill payment agreement.
+ </param>
+ <param name="ControlDigit">
+ Dígito de control de recibos (usado para modificaciones de póliza con alteración de la distribución de reaseguro).
+ //
+ Bill control digit (used in policy modifications with changes in reinsurance).
+ </param>
+ <param name="Year">
+ Indicador
+ //
+ indicator
+ </param>
+ <param name="Check">
+ Indicador
+ //
+ indicator
+ </param>
+ <param name="Consecutive">
+ Número Consecutivo
+ //
+ Consecutive number
+ </param>
+ <param name="LineOfBusiness">
+ Linea de negocio
+ //
+ Consecutive number
+ </param>
+ <param name="ProductCode">
+ Número Consecutivo
+ //
+ Código de producto
+ </param>
+ <param name="PolicyID">
+ Intensification de Póliza
+ //
+ Consecutive number
+ </param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.General.INSREAUPDNUMERATOR(System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+  NOMBRE    : INSREAUPDNUMERATOR_SP
+ OBJETIVO  : OBTENER LOS CONSECUTIVOS. EJPLO: POLICY.NPOLICY
+ </summary>
+ <param name="RecordType">
+ Tipo de registro.
+ //
+ Type of Record.
+ </param>
+ <param name="Key">
+ Clave complementaria para obtener el numerador correspondiente.
+ //
+ Complementary key to obtain the appropriate numerator.
+ </param>
+ <param name="recordEffectiveDate">
+ Fecha de vigencia de la póliza / certificado.
+ //
+ Effective date of the policy/certificate.
+ </param>
+ <param name="auditUserIdentify">
+ Código del usuario que realiza la operación.
+ //
+ User Code that performs the operation.
+ </param>
+ <param name="CertificateID">
+ Número del certificado (solo para colectivos, si la factura pertenece a un certificado).
+ //
+ Number identifying the certificate (only for Groups, if the bill belongs to a single certificate).
+ </param>
+ <param name="InstallmentNumber">
+ Número que identifica la parte del convenio de pago de la factura.
+ //
+ Number of the installment related to the bill payment agreement.
+ </param>
+ <param name="ControlDigit">
+ Dígito de control de recibos (usado para modificaciones de póliza con alteración de la distribución de reaseguro).
+ //
+ Bill control digit (used in policy modifications with changes in reinsurance).
+ </param>
+ <param name="Year">
+ Indicador
+ //
+ indicator
+ </param>
+ <param name="Check">
+ Indicador
+ //
+ indicator
+ </param>
+ <param name="Consecutive">
+ Número Consecutivo
+ //
+ Consecutive number
+ </param>
+ <param name="LineOfBusiness">
+ Linea de negocio
+ //
+ Consecutive number
+ </param>
+ <param name="ProductCode">
+ Número Consecutivo
+ //
+ Código de producto
+ </param>
+ <param name="PolicyID">
+ Intensification de Póliza
+ //
+ Consecutive number
+ </param>
+ <param name="provider">
+ Código de proveedor del servicio. 
+ // 
+ Provider code of the service.
+ </param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.Synchronize(InMotionGIT.General.Entity.Contracts.Images.Image,System.String,System.DateTime)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.Synchronize(InMotionGIT.General.Entity.Contracts.Images.Image,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.SynchronizeCollection(InMotionGIT.General.Entity.Contracts.Images.ImageCollection,System.String,System.DateTime,System.Boolean,System.Boolean,System.Int64)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="items">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.SynchronizeCollection(InMotionGIT.General.Entity.Contracts.Images.ImageCollection,System.String,System.DateTime,System.Boolean,System.Boolean,System.Int64,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo Imagen
+ </summary>
+ <param name="items">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.Retrieve(System.Int64,System.DateTime,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo imagen
+ </summary>
+ <param name="ImageID">Id de la image</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Image.Retrieve(System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo imagen
+ </summary>
+ <param name="ImageID">Id de la image</param>
+ <param name="atDate">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="filter">Filtro para aplicar en el query</param>
+ <returns>Retorna un una colección de images</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Phone.Synchronize(InMotionGIT.General.Entity.Contracts.Phones.Phone,System.String,System.DateTime)">
+ <summary>
+ Permite sincronizar un objeto tipo dirección
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Phone.Synchronize(InMotionGIT.General.Entity.Contracts.Phones.Phone,System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Permite sincronizar un objeto tipo dirección
+ </summary>
+ <param name="item">Objeto a sintonizar</param>
+ <param name="auditUserIdentify">Usuario que solicita la acción, a modo de auditoria</param>
+ <param name="atDate">Fecha de solicitud</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Retorna un true si logra sincronizar el item y un false sino logro sincronizar el item</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UsersLkp">
+ <summary>
+ Lista de usuario.
+ </summary>
+ <returns>Lista de usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UsersLkp(System.String,System.String)">
+ <summary>
+ Lista de usuario.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Lista de usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UserName(System.Int32)">
+ <summary>
+ Recupera el nombre asociado a un usuario.
+ </summary>
+ <param name="userCode">Código del usuario.</param>
+ <returns>Nombre del usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UserName(System.Int32,System.String,System.String)">
+ <summary>
+ Recupera el nombre asociado a un usuario.
+ </summary>
+ <param name="userCode">Código del usuario.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Nombre del usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.RetrieveUserByFilter(System.Int32,System.String,System.String)">
+ <summary>
+ Recupera la información de un usuario por medio de una de la usuarios del filtro.
+ </summary>
+ <param name="userCode">Código del usuario.</param>
+ <param name="clientId">Código de cliente.</param>
+ <param name="userInitials">Iniciales del usuario.</param>
+ <returns>Información de un usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.RetrieveUserByFilter(System.Int32,System.String,System.String,System.String,System.String)">
+ <summary>
+ Recupera la información de un usuario por medio de una de la usuarios del filtro.
+ </summary>
+ <param name="userCode">Código del usuario.</param>
+ <param name="clientId">Código de cliente.</param>
+ <param name="userInitials">Iniciales del usuario.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un usuario.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.RetrieveSecurityScheme(System.String,System.DateTime)">
+ <summary>
+ Recupera la información de un esquema de seguridad por medio de su código.
+ </summary>
+ <param name="securitySchemeCode">Código de esquema de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.RetrieveSecurityScheme(System.String,System.DateTime,System.String,System.String)">
+ <summary>
+ Recupera la información de un esquema de seguridad por medio de su código.
+ </summary>
+ <param name="securitySchemeCode">Código de esquema de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UserRetrieve(System.Int64,System.DateTime,System.String)">
+ <summary>
+ Recupera la información de un usuario de seguridad por medio de su código.
+ </summary>
+ <param name="UserId">Código de ventana de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <param name="filter">filter.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.UserRetrieve(System.Int64,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Recupera la información de un usuario de seguridad por medio de su código.
+ </summary>
+ <param name="UserId">Código de ventana de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <param name="filter">filter.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.WindowsSystemRetrieve(System.String,System.DateTime,System.String)">
+ <summary>
+ Recupera la información de un esquema de seguridad por medio de su código.
+ </summary>
+ <param name="WindowLogicalCode">Código de ventana de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <param name="filter">filter.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.WindowsSystemRetrieve(System.String,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+ Recupera la información de un esquema de seguridad por medio de su código.
+ </summary>
+ <param name="WindowLogicalCode">Código de ventana de seguridad.</param>
+ <param name="atDate">Fecha de transacción.</param>
+ <param name="filter">filter.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un esquema de seguridad.</returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.AuthorizationLevelRetrieve(System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+  Retorna el nivel de authorization del código
+ </summary>
+ <param name="SecuritySchemeCode">código de schema</param>
+ <param name="ModuleOrTransaction">código de transacción</param>
+ <param name="ModuleOrTransactionCode">código de transacción</param>
+ <param name="atDate">Fecha actual</param>
+ <param name="filter">Filtro a aplicar en el query</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.General.Proxy.Security.AuthorizationLevelRetrieve(System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String)">
+ <summary>
+  Retorna el nivel de authorization del código
+ </summary>
+ <param name="SecuritySchemeCode">código de schema</param>
+ <param name="ModuleOrTransaction">código de transacción</param>
+ <param name="ModuleOrTransactionCode">código de transacción</param>
+ <param name="atDate">Fecha actual</param>
+ <param name="filter">Filtro a aplicar en el query</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

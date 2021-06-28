@@ -1,0 +1,139 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="CalculaPrimaTresOpciones" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ibec="clr-namespace:InMotionGIT.Bill.Entity.Contracts;assembly=InMotionGIT.Bill.Entity.Contracts" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icce="clr-namespace:InMotionGIT.Common.Contracts.Errors;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:ipa="clr-namespace:InMotionGIT.PolicyManager.Activities;assembly=InMotionGIT.PolicyManager.Activities" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipeci="clr-namespace:InMotionGIT.Policy.Entity.Contracts.Interfaces;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="RiskInformation" Type="InArgument(ipec:RiskInformation)" />
+    <x:Property Name="Capital1" Type="InArgument(x:Decimal)" />
+    <x:Property Name="Capital2" Type="InArgument(x:Decimal)" />
+    <x:Property Name="Capital3" Type="InArgument(x:Decimal)" />
+    <x:Property Name="Coberturas1" Type="OutArgument(ipec:CoverageWithCalculatedPremiumCollection)" />
+    <x:Property Name="Coberturas2" Type="OutArgument(ipec:CoverageWithCalculatedPremiumCollection)" />
+    <x:Property Name="Coberturas3" Type="OutArgument(ipec:CoverageWithCalculatedPremiumCollection)" />
+    <x:Property Name="DetalleSin1" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="DetalleCon1" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="DetalleSin2" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="DetalleCon2" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="DetalleSin3" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="DetalleCon3" Type="OutArgument(ibec:PremiumDetailCollection)" />
+    <x:Property Name="AporteAnual" Type="InArgument(x:Decimal)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>776,1198</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="CalculaPrimaTresOpciones" sap:VirtualizedContainerService.HintSize="827,1158">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144</av:PointCollection>
+        <x:Double x:Key="Height">1121.92</x:Double>
+        <x:Double x:Key="Width">813</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">218.5,144</av:Point>
+            <av:Size x:Key="ShapeSize">163,132</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,276 300,347</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,132">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="CalculaPrimaTresOpciones." />
+            <icd:LocalizedString Language="2" Value="CalculaPrimaTresOpciones." />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">171.5,347</av:Point>
+                <av:Size x:Key="ShapeSize">257,106</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,453 300,507</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteCalculaPrimaUnaOpcionCapital1" sap:VirtualizedContainerService.HintSize="257,106" ModelId="0ec525f6-1b1f-42df-9eb1-f576cc3ee34f" Release="2" Tracking="True" WorkflowPath="CalculaPrimaUnaOpcion">
+              <icag:ExecuteWorkflow.ChildArguments>
+                <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                <InArgument x:TypeArguments="ipec:RiskInformation" x:Key="RiskInformation">[RiskInformation]</InArgument>
+                <InArgument x:TypeArguments="x:Decimal" x:Key="Capital">[Capital1]</InArgument>
+                <OutArgument x:TypeArguments="ipec:CoverageWithCalculatedPremiumCollection" x:Key="Coberturas">[Coberturas1]</OutArgument>
+                <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleSin">[DetalleSin1]</OutArgument>
+                <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleCon">[DetalleCon1]</OutArgument>
+                <InArgument x:TypeArguments="x:Decimal" x:Key="AporteAnual">[AporteAnual]</InArgument>
+              </icag:ExecuteWorkflow.ChildArguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </icag:ExecuteWorkflow>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">171.5,507</av:Point>
+                    <av:Size x:Key="ShapeSize">257,106</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">300,613 300,697</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteCalculaPrimaUnaOpcionCapital2" sap:VirtualizedContainerService.HintSize="257,106" ModelId="0ec525f6-1b1f-42df-9eb1-f576cc3ee34f" Release="2" Tracking="True" WorkflowPath="CalculaPrimaUnaOpcion">
+                  <icag:ExecuteWorkflow.ChildArguments>
+                    <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                    <InArgument x:TypeArguments="ipec:RiskInformation" x:Key="RiskInformation">[RiskInformation]</InArgument>
+                    <InArgument x:TypeArguments="x:Decimal" x:Key="Capital">[Capital2]</InArgument>
+                    <OutArgument x:TypeArguments="ipec:CoverageWithCalculatedPremiumCollection" x:Key="Coberturas">[Coberturas2]</OutArgument>
+                    <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleSin">[DetalleSin2]</OutArgument>
+                    <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleCon">[DetalleCon2]</OutArgument>
+                    <InArgument x:TypeArguments="x:Decimal" x:Key="AporteAnual">[AporteAnual]</InArgument>
+                  </icag:ExecuteWorkflow.ChildArguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </icag:ExecuteWorkflow>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">171.5,697</av:Point>
+                        <av:Size x:Key="ShapeSize">257,106</av:Size>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteCalculaPrimaUnaOpcionCapital3" sap:VirtualizedContainerService.HintSize="257,106" ModelId="0ec525f6-1b1f-42df-9eb1-f576cc3ee34f" Release="2" Tracking="True" WorkflowPath="CalculaPrimaUnaOpcion">
+                      <icag:ExecuteWorkflow.ChildArguments>
+                        <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                        <InArgument x:TypeArguments="ipec:RiskInformation" x:Key="RiskInformation">[RiskInformation]</InArgument>
+                        <InArgument x:TypeArguments="x:Decimal" x:Key="Capital">[Capital3]</InArgument>
+                        <OutArgument x:TypeArguments="ipec:CoverageWithCalculatedPremiumCollection" x:Key="Coberturas">[Coberturas3]</OutArgument>
+                        <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleSin">[DetalleSin3]</OutArgument>
+                        <OutArgument x:TypeArguments="ibec:PremiumDetailCollection" x:Key="DetalleCon">[DetalleCon3]</OutArgument>
+                        <InArgument x:TypeArguments="x:Decimal" x:Key="AporteAnual">[AporteAnual]</InArgument>
+                      </icag:ExecuteWorkflow.ChildArguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </icag:ExecuteWorkflow>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+  </Flowchart>
+</Activity>

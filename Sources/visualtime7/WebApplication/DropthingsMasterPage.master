@@ -1,0 +1,316 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DropthingsMasterPage.master.cs"
+    Inherits="DropthingsMasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta content="IE=11,chrome=1" http-equiv="X-UA-Compatible" />
+    <title>VisualTIME</title>
+    <meta charset="utf-8" />
+
+    <link href="/Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Styles/jquery-ui.min-1.11.4.css" rel="stylesheet" />
+    <!-- <link href="/Styles/ui.jqgrid-bootstrap.css" rel="stylesheet" /> -->
+    
+    <link href="/Styles/ui.free.jqgrid.css" rel="stylesheet" />
+    
+    <!--JQuery Toast-->
+    <link href="Styles/jquery.toast.css" rel="stylesheet" />
+
+    <script src="/Scripts/jquery.min.js"></script>
+    <script src="/Scripts/jquery-migrate-1.4.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery-ui.js"></script>
+    <script src="/Scripts/jquery.numeric.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.messages-es.js"></script>
+    <script src="/Scripts/additional-methods.min.js"></script>
+    
+    <!--JQuery Toast-->
+    <script src="/Scripts/jquery.toast.js"></script>
+
+	<asp:PlaceHolder runat="server" >
+		<link href="/Styles/fasi.css?v=<%=System.IO.File.GetLastWriteTime(Server.MapPath("~") + @"\Styles\fasi.css").ToString("yyyyMMddHHmmss")%>" rel="stylesheet" />
+		<script src="/Scripts/fasi.js?v=<%=System.IO.File.GetLastWriteTime(Server.MapPath("~") + @"\Scripts\fasi.js").ToString("yyyyMMddHHmmss")%>"></script>
+		<script src="/Scripts/master-page.js?v=<%=System.IO.File.GetLastWriteTime(Server.MapPath("~") + @"\Scripts\master-page.js").ToString("yyyyMMddHHmmss")%>"></script>
+	</asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+
+    <style type="text/css">
+        #DeletePageConfirmPopupPlaceholder
+        {
+            height: 224px;
+            width: 732px;
+        }
+    </style>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!-- A dummy panel to download Ajax Control Toolkit library for drap and drop that CustomDragDrop extender uses -->
+    <asp:Panel ID="DummyPanel" runat="server">
+    </asp:Panel>
+    <ajaxToolkit:DragPanelExtender ID="Dummy" DragHandleID="DummyPanel" TargetControlID="DummyPanel"
+        runat="server">
+    </ajaxToolkit:DragPanelExtender>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"
+        LoadScriptsBeforeUI="false" ScriptMode="Release" EnableScriptLocalization="true"
+        EnableScriptGlobalization="true" AsyncPostBackTimeout="150">
+        <Services>
+            <asp:ServiceReference InlineScript="true" Path="dropthings/PageService.asmx" />
+            <asp:ServiceReference InlineScript="true" Path="dropthings/ProxyAsync.asmx" />
+            <asp:ServiceReference InlineScript="true" Path="dropthings/WidgetService.asmx" />
+        </Services>
+    </asp:ScriptManager>
+    <script src="/dropthings/Myframework.js" type="text/javascript"></script>
+    <script type="text/javascript">        if (typeof Proxy == "undefined") window.Proxy = Dropthings.Web.Framework.ProxyAsync;</script>
+    <div id="container">
+        <!-- Render header first so that user can start typing search criteria while the huge runtime and other scripts download -->
+        <div id="header">
+            <div class="header-container">
+                <h1>
+                    <a href="/dropthings/default.aspx">
+                        <div id="HeaderLogo">
+                            <span>Versión Oficial Chile</span>
+                        </div>
+                    </a>
+                </h1>
+                <div id="login_panel">
+                    <dxm:ASPxMenu ID="PrincipalMenu" runat="server" SkinID="MainMenu" ClientIDMode="AutoID"
+                        OnItemClick="LanguageMenu_ItemClick">
+                        <Items>
+                            <dxm:MenuItem Name="UserNameItem" Visible="false" />
+                            <dxm:MenuItem Name="LogInItem" Text="<%$ Resources:Resource, LogIn %>" NavigateUrl="javascript:ShowPopupControl();" />
+                            <dxm:MenuItem Name="LogOutItem" Text="<%$ Resources:Resource, LogOut %>" NavigateUrl="~/dropthings/LogOff.aspx" />
+                            <dxm:MenuItem Name="ChangePasswordItem" Text="<%$ Resources:Resource, ChangePassword %>"
+                                Visible="False" NavigateUrl="javascript:ChangePasswordPopupControl.Show();" />
+                            <dxm:MenuItem Name="StartOverItem" Visible="false" Text="<%$ Resources:Resource, StartOver %>"
+                                NavigateUrl="~/dropthings/LogOff.aspx" />
+                            <dxm:MenuItem Name="ProfileItem" Text="<%$ Resources:Resource, Profile %>" Visible="False" />
+                            <dxm:MenuItem Name="LanguageItem" Text="Language" />
+                            <dxm:MenuItem Name="HelpItem" Text="<%$ Resources:Resource, HelpLink %>" Target = "_blank" NavigateUrl="<%$appSettings:Url.Help %>" />
+                        </Items>
+                    </dxm:ASPxMenu>
+                </div>
+                <div id="header_message">
+                    <asp:Label ID="header_message_wrapper" runat="server" CssClass="header_message_wrapper"><%= Dropthings.Web.Util.ResourceManager.getResource("PortalSubTitle")%></asp:Label>
+                    <div style="float: right; margin-top: 3px; margin-right: 3px;">
+                        <asp:HiddenField ID="hfIsEmployee" ClientIDMode="Static" Value="0" runat="server" />
+                        <asp:HiddenField ID="hfTransactionId" ClientIDMode="Static" runat="server" />
+                        <asp:HiddenField ID="hfContentBtnGo" ClientIDMode="Static"  runat="server" />
+                        <asp:HiddenField ID="hfContentWatermark" ClientIDMode="Static"  runat="server" />
+                        <input id="txtSearchTransacction"  type="text" size="60" maxlength="71" />
+                        <button id="btnGO" ></button>
+                    </div>
+                </div>
+                <div id="Progress">
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="10" DynamicLayout="false">
+                        <ProgressTemplate>
+                            <span>
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/dropthings/indicator.gif"
+                                    AlternateText="Loading..." />
+                            </span>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+                </div>
+                <div id="HelpDiv">
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="logo-client-wrapper">
+                <a href="/"></a>
+            </div>
+            <div id="tab_container">
+                <asp:UpdatePanel ID="TabUpdatePanel" runat="server" UpdateMode="conditional">
+                    <ContentTemplate>
+                        <div id="tabs" class="ClassForTabsDiv">
+                            <ul class="tabs" runat="server" id="tabList">
+                                <li class="">
+                                    <asp:LinkButton ID="Page1Tab" runat="server" Text="Page 1"></asp:LinkButton></li>
+                                <li class="">
+                                    <asp:LinkButton ID="Page2Tab" runat="server" Text="Page 2"></asp:LinkButton></li>
+                            </ul>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <div id="onpage_menu">
+                <div id="onpage_menu_wrapper">
+                </div>
+            </div>
+            <div id="contents" class="PositionForContent">
+                <div id="contents_wrapper">
+                    <asp:ContentPlaceHolder ID="ContentPlaceholder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="footer">
+                    <div id="footer_wrapper">
+                        <p>
+                            <asp:Label ID="CopyrightLabel" runat="server" Text="<%$ Resources:Resource, Copyright %>"
+                                ClientIDMode="Static"></asp:Label>
+                            -<a href="javascript:showpopup('  <%=ConfigurationManager.AppSettings["Url.WebApplication"] %>' + '/dropthings/PrivacyPolicy.aspx')">
+                                <%= Dropthings.Web.Util.ResourceManager.getResource("PrivacyPolicy")%>
+                            </a>-<a href="javascript:showpopup('  <%=ConfigurationManager.AppSettings["Url.WebApplication"] %>' + '/dropthings/TermsService.aspx')">
+                                <%= Dropthings.Web.Util.ResourceManager.getResource("TermsService")%>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <dx:ASPxHiddenField ID="DeleteWidgetMessages" runat="server" ClientInstanceName="DeleteWidgetMessages">
+            </dx:ASPxHiddenField>
+        </div>
+    </div>
+    <!-- Fades the UI -->
+    <div id="blockUI" style="display: none; background-color: black; width: 100%; height: 100px;
+        position: absolute; left: 0px; top: 0px; z-index: 50000; -moz-opacity: 0.5; opacity: 0.5;
+        filter: alpha(opacity=50);" onclick="return false" onmousedown="return false"
+        onmousemove="return false" onmouseup="return false" ondblclick="return false">
+        &nbsp;
+    </div>
+    <textarea id="TraceConsole" rows="10" cols="80" style="display: none"></textarea>&nbsp;
+    <dxlp:ASPxLoadingPanel ID="loadingPanel" runat="server" ClientInstanceName="loadingPanel" />
+    <dxpc:ASPxPopupControl ID="LogInPopupControl" runat="server" Modal="True" ClientInstanceName="LogInPopupControl"
+        ContentUrl="javascript:void(0);" HeaderText="<%$ Resources:Resource, LogInHeaderText %>"
+        ShowPageScrollbarWhenModal="False" EnableClientSideAPI="True" Height="270px"
+        Width="370px" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+        ShowFooter="True" ShowHeader="true" EnableViewState="True">
+        <ClientSideEvents Init="OnPopupInit" Shown="OnPopupShown" />
+        <HeaderImage Url="~/images/generaluse/login/key.png" />
+        <ContentStyle Paddings-Padding="0px" />
+        <FooterTemplate>
+            <table width="100%">
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td width="50%" align="left">
+                        <dxe:ASPxHyperLink ID="ForgotPasswordHyperLink" ClientInstanceName="ForgotPasswordHyperLink" runat="server" Text="<%$ Resources:Resource, ForgotPassword %>"
+                            NavigateUrl="javascript:LogInPopupControl.Hide();ForgotPasswordPopupControl.SetContentUrl('/Authentication/ForgotPassword.aspx');ForgotPasswordPopupControl.Show();">
+                        </dxe:ASPxHyperLink>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td width="50%" align="right">
+                        <dxe:ASPxHyperLink ID="RegisterHyperLink" ClientInstanceName="RegisterHyperLink" ClientEnabled="True" runat="server" Text="<%$ Resources:Resource, Register %>"
+                            NavigateUrl="javascript:LogInPopupControl.Hide();window.location.href='/Authentication/UserRegister.aspx';" EnableClientSideAPI="True" ClientVisible="True">
+                        </dxe:ASPxHyperLink>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </FooterTemplate>
+    </dxpc:ASPxPopupControl>
+    <dxpc:ASPxPopupControl ID="ChangePasswordPopupControl" runat="server" Modal="True" CloseAction="CloseButton"
+        ClientInstanceName="ChangePasswordPopupControl" ContentUrl="" HeaderText="<%$ Resources:Resource, ChangePasswordHeaderText %>"
+        ShowPageScrollbarWhenModal="False" EnableClientSideAPI="True" Height="280px"
+        Width="375px" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+        EnableViewState="True" ShowFooter="True" ShowHeader="true" FooterText="<%$ Resources:Resource, ChangePasswordFooterText %>">
+        <HeaderImage Url="~/images/generaluse/login/changePass.png" />
+        <ContentStyle Paddings-Padding="0px" />
+    </dxpc:ASPxPopupControl>
+    <dxpc:ASPxPopupControl ID="ForgotPasswordPopupControl" runat="server" Modal="True"
+        ClientInstanceName="ForgotPasswordPopupControl" ContentUrl="~/Authentication/ForgotPassword.aspx"
+        HeaderText="<%$ Resources:Resource, ForgotPasswordHeaderText %>" EnableViewState="True"
+        ShowPageScrollbarWhenModal="False" EnableClientSideAPI="True" Height="295px"
+        Width="385px" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+        ShowFooter="True" ShowHeader="true" FooterText="">
+        <HeaderImage Url="~/images/generaluse/login/forgotPass.png" />
+        <ContentStyle Paddings-Padding="0px" />
+        <FooterTemplate>
+            <table width="100%">
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td width="50%" align="left">
+                        <dxe:ASPxHyperLink ID="BackHyperLink" runat="server" Visible="false" Text="<%$ Resources:Resource, LogIn %>"
+                            NavigateUrl="javascript:ForgotPasswordPopupControl.Hide();LogInPopupControl.Show();">
+                        </dxe:ASPxHyperLink>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td width="50%" align="right">
+                        <dxe:ASPxHyperLink ID="ResetHyperLink" runat="server" Text="<%$ Resources:Resource, Reset %>"
+                            NavigateUrl="javascript:ForgotPasswordPopupControl.SetContentUrl('/Authentication/ForgotPassword.aspx?View=1');">
+                        </dxe:ASPxHyperLink>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </FooterTemplate>
+    </dxpc:ASPxPopupControl>
+    <dxpc:ASPxPopupControl ID="ContractPopupControl" runat="server" Modal="True" ClientInstanceName="ContractPopupControl"
+        ContentUrl="/Authentication/UserLogin.aspx?View=1&CallPage=true" HeaderText="<%$ Resources:Resource, RevelationHeaderText %>"
+        ShowPageScrollbarWhenModal="False" EnableClientSideAPI="True" Height="270px"
+        Width="570px" PopupHorizontalAlign="WindowCenter" ShowOnPageLoad="False" ShowHeader="true"
+        ShowFooter="True" PopupVerticalAlign="WindowCenter" ShowCloseButton="False">
+        <HeaderImage Url="~/images/generaluse/login/comments.png" />
+        <ContentStyle Paddings-Padding="0px" />
+        <FooterTemplate>
+            <table width="100%">
+                <tr align="right">
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <dxe:ASPxButton ID="AcceptBtn" runat="server" Text="<%$ Resources:Resource, AcceptBtnResource %>"
+                                        AutoPostBack="false">
+                                        <ClientSideEvents Click="function(s, e) {
+                                                               ContractPopupControl.Hide();
+                                                            }" />
+                                    </dxe:ASPxButton>
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <dxe:ASPxButton ID="CancelBtn" OnClick="CancelBtnOnClick" runat="server" Text="<%$ Resources:Resource, CancelButtonResource %>"
+                                        AutoPostBack="True">
+                                    </dxe:ASPxButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </FooterTemplate>
+    </dxpc:ASPxPopupControl>
+    </form>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/ladda-themeless.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="H5ConsultaSiniestrosMainForm">
+        <input type="hidden" id="H5ConsultaSiniestrosFormId" name="H5ConsultaSiniestrosFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zoneHeader zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zoneHeader">
+    <!-- Container content -->
+                <!-- Siniestro numeric -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='SiniestroLabel' class='control-label' for='Siniestro'>Siniestro</label><span id='SiniestroRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='Siniestro' name='Siniestro' title='Siniestro' type='text' style='text-align: right'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- RecordEffectiveDate datepicker -->
+                <div class='col-md-4 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='RecordEffectiveDateLabel' class='control-label' for='RecordEffectiveDate'>Fecha de efecto</label><span id='RecordEffectiveDateRequired' class='required-mark'>*</span>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='input-group date' id='RecordEffectiveDate_group'>
+                                    <input id='RecordEffectiveDate' name='RecordEffectiveDate' type='text' class='form-control' title='fecha de efecto' size='10' maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- btnOk button -->
+                <div class='col-md-4 form-vertical'>
+                  <div class='form-group'>
+                    <button id='btnOk' class='ladda-button btn pull-left btn-primary' data-style='expand-right' title='Hacer click para ejecutar consulta' ><span class='ladda-label'>Aceptar</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zoneHeader zone -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+
+
+    <script src='/fasi/app/js/constants.js?rel=20190227105003795'></script>
+    <script src="/fasi/app/js/core.js?rel=20190227105003795"></script>
+    <script src="/fasi/app/js/general.js?rel=20190227105003795"></script>
+    <script src='/fasi/app/js/Security.js?rel=20190227105003795'></script>
+    
+
+    <script src='/fasi/assets/js/spin.min.js'></script>
+    <script src='/fasi/assets/js/ladda.min.js'></script>
+    <script src='/fasi/assets/js/ladda.jquery.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20190227105003795'></script>
+    <script src='/fasi/app/js/notification.js?rel=20190227105003795'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/H5ConsultaSiniestros.js?rel=20190227105003795"></script>
+</body>
+</html>

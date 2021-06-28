@@ -1,0 +1,22 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+--%>
+<dxtc:ASPxPageControl runat="server" CssFilePath='~/App_Themes/Office2010Silver/{0}/styles.css' CssPostfix='Office2010Silver'>
+            <LoadingPanelImage Url="~/App_Themes/Office2010Silver/Web/Loading.gif"/>
+            <ContentStyle>            
+                 <Border BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+            </ContentStyle>
+            <ActiveTabStyle>
+                <BackgroundImage ImageUrl="~/App_Themes/Office2010Silver/TabContainer/tcTabBack.gif" />
+            </ActiveTabStyle>
+            <TabStyle BackColor="#ffffff" Border-BorderColor="#00538b" />           
+</dxtc:ASPxPageControl>

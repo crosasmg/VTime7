@@ -1,0 +1,1265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSourceModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="C:\VisualTIMENet\Components\Services\InMotionGIT.PhoneManager\Database Model\InMotionGIT.Phone.DB.xml" startingon="2015-08-24T20:17:58.9865073-03:00" endingon="2015-08-24T20:17:59.0165013-03:00" source="ErwinDataModel" xmlns="urn:InMotionGIT.Database.Model.Data">
+  <Schemas>
+    <ModelSchema name="Phone">
+      <Tables>
+        <Table name="EnumPhoneType" comment="Phone type table.&#xA;//&#xA;Tabla de tipo de teléfono.">
+          <Columns>
+            <Column name="PhoneType" comment="Phone type.&#xA;//&#xA;Tipo de teléfono." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneType" />
+                  <FriendlyName Language="Spanish" Value="TipoDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Phone type." />
+                  <Summary Language="Spanish" Value="Tipo de teléfono." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="RecordStatus" comment="General status of the record.&#xA;//&#xA;Estado general del registro.&#xA;" ordinal="2" kind="CHAR" modelkind="Char" size="1" domain="RecordStatus" nullable="false">
+              <Extend behavior="RecordStatus">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="RecordStatus" />
+                  <FriendlyName Language="Spanish" Value="EstadoDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="General status of the record." />
+                  <Summary Language="Spanish" Value="Estado general del registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="3" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="4" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="5" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateTimeStamp" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="6" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKEnumPhoneType" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="PhoneType" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKEnumPhoneType" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="PhoneType" />
+              </Columns>
+            </Index>
+            <Index name="XIF1EnumPhoneType">
+              <Columns>
+                <IndexColumn name="RecordStatus" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="Translator" IsGenerated="false" TranslatorDetailTableName="ETranPhoneType">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="EnumPhoneType" />
+              <FriendlyName Language="Spanish" Value="EnumPhoneType" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Phone type table." />
+              <Summary Language="Spanish" Value="Tabla de tipo de teléfono." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Maintenance" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="ETranPhoneType" comment="Descriptions of the phone type table.&#xA;//&#xA;Descripciones de la tabla de tipo de teléfono.&#xA;">
+          <Columns>
+            <Column name="PhoneType" comment="Phone type.&#xA;//&#xA;Tipo de teléfono." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneType" />
+                  <FriendlyName Language="Spanish" Value="TipoDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Phone type." />
+                  <Summary Language="Spanish" Value="Tipo de teléfono." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="LanguageID" comment="Language in which the description is indicated&#xA;//&#xA;Idioma en el que se encuentra la descripción" ordinal="2" kind="NUMERIC" modelkind="Numeric" size="5" domain="LanguageID" nullable="false">
+              <Extend behavior="LanguageId">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="LanguageID" />
+                  <FriendlyName Language="Spanish" Value="Idioma" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Language in which the description is indicated" />
+                  <Summary Language="Spanish" Value="Idioma en el que se encuentra la descripción" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="Description" comment="Description of the code.&#xA;//&#xA;Descripción del código.&#xA;" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="30" domain="Description" nullable="false">
+              <Extend behavior="TableSummary">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Description" />
+                  <FriendlyName Language="Spanish" Value="Descripción" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Description of the code." />
+                  <Summary Language="Spanish" Value="Descripción del código." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ShortDescription" comment="Abbreviated description of the code&#xA;//&#xA;Descripción abreviada del código" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="12" domain="ShortDescription" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="ShortDescription" />
+                  <FriendlyName Language="Spanish" Value="DescripciónCorta" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="5" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="6" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="7" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="8" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKETranPhoneType" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="PhoneType" />
+                <ConstraintColumn name="LanguageID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="R_92" foreigntablename="EnumPhoneType">
+              <KeyColumns>
+                <ConstraintColumn name="PhoneType" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="PhoneType" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKETranPhoneType" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="PhoneType" />
+                <IndexColumn name="LanguageID" />
+              </Columns>
+            </Index>
+            <Index name="XIF2ETranPhoneType">
+              <Columns>
+                <IndexColumn name="LanguageID" />
+              </Columns>
+            </Index>
+            <Index name="XIF1ETranPhoneType">
+              <Columns>
+                <IndexColumn name="PhoneType" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="TranslatorDetail" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="ETranPhoneType" />
+              <FriendlyName Language="Spanish" Value="ETranPhoneType" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Descriptions of the phone type table." />
+              <Summary Language="Spanish" Value="Descripciones de la tabla de tipo de teléfono." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Maintenance" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="Phone" comment="Teléfonos de clientes&#xA;Un registro por cada teléfono asociado a un cliente&#xA;//&#xA;Phones of a client&#xA;A record per every phone associated with a client">
+          <Columns>
+            <Column name="CompanyID" comment="Code that identifies the user company owner of the information.&#xA;//&#xA;Código que identifica a la compañía usuaria dueña de la información." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UserCompany" />
+                  <FriendlyName Language="Spanish" Value="CompañíaUsuaria" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the user company owner of the information" />
+                  <Summary Language="Spanish" Value="Código que identifica a la compañía usuaria dueña de la información" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneID" comment="Unique key that identifies the phone.&#xA;//&#xA;Clave única que identifica al teléfono." ordinal="2" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneId" />
+                  <FriendlyName Language="Spanish" Value="ClaveDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Unique key that identifies the phone." />
+                  <Summary Language="Spanish" Value="Clave única que identifica al teléfono." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="InternalPhoneKey" comment="A number that identifies the phone as a unique.&#xA;//&#xA;Número que identifica al teléfono como único." ordinal="3" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend sequence="true">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="InternalPhoneKey" />
+                  <FriendlyName Language="Spanish" Value="InternalPhoneKey" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="A number that identifies the phone as a unique." />
+                  <Summary Language="Spanish" Value="Número que identifica al teléfono como único." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="BestTimeToCall" comment="Best time to call.&#xA;//&#xA;Mejor hora para llamar.&#xA;" ordinal="4" kind="CHAR" modelkind="Char" size="5" domain="BestTimeToCall" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="BestTimeToCall" />
+                  <FriendlyName Language="Spanish" Value="MejorHoraParaLlamar" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Best time to call." />
+                  <Summary Language="Spanish" Value="Mejor hora para llamar." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CountryID" comment="Code of the country.&#xA;//&#xA;Código del país." ordinal="5" kind="NUMERIC" modelkind="Numeric" size="5" domain="CountryID">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="HadProblemsForCommunication" comment="The phone has had problems for communication.&#xA;//&#xA;El teléfono ha tenido problemas para su comunicación." ordinal="6" kind="NUMBER" modelkind="Numeric" size="1" domain="Switch" nullable="false">
+              <Extend behavior="Switch">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneHadProblemsForCommunication" />
+                  <FriendlyName Language="Spanish" Value="TeléfonoConProblemasParaComunicación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="The phone has had problems for communication." />
+                  <Summary Language="Spanish" Value="El teléfono ha tenido problemas para su comunicación." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneArea" comment="Area Code.&#xA;//&#xA;Código de área." ordinal="7" kind="NUMERIC" modelkind="Numeric" size="10" domain="PhoneArea" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="AreaCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeÁrea" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Area Code." />
+                  <Summary Language="Spanish" Value="Código de área." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneNumber" comment="Telephone Number.&#xA;//&#xA;Número telefónico.&#xA;" ordinal="8" kind="VARCHAR2" modelkind="VarChar" size="11" domain="PhoneNumber">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneNumber" />
+                  <FriendlyName Language="Spanish" Value="NúmeroTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Telephone number." />
+                  <Summary Language="Spanish" Value="Número telefónico." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneNumberNumeric" comment="Telephone Number (only numeric digits).&#xA;//&#xA;Número telefónico (sólo dígitos numéricos)." ordinal="9" kind="VARCHAR2" modelkind="VarChar" size="11" domain="PhoneNumberNumeric">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneNumberNumeric" />
+                  <FriendlyName Language="Spanish" Value="NúmeroTeléfonoNumérico" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Telephone Number (only numeric digits)." />
+                  <Summary Language="Spanish" Value="Número telefónico (sólo dígitos numéricos)." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneOrderUsage" comment="Order phone usage. First you call the number of lower order.&#xA;//&#xA;Orden de utilización del teléfono. Primero se llama al número de menor orden." ordinal="10" kind="NUMERIC" modelkind="Numeric" size="5" domain="OrderPhoneUsage" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneOrderUsage" />
+                  <FriendlyName Language="Spanish" Value="OrdenDeUso" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Order phone usage. First you call the number of lower order." />
+                  <Summary Language="Spanish" Value="Orden de utilización del teléfono. Primero se llama al número de menor orden." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneType" comment="Phone type&#xA;//&#xA;Tipo de teléfono." ordinal="11" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneType" />
+                  <FriendlyName Language="Spanish" Value="TipoDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Phone type" />
+                  <Summary Language="Spanish" Value="Tipo de teléfono" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="RecordOwnerID" comment="Code that identifies the owner of the phone.&#xA;//&#xA;Código que identifica al propietario del teléfono." ordinal="12" kind="CHAR" modelkind="Char" size="20" domain="Identifier">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="RecordOwnerID" />
+                  <FriendlyName Language="Spanish" Value="PropietarioID" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the owner of the address." />
+                  <Summary Language="Spanish" Value="Código que identifica al propietario de la dirección." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="RecordOwnerType" comment="Owner of the record.&#xA;//&#xA;Propietario del Registro." ordinal="13" kind="NUMERIC" modelkind="Numeric" size="5" domain="RecordOwner">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="RecordOwnerType" />
+                  <FriendlyName Language="Spanish" Value="TipoPropietarioDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Owner of the record. " />
+                  <Summary Language="Spanish" Value="Propietario del registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="14" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="15" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="16" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="17" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKPhone" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+                <ConstraintColumn name="InternalPhoneKey" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="R/74" foreigntablename="TabBestTimeToCall">
+              <KeyColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="R/112" foreigntablename="PhoneMaster">
+              <KeyColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="R/116" foreigntablename="EnumPhoneType">
+              <KeyColumns>
+                <ConstraintColumn name="PhoneType" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="PhoneType" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKPhone" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+                <IndexColumn name="PhoneID" />
+                <IndexColumn name="InternalPhoneKey" />
+              </Columns>
+            </Index>
+            <Index name="XIF11Phone">
+              <Columns>
+                <IndexColumn name="BestTimeToCall" />
+              </Columns>
+            </Index>
+            <Index name="XIF14Phone">
+              <Columns>
+                <IndexColumn name="CountryID" />
+              </Columns>
+            </Index>
+            <Index name="XIF15Phone">
+              <Columns>
+                <IndexColumn name="RecordOwnerType" />
+              </Columns>
+            </Index>
+            <Index name="XIF16Phone">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+                <IndexColumn name="PhoneID" />
+              </Columns>
+            </Index>
+            <Index name="XIF17Phone">
+              <Columns>
+                <IndexColumn name="PhoneType" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Phone" />
+              <FriendlyName Language="Spanish" Value="Telefono" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Table of Phones." />
+              <Summary Language="Spanish" Value="Tabla de Teléfonos." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Phone" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="PhoneAreaAllowed" comment="Phone Area Codes allowed.&#xA;//&#xA;Códigos de área de teléfono permitidos.">
+          <Columns>
+            <Column name="CountryID" comment="Code of the country.&#xA;The possible values are in TabCountry.&#xA;//&#xA;Código del país.&#xA;Valores posibles según tabla TabCountry." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CountryID" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneArea" comment="Phone Area Code allowed.&#xA;//&#xA;Código de área de teléfono permitido." ordinal="2" kind="NUMERIC" modelkind="Numeric" size="6" domain="PhoneArea" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneArea" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeÁrea" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Phone Area Code allowed." />
+                  <Summary Language="Spanish" Value="Código de área de te;éfono permitido." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="MobileIndicator" comment="The area code corresponds to a cell phone.&#xA;Sole values &#xA;  1 - Affirmative&#xA;  0 - Negative.&#xA;//&#xA;El código de área corresponde a un teléfono celular.&#xA;Valor únicos:&#xA;  1 - Afirmativo&#xA;  0 - Negativo." ordinal="3" kind="NUMBER" modelkind="Numeric" size="1" domain="Switch" nullable="false">
+              <Extend behavior="Switch">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="MobileIndicator" />
+                  <FriendlyName Language="Spanish" Value="TeléfonoCelular" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="The area code corresponds to a cell phone." />
+                  <Summary Language="Spanish" Value="El código de área corresponde a un teléfono celular." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="4" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="5" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="6" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="7" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKPhoneAreaAllowed" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CountryID" />
+                <ConstraintColumn name="PhoneArea" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKPhoneAreaAllowed" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="CountryID" />
+                <IndexColumn name="PhoneArea" />
+              </Columns>
+            </Index>
+            <Index name="XIF1PhoneAreaAllowed">
+              <Columns>
+                <IndexColumn name="CountryID" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="Lookup" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="PhoneAreaAllowed" />
+              <FriendlyName Language="Spanish" Value="PhoneAreaAllowed" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Phone Area Codes allowed." />
+              <Summary Language="Spanish" Value="Códigos de área de teléfono permitidos." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="PhoneExtensions" comment="Phone Extensions.&#xA;//&#xA;Extensiones telefónicas.&#xA;">
+          <Columns>
+            <Column name="CompanyID" comment="Code that identifies the user company owner of the information.&#xA;//&#xA;Código que identifica a la compañía usuaria dueña de la información." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UserCompany" />
+                  <FriendlyName Language="Spanish" Value="CompañíaUsuaria" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the user company owner of the information" />
+                  <Summary Language="Spanish" Value="Código que identifica a la compañía usuaria dueña de la información" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneID" comment="Unique key that identifies the phone.&#xA;//&#xA;Clave única que identifica al teléfono." ordinal="2" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneId" />
+                  <FriendlyName Language="Spanish" Value="ClaveDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Unique key that identifies the phone." />
+                  <Summary Language="Spanish" Value="Clave única que identifica al teléfono." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="InternalPhoneKey" comment="A number that identifies the phone as a unique.&#xA;//&#xA;Número que identifica al teléfono como único." ordinal="3" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="InternalPhoneKey" />
+                  <FriendlyName Language="Spanish" Value="InternalPhoneKey" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="A number that identifies the phone as a unique." />
+                  <Summary Language="Spanish" Value="Número que identifica al teléfono como único." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ExtensionPhoneID" comment="A number that identifies the extension as unique.&#xA;//&#xA;Número que identifica a la extensión como única." ordinal="4" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend sequence="true">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="ExtensionPhoneID" />
+                  <FriendlyName Language="Spanish" Value="ExtensiónTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Unique key that identifies the phone extension." />
+                  <Summary Language="Spanish" Value="Clave única que identifica a la extensión." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ExtensionNumber" comment="Telephone extension number.&#xA;//&#xA;Número de extensión telefónica." ordinal="5" kind="NUMERIC" modelkind="Numeric" size="5" domain="ExtensionNumber" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="ExtensionNumber" />
+                  <FriendlyName Language="Spanish" Value="NúmeroExtensión" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Telephone extension number." />
+                  <Summary Language="Spanish" Value="Número de extensión telefónica." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ExtensionOrderUsage" comment="Order extension number  usage. First you call the extension number of lower order.&#xA;//&#xA;Orden de utilización de la extensión telefónica. Primero se llama al número de extensión de menor orden." ordinal="6" kind="NUMERIC" modelkind="Numeric" size="5" domain="ExtensionOrderUsage" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="ExtensionOrder" />
+                  <FriendlyName Language="Spanish" Value="OrdenExtensión" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Order extension number  usage. First you call the extension number of lower order." />
+                  <Summary Language="Spanish" Value="Orden de utilización de la extensión telefónica. Primero se llama al número de extensión de menor orden." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="7" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="8" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="9" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="10" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKPhoneExtensions" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+                <ConstraintColumn name="InternalPhoneKey" />
+                <ConstraintColumn name="ExtensionPhoneID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="R/70" foreigntablename="Phone">
+              <KeyColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+                <ConstraintColumn name="InternalPhoneKey" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+                <ConstraintColumn name="InternalPhoneKey" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKPhoneExtensions" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+                <IndexColumn name="PhoneID" />
+                <IndexColumn name="InternalPhoneKey" />
+                <IndexColumn name="ExtensionPhoneID" />
+              </Columns>
+            </Index>
+            <Index name="XIF1PhoneExtensions">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+                <IndexColumn name="PhoneID" />
+                <IndexColumn name="InternalPhoneKey" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="PhoneExtensions" />
+              <FriendlyName Language="Spanish" Value="PhoneExtensions" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Phone Extensions." />
+              <Summary Language="Spanish" Value="Extensiones telefónicas." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Phone" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="PhoneMaster" comment="General information of the phone.&#xA;//&#xA;Información general del teléfono.">
+          <Columns>
+            <Column name="CompanyID" comment="Code that identifies the user company owner of the information.&#xA;//&#xA;Código que identifica a la compañía usuaria dueña de la información." ordinal="1" kind="NUMERIC" modelkind="Numeric" size="5" domain="CodeOfTable" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UserCompany" />
+                  <FriendlyName Language="Spanish" Value="CompañíaUsuaria" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the user company owner of the information" />
+                  <Summary Language="Spanish" Value="Código que identifica a la compañía usuaria dueña de la información" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="PhoneID" comment="Unique key that identifies the phone.&#xA;//&#xA;Clave única que identifica al teléfono." ordinal="2" kind="NUMERIC" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend sequence="true">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="PhoneId" />
+                  <FriendlyName Language="Spanish" Value="ClaveDeTeléfono" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Unique key that identifies the phone." />
+                  <Summary Language="Spanish" Value="Clave única que identifica al teléfono." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="3" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="4" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="5" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="6" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKPhoneMaster" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="CompanyID" />
+                <ConstraintColumn name="PhoneID" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKPhoneMaster" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+                <IndexColumn name="PhoneID" />
+              </Columns>
+            </Index>
+            <Index name="XIF1PhoneMaster">
+              <Columns>
+                <IndexColumn name="CompanyID" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="PhoneMaster" />
+              <FriendlyName Language="Spanish" Value="PhoneMaster" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="General information of the phone." />
+              <Summary Language="Spanish" Value="Información general del teléfono." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Phone" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="TabBestTimeToCall" comment="Best time to call table&#xA;//&#xA;Tabla de mejor hora para llamar.&#xA;&#xA;&#xA;">
+          <Columns>
+            <Column name="BestTimeToCall" comment="Best time to call.&#xA;//&#xA;Mejor hora para llamar." ordinal="1" kind="CHAR" modelkind="Char" size="5" domain="BestTimeToCall" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="BestTimeToCall" />
+                  <FriendlyName Language="Spanish" Value="MejorHoraParaLlamar" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Best time to call." />
+                  <Summary Language="Spanish" Value="Mejor hora para llamar." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="RecordStatus" comment="General status of the record.&#xA;//&#xA;Estado general del registro.&#xA;" ordinal="2" kind="CHAR" modelkind="Char" size="1" domain="RecordStatus" nullable="false">
+              <Extend behavior="RecordStatus">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="RecordStatus" />
+                  <FriendlyName Language="Spanish" Value="EstadoDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="General status of the record." />
+                  <Summary Language="Spanish" Value="Estado general del registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="3" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="4" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="5" kind="SMALLINT" modelkind="Short" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuario" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="6" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateTimeStamp" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKTabBestTimeToCall" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+              </KeyColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKTabBestTimeToCall" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="BestTimeToCall" />
+              </Columns>
+            </Index>
+            <Index name="XIF1TabBestTimeToCall">
+              <Columns>
+                <IndexColumn name="RecordStatus" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="Translator" IsGenerated="false" TranslatorDetailTableName="TransBestTimeToCall">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="TabBestTimeToCall" />
+              <FriendlyName Language="Spanish" Value="TabBestTimeToCall" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Best time to call table." />
+              <Summary Language="Spanish" Value="Tipos de direcciones asociadas al propietario del registro." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Maintenance" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="TransBestTimeToCall" comment="Descriptions of the best time to call table.&#xA;//&#xA;Descripciones de la tabla de mejor hora para llamar.&#xA;">
+          <Columns>
+            <Column name="BestTimeToCall" comment="Best time to call.&#xA;//&#xA;Mejor hora para llamar." ordinal="1" kind="CHAR" modelkind="Char" size="5" domain="BestTimeToCall" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="BestTimeToCall" />
+                  <FriendlyName Language="Spanish" Value="MejorHoraParaLlamar" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Best time to call." />
+                  <Summary Language="Spanish" Value="Mejor hora para llamar." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="LanguageID" comment="Language in which the description is indicated&#xA;//&#xA;Idioma en el que se encuentra la descripción" ordinal="2" kind="NUMERIC" modelkind="Numeric" size="5" domain="LanguageID" nullable="false">
+              <Extend behavior="LanguageId">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="LanguageID" />
+                  <FriendlyName Language="Spanish" Value="Idioma" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Language in which the description is indicated" />
+                  <Summary Language="Spanish" Value="Idioma en el que se encuentra la descripción" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="Description" comment="Description of the code.&#xA;//&#xA;Descripción del código.&#xA;" ordinal="3" kind="VARCHAR2" modelkind="VarChar" size="30" domain="Description" nullable="false">
+              <Extend behavior="TableSummary">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Description" />
+                  <FriendlyName Language="Spanish" Value="Descripción" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Description of the code." />
+                  <Summary Language="Spanish" Value="Descripción del código." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ShortDescription" comment="Abbreviated description of the code&#xA;//&#xA;Descripción abreviada del código" ordinal="4" kind="VARCHAR2" modelkind="VarChar" size="12" domain="ShortDescription" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="ShortDescription" />
+                  <FriendlyName Language="Spanish" Value="DescripciónCorta" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreationDate" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="5" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CreatorUserCode" comment="Code of the user creating  the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea el registro.&#xA;Valores relacionados con la tabla Users" ordinal="6" kind="NUMERIC" modelkind="Numeric" size="5" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreador" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateDate" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="7" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UpdateUserCode" comment="Code of the user creating or updating the record.&#xA;Values related to the table Users&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla Users" ordinal="8" kind="NUMERIC" modelkind="Numeric" size="5" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="XPKTransBestTimeToCall" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+                <ConstraintColumn name="LanguageID" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="R_48" foreigntablename="TabBestTimeToCall">
+              <KeyColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="BestTimeToCall" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="XPKTransBestTimeToCall" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="BestTimeToCall" />
+                <IndexColumn name="LanguageID" />
+              </Columns>
+            </Index>
+            <Index name="XIF1TransBestTimeToCall">
+              <Columns>
+                <IndexColumn name="BestTimeToCall" />
+              </Columns>
+            </Index>
+            <Index name="XIF2TransBestTimeToCall">
+              <Columns>
+                <IndexColumn name="LanguageID" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="TranslatorDetail" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="TransBestTimeToCall" />
+              <FriendlyName Language="Spanish" Value="TransBestTimeToCall" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <PluralFriendlyName Language="Spanish" />
+              <PluralFriendlyName Language="English" />
+            </PluralFriendlyNames>
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Descriptions of the best time to call table." />
+              <Summary Language="Spanish" Value="Descripciones de la tabla de mejor hora para llamar." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="Maintenance" />
+            </Modules>
+          </Extend>
+        </Table>
+      </Tables>
+    </ModelSchema>
+  </Schemas>
+  <Extend>
+    <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+      <Module Name="Main Subject Area" />
+      <Module Name="Phone" />
+      <Module Name="Maintenance" />
+      <Module Name="PlaceOfInterest" />
+    </Modules>
+  </Extend>
+</DataSourceModel>

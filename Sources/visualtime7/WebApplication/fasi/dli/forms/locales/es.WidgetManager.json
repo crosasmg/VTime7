@@ -1,0 +1,107 @@
+﻿{
+  "app": {
+    "title": "Mantenimiento de widgets",
+    "form": {
+             "Widget_Message_Notify_insert4": "Se agregó correctamente el widget",
+             "Widget_Title_Notify_insert4": "Adición de widget",
+             "Widget_Message_Notify_insert5": "No se pudo agregar el widget",
+             "Widget_Title_Notify_insert5": "Adición de widget",
+             "Widget_Message_Notify_update3": "Se actualizó correctamente el widget",
+             "Widget_Title_Notify_update3": "Actualización de widget",
+             "Widget_Message_Notify_update5": "No se pudo actualizar el widget",
+             "Widget_Title_Notify_update5": "Actualización de widget",
+             "Widget_Message_Notify_delete5": "Se eliminó correctamente el widget",
+             "Widget_Title_Notify_delete5": "Eliminacion del widget",
+             "Widget_Message_Notify_delete7": "No se pudo eliminar el widget",
+             "Widget_Title_Notify_delete7": "Eliminacion del widget",
+             "Widget_Message_Notify_delete9": "No se pudo eliminar el widget porque se encuentra asociado a {{WidgetRolesResult}}",
+             "Widget_Title_Notify_delete9": "",
+             "Widget_Title": "",
+             "Widget_AddButtonCaption": "Agregar",
+             "Widget_DeleteButtonCaption": "Eliminar",
+             "Id_Label": "Identificador",
+             "WidgetTbl_Id_Title": "Identificador",
+             "Id_Tooltip": "Id",
+             "Id_Measure": "",
+             "Id_Legend": "",
+             "Id_Prefix": "",
+             "Id_RequiredMessage": "El identificador es requerido",
+             "Title_Label": "Nombre",
+             "WidgetTbl_Title_Title": "Nombre",
+             "Title_Tooltip": "Nombre del widget",
+             "Title_Measure": "",
+             "Title_Legend": "",
+             "Title_Prefix": "",
+             "Title_Watermark": "",
+             "Title_RequiredMessage": "El nombre es requerido",
+             "Description_Label": "Descripción",
+             "WidgetTbl_Description_Title": "Descripción",
+             "Description_Tooltip": "Description",
+             "Description_Measure": "",
+             "Description_Legend": "",
+             "Description_Prefix": "",
+             "Description_Watermark": "",
+             "Url_Label": "Ruta",
+             "WidgetTbl_Url_Title": "Ruta",
+             "Url_Tooltip": "Ruta",
+             "Url_Measure": "",
+             "Url_Legend": "",
+             "Url_Prefix": "",
+             "Url_Watermark": "",
+             "Url_RequiredMessage": "La ruta es requerida",
+             "Icon_Label": "Icono",
+             "WidgetTbl_Icon_Title": "Icono",
+             "Icon_Tooltip": "Icono",
+             "Icon_Measure": "",
+             "Icon_Legend": "",
+             "Icon_Prefix": "",
+             "Icon_RequiredMessage": "El icono es requerido",
+             "DefaultState_Label": "Estado",
+             "WidgetTbl_DefaultState_Title": "Estado",
+             "DefaultState_Tooltip": "Estado",
+             "DefaultState_Measure": "",
+             "DefaultState_Legend": "",
+             "DefaultState_Prefix": "",
+             "DefaultState_Watermark": "",
+             "DefaultState_maxlength": "El campo permite 0 caracteres máximo",
+             "LanguageId_Label": "Lenguaje",
+             "WidgetTbl_LanguageId_Title": "Lenguaje",
+             "LanguageId_Tooltip": "Lenguaje",
+             "LanguageId_Measure": "",
+             "LanguageId_Legend": "",
+             "LanguageId_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "Id": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El identificador es requerido"
+        },
+        "Title": {
+             "maxlength": "El campo permite 255 caracteres máximo",
+             "required": "El nombre es requerido"
+        },
+        "Description": {
+             "maxlength": "El campo permite 255 caracteres máximo"
+        },
+        "Url": {
+             "maxlength": "El campo permite 255 caracteres máximo",
+             "required": "La ruta es requerida"
+        },
+        "Icon": {
+             "required": "El icono es requerido"
+        },
+        "DefaultState": {
+
+        },
+        "LanguageId": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999"
+        }
+    }
+  }
+}

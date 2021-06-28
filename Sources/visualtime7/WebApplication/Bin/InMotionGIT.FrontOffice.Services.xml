@@ -1,0 +1,418 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.FrontOffice.Services
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.PageManager.DecideCurrentPage(System.Int32,System.Int32,System.Collections.Generic.List{InMotionGIT.FrontOffice.Services.Contracts.Page},InMotionGIT.FrontOffice.Services.Contracts.Settings)">
+ <summary>
+ Method that current page and id de current of the user
+ </summary>
+ <param name="UserId">Name of the page by search</param>
+ <param name="pages">List of the paginas by user</param>
+ <returns>Return current page of the user </returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.PageManager.CreateNewPage(System.Int32,System.String,System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue},System.Boolean)">
+ <summary>
+
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.PageManager.SetCurrentPage(System.Int32,System.Int32)">
+ <summary>
+ Method that changes the state of the current page
+ </summary>
+ <param name="userGuid">User guid of the user</param>
+ <param name="pageId">Id of the page</param>
+ <returns>Return if </returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.PageManager.ChangePageName(System.Int32,System.String,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="PageID"></param>
+ <param name="PageName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.PageManager.DeletePage(System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="pageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.UserManager.GetUserPages(System.Int32)">
+ <summary>
+ Method that gets all the pages related to a user via the User Id
+ </summary>
+ <param name="userGuid">User guid of the user</param>
+ <returns>Return all pages that belong to a user</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.UserManager.GetUserSetting(System.Int32,System.Collections.Generic.List{InMotionGIT.FrontOffice.Services.Contracts.Page})">
+ <summary>
+ Method that gets all the settings and current page related to a user via the User Id
+ </summary>
+ <param name="userGuid">User guid of the user</param>
+ <param name="listPages">List of the paginas by user</param>
+ <returns>Returns  setting of the user</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.UserManager.GetUserSetting(System.Int32)">
+ <summary>
+ Method that gets all the settings and current page related to a user via the User Id
+ </summary>
+ <param name="userGuid">User guid of the user</param>
+ <returns>Returns  setting of the user</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.GetWidgetsInPage(System.Int32,System.Int32,System.String)">
+ <summary>
+ That current page and id de current of the user
+ </summary>
+ <param name="pageId">Name of the page by search</param>
+ <param name="LanguageId">Name of the Languege Id</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.LoadWidget(System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="WidgetInstanceId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.CreateDeafultWidgetsOnPage(System.String,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="roleName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.DeleteWidgetInstance(System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="pageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.DeleteWidgetInstance(InMotionGIT.FrontOffice.Services.Contracts.WidgetInstance)">
+ <summary>
+
+ </summary>
+ <param name="widgetInstance"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.ChangeWidgetInstancePosition(System.Int32,System.Int32,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="WidgetInstanceId"></param>
+ <param name="ColumnNo"></param>
+ <param name="RowNo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.PushDownWidgetsOnColumn(System.Int32,System.Int32,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="pageId"></param>
+ <param name="columnNo"></param>
+ <param name="position"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.AddWidgetOnPage(System.Int32,System.Int32,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="widgetId"></param>
+ <param name="pageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.EnsureOwner(System.String,System.Int32,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="userName"></param>
+ <param name="pageId"></param>
+ <param name="widgetInstanceId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Helpers.WidgetManager.ReorderWidgetInstanceOnColumn(System.Int32,System.Int32)">
+ <summary>
+
+ </summary>
+ <param name="pageId"></param>
+ <param name="columnNo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Services.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Services.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Services.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Services.My.Resources.Resources.FirstTab">
+<summary>
+  Looks up a localized string similar to Home.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Services.My.Resources.Resources.NewTab">
+<summary>
+  Looks up a localized string similar to New Tab.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Services.My.Resources.Resources.SecondTab">
+<summary>
+  Looks up a localized string similar to New Page.
+</summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.SendMail(InMotionGIT.FrontOffice.Services.Contracts.Parameter)">
+ <summary>
+ Sending email service with the OneWay property/Envío de email por servicio con la propiedad OneWay
+ </summary>
+ <param name="Parameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.SendMailWithTemplate(InMotionGIT.FrontOffice.Services.Contracts.Parameter)">
+ <summary>
+ Sending email with template for service with the OneWay property / Envío de email con template por servicio con la propiedad OneWay
+ </summary>
+ <param name="Parameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.UserStatusChange(System.String,System.Boolean)">
+ <summary>
+ UserStatusChange
+ </summary>
+ <param name="username"></param>
+ <param name="status"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.UserAllByPage(System.Int32,System.Int32,System.String,System.Boolean)">
+ <summary>
+ UserAllByPage
+ </summary>
+ <param name="username"></param>
+ <param name="status"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageChangeCurrent(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ PageChangeCurrent
+ </summary>
+ <param name="pageId"></param>
+ <param name="userId"></param>
+ <param name="languageId"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageChangeOwnership(System.Int32,System.Int32)">
+ <summary>
+ PageChangeOwnership
+ </summary>
+ <param name="oldGuid"></param>
+ <param name="newGuid"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.FirstVisit(System.Int32,System.Int32,System.String,System.Int32,System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue},System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue})">
+ <summary>
+ FirstVisit
+ </summary>
+ <param name="UserId"></param>
+ <param name="pageName"></param>
+ <param name="roleName"></param>
+ <param name="languageId"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageAddNewTab(System.Int32,System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue})">
+ <summary>
+  PageAddNewTab
+ </summary>
+ <param name="UserId"></param>
+ <param name="layoutType"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageChangeName(System.Int32,System.String,System.Int32)">
+ <summary>
+ PageChangeName
+ </summary>
+ <param name="userId"></param>
+ <param name="pageName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageChangeNameByPageId(System.Int32,System.String,System.Int32)">
+ <summary>
+ PageChangeName
+ </summary>
+ <param name="userId"></param>
+ <param name="pageName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageDelete(System.Int32,System.Int32)">
+ <summary>
+ PageDelete
+ </summary>
+ <param name="userId"></param>
+ <param name="pageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.PageUpdate(System.Int32,System.Int32,System.Int32)">
+ <summary>
+  PageUpdate
+ </summary>
+ <param name="userId"></param>
+ <param name="layoutType"></param>
+ <param name="pageID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.UserVisit(System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+  UserVisit
+ </summary>
+ <param name="userId"></param>
+ <param name="PageName"></param>
+ <param name="LanguageId"></param>
+ <param name="rolName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetGetAllIsAnonymouAllow">
+ <summary>
+ WidgetGetAllIsAnonymouAllow
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.GetWidgetsInPage(System.Int32,System.Int32,System.String)">
+ <summary>
+ GetWidgetsInPage
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetGetAllOrderBy">
+ <summary>
+  WidgetGetAllOrderBy
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetGetListByRole(System.String,System.Int32)">
+ <summary>
+  WidgetGetListByRole
+ </summary>
+ <param name="RoleName"></param>
+ <param name="LanguageID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetGetWidgetTrans(System.Int32,System.Int32)">
+ <summary>
+ WidgetGetWidgetTrans
+ </summary>
+ <param name="WidgetId"></param>
+ <param name="LanguageID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetAdd(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+ WidgetAdd
+ </summary>
+ <param name="userId"></param>
+ <param name="widgetId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceChangeTitle(System.Int32,System.Int32,System.String)">
+ <summary>
+ WidgetInstanceChangeTitle
+ </summary>
+ <param name="widgetInstanceId"></param>
+ <param name="languageID"></param>
+ <param name="title"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceExpanded(System.Int32,System.Boolean)">
+ <summary>
+ It changes state expanded collapsed, the vicerversa
+ </summary>
+ <param name="widgetInstanceId"></param>
+ <param name="expanded">State Expanded or collapsed</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceStateChange(System.Int32,System.String)">
+ <summary>
+ Method state change of the entity widgetinstance
+ </summary>
+ <param name="widgetInstanceId"></param>
+ <param name="state">State of entity of the widgetinstance</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceDelete(System.Int32,System.String)">
+ <summary>
+
+ </summary>
+ <param name="widgetInstanceId"></param>
+ <param name="userName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceDeleteProcess(System.Int32)">
+ <summary>
+ A method for removing widget instance
+ </summary>
+ <param name="widgetInstanceId"></param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInstanceAdd(System.Int32,System.Int32)">
+ <summary>
+ WidgetInstanceAdd
+ </summary>
+ <param name="userId"></param>
+ <param name="widgetId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.WidgetInRoleGet(System.Int32,System.String)">
+ <summary>
+ WidgetInRoleGet
+ </summary>
+ <param name="widgetId"></param>
+ <param name="RoleName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.UserSettingIsExist(System.Int32)">
+ <summary>
+ UserSettingIsExist
+ </summary>
+ <param name="userGuid"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Services.Manager.FileListToSyncronize">
+ <summary>
+ Function to make the list of files to synchronize - Función para tomar la lista de archivos a sincronizar
+ </summary>
+ <returns>List of files - Lista de archivos</returns>
+</member>
+</members>
+</doc>

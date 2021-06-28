@@ -1,0 +1,1012 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	/*top: 0;*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 12px;
+	/*font: inherit;*/
+	/*vertical-align: baseline;*/
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-spacing: 0 2px;
+}
+
+table.grdData {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+#left_frame > table,
+div > table {
+	border-spacing: 0;
+}
+
+#left_frame > table td {
+	padding: 0;
+}
+
+td {
+	padding: 1px 0;
+}
+
+td > a > img {
+	padding: 1px;
+}
+
+BODY {
+    BACKGROUND-COLOR: #FFFFFF;
+	background: #ffffff;
+	/*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    /*color: #6F0000;*/
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+	margin: 8px 8px 0 0;
+}
+
+H2 {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 13px;
+	font-weight: bold;
+	position: relative !important;
+	margin: 0;
+	top: -8px;
+}
+
+HR {
+    COLOR: #6F0000;
+	border: 1px;
+	border-style: inset;
+	margin: 2px 0;
+}
+
+LABEL {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+	font-weight: normal;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+INPUT {
+    /*BORDER-BOTTOM: 1px groove;
+    BORDER-LEFT: 1px groove;
+    BORDER-RIGHT: 1px groove;
+    BORDER-TOP: 1px groove;*/
+    /*COLOR: #6F0000;*/
+	font-family: Arial;
+	font-size: 12px;
+	margin: 1px 0;
+	padding: 2px 4px;
+}
+
+select[multiple], 
+select[size], 
+select {
+	min-width: 140px;
+	height: auto;
+	font-family: Arial;
+	font-size: 12px;
+	margin: 1px 0;
+	padding: 2px;
+}
+
+OPTION {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+	margin: 2px;
+	padding: 2px;
+}
+
+.FIELD > a {
+	font-size: 11px;
+	color: #0000EE;
+	text-decoration: underline;
+}
+
+TEXTAREA {
+    /*BORDER-BOTTOM: thin groove;
+    BORDER-LEFT: thin groove;
+    BORDER-RIGHT: thin groove;
+    BORDER-TOP: thin groove;*/
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+	/*margin: 2px;*/
+	max-width: 100%;
+	padding: 2px;
+}
+
+BODY.sequence
+{
+    BACKGROUND: url(/VTimeNet/Images/framesequence.jpg) #0080b1 no-repeat
+/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1,StartColorStr='#A1966C',EndColorStr='#E6E4D2')*/
+    
+}
+
+
+
+TD.folderSeq {
+	color: #FFFFFF;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 16px;
+}
+
+A.linkSeq {
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+    TEXT-DECORATION: none;
+}
+
+A.linkSeq:hover {
+    BACKGROUND-COLOR: #E5ECFF;
+	color: #6F0000;
+}
+
+label > a:hover,
+label > a:focus,
+label > a {
+	/*text-decoration: none;
+	color: #6F0000;*/
+}
+
+.grdData {
+    FONT-SIZE: 11px;
+}
+
+.grdData TH {
+    BACKGROUND-COLOR: #6F0000;
+    COLOR: #FFFFFF;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+    font-weight: lighter;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.grdData TD {
+	BACKGROUND-COLOR: #E5ECFF;
+	border-width: thin;    
+    border-color: #E5ECFF;	
+	height: 30px;	
+    COLOR: #6F0000;	
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.HighLighted {
+    COLOR: #6F0000;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder;
+    TEXT-ALIGN: right;
+}
+
+.HighLighted > label > a,
+.HighLighted > div > label > a {
+	text-decoration: none;
+	color: #6F0000;
+}
+
+.Button {
+}
+
+.Button INPUT {
+    BACKGROUND-COLOR: #0080b1;
+    BORDER-BOTTOM: thin outset;
+    BORDER-LEFT: thin outset;
+    BORDER-RIGHT: thin outset;
+    BORDER-TOP: thin outset;
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder;
+}
+
+.HighLighted LABEL {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 13px;
+    FONT-WEIGHT: bolder;
+    TEXT-ALIGN: right;
+}
+
+.Collapsed {
+    DISPLAY: none;
+}
+
+.Expandable {
+    CURSOR: hand;
+}
+
+.Calendar {
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+}
+
+.Calendar select {
+	min-width: 50px;
+}
+
+.Calendar TH {
+    BACKGROUND-COLOR: #FFFFFF;
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 11px;
+}
+
+.Calendar A:visited {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A:link {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A:active {
+    COLOR: #6F0000;
+    TEXT-DECORATION: none
+}
+
+.grdData TH LABEL {
+    BACKGROUND-COLOR: #FFFFFF;
+    COLOR: #6F0000;
+    font-size: 13px;
+    FONT-WEIGHT: bold;
+}
+
+.Values {
+}
+
+.Values TABLE {
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    COLOR: #FFFFFF;
+}
+
+.Values TABLE TH {
+    BACKGROUND-COLOR: #6F0000;
+    COLOR: #FFFFFF;
+}
+
+.WindowsName {
+    COLOR: #6F0000;
+    FLOAT: right;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 16px;
+    POSITION: static;
+    TEXT-ALIGN: left;
+    margin-bottom: 7px;
+}
+
+.Header {
+    BACKGROUND-COLOR: #FFFAF0;
+}
+
+.down {
+	font-size: 11px;
+}
+
+.Field {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+}
+
+.grdData TD .field {
+    COLOR: #6F0000;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 11px;
+}
+
+.Header .WindowsName {
+    COLOR: #FFFFFF;
+    FONT-SIZE: 16px;
+    FONT-WEIGHT: bolder;
+}
+
+.Tiny {
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 12px;
+    FONT-weight: bold;
+}
+
+#left_frame  .Tiny {
+	color: #FFFFFF;
+}
+
+iframe td {
+	width: 200px;
+}
+
+.POSSVALUE {
+    FONT-FAMILY: Verdana, Tahoma;
+    FONT-SIZE: 9px;
+}
+
+.grdData .UNEVEN {
+    BACKGROUND-COLOR: #E5ECFF;
+}
+
+.grdData .UNEVEN TD {
+    BACKGROUND-COLOR: #FFFFFF;
+}
+
+.HorLine {
+	BACKGROUND-COLOR: #FFFFFF;
+	HEIGHT: 10px;
+	border-top: 2px solid #708CA2;
+}
+
+.HeightRow {
+    HEIGHT: 8px;
+}
+
+.TransNode {
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    COLOR: #6F0000;
+    FONT-FAMILY: Verdana, Tahoma;
+    /*FONT-SIZE: smaller;*/
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+}
+
+.ThinNode {
+	color: #6F0000;
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    HEIGHT: 22px;
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+    WIDTH: 16px;
+}
+
+.WideNode {
+    BORDER-BOTTOM-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-TOP-STYLE: none;
+    HEIGHT: 22px;
+    MARGIN: 0;
+    PADDING-BOTTOM: 0;
+    PADDING-LEFT: 0;
+    PADDING-RIGHT: 0;
+    PADDING-TOP: 0;
+    TEXT-DECORATION: none;
+    WIDTH: 24px;
+}
+
+.Calendar TD.Hollidays {
+    FONT-SIZE: 12px;
+}
+
+BODY.module {
+    BACKGROUND: url(/vtimenet/images/framemodules.jpg) #0080b1 fixed no-repeat;
+}
+
+.Work {
+    BORDER-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    BORDER-LEFT: 1px;
+    BORDER-BOTTOM: 1px;
+}
+
+.NWork {
+    COLOR: #6F0000;
+    BACKGROUND-COLOR: transparent;
+    TEXT-DECORATION: none;
+}
+
+.Calendar A.NWork:link {
+    COLOR: #6F0000;
+}
+
+.Calendar A.NWork:visited {
+    COLOR: #6F0000;
+}
+
+.TableWName {
+	width: 100%;
+	color: #FFFFFF;
+	height: 42px;
+	padding: 0;
+	TEXT-ALIGN: right;	
+	background: url(/VTimeNetLat/images/WNbg1.bmp);
+	background-repeat: repeat-x;
+}
+
+.TableWNameLeft {
+	padding-right: 0;
+	padding: 0;
+	width: 14px;	
+}
+
+.TableWNameCenter {
+	padding: 0;
+	vertical-align: top;
+}
+
+.TableWNameRight {
+	padding: 0;
+	width: 14px;
+}
+
+#left_frame {
+    BACKGROUND: url(/vtimeNet/images/framemodules.jpg) #0080b1 fixed no-repeat
+}
+
+#tabNav {
+	position: absolute; 
+	top: 0; 
+	width: 100%;
+}
+
+/*color del mnu ppal que se ve al principio*/
+#nav {
+	background: #708CA2; 
+	padding: 0; 
+	margin: 0; 
+	list-style: none; 
+	height: 22px;
+	position: relative; 
+	z-index: 500; 
+	font-family: arial, verdana, sans-serif;
+}
+
+#nav li.top {
+	display: block; 
+	float: left; 
+	height: 22px; 
+}
+
+#nav li a.top_link {
+	display: block; 
+	float: left; 
+	height: 19px; 
+	line-height: 20px; 
+	color: #FFFFFF; 
+	text-decoration: none;    
+	font-size: 11px; 
+	font-weight: bold; 
+	padding: 0 24px 0 12px; 
+	cursor: pointer; 
+}
+
+/*color al pasar el mouse sobre el elemento del mnu ppal*/
+#nav li:hover {
+	position: relative; 
+	z-index: 200; 
+	background: #E5ECFF; 
+}
+
+/* Color de la letra al pasar el mouse sobre el elemento del mnu ppal */
+#nav li:hover a.top_link  span.down {
+	color: #000000;
+} 
+
+/* Este es el fondo del submenu */
+#nav li:hover ul.sub {
+	background: #708CA2; 
+	left: 1px; 
+	top: 22px; 
+	padding: 0;
+	border: 0;
+	white-space: nowrap; 
+	width: 150px; 
+	height: auto; 
+	z-index: 300;
+} 
+
+/*carac. de la caja del submenu */
+#nav li:hover ul.sub li {
+	display: block; 
+	height: 22px; 
+	position: relative; 
+	float: left; 
+	width: 150px; 
+	font-weight: bold;
+}
+
+/*carac. de los links dentro del submenu. lo que se despliega y no le haz pasado el mouse */
+#nav li:hover ul.sub li a {
+	display: block; 
+	font-size: 11px; 
+	height: 18px; 
+	width: 150px; 
+	line-height: 18px; 
+	text-indent: 5px; 
+	color: #FFFFFF; 
+	text-decoration: none;
+	border: 0;
+} 
+
+/* Imagenes que se muestran en el menu */
+#nav li:hover ul.sub li a img {
+	height: 17px; 
+	width: 17px;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+}
+
+/*Cuando pasas el mouse por encima del submenu. fondo, letra, borde */
+#nav li:hover ul.sub li a:hover {
+	height: 22px; 
+	background: #E5ECFF; 
+	color: #000000; 
+}
+
+#nav ul, 
+#nav li:hover ul ul,
+#nav li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover li:hover ul ul {
+	position: absolute; 
+	left: -9999px; 
+	top: -9999px; 
+	width: 0; 
+	height: 0; 
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+}
+
+textarea:disabled, 
+input:not([type]):disabled, 
+input[type="color"]:disabled, 
+input[type="date"]:disabled, 
+input[type="datetime"]:disabled, 
+input[type="datetime-local"]:disabled, 
+input[type="email"]:disabled, 
+input[type="month"]:disabled, 
+input[type="password"]:disabled, 
+input[type="number"]:disabled, 
+input[type="search"]:disabled, 
+input[type="tel"]:disabled, 
+input[type="text"]:disabled, 
+input[type="time"]:disabled, 
+input[type="url"]:disabled, 
+input[type="week"]:disabled {
+	background-color: #FFFFFF;
+	color: #CCCCCC;	
+}
+
+#form1 td > a {
+	/*top: -5px;*/
+	position: relative;
+}
+
+body#left_frame {
+	margin: 0;
+}
+
+#left_frame.leftMainMenu {
+	background: none;
+	/*filter: none;*/
+}
+
+iframe {
+	width: 100%;
+}
+	
+div#Scroll {
+	height: 240px;
+	overflow: hidden;
+}
+
+#left_frame>img {
+	display: none;
+}
+
+
+/***********************************************************************/
+/***************************** Misceláneos *****************************/
+/***********************************************************************/
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.has-error .help-block, 
+.has-error .control-label, 
+.has-error .radio, 
+.has-error .checkbox, 
+.has-error .radio-inline, 
+.has-error .checkbox-inline {
+	font-size: 12px;
+}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+	color: #292929;
+}
+
+.form-control {
+	height: 28px;
+	padding: 4px 6px;
+	border-radius: 0;
+}
+
+.form-group {
+	margin-bottom: 5px;
+}
+
+
+/***********************************************************************/
+/************** Datepicker, styles for the holidays*********************/
+/***********************************************************************/
+.holidays {
+    background-image: none;
+}
+
+.holidays>.ui-state-default.ui-state-highlight, 
+.holidays>.ui-state-default {
+	background: #FFFFFF;
+	color: #AF0000 !important;
+	opacity: 0.7;
+	font-weight: bold;
+}
+
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year {
+	width: auto;
+	min-width: 80px;
+	color: black;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+.ui-datepicker th {
+	padding: 0.4em 0.1em;
+}
+
+.ui-datepicker th > span {
+	font-size: 0.9em;
+}
+
+.ui-dialog {
+	z-index: 999;
+}
+
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight {
+	background: #D5D5D5;
+	border: 1px solid #3C3C3C;
+	color: #363636;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+	border: 1px solid #EBEBEB;
+	background: #FFFFFF;
+}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+	border: 1px solid #DDDDDD;
+	/*background: #FFFFFF;*/
+}
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active {
+	border: 1px solid #D1D1D1;
+	background: #DADADA;
+}
+
+.ui-state-hover, 
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+}
+
+.ui-state-hover.ui-datepicker-prev-hover,
+.ui-state-hover.ui-datepicker-next-hover {
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+}
+
+.ui-jqgrid-titlebar.ui-widget-header {
+	background: #6F0000;
+	border: none;
+	opacity: 0.9;
+}
+
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix {
+	/*background: #F0F0F0;
+	border-radius: 0;*/
+	padding: 12px 10px;
+	/*border: none;*/
+	/*border-bottom: 1px solid #E7E7E7;*/
+	/*color: #575757;*/
+	background: #6F0000;
+	border: none;
+	opacity: 0.9;
+	margin-bottom: 8px;
+} 
+
+.ui-widget-content,
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+	border: none;
+	background: #ffffff;
+	color: #222222;
+}
+
+.ui-widget-content {
+	border: 1px solid #EBEBEB;
+}
+
+a.ui-datepicker-next.ui-corner-all > span.ui-icon-circle-triangle-e {
+	background-image: url(/Styles/images/ui-icons_222222_256x240.png);
+	background-position: -48px -192px;
+}
+
+a.ui-datepicker-prev.ui-corner-all > span.ui-icon-circle-triangle-w {
+	background-image: url(/Styles/images/ui-icons_222222_256x240.png);
+	background-position: -80px -192px;
+}
+
+td.ui-widget-content.subgrid-data {
+	padding: 20px 0;
+}
+
+.ui-datepicker.ui-widget-content {
+	border: 1px solid #B9B5B5;
+}
+
+.ui-datepicker-calendar .ui-state-default{
+	border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+	color: #333;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+	color: #333;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+	border: 1px solid #D1D1D1;
+	background: #D1D1D1;
+	color: #333;
+}
+
+.ui-datepicker-calendar .ui-state-highlight {
+	background: #D5D5D5;
+	border: 1px solid #3C3C3C;
+	color: #363636;
+}
+
+
+/***************************************************************/
+/****************** jqueryui custom styles *********************/
+/***************************************************************/
+.ui-jqgrid-title {
+    font-size: 12px;
+}
+
+.ui-widget .ui-widget,
+.ui-jqgrid .ui-jqgrid-htable th div {
+	font-size: 12px;
+}
+
+.ui-widget-overlay {
+	opacity: 0.6;
+	background: darkgray;
+}
+
+td.ui-widget-content.subgrid-data {
+	overflow: hidden;
+}
+
+.ui-widget.ui-widget-content.ui-corner-all.ui-jqdialog {
+	width: 360px !important;
+}
+
+.ui-jqgrid .ui-pg-input {
+	height: 22px;
+}
+
+.ui-jqgrid tr.jqgrow td {
+	padding: 4px 2px;
+	/*font-size: 12px;*/
+}
+
+.ui-jqgrid-titlebar-close.HeaderButton {
+	/*display: none;*/
+}
+
+.ui-widget input, 
+.ui-widget select, 
+.ui-widget textarea, 
+.ui-widget button {
+	/*font-size: 13px;*/
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+	margin: -8px;
+}
+
+td.checkboxGrid > input[type="checkbox"] {
+	float: none;
+}
+
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr {
+	background: #E4E4E4;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	background: none;
+	border: none;
+	background-image: url(/Styles/images/ui-icons_FFFFFF_256x240.png);
+	background-position: -96px -126px;
+	opacity: 1;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover {
+	opacity: 0.7;
+}
+
+.ui-accordion .ui-accordion-content {
+	padding: 15px;
+}
+
+.ui-widget-overlay {
+	height: 200%;
+}
+
+
+/***********************************************************************/
+/******************************* Buttons *******************************/
+/***********************************************************************/
+.btn {	
+	/*border: none !important;*/
+	/*margin: 3px !important;*/
+	/*cursor: pointer;*/
+}
+
+/* important attr is added to overwrite the contents of the ui css */
+.btnAccept {
+	width: 25px;
+	height: 25px;
+	background: #FFFFFF url('../Images/btnAcceptOff.png') no-repeat !important;
+}
+
+.btnAccept:active {
+	background: #FFFFFF url('../Images/btnAcceptOff.png') no-repeat !important;
+}
+	
+.btnAccept:hover {
+	background: #FFFFFF url('../Images/btnAcceptOn.png') no-repeat !important;
+}
+
+.btnCancel {
+	width: 25px;
+	height: 25px;
+	background: #FFFFFF url('../Images/btnCancelOff.png') no-repeat !important;
+}
+
+.btnCancel:active {
+	background: #FFFFFF url('../Images/btnCancelOff.png') no-repeat !important;
+}
+	
+.btnCancel:hover {
+	background: #FFFFFF url('../Images/btnCancelOn.png') no-repeat !important;
+}
+
+.btnAdd {
+	width: 35px;
+	height: 20px;
+	background: #FFFFFF url('../Images/btnAddOff.png') no-repeat;
+}
+
+.btnAdd:active {
+	background: #FFFFFF url('../Images/btnAddOff.png') no-repeat;
+}
+	
+.btnAdd:hover {
+	background: #FFFFFF url('../Images/btnAddOn.png') no-repeat;
+}
+
+
+/***************************************************************/
+/********************** Grid and Subgrid ***********************/
+/***************************************************************/
+#mapa {
+    width: 100%; 
+    height: 300px;
+}
+
+#grid-address {
+	border-collapse: inherit;
+}
+
+.grid-address-wrapper,
+.grid-phone-wrapper {
+	width: 100%; 
+	/*height: 30px; */
+	padding: 10px 0;
+}
+
+#keyword {
+	margin: 3px 0;
+	width: 100%;
+}
+
+
+/***************************************************************/
+/************************* Bootstrap ***************************/
+/***************************************************************/
+.form-horizontal .form-group {
+	/*margin-left: -14px;
+	margin-right: -14px;*/
+}
+
+.row {
+	margin-left: -12px;
+	margin-right: -12px;
+}

@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbeShipTypeCaption" xml:space="preserve">
+    <value> Tipo Embarc.</value>
+  </data>
+  <data name="cbeShipTypeToolTip" xml:space="preserve">
+    <value> Tipo de embarcación</value>
+  </data>
+  <data name="cbeShipUseCaption" xml:space="preserve">
+    <value> Uso</value>
+  </data>
+  <data name="cbeShipUseToolTip" xml:space="preserve">
+    <value>Marca del vehículo </value>
+  </data>
+  <data name="cbeUnitMesureCodeCaption" xml:space="preserve">
+    <value>Unidad Medida</value>
+  </data>
+  <data name="cbeUnitMesureCodeToolTip" xml:space="preserve">
+    <value>Unidad de medida de la capacidad de carga</value>
+  </data>
+  <data name="lblDatosVariosCaption" xml:space="preserve">
+    <value>Datos Varios</value>
+  </data>
+  <data name="lblEmbarcacionCaption" xml:space="preserve">
+    <value>Embarcación</value>
+  </data>
+  <data name="lblMotorCaption" xml:space="preserve">
+    <value>Motor</value>
+  </data>
+  <data name="lblTonelajesCaption" xml:space="preserve">
+    <value>Tonelajes</value>
+  </data>
+  <data name="tcdLastCareDateCaption" xml:space="preserve">
+    <value> Fecha Carena</value>
+  </data>
+  <data name="tcdLastCareDateToolTip" xml:space="preserve">
+    <value> Fecha de la última carena</value>
+  </data>
+  <data name="tcnCapacityCaption" xml:space="preserve">
+    <value>Capacidad Carga</value>
+  </data>
+  <data name="tcnCapacityToolTip" xml:space="preserve">
+    <value>Capacidad de Carga</value>
+  </data>
+  <data name="tcnConsYearCaption" xml:space="preserve">
+    <value>Año Construc.</value>
+  </data>
+  <data name="tcnConsYearToolTip" xml:space="preserve">
+    <value>Año de construcción</value>
+  </data>
+  <data name="tcnDepthCaption" xml:space="preserve">
+    <value>Puntal</value>
+  </data>
+  <data name="tcnDepthToolTip" xml:space="preserve">
+    <value>Medida del Puntal en metros lineales</value>
+  </data>
+  <data name="tcnEquivYearCaption" xml:space="preserve">
+    <value>Año Equiv.</value>
+  </data>
+  <data name="tcnEquivYearToolTip" xml:space="preserve">
+    <value>Año Equivalente</value>
+  </data>
+  <data name="tcnLengthCaption" xml:space="preserve">
+    <value>Eslora</value>
+  </data>
+  <data name="tcnLengthToolTip" xml:space="preserve">
+    <value>Medida de la Eslora en metros lineales</value>
+  </data>
+  <data name="tcnNumMotorsCaption" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="tcnNumMotorsToolTip" xml:space="preserve">
+    <value>Número de motores de la embarcación</value>
+  </data>
+  <data name="tcnPowerCaption" xml:space="preserve">
+    <value>Fuerza HP</value>
+  </data>
+  <data name="tcnPowerToolTip" xml:space="preserve">
+    <value>Potencia de los motores en HP</value>
+  </data>
+  <data name="tcnTRBCaption" xml:space="preserve">
+    <value>TRB</value>
+  </data>
+  <data name="tcnTRBToolTip" xml:space="preserve">
+    <value>Toneladas de registro bruto</value>
+  </data>
+  <data name="tcnTRNCaption" xml:space="preserve">
+    <value>TRN</value>
+  </data>
+  <data name="tcnTRNToolTip" xml:space="preserve">
+    <value>Toneladas de registro neto</value>
+  </data>
+  <data name="tcnWatersCaption" xml:space="preserve">
+    <value>Manga</value>
+  </data>
+  <data name="tcnWatersToolTip" xml:space="preserve">
+    <value>Medida de la Manga en metros lineales</value>
+  </data>
+  <data name="tctActionZoneCaption" xml:space="preserve">
+    <value>Radio de Acción</value>
+  </data>
+  <data name="tctActionZoneToolTip" xml:space="preserve">
+    <value>Radio de acción de la embarcación</value>
+  </data>
+  <data name="tctColorCaption" xml:space="preserve">
+    <value> Color</value>
+  </data>
+  <data name="tctColorToolTip" xml:space="preserve">
+    <value>Color del Casco</value>
+  </data>
+  <data name="tctConstructorCaption" xml:space="preserve">
+    <value> Constructor</value>
+  </data>
+  <data name="tctConstructorToolTip" xml:space="preserve">
+    <value> Constructor del casco</value>
+  </data>
+  <data name="tctDotationCaption" xml:space="preserve">
+    <value>Dotación</value>
+  </data>
+  <data name="tctDotationToolTip" xml:space="preserve">
+    <value>Dotación de la embarcación</value>
+  </data>
+  <data name="tctLastCarePlaceCaption" xml:space="preserve">
+    <value>Lugar Carena</value>
+  </data>
+  <data name="tctLastCarePlaceToolTip" xml:space="preserve">
+    <value>Lugar de la última carena</value>
+  </data>
+  <data name="tctModelMotorsCaption" xml:space="preserve">
+    <value>Marca/Modelo</value>
+  </data>
+  <data name="tctModelMotorsToolTip" xml:space="preserve">
+    <value>Marcas y Modelos de los motores de la embarcación</value>
+  </data>
+  <data name="tctNameCaption" xml:space="preserve">
+    <value> Nombre</value>
+  </data>
+  <data name="tctNameToolTip" xml:space="preserve">
+    <value> Nombre de la embarcación</value>
+  </data>
+  <data name="tctRegistCaption" xml:space="preserve">
+    <value> Matrícula</value>
+  </data>
+  <data name="tctRegistToolTip" xml:space="preserve">
+    <value> Matrícula de la embarcación</value>
+  </data>
+  <data name="tctSeaPortCaption" xml:space="preserve">
+    <value>Puerto Registro</value>
+  </data>
+  <data name="tctSeaPortToolTip" xml:space="preserve">
+    <value>Puerto de Registro</value>
+  </data>
+  <data name="tctSerialMotorsCaption" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="tctSerialMotorsToolTip" xml:space="preserve">
+    <value>Serie de los motores de la embarcación</value>
+  </data>
+  <data name="valMaterialCaption" xml:space="preserve">
+    <value> Material Casco</value>
+  </data>
+  <data name="valMaterialToolTip" xml:space="preserve">
+    <value> Material del Casco</value>
+  </data>
+</root>

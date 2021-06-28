@@ -1,0 +1,98 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<dxrp:ASPxRoundPanel runat="server" BackColor="#E2E8C9" >
+<TopEdge>
+<BackgroundImage HorizontalPosition="left" 
+  ImageUrl="~/App_Themes/Office2003Olive/Web/rpTopEdge.png" Repeat="RepeatX" 
+  VerticalPosition="top" />
+</TopEdge>
+<ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+<HeaderRightEdge>
+<BackgroundImage HorizontalPosition="left" 
+  ImageUrl="~/App_Themes/Office2003Olive/Web/rpHeader.png" Repeat="RepeatX" 
+  VerticalPosition="top" />
+</HeaderRightEdge>
+<Border BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+<HeaderLeftEdge>
+<BackgroundImage HorizontalPosition="left" 
+  ImageUrl="~/App_Themes/Office2003Olive/Web/rpHeader.png" Repeat="RepeatX" 
+  VerticalPosition="top" />
+</HeaderLeftEdge>
+<HeaderStyle BackColor="#B5C48F">
+<Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" 
+PaddingRight="2px" />
+<BorderBottom BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+</HeaderStyle>
+<HeaderContent>
+<BackgroundImage HorizontalPosition="left" 
+  ImageUrl="~/App_Themes/Office2003Olive/Web/rpHeader.png" Repeat="RepeatX" 
+  VerticalPosition="top" />
+</HeaderContent>
+<DisabledStyle ForeColor="Gray">
+</DisabledStyle>
+<NoHeaderTopEdge BackColor="#E2E8C9">
+</NoHeaderTopEdge>
+</dxrp:ASPxRoundPanel>
+
+<dxrp:ASPxRoundPanel runat="server" SkinId="RoundPanelDesglose" BackColor="#E2E8C9" CssFilePath="~/App_Themes/Office2003Olive/Web/styles.css" 
+                     ImageFolder="~/App_Themes/Office2003Olive/Web/" CssPostfix="Office2003Olive">
+           <BottomRightCorner Height="3px" Width="3px" 
+                  Url="~/App_Themes/Office2003Olive/Web/BottomRightCornerSquare.png" />
+           <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+           <NoHeaderTopRightCorner Height="3px" Width="3px" 
+                  Url="~/App_Themes/Office2003Olive/Web/NoHeaderTopRightCornerSquare.png" />
+           <Border BorderStyle="Solid" BorderColor="#758D5E" BorderWidth="1px" />
+           <HeaderStyle BackColor="#E2E8C9" Font-Bold="True" Font-Size="Small">
+           <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" PaddingRight="2px" />
+           </HeaderStyle>
+           <TopRightCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/TopRightCornerSquare.png" />
+           <DisabledStyle ForeColor="Gray">
+           </DisabledStyle>
+           <NoHeaderTopEdge BackColor="#E2E8C9">
+           </NoHeaderTopEdge>
+           <NoHeaderTopLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/NoHeaderTopLeftCornerSquare.png"  />
+           <TopLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/TopLeftCornerSquare.png"  />
+           <BottomLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/BottomLeftCornerSquare.png"  />
+</dxrp:ASPxRoundPanel>
+
+<dxrp:ASPxRoundPanel runat="server" SkinId="RoundPanelPresupuestos" BackColor="#E2E8C9" CssFilePath="~/App_Themes/Office2003Olive/Web/styles.css" 
+                     ImageFolder="~/App_Themes/Office2003Olive/Web/" CssPostfix="Office2003Olive">
+           <BottomRightCorner Height="3px" Width="3px" 
+                  Url="~/App_Themes/Office2003Olive/Web/BottomRightCornerSquare.png" />
+           <ContentPaddings Padding="2px" PaddingBottom="10px" PaddingTop="10px" />
+           <NoHeaderTopRightCorner Height="3px" Width="3px" 
+                  Url="~/App_Themes/Office2003Olive/Web/NoHeaderTopRightCornerSquare.png" />
+           <HeaderStyle BackColor="#E2E8C9" Font-Bold="True" Font-Size="Small">
+           <Paddings Padding="0px" PaddingBottom="7px" PaddingLeft="2px" PaddingRight="2px" />
+           </HeaderStyle>
+           <TopRightCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/TopRightCornerSquare.png" />
+           <DisabledStyle ForeColor="Gray">
+           </DisabledStyle>
+           <NoHeaderTopEdge BackColor="#E2E8C9">
+           </NoHeaderTopEdge>
+           <NoHeaderTopLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/NoHeaderTopLeftCornerSquare.png"  />
+           <TopLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/TopLeftCornerSquare.png"  />
+           <BottomLeftCorner Height="3px" Width="3px" 
+                   Url="~/App_Themes/Office2003Olive/Web/BottomLeftCornerSquare.png"  />
+           <Border BorderStyle="Solid" BorderColor="#FFFFFF" BorderWidth="0px"/>
+</dxrp:ASPxRoundPanel>

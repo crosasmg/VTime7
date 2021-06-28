@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AJAXASMXHandler</name>
+    </assembly>
+    <members>
+        <member name="T:AJAXASMXHandler.AsmxHandlerSyncResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.AsmxHandlerSyncResult.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="T:AJAXASMXHandler.ASMXHttpHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ASMXHttpHandler.ExecuteMethod(System.Web.HttpContext,AJAXASMXHandler.WebMethodDef,AJAXASMXHandler.WebServiceDef)">
+            <summary>
+            Execute web method synchronously
+            </summary>
+            <param name="context"></param>
+            <param name="methodDef"></param>
+            <param name="serviceDef"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.ASMXHttpHandler.StrongTypeParameters(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.List{System.Reflection.ParameterInfo})">
+            <summary>
+            Converts the parameter values to proper data type according to the parameter data types
+            For example, a string value in input parameter is converted to integer if prameter type is integer
+            </summary>
+            <param name="rawParams"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AJAXASMXHandler.AsyncWebMethodState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AJAXASMXHandler.AsyncWebMethodState.Context">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.AsyncWebMethodState.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.AsyncWebMethodState.#ctor(AJAXASMXHandler.AsyncWebMethodState)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.AsyncWebMethodState.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AJAXASMXHandler.ETagMethodAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.ETagMethodAttribute.Enabled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ETagMethodAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ETagMethodAttribute.#ctor(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="enabled"></param>
+        </member>
+        <member name="T:AJAXASMXHandler.ResponseFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.#ctor(System.Web.HttpResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="P:AJAXASMXHandler.ResponseFilter.CanRead">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.ResponseFilter.CanSeek">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.ResponseFilter.CanWrite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.Flush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.ResponseFilter.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.ResponseFilter.Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            
+            </summary>
+            <param name="offset"></param>
+            <param name="origin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.SetLength(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AJAXASMXHandler.ResponseFilter.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:AJAXASMXHandler.TransactionalMethodAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.TransactionalMethodAttribute.TransactionOption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.TransactionalMethodAttribute.IsolationLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AJAXASMXHandler.TransactionalMethodAttribute.Timeout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor(System.Transactions.TransactionScopeOption,System.Transactions.IsolationLevel,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="option"></param>
+            <param name="isolationLevel"></param>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor(System.Transactions.TransactionScopeOption)">
+            <summary>
+            
+            </summary>
+            <param name="option"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor(System.Transactions.TransactionScopeOption,System.Transactions.IsolationLevel)">
+            <summary>
+            
+            </summary>
+            <param name="option"></param>
+            <param name="isolationLevel"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor(System.Transactions.IsolationLevel)">
+            <summary>
+            
+            </summary>
+            <param name="isolationLevel"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.TransactionalMethodAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AJAXASMXHandler.WebServiceDef.EnsureMethods(System.Type)">
+            <summary>
+            Scans the web service type for Web methods and precaches web method definition
+            </summary>
+            <param name="wsType"></param>
+        </member>
+        <member name="M:AJAXASMXHandler.WebServiceDef.AddMethod(System.Type,System.Collections.Generic.Dictionary{System.String,AJAXASMXHandler.WebMethodDef},System.Reflection.MethodInfo)">
+            <summary>
+            Caches a web method definition 
+            </summary>
+            <param name="wsType"></param>
+            <param name="methods"></param>
+            <param name="method"></param>
+        </member>
+        <member name="T:AJAXASMXHandler.WebMethodDef">
+            <summary>
+            Caches a web method definition along with its BeginXXX and EndXXX pairs
+            </summary>
+        </member>
+    </members>
+</doc>

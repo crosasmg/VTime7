@@ -1,0 +1,786 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Product.Services
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Product.Services.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Product.Services.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Product.Services.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.IsCoreProvider(System.String)">
+ <summary>
+ Indica si el proveedor usando por la operación es Visual Time Core
+ </summary>
+ <param name="provider">Código de proveedor del servicio.</param>
+ <returns>Verdadero si el proveedor es Visual Time Core, para el caso contrario Falso</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.FixedInsuredAmountForCoverageBasicByCoverageModule(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Retrieve the insured amount of basic coverage for a module. // Permite recuperar la suma asegurada de la cobertura básica para un módulo.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="coverageModule">Code of the module of the coverage. // Código del módulo de la cobertura.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.Retrieve(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Recovers the information of the product. // Retorna la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance</returns>''' 
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.RetrieveCaching(System.Int32,System.Int32,System.DateTime,System.Boolean,System.Data.Common.DbConnection)">
+ <summary>
+ Recovers the information of the product. // Retorna la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="currentConnection">Record effective date.</param>
+ <returns>Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.RetrieveCaching(System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Recovers the information of the product. // Retorna la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="currentConnection">Record effective date.</param>
+ <returns>Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.ClearDependency(InMotionGIT.Product.Entity.Contracts.ProductMaster)">
+ <summary>
+ Cleans the dependencies of the object ProductMaster. // Limpia la información derivada entre las dependencias de un objecto tipo ProductMaster.
+ </summary>
+ <param name="prodInstance">Instance <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>.</param>
+ <returns>Instance <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso>.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.ClearCache(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Cleans the information of the product from the cache. // Limpia del cache la información de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+</member>
+<member name="M:InMotionGIT.Product.Services.Helpers.Support.ClearCache">
+ <summary>
+ Cleans the information of the product from the cache. // Limpia del cache la información de un producto.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Product.Services.Interfaces.Connection.IProduct">
+ <summary>
+ Interface for IProduct. // Interfaz para IProduct.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.LineOfBussinesLkp(System.Int32)">
+ <summary>
+ Active line of business. // Ramos activos.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>List of active line of business. // Lista de los ramos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.LineOfBussinesDescription(System.Int32,System.Int32)">
+ <summary>
+ Description of the active line of business. // Descripción de ramos activos.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>Returns the description of the line of business. // Retorna la descripción del ramo.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ProductByLineOfBusinessLkp(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ List of active product based on the line of business. // Lista de productos activos basados en el ramo.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productcode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>List of active products. // Lista de productos activa.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ProductLkp(System.Int32)">
+ <summary>
+ List of active products, including a description of the line of business. // Lista de productos activos, incluyendo descripción del ramo.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>List of active products. // Lista de productos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ProductDescription(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Product description. // Descripción de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productcode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>Description of the product.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.RoleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Roles allowed in a policy for a product. // Roles permitidos para el producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.RoleAllowedByProductCoverage(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Roles allowed by coverage in a policy for a product. // Roles permitidos para la cobertura del producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.CurrencyByProduct(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Currencies allowed in a policy for a product. // Monedas permitidas para el producto en una póliza. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of currencies allowed. // Lista de monedas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.BasicRatingTableByProduct(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atencion medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ModuleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Currencies allowed in a policy for a product. // Monedas permitidas para el producto en una póliza. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of currencies allowed. // Lista de monedas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.CoverageByProductLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Coverages allowed in a policy for a product. // Coberturas permitidas para el producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="coverageModule">Code of the module of the coverage. if it is zero, it returns all coverages for all modules, otherwise only coverage for the indicated module.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of coverages allowed. // Lista de coberturas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.DiscountExtraPremiumTaxByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para el producto de una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.DiscountExtraPremiumTaxByProductLookup(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para el producto de una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.IllnessByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.IllnessByFilterAndProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32,System.Int32)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.IllnessDescription(System.String,System.Int32)">
+ <summary>
+ Descripción de la enfermedad.
+ </summary>
+ <param name="Illness">Identificación de la enfermedad</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.RoleLkp(System.Int32)">
+ <summary>
+ Roles list. // Lista de roles.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>List of roles. // Lista de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ProductInformation(System.Int32,System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ To recover all the product information. // Para recuperar la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.ReasonForExclusionOfIllnessLkp(System.Int32)">
+ <summary>
+ Reasons for exclusion of illness (Health policies) list. // Lista de causas de exclusión de enfermedad ( Atención Médica).
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <returns>List of Reasons. // Lista de causas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.BasicRatingTableByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atención medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>      
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.Connection.IProduct.RetrieveBasicInsuredAmount(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.String,System.Int32)">
+ <summary>
+ Capitales básicos asociados a un producto // Basic capitals associated With a product
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial. // Code of the line of business.</param>
+ <param name="codeOfTheInsuredAmount">Código que identifica el capital asegurado. // Code that identifies the limit.</param>
+ <param name="ProductCode">Código del producto. // Code of the product.</param>
+ <param name="atDate">Fecha de efecto del registro. // Date from which the record is valid.</param>
+ <param name="childFilter">Filtro para traer todos los ojetos hijos</param>
+ <param name="withLookups">Verdadero para traer la descripciones</param>
+ <param name="provider">Código de cliente del servicio.</param>
+ <param name="companyID">Código multicompañia.</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Product.Services.Interfaces.IProductManager">
+ <summary>
+ Interface for IProductManager. // Interfaz para IProductManager.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.LineOfBussinesLkp(System.Int32,System.String)">
+ <summary>
+ Active line of business. // Ramos activos.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active line of business. // Lista de los ramos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.LineOfBussinesDescription(System.Int32,System.Int32,System.String)">
+ <summary>
+ Description of the active line of business. // Descripción de un ramo.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Returns the description of the line of business. // Retorna la descripción del ramo.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ProductByLineOfBusinessLkp(System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+ List of active product based on the line of business. // Lista de productos activos basados en el ramo.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active products. // Lista de productos activa.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ProductLkp(System.Int32,System.String)">
+ <summary>
+ List of active products, including a description of the line of business. // Lista de productos activos, incluyendo descripción del ramo.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active products. // Lista de productos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ProductDescription(System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+ Product description. // Descripción de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productcode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Description of the product.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.RoleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Roles allowed in a policy for a product. // Roles permitidos para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.RoleAllowedByProductCoverage(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Roles allowed by coverage in a policy for a product. // Roles permitidos para las cobertura de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.CurrencyByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Currencies allowed in a policy for a product. // Monedas permitidas para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of currencies allowed. // Lista de monedas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.BasicRatingTableByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atención medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.BasicRatingTableByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atención medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ModuleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Currencies allowed in a policy for a product. // Monedas permitidas para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of currencies allowed. // Lista de monedas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.CoverageByProductLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Coverages allowed in a policy for a product. // Coberturas permitidas para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="coverageModule">Code of the module of the coverage. if it is zero, it returns all coverages for all modules, otherwise only coverage for the indicated module.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of coverages allowed. // Lista de coberturas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.DiscountExtraPremiumTaxByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.DiscountExtraPremiumTaxByProductLookup(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.IllnessByFilterLkp(System.Int32,System.String,System.Int32,System.Int32,System.String)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.IllnessByFilterAndProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32,System.Int32,System.String,System.Int32)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.IllnessDescription(System.String,System.Int32,System.String)">
+ <summary>
+ Descripción de la enfermedad.
+ </summary>
+ <param name="Illness">Identificación de la enfermedad</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.RoleLkp(System.Int32,System.String)">
+ <summary>
+ Roles list. // Lista de roles.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of roles. // Lista de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ProductInformation(System.Int32,System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ To recover all the product information. // Recupera la información de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.ReasonForExclusionOfIllnessLkp(System.Int32,System.String)">
+ <summary>
+ Reasons for exclusion of illness (Health policies) list. // Lista de causas de exclusión de enfermedad ( Atención Médica).
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of Reasons. // Lista de causas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.RetrieveBasicInsuredAmount(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.String,System.Int32)">
+ <summary>
+ Capitales básicos asociados a un producto // Basic capitals associated With a product
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial. // Code of the line of business.</param>
+ <param name="codeOfTheInsuredAmount">Código que identifica el capital asegurado. // Code that identifies the limit.</param>
+ <param name="ProductCode">Código del producto. // Code of the product.</param>
+ <param name="atDate">Fecha de efecto del registro. // Date from which the record is valid.</param>
+ <param name="childFilter">Filtro para traer todos los ojetos hijos</param>
+ <param name="withLookups">Verdadero para traer la descripciones</param>
+ <param name="provider">Código de cliente del servicio.</param>
+ <param name="companyID">Código multicompañia.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.Interfaces.IProductManager.RetrieveBasicInsuredAmounts(System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Obtiene un conjunto de capitales básicos asociados a un producto // Obtains a collection of basic capitals associated With a product
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial. // Code of the line of business.</param>
+ <param name="ProductCode">Código del producto. // Code of the product.</param>
+ <param name="productCode"></param>
+ <param name="atDate">Fecha de efecto del registro. // Date from which the record is valid.</param>
+ <param name="provider">Código de cliente del servicio.</param>
+ <param name="companyID">Código multicompañia.</param>
+ <returns>Conjunto de capitales básicos asociados a un producto // Collection of basic capitals associated With a product</returns>
+</member>
+<member name="T:InMotionGIT.Product.Services.ProductManager">
+ <summary>
+ ProductManager class. // Clase ProductManager.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RetrieveWithCaching(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ To recover all the product information. // Para recuperar la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RetrieveWithCaching(System.Int32,System.Int32,System.DateTime,System.Boolean,System.String)">
+ <summary>
+ To recover all the product information. // Para recuperar la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RetrieveWithCaching(System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.Int32)">
+ <summary>
+ To recover all the product information. // Para recuperar la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RetrieveWithCachingByFilter(System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="atDate"></param>
+ <param name="withLookups"></param>
+ <param name="chilFilter"></param>
+ <param name="provider"></param>
+ <param name="companyID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.LineOfBussinesLkp(System.Int32,System.String)">
+ <summary>
+ Active line of business. // Ramos activos.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active line of business. // Lista de los ramos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.LineOfBussinesDescription(System.Int32,System.Int32,System.String)">
+ <summary>
+ Description of the active line of business. // Descripción de ramos activos.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Returns the description of the line of business. // Retorna la descripción del ramo.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ProductByLineOfBusinessLkp(System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+ List of active product based on the line of business. // Lista de productos activos basados en el ramo.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active products. // Lista de productos activa.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ProductLkp(System.Int32,System.String)">
+ <summary>
+ List of active products, including a description of the line of business. // Lista de productos activos, incluyendo descripción del ramo.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of active products. // Lista de productos activos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ProductDescription(System.Int32,System.Int32,System.Int32,System.String)">
+ <summary>
+ Product description. // Descripción de un producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Description of the product.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RoleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Roles allowed in a policy for a product. // Roles permitidos para el producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <param name="companyID">Código de control multicompañia // Multi company control</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RoleAllowedByProductCoverage(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Roles allowed by coverage in a policy for a product. // Roles permitidos para la cobertura del producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of roles allowed. // Lista de roles permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.CurrencyByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Currencies allowed in a policy for a product. // Monedas permitidas para el producto en una póliza. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of currencies allowed. // Lista de monedas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ModuleByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Modules allowed in a policy for a product. // Módulos permitidos para el producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of modules allowed. // Lista de módulos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.CoverageByProductLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ Coverages allowed in a policy for a product. // Coberturas permitidas para el producto en una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="coverageModule">Code of the module of the coverage. if it is zero, it returns all coverages for all modules, otherwise only coverage for the indicated module.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of coverages allowed. // Lista de coberturas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.DiscountExtraPremiumTaxByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para el producto de una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.DiscountExtraPremiumTaxByProductLookup(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+ <summary>
+ DiscountExtraPremiumTax allowed in a policy for a product. // Recargos y descuentos permitidos para el producto de una póliza.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of discount/extra premium/Tax allowed. // Lista de recargos y descuentos permitidos.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.IllnessByFilterLkp(System.Int32,System.String,System.Int32,System.Int32,System.String)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.IllnessDescription(System.String,System.Int32,System.String)">
+ <summary>
+ Descripción de la enfermedad.
+ </summary>
+ <param name="Illness">Identificación de la enfermedad</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.IllnessByFilterAndProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Int32,System.Int32,System.String,System.Int32)">
+ <summary>
+ Filtered list of simple values of 'Disease types' according to the language and filter indicated, excluding diseases excluded per product from the list. // Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado, excluyendo de la lista las enfermedades excluidas por producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="filter">Value used to filter the list. // Valor usado para filtrar la lista.</param>
+ <param name="index">Indicates the initial records to retrieve. // Indica el registros inicial a recuperar.</param>
+ <param name="limit">Limits the number of records to retrieve. // Limita la cantidad de registros a recuperar.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of values. // Lista de valores.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.RoleLkp(System.Int32,System.String)">
+ <summary>
+ Roles list. // Lista de roles.
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of roles. // Lista de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ProductInformation(System.Int32,System.Int32,System.Int32,System.DateTime,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ To recover all the product information. // Para recuperar la información del producto.
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productId">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns><seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso> instance. // Instancia <seealso cref="T:InMotionGIT.Product.Entity.Contracts.ProductMaster">ProductMaster</seealso></returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.BasicRatingTableByProduct(System.Int32,System.Int32,System.Int32,System.DateTime,System.String)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atencion medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.BasicRatingTableByProductLkp(System.Int32,System.Int32,System.Int32,System.DateTime,System.String)">
+ <summary>
+ Basic information about rates associated for a product. // Tarifas de atencion medica para un producto. 
+ </summary>
+ <param name="lineOfBusiness">Code of the line of business. // Código del ramo.</param>
+ <param name="productCode">Code of the product. // Código del producto.</param>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="atDate">Record effective date. // Fecha de efecto.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of basic information about rates. // Lista de tarifas permitidas.</returns>
+</member>
+<member name="M:InMotionGIT.Product.Services.ProductManager.ReasonForExclusionOfIllnessLkp(System.Int32,System.String)">
+ <summary>
+ Reasons for exclusion of illness (Health policies) list. // Lista de causas de exclusión de enfermedad ( Atención Médica).
+ </summary>
+ <param name="languageID">Language in which the information is displayed. // Lenguaje en que se muestra la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of Reasons. // Lista de causas.</returns>
+</member>
+</members>
+</doc>

@@ -1,0 +1,432 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="NNClaimDeclarationDemo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:iaad="clr-namespace:InMotionGIT.Agenda.Activities.Design;assembly=InMotionGIT.Agenda.Activities.Design" xmlns:iac="clr-namespace:InMotionGIT.Agenda.Contracts;assembly=InMotionGIT.Agenda.Contracts" xmlns:iad="clr-namespace:InMotionGIT.Actions.Designer;assembly=InMotionGIT.Actions.Designer" xmlns:iada="clr-namespace:InMotionGIT.Actions.Designer.Actions;assembly=InMotionGIT.Actions.Designer" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.ClaimManager.Activities;assembly=InMotionGIT.ClaimManager.Activities" xmlns:ica2="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Claim.Entity.Contracts;assembly=InMotionGIT.Claim.Entity.Contracts" xmlns:icec1="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic" xmlns:s="clr-namespace:System;assembly=System" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s6="clr-namespace:System;assembly=InRule.Authoring" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Workflow.ComponentModel" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs2="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="Claim" Type="InOutArgument(icec:Claim)" />
+    <x:Property Name="RiskInformation" Type="InOutArgument(ipec:RiskInformation)" />
+    <x:Property Name="Client" Type="InOutArgument(icec1:Client)" />
+    <x:Property Name="EMailSponsor" Type="InOutArgument(x:String)" />
+    <x:Property Name="NombreSponsor" Type="InOutArgument(x:String)" />
+    <x:Property Name="EMailAsegurado" Type="InOutArgument(x:String)" />
+    <x:Property Name="DenuncioTercero" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="Documents" Type="InArgument(icec:DocumentRequestInClaimCollection)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>944,1840</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg2:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart DisplayName="NNClaimDeclarationDemo" sap:VirtualizedContainerService.HintSize="904,1800">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="icec:ClaimCase" Default="[New ClaimCase]" Name="ClaimCase" />
+      <Variable x:TypeArguments="x:String" Default="siniestrossegurosgenerales@metlife.cl" Name="eMailClaimPerson" />
+      <Variable x:TypeArguments="icec1:Client" Default="[New Client]" Name="ClientClaimPerson" />
+      <Variable x:TypeArguments="x:Boolean" Name="ElementFoundIndicator" />
+      <Variable x:TypeArguments="icec:ClaimBeneficiary" Default="[New ClaimBeneficiary]" Name="ClaimBeneficiary" />
+      <Variable x:TypeArguments="x:Int64" Name="NumeroSiniestro" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">370,2.4</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">400,77.6 400,113.6</av:PointCollection>
+        <x:Double x:Key="Height">1763.6000000000001</x:Double>
+        <x:Double x:Key="Width">889.6</x:Double>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">318.4,113.6</av:Point>
+            <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">400,246.4 400,286.4</av:PointCollection>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="NNClaimDeclarationDemo. Ramo:  { Value /Claim/LineOfBusiness }  Producto:  { Value /Claim/ProductCode }  Poliza:  { Value /Claim/PolicyID } Certificado: { Value /Claim/CertificateID }" />
+            <icd:LocalizedString Language="2" Value="WFClaimLossAdjuster. Ramo:  { Value /Claim/LineOfBusiness }  Producto:  { Value /Claim/ProductCode }  Poliza:  { Value /Claim/PolicyID } Certificado: { Value /Claim/CertificateID }" />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg2:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">253.6,286.4</av:Point>
+                <av:Size x:Key="ShapeSize">292.8,107.2</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">400,393.6 400,436.4</av:PointCollection>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteGetClientRelatedToTypeOfClient" sap:VirtualizedContainerService.HintSize="292.8,107.2" ModelId="c4bc5a76-c537-4b50-9519-d046b7a90ef4" Release="2" Tracking="True" WorkflowPath="GetClientRelatedToTypeOfClient">
+              <icag:ExecuteWorkflow.ChildArguments>
+                <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="TypeOfClient">2</InArgument>
+                <InOutArgument x:TypeArguments="icec1:Client" x:Key="Client">[ClientClaimPerson]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:Boolean" x:Key="ElementFoundIndicator">[ElementFoundIndicator]</InOutArgument>
+              </icag:ExecuteWorkflow.ChildArguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg2:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </icag:ExecuteWorkflow>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID13" Condition="[ElementFoundIndicator]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">364.8,436.4</av:Point>
+                    <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                    <x:String x:Key="TrueLabel">ClaimPersonExist</x:String>
+                    <x:String x:Key="FalseLabel">NoExist</x:String>
+                    <av:PointCollection x:Key="TrueConnector">364.8,480 190,480 190,539.6</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">435.2,480 470,480 470,616.4</av:PointCollection>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <FlowDecision.True>
+                  <FlowStep x:Name="__ReferenceID12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">68.4,539.6</av:Point>
+                        <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">190,600.4 190,670 329.2,670</av:PointCollection>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="AssigneMailOfClaimPerson" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[eMailClaimPerson]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[ClientClaimPerson.eMailAddressDefault]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg2:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">329.2,616.4</av:Point>
+                            <av:Size x:Key="ShapeSize">281.6,107.2</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">470,723.6 470,758.8</av:PointCollection>
+                          </scg2:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteWFClaimLossAdjusterFillClaim" sap:VirtualizedContainerService.HintSize="281.6,107.2" ModelId="64ba184a-789b-4984-b73d-9500115d28a3" Release="3" Tracking="True" WorkflowPath="WFClaimLossAdjusterFillClaim">
+                          <icag:ExecuteWorkflow.ChildArguments>
+                            <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                            <InOutArgument x:TypeArguments="icec:Claim" x:Key="Claim">[Claim]</InOutArgument>
+                            <InArgument x:TypeArguments="icec1:Client" x:Key="Client">[Client]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="DenuncioTercero">[DenuncioTercero]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="PrimaryInsuredClientID">[RiskInformation.PrimaryInsured.Client.ClientID]</InArgument>
+                            <InArgument x:TypeArguments="icec:DocumentRequestInClaimCollection" x:Key="Documents">[Documents]</InArgument>
+                          </icag:ExecuteWorkflow.ChildArguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg2:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </icag:ExecuteWorkflow>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">370,758.8</av:Point>
+                                <av:Size x:Key="ShapeSize">200,22.4</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">470,781.2 470,819.6</av:PointCollection>
+                              </scg2:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ica1:ClaimDeclaration Claim="[Claim]" ClaimID="[NumeroSiniestro]" Currency="1" sap:VirtualizedContainerService.HintSize="200,22.4" ProcessDate="[Claim.ClaimDate]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg2:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ica1:ClaimDeclaration>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">348.4,819.6</av:Point>
+                                    <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">470,880.4 470,916.4</av:PointCollection>
+                                  </scg2:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="AssignNroSiniestro" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int64">[Claim.ClaimID]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int64">[convert.ToInt64(NumeroSiniestro)]</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg2:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowDecision x:Name="__ReferenceID4" Condition="[CLaim.ClaimID &lt;&gt; 0]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">434.8,916.4</av:Point>
+                                        <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                        <av:PointCollection x:Key="TrueConnector">434.8,960 290,960 290,1002</av:PointCollection>
+                                        <av:PointCollection x:Key="FalseConnector">505.2,960 660,960 660,992</av:PointCollection>
+                                      </scg2:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <FlowDecision.True>
+                                      <FlowStep x:Name="__ReferenceID5">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">210.8,1002</av:Point>
+                                            <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">290,1138 290,1176.4</av:PointCollection>
+                                          </scg2:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="MailRecepcionOK" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[EMailAsegurado]">
+                                          <ica2:SendMail.Body>
+                                            <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sr./Sra. { Value /Client/FirstName } { Value /Client/LastName } { Value /Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el reclamo de siniestro de vida realizado por usted&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pronto estar&amp;aacute; recibiendo noticias nuestras.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                            <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sr./Sra. { Value /Client/FirstName } { Value /Client/LastName } { Value /Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el reclamo de siniestro de vida realizado por usted&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pronto estar&amp;aacute; recibiendo noticias nuestras.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                          </ica2:SendMail.Body>
+                                          <ica2:SendMail.Subject>
+                                            <icd:LocalizedString Language="1" Value="Recepción de reclamo de siniestro - Siniestro N° { Value /Claim/ClaimID } " />
+                                            <icd:LocalizedString Language="2" Value="Recepción de reclamo de siniestro - Siniestro N° { Value /Claim/ClaimID } " />
+                                          </ica2:SendMail.Subject>
+                                        </ica2:SendMail>
+                                        <FlowStep.Next>
+                                          <FlowDecision x:Name="__ReferenceID9" Condition="[EMailSponsor &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <av:Point x:Key="ShapeLocation">254.8,1176.4</av:Point>
+                                                <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                                <av:PointCollection x:Key="TrueConnector">254.8,1220 90,1220 90,1302</av:PointCollection>
+                                                <x:String x:Key="TrueLabel">WithSponsor</x:String>
+                                                <x:String x:Key="FalseLabel">WithoutSponsor</x:String>
+                                                <av:PointCollection x:Key="FalseConnector">325.2,1220 355.2,1220 355.2,1452 270,1452 270,1482</av:PointCollection>
+                                              </scg2:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <FlowDecision.True>
+                                              <FlowStep x:Name="__ReferenceID7">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">10.8,1302</av:Point>
+                                                    <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">90,1438 90,1468 270,1468 270,1482</av:PointCollection>
+                                                  </scg2:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="Enviar notificación al Sponsor" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[EMailSponsor]">
+                                                  <ica2:SendMail.Body>
+                                                    <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sponsor &amp;nbsp;{ Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pronto estar&amp;aacute; recibiendo noticias nuestras.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                    <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sponsor &amp;nbsp;{ Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pronto estar&amp;aacute; recibiendo noticias nuestras.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                  </ica2:SendMail.Body>
+                                                  <ica2:SendMail.Subject>
+                                                    <icd:LocalizedString Language="1" Value="MetLife - Siniestro Registrado N°  { Value /Claim/ClaimID }  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                    <icd:LocalizedString Language="2" Value="MetLife - Siniestro Registrado N°  { Value /Claim/ClaimID }  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                  </ica2:SendMail.Subject>
+                                                </ica2:SendMail>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID0">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">190.8,1482</av:Point>
+                                                        <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">270,1618 270,1656.4</av:PointCollection>
+                                                      </scg2:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="Enviar notificación a la compañía" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[eMailClaimPerson]">
+                                                      <ica2:SendMail.Body>
+                                                        <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Estimado Coordinador de Siniestros de MetLife&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;SPONSOR: { Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                        <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Estimado Coordinador de Siniestros de MetLife&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;SPONSOR: &amp;nbsp;{ Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                      </ica2:SendMail.Body>
+                                                      <ica2:SendMail.Subject>
+                                                        <icd:LocalizedString Language="1" Value="MetLife - Siniestro Registrado N°  { Value /Claim/ClaimID }  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                        <icd:LocalizedString Language="2" Value="MetLife - Siniestro Registrado N°  { Value /Claim/ClaimID }  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                      </ica2:SendMail.Subject>
+                                                    </ica2:SendMail>
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID15">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">122.8,1656.4</av:Point>
+                                                            <av:Size x:Key="ShapeSize">294.4,107.2</av:Size>
+                                                          </scg2:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <icag:ExecuteWorkflow CallMode="Asynchronous" DisplayName="ExecuteControlGeneralClaimDeclaration" sap:VirtualizedContainerService.HintSize="294.4,107.2" ModelId="f24e6746-2373-4d8b-9462-72559290e67d" Release="1" Tracking="True" WorkflowPath="ControlGeneralClaimDeclaration">
+                                                          <icag:ExecuteWorkflow.ChildArguments>
+                                                            <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                                                            <InArgument x:TypeArguments="x:Int64" x:Key="ClaimID">[Claim.ClaimID]</InArgument>
+                                                          </icag:ExecuteWorkflow.ChildArguments>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg2:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </icag:ExecuteWorkflow>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowDecision.True>
+                                            <FlowDecision.False>
+                                              <x:Reference>__ReferenceID0</x:Reference>
+                                            </FlowDecision.False>
+                                          </FlowDecision>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowDecision.True>
+                                    <FlowDecision.False>
+                                      <FlowStep x:Name="__ReferenceID6">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">580.8,992</av:Point>
+                                            <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">660,1128 660,1158 670,1158 670,1166.4</av:PointCollection>
+                                          </scg2:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="MailRecepcionNonOK" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[EMailAsegurado]">
+                                          <ica2:SendMail.Body>
+                                            <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sr./Sra. { Value /Client/FirstName } { Value /Client/LastName } { Value /Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el reclamo de siniestro de vida realizado por usted&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;No ha sido posible el procesamiento por favor p&amp;oacute;ngase en contacto con nosotros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                            <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs746A5FAB{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 36pt}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Sr./Sra. { Value /Client/FirstName } { Value /Client/LastName } { Value /Client/LastName2 }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;El dia de hoy hemos recibido el reclamo de siniestro de vida realizado por usted&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs746A5FAB&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Tipo de reclamo { Value /TypeOfClaimDescription }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs746A5FAB&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Monto reclamado { Value /ClaimAmount }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs746A5FAB&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;No nos ha sido posible su procesamiento, por favor dir&amp;iacute;jase a nuestras oficinas.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;Departamento de reclamos&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                          </ica2:SendMail.Body>
+                                          <ica2:SendMail.Subject>
+                                            <icd:LocalizedString Language="1" Value="Recepción de reclamo de siniestros - Vida (con problemas)" />
+                                            <icd:LocalizedString Language="2" Value="Recepción de reclamo de siniestros - Vida (con problemas)" />
+                                          </ica2:SendMail.Subject>
+                                        </ica2:SendMail>
+                                        <FlowStep.Next>
+                                          <FlowDecision x:Name="__ReferenceID10" Condition="[EMailSponsor &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="70.4,87.2">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <av:Point x:Key="ShapeLocation">634.8,1166.4</av:Point>
+                                                <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                                <x:String x:Key="TrueLabel">WithSponsor</x:String>
+                                                <x:String x:Key="FalseLabel">WithoutSponsor</x:String>
+                                                <av:PointCollection x:Key="TrueConnector">634.8,1210 550,1210 550,1292</av:PointCollection>
+                                                <av:PointCollection x:Key="FalseConnector">705.2,1210 810,1210 810,1492</av:PointCollection>
+                                              </scg2:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <FlowDecision.True>
+                                              <FlowStep x:Name="__ReferenceID8">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">470.8,1292</av:Point>
+                                                    <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">550,1428 550,1458 810,1458 810,1492</av:PointCollection>
+                                                  </scg2:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="Enviar notificación al Sponsor Sinietro con Problemas" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[EMailSponsor]">
+                                                  <ica2:SendMail.Body>
+                                                    <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sponsor &amp;nbsp;{ Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pero el mismo no pudo ser registrado en nuestos sistemas. Por favor pongase en contacto con nosotros&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                    <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Sponsor &amp;nbsp;{ Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Numero de Siniestro Asignado: { Value /Claim/ClaimID } &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pronto estar&amp;aacute; recibiendo noticias nuestras.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                  </ica2:SendMail.Body>
+                                                  <ica2:SendMail.Subject>
+                                                    <icd:LocalizedString Language="1" Value="MetLife - Siniestro NO Registrado " />
+                                                    <icd:LocalizedString Language="2" Value="MetLife - Siniestro Registrado N°  { Value /Claim/ClaimID }  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                  </ica2:SendMail.Subject>
+                                                </ica2:SendMail>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID1">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">730.8,1492</av:Point>
+                                                        <av:Size x:Key="ShapeSize">158.4,136</av:Size>
+                                                      </scg2:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ica2:SendMail AttachFileName="{x:Null}" AttachFileName2="{x:Null}" AttachFileName3="{x:Null}" FailedExecution="{x:Null}" FailedMessage="{x:Null}" JobId="{x:Null}" cc="{x:Null}" DisplayName="Enviar notificación a la compañía" EditSource="False" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="158.4,136" To="[eMailClaimPerson]">
+                                                      <ica2:SendMail.Body>
+                                                        <icd:LocalizedString Language="1" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Estimado Coordinador de Siniestros de MetLife&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;SPONSOR: { Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pero hubo un problema al registrarlo en el sistema. Por favor verificar.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                        <icd:LocalizedString Language="2" Value="&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA; &lt;head&gt;&#xA;  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;&lt;title&gt;&#xA;  &lt;/title&gt;&#xA;  &lt;style type=&quot;text/css&quot;&gt;&#xA;   .cs7C1F8B9D{text-align:right;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .csE8AC24F0{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;   .cs2654AE3A{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt}&#xA;   .cs63EB74B2{color:#000000;background-color:transparent;font-family:Times New Roman;font-size:12pt;font-weight:normal;font-style:normal;}&#xA;  &lt;/style&gt;&#xA; &lt;/head&gt;&#xA; &lt;body&gt;&#xA;  &lt;p class=&quot;cs7C1F8B9D&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Fecha { Value /Claim/ClaimDate }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Estimado Coordinador de Siniestros de MetLife&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;El dia de hoy hemos recibido el denuncio de siniestro a nombre del asegurado&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;RUT: &amp;nbsp;{ Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;NOMBRE: &amp;nbsp; { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;SPONSOR: { Value /NombreSponsor }&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;Pero hubo un problema al registrarlo en el sistema. Por favor verificar.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;csE8AC24F0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs2654AE3A&quot;&gt;&lt;span class=&quot;cs63EB74B2&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;" />
+                                                      </ica2:SendMail.Body>
+                                                      <ica2:SendMail.Subject>
+                                                        <icd:LocalizedString Language="1" Value="MetLife - Siniestro No Registrado  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                        <icd:LocalizedString Language="2" Value="MetLife - Siniestro NO registrado  - RUT Asegurado  { Value /RiskInformation/PrimaryInsured/ClientID } - { Value /RiskInformation/PrimaryInsured/Client/SDIGIT }" />
+                                                      </ica2:SendMail.Subject>
+                                                    </ica2:SendMail>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowDecision.True>
+                                            <FlowDecision.False>
+                                              <x:Reference>__ReferenceID1</x:Reference>
+                                            </FlowDecision.False>
+                                          </FlowDecision>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowDecision.False>
+                                  </FlowDecision>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <x:Reference>__ReferenceID2</x:Reference>
+                </FlowDecision.False>
+              </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">10,738.8</av:Point>
+          <av:Size x:Key="ShapeSize">200,22.4</av:Size>
+        </scg2:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ica1:ClaimDeclaration Claim="[Claim]" ClaimID="[NumeroSiniestro]" Currency="1" sap:VirtualizedContainerService.HintSize="200,22.4" ProcessDate="[Claim.ClaimDate]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ica1:ClaimDeclaration>
+    </FlowStep>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
+  </Flowchart>
+</Activity>

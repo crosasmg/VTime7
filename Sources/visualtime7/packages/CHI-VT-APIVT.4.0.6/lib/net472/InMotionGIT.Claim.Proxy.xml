@@ -1,0 +1,150 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Claim.Proxy
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Claim.Proxy.Helpers.Support.NewManagerClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del underwriting.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Helpers.Support.GetRealDeployWeb(System.String)">
+ <summary>
+ Build the real deploy web - Construye la dirección del deploy
+ </summary>
+ <param name="path">Current deploy web - Dirección del deploy </param>
+ <returns>Real Deploy Web - Dirección real del deploy </returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.Retrieve(System.Int32,System.Boolean,System.DateTime)">
+ <summary>
+ Recupera la información de un siniestro por medio de su numero de identificación.
+ </summary>
+ <param name="claimId">Número que identifica al siniestro.</param>
+ <param name="withLookupInformation">Indica si el objeto debe incluir la informacion de la descripción para lista de valores.</param>
+ <param name="atDate">Fecha de efecto.</param>
+ <returns>Información de un siniestro.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.Retrieve(System.Int64,System.DateTime,System.String,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ Recupera la información de un siniestro por medio de su numero de identificación.
+ </summary>
+ <param name="claimId">Número que identifica al siniestro.</param>
+ <param name="withLookupInformation">Indica si el objeto debe incluir la informacion de la descripción para lista de valores.</param>
+ <param name="atDate">Fecha de efecto.</param>
+ <param name="accessToken">Token. // Token.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Información de un siniestro.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.Find(System.Int32)">
+ <summary>
+ Verifica si existe un siniestro por medio de su numero de identificación.
+ </summary>
+ <param name="claimId">Número que identifica al siniestro.</param>
+ <returns>Verdadero en caso de existir el siniestro, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.Find(System.Int32,System.String,System.String,System.Int32)">
+ <summary>
+ Verifica si existe un siniestro por medio de su numero de identificación.
+ </summary>
+ <param name="claimId">Número que identifica al siniestro.</param>
+ <param name="accessToken">Token. // Token.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Verdadero en caso de existir el siniestro, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.SynchronizeClaimDeclaration(System.DateTime,InMotionGIT.Claim.Entity.Contracts.Claim,System.Int32)">
+ <summary>
+ Sincroniza la información de un siniestro hacia la base de datos.
+ </summary>
+ <param name="processDate">Fecha de ejecución del proceso.</param>
+ <param name="claim">Información de un siniestro.</param>
+ <param name="currency">Moneda asociada al siniestro.</param>
+ <returns>Número que identifica al siniestro procesado.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.SynchronizeClaimDeclaration(System.DateTime,InMotionGIT.Claim.Entity.Contracts.Claim,System.Int32,System.String,System.String,System.Int32)">
+ <summary>
+ Sincroniza la información de un siniestro hacia la base de datos.
+ </summary>
+ <param name="processDate">Fecha de ejecución del proceso.</param>
+ <param name="claim">Información de un siniestro.</param>
+ <param name="currency">Moneda asociada al siniestro.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Número que identifica al siniestro procesado.</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrieveClaimDocuments(System.Int32,System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna la lista de documentos requeridos de un siniestro // Returns the list of the documents requiered for a claim
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial</param>
+ <param name="productCode">Código del producto</param>
+ <param name="atDate">Fecha de validez de la información</param>
+ <param name="accessToken">Token de acceso a operación</param>
+ <param name="provider">Código de proveedor del servicio</param>
+ <param name="companyID">Código la compañía</param>
+ <returns>Retorna la lista de documentos requeridos de un siniestro</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrievePaymentsAllowedCoverageProduct(System.Int32,System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna la lista de pagos permitidos en las coberturas de un producto // Returns the list of allowed payments in a product covers
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial</param>
+ <param name="productCode">Código del producto</param>
+ <param name="atDate">Fecha de validez de la información</param>
+ <param name="accessToken">Token de acceso a operación</param>
+ <param name="provider">Código de proveedor del servicio</param>
+ <param name="companyID">Código la compañía</param>
+ <returns>Lista de pagos permitidos en las coberturas de un producto</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrieveClaimByClientId(System.String,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna la lista de siniestros de asociados a un clientID // Returns the list of clientid's claims
+ </summary>
+ <param name="clientID">Código del cliente de que se requieren los siniestros</param>
+ <param name="atDate">Fecha de validez de la información</param>
+ <param name="accessToken">Token de acceso a operación</param>
+ <param name="provider">Código de proveedor del servicio</param>
+ <param name="companyID">Código la compañía</param>
+ <returns>Colección de siniestros asociados a un clientID</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrieveClaimByPolicy(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna la lista de siniestros de asociados a una Póliza // Returns the list of policy's claims
+ </summary>
+ <param name="lineOfBusiness">Código del ramo comercial</param>
+ <param name="productCode">Código del producto</param>
+ <param name="policyId">Id de la póliza</param>
+ <param name="certif">Nro de certificado de la póliza</param>
+ <param name="atDate">Fecha de validez de la información</param>
+ <param name="accessToken">Token de acceso a operación</param>
+ <param name="provider">Código de proveedor del servicio</param>
+ <param name="companyID">Código la compañía</param>
+ <returns>Colección de siniestros asociados a una póliza</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrieveVendorInformation(System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna la información de un proveedor de servicios especifico
+ </summary>
+ <param name="vendorCode">Código proveedor - NPROVIDER</param>
+ <param name="atDate">Fecha de operació de consulta</param>
+ <param name="accessToken">Token</param>
+ <param name="provider">Código de cliente del servicio</param>
+ <param name="companyID">Código multicompañia</param>
+ <returns>Toda la información de un proveedor de servicios - TAB_PROVIDER</returns>
+</member>
+<member name="M:InMotionGIT.Claim.Proxy.Manager.RetrieveVendorByVendorType(System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Retorna un conjunto de un tipo determinado de proveedores de servicio
+ </summary>
+ <param name="vendorType">Código tipo proveedor de servicios - NTYPEPROV</param>
+ <param name="atDate">Fecha de operación de consulta</param>
+ <param name="accessToken">Token</param>
+ <param name="provider">Código de cliente del servicio</param>
+ <param name="companyId">Código multicompañia</param>
+ <returns>Lista de proveedores de servicio con su información - TAB_PROVIDER</returns>
+</member>
+</members>
+</doc>

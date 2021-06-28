@@ -1,0 +1,701 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Membership.Providers
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Membership.Providers.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.My.Resources.Resources.FirstTab">
+<summary>
+  Looks up a localized string similar to Home.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.My.Resources.Resources.NewTab">
+<summary>
+  Looks up a localized string similar to New Tab.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.My.Resources.Resources.SecondTab">
+<summary>
+  Looks up a localized string similar to New Page.
+</summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.Language">
+ <summary>
+ Current Language
+ </summary>
+ <remarks>
+ This property is associated with the field 'CurrentLanguage' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.LanguageId">
+ <summary>
+ Current LanguageId
+ </summary>
+ <remarks>
+ This property is associated with the field 'LanguageId' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.Theme">
+ <summary>
+ Current Theme
+ </summary>
+ <remarks>
+ This property is associated with the field 'Current Theme' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.UserName">
+ <summary>
+ UserName
+ </summary>
+ <remarks>
+ This property is associated with the field 'UserName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.RoleName">
+ <summary>
+ RoleName
+ </summary>
+ <remarks>
+ This property is associated with the field 'RoleName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.IsAdministrator">
+ <summary>
+ Is Administrator
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.IsEmployee">
+ <summary>
+ Is IsEmployee
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.IsProducer">
+ <summary>
+ Is IsEmployee
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.IsClient">
+ <summary>
+ Is Client
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipInfo.PasswordNeverExpires">
+ <summary>
+ Is Client
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.FrontOfficeMembershipProvider.UserGetAllUserByEmail(System.String)">
+ <summary>
+ Retorna todos los nombre de usuario que concuerda con el Email
+ </summary>
+ <param name="email">Email a buscar</param>
+ <returns>Lista de nombre de usuarios que concuerda con el email</returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.FrontOfficeMembershipProvider.UserAllByPage(System.Int32,System.Int32,System.String,System.Boolean)">
+ <summary>
+  Método para retornar lista de usuarios paginadas
+ </summary>
+ <param name="startIndex">Indice inicial</param>
+ <param name="endIndex">Indice final</param>
+ <param name="filter">Filtro para la lista a traer</param>
+ <param name="allowScheduler">Define si los usuarios permite agenda o no</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser">
+ <summary>
+ Table containing the information of the user in the memberships
+ </summary>
+ <remarks>
+ This class is associated with the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.UserID">
+ <summary>
+ User ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'UserId' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.UserCode">
+ <summary>
+ User Code
+ </summary>
+ <remarks>
+ This property is associated with the field 'nUserCode' on the table 'User' of schema INSUDB.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordNeverExpires">
+ <summary>
+ User ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'PASSWORDNEVEREXPIRES ' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.MemberID">
+ <summary>
+ Member ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'MemberID' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.RealUserName">
+ <summary>
+ Real User Name
+ </summary>
+ <remarks>
+ This property is associated with the field 'RealUserName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.Password">
+ <summary>
+ Password
+ </summary>
+ <remarks>
+ This property is associated with the field 'UserPwd' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordAnswer">
+ <summary>
+ Password Answare
+ </summary>
+ <remarks>
+ This property is associated with the field 'PwdAnswer' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.LastPasswordChangeDate">
+ <summary>
+ Last Password Change Date the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'LastPwdChangedDate' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.LastLockedoutDate">
+ <summary>
+ Last Lockedout Date the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'LastLockedOutDate' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.IsSubscriber">
+ <summary>
+ Is Subscriber the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsSubscriber' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FailedPasswordAttemptWindowsStart">
+ <summary>
+ Failed Passsword Attempt Windows Start the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FailedPwdAptWdsSrt' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FailedPasswordAttemptCount">
+ <summary>
+ Failed Password Attempt Count the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FailedPwdAptCount' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FailedPasswordAnswerAttemptWindowsStart">
+ <summary>
+ Failed Password Answer Attempt Windows Start the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FailedPwdAnswerAptWdsStr' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FailedPasswordAnswerAttemptCount">
+ <summary>
+ Failed Password Answer Attemp Count
+ </summary>
+ <remarks>
+ This property is associated with the field 'FailedPwdAnswerAptCount' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.MAIL">
+ <summary>
+ E-Mail the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'EMail' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.Language">
+ <summary>
+ Language
+ </summary>
+ <remarks>
+ This property is associated with the field 'Language' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.LanguageName">
+ <summary>
+ Language Name
+ </summary>
+ <remarks>
+ This property is associated with the field 'LanguageName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.Theme">
+ <summary>
+ Theme for the User Application
+ </summary>
+ <remarks>
+ This property is associated with the field 'Theme' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.ClientID">
+ <summary>
+ Client ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'ClientID' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.ProducerID">
+ <summary>
+ Producer ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'ProducerID' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.LanguageID">
+ <summary>
+ Language ID
+ </summary>
+ <remarks>
+ This property is associated with the field 'LanguageID' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.UserType">
+ <summary>
+ User Type
+ </summary>
+ <remarks>
+ This property is associated with the field 'UserType' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.OldEMail">
+ <summary>
+ Old E-Email the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'OldEmail' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FirstTimePasswordChange">
+ <summary>
+ Firt Time Password Chage the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FirstTimePasswordChange' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.AccountLockoutNotification">
+ <summary>
+ Acount Lockout Notification
+ </summary>
+ <remarks>
+ This property is associated with the field 'AccountLockoutNotification' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FirstName">
+ <summary>
+ Firts Name the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FirstName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.SurName">
+ <summary>
+ Sour Name the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'SurName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.SecondLastName">
+ <summary>
+ Segundo Apellido
+ </summary>
+ <remarks>
+ This property is associated with the field 'SecondLastName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.SecurityLevel">
+ <summary>
+ Segundo Apellido
+ </summary>
+ <remarks>
+ This property is associated with the field 'SecondLastName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.IsFirstVisit">
+ <summary>
+ Is First Visit
+ </summary>
+ <remarks>
+ This property is associated with the field 'SecondLastName' on the table 'IsFirstVisit'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.LastName">
+ <summary>
+ Last Name the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'LastName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.FullName">
+ <summary>
+ Full Name the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'FullName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.DateofBirth">
+ <summary>
+ Date of Birth the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'DateOfBirth' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.Gender">
+ <summary>
+ Gender
+ </summary>
+ <remarks>
+ This property is associated with the field 'Gender' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.CompanyName">
+ <summary>
+ Company Name
+ </summary>
+ <remarks>
+ This property is associated with the field 'CompanyName' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.AddressHome">
+ <summary>
+ Andress Home
+ </summary>
+ <remarks>
+ This property is associated with the field 'AddressHome' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.City">
+ <summary>
+ Cidade
+ </summary>
+ <remarks>
+ This property is associated with the field 'City' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.State">
+ <summary>
+ State
+ </summary>
+ <remarks>
+ This property is associated with the field 'State' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.Country">
+ <summary>
+ Country
+ </summary>
+ <remarks>
+ This property is associated with the field 'Country' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.IsAdministrator">
+ <summary>
+ This property is associated with the field 'IsAdministrator' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.AllowScheduler">
+ <summary>
+ This property is associated with the field 'AllowScheduler' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.IsEmployee">
+ <summary>
+ This property is associated with the field 'IsEmployee' on the table 'User'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.ExtensionNumber">
+ <summary>
+ Extension Number
+ </summary>
+ <remarks>
+ This property is associated with the field 'ExtensionNumber' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.AreaNumber">
+ <summary>
+ Area Number
+ </summary>
+ <remarks>
+ This property is associated with the field 'AreaNumber' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.TelephoneNumber">
+ <summary>
+ Telephone Number
+ </summary>
+ <remarks>
+ This property is associated with the field 'TelephoneNumber' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.IsInactive">
+ <summary>
+ Is Inactive
+ </summary>
+ <remarks>
+ This property is associated with the field 'IsInactive' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordOne">
+ <summary>
+ Password One the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'PasswordOne' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordTwo">
+ <summary>
+ Password Two the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'PasswordTwo' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordThree">
+ <summary>
+ Password Three the User
+ </summary>
+ <remarks>
+ This property is associated with the field 'PasswordThree' on the table 'User'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.FrontOfficeMembershipUser.PasswordQuestion">
+ <summary>
+ Password Question of the user.
+ </summary>
+ <remarks>
+ This property is associated with the field 'PasswordQuestion' on the table 'User'.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.GetNameUserById(System.Int32)">
+ <summary>
+ Obtiene el nombre del usuario por id
+ </summary>
+ <param name="userId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.ConvertList(System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue})">
+ <summary>
+ Convert to code lenguage in list
+ </summary>
+ <param name="PageTrans"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.SaveQuestionAndAnswerSecret(System.String,System.String,System.String)">
+ <summary>
+ Metodo para cambiar la pregunta y respuesta secreta.
+ </summary>
+ <param name="userName"></param>
+ <param name="answerSecret"></param>
+ <param name="questionSecret"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.SaveChange(System.String,InMotionGIT.Membership.Providers.FrontOfficeMembershipUser,System.Int32,System.String)">
+ <summary>
+ Guarda los cambios hechos sobre el esquema
+ </summary>
+ <param name="userChanged"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.RetriveUserbyUsername(System.String)">
+ <summary>
+ Metodo axiliar para extraer toda la data del usuario desde el membership
+ </summary>
+ <param name="username">Nombre de usuario</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.RetriveUserContext">
+ <summary>
+  Método auxiliar para retorno del user del context
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.RetriveUserContext(System.Boolean)">
+ <summary>
+  Método auxiliar para retorno del user del context, con sobre carga para forzado la carga
+ </summary>
+ <param name="forcedLoading">Se define para poder forzar la lectura del usuario de base de datos</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.LanguageIdToEnumLanguage(System.Int32)">
+ <summary>
+ Convert LanguageId to EnumLanguage
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.CulturalNameToLanguageId(System.String)">
+ <summary>
+ Convert CulturalName to LanguageId
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.LanguageEnumToCulturalName(InMotionGIT.Common.Enumerations.EnumLanguage)">
+ <summary>
+ Convert LanguageEnum to CulturalName
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helper.SettingGetMembership">
+ <summary>
+ Get Setting Current of the Membership
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helpers.User.UserLkp">
+ <summary>
+ Lookup de usuarios en el sistema,muestra lista de usuarios por nombre real y código
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helpers.User.UserDescription(System.Int32)">
+ <summary>
+ Retorna del nombre real del usuario de usuarios en el sistema,muestra lista de usuarios por nombre real y código
+ </summary>
+ <param name="userId">Id del usuario a buscar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helpers.User.ChangeUserName(System.Int32,System.String)">
+ <summary>
+  Allow change counter password atten;
+ </summary>
+ <param name="UserId"></param>
+ <param name="UserName"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helpers.User.ResetFailedPasswordAttemptCount(System.Int32)">
+ <summary>
+  Permite reiniciar el contador de fallos
+ </summary>
+ <param name="UserId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.Helpers.User.ResetFailedPasswordAttemptCountAndOnLine(System.Int32)">
+ <summary>
+  Permite reiniciar el contador de fallos
+ </summary>
+ <param name="UserId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.MemberContext.UpdateInformation(System.String,System.Int32)">
+TODO:Verificar por almacen de datos del cookie
+</member>
+<member name="P:InMotionGIT.Membership.Providers.MemberContext.User">
+ <summary>
+ Return the user profile information conditional on the type of security
+ </summary>
+ <value>Field type Dropthings.Web.Framework.UserProfile</value>
+ <returns>Return field type Dropthings.Web.Framework.UserProfile</returns>
+</member>
+<member name="P:InMotionGIT.Membership.Providers.MemberContext.User(System.Boolean)">
+ <summary>
+  Return the user profile information conditional on the type of security
+ </summary>
+ <param name="forcedLoading">Define si se realiza el forzado de la carga del usuario</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.MemberContext.LanguageIdToEnumLanguage">
+ <summary>
+ Convert LanguageId to EnumLanguage
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.MemberContext.CulturalNameToLanguageId">
+ <summary>
+ Convert CulturalName to LanguageId
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.MemberContext.LanguageEnumToCulturalName">
+ <summary>
+ Convert LanguageEnum to CulturalName
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Membership.Providers.MemberContext.GetCurrenPageId(System.Int32)">
+ <summary>
+ GetCurrenPageId
+ </summary>
+ <param name="userId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

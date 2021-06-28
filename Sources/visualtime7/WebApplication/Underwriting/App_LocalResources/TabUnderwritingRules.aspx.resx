@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ddlBranch" xml:space="preserve">
+    <value>Line of business</value>
+  </data>
+  <data name="ddlNivelEnfermedad" xml:space="preserve">
+    <value>Impairment level</value>
+  </data>
+  <data name="txtPoints" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="ddlTypeCase" xml:space="preserve">
+    <value>Type of case</value>
+  </data>
+  <data name="ddlUwArea" xml:space="preserve">
+    <value>Underwriting area</value>
+  </data>
+  <data name="ddlUwRule" xml:space="preserve">
+    <value>Underwriting rule</value>
+  </data>
+  <data name="ddlUwStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="RequirementTypeDescription" xml:space="preserve">
+    <value>Requirement</value>
+  </data>
+  <data name="txtEfecDate" xml:space="preserve">
+    <value>Effect date</value>
+  </data>
+  <data name="txtEnfermedad" xml:space="preserve">
+    <value>Impairment</value>
+  </data>
+  <data name="txtExplanation" xml:space="preserve">
+    <value>Explanation</value>
+  </data>
+  <data name="grpUWAlarms" xml:space="preserve">
+    <value>Alarms &lt;p style="display:inline;font-size:11px;font-weight:normal;"&gt;(Select a record with a click to view detailed information about it).&lt;/p&gt;</value>
+  </data>
+  <data name="grpUWRequirements" xml:space="preserve">
+    <value>Requirements</value>
+  </data>
+  <data name="grpUWRules" xml:space="preserve">
+    <value>Underwriting rule</value>
+  </data>
+  <data name="modal-rules-title" xml:space="preserve">
+    <value>Underwriting Rules</value>
+  </data>
+  <data name="btnUWAddRule" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnUWCancelRule" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnUWDeleRule" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnUWEditRule" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnUWSaveRule" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Underwriting Rules</value>
+  </data>
+  <data name="ddlUwRuleDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="xTbUwRAlarmType" xml:space="preserve">
+    <value>Alarm type</value>
+    <comment>x</comment>
+  </data>
+  <data name="xTbUwRCaseDecision" xml:space="preserve">
+    <value>Case decision</value>
+    <comment>x</comment>
+  </data>
+  <data name="xTbUwRCaseStage" xml:space="preserve">
+    <value>Case stage</value>
+    <comment>x</comment>
+  </data>
+  <data name="xTbUwRComment" xml:space="preserve">
+    <value>Comment</value>
+    <comment>x</comment>
+  </data>
+  <data name="xTbUwRProduct" xml:space="preserve">
+    <value>Product</value>
+    <comment>x</comment>
+  </data>
+  <data name="ddlReqQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="ddlReqStatus" xml:space="preserve">
+    <value>Assign status</value>
+  </data>
+  <data name="ddlReqType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="dialog-confirm-delete" xml:space="preserve">
+    <value>Do you wish to delete the current rule?</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="dialog-confirm-save" xml:space="preserve">
+    <value>Do you wish to save changes made to the current rule?</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="dialog-message" xml:space="preserve">
+    <value>The product has no rate.</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="title-dialog-confirm-delete" xml:space="preserve">
+    <value>Delete</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="title-dialog-confirm-save" xml:space="preserve">
+    <value>Save</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="title-dialog-message" xml:space="preserve">
+    <value>Error</value>
+    <comment>dialog</comment>
+  </data>
+  <data name="ExclusionsTab" xml:space="preserve">
+    <value>Exclusions</value>
+    <comment>Alarmas&gt;Tabs</comment>
+  </data>
+  <data name="MaxInsuredSumTab" xml:space="preserve">
+    <value>Sum insured limit</value>
+    <comment>Alarmas&gt;Tabs</comment>
+  </data>
+  <data name="SurchargeDiscountTab" xml:space="preserve">
+    <value>Flat extra premium</value>
+    <comment>Alarmas&gt;Tabs</comment>
+  </data>
+  <data name="btnLanguage" xml:space="preserve">
+    <value>Language: </value>
+  </data>
+  <data name="lang-en" xml:space="preserve">
+    <value> English</value>
+  </data>
+  <data name="lang-es" xml:space="preserve">
+    <value> Spanish</value>
+  </data>
+  <data name="ttipddlBranch" xml:space="preserve">
+    <value>Line of business for the rule</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlCaseType" xml:space="preserve">
+    <value>Indicates whether the rule is for new business or endorsment</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlNivelEnfermedad" xml:space="preserve">
+    <value>Indicates wether the Impairment degree is mild, medium or severe</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlReqQuestion" xml:space="preserve">
+    <value>It corresponds to the evaluation question associated to the rule to apply</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlReqStatus" xml:space="preserve">
+    <value>Status to assign to the requirement</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlReqType" xml:space="preserve">
+    <value>It corresponds to the requirement associated to the rule</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlUwArea" xml:space="preserve">
+    <value>Indicates the subscription area of the rule</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlUwRule" xml:space="preserve">
+    <value>Rule identifier number</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlUwRuleDescription" xml:space="preserve">
+    <value>Corresponds to the description of the rule to apply</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttipddlUwStatus" xml:space="preserve">
+    <value>Rule status</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttiptxtEfecDate" xml:space="preserve">
+    <value>Date since information is valid</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttiptxtEnfermedad" xml:space="preserve">
+    <value>Impairment description</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttiptxtExplanation" xml:space="preserve">
+    <value>Brief description of the rule to apply</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="ttiptxtPoints" xml:space="preserve">
+    <value>Points for risk clasification related to the rule. (Range -99 to +99)</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+  <data name="confirmChangeBranch" xml:space="preserve">
+    <value>This action will clear the alarms created, press accept button  to performed.</value>
+  </data>
+  <data name="confirmChangeBranchTitle" xml:space="preserve">
+    <value>Confirm Action</value>
+  </data>
+  <data name="ConfirmChanges" xml:space="preserve">
+    <value>Confirm changes</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="msgInfoRestriction" xml:space="preserve">
+    <value>Select a row to add a restriction</value>
+  </data>
+  <data name="UpdateTitle" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="grpUWAlarmsTitle" xml:space="preserve">
+    <value>Alarms (Select a record with a click to view detailed information about it).</value>
+  </data>
+  <data name="ttipTypeOfUnit" xml:space="preserve">
+    <value>Tasa</value>
+    <comment>ToolTip TabUnderwritingRule</comment>
+  </data>
+</root>

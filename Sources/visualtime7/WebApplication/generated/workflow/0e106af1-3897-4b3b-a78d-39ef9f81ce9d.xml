@@ -1,0 +1,292 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="BuscaMailEnAddressService" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:iaa="clr-namespace:InMotionGIT.AddressManager.Activities;assembly=InMotionGIT.AddressManager.Activities" xmlns:iace="clr-namespace:InMotionGIT.AddressManager.Contract.Enumerations;assembly=InMotionGIT.AddressManager.Contract" xmlns:iacg="clr-namespace:InMotionGIT.AddressManager.Contract.General;assembly=InMotionGIT.AddressManager.Contract" xmlns:iacm="clr-namespace:InMotionGIT.AddressManager.Contract.Models;assembly=InMotionGIT.AddressManager.Contract" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:iccp="clr-namespace:InMotionGIT.Common.Contracts.Process;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="Client" Type="InOutArgument(icec:Client)" />
+    <x:Property Name="eMail" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>912,1276</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="BuscaMailEnAddressService" sap:VirtualizedContainerService.HintSize="872,1236">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="iacg:AddressDLICollection" Name="AddressDLIcollection" />
+      <Variable x:TypeArguments="x:Int32" Name="AddressIDInt32" />
+      <Variable x:TypeArguments="iccp:ConsumerInformation" Default="[New InMotionGIT.Common.Contracts.Process.ConsumerInformation]" Name="ConsumerInformation" />
+      <Variable x:TypeArguments="iacm:AddresseMailDLI" Default="[New InMotionGIT.AddressManager.Contract.Models.AddressemailDLI]" Name="eMailAddress" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="MailEncontrado" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134</av:PointCollection>
+        <x:Double x:Key="Width">858</x:Double>
+        <x:Double x:Key="Height">1199.92</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">218.5,134</av:Point>
+            <av:Size x:Key="ShapeSize">163,132</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,266 300,376.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,132">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="BuscaMailEnAddressService. { Value /Client/ClientID } - AddressIDD { Value /Client/NADDRESSID }" />
+            <icd:LocalizedString Language="2" Value="BuscaMailEnAddressService. { Value /Client/ClientID }" />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowDecision x:Name="__ReferenceID2" Condition="[Client.NADDRESSID = 0]" sap:VirtualizedContainerService.HintSize="70,87">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">265,376.5</av:Point>
+                <av:Size x:Key="ShapeSize">70,87</av:Size>
+                <av:PointCollection x:Key="TrueConnector">265,420 160,420 160,500</av:PointCollection>
+                <x:String x:Key="TrueLabel">AddressID0</x:String>
+                <x:String x:Key="FalseLabel">AddressID</x:String>
+                <av:PointCollection x:Key="FalseConnector">335,420 500,420 500,510</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID0">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">39,500</av:Point>
+                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="AssignEmailByDefault" sap:VirtualizedContainerService.HintSize="242,60">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[eMail]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Client.eMailAddressDefault]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <FlowStep x:Name="__ReferenceID4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">379,510</av:Point>
+                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">500,570 500,624.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="AssignAddressIDInt32" sap:VirtualizedContainerService.HintSize="242,60">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[AddressIDInt32]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[convert.ToInt32(Client.NADDRESSID)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">400,624.5</av:Point>
+                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">500,675.5 500,729</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="SequenceConsumer" sap:VirtualizedContainerService.HintSize="200,51">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="AssignCompany" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[ConsumerInformation.CompanyId]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignCountry" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ConsumerInformation.Country]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">58</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignNewSecurity" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="iccp:SecurityInformation">[ConsumerInformation.Security]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="iccp:SecurityInformation">[New InMotionGIT.Common.Contracts.Process.SecurityInformation]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignUsercode" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[ConsumerInformation.Security.Usercode]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">9998</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignNewAddress" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="iacg:Address">[eMailAddress.Address]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="iacg:Address">[New InMotionGIT.AddressManager.Contract.General.Address]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignNewAddressCompany" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="icd:LookUpValueExtend">[eMailAddress.Address.UserCompany]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="icd:LookUpValueExtend">[New InMotionGIT.Common.DataType.LookUpValueExtend]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="AssignAddressCompany" sap:VirtualizedContainerService.HintSize="242,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[eMailAddress.Address.UserCompany.Code]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">1</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">400,729</av:Point>
+                            <av:Size x:Key="ShapeSize">200,22</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">500,751 500,846.5</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <iaa:RetrieveAddressesByIdDLI AddressDLICollection="[AddressDLIcollection]" AddressId="[AddressIDInt32]" Consumer="[ConsumerInformation]" sap:VirtualizedContainerService.HintSize="200,22" ProcessDate="[Date.Today]" TypeOfAddress="[InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress.eMail]" TypeOfPhysicalAddress="[InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfPhysicalAddress.Unknown]" UserCompany="[eMailAddress.Address.UserCompany]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </iaa:RetrieveAddressesByIdDLI>
+                        <FlowStep.Next>
+                          <FlowDecision x:Name="__ReferenceID6" Condition="[AddressDLIcollection is nothing orelse AddressDLIcollection.Count = 0]" sap:VirtualizedContainerService.HintSize="70,87" True="{x:Reference __ReferenceID0}">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">465,846.5</av:Point>
+                                <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                <av:PointCollection x:Key="TrueConnector">465,890 160,890 160,560</av:PointCollection>
+                                <x:String x:Key="TrueLabel">SinMailEnAddress</x:String>
+                                <x:String x:Key="FalseLabel">ConMailEnAddress</x:String>
+                                <av:PointCollection x:Key="FalseConnector">535,890 680,890 680,970</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.False>
+                              <FlowStep x:Name="__ReferenceID8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">559,970</av:Point>
+                                    <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">680,1030 680,1074.5</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="AssignMailEncontradoFalse" sap:VirtualizedContainerService.HintSize="242,60">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[MailEncontrado]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">580,1074.5</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ForEach x:TypeArguments="iacm:AddressDLI" DisplayName="ForEach&lt;AddressDLI&gt;" sap:VirtualizedContainerService.HintSize="494,562" Values="[AddressDLIcollection]">
+                                      <ActivityAction x:TypeArguments="iacm:AddressDLI">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="iacm:AddressDLI" Name="direccion" />
+                                        </ActivityAction.Argument>
+                                        <If Condition="[MailEncontrado = false andalso direccion.TypeOfAddress = InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress.eMail]" DisplayName="If MailEncontrado = false andalso direccion.TypeOfAddress = InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress.eMail" sap:VirtualizedContainerService.HintSize="464,454">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="264,346">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <iaa:RetrieveeMail AddressId="[direccion.AddressID]" AddresseMailDLI="[eMailAddress]" Consumer="[ConsumerInformation]" sap:VirtualizedContainerService.HintSize="242,22" InternalAddressKey="[direccion.InternalAddressKey]" ProcessDate="[date.Today]" />
+                                              <Assign DisplayName="AssignMailEncontradoTrue" sap:VirtualizedContainerService.HintSize="242,60">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Boolean">[MailEncontrado]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="AssignMail" sap:VirtualizedContainerService.HintSize="242,60">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[eMail]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[eMailAddress.eMailAddress.eMail]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                        </If>
+                                      </ActivityAction>
+                                    </ForEach>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowDecision.False>
+          </FlowDecision>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+  </Flowchart>
+</Activity>

@@ -1,0 +1,323 @@
+﻿<%@ Page Language="VB" Explicit="true" Inherits="mu700_aspx" CodeFile="~/VTimeNet/policy/policyseq/MU700.aspx.vb" EnableViewState="false" %>
+
+<%@ Import Namespace="System.Globalization" %>
+<%@ Import Namespace="eNetFrameWork" %>
+<%@ Import Namespace="eFunctions" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="eFunctions.Values" %>
+<%@ Import Namespace="eRemoteDB.Parameter" %>
+<%@ Import Namespace="eProduct" %>
+<%@ Import Namespace="ePolicy" %>
+
+<%@ Register Src="MU700.aspx_files/ctrlIdentificacionRiesgo.ascx" TagName="ctrlIdentificacionRiesgo"
+    TagPrefix="UC1" %> 
+<%@ Register Src="MU700.aspx_files/ctrlInformacionParticularRobo.ascx" TagName="ctrlInformacionParticularRobo"
+    TagPrefix="UC2" %>
+<%@ Register Src="MU700.aspx_files/ctrlEquiposElectronicos.ascx" TagName="ctrlEquiposElectronicos"
+    TagPrefix="UC3" %>
+<%@ Register Src="MU700.aspx_files/ctrlRoturaMaquinaria.ascx" TagName="ctrlRoturaMaquinaria"
+    TagPrefix="UC4" %>
+<%@ Register Src="MU700.aspx_files/ctrlEquipoMaquinariaContratista.ascx" TagName="ctrlEquipoMaquinariaContratista"
+    TagPrefix="UC5" %>
+<%@ Register Src="MU700.aspx_files/ctrlFidelidad.ascx" TagName="ctrlFidelidad" TagPrefix="UC6" %>
+
+<%@ Register src="MU700.aspx_files/ctrlDineroValores.ascx" tagname="ctrlDineroValores" tagprefix="uc7" %>
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<% 
+
+    Response.Expires = -1
+    mObjValues.sCodisplPage = Request.QueryString.Item("sCodispl")
+    
+    Dim mblnGroups As Boolean
+    Dim mblnSituation As Boolean
+    
+%>
+<script type="text/javascript" language="JavaScript" src="/VTimeNet/Scripts/GenFunctions.js"></script>
+<script type="text/javascript" language="JavaScript">
+
+    //**+ This line keep the version in SS
+    //+ Esta línea guarda la version procedente de VSS
+    //------------------------------------------------------------------------------------------
+    document.VssVersion = "$$Revision: 5 $|$$Date: 10/24/03 11:22a $"
+    //------------------------------------------------------------------------------------------
+
+    //**% insCancel: It controls the action to cancel of the page.
+    //% insCancel: Controla la acción cancelar de la página.
+    //------------------------------------------------------------------------------------------
+    function insCancel() {
+        //------------------------------------------------------------------------------------------
+        return true;
+    }
+    //**% insStateZone: This function allow to enabled and the images in the window.
+    //%insStateZone: Permite habilitar los objetos y las imagenes en la ventana.
+    //------------------------------------------------------------------------------------------
+    function insStateZone() {
+        //------------------------------------------------------------------------------------------
+        return true;
+    }
+
+    //**% insPreZone: This function allow to enabled and the images in the window.
+    //%insPreZone: Permite habilitar los objetos y las imagenes en la ventana.
+    //-------------------------------------------------------------------------------------------------------------------
+    function insPreZone(llngAction) {
+        //-------------------------------------------------------------------------------------------------------------------
+        switch (llngAction) {
+            case 302:
+            case 305:
+            case 401:
+                document.location.href = document.location.href.replace(/&nMainAction.*/, '') + '&nMainAction=' + llngAction
+                break;
+        }
+    }
+
+    function InputOnChange(field) {
+        switch (field.name) {
+
+        }
+    }
+		
+    function setValueToStorage(fieldName) {
+
+        if (window.localStorage) {
+            sessionStorage.setItem(fieldName, top.frames['fraFolder'].document.getElementsByName(fieldName)[0].value);
+
+//            var nombre = localStorage.getItem("nombre");
+//            localStorage.removeItem("nombre");
+
+        }
+//        else {
+//            throw new Error('Tu Browser no soporta LocalStorage!');
+//        }
+    }
+
+    function cleanValueFromStorage() {
+        if (window.localStorage) {
+            return window.sessionStorage.clear();
+        }
+    }
+
+    function getValueFromStorage(fieldName) {
+        if (window.localStorage) {
+            return window.sessionStorage[fieldName];
+        }
+//        else {
+//            throw new Error('Tu Browser no soporta LocalStorage!');
+//        }
+    }
+
+    function isNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+
+
+
+
+
+</script>
+<html>
+<head runat="server">
+    <title></title>
+
+    <%
+        If Request.QueryString.Item("Type") <> "PopUp" Then        
+            Response.Write(mobjMenu.setZone(2, "MU700", Request.QueryString.Item("sWindowDescript")))
+            mobjMenu = Nothing                       
+        End if            
+    %>
+
+
+    <%
+        If Request.QueryString.Item("Type") <> "PopUp" Then
+            Response.Write("<script type='text/javascript'>var nMainAction = " & CShort("0" & Request.QueryString.Item("nMainAction")) & "</script>")
+        End If
+        Response.Write(mObjValues.StyleSheet())
+        If Request.QueryString.Item("Type") <> "PopUp" Then
+            Response.Write("<script language='JavaScript' src='/VTimeNet/Scripts/tmenu.js'></script>")
+        End If
+    %>
+</head>
+<body onunload="closeWindows();">
+
+    <%
+     
+        reaSeccionesRequeridas()
+        
+        insPreMU700()
+        Dim mclsPolicy As New ePolicy.Policy
+        Dim mclsGroups As New ePolicy.Groups
+        Dim mclsSituation As New ePolicy.Situation
+        
+        Call mclsPolicy.Find(Session("sCertype"), mObjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mObjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mObjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), True)
+        If mclsPolicy.sPolitype = "2" Then
+            mblnGroups = mclsGroups.valGroupExist(Session("sCertype"), _
+                                                  mObjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), _
+                                                  mObjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), _
+                                                  mObjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), _
+                                                  mObjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate))
+        End If
+        
+        mblnSituation = mclsSituation.valExistsSituation(Session("sCertype"), mObjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mObjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mObjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mObjValues.StringToType(CStr(eRemoteDB.Constants.intNull), eFunctions.Values.eTypeData.etdDouble))
+        
+     %>
+
+   
+    <%
+
+        If Request.QueryString.Item("Type") <> "PopUp" Then
+            Response.Write("<br/>")
+        End If
+        Response.Write(mObjValues.ShowWindowsName(Request.QueryString.Item("sCodispl")))
+    
+    %>
+        <form id="FORM" method="POST"  action="valPolicySeq.aspx?nMainAction=<%=Request.QueryString.Item("nMainAction") %>&sCodispl=MU700" >
+
+            <table width="100%">
+                <tr>
+                    <td class="HighLighted" colspan="4">
+                        <label> <a name="Datos del colectivo"><%= GetLocalResourceObject("AnchorDatos del colectivoCaption") %></a> </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Horline" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td style="width:20%">
+                        <label><%= GetLocalResourceObject("cbovalGroupCaption") %></label>
+                    </td>
+                    <%
+                        With mobjValues.Parameters
+                            .Add("sCertype", Session("sCertype"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                            .Add("nBranch", Session("nBranch"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                            .Add("nProduct", Session("nProduct"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                            .Add("nPolicy", Session("nPolicy"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                        End With
+                    %>
+                    <td>
+                        <%= mObjValues.PossiblesValues("cbovalGroup", "tabGroups", eFunctions.Values.eValuesType.clngWindowType, mObjMultiRiskValores.NGROUP, True, , , , , , , , GetLocalResourceObject("cbovalGroupToolTip"))%>
+                    </td>
+
+
+                    <td style="width:20%">
+                        <label><%= GetLocalResourceObject("cboArticleCaption") %></label>
+                    </td>
+                    <td>
+                      <%= mObjValues.PossiblesValues("cboArticle", "Table118", eFunctions.Values.eValuesType.clngComboType, mObjMultiRiskValores.nArticle, , , , , , , , , GetLocalResourceObject("cboArticleToolTip"))%>
+                    
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label> <%= GetLocalResourceObject("cbovalSituationCaption") %></label>
+                    </td>
+                        <%
+                            With mobjValues.Parameters
+                                .Add("sCertype", Session("sCertype"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                                .Add("nBranch", Session("nBranch"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                                .Add("nProduct", Session("nProduct"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                                .Add("nPolicy", Session("nPolicy"), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                            End With
+                        %>
+                        <td>
+                            <%= mObjValues.PossiblesValues("cbovalSituation", "tabSituation", 2, mObjMultiRiskValores.NSITUATION, True, , , , , , , , GetLocalResourceObject("cbovalSituationToolTip"))%>
+                        </td>
+                </tr>
+            </table>
+
+    <% If dicRequieredSections.ContainsKey(1) Then %>
+        <UC1:ctrlIdentificacionRiesgo ID="TablaCamposIndentificacionRiesgo" runat="server" />
+    <% End If %>
+
+    <% If dicRequieredSections.ContainsKey(2) Then %>
+        <UC2:ctrlInformacionParticularRobo ID="TablaCamposInformacionParticularRobo" runat="server" />
+    <% End If %>
+
+    <% If dicRequieredSections.ContainsKey(3) Then %>
+        <UC3:ctrlEquiposElectronicos ID="TablaCamposEquiposElectronicos" runat="server" />
+    <% End If %>
+
+    <% If dicRequieredSections.ContainsKey(4) Then %>
+        
+        <UC4:ctrlRoturaMaquinaria ID="TablaCamposRoturaMaquinaria" runat="server" />
+    <% End If %>
+       
+    <% If dicRequieredSections.ContainsKey(5) Then %>
+        <UC5:ctrlEquipoMaquinariaContratista ID="TablaCamposEquipoMaquinariaContratista" runat="server" />
+    <% End If %>
+
+    <% If dicRequieredSections.ContainsKey(6) Then %>
+        <UC6:ctrlFidelidad ID="TablaCamposFidelidad" runat="server" />
+    <% End If %>
+
+    <% If dicRequieredSections.ContainsKey(7) Then %>
+        <uc7:ctrlDineroValores ID="TablaDineroValores" runat="server" />
+    <% End If %>
+
+    <%
+        Response.Write(mObjValues.HiddenControl("sREquieredSections", sRequieredSections))
+        
+        Response.Write(mObjValues.HiddenControl("sInd_Fidelity", IIf(String.IsNullOrEmpty(msInd_Fidelity), "2", msInd_Fidelity)))
+        Response.Write(mObjValues.HiddenControl("sInd_Electronic", IIf(String.IsNullOrEmpty(msInd_Electronic), "2", msInd_Electronic)))
+        Response.Write(mObjValues.HiddenControl("sInd_Machine", IIf(String.IsNullOrEmpty(msInd_Machine), "2", msInd_Machine)))
+        Response.Write(mObjValues.HiddenControl("sInd_Contractor", IIf(String.IsNullOrEmpty(msInd_Contractor), "2", msInd_Contractor)))
+        
+        
+        If msIndSRISKENABLED = "1"  and   Request.QueryString.Item("Type") <> "PopUp"  Then
+            
+            
+            Response.Write("        <BR>" & vbCrLf)
+            Response.Write("        <BR>" & vbCrLf)
+                           
+            Response.Write("					<TABLE " & " width=100% " & " > " & vbCrLf)
+                      
+            Response.Write("        <TR>" & vbCrLf)
+            
+            Response.Write(mObjValues.ShowWindowsName(Request.QueryString.Item("sCodispl"), GetLocalResourceObject("SRISKDESCRIPTION_caption")))
+          
+            Response.Write("	   </TR>" & vbCrLf)
+            
+                    
+            Response.Write("	   <TR>" & vbCrLf)
+                                              
+            
+            Response.Write("							<TD>")
+
+
+            Response.Write(mObjValues.TextAreaControl("SRISKDESCRIPTION", 4, 0, SRISKDESCRIPTION, False, GetLocalResourceObject("SRISKDESCRIPTION_ToolTip"), False, False, , ""))
+            Response.Write("</TD>" & vbCrLf)
+            Response.Write("						</TR>" & vbCrLf)
+            Response.Write("					</TABLE> " & vbCrLf)
+            
+            Response.Write(" <script>" & vbCrLf)
+            Response.Write(" $('TextArea[name=SRISKDESCRIPTION]').css('width', '100%');")
+            Response.Write(" </script> " )
+        Else
+            Response.Write(mObjValues.HiddenControl("SRISKDESCRIPTION", String.Empty))
+        End If
+        
+        If Not mblnGroups Then
+            With Response
+                .Write("<script>")
+                .Write("self.document.forms[0].cbovalGroup.disabled=true;")
+                .Write("self.document.btncbovalGroup.disabled=true;")
+                .Write("</script>")
+            End With
+        End If
+	
+        If Not mblnSituation Then
+            With Response
+                .Write("<script>")
+                .Write("self.document.forms[0].cbovalSituation.disabled=true;")
+                .Write("self.document.btncbovalSituation.disabled=true;")
+                .Write("</script>")
+            End With
+        End If
+        
+    %>
+
+    </form>
+</body>
+</html>

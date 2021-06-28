@@ -1,0 +1,116 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Correspondence.Support
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.SendMailWithTemplate(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+ <summary>
+ Send Mail
+ </summary>
+ <param name="templateName">Set name of template</param>
+ <param name="userType">Set type of user</param>
+ <param name="language">Set language</param>
+ <param name="parameters">Set parameters</param>
+ <param name="to"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.SendMailWithTemplateFASI(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+ <summary>
+ Send Mail
+ </summary>
+ <param name="templateName">Set name of template</param>
+ <param name="userType">Set type of user</param>
+ <param name="language">Set language</param>
+ <param name="parameters">Set parameters</param>
+ <param name="to"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.SendMailWithTemplate(System.String,System.String,System.String,System.Object,System.String)">
+ <summary>
+ Send Mail
+ </summary>
+ <param name="templateName">Set name of template</param>
+ <param name="userType">Set type of user</param>
+ <param name="language">Set language</param>
+ <param name="parameter">Set parameter</param>
+ <param name="to"></param>
+ <remarks>Overload of the method</remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.LoadTemplate(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Load template and replace parameters
+ </summary>
+ <param name="templatesPath">Set path of template</param>
+ <param name="templateName">Set name of template</param>
+ <param name="userType">Set type of user</param>
+ <param name="language">Set language</param>
+ <param name="extension">Set extension of template</param>
+ <param name="parameters">Set parameters</param>
+ <returns>Returns string</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.ObjectToTemplate(System.Object,System.String)">
+ <summary>
+ Load Object to template
+ </summary>
+ <param name="currentObject">Set current object</param>
+ <param name="template">Set template</param>
+ <returns>Retunrs string</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+  Method setted for send e mail
+ </summary>
+ <param name="to">Sets who then sent the email </param>
+ <param name="cc">Sets copy email </param>
+ <param name="bcc">Sets copy email</param>
+ <param name="subject">Sets the email subject</param>
+ <param name="body">Sets the body of the email</param>
+ <param name="attachment">Sets the attachment of the email</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Mail.SendEmailFASI(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+  Method setted for send e mail
+ </summary>
+ <param name="to">Sets who then sent the email </param>
+ <param name="cc">Sets copy email </param>
+ <param name="bcc">Sets copy email</param>
+ <param name="subject">Sets the email subject</param>
+ <param name="body">Sets the body of the email</param>
+ <param name="attachment">Sets the attachment of the email</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Correspondence.Support.Merge.SendEmailProcess(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Process, replace the data and sends the email.
+ Procesar, reemplazar los datos y envía el correo electrónico.
+ </summary>
+ <param name="to">
+ Email to send mail - Correo electrónico a enviar el correo
+ </param>
+ <param name="cc">
+ Copy email to also send mail - Copia de correo electrónico para enviar también el correo
+ </param>
+ <param name="bcc">
+ Bcc email to also send mail - Copia oculta de correo electrónico para enviar también el correo
+ </param>
+ <param name="attachment">
+ Attachment - Archivo adjunto 
+ </param>
+ <param name="subjectFilePath">
+ Subject File Path - Ruta del archivo que contiene el asunto
+ </param>
+ <param name="bodyFilePath">
+ Body File Path - Ruta del archivo que contiene el cuerpo
+ </param>    
+ <param name="target">
+ Dictionary with parameter's values - Diccionario con los valores de parámetros
+ </param>
+</member>
+</members>
+</doc>

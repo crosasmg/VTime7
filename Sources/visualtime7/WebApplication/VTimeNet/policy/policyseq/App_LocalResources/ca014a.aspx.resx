@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chkRequiredColumnCaption" xml:space="preserve">
+    <value>Obligatoria</value>
+  </data>
+  <data name="chkRequiredColumnToolTip" xml:space="preserve">
+    <value>Indica que la cobertura es requerida</value>
+  </data>
+  <data name="chkDefaultiColumnCaption" xml:space="preserve">
+    <value>Preselección</value>
+  </data>
+  <data name="chkDefaultiColumnToolTip" xml:space="preserve">
+    <value>Indica que la cobertura está seleccionada por omisión</value>
+  </data>
+  <data name="tcnModulecColumnCaption" xml:space="preserve">
+    <value>Módulo</value>
+    <comment>ID=40805</comment>
+  </data>
+  <data name="tcnModulecColumnToolTip" xml:space="preserve">
+    <value>Mod</value>
+    <comment>ID=40805</comment>
+  </data>
+  <data name="cbeRoleColumnCaption" xml:space="preserve">
+    <value>Tipo de asegurado</value>
+  </data>
+  <data name="cbeRoleColumnToolTip" xml:space="preserve">
+    <value>Rol asociado a la cobertura</value>
+  </data>
+  <data name="tcnCoverColumnCaption" xml:space="preserve">
+    <value>Código</value>
+    <comment>ID=40806</comment>
+  </data>
+  <data name="tcnCoverColumnToolTip" xml:space="preserve">
+    <value>Código de la cobertura</value>
+    <comment>ID=40806</comment>
+  </data>
+  <data name="tctCoverColumnCaption" xml:space="preserve">
+    <value>Cobertura</value>
+    <comment>ID=40785</comment>
+  </data>
+  <data name="tctCoverColumnToolTip" xml:space="preserve">
+    <value>Descripción de la cobertura</value>
+    <comment>ID=40785</comment>
+  </data>
+  <data name="tcnCapitalColumnCaption" xml:space="preserve">
+    <value>Suma asegurada</value>
+    <comment>ID=40807</comment>
+  </data>
+  <data name="tcnCapitalColumnToolTip" xml:space="preserve">
+    <value>Capital aegurado asociado a la cobertura</value>
+    <comment>ID=40807</comment>
+  </data>
+  <data name="tcnRateColumnCaption" xml:space="preserve">
+    <value>Tasa actual</value>
+  </data>
+  <data name="tcnRateColumnToolTip" xml:space="preserve">
+    <value>Tasa actual de la cobertura</value>
+  </data>
+  <data name="tcnRatecoveColumnCaption" xml:space="preserve">
+    <value>Tasa</value>
+    <comment>ID=40792</comment>
+  </data>
+  <data name="tcnRatecoveColumnToolTip" xml:space="preserve">
+    <value>Tasa a aplicar (pormilaje) sobre la suma asegurada</value>
+    <comment>ID=40792</comment>
+  </data>
+  <data name="tcnPremiumColumnCaption" xml:space="preserve">
+    <value>Prima</value>
+    <comment>ID=40793</comment>
+  </data>
+  <data name="tcnPremiumColumnToolTip" xml:space="preserve">
+    <value>Prima anual a cobrar por la cobertura/rol</value>
+    <comment>ID=40793</comment>
+  </data>
+  <data name="cbeRetarifColumnCaption" xml:space="preserve">
+    <value>Retarificación</value>
+  </data>
+  <data name="cbeRetarifColumnToolTip" xml:space="preserve">
+    <value>Tipo de retarificación a aplicar a la cobertura</value>
+  </data>
+  <data name="valBranch_reiColumnCaption" xml:space="preserve">
+    <value>Ramo de reaseguro</value>
+  </data>
+  <data name="valBranch_reiColumnToolTip" xml:space="preserve">
+    <value>Ramo de reaseguro asociado a la cobertura</value>
+  </data>
+  <data name="cbenTypAgeMinMColumnCaption" xml:space="preserve">
+    <value>Edad mín. en (masc)</value>
+  </data>
+  <data name="cbenTypAgeMinMColumnToolTip" xml:space="preserve">
+    <value>Medida en la cual se expresa el valor de edad mínima para masculino</value>
+  </data>
+  <data name="cbenTypAgeMinFColumnCaption" xml:space="preserve">
+    <value>Edad mín. en (femen))</value>
+  </data>
+  <data name="cbenTypAgeMinFColumnToolTip" xml:space="preserve">
+    <value>Medida en la cual se expresa el valor de edad mínima para femenino</value>
+  </data>
+  <data name="tcnAgemininsColumnCaption" xml:space="preserve">
+    <value>Edad mín. (masculino)</value>
+  </data>
+  <data name="tcnAgemininsColumnToolTip" xml:space="preserve">
+    <value>Edad mínima permitida para la cobertura para los asegurados de sexo masculino</value>
+  </data>
+  <data name="tcnAgemininsfColumnCaption" xml:space="preserve">
+    <value>Edad mín. (femenino)</value>
+  </data>
+  <data name="tcnAgemininsfColumnToolTip" xml:space="preserve">
+    <value>Edad mínima permitida para la cobertura para los asegurados de sexo femenino</value>
+  </data>
+  <data name="tcnAgemaxinsColumnCaption" xml:space="preserve">
+    <value>Edad máx. (masculino)</value>
+  </data>
+  <data name="tcnAgemaxinsColumnToolTip" xml:space="preserve">
+    <value>Edad máxima permitida para la cobertura para los asegurados de sexo masculino</value>
+  </data>
+  <data name="tcnAgemaxinsfColumnCaption" xml:space="preserve">
+    <value>Edad máx. (femenino)</value>
+  </data>
+  <data name="tcnAgemaxinsfColumnToolTip" xml:space="preserve">
+    <value>Edad máxima permitida para la cobertura para los asegurados de sexo femenino</value>
+  </data>
+  <data name="tcnAgemaxperColumnCaption" xml:space="preserve">
+    <value>Edad per. (masculino)</value>
+  </data>
+  <data name="tcnAgemaxperColumnToolTip" xml:space="preserve">
+    <value>Edad de permanencia permitida para la cobertura para los asegurados de sexo masculino</value>
+  </data>
+  <data name="tcnAgemaxperfColumnCaption" xml:space="preserve">
+    <value>Edad per. (femenino)</value>
+  </data>
+  <data name="tcnAgemaxperfColumnToolTip" xml:space="preserve">
+    <value>Edad de permanencia permitida para la cobertura para los asegurados de sexo femenino</value>
+  </data>
+  <data name="cbeWait_typeColumnCaption" xml:space="preserve">
+    <value>Tipo de carencia</value>
+    <comment>ID=40804</comment>
+  </data>
+  <data name="cbeWait_typeColumnToolTip" xml:space="preserve">
+    <value>Tipo de carencia</value>
+    <comment>ID=40804</comment>
+  </data>
+  <data name="tcnWaitQColumnCaption" xml:space="preserve">
+    <value>Duración de carencia</value>
+    <comment>ID=40814</comment>
+  </data>
+  <data name="tcnWaitQColumnToolTip" xml:space="preserve">
+    <value>Duración de la carencia</value>
+    <comment>ID=40814</comment>
+  </data>
+  <data name="tcnPremimaxColumnCaption" xml:space="preserve">
+    <value>Prima Maxima</value>
+    <comment>ID=40815</comment>
+  </data>
+  <data name="tcnPremimaxColumnToolTip" xml:space="preserve">
+    <value>Monto Maximo de Prima</value>
+    <comment>ID=40815</comment>
+  </data>
+  <data name="tcnPremiminColumnCaption" xml:space="preserve">
+    <value>Prima Minima</value>
+    <comment>ID=40816</comment>
+  </data>
+  <data name="tcnPremiminColumnToolTip" xml:space="preserve">
+    <value>Monto Minimo de Prima</value>
+    <comment>ID=40816</comment>
+  </data>
+  <data name="tcnCacalmaxColumnCaption" xml:space="preserve">
+    <value>Capital Maximo</value>
+    <comment>ID=40817</comment>
+  </data>
+  <data name="tcnCacalmaxColumnToolTip" xml:space="preserve">
+    <value>Monto Maximo de Capital Asegurado</value>
+    <comment>ID=40817</comment>
+  </data>
+  <data name="tcnCacalminColumnCaption" xml:space="preserve">
+    <value>Capital Minimo</value>
+    <comment>ID=40818</comment>
+  </data>
+  <data name="tcnCacalminColumnToolTip" xml:space="preserve">
+    <value>Monto Minimo de Capital Asegurado</value>
+    <comment>ID=40818</comment>
+  </data>
+  <data name="2ColumnCaption" xml:space="preserve">
+    <value>Cobertura</value>
+  </data>
+  <data name="valGroupCaption" xml:space="preserve">
+    <value>Grupo del colectivo</value>
+    <comment>ID=""13043""</comment>
+  </data>
+  <data name="valGroupToolTip" xml:space="preserve">
+    <value>Grupo del colectivo asociado a las coberturas</value>
+    <comment>ID=""13043""</comment>
+  </data>
+  <data name="cbeCurrencDesCaption" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>ID=13050</comment>
+  </data>
+  <data name="cbeCurrencDesToolTip" xml:space="preserve">
+    <value>Moneda asociada a las coberturas</value>
+    <comment>ID=13050</comment>
+  </data>
+  <data name="tcnLegCaption" xml:space="preserve">
+    <value>Tope de capital por evaluaciòn</value>
+  </data>
+  <data name="tcnLegToolTip" xml:space="preserve">
+    <value>Monto tope de límite de Emisión Garantizada</value>
+  </data>
+  <data name="btn_ApplyCaption" xml:space="preserve">
+    <value>Copia coberturas</value>
+    <comment>ID=""0""</comment>
+  </data>
+  <data name="btn_ApplyToolTip" xml:space="preserve">
+    <value>Se acepta las coberturas para la moneda/grupo en tratamiento</value>
+    <comment>ID=""0""</comment>
+  </data>
+</root>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Config>
+ <Database>
+  <Server>Oracle</Server>
+  <ServerName>3.214.254.97</ServerName>  
+  <Owner>INSUDB</Owner>  
+  <DatabaseName>TIME</DatabaseName>  
+  <ConnectionStringWithPool>
+Data source=VISUALTIME7;Min Pool Size=60;Max Pool Size=350;Connection Lifetime=120
+</ConnectionStringWithPool>
+  <ConnectionString>
+Data source=VISUALTIME7;
+</ConnectionString>
+  <ConnectionStringProvider>Oracle.DataAccess.Client</ConnectionStringProvider>    
+  <CommandTimeOut>60</CommandTimeOut> 
+  <User>181B9BADB746</User> 
+  <Password>A07A1EF54972DA31</Password>
+  <CacheEnabled>Yes</CacheEnabled>
+  <MultiCompany>Yes</MultiCompany>
+ </Database>
+  <MultiCompanies>
+    <Company id='1' name='Vida' user='181B9BADB746' password='A07A1EF54972DA31'/>    
+	  <Company id='2' name='Generales' user='C97A7C5EA2CB4F53CB' password='A07A1EF54972DA31'/>    
+  </MultiCompanies>
+  <Portal> 
+  <UsePortal>Yes</UsePortal>
+  <Roles> 
+     <Role>Empleado</Role>
+  </Roles>
+ </Portal>
+ <Workflow>
+  <Enabled>Yes</Enabled>
+  <Prefix>GIT.EDW.Workflow</Prefix>
+  <Path>C:\PROTECTA\WebApplication\Bin\</Path>   
+ </Workflow >
+ <Report>
+  <WorkingMode>Server</WorkingMode>
+  <Server>http://localhost/VTimeNet/Common/Reports/Report.aspx</Server>
+  <ConnectionString>TIME</ConnectionString>
+  <Width>1200</Width>
+  <Height>1300</Height> 
+ </Report>
+ <Debug>
+  <Active>No</Active>
+  <StoredProcedureCalled>Yes</StoredProcedureCalled>
+  <LogFile>C:\PROTECTA\Temp\TFiles\PerformanceDebug.Log</LogFile>
+  <Developer>No</Developer>
+  <OracleTrace>No</OracleTrace>
+  <Usercode>1508|1971|1374|3010|</Usercode>
+ </Debug>
+ <ErrorSystem>
+  <Server>Oracle</Server>
+  <ServerName>3.214.254.97</ServerName>   
+   <Owner>insudb</Owner>
+  <DatabaseName>TIME</DatabaseName>  
+  <ConnectionString>Data Source=TIME;Pooling=false;Unicode=True</ConnectionString>
+  <User>181B9BADB746</User>
+  <Password>A07A1EF54972DA31</Password>
+  <CommandTimeOut>60</CommandTimeOut>
+  <MultiCompany>No</MultiCompany>
+ </ErrorSystem>
+ <ImagesDB>
+  <Provider>Oracle.DataAccess.Client</Provider>
+  <Database>TIME</Database>
+  <ConnectionString>Provider=Oracle.DataAccess.Client;Data Source=TIME;Persist Security Info=True</ConnectionString>
+  <sInitials>181B9BADB746</sInitials>
+  <sAccessWo>A07A1EF54972DA31</sAccessWo>
+ </ImagesDB>
+ <Paths>
+  <Configuration>C:\PROTECTA\Configuration</Configuration>
+  <MultiCompany>C:\PROTECTA\Configuration</MultiCompany>
+  <VirtualDirectory>C:\PROTECTA\WebApplication\VTimeNet</VirtualDirectory>
+  <Configuration>C:\PROTECTA\Configuration</Configuration>
+  <VisualTIMERLog>C:\PROTECTA\Temp\VisualTIMERLog</VisualTIMERLog>
+  <Cache>C:\PROTECTA\Temp\Cache</Cache>
+  <Help>http://funcionalesvo.visualtime.cl/funcionales/es_es_lat/</Help>
+  <ImageTemp>C:\PROTECTA\Temp\TFiles</ImageTemp>
+  <ErrorLog>C:\PROTECTA\Temp\Log</ErrorLog>
+  <Report>/Reports/</Report>
+  <CDoc_Path>C:\PROTECTA\Temp\TFiles\</CDoc_Path>
+  <sSchecode>C:\PROTECTA\Temp\Cache\Schema</sSchecode>
+  <ExportDirectoryReport>C:\PROTECTA\Temp\TFiles\Report\</ExportDirectoryReport>
+  <VirtualReportExportPath>/VTimeNet/Temp/TFiles/Report</VirtualReportExportPath>
+  <ExportDirectoryLetter>C:\PROTECTA\temp\TFiles\Letter\</ExportDirectoryLetter>
+  <VirtualLetterExportPath>/VTimeNet/Temp/TFiles/Letter</VirtualLetterExportPath>  
+  <VirtualRootLoad>C:\PROTECTA\Temp\TFiles</VirtualRootLoad>  
+  <MASSIVELOAD>C:\PROTECTA\Temp\TFiles</MASSIVELOAD>
+  <Correspondence>D:\Model of correspondence</Correspondence>
+  <LoadFile>C:\PROTECTA\Temp\TFiles\</LoadFile>
+  <ClauseLoad>C:\PROTECTA\Temp\TFiles\Clause\</ClauseLoad>
+  <LogoFilename>C:\PROTECTA\WebApplication\VTimeNet\Images\Logos\ReportLogo.jpg</LogoFilename>
+  <ExportDirectoryPolicy>C:\PROTECTA\Temp\TFiles\policy\</ExportDirectoryPolicy>  
+ </Paths>
+ <WorkFlow>
+  <Active>No</Active>
+ </WorkFlow>
+ <Application>
+     <ContactUs>mailto:vtsupport@ease.com.ve</ContactUs>
+     <PasswordOpt>TIME</PasswordOpt>
+     <ImgPath>C:\PROTECTA\VTimeNetLat\temp\TFiles</ImgPath>
+     <UpLoadFile>C:\PROTECTA\VTimeNetLat\temp\TFiles</UpLoadFile>
+     <Outlook>1</Outlook>
+        <OfficialPolicy>1</OfficialPolicy>
+ </Application>
+ <Style>
+    <Sheet>Custom.ccs</Sheet>   
+    <BodyBackground>framesequence.jpg</BodyBackground>
+ </Style>
+ <Security>
+     <MaxFailedLogonAttempts>3</MaxFailedLogonAttempts>
+     <PasswordExpiresAfter>60</PasswordExpiresAfter>
+     <PasswordStrength>(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,12})</PasswordStrength>
+     <PasswordChangeSchema>CHNGPW</PasswordChangeSchema>
+ </Security>
+</Config>

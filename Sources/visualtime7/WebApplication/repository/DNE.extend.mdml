@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSourceModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="C:\Users\lsanchez\Source\Workspaces\IM-GIT\CC y NN\03-Análisis y Diseño\Modelo DNE\DNE-model.xml" startingon="2016-02-26T19:12:54.1204406-03:00" endingon="2016-02-26T19:12:54.18245-03:00" source="ErwinDataModel" xmlns="urn:InMotionGIT.Database.Model.Data">
+  <Schemas>
+    <ModelSchema name="DNE">
+      <Tables>
+        <Table name="IMAGEN_DLI" comment="Image content table.&#xA;//&#xA;Table de contenido de imágen.">
+          <Columns>
+            <Column name="ID_SECUENCIA" comment="Sequence identifier.&#xA;//&#xA;Identificador de la secuencia." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sequence id" />
+                  <FriendlyName Language="Spanish" Value="Id secuencia" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Identifier of the sequence." />
+                  <Summary Language="Spanish" Value="Identificador de la secuencia." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_CONSECUTIVO" comment="Identifies the sequence in which the elementes have been inserted into the sequence.&#xA;//&#xA;Identifica la secuencia en el mismo órden en el que los elementos fueron insertados." ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Consequence id" />
+                  <FriendlyName Language="Spanish" Value="Id consecutivo" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Consequence id" />
+                  <Summary Language="Spanish" Value="Id consecutivo" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="IMAGEN_CALIDAD_WEB" ordinal="3" kind="ORDIMAGE" modelkind="Binary" domain="Blob" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="IMAGEN_CALIDAD_ORIGINAL" ordinal="4" kind="ORDIMAGE" modelkind="Binary" domain="Blob" nullable="false"> 
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="METAORDIMAGE" ordinal="5" kind="XMLTYPE" modelkind="None" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="METAEXIF" ordinal="6" kind="XMLTYPE" modelkind="None" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="METAIPTC" ordinal="7" kind="XMLTYPE" modelkind="None" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="METAXMP" ordinal="8" kind="XMLTYPE" modelkind="None" domain="String">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATIONDATE" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="9" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATORUSERCODE" comment="Code of the user creating  the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea el registro." ordinal="10" kind="NUMBER" modelkind="Numeric" size="9" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreado" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEDATE" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="11" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEUSERCODE" comment="Code of the user creating or updating the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla usuarios." ordinal="12" kind="NUMBER" modelkind="Numeric" size="9" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="IMAGEN_DLI_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="IMAGEN_DLI_RECURSO_DNE_FK" foreigntablename="RECURSO_DNE_DLI">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="IMAGEN_DLI_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+            <Index name="XIF1IMAGEN_DLI">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Image" />
+              <FriendlyName Language="Spanish" Value="Imagen" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend" />
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Image." />
+              <Summary Language="Spanish" Value="Imagen." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="DNE" />
+            </Modules>
+          </Extend>
+        </Table>
+		<Table name="ARCHIVO_SONIDO_DLI" comment="Sound content table.&#xA;//&#xA;Tabla de contenido de sonido.">
+          <Columns>
+            <Column name="ID_SECUENCIA" comment="Sequence identifier.&#xA;//&#xA;Identificador de la secuencia." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sequence id" />
+                  <FriendlyName Language="Spanish" Value="Id secuencia" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Identifier of the sequence." />
+                  <Summary Language="Spanish" Value="Identificador de la secuencia." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_CONSECUTIVO" comment="Identifies the sequence in which the elementes have been inserted into the sequence.&#xA;//&#xA;Identifica la secuencia en el mismo órden en el que los elementos fueron insertados." ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Consequence id" />
+                  <FriendlyName Language="Spanish" Value="Id consecutivo" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Consequence id" />
+                  <Summary Language="Spanish" Value="Id consecutivo" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ARCHIVO_SONIDO" comment="Sound file content.&#xA;//&#xA;Contenido del archivo de sonido." ordinal="3" kind="ORDAUDIO" modelkind="Binary" domain="Blob" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sound file" />
+                  <FriendlyName Language="Spanish" Value="Archivo de sonido" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Sound file.&#xA;" />
+                  <Summary Language="Spanish" Value="Archivo de sonido." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATIONDATE" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="4" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATORUSERCODE" comment="Code of the user creating  the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea el registro." ordinal="5" kind="NUMBER" modelkind="Numeric" size="9" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreado" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEDATE" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="6" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEUSERCODE" comment="Code of the user creating or updating the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla usuarios." ordinal="7" kind="NUMBER" modelkind="Numeric" size="9" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="ARCHIVO_SONIDO_DLI_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="ARCHIVO_SONIDO_DLI_RECURSO_DNE_FK" foreigntablename="RECURSO_DNE_DLI">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="ARCHIVO_SONIDO_DLI_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+            <Index name="XIF1ARCHIVO_SONIDO_DLI">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Sound_file" />
+              <FriendlyName Language="Spanish" Value="Archivo_Sonido" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend" />
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Sound content table." />
+              <Summary Language="Spanish" Value="Tabla de contenido de sonido." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="DNE" />
+            </Modules>
+          </Extend>
+        </Table>
+		<Table name="DOCUMENTO_DLI" comment="Document content table.&#xA;//&#xA;Tabla de contenido de documentos.">
+          <Columns>
+            <Column name="ID_SECUENCIA" comment="Sequence identifier.&#xA;//&#xA;Identificador de la secuencia." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sequence id" />
+                  <FriendlyName Language="Spanish" Value="Id secuencia" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Identifier of the sequence." />
+                  <Summary Language="Spanish" Value="Identificador de la secuencia." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_CONSECUTIVO" comment="Identifies the sequence in which the elementes have been inserted into the sequence.&#xA;//&#xA;Identifica la secuencia en el mismo órden en el que los elementos fueron insertados." ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Consequence id" />
+                  <FriendlyName Language="Spanish" Value="Id consecutivo" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Consequence id" />
+                  <Summary Language="Spanish" Value="Id consecutivo" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="DOCUMENTO" comment="Document content.&#xA;//&#xA;Contenido del documento." ordinal="3" kind="ORDDOC" modelkind="Binary" domain="Blob" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Document content" />
+                  <FriendlyName Language="Spanish" Value="Contenido del documento" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Document content." />
+                  <Summary Language="Spanish" Value="Contenido del documento." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATIONDATE" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="4" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATORUSERCODE" comment="Code of the user creating  the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea el registro." ordinal="5" kind="NUMBER" modelkind="Numeric" size="9" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreado" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEDATE" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="6" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEUSERCODE" comment="Code of the user creating or updating the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla usuarios." ordinal="7" kind="NUMBER" modelkind="Numeric" size="9" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="DOCUMENTO_DLI_PKV1" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="DOCUMENTO_DLI_RECURSO_DNE_FK" foreigntablename="RECURSO_DNE_DLI">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="DOCUMENTO_DLI_PKV1" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+            <Index name="XIF1DOCUMENTO_DLI">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Documents" />
+              <FriendlyName Language="Spanish" Value="Documento" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend" />
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Document content table." />
+              <Summary Language="Spanish" Value="Tabla de contenido de documentos." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="DNE" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="RECURSO_DNE_DLI" comment="Resource table.&#xA;//&#xA;Tabla de recursos.">
+          <Columns>
+            <Column name="ID_SECUENCIA" comment="Sequence identifier.&#xA;//&#xA;Identificador de la secuencia." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sequence id" />
+                  <FriendlyName Language="Spanish" Value="Id secuencia" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Identifier of the sequence." />
+                  <Summary Language="Spanish" Value="Identificador de la secuencia." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_CONSECUTIVO" comment="Identifies the sequence in which the elementes have been inserted into the sequence.&#xA;//&#xA;Identifica la secuencia en el mismo órden en el que los elementos fueron insertados." ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Consequence id" />
+                  <FriendlyName Language="Spanish" Value="Id consecutivo" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Consequence id" />
+                  <Summary Language="Spanish" Value="Id consecutivo" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_UBICACION" comment="Location identifier.&#xA;//&#xA;Identificador de la ubicación." ordinal="3" kind="NUMBER" modelkind="Numeric" size="5" domain="Number">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Location id" />
+                  <FriendlyName Language="Spanish" Value="Id ubicacion" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Location id." />
+                  <Summary Language="Spanish" Value="Id ubicacion." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_TIPO_RECURSO_DNE" comment="Type of resource code.&#xA;//&#xA;Código de tipo de recurso." ordinal="4" kind="NUMBER" modelkind="Numeric" size="5" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Resouce type" />
+                  <FriendlyName Language="Spanish" Value="Tipo de recurso" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Resouce type" />
+                  <Summary Language="Spanish" Value="Tipo de recurso" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="NOMBRE" comment="Sequence name.&#xA;//&#xA;Nombre de la secuencia." ordinal="5" kind="VARCHAR2" modelkind="VarChar" size="30" domain="String" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="DESCRIPCION" comment="Description of the code.&#xA;//&#xA;Descripción del código." ordinal="6" kind="VARCHAR2" modelkind="VarChar" size="100" domain="Descripcion">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Description" />
+                  <FriendlyName Language="Spanish" Value="Descripcion" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Description of the code." />
+                  <Summary Language="Spanish" Value="Descripción del código." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="FECHA_EXPIRACION" comment="Expiration date.&#xA;//&#xA;Fecha de expiración." ordinal="7" kind="DATE" modelkind="DateTime" domain="Datetime" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CLIENTE_PROPIETARIO_PERSONA" comment="Code that identifies the owner of the resource.&#xA;//&#xA;Código que identifica al propietario de la resource." ordinal="8" kind="CHAR" modelkind="Char" size="14" domain="String" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="RecordOwnerID" />
+                  <FriendlyName Language="Spanish" Value="ClavePropietario" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the owner of the resource." />
+                  <Summary Language="Spanish" Value="Código que identifica al propietario del recurso." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CLIENTE_PROPIETARIO_COMPA?IA" comment="Code that identifies the company owner of the resource.&#xA;//&#xA;Código que identifica a la compañía propietaria de la resource." ordinal="9" kind="CHAR" modelkind="Char" size="14" domain="String" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UserCompany" />
+                  <FriendlyName Language="Spanish" Value="CompañíaUsuaria" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code that identifies the user company owner of the information" />
+                  <Summary Language="Spanish" Value="Código que identifica a la compañía usuaria dueña de la información" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="MINIATURA" comment="Thumbnail.&#xA;//&#xA;Thumbnail." ordinal="10" kind="ORDIMAGE" modelkind="Binary" domain="Blob">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" />
+                  <FriendlyName Language="Spanish" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" />
+                  <Summary Language="Spanish" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATIONDATE" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="11" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATORUSERCODE" comment="Code of the user creating  the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea el registro." ordinal="12" kind="NUMBER" modelkind="Numeric" size="9" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreado" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEDATE" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="13" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEUSERCODE" comment="Code of the user creating or updating the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla usuarios." ordinal="14" kind="NUMBER" modelkind="Numeric" size="9" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="RecordStatus" comment="General status of the record.&#xA;//&#xA;Estado general del registro." ordinal="15" kind="CHAR" modelkind="Char" size="1" domain="Estado_Registro" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Record_Status" />
+                  <FriendlyName Language="Spanish" Value="Estado_Registro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Status of the record." />
+                  <Summary Language="Spanish" Value="Estado del registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="RECURSO_DNE_DLI_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="REC_DNE_ENUM_T_REC_FK" foreigntablename="ENUM_TIPO_RECURSO_DNE">
+              <KeyColumns>
+                <ConstraintColumn name="ID_TIPO_RECURSO_DNE" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_TIPO_RECURSO_DNE" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="REC_DNE_TAB_UBI_DNE_FK" foreigntablename="TAB_UBICACION_DNE">
+              <KeyColumns>
+                <ConstraintColumn name="ID_UBICACION" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_UBICACION" />
+              </ForeignColumns>
+            </Constraint>
+            <Constraint name="RECURSO_DNE_DLI_SECUENCIA_DNE_FK" foreigntablename="SECUENCIA_DNE">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="RECURSO_DNE_DLI_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+            <Index name="XIF1RECURSO_DNE_DLI">
+              <Columns>
+                <IndexColumn name="ID_TIPO_RECURSO_DNE" />
+              </Columns>
+            </Index>
+            <Index name="XIF2RECURSO_DNE_DLI">
+              <Columns>
+                <IndexColumn name="ID_UBICACION" />
+              </Columns>
+            </Index>
+            <Index name="XIF3RECURSO_DNE_DLI">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+              </Columns>
+            </Index>
+            <Index name="XIF4RECURSO_DNE_DLI">
+              <Columns>
+                <IndexColumn name="RecordStatus" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Resouce" />
+              <FriendlyName Language="Spanish" Value="Recurso" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend" />
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Resource." />
+              <Summary Language="Spanish" Value="Recurso." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="DNE" />
+            </Modules>
+          </Extend>
+        </Table>
+        <Table name="VIDEO_DLI">
+          <Columns>
+            <Column name="ID_SECUENCIA" comment="Sequence identifier.&#xA;//&#xA;Identificador de la secuencia." ordinal="1" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Sequence id" />
+                  <FriendlyName Language="Spanish" Value="Id secuencia" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Identifier of the sequence." />
+                  <Summary Language="Spanish" Value="Identificador de la secuencia." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="ID_CONSECUTIVO" comment="Identifies the sequence in which the elementes have been inserted into the sequence.&#xA;//&#xA;Identifica la secuencia en el mismo órden en el que los elementos fueron insertados." ordinal="2" kind="NUMBER" modelkind="Numeric" size="10" domain="Number" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Consequence id" />
+                  <FriendlyName Language="Spanish" Value="Id consecutivo" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Consequence id" />
+                  <Summary Language="Spanish" Value="Id consecutivo" />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="VIDEO" comment="Video content.&#xA;//&#xA;Contenido del video." ordinal="3" kind="ORDVIDEO" modelkind="Binary" domain="Blob" nullable="false">
+              <Extend>
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="Video content" />
+                  <FriendlyName Language="Spanish" Value="Contenido del video" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Video content." />
+                  <Summary Language="Spanish" Value="Contenido del video." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATIONDATE" comment="Computer date when the record is created.&#xA;//&#xA;Fecha del computador en que se crea el registro." ordinal="4" kind="DATE" modelkind="DateTime" domain="CreationDate" nullable="false">
+              <Extend behavior="DateCreated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreationDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeCreación" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="CREATORUSERCODE" comment="Code of the user creating  the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea el registro." ordinal="5" kind="NUMBER" modelkind="Numeric" size="9" domain="CreatorUserCode" nullable="false">
+              <Extend behavior="Author">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="CreatorUserCode" />
+                  <FriendlyName Language="Spanish" Value="UserCodeCreado" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating  the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEDATE" comment="Computer date when the record is updated or created.&#xA;//&#xA;Fecha del computador en que se crea o actualiza el registro." ordinal="6" kind="DATE" modelkind="DateTime" domain="UpdateDate" nullable="false">
+              <Extend behavior="DateUpdated">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateDate" />
+                  <FriendlyName Language="Spanish" Value="FechaDeActualizaciónDelRegistro" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Computer date when the record is updated or created." />
+                  <Summary Language="Spanish" Value="Fecha del computador en que se crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+            <Column name="UPDATEUSERCODE" comment="Code of the user creating or updating the record.&#xA;Values related to the users table.&#xA;//&#xA;Código del usuario que crea o actualiza el registro.&#xA;Valores relacionados con la tabla usuarios." ordinal="7" kind="NUMBER" modelkind="Numeric" size="9" domain="UpdateUserCode" nullable="false">
+              <Extend behavior="Update">
+                <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <FriendlyName Language="English" Value="UpdateUserCode" />
+                  <FriendlyName Language="Spanish" Value="CódigoDeUsuarioQueActualiza" />
+                </FriendlyNames>
+                <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+                  <Summary Language="English" Value="Code of the user creating or updating the record." />
+                  <Summary Language="Spanish" Value="Código del usuario que crea o actualiza el registro." />
+                </Summaries>
+              </Extend>
+            </Column>
+          </Columns>
+          <Constraints>
+            <Constraint name="VIDEO_DLI_PK" kind="PrimaryKey">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+            </Constraint>
+            <Constraint name="VIDEO_DLI_RECURSO_DNE_FK" foreigntablename="RECURSO_DNE_DLI">
+              <KeyColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </KeyColumns>
+              <ForeignColumns>
+                <ConstraintColumn name="ID_SECUENCIA" />
+                <ConstraintColumn name="ID_CONSECUTIVO" />
+              </ForeignColumns>
+            </Constraint>
+          </Constraints>
+          <Indexes>
+            <Index name="VIDEO_DLI_PK" primarykey="true" unique="true">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+            <Index name="XIF1VIDEO_DLI">
+              <Columns>
+                <IndexColumn name="ID_SECUENCIA" />
+                <IndexColumn name="ID_CONSECUTIVO" />
+              </Columns>
+            </Index>
+          </Indexes>
+          <Extend Behavior="None" IsGenerated="false">
+            <FriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <FriendlyName Language="English" Value="Video" />
+              <FriendlyName Language="Spanish" Value="Video" />
+            </FriendlyNames>
+            <PluralFriendlyNames xmlns="urn:InMotionGIT.Database.Model.Extend" />
+            <Summaries xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Summary Language="English" Value="Video." />
+              <Summary Language="Spanish" Value="Video." />
+            </Summaries>
+            <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+              <Module Name="Main Subject Area" />
+              <Module Name="DNE" />
+            </Modules>
+          </Extend>
+        </Table>		
+	  </Tables>
+    </ModelSchema>
+  </Schemas>
+  <Extend lookuppattern="^table[0-9]*$">
+    <Modules xmlns="urn:InMotionGIT.Database.Model.Extend">
+      <Module Name="Main Subject Area" />
+      <Module Name="DNE" />
+    </Modules>
+  </Extend>
+</DataSourceModel>

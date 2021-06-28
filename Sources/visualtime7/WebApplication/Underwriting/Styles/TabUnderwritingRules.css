@@ -1,0 +1,79 @@
+﻿legend {
+    all: unset;
+    display: block;
+    -webkit-padding-start: 2px;
+    -webkit-padding-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    font-size: 12px;
+    width: auto;
+    margin-bottom: 0px;
+}
+
+fieldset {
+    all: unset;
+    display: block;
+
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    padding-bottom: 7.5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 4.2px;
+}
+
+#ddlUwRule_progressbar .ui-progressbar-value {
+    background-color: #ccc;
+    /*height: 2px;*/
+}
+
+/*#tabsGeneral ul.nav.nav-tabs > li > a */
+.disable-links {
+    pointer-events: none;
+}
+
+.divSuccess{
+	border-radius: 12px 12px 12px 12px;
+	-moz-border-radius: 12px 12px 12px 12px;
+	-webkit-border-radius: 12px 12px 12px 12px;
+	border: 0px solid #000000;
+	padding:10px;
+}
+
+.required:after {
+    /*label~[required] {*/
+    /*[required] :before {*/
+    content: " *";
+    color: red;
+}
+
+.loadingFog {
+    background: url(../../VTimeNet/images/loader-green.gif);
+    background-position-x: 47%;
+    background-position-y: 47%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+    position: fixed;
+    background-size: 64px 64px;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+}
+
+
+.ui-autocomplete {
+    width:200px;    
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: auto;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 20px;
+} 
+

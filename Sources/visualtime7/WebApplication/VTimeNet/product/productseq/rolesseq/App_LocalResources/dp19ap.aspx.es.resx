@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AnchorForma de cálculoCaption" xml:space="preserve">
+    <value>Forma de cálculo</value>
+    <comment>ID=100099</comment>
+  </data>
+	<data name="AnchorCondicionesCaption" xml:space="preserve">
+    <value>Condiciones</value>
+  </data>
+	<data name="OptCalc_CStr1Caption" xml:space="preserve">
+    <value>Libre</value>
+  </data>
+	<data name="OptCalc_CStr1ToolTip" xml:space="preserve">
+    <value>Indica si el capital es libre para que el usuario lo indique</value>
+  </data>
+	<data name="tcnCacalmulCaption" xml:space="preserve">
+    <value>Múltiplo de</value>
+    <comment>ID=14695</comment>
+  </data>
+	<data name="tcnCacalmulToolTip" xml:space="preserve">
+    <value>Múltiplo de una cantidad</value>
+    <comment>ID=14695</comment>
+  </data>
+	<data name="OptCalc_CStr5Caption" xml:space="preserve">
+    <value>Ilimitado</value>
+  </data>
+	<data name="OptCalc_CStr5ToolTip" xml:space="preserve">
+    <value>Indica si el capital es ilimitado</value>
+  </data>
+	<data name="tcnCapminimCaption" xml:space="preserve">
+    <value>Mínimo</value>
+    <comment>ID=14698</comment>
+  </data>
+	<data name="tcnCapminimToolTip" xml:space="preserve">
+    <value>Capital mínimo</value>
+    <comment>ID=14698</comment>
+  </data>
+	<data name="OptCalc_CStr2Caption" xml:space="preserve">
+    <value>Fijo</value>
+  </data>
+	<data name="OptCalc_CStr2ToolTip" xml:space="preserve">
+    <value>Indica si el capital es fijo</value>
+  </data>
+	<data name="tcnCacalfixCaption" xml:space="preserve">
+    <value>Monto</value>
+    <comment>ID=14694</comment>
+  </data>
+	<data name="tcnCacalfixToolTip" xml:space="preserve">
+    <value>Monto de Capital fijo</value>
+    <comment>ID=14694</comment>
+  </data>
+	<data name="tcnCapmaximCaption" xml:space="preserve">
+    <value>Máximo</value>
+    <comment>ID=14697</comment>
+  </data>
+	<data name="tcnCapmaximToolTip" xml:space="preserve">
+    <value>Capital máximo</value>
+    <comment>ID=14697</comment>
+  </data>
+	<data name="OptCalc_CStr3Caption" xml:space="preserve">
+    <value>%Otra Cobertura</value>
+  </data>
+	<data name="OptCalc_CStr3ToolTip" xml:space="preserve">
+    <value>Indica si el capital corresponde al porcentaje sobre el capital de otra cobertura</value>
+  </data>
+	<data name="tcnCapbaspeCaption" xml:space="preserve">
+    <value>%</value>
+    <comment>ID=14696</comment>
+  </data>
+	<data name="tcnCapbaspeToolTip" xml:space="preserve">
+    <value>Porcentaje de cálculo de Capital, el cual aplica sobre el capital de otra cobertura</value>
+    <comment>ID=14696</comment>
+  </data>
+	<data name="tcnCaMaxPerCaption" xml:space="preserve">
+    <value>% Otra Cobertura</value>
+  </data>
+	<data name="tcnCaMaxPerToolTip" xml:space="preserve">
+    <value>Porcentaje de capital sobre otra cobertura para controlar el máximo permitido</value>
+  </data>
+	<data name="valCacalcovCaption" xml:space="preserve">
+    <value>Cobertura</value>
+    <comment>ID=14693</comment>
+  </data>
+	<data name="valCacalcovToolTip" xml:space="preserve">
+    <value>Cobertura sobre la cual aplica el porcentaje de cálculo de capital</value>
+    <comment>ID=14693</comment>
+  </data>
+	<data name="valCaMaxCovCaption" xml:space="preserve">
+    <value>Cobertura</value>
+  </data>
+	<data name="valCaMaxCovToolTip" xml:space="preserve">
+    <value>Código de la cobertura a aplicar porcentaje para obtener el máximo permitido</value>
+  </data>
+	<data name="OptCalc_CStr4Caption" xml:space="preserve">
+    <value>Rutina</value>
+  </data>
+	<data name="OptCalc_CStr4ToolTip" xml:space="preserve">
+    <value>Indica si el capital se calcula en base a una rutina</value>
+  </data>
+	<data name="tctRouprcalCaption" xml:space="preserve">
+    <value>Rutina</value>
+  </data>
+	<data name="tctRouprcalToolTip" xml:space="preserve">
+    <value>Rutina de cálculo de capital</value>
+  </data>
+	<data name="chkLegToolTip" xml:space="preserve">
+    <value>Indica si aplica tope de capital por evaluaciòn</value>
+  </data>
+	<data name="AnchorCaption" xml:space="preserve">
+    <value>Aplica tope de capital por evaluación?</value>
+  </data>
+	<data name="tctROU_COND_CAPCaption" xml:space="preserve">
+    <value>Rutina</value>
+  </data>
+	<data name="tctROU_COND_CAPToolTip" xml:space="preserve">
+    <value>Rutina para validación de condiciones especiales de capital.</value>
+  </data>
+	<data name="AnchorCambiosCaption" xml:space="preserve">
+    <value>Cambios</value>
+    <comment>ID=100101</comment>
+  </data>
+	<data name="chkCh_typ_capAddCaption" xml:space="preserve">
+    <value>Aumentar</value>
+  </data>
+	<data name="chkCh_typ_capAddToolTip" xml:space="preserve">
+    <value>Indica si se permite aumentar el capita</value>
+  </data>
+	<data name="tcnRatecapaddCaption" xml:space="preserve">
+    <value>%</value>
+  </data>
+	<data name="tcnRatecapaddToolTip" xml:space="preserve">
+    <value>Porcentaje de aumento permitido para el capital</value>
+  </data>
+	<data name="tcnChcaplevCaption" xml:space="preserve">
+    <value>Nivel de usuario</value>
+  </data>
+	<data name="tcnChcaplevToolTip" xml:space="preserve">
+    <value>Nivel de Usuario para alterar el capital</value>
+  </data>
+	<data name="chkCh_typ_capSubCaption" xml:space="preserve">
+    <value>Disminuir</value>
+  </data>
+	<data name="chkCh_typ_capSubToolTip" xml:space="preserve">
+    <value>Indica si se permite disminuir el capita</value>
+  </data>
+	<data name="tcnRatecapsubCaption" xml:space="preserve">
+    <value>%</value>
+  </data>
+	<data name="tcnRatecapsubToolTip" xml:space="preserve">
+    <value>Porcentaje de disminución permitido para el capital</value>
+  </data>
+	<data name="AnchorCambios2Caption" xml:space="preserve">
+    <value>Endosos</value>
+    <comment>ID=100101</comment>
+  </data>
+	<data name="tcnQmonth_vigCaption" xml:space="preserve">
+    <value>Vigencia mínima</value>
+  </data>
+	<data name="tcnQmonth_vigToolTip" xml:space="preserve">
+    <value>Cantidad de meses de vigencia de la póliza, para permitir el endoso de capital</value>
+  </data>
+	<data name="tcnQbetweenmodCaption" xml:space="preserve">
+    <value>Periodo mínimo</value>
+  </data>
+	<data name="tcnQbetweenmodToolTip" xml:space="preserve">
+    <value>Cantidad mínima de meses que deben transcurrir antes de poder realizar un nuevo endoso de capital</value>
+  </data>
+	<data name="tcnQmax_modCaption" xml:space="preserve">
+    <value>Cantidad máxima</value>
+  </data>
+	<data name="tcnQmax_modToolTip" xml:space="preserve">
+    <value>Indica la cantidad de modificaciones que se pueden realizar en un año</value>
+  </data>
+</root>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.General.Activities
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.General.Activities.Helpers.Utility">
+ <summary>
+ Utility de soporte a los workflows
+ </summary>
+</member>
+<member name="M:InMotionGIT.General.Activities.Helpers.Utility.ExtractContextInstanceFromWorkflowDataContext(System.Activities.WorkflowDataContext)">
+ <summary>
+ Devuelve la instancia de la clase context usada como parámetro del workflow.
+ </summary>
+ <param name="dataContext">Instancia del tipo dataContext del workflow</param>
+ <returns>En caso de existir el argumento context se retorna la instancia, en caso contrario se retorna nulo</returns>
+</member>
+<member name="M:InMotionGIT.General.Activities.Helpers.Utility.ExtractContextInstanceFromWorkflowDataContext(System.Activities.WorkflowDataContext,System.Collections.Generic.Dictionary{System.String,System.Object}@)">
+ <summary>
+ Devuelve la instancia de la clase context usada como parámetro del workflow.
+ </summary>
+ <param name="dataContext">Instancia del tipo dataContext del workflow</param>
+ <param name="workflowProperties">Lista de propiedades del workflow a ser llenada por la función</param>
+ <returns>En caso de existir el argumento context se retorna la instancia, en caso contrario se retorna nulo</returns>
+</member>
+</members>
+</doc>

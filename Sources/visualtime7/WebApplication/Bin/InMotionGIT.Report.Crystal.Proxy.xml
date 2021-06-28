@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Report.Crystal.Proxy
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,System.String,System.Int32,System.Int32,System.Int64,System.Int32,System.DateTime)">
+ <summary>
+ Ejecuta un reporte del tipo “Crystal Report” y genera el resultado en formato PDF.
+ </summary>
+ <param name="reportFileName">Nombre del archivo de “Crystal Report”.</param>
+ <param name="urlMode">Indica si la ruta a ser retornada debe ser el tipo URL o en caso contrario una ruta física en el servidor.</param>
+ <param name="viewMode"></param>   
+ <param name="recordType">Tipo de registro.</param>
+ <param name="lineOfBusiness">Código del ramo comercial.</param>
+ <param name="productCode">Código del producto.</param>
+ <param name="policyID">Número que identifica la póliza/cotización/solicitud.</param>
+ <param name="certificateID">Número del certificado.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Dependiendo del parámetro “urlMode” puede ser una dirección “URL” para acceder al PDF generado o la ruta física en el servidor.</returns>
+ <remarks>En caso de existir algún problema con la ejecución del reporte el resultado de la funciona estará vacío y en el log del servidor quedara registra el detalle del error.</remarks>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Ejecuta un reporte del tipo “Crystal Report” y genera el resultado en formato PDF.
+ </summary>
+ <param name="reportFileName">Nombre del archivo de “Crystal Report”.</param>
+ <param name="urlMode">Indica si la ruta a ser retornada debe ser el tipo URL o en caso contrario una ruta física en el servidor.</param>
+ <param name="viewMode"></param>
+ <param name="procParamater1"></param>
+ <param name="procParamater2"></param>
+ <param name="procParamater3"></param>
+ <param name="procParamater4"></param>
+ <param name="procParamater5"></param>
+ <param name="procParamater6"></param>
+ <param name="procParamater7"></param>
+ <returns>Dependiendo del parámetro “urlMode” puede ser una dirección “URL” para acceder al PDF generado o la ruta física en el servidor.</returns>
+ <remarks>En caso de existir algún problema con la ejecución del reporte el resultado de la funciona estará vacío y en el log del servidor quedara registra el detalle del error.</remarks>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+ <summary>
+ Ejecuta un reporte del tipo “Crystal Report” y genera el resultado en formato PDF.
+ </summary>
+ <param name="reportFileName">Nombre del archivo de “Crystal Report”.</param>
+ <param name="urlMode">Indica si la ruta a ser retornada debe ser el tipo URL o en caso contrario una ruta física en el servidor.</param>
+ <param name="viewMode"></param>
+ <param name="reportParameters">Lista de parámetro del tipo reporte.</param>
+ <param name="procedureParameters">Lista de parámetro del procedimiento almacenado.</param>
+ <returns>Dependiendo del parámetro “urlMode” puede ser una dirección “URL” para acceder al PDF generado o la ruta física en el servidor.</returns>
+ <remarks>En caso de existir algún problema con la ejecución del reporte el resultado de la funciona estará vacío y en el log del servidor quedara registra el detalle del error.</remarks>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,System.String)">
+ Use by Code activity
+ <summary>
+ Ejecuta un reporte del tipo “Crystal Report” usando contrato de datos como Dataset y genera el resultado en formato PDF.
+ </summary>
+ <param name="reportFileName">Nombre del archivo de “Crystal Report”.</param>
+ <param name="urlMode">Indica si la ruta a ser retornada debe ser el tipo URL o en caso contrario una ruta física en el servidor.</param>
+ <param name="viewMode"></param>
+ <param name="reportContract">Lista que contiene el contrato del reporte.</param>
+ <returns>Dependiendo del parámetro “urlMode” puede ser una dirección “URL” para acceder al PDF generado o la ruta física en el servidor.</returns>
+ <remarks>En caso de existir algún problema con la ejecución del reporte el resultado de la funciona estará vacío y en el log del servidor quedara registra el detalle del error.</remarks>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,InMotionGIT.Report.Crystal.Designs.ReportCargo.ContractsCargo)">
+ Use by Code activity
+ <summary>
+ Ejecuta un reporte del tipo “Crystal Report” usando contrato de datos como Dataset y genera el resultado en formato PDF.
+ </summary>
+ <param name="reportFileName">Nombre del archivo de “Crystal Report”.</param>
+ <param name="urlMode">Indica si la ruta a ser retornada debe ser el tipo URL o en caso contrario una ruta física en el servidor.</param>
+ <param name="viewMode"></param>
+ <param name="reportCargo">Lista que contiene el contrato del reporte.</param>
+ <returns>Dependiendo del parámetro “urlMode” puede ser una dirección “URL” para acceder al PDF generado o la ruta física en el servidor.</returns>
+ <remarks>En caso de existir algún problema con la ejecución del reporte el resultado de la funciona estará vacío y en el log del servidor quedara registra el detalle del error.</remarks>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.Execute(System.String,System.Boolean,System.Boolean,InMotionGIT.Report.Crystal.Designs.ReportCargo.ContractsCargoCollection)">
+ Use by Code activity
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.PhysicalToURL(System.String,System.Boolean)">
+ <summary>
+ Permite convertir el resultado de la ejeucion de un reporte con urlMode en false a un url validado para descarga o visualización
+ </summary>
+ <param name="fileName"></param>
+ <param name="viewMode"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Report.Crystal.Proxy.Client.SetDateString(System.DateTime)">
+ <summary>
+ Método que permite transformar una fecha en formato de BO para reportes.
+ </summary>
+ <param name="realDate">Fecha a transformar.</param>
+ <returns>Fecha formateada de tipo string.</returns>
+</member>
+</members>
+</doc>

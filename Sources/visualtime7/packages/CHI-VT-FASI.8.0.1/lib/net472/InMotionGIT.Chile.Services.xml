@@ -1,0 +1,751 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Chile.Services
+</name>
+</assembly>
+<members>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Base.WithError">
+ <summary>
+ With Error
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Base.ErrorMessage">
+ <summary>
+ Error Message
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Patente">
+ <summary>
+ PatenteVeh
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Digito">
+ <summary>
+ DigPatente
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Marca">
+ <summary>
+ MarcaVeh
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Modelo">
+ <summary>
+ ModeloVeh
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Ano">
+ <summary>
+ AnoFab
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Tipo">
+ <summary>
+ TipoVeh
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Color">
+ <summary>
+ ColorVeh
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.NroMotor">
+ <summary>
+ NroMotor
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.NroChassis">
+ <summary>
+ NroChasisVin
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.NroSerie">
+ <summary>
+ NroSerie
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.Origen">
+ <summary>
+ Origen
+ </summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.Contracts.Vehicle.FechaActualizacion">
+ <summary>
+ FechaActualizacion
+ </summary>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.SignedPolicy.ChangePaymentInfo(InMotionGIT.Chile.Entity.Contracts.Webpay.SOAPSignedPolicy)">
+ <summary>
+ Permite la actualización de la información relacionada con el pago
+ </summary>
+ <param name="instance">Instancia de la clase 'SOAPSignedPolicy' con los datos a ser actualizados</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.SignedPolicy.ChangePaymentInfoWithStatus(InMotionGIT.Chile.Entity.Contracts.Webpay.SOAPSignedPolicy)">
+ <summary>
+ Permite la actualización de la información relacionada con el pago
+ </summary>
+ <param name="instance">Instancia de la clase 'SOAPSignedPolicy' con los datos a ser actualizados</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.SignedPolicy.ChangeStatus(System.Int32,System.Int32,System.String)">
+ <summary>
+ Permite la actualización del estado del procesamiento para una orden de compra
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.Tracking.GetIPRequest">
+ <summary>
+ Get IP ot the client request
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.WebPay.Confirm(System.Web.HttpContext,System.String,System.String,System.String)">
+ <summary>
+ Confirma que la operación realizada por medio de WebPay es valida
+ </summary>
+ <param name="context">Contexto de ejecucion para la solicitud HTTP</param>
+ <param name="cgipath">Ruta donde esta ubicado el cgi de WebPay</param>
+ <param name="temppath">Ruta a ser usada como carpeta temporal</param>
+ <param name="webPaySessionPath">Ruta usada para alamacenar las session de webpay</param>
+ <returns>Retorna verdadero en caso de que la operación sea valida</returns>
+ <remarks>
+            If InMotionGIT.Chile.Services.Helpers.Webpay.Confirm(HttpContext.Current,
+                                                                 "C:\VisualTIMENet\WebApplication\cgi-bin",
+                                                                 "C:\VisualTIMENet\Temp\WebPayCheckMac",
+                                                                 "C:\VisualTIMENet\Temp\WebPaySession") Then
+                result = "ACEPTADO"
+            Else
+                result = "RECHAZADO"
+            End If
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.WebPay.CheckMac(System.Web.HttpContext,System.String,System.String)">
+ <summary>
+ Ejecuta el CheckMac necesario para validar un operación de WebPay
+ </summary>
+ <param name="context">Contexto de ejecucion para la solicitud HTTP</param>
+ <param name="cgipath">Ruta donde esta ubicado el cgi de WebPay</param>
+ <param name="temppath">Ruta a ser usada como carpeta temporal</param>
+ <returns>Retorna el texto 'CORRECTO' en caso de que la verificación sea valida</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.WebPay.ExecuteCreatePolicyAccordingSaleType(System.Int32,System.String)">
+ <summary>
+ Recupera los datos de la forma y ejecuta el workflow para la emision de la poliza.
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <param name="webPaySessionPath">Ruta usada para alamacenar las session de webpay</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Helpers.WebPay.RetrieveRiskAndAutoInformationFromWebPaySession(System.Int32,System.String,InMotionGIT.Chile.Entity.Contracts.Data.Sale@,System.Int32@)">
+ <summary>
+ Recupera los datos de la forma almacenados en la session de webpay.
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <param name="webPaySessionPath">Ruta usada para alamacenar las session de webpay</param>
+ <param name="sale">Instancia con la informacion del automovil</param>
+ <param name="typeSale">Tipo de venta</param>
+ <returns>Verdadero en caso de conseguir cargar la información, de lo contrario falso</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.AACHQueryVehicleInformation(System.String)">
+ <summary>
+ Buscar los datos asociados a una patente y los devuelve bajo una estructura de la AACH
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.RegisterFormat(System.String)">
+ <summary>
+ Permite dar formato a una numero de patente
+ </summary>
+ <param name="register">Patente a formatear</param>
+ <returns>Patente formateada</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.AACHQueryVTVehicleInformation(System.String,System.String)">
+ <summary>
+ Buscar los datos asociados a una patente y los devuelve bajo la estructura de automovil usada por visualtime
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <param name="digit">Digito verificador</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.SignedPolicyRetrieveByPurchaseOrder(System.Int32)">
+ <summary>
+ Permite recuperar un registro de la tabla 'SOAP_SIGNED_POLICIES' basado en el número de orden de compra
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <returns>Instancia de la clase 'SOAPSignedPolicy' con la información de un registro de la tabla</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.WebPaySessionRetrieveRiskAndAuto(System.Int32,InMotionGIT.Chile.Entity.Contracts.Data.Sale@,System.Int32@)">
+ <summary>
+ Recupera los datos de la forma almacenados en la session de webpay.
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <param name="sale">Instancia con la informacion del automovil</param>
+ <param name="typeSale">Tipo de venta</param>
+ <returns>Verdadero en caso de conseguir cargar la información, de lo contrario falso</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.SignedPolicySetup(InMotionGIT.Chile.Entity.Contracts.Data.Sale,System.Int32)">
+ <summary>
+ Crear el registro inicial al momento de enviar la informacion a webpay.
+ </summary>
+ <param name="sale">Instancia con la informacion del riesgo</param>
+ <param name="status">Estado del proceso</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.WebPaySessionStorageRiskAndAuto(InMotionGIT.Chile.Entity.Contracts.Data.Sale)">
+ <summary>
+ Alacena en disco los datos ingresados en el formulario
+ </summary>
+ <param name="sale">Instancia con la informacion del riesgo</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.WebPayAmountFormat(System.Decimal)">
+ <summary>
+ Permite dar formato al monto enviado al proceso de WebPay
+ </summary>
+ <param name="amount">Monto a ser formateado</param>
+ <returns>Monto con dos ceros agregados al final</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.SignedPolicyGetPDF(System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Permite recuperar el PDF almacenadano en la tabla 'SOAP_SIGNED_POLICIES' y almacenarlo en disco.
+ </summary>
+ <param name="lineOfBusiness">Cóodigo del ramo</param>
+ <param name="productCode">Cóodigo del producto</param>
+ <param name="policyID">Número de póliza</param>
+ <param name="licensePlate">Patente del vehículo</param>
+ <returns>Información del PDF en disco</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.SignedPolicyChangePolicyInfo(InMotionGIT.Chile.Entity.Contracts.AACH.Folio,System.Int64,System.String,System.DateTime,System.DateTime,System.String)">
+ <summary>
+ Permite la actualización de la información relacionada con la poliza
+ </summary>
+ <param name="folio"></param>
+ <param name="purchaseOrder"></param>
+ <param name="clientID"></param>
+ <param name="EffectiveDate"></param>
+ <param name="EndingDate"></param>
+ <param name="result"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.CruzBlancaRetrieveVTVehicleInformation(System.String,System.String,System.Int32,InMotionGIT.Client.Entity.Contracts.Client@)">
+ <summary>
+ Buscar los datos asociados a una patente en un servicio provisto por Cruz Blanca y los devuelve bajo la estructura de automovil usada por visualtime
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <param name="digit">Digito verificador</param>
+ <param name="typeSale">Indica el canal de venta o módulo del SOAP</param>
+ <param name="client">Información del propietario</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.CruzBlancaChangeTicketToUsed(System.Int32)">
+ <summary>
+ Permite validar un numero de ticket para descuento.s
+ </summary>
+ <param name="ticketNumber">Numero de ticket</param>
+ <returns>Respuesta del servicio</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Manager.CruzBlancaValidateTicket(System.Int32)">
+ <summary>
+ Permite cambiar el estado de un numero de ticket para descuento.
+ </summary>
+ <param name="ticketNumber">Numero de ticket</param>
+ <returns>Respuesta del servicio</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.AACHQueryVehicleInformation(System.String)">
+ <summary>
+ Buscar los datos asociados a una patente y los devuelve bajo una estructura de la AACH
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.AACHQueryVTVehicleInformation(System.String,System.String)">
+ <summary>
+ Buscar los datos asociados a una patente y los devuelve bajo la estructura de automovil usada por visualtime
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <param name="digit">Digito verificador</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.RegisterFormat(System.String)">
+ <summary>
+ Permite dar formato a una numero de patente
+ </summary>
+ <param name="register">Patente a formatear</param>
+ <returns>Patente formateada</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.SignedPolicyRetrieveByPurchaseOrder(System.Int32)">
+ <summary>
+ Permite recuperar un registro de la tabla 'SOAP_SIGNED_POLICIES' basado en el número de orden de compra
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <returns>Instancia de la clase 'SOAPSignedPolicy' con la información de un registro de la tabla</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.SignedPolicySetup(InMotionGIT.Chile.Entity.Contracts.Data.Sale,System.Int32)">
+ <summary>
+ Crear el registro inicial al momento de enviar la informacion a webpay.
+ </summary>
+ <param name="sale">Instancia con la informacion del riesgo</param>
+ <param name="status">Estado del proceso</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.SignedPolicyGetPDF(System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Permite recuperar el PDF almacenadano en la tabla 'SOAP_SIGNED_POLICIES' y almacenarlo en disco.
+ </summary>
+ <param name="lineOfBusiness">Cóodigo del ramo</param>
+ <param name="productCode">Cóodigo del producto</param>
+ <param name="policyID">Número de póliza</param>
+ <param name="licensePlate">Patente del vehículo</param>
+ <returns>Información del PDF en disco</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.SignedPolicyChangePolicyInfo(InMotionGIT.Chile.Entity.Contracts.AACH.Folio,System.Int64,System.String,System.DateTime,System.DateTime,System.String)">
+ <summary>
+ Permite la actualización de la información relacionada con la poliza
+ </summary>
+ <param name="folio"></param>
+ <param name="purchaseOrder"></param>
+ <param name="clientID"></param>
+ <param name="EffectiveDate"></param>
+ <param name="EndingDate"></param>
+ <param name="result"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.WebPayAmountFormat(System.Decimal)">
+ <summary>
+ Permite dar formato al monto enviado al proceso de WebPay
+ </summary>
+ <param name="amount">Monto a ser formateado</param>
+ <returns>Monto con dos ceros agregados al final</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.WebPaySessionRetrieveRiskAndAuto(System.Int32,InMotionGIT.Chile.Entity.Contracts.Data.Sale@,System.Int32@)">
+ <summary>
+ Recupera los datos de la forma almacenados en la session de webpay.
+ </summary>
+ <param name="purchaseOrder">Número de orden de compra</param>
+ <param name="sale">Instancia con la informacion del automovil</param>
+ <param name="typeSale">Tipo de venta</param>
+ <returns>Verdadero en caso de conseguir cargar la información, de lo contrario falso</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.WebPaySessionStorageRiskAndAuto(InMotionGIT.Chile.Entity.Contracts.Data.Sale)">
+ <summary>
+ Alacena en disco los datos ingresados en el formulario
+ </summary>
+ <param name="sale">Instancia con la informacion del riesgo</param>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.CruzBlancaRetrieveVTVehicleInformation(System.String,System.String,System.Int32,InMotionGIT.Client.Entity.Contracts.Client@)">
+ <summary>
+ Buscar los datos asociados a una patente en un servicio provisto por Cruz Blanca y los devuelve bajo la estructura de automovil usada por visualtime
+ </summary>
+ <param name="licensePlate">Patente del vehículo</param>
+ <param name="digit">Digito verificador</param>
+ <param name="typeSale">Indica el canal de venta o módulo del SOAP</param>
+ <param name="client">Información del propietario</param>
+ <returns>Datos del vehiculo</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.CruzBlancaValidateTicket(System.Int32)">
+ <summary>
+ Permite validar un numero de ticket para descuento.s
+ </summary>
+ <param name="ticketNumber">Numero de ticket</param>
+ <returns>Respuesta del servicio</returns>
+</member>
+<member name="M:InMotionGIT.Chile.Services.Interfaces.IManager.CruzBlancaChangeTicketToUsed(System.Int32)">
+ <summary>
+ Permite cambiar el estado de un numero de ticket para descuento.
+ </summary>
+ <param name="ticketNumber">Numero de ticket</param>
+ <returns>Respuesta del servicio</returns>
+</member>
+<member name="T:InMotionGIT.Chile.Services.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Chile.Services.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.#ctor">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTDespachoCompleted">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTConsultaWebCompleted">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTDespacho(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTDespachoAsync(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTDespachoAsync(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTConsultaWeb(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTConsultaWebAsync(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.GeneraOTConsultaWebAsync(InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.wsWFL.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.nro_poliza">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.patente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.rut">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.nombre">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.apellido_paterno">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.apellido_materno">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.email">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.direccion">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.rut_compania">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.user">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otDespacho.pass">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.nombres">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.rut">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.codarea">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.telefono">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.ciudad">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.email">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.codmateria">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.otConsultaWeb.mensaje">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.respuesta">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.respuesta.CodError">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.respuesta.Error">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTDespachoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTDespachoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTDespachoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTConsultaWebCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTConsultaWebCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.cl.mutualdeseguros.kcct.GeneraOTConsultaWebCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.#ctor">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTDespachoCompleted">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTConsultaWebCompleted">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTSiniestroCompleted">
+<remarks/>
+</member>
+<member name="E:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.ActualizaOTSiniestroCompleted">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTDespacho(InMotionGIT.Chile.Services.mutualdeseguros.otDespacho)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTDespachoAsync(InMotionGIT.Chile.Services.mutualdeseguros.otDespacho)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTDespachoAsync(InMotionGIT.Chile.Services.mutualdeseguros.otDespacho,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTConsultaWeb(InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTConsultaWebAsync(InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTConsultaWebAsync(InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTSiniestro(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTSiniestroAsync(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.GeneraOTSiniestroAsync(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.ActualizaOTSiniestro(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.ActualizaOTSiniestroAsync(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.ActualizaOTSiniestroAsync(InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro,System.Object)">
+<remarks/>
+</member>
+<member name="M:InMotionGIT.Chile.Services.mutualdeseguros.wsWFL.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.nro_poliza">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.patente">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.rut">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.nombre">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.apellido_paterno">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.apellido_materno">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.email">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.direccion">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.rut_compania">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.user">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otDespacho.pass">
+<comentarios/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.nrOT">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.rutReclamante">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.dvReclamante">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.nombreReclamante">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoPatReclamante">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoMatReclamante">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.rutSiniestrado">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.dvSiniestrado">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.nombreSiniestrado">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoPatSiniestrado">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoMatSiniestrado">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.rutTitular">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.dvTitular">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.nombreTitular">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoPatTitular">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.apellidoMatTitular">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.fechaSiniestro">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.nrPoliza">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.codRamo">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.codProducto">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.patente">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.rut_compania">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.user">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otSiniestro.pass">
+<comentarios/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.rut">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.nombre">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.ciudad">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.cod_area">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.fono">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.email">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.cod_materia">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.mensaje">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.rut_compania">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.user">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.otConsultaWeb.pass">
+<comentarios/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.respuesta">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.respuesta.CodError">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.respuesta.Error">
+<comentarios/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.respuesta.NrOT">
+<comentarios/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTDespachoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTDespachoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTDespachoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTConsultaWebCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTConsultaWebCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTConsultaWebCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTSiniestroCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTSiniestroCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.GeneraOTSiniestroCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.ActualizaOTSiniestroCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Chile.Services.mutualdeseguros.ActualizaOTSiniestroCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Chile.Services.mutualdeseguros.ActualizaOTSiniestroCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

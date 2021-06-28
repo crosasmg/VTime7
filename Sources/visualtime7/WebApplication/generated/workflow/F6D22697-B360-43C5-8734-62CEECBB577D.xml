@@ -1,0 +1,123 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="AppendInsuranceAdjusterRoleUW" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:ica1="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica2="clr-namespace:InMotionGIT.Client.Activities;assembly=InMotionGIT.Client.Activities" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icce="clr-namespace:InMotionGIT.Common.Contracts.Errors;assembly=InMotionGIT.Common.Contracts" xmlns:iccp="clr-namespace:InMotionGIT.Common.Contracts.Process;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:igecg="clr-namespace:InMotionGIT.General.Entity.Contracts.General;assembly=InMotionGIT.General.Entity.Contracts" xmlns:iiec="clr-namespace:InMotionGIT.Intermedia.Entity.Contracts;assembly=InMotionGIT.Intermedia.Entity.Contracts" xmlns:iieca="clr-namespace:InMotionGIT.Intermedia.Entity.Contracts.Activities;assembly=InMotionGIT.Intermedia.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:ipec1="clr-namespace:InMotionGIT.Product.Entity.Contracts;assembly=InMotionGIT.Product.Entity.Contracts" xmlns:iq="clr-namespace:InMotionGIT.Questionnaires;assembly=InMotionGIT.Questionnaires" xmlns:iua="clr-namespace:InMotionGIT.Underwriting.Activities;assembly=InMotionGIT.Underwriting.Activities" xmlns:iuc="clr-namespace:InMotionGIT.Underwriting.Contracts;assembly=InMotionGIT.Underwriting.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic" xmlns:s="clr-namespace:System;assembly=System" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=System.ServiceModel" xmlns:s4="clr-namespace:System;assembly=System.AddIn" xmlns:s5="clr-namespace:System;assembly=System.Drawing.Design" xmlns:s6="clr-namespace:System;assembly=System.Design" xmlns:s7="clr-namespace:System;assembly=System.Configuration.Install" xmlns:s8="clr-namespace:System;assembly=System.DirectoryServices" xmlns:s9="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs2="clr-namespace:System.Runtime.Serialization;assembly=System.Workflow.ComponentModel" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UnderwritingCase" Type="InOutArgument(iuc:UnderwritingCase)" />
+    <x:Property Name="RoleInCase" Type="InOutArgument(iuc:RoleInCase)" />
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="ConsumerInformation" Type="InArgument(iccp:ConsumerInformation)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1634,2970</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="AppendInsuranceAdjusterRoleUW" sap:VirtualizedContainerService.HintSize="1594,2930" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">830,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">860,77.5 860,107.5 857.5,107.5 857.5,141.5</av:PointCollection>
+        <x:Double x:Key="Height">2894</x:Double>
+        <x:Double x:Key="Width">1580</x:Double>
+      </scg2:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">776,141.5</av:Point>
+            <av:Size x:Key="ShapeSize">163,132</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">857.5,273.5 857.5,303.5 860,303.5 860,321</av:PointCollection>
+          </scg2:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica1:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163,132">
+          <ica1:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="AppendInsuranceAdjusterRoleUW. Caso { Value /UnderwritingCase/UnderwritingCaseID }" />
+            <icd:LocalizedString Language="2" Value="ProcessRequestOfLifePolicyStandard. { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }" />
+            <icd:LocalizedString Language="3" Value="ProcessRequestOfLifePolicyStandard. { Value /RiskInformation/PrimaryInsured/Client/FirstName } { Value /RiskInformation/PrimaryInsured/Client/LastName } { Value /RiskInformation/PrimaryInsured/Client/LastName2 }" />
+          </ica1:ProcessIdentifier.Identifier>
+        </ica1:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">739,321</av:Point>
+                <av:Size x:Key="ShapeSize">242,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">860,381 860,439</av:PointCollection>
+              </scg2:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="AssignClientID3006180010" sap:VirtualizedContainerService.HintSize="242,60">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[RoleInCase.ClientID]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">3006180010</InArgument>
+              </Assign.Value>
+            </Assign>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">760,439</av:Point>
+                    <av:Size x:Key="ShapeSize">200,22</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">860,461 860,527</av:PointCollection>
+                  </scg2:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ica2:Retrieve EffectiveDate="{x:Null}" Email="{x:Null}" Exist="{x:Null}" AddressOnly="False" Client="[RoleInCase.Client]" ClientId="[RoleInCase.ClientID]" DisplayName="RetrieveClientOfPerito" sap:VirtualizedContainerService.HintSize="200,22" />
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">723.5,527</av:Point>
+                        <av:Size x:Key="ShapeSize">273,106</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">860,633 860,699</av:PointCollection>
+                      </scg2:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteBuscaMailEnAddressService" sap:VirtualizedContainerService.HintSize="273,106" ModelId="0e106af1-3897-4b3b-a78d-39ef9f81ce9d" Release="3" Tracking="True" WorkflowPath="BuscaMailEnAddressService">
+                      <icag:ExecuteWorkflow.ChildArguments>
+                        <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                        <InArgument x:TypeArguments="icec:Client" x:Key="Client">[RoleInCase.Client]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="eMail">[RoleInCase.Client.eMailAddressDefault]</OutArgument>
+                      </icag:ExecuteWorkflow.ChildArguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg2:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </icag:ExecuteWorkflow>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">760,699</av:Point>
+                            <av:Size x:Key="ShapeSize">200,22</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">860,721 860,789</av:PointCollection>
+                          </scg2:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <iua:UWCaseAddRole Client="[RoleInCase.Client]" DisplayName="AgregaRolPeritoAlCaso" sap:VirtualizedContainerService.HintSize="200,22" Role="Professional" RoleInCase="[RoleInCase]" UnderwritingCase="[UnderwritingCase]" />
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg2:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">760,789</av:Point>
+                                <av:Size x:Key="ShapeSize">200,22</av:Size>
+                              </scg2:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <iua:SaveUWCase RiskInformation="{x:Null}" AuditUserIdentify="9998" DisplayName="GuardaCasoConRequerimientosProveedores" sap:VirtualizedContainerService.HintSize="200,22" UnderwritingCase="[UnderwritingCase]" />
+                          </FlowStep>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+  </Flowchart>
+</Activity>

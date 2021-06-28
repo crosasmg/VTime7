@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NCONSEC_Caption" xml:space="preserve">
+    <value>NCONSEC</value>
+  </data>
+  <data name="NCONSEC_ToolTip" xml:space="preserve">
+    <value> Consecutive number</value>
+  </data>
+  <data name="NCONSEC.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NCONSEC" is required.</value>
+  </data>
+  <data name="SCERTYPE_Caption" xml:space="preserve">
+    <value>SCERTYPE</value>
+  </data>
+  <data name="SCERTYPE_ToolTip" xml:space="preserve">
+    <value>Type of Record.</value>
+  </data>
+  <data name="SCERTYPE.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "SCERTYPE" is required.</value>
+  </data>
+  <data name="cbeBranch_Caption" xml:space="preserve">
+    <value>NBRANCH</value>
+  </data>
+  <data name="cbeBranch_ToolTip" xml:space="preserve">
+    <value>Code of the line of business.</value>
+  </data>
+  <data name="cbeBranch.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NBRANCH" is required.</value>
+  </data>
+  <data name="valProduct_Caption" xml:space="preserve">
+    <value>NPRODUCT</value>
+  </data>
+  <data name="valProduct_ToolTip" xml:space="preserve">
+    <value>Code of the product.</value>
+  </data>
+  <data name="valProduct.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NPRODUCT" is required.</value>
+  </data>
+  <data name="NPOLICY_Caption" xml:space="preserve">
+    <value>NPOLICY</value>
+  </data>
+  <data name="NPOLICY_ToolTip" xml:space="preserve">
+    <value>Number identifying the Policy/Quotation/Application.</value>
+  </data>
+  <data name="NPOLICY.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NPOLICY" is required.</value>
+  </data>
+  <data name="NCERTIF_Caption" xml:space="preserve">
+    <value>NCERTIF</value>
+  </data>
+  <data name="NCERTIF_ToolTip" xml:space="preserve">
+    <value>Number identifying the certificate.</value>
+  </data>
+  <data name="NCERTIF.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NCERTIF" is required.</value>
+  </data>
+  <data name="NTYPE_Caption" xml:space="preserve">
+    <value>Type of Element</value>
+  </data>
+  <data name="NTYPE_ToolTip" xml:space="preserve">
+    <value>Type of element.</value>
+  </data>
+  <data name="DEFFECTDATE_Caption" xml:space="preserve">
+    <value>DEFFECTDATE</value>
+  </data>
+  <data name="DEFFECTDATE_ToolTip" xml:space="preserve">
+    <value>Fecha de Efecto</value>
+  </data>
+  <data name="DEFFECTDATE.PropertiesDateEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "DEFFECTDATE" is required.</value>
+  </data>
+  <data name="NSECTION_Caption" xml:space="preserve">
+    <value>Type Section</value>
+  </data>
+  <data name="NSECTION_ToolTip" xml:space="preserve">
+    <value>Section of the electronic equipment.</value>
+  </data>
+  <data name="SDESCRIPTION_Caption" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SDESCRIPTION_ToolTip" xml:space="preserve">
+    <value>Description of the electronic equipment.</value>
+  </data>
+  <data name="NCAPITAL_Caption" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="NCAPITAL_ToolTip" xml:space="preserve">
+    <value>Capital of the machine.</value>
+  </data>
+  <data name="DCOMPDATE_Caption" xml:space="preserve">
+    <value>DCOMPDATE</value>
+  </data>
+  <data name="DCOMPDATE_ToolTip" xml:space="preserve">
+    <value>Computer date</value>
+  </data>
+  <data name="DCOMPDATE.PropertiesDateEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "DCOMPDATE" is required.</value>
+  </data>
+  <data name="NUSERCODE_Caption" xml:space="preserve">
+    <value>NUSERCODE</value>
+  </data>
+  <data name="NUSERCODE_ToolTip" xml:space="preserve">
+    <value>Code of the user</value>
+  </data>
+  <data name="NUSERCODE.PropertiesTextEdit.ValidationSettings_ErrorText" xml:space="preserve">
+    <value>The "NUSERCODE" is required.</value>
+  </data>
+  <data name="DNULLDATE_Caption" xml:space="preserve">
+    <value>DNULLDATE</value>
+  </data>
+  <data name="DNULLDATE_ToolTip" xml:space="preserve">
+    <value>Date when the record is cancelled.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorGeneralValidator0Resource" xml:space="preserve">
+    <value>The key has already been entered in another record.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired1Resource" xml:space="preserve">
+    <value>The "NCONSEC" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired2Resource" xml:space="preserve">
+    <value>The "SCERTYPE" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired3Resource" xml:space="preserve">
+    <value>The "NBRANCH" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired4Resource" xml:space="preserve">
+    <value>The "NPRODUCT" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired5Resource" xml:space="preserve">
+    <value>The "NPOLICY" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired6Resource" xml:space="preserve">
+    <value>The "NCERTIF" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired7Resource" xml:space="preserve">
+    <value>The "DEFFECTDATE" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired8Resource" xml:space="preserve">
+    <value>The "DCOMPDATE" is required.</value>
+  </data>
+  <data name="MULTIRISK_DETMessageErrorRequired9Resource" xml:space="preserve">
+    <value>The "NUSERCODE" is required.</value>
+  </data>
+  <data name="NAREA_MultiRisk_Caption" xml:space="preserve">
+    <value>Surveillance area.</value>
+  </data>
+  <data name="NAREA_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Surveillance area (square meters).</value>
+  </data>
+  <data name="NSECURITYMEN_MultiRisk_Caption" xml:space="preserve">
+    <value>Number of watchers</value>
+  </data>
+  <data name="NSECURITYMEN_MultiRisk_ToolTip" xml:space="preserve">
+    <value>Number of watchers</value>
+  </data>
+  <data name="NFI_POLICYTYPE_Fidelity_Caption" xml:space="preserve">
+    <value>Policy Type</value>
+  </data>
+  <data name="NFI_POLICYTYPE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Type Fidelity Policy</value>
+  </data>
+  <data name="NINSURTYPE_Fidelity_Caption" xml:space="preserve">
+    <value>Insurance Type</value>
+  </data>
+  <data name="NINSURTYPE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Insurance Type</value>
+  </data>
+  <data name="NNUMBEROFEMPLOYEES_Fidelity_Caption" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="NNUMBEROFEMPLOYEES_Fidelity_Tooltip" xml:space="preserve">
+    <value>Number of Employees</value>
+  </data>
+  <data name="NFACTOR_Fidelity_Caption" xml:space="preserve">
+    <value>Factor warranty</value>
+  </data>
+  <data name="NFACTOR_Fidelity_ToolTip" xml:space="preserve">
+    <value>Corresponds to the factor is multiplied   to obtain the premium payable by the employee.</value>
+  </data>
+  <data name="NVALUE_Fidelity_Caption" xml:space="preserve">
+    <value>Value warranty</value>
+  </data>
+  <data name="NVALUE_Fidelity_Tooltip" xml:space="preserve">
+    <value>Corresponds to the value by which the warranty factor is multiplied to the premium payable by the employee</value>
+  </data>
+  <data name="SFIRSTNAME_Fidelity_Caption" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="SFIRSTNAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="SLASTNAME2_Fidelity_Caption" xml:space="preserve">
+    <value>Lastname2</value>
+  </data>
+  <data name="SLASTNAME2_Fidelity_ToolTip" xml:space="preserve">
+    <value>Lastname2</value>
+  </data>
+  <data name="SLASTNAME_Fidelity_Caption" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="SLASTNAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="SMIDDLENAME_Fidelity_Caption" xml:space="preserve">
+    <value>Middel name</value>
+  </data>
+  <data name="SMIDDLENAME_Fidelity_ToolTip" xml:space="preserve">
+    <value>Middel name</value>
+  </data>
+  <data name="SDIGIT_Fidelity_Caption" xml:space="preserve">
+    <value>Digit</value>
+  </data>
+  <data name="SCLIENT_Fidelity_Digit_Caption" xml:space="preserve">
+    <value>Verifier digit</value>
+  </data>
+  <data name="NPREMIUM_EquipElect_Caption" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="NPREMIUM_EquipElect_ToolTip" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="NRATE_EquipElect_Caption" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="NRATE_EquipElect_ToolTip" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="NSECTION_EquipElect_Caption" xml:space="preserve">
+    <value>Sinister</value>
+  </data>
+  <data name="SDAMAGE_EquipElect_Caption" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="NSECTION_EquipElect_ToolTip" xml:space="preserve">
+    <value>Indicador de siniestrado</value>
+  </data>
+  <data name="SRISKDESCRIPTION_caption" xml:space="preserve">
+    <value>Risk description</value>
+  </data>
+  <data name="SRISKDESCRIPTION_ToolTip" xml:space="preserve">
+    <value>Allows the entry of a brief description of the insured risk</value>
+  </data>
+  <data name="AnchorDatos del vehículoCaption" xml:space="preserve">
+    <value>Vehicle Specific Information</value>
+  </data>
+  <data name="cbovalGroupCaption" xml:space="preserve">
+    <value>Grouping within the Group</value>
+  </data>
+  <data name="cbovalGroupToolTip" xml:space="preserve">
+    <value>Number identifying the group the certificate belongs to.</value>
+  </data>
+  <data name="cbovalSituationCaption" xml:space="preserve">
+    <value>Risk Location</value>
+  </data>
+  <data name="cbovalSituationToolTip" xml:space="preserve">
+    <value>Risk location (grouping for billing) the certificate belongs to.</value>
+  </data>
+  <data name="cboArticleCaption" xml:space="preserve">
+    <value>Market sector</value>
+  </data>
+  <data name="cboArticleToolTip" xml:space="preserve">
+    <value>Type of business to which the risk under treatment belongs.</value>
+  </data>
+</root>

@@ -1,0 +1,71 @@
+﻿<Activity mc:Ignorable="sap sads" x:Class="WFRepProyeccionCUI"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities"
+ xmlns:ica1="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity"
+ xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts"
+ xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common"
+ xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:s6="clr-namespace:System;assembly=System.Runtime.WindowsRuntime"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="nbranch" Type="InArgument(x:Int32)" />
+    <x:Property Name="nproduct" Type="InArgument(x:Int32)" />
+    <x:Property Name="scertype" Type="InArgument(x:String)" />
+    <x:Property Name="npolicy" Type="InArgument(x:Int32)" />
+    <x:Property Name="ncertif" Type="InArgument(x:Int32)" />
+    <x:Property Name="deffecdate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="reportRoute" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>262,614</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sap:VirtualizedContainerService.HintSize="222,574">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bResultado" />
+      <Variable x:TypeArguments="x:String" Name="sResultado" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ica:ProcessIdentifier DisplayName="Parametros de entrada" sap:VirtualizedContainerService.HintSize="200,132">
+      <ica:ProcessIdentifier.Identifier>
+        <icd:LocalizedString Language="1" Value="{}{ Value /nbranch }/{ Value /ncertif }/{ Value /npolicy }/{ Value /nproduct }/{ Value /scertype }/{ Value /deffecdate }" />
+        <icd:LocalizedString Language="2" Value="{}{ Value /nbranch }" />
+      </ica:ProcessIdentifier.Identifier>
+    </ica:ProcessIdentifier>
+    <ica1:Report FailedExecution="[bResultado]" FailedMessage="[sResultado]" FailedRaiseException="True" sap:VirtualizedContainerService.HintSize="200,106" PDFFileName="[reportRoute]" RemoteHandler="False" ReportFileName="rpt_ProyeccionCUI.rpt" URLResultMode="False" ViewMode="True">
+      <ica1:Report.ProcedureParameters>
+        <InArgument x:TypeArguments="x:Int32" x:Key="P_NBRANCH" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="P_NPRODUCT" />
+        <InArgument x:TypeArguments="x:String" x:Key="P_SCERTYPE" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="P_NPOLICY" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="P_NCERTIF" />
+        <InArgument x:TypeArguments="s:DateTime" x:Key="P_DEFFECDATE" />
+      </ica1:Report.ProcedureParameters>
+      <ica1:Report.ReportParameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ica1:Report.ReportParameters>
+    </ica1:Report>
+    <ica:ProcessIdentifier DisplayName="Resultado" sap:VirtualizedContainerService.HintSize="200,132">
+      <ica:ProcessIdentifier.Identifier>
+        <icd:LocalizedString Language="1" Value="{}{ Value /reportRoute }" />
+        <icd:LocalizedString Language="2" Value="{}{ Value /reportRoute }" />
+      </ica:ProcessIdentifier.Identifier>
+    </ica:ProcessIdentifier>
+  </Sequence>
+</Activity>

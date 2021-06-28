@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-CL">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="FrontOfficeConnection" ProviderKey="MSSqlServer" ConnectionString="XpoProvider=MSSqlServer;data source=(LOCAL);user id=;password=;initial catalog=FrontOffice;Persist Security Info=true" RequirePassword="true">
+      <Parameters>
+        <Parameter Name="server" Value="(LOCAL)" />
+        <Parameter Name="database" Value="FrontOffice" />
+        <Parameter Name="useIntegratedSecurity" Value="False" />
+        <Parameter Name="read only" Value="1" />
+        <Parameter Name="generateConnectionHelper" Value="false" />
+      </Parameters>
+    </DataConnection>
+  </DataConnections>
+  <DataSources>
+    <DataSource Name="Data Source 1">
+      <DataProvider DataConnection="FrontOfficeConnection" SupportSql="true" Sql="SELECT main.StartTime Created&#xD;&#xA;      ,main.CurrentTime&#xD;&#xA;      ,DATEDIFF(millisecond, main.StartTime, main.CurrentTime) CurrentMillisecond&#xD;&#xA;      ,main.WorkflowActivityDefinition&#xD;&#xA;      ,main.State&#xD;&#xA;      ,kind= CASE WHEN CHARINDEX('End-of-file on communication channel', ISNULL(main.Reason,'')) &gt; 0 THEN 'Communication Channel'&#xD;&#xA;				     WHEN CHARINDEX('Integrity constraint', ISNULL(main.Reason,''))  &gt; 0 THEN 'Integrity'&#xD;&#xA;				     WHEN CHARINDEX('TNS:packet writer failure', ISNULL(main.Reason,''))  &gt; 0 THEN 'TNS Failure'&#xD;&#xA;				     WHEN CHARINDEX('There are no recipients specified in Mail Address', ISNULL(main.Reason,''))  &gt; 0 THEN 'Mail Address'&#xD;&#xA;				     WHEN ISNULL(main.Reason,'')&lt;&gt; ''  THEN 'Other'&#xD;&#xA;				     ELSE '' END , main.Reason , wi.IdentifyValue&#xD;&#xA;  FROM Tracking.vw_WorkflowInstanceByLastState main&#xD;&#xA;  LEFT JOIN tracking.WorkflowIdentify wi&#xD;&#xA;   ON wi.WorkflowInstanceId=main.WorkflowInstanceId&#xD;&#xA;WHERE main.StartTime &gt; '2016-01-01'&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+    </DataSource>
+    <DataSource Name="Data Source 2">
+      <DataProvider DataConnection="FrontOfficeConnection" SupportSql="true">
+        <Selection>
+          <Table Name="Dispatcher.Jobs">
+            <Columns>
+              <Column Name="JobId" />
+              <Column Name="eMail" />
+              <Column Name="Subject" />
+              <Column Name="Status" />
+              <Column Name="Fail" />
+              <Column Name="LastUpdatedBy" />
+              <Column Name="LastUpdatedOn" Alias="Created" />
+            </Columns>
+          </Table>
+        </Selection>
+      </DataProvider>
+    </DataSource>
+  </DataSources>
+  <Items>
+    <Grid UniqueName="Grid 1" Name="Detalle" DataSource="Data Source 1">
+      <DataItems>
+        <Dimension DataMember="Created" SortOrder="Descending" DateTimeGroupInterval="DateHourMinuteSecond" UniqueName="DataItem0">
+          <DateTimeFormat DateFormat="Long" />
+        </Dimension>
+        <Dimension DataMember="CurrentMillisecond" SortOrder="Descending" UniqueName="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Dimension>
+        <Dimension DataMember="IdentifyValue" UniqueName="DataItem2" />
+        <Dimension DataMember="Reason" UniqueName="DataItem3" />
+        <Dimension DataMember="CurrentTime" DateTimeGroupInterval="DateHourMinuteSecond" UniqueName="DataItem4" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="Inicio">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Fin">
+          <Dimension UniqueName="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Duración">
+          <Dimension UniqueName="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Identificación">
+          <Dimension UniqueName="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Razón">
+          <Dimension UniqueName="DataItem3" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions EnableBandedRows="true" ShowHorizontalLines="true" ShowVerticalLines="false" />
+    </Grid>
+    <Grid UniqueName="Grid 2" Name="State" ShowCaption="false" DataSource="Data Source 1">
+      <DataItems>
+        <Dimension DataMember="WorkflowActivityDefinition" UniqueName="DataItem0" />
+        <Dimension DataMember="State" UniqueName="DataItem2" />
+        <Measure DataMember="WorkflowActivityDefinition" SummaryType="Count" UniqueName="DataItem3" />
+      </DataItems>
+      <InteractivityOptions IsMasterFilter="true" />
+      <GridColumns>
+        <GridDimensionColumn Name="Workflow">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Estatus">
+          <Dimension UniqueName="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Cantidad">
+          <Measure UniqueName="DataItem3" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ShowHorizontalLines="true" ShowVerticalLines="true" />
+    </Grid>
+    <RangeFilter UniqueName="Range Filter 1" DataSource="Data Source 1">
+      <DataItems>
+        <Measure DataMember="WorkflowActivityDefinition" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="Created" DateTimeGroupInterval="DayMonthYear" UniqueName="DataItem1" />
+      </DataItems>
+      <Argument UniqueName="DataItem1" />
+      <Series>
+        <Simple SeriesType="Line">
+          <Value UniqueName="DataItem0" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+    <Grid UniqueName="Grid 3" Name="Correspondencia" DataSource="Data Source 2">
+      <DataItems>
+        <Dimension DataMember="Dispatcher.Jobs.LastUpdatedOn" SortOrder="Descending" DateTimeGroupInterval="DateHourMinuteSecond" UniqueName="DataItem0" />
+        <Dimension DataMember="Dispatcher.Jobs.eMail" UniqueName="DataItem1" />
+        <Dimension DataMember="Dispatcher.Jobs.Subject" UniqueName="DataItem2" />
+        <Dimension DataMember="Dispatcher.Jobs.Status" SortOrder="Descending" UniqueName="DataItem3">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+        <Dimension DataMember="Dispatcher.Jobs.Fail" UniqueName="DataItem4" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="Enviada">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Correo">
+          <Dimension UniqueName="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Título">
+          <Dimension UniqueName="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Estatus">
+          <Dimension UniqueName="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Razón">
+          <Dimension UniqueName="DataItem4" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ShowHorizontalLines="true" ShowVerticalLines="true" />
+    </Grid>
+    <Chart UniqueName="Chart 1" Name="Ejecución Diaria" DataSource="Data Source 1">
+      <DataItems>
+        <Measure DataMember="WorkflowActivityDefinition" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="CurrentTime" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" UniqueName="DataItem1">
+          <DateTimeFormat DateFormat="Short" />
+        </Dimension>
+        <Dimension DataMember="WorkflowActivityDefinition" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <AxisY Title="Cantidad" />
+          <Series>
+            <Simple SeriesType="StackedBar">
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend Visible="false" />
+      <AxisX Title="Fecha" />
+    </Chart>
+    <Grid UniqueName="Grid 4" Name="Tiempos de Ejecución" DataSource="Data Source 1">
+      <DataItems>
+        <Dimension DataMember="Created" SortOrder="Descending" DateTimeGroupInterval="DayMonthYear" UniqueName="DataItem0" />
+        <Dimension DataMember="WorkflowActivityDefinition" UniqueName="DataItem1" />
+        <Measure DataMember="CurrentMillisecond" SummaryType="Min" UniqueName="DataItem2">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="CurrentMillisecond" SummaryType="Average" UniqueName="DataItem3">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="CurrentMillisecond" SummaryType="Max" UniqueName="DataItem4">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="WorkflowActivityDefinition" SummaryType="Count" UniqueName="DataItem5" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="Fecha">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Workflow">
+          <Dimension UniqueName="DataItem1" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Minimo">
+          <Measure UniqueName="DataItem2" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Name="Promedio">
+          <Measure UniqueName="DataItem3" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Name="Maximo">
+          <Measure UniqueName="DataItem4" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Name="Cantidad">
+          <Measure UniqueName="DataItem5" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ShowHorizontalLines="true" ShowVerticalLines="true" />
+    </Grid>
+  </Items>
+  <Layout>
+    <LayoutItem Name="Chart 1" Left="0.26950354609929078" Top="0.14285714285714285" Right="1" Bottom="0.37523809523809526" />
+    <LayoutItem Name="Range Filter 1" Left="0" Top="0" Right="1" Bottom="0.14285714285714285" />
+    <LayoutItem Name="Grid 2" Left="0" Top="0.14285714285714285" Right="0.26950354609929078" Bottom="0.52190476190476187" />
+    <LayoutItem Name="Grid 3" Left="0" Top="0.8342857142857143" Right="1" Bottom="1" />
+    <LayoutItem Name="Grid 4" Left="0.26950354609929078" Top="0.37523809523809526" Right="1" Bottom="0.52190476190476187" />
+    <LayoutItem Name="Grid 1" Left="0" Top="0.52190476190476187" Right="1" Bottom="0.8342857142857143" />
+  </Layout>
+</Dashboard>

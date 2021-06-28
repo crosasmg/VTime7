@@ -1,0 +1,140 @@
+﻿--------------------------------------
+RELEASE LETTER - Versión 1.1.0.100
+--------------------------------------
+
++BUGFIXES
+
+  1. Error # .
+
++ENHANCEMENTS
+
+  1. .
+
++REQUIREMENTS
+
+  1. .
+
+----------------------------------------------
+RELEASE LETTER - Version 1.0.6.0 - FrontOffice
+----------------------------------------------
+
++BUGFIXES
+
+1-) Se modificó la ventana de mantenimientos de usuarios para que se muestren los controles de Clientes y Productores al momento de editar el registro. 
+    Esto se usa para asignar los respectivos códigos del BackOffice en el Profile de los usuarios del FrontOffice.
+    
+2-) Corrección de la data de los Widgets para que se mostrarán correctamente las imágenes en el grid.    
+
+3-) Se modificaron las paginas WidgetsInRolesManager y la pagina Default para que se generara el cache de los 
+	Widgets disponibles por cada Rol existente de manera independiente. 
+	De esta manera cada vez que se presione el botón “Add Stuff” la paleta de Widgets disponibles la toma del 
+	cache y no la va a buscar a la base de datos, esto mejora el performance de la aplicación.
+	
+4-) Se modificó el Widget de la Consulta General para que utilizara el ProviderControl como filtro para la 
+	información que se desea mostrar. 
+	Se debe crear una consulta de proveedores simple para determinar que funciona correctamente ya que actualmente no existe ninguna.
+	
+5-)	Se modificó la ventana de Mantenimientos de Widgets que se muestre la imagen del boton Aceptar del grid 
+	en la versión UsaLife y Latinoamericana. Antes solo se mostraba en la Latinoamericana.
+	
+6-) Se realizó la corrección del error en las fechas de ejecución de los WF en las ventanas del portal generadas por el EDW. 
+	Luego de investigar cómo funciona el WWF se determinó que en las tablas de los WF se almacena la 
+	fecha según la UTC (Coordinated Universal Time), la corrección que se aplicó fue que al momento 
+	de mostrar la información en la ventana de Mantenimiento de Workflows se convierte en el formato 
+	local (según la configuración de la base de datos).
+	
+7-) En la página del mantenimiento de widget se corrigió el siguiente error: 
+	Cuando el defaultState estaba vacío daba error al editar el registro.	
+	
+8-)	Puntos de millar en la PopUp de la consulta general.
+	Verifiqué que se estuvieran mostrando correctamente los montos en la consulta general.
+	La corrección ya estaba aplicada.
+	
+9-) Error al crear el usuario desde la página de inicialización. 
+	Se modificó la página de inicialización para que verificara si el usuario a crear tiene 
+	información del eMail en el BackOffice, dado a que al estar vacio ocasionaba un error.	
+	
+10-) Se modificó la página de inicialización para que siempre se borre la información del 
+	Membership del usuario antes de crearlo, antes respetaba la información que estaba creada.	
+	
+11-) Actualmente al hacer Login con algunos usuarios da error de manera intermitente. 
+	 Para corregirlo se verifica que la configuración de usuario este correcta, 
+	 es caso de que no sea así, se vuelve a generar.
+	 
+12-) Traducción de los textos en JavaScript. 
+	 Actualmente cuando se borra un Widget se envía un mensaje que siempre está en ingles.	 
+	 
+13-) Traducción de la columna “Status” en la ventana de mantenimiento de WF. 
+	 Actualmente las tablas de WF’s no son multi-idioma y eso ocasionaba que la información 
+	 siempre se mostrara en ingles. Se hizo un manejo en la página para que se muestre la 
+	 información de acuerdo al idioma del portal.
+	 
+14-) Se modificó la asignación del acceso las a las transacciones de VT desde el portal, 
+	 se respeta lo definido en el esquema de seguridad.
+	
+
++ENHANCEMENTS
+
+1-) Investigación sobre la mejora en el perfomance de la aplicación cuando se desea mostrar un volumen 
+	grande de información en el grid. 
+	La  mejor opción que se consiguió fue la implementación de la capa de Persistencia de DevExpress (XPO).
+	Se crearon las clases de persistencia XPO y se modificaron los controles que se usan en la consulta 
+	general (Auto, Siniestros, Clientes, Productores, Pólizas, Recibos, Proveedores y Dirección de riesgo) 
+	para que usen las nuevas clases. 
+	Para tal fin se  generó el DLL GIT.GeneralQuery que y se ejecutó el FXCop corrigiéndole todos los 
+	errores mostrados. Solo se excluyeron unos errores que hacian referencia al nombre las propiedades de la capa
+	de persistencia de XPO para que funcionaran para Oracle y SQL (los nombres están en mayusculas).   
+	Se realizaron las pruebas tanto en la versión de Oracle como SqlServer y ambas fueron satisfactorias. 
+	
+2-)	Mejora en el manejo de notas en la consulta general (Word), para ponerla en funcionamiento se debe crear una entrada en el archivo de configuración donde se indique el formato de las notas en la versión que se está trabajando. 
+	Quedó de la siguiente manera:
+	<add key="Linked.BMI.NotesFormat" value="RTF"/>
+	<add key="Linked.LatinaCombinada.NotesFormat" value="HTML"/>
+	
+	Al momento de consultar el detalle (estilo de la columna NotePreview) se hace lo siguiente:
+	•	Para el caso donde se indica que las notas se manejan en RFT, al abrir el detalle se mostrará la información en Word como se maneja en VisualTime.
+	•	Para el caso donde las notas en manejan en HTML,  al abrir el detalle se mostrará la información en una PopUp.
+	
+	Al momento de consultar varias notas (estilo de la columna NoteDetail) se hace lo siguiente:
+	•	Para el caso donde se indica que las notas se manejan en RFT, al abrir el grid solo se mostrará el titulo de la nota y no el contenido.
+	•	Para el caso donde las notas en manejan en HTML, al abrir el grid se mostrarán las notas con el detalle.
+
+3-) Se modificó la ventana de Inicialización para hacer lo siguiente:
+	a.	Se agregó la opción para limpiar la tabla DocumentCache.
+	b.	En la creación de los usuarios del BackOffice en el Portal se agregó la búsqueda del eMail del 
+		usuario para grabarlo en el Membership y de esta manera se pueda usar la opción de recuperación 
+		de Password del portal. La búsqueda el correo es personalizada para la versión SQL y Oracle ya 
+		que en ambas se maneja distinto.
+	c.	Se agregó la opción de creación de la configuración inicial de la tabla WidgetsInRoles según lo 
+		definido en la tabla Widgets, básicamente lo que se hace es tomar en cuenta los Widgets que están 
+		marcados por Default y se graban para todos los roles del FrontOffice.
+	d.	Se coloco el manejo de exclusión de las operaciones de creación de todos los usuarios del Back Office 
+		en el Portal y la creación de Usuarios Especificos, ambas no pueden ejecutarse simultáneamente.
+	e.	Se agregó la opción para limpiar la tabla NavigationDirectory.
+	f.	Se agregó la opción para limpiar los usuarios anónimos.
+	g.  Se agregó la opción de copiar la configuración de un usuario en particular a los demás 
+		usuarios creados en el FrontOffice, la configuración contempla Páginas y Widgets.		
+
+4-) Se creó la ventana _Support.aspx desde la cual se puede crear el usuario admin sin necesidad de 
+	haber ingresado en el Portal. La finalidad de esta ventana es tener una herramienta que nos permita 
+	comenzar la configuración de la información inicial del portal en caso de que la ventana de 
+	inicialización no la tengamos disponible o que la data de configuración este corrupta.
+	
+5-) Multiple selección en el filtro de la consulta general.
+	Se liberó la modificación en el widget de la consulta general que permite la múltiple selección 
+	de elementos para realizar el filtro de los datos.
+	Para este cambio fue necesario modificar el EDW colocándole la opción IN en el FilterBuilder.
+	
+6-) Se coloco el filtro en la página UsersManager debido a que en la versión de BMI existen 
+	casi 1000 usuarios y sin el filtro se hace engorroso el manejo de la información.		
+	
+7-) Se modificó la creación del Layout inicial para los usuarios (anónimos y autenticados) de manera que se 
+	permita colocar un default para la manera como se distribuyen las columnas en las páginas, 
+	para esto se creó una entrada en el archivo de configuración que se llama “DefaultPageLayoutType “ 
+	y va a contener los valores del 1 al 4.
+	
+
++REQUIREMENTS
+
+1-)
+

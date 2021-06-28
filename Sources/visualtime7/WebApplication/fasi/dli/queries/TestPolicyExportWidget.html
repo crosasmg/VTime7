@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="TestPolicyExportMainForm">
+        <input type="hidden" id="TestPolicyExportFormId" name="TestPolicyExportFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: Items grid -->
+                        <div  class='col-md-12'>
+
+                       <div id='ItemsContainer'>
+                            <div id='ItemsTblPlaceHolder'></div>
+                       </div>
+
+                        </div>
+                        <!-- End Container: Items grid -->
+                        <!-- ROLESActionLbl label -->
+                        <div class='col-md-12 form-vertical'>
+                          <div class='form-group text-left'>
+                                          <label id='ROLESActionLbl' title='Acciones disponibles'>Presione el icono <span class='caret'></span> para ver el menú de acciones disponibles asociadas al campo seleccionado.</label>
+
+                          </div>
+                        </div>
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+    <ul id='Items_ROLESNPOLICYContextMenu' class='dropdown-menu'>
+ <li data-item='Items_ROLESNPOLICY_Item1'><a>Test</a></li>
+    </ul>
+
+    
+
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20200210124857671'></script>
+    <script src='/fasi/assets/js/bootstrap-table-contextmenu.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-export.js'></script>
+    <script src='/fasi/assets/js/tableExport.min.js'></script>
+    <script src='/fasi/assets/js/pdfmake.min.js'></script>
+    <script src='/fasi/assets/js/vfs_fonts.js'></script>
+    <script src='/fasi/assets/js/jquery.base64.js'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/queries/TestPolicyExport.js?rel=20200210124857671"></script>
+</body>
+</html>

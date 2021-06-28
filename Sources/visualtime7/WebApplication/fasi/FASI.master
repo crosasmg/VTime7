@@ -1,0 +1,281 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FASI.master.cs" Inherits="FASI" ViewStateMode="Disabled" EnableViewState="false" %>
+
+<!DOCTYPE html>
+<html id="app" lang="">
+<head runat="server">
+    <meta charset='UTF-8' />
+    <title>VisualTIME</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <%--<link rel="stylesheet" href="/fasi/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fasi/assets/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/fasi/assets/css/jquery-ui.min.css" />--%>
+    <link rel="stylesheet" href="/fasi/assets/css/fasi.mp.fw.bundle.css" />
+
+    <%--Se cambia a carga asíncrono --%>
+    <%--<link rel="stylesheet" href="/fasi/assets/css/sweetalert.css" />
+    <link rel="stylesheet" href="/fasi/assets/css/toastr.min.css" />
+    <link rel="stylesheet" href="/fasi/assets/css/select2.min.css" />
+    <link rel="stylesheet" href="/fasi/assets/css/animate.css" />--%>
+
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+            var elementLaddathemelessCSS = document.createElement("link");
+            elementLaddathemelessCSS.type = "text/css";
+            elementLaddathemelessCSS.rel = "stylesheet";
+            elementLaddathemelessCSS.href = "/fasi/assets/css/fasi.mp.base.bundle.min.css";
+            document.getElementsByTagName("head")[0].appendChild(elementLaddathemelessCSS);
+
+            var elementNotificationJS = document.createElement("script");
+            elementNotificationJS.src = "/fasi/assets/js/fasi.mp.base.bundle.min.js?rel=20190527015700371";
+            document.body.appendChild(elementNotificationJS);
+
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <%--  <link rel="stylesheet" href="/fasi/app/css/master.css?rel=1526481090699" />
+    <link rel='stylesheet' href='/fasi/app/css/fasi-html5.css?rel=1526481090699' />--%>
+    <link rel="stylesheet" href="/fasi/extend/css/custom-master.css?rel=1526481090699" />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="profile-element">
+                            <a href="/fasi/default.aspx">
+                                <div class="main-image-logo"></div>
+                            </a>
+                            <div id="profileDropdown" class="dropdown" style="display: none;">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <span class="clear" style="padding-left: 7px;">
+                                        <span class="block m-t-xs">
+                                            <strong id="userName" class="font-bold"></strong>
+                                        </span>
+                                        <span class="text-muted text-xs block"><span id="userType"></span><b class="caret"></b></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                    <li><a href="/fasi/dli/forms/UProfile.aspx"><i class="fa fa-user-o"></i>&nbsp;<span class="trn" data-trn-key="Profile"></span></a></li>
+                                    <li class="divider dividerPasswordChange"></li>
+                                    <li class="PasswordChange"><a href="/fasi/dli/forms/PasswordChange.aspx"><i class="fa fa-key"></i>&nbsp;<span class="trn" data-trn-key="PasswordChange"></span></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" onclick="securitySupport.Logout(masterSupport.user.userId, true);return false"><i class="fa fa-sign-out"></i>&nbsp;<span class="trn" data-trn-key="LogOut"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="logo-element">
+                            VT
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                        <div class="navbar-form-custom">
+                            <div class="form-group top-search-select2">
+                                <select class="form-control" name="top-search" id="top-search" style="display: none;"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="/fasi/default.aspx" class="m-r-sm text-muted welcome-message" id="TopRightText" runat="server">Visual <strong>TIME</strong> <small class="hidden-xs">Top Insurance Management Ensemble</small>
+                            </a>
+                        </li>
+                        <%--Notifications--%>
+                        <li id="divNotifications" class="dropdown" style="display: none;">
+                            <a id="OptionCountInfo" class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i id="alertsIcon" class="fa fa-bell" data-toggle="tooltip" data-placement="bottom"></i><span id="alertsCount" class="label label-primary"></span>
+                            </a>
+                            <ul id="NotificationMessageContainer" class="dropdown-menu dropdown-alerts"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i id="languageIcon" class="fa fa-language" data-toggle="tooltip" data-i18n="[title]app.form.Language" data-placement="bottom"></i>
+                            </a>
+                            <ul id="languageSelection" class="dropdown-menu dropdown-alerts" style="width: 150px;">
+                                <li>
+                                    <a href="javascript:translator.changeLanguage('es')">
+                                        <div class="trn" data-trn-key="Spanish"></div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="javascript:translator.changeLanguage('en')">
+                                        <div class="trn" data-trn-key="English"></div>
+                                    </a>
+                                </li>
+                                <%--<li class="divider"></li>
+                                <li>
+                                    <a href="javascript:translator.changeLanguage('pt')">
+                                        <div class="trn" data-trn-key="Portuguese"></div>
+                                    </a>
+                                </li>--%>
+                            </ul>
+                        </li>
+                        <li>
+                            <a target="_blank" href="<%= System.Configuration.ConfigurationSettings.AppSettings["FASI.Url.Help"] %>">
+                                <i id="helpIcon" class="fa fa-question" data-toggle="tooltip" data-placement="bottom"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="signLink" href="#">
+                                <i id="signIcon" class="fa fa-sign-in" data-toggle="tooltip" data-placement="bottom"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading" style="display: none;">
+                <div class="col-lg-12">
+                    <h2 id="pageTitle"></h2>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <asp:ContentPlaceHolder ID="ContentPlaceholder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <strong class="trn" data-trn-key="Copyright" data-original-title="<%= HttpContext.Current.Session["updateInfo"] %>" data-placement="top"></strong>
+                    - <a href="javascript:showpopup(window.location.protocol + '//' + window.location.host + '/dropthings/PrivacyPolicy.aspx')" class="trn" data-trn-key="PrivacyPolicy"></a>
+                    - <a href="javascript:showpopup(window.location.protocol + '//' + window.location.host + '/dropthings/TermsService.aspx')" class="trn" data-trn-key="TermsService"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="menuConfiguration" class="theme-config" style="display: none;">
+        <div class="theme-config-box">
+            <div class="spin-icon">
+                <i class="fa fa-cogs"></i>
+            </div>
+            <div class="skin-settings">
+                <div class="title trn" data-trn-key="Configuration">
+                </div>
+                <form id="menuItemMainForm">
+                    <div class="setings-item">
+                        <span data-i18n="[html]app.form.MenuItem_Title;[title]app.form.MenuItem_Tooltip"></span>
+                        <input type="text" data-i18n="[title]app.form.MenuItem_Tooltip" id="menuItemName" name="PageName" />
+                    </div>
+                    <div class="setings-item">
+                        <span data-i18n="[html]app.form.MenuOrder_Title;[title]app.form.MenuOrder_Tooltip"></span>
+                        <input type="number" data-i18n="[title]app.form.MenuOrder_Tooltip" id="menuOrder" name="MenuOrder" min="0" />
+                    </div>
+                    <div class="setings-item">
+                        <span data-i18n="[html]app.form.ChangeColumns_Title;[title]app.form.ChangeColumns_Tooltip"></span>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="columns1" data-i18n="[title]app.form.ChangeColumns_Tooltip" name="Columns" value="1" />
+                                <i class="fa fa-square fa-5x" data-i18n="[title]app.form.LayoutOne_Tooltip"></i>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="columns2" data-i18n="[title]app.form.ChangeColumns_Tooltip" name="Columns" value="2" />
+                                <i class="fa fa-th-large fa-5x" data-i18n="[title]app.form.LayoutTwo_Two_Tooltip"></i>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="columns3" name="Columns" value="3" />
+                                <i class="fa fa-th fa-5x" data-i18n="[title]app.form.LayoutThree_Three_Tooltip"></i>
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-outline btn-success btn-block white-bg" data-toggle="modal" data-target="#widgetsModal">
+                            <i class="fa fa-plus"></i>&nbsp;<span class="trn" data-i18n="[html]app.form.AddWidgets_Text;[title]app.form.AddWidgets_Tooltip"></span>
+                        </button>
+                        <button id="btnSaveMenuItem" class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;<span data-i18n="[html]app.form.SavePage_Text;[title]app.form.SavePage_Tooltip"></span></button>
+                        <button id="btnDeleteMenuItem" class="btn btn-danger btn-block"><i class="fa fa-trash-o"></i>&nbsp;<span data-i18n="[html]app.form.DeletePage_Text;[title]app.form.DeletePage_Tooltip"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="small-chat" style="display: none;">
+        <a class="btn btn-primary btn-rounded" href="javascript:masterSupport.createMenuItem();">
+            <i class="fa fa-plus"></i><span class="hidden-xs">&nbsp;</span><span class="hidden-xs trn" data-i18n="[html]app.form.NewPage_Text;[title]app.form.NewPage_Tooltip"></span>
+        </a>
+    </div>
+
+    <%--Se cambia a carga a fasi.mp.assets.bundle.js --%>
+    <%--<script src="/fasi/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="/fasi/assets/js/jquery-ui.min.js"></script>
+    <script src="/fasi/assets/js/jquery.translate.js"></script>
+    <script src="/fasi/assets/js/bootstrap.min.js"></script>
+    <script src="/fasi/assets/js/jquery.metisMenu.js"></script>
+    <script src="/fasi/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="/fasi/assets/js/jquery.validate.min.js"></script>
+    <script src="/fasi/assets/js/pace.min.js"></script>--%>
+
+    <%--Se cambia a carga asíncrono --%>
+    <%--<script src="/fasi/assets/js/sweetalert.min.js"></script>
+    <script src="/fasi/assets/js/toastr.min.js"></script>--%>
+
+    <script src="/fasi/assets/js/sweetalert.min.js"></script>
+    <script src="/fasi/assets/js/toastr.min.js"></script>
+
+    <%--Se cambia a carga a fasi.mp.assets.bundle.js --%>
+    <%-- <script src='/fasi/assets/js/moment-with-locales.min.js'></script>
+    <script src='/fasi/assets/js/loadingoverlay.min.js'></script>
+    <script src="/fasi/assets/js/select2.min.js"></script>
+    <script src="/fasi/assets/js/select2-es.min.js" charset="UTF-8"></script>
+    <script src="/fasi/assets/js/jquery.periodic.min.js?rel=1526481090699"></script>--%>
+
+    <script src='/fasi/assets/js/fasi.mp.assets.bundle.min.js'></script>
+    <%--<script src='/fasi/app/js/master.js'></script>--%>
+
+    <script src="/fasi/app/js/constants.js?rel=1526481090699"></script>
+
+    <script type="text/javascript">
+       <%-- constants.Interval =  60 * 1000 * parseInt( "<%= Session.Timeout %>");
+        constants.Interval = constants.Interval - (60 * 1000);--%>
+</script>
+
+    <%--Se cambia a carga a fasi.mp.app.bundle.js --%>
+    <%--Se cambia a carga asíncrono- Master-Page JS Base --%>
+    <script src="/fasi/app/js/notification.js?rel=1526481090699"></script>
+    <%--
+    <script src="/fasi/app/js/fasi.master.bundle.min.js?rel=1526481090699"></script>
+    --%>
+
+    <%-- fasi.app.bundle.js --%>
+
+    <script src="/fasi/assets/js/i18next.min.js?rel=1526481090699"></script>
+
+    <script src="/fasi/app/js/general.js?rel=1526481090699"></script>
+    <script src="/fasi/app/js/core.js?rel=1526481090699"></script>
+    <script src="/fasi/app/js/ajaxhelper.js?rel=1526481090699"></script>
+    <script src="/fasi/app/js/Security.js?rel=1526481090699"></script>
+    <script src="/fasi/app/js/master.js?rel=1526481090699"></script>
+    <script src="/fasi/app/js/master.translate.js?rel=1526481090699"></script>
+
+    <%--
+        <script src="/fasi/app/js/fasi.mp.app.bundle.min.js" charset="utf-8"></script>
+    --%>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

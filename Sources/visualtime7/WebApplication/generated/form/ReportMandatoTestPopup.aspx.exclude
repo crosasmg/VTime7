@@ -1,0 +1,22 @@
+﻿<%@ Page Title="Report Mandato Test" Language="VB" AutoEventWireup="false" CodeFile="ReportMandatoTestPopup.aspx.vb" Inherits="ReportMandatoTestPopup" UICulture="auto" Culture="auto" meta:resourcekey="ReportMandatoTestPageTitleResource"%>
+
+<%@ Register src="ReportMandatoTestUserControl.ascx" tagname="ReportMandatoTestUserControl" tagprefix="ReportMandatoTestUC" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Popup" runat="server">
+    <title></title>
+    <meta charset="iso-8859-1"> 
+    <script src="/scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="ReportMandatoTest.js" type="text/javascript"></script>
+</head>
+<body id="ReportMandatoTestBody">
+    <form id="popupForm" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" EnablePartialRendering="true" />
+    <asp:UpdatePanel ID="ReportMandatoTestUpdatePanel" runat="server" updatemode="Conditional" ChildrenAsTriggers="true" >
+        <ContentTemplate>
+             <ReportMandatoTestUC:ReportMandatoTestUserControl ID="ReportMandatoTestUserControl" runat="server" />
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    </form>
+</body>
+</html>

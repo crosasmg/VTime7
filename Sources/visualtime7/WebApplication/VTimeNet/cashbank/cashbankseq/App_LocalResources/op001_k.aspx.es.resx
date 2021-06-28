@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AnchorDocumentoCaption" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+	<data name="AnchorinformaciónconvenioCaption" xml:space="preserve">
+    <value>Información del convenio</value>
+  </data>
+	<data name="AnchorSoporteCaption" xml:space="preserve">
+    <value>Soporte</value>
+  </data>
+	<data name="AnchorTarjeta de créditoCaption" xml:space="preserve">
+    <value>Tarjeta de crédito</value>
+  </data>
+	<data name="AnchorFinanciamientoCaption" xml:space="preserve">
+    <value>Financiamiento</value>
+  </data>
+	<data name="tcnTransacCaption" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+	<data name="tcnTransacToolTip" xml:space="preserve">
+    <value>Número identificativo del movimiento en tratamiento.</value>
+  </data>
+	<data name="tcdEffecDateCaption" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+	<data name="tcdEffecDateToolTip" xml:space="preserve">
+    <value>Fecha en la que se realiza la transacción.</value>
+  </data>
+	<data name="tcncomprobCaption" xml:space="preserve">
+    <value>Número de comprobante</value>
+  </data>
+	<data name="tcncomprobToolTip" xml:space="preserve">
+    <value>Número de comprobante del ingreso en caja.</value>
+  </data>
+	<data name="cbeMovTypeCaption" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+	<data name="cbeMovTypeToolTip" xml:space="preserve">
+    <value>Indica la forma en que se está ingresando el dinero a la compañía.</value>
+  </data>
+	<data name="cbeOfficeCaption" xml:space="preserve">
+    <value>Sucursal</value>
+  </data>
+	<data name="cbeOfficeToolTip" xml:space="preserve">
+    <value>Zona o sucursal a la que pertenece la caja afectada.</value>
+  </data>
+	<data name="tcdValorDateCaption" xml:space="preserve">
+    <value>Fecha de valorización</value>
+  </data>
+	<data name="tcdValorDateToolTip" xml:space="preserve">
+    <value>Fecha para la que se toma el factor de cambio a aplicar al ingreso de caja.</value>
+  </data>
+	<data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda origen</value>
+  </data>
+	<data name="tcnAmountCaption" xml:space="preserve">
+    <value>Monto en moneda origen</value>
+  </data>
+	<data name="cbeCurrencyingCaption" xml:space="preserve">
+    <value>Moneda del ingreso</value>
+  </data>
+	<data name="cbeCurrencyingToolTip" xml:space="preserve">
+    <value>Moneda en que se está realizando el ingreso.</value>
+  </data>
+	<data name="tcnAmountingCaption" xml:space="preserve">
+    <value>Monto del ingreso</value>
+  </data>
+	<data name="tcnAmountingToolTip" xml:space="preserve">
+    <value>Monto en el que se realiza el ingreso.</value>
+  </data>
+	<data name="tcnDiferenceCaption" xml:space="preserve">
+    <value>Diferencia</value>
+  </data>
+	<data name="tcnDiferenceToolTip" xml:space="preserve">
+    <value>Muestra la diferencia entre el monto del ingreso actual y el nuevo</value>
+  </data>
+	<data name="cbeCompanyCaption" xml:space="preserve">
+    <value>Compañía</value>
+  </data>
+	<data name="cbeCompanyToolTip" xml:space="preserve">
+    <value>Compañía a la cual pertenecen los conceptos de entrada de dinero en caja.</value>
+  </data>
+	<data name="cbeAreaCaption" xml:space="preserve">
+    <value>Área de seguros</value>
+  </data>
+	<data name="cbeAreaToolTip" xml:space="preserve">
+    <value>Area de seguros a la que pertenece la compañía</value>
+  </data>
+	<data name="valConceptCaption" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+	<data name="valConceptToolTip" xml:space="preserve">
+    <value>Código del concepto por el cual se está realizando el ingreso.</value>
+  </data>
+	<data name="valCurrAccCaption" xml:space="preserve">
+    <value>Cuenta corriente</value>
+  </data>
+	<data name="valCurrAccToolTip" xml:space="preserve">
+    <value>Cuenta corriente a afectar.</value>
+  </data>
+	<data name="cbeBussiTypeCaption" xml:space="preserve">
+    <value>Tipo de negocio</value>
+  </data>
+	<data name="SCA2-ICaption" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+	<data name="AnchorDocumento2Caption" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+	<data name="tctDocNumbeCaption" xml:space="preserve">
+    <value>Número</value>
+  </data>
+	<data name="tctDocNumbeToolTip" xml:space="preserve">
+    <value>Número del documento físico que soporta el ingreso en tratamiento.</value>
+  </data>
+	<data name="cbeChequelocatCaption" xml:space="preserve">
+    <value>Plaza</value>
+  </data>
+	<data name="cbeChequelocatToolTip" xml:space="preserve">
+    <value>Código de la plaza a la que pertenece el cheque.</value>
+  </data>
+	<data name="tcdDocDateCaption" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+	<data name="tcdDocDateToolTip" xml:space="preserve">
+    <value>Fecha (valor) del documento.</value>
+  </data>
+	<data name="cbeBankCaption" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+	<data name="cbeBankToolTip" xml:space="preserve">
+    <value>Corresponde al banco (externo),al cual pertenece el cheque o la tarjeta de crédito que se está ingresando.</value>
+  </data>
+	<data name="valAccBankCaption" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+	<data name="valAccBankToolTip" xml:space="preserve">
+    <value>Cuenta interna del banco que se ve afectado por el movimiento.</value>
+  </data>
+	<data name="tcnFinancIntCaption" xml:space="preserve">
+    <value>Interés financiero</value>
+  </data>
+	<data name="tcnFinancIntToolTip" xml:space="preserve">
+    <value>Muestra los intereses financieros de los cheques a fecha.</value>
+  </data>
+	<data name="cbeinwayCaption" xml:space="preserve">
+    <value>Canal de ingreso</value>
+  </data>
+	<data name="cbeinwayToolTip" xml:space="preserve">
+    <value>Código del canal de ingreso.</value>
+  </data>
+	<data name="Anchorinformaciónconvenio2Caption" xml:space="preserve">
+    <value>Información del convenio</value>
+  </data>
+	<data name="AnchorTarjeta de crédito2Caption" xml:space="preserve">
+    <value>Tarjeta de crédito</value>
+  </data>
+	<data name="valBank_agreeCaption" xml:space="preserve">
+    <value>Banco-convenio</value>
+  </data>
+	<data name="valBank_agreeToolTip" xml:space="preserve">
+    <value>Banco que se encuentra en convenio de PAC o de Pago en ventanilla.</value>
+  </data>
+	<data name="tctCardNumCaption" xml:space="preserve">
+    <value>Número</value>
+  </data>
+	<data name="tctCardNumToolTip" xml:space="preserve">
+    <value>Número que identifica a la tarjeta de crédito con la que se ha realizado el pago.</value>
+  </data>
+	<data name="tcnCod_AgreeCaption" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
+	<data name="tcnCod_AgreeToolTip" xml:space="preserve">
+    <value>Número del convenio de descuento por planilla.</value>
+  </data>
+	<data name="dtcClient_AgreeToolTip" xml:space="preserve">
+    <value>Código del cliente asociado al convenio.</value>
+  </data>
+	<data name="cbeCardTypeCaption" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+	<data name="cbeCardTypeToolTip" xml:space="preserve">
+    <value>Tipo de tarjeta de crédito con la que se realiza el pago.</value>
+  </data>
+	<data name="tcdDatecollectCaption" xml:space="preserve">
+    <value>Fecha de cobranza</value>
+  </data>
+	<data name="tcdDatecollectToolTip" xml:space="preserve">
+    <value>Fecha de cobranza para la cual se realiza el ingreso en caja.</value>
+  </data>
+	<data name="tcdCardExpirCaption" xml:space="preserve">
+    <value>Vencimiento</value>
+  </data>
+	<data name="tcdCardExpirToolTip" xml:space="preserve">
+    <value>Fecha en la que expira o vence la tarjeta de crédito con la que se realiza el pago.</value>
+  </data>
+	<data name="AnchorSoporte2Caption" xml:space="preserve">
+    <value>Soporte</value>
+    <comment>ID=100677</comment>
+  </data>
+	<data name="cbeTypeDocsupportCaption" xml:space="preserve">
+    <value>Documento de respaldo</value>
+  </data>
+	<data name="cbeTypeDocsupportToolTip" xml:space="preserve">
+    <value>Tipo de documento de respaldo.</value>
+  </data>
+	<data name="tcnFolioSupportCaption" xml:space="preserve">
+    <value>Folio de respaldo</value>
+  </data>
+	<data name="tcnFolioSupportToolTip" xml:space="preserve">
+    <value>Número de folio del documento respaldo o soporte.</value>
+  </data>
+	<data name="tcnBulletinsCaption" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+	<data name="tcnBulletinsToolTip" xml:space="preserve">
+    <value>Número de boletín</value>
+  </data>
+	<data name="dtcClientCaption" xml:space="preserve">
+    <value>Cliente</value>
+    <comment>ID=9036</comment>
+  </data>
+	<data name="dtcClientToolTip" xml:space="preserve">
+    <value>Código del cliente al que corresponce el movimiento.</value>
+    <comment>ID=9036</comment>
+  </data>
+	<data name="valIntermedCaption" xml:space="preserve">
+    <value>Intermediario</value>
+    <comment>ID=9046</comment>
+  </data>
+	<data name="valIntermedToolTip" xml:space="preserve">
+    <value>Código del intermediario al que corresponde el movimiento.</value>
+    <comment>ID=9046</comment>
+  </data>
+	<data name="valCompanyCRCaption" xml:space="preserve">
+    <value>Co/Reaseguro</value>
+    <comment>ID=9037</comment>
+  </data>
+	<data name="valCompanyCRToolTip" xml:space="preserve">
+    <value>Código de la compañía a la que corresponde el movimiento.</value>
+    <comment>ID=9037</comment>
+  </data>
+	<data name="cbeBranchCaption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+	<data name="cbeBranchToolTip" xml:space="preserve">
+    <value>Ramo al que pertenece la propuesta</value>
+  </data>
+	<data name="valProductCaption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+	<data name="valProductToolTip" xml:space="preserve">
+    <value>Producto al que pertenece al propuesta</value>
+  </data>
+	<data name="tcnProponumCaption" xml:space="preserve">
+    <value>Propuesta</value>
+    <comment>ID=9048</comment>
+  </data>
+	<data name="tcnProponumToolTip" xml:space="preserve">
+    <value>Número identificativo de la propuesta a la que corresponde el movimiento.</value>
+    <comment>ID=9048</comment>
+  </data>
+	<data name="tcnBordereauxCaption" xml:space="preserve">
+    <value>Relación</value>
+    <comment>ID=9030</comment>
+  </data>
+	<data name="tcnBordereauxToolTip" xml:space="preserve">
+    <value>Número identificativo de la relación de cobro o de la remesa recibida.</value>
+    <comment>ID=9030</comment>
+  </data>
+	<data name="tcnClaimCaption" xml:space="preserve">
+    <value>Siniestro</value>
+    <comment>ID=9035</comment>
+  </data>
+	<data name="tcnClaimToolTip" xml:space="preserve">
+    <value>Número identificativo del siniestro al que pertenece el movimiento (recobro/salvamento/recuperado).</value>
+    <comment>ID=9035</comment>
+  </data>
+	<data name="cbeCaseNumberCaption" xml:space="preserve">
+    <value>Caso</value>
+  </data>
+	<data name="cbeCaseNumberToolTip" xml:space="preserve">
+    <value>Número de caso asociado al siniestro.</value>
+  </data>
+	<data name="AnchorFinanciamiento2Caption" xml:space="preserve">
+    <value>Financiamiento</value>
+    <comment>ID=100678</comment>
+  </data>
+	<data name="tcnContractCaption" xml:space="preserve">
+    <value>Contrato</value>
+    <comment>ID=9039</comment>
+  </data>
+	<data name="tcnContractToolTip" xml:space="preserve">
+    <value>Número identificativo del contrato de financiamiento al que corresponde el movimiento.</value>
+    <comment>ID=9039</comment>
+  </data>
+	<data name="tcnDraftCaption" xml:space="preserve">
+    <value>Cuota</value>
+    <comment>ID=9044</comment>
+  </data>
+	<data name="tcnDraftToolTip" xml:space="preserve">
+    <value>Número identificativo del cuota en el contrato de financiamiento al que corresponde el movimiento.</value>
+    <comment>ID=9044</comment>
+  </data>
+	<data name="tcnTransacCaption" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+	<data name="tcnTransacToolTip" xml:space="preserve">
+    <value>Número identificativo del movimiento en tratamiento.</value>
+  </data>
+	<data name="tcdEffecDateCaption" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+	<data name="tcdEffecDateToolTip" xml:space="preserve">
+    <value>Fecha en la que se realiza la transacción.</value>
+  </data>
+	<data name="tcncomprobCaption" xml:space="preserve">
+    <value>Número de comprobante</value>
+  </data>
+	<data name="tcncomprobToolTip" xml:space="preserve">
+    <value>Número de comprobante del ingreso en caja.</value>
+  </data>
+	<data name="cbeMovTypeCaption" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+	<data name="cbeMovTypeToolTip" xml:space="preserve">
+    <value>Indica la forma en que se está ingresando el dinero a la compañía.</value>
+  </data>
+	<data name="cbeOfficeCaption" xml:space="preserve">
+    <value>Sucursal</value>
+  </data>
+	<data name="cbeOfficeToolTip" xml:space="preserve">
+    <value>Zona o sucursal a la que pertenece la caja afectada.</value>
+  </data>
+	<data name="tcdValorDateCaption" xml:space="preserve">
+    <value>Fecha de valorización</value>
+  </data>
+	<data name="tcdValorDateToolTip" xml:space="preserve">
+    <value>Fecha para la que se toma el factor de cambio a aplicar al ingreso de caja.</value>
+  </data>
+	<data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda origen</value>
+  </data>
+	<data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda en la que se encuentra expresado el monto del ingreso.</value>
+  </data>
+	<data name="tcnAmountCaption" xml:space="preserve">
+    <value>Monto en moneda origen</value>
+  </data>
+	<data name="tcnAmountToolTip" xml:space="preserve">
+    <value>Monto del ingreso en su moneda origen.</value>
+  </data>
+	<data name="cbeCurrencyingCaption" xml:space="preserve">
+    <value>Moneda del ingreso</value>
+  </data>
+	<data name="cbeCurrencyingToolTip" xml:space="preserve">
+    <value>Moneda en que se está realizando el ingreso.</value>
+  </data>
+	<data name="tcnAmountingCaption" xml:space="preserve">
+    <value>Monto del ingreso</value>
+  </data>
+	<data name="tcnAmountingToolTip" xml:space="preserve">
+    <value>Monto en el que se realiza el ingreso.</value>
+  </data>
+	<data name="tcnDiferenceCaption" xml:space="preserve">
+    <value>Diferencia</value>
+  </data>
+	<data name="tcnDiferenceToolTip" xml:space="preserve">
+    <value>Muestra la diferencia entre el monto del ingreso actual y el nuevo</value>
+  </data>
+	<data name="cbeCompanyCaption" xml:space="preserve">
+    <value>Compañía</value>
+  </data>
+	<data name="cbeCompanyToolTip" xml:space="preserve">
+    <value>Compañía a la cual pertenecen los conceptos de entrada de dinero en caja.</value>
+  </data>
+	<data name="cbeAreaCaption" xml:space="preserve">
+    <value>Área de seguros</value>
+  </data>
+	<data name="cbeAreaToolTip" xml:space="preserve">
+    <value>Area de seguros a la que pertenece la compañía</value>
+  </data>
+	<data name="valConceptCaption" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+	<data name="valConceptToolTip" xml:space="preserve">
+    <value>Código del concepto por el cual se está realizando el ingreso.</value>
+  </data>
+	<data name="valCurrAccCaption" xml:space="preserve">
+    <value>Cuenta corriente</value>
+  </data>
+	<data name="valCurrAccToolTip" xml:space="preserve">
+    <value>Cuenta corriente a afectar.</value>
+  </data>
+	<data name="cbeBussiTypeCaption" xml:space="preserve">
+    <value>Tipo de negocio</value>
+  </data>
+	<data name="btnNotesCaption" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+	<data name="btnNotesToolTip" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+	<data name="AnchorDocumento3Caption" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+	<data name="tctDocNumbeCaption" xml:space="preserve">
+    <value>Número</value>
+  </data>
+	<data name="tctDocNumbeToolTip" xml:space="preserve">
+    <value>Número del documento físico que soporta el ingreso en tratamiento.</value>
+  </data>
+	<data name="cbeChequelocatCaption" xml:space="preserve">
+    <value>Plaza</value>
+  </data>
+	<data name="cbeChequelocatToolTip" xml:space="preserve">
+    <value>Código de la plaza a la que pertenece el cheque.</value>
+  </data>
+	<data name="tcdDocDateCaption" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+	<data name="tcdDocDateToolTip" xml:space="preserve">
+    <value>Fecha (valor) del documento.</value>
+  </data>
+	<data name="cbeBankCaption" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+	<data name="cbeBankToolTip" xml:space="preserve">
+    <value>Corresponde al banco (externo),al cual pertenece el cheque o la tarjeta de crédito que se está ingresando.</value>
+  </data>
+	<data name="valAccBankCaption" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+	<data name="valAccBankToolTip" xml:space="preserve">
+    <value>Cuenta interna del banco que se ve afectado por el movimiento.</value>
+  </data>
+	<data name="tcnFinancIntCaption" xml:space="preserve">
+    <value>Interés financiero</value>
+  </data>
+	<data name="tcnFinancIntToolTip" xml:space="preserve">
+    <value>Muestra los intereses financieros de los cheques a fecha.</value>
+  </data>
+	<data name="cbeinwayCaption" xml:space="preserve">
+    <value>Canal de ingreso</value>
+  </data>
+	<data name="cbeinwayToolTip" xml:space="preserve">
+    <value>Código del canal de ingreso.</value>
+  </data>
+	<data name="Anchorinformaciónconvenio3Caption" xml:space="preserve">
+    <value>Información del convenio</value>
+  </data>
+	<data name="AnchorTarjeta de crédito3Caption" xml:space="preserve">
+    <value>Tarjeta de crédito</value>
+  </data>
+	<data name="valBank_agreeCaption" xml:space="preserve">
+    <value>Banco-convenio</value>
+  </data>
+	<data name="valBank_agreeToolTip" xml:space="preserve">
+    <value>Banco que se encuentra en convenio de PAC o de Pago en ventanilla.</value>
+  </data>
+	<data name="tctCardNumCaption" xml:space="preserve">
+    <value>Número</value>
+  </data>
+	<data name="tctCardNumToolTip" xml:space="preserve">
+    <value>Número que identifica a la tarjeta de crédito con la que se ha realizado el pago.</value>
+  </data>
+	<data name="tcnCod_AgreeCaption" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
+	<data name="tcnCod_AgreeToolTip" xml:space="preserve">
+    <value>Número del convenio de descuento por planilla.</value>
+  </data>
+	<data name="cbeCardTypeCaption" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+	<data name="cbeCardTypeToolTip" xml:space="preserve">
+    <value>Tipo de tarjeta de crédito con la que se realiza el pago.</value>
+  </data>
+	<data name="tcdDatecollectCaption" xml:space="preserve">
+    <value>Fecha de cobranza</value>
+  </data>
+	<data name="tcdDatecollectToolTip" xml:space="preserve">
+    <value>Fecha de cobranza para la cual se realiza el ingreso en caja.</value>
+  </data>
+	<data name="tcdCardExpirCaption" xml:space="preserve">
+    <value>Vencimiento</value>
+  </data>
+	<data name="tcdCardExpirToolTip" xml:space="preserve">
+    <value>Fecha en la que expira o vence la tarjeta de crédito con la que se realiza el pago.</value>
+  </data>
+	<data name="AnchorSoporte3Caption" xml:space="preserve">
+    <value>Soporte</value>
+  </data>
+	<data name="cbeTypeDocsupportCaption" xml:space="preserve">
+    <value>Documento de respaldo</value>
+  </data>
+	<data name="cbeTypeDocsupportToolTip" xml:space="preserve">
+    <value>Tipo de documento de respaldo.</value>
+  </data>
+	<data name="tcnFolioSupportCaption" xml:space="preserve">
+    <value>Folio de respaldo</value>
+  </data>
+	<data name="tcnFolioSupportToolTip" xml:space="preserve">
+    <value>Número de folio del documento respaldo o soporte.</value>
+  </data>
+	<data name="tcnBulletinsCaption" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+	<data name="tcnBulletinsToolTip" xml:space="preserve">
+    <value>Número de boletín</value>
+  </data>
+	<data name="dtcClientCaption" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+	<data name="dtcClientToolTip" xml:space="preserve">
+    <value>Código del cliente al que corresponce el movimiento.</value>
+  </data>
+	<data name="valIntermedCaption" xml:space="preserve">
+    <value>Intermediario</value>
+  </data>
+	<data name="valIntermedToolTip" xml:space="preserve">
+    <value>Código del intermediario al que corresponde el movimiento.</value>
+  </data>
+	<data name="valCompanyCRCaption" xml:space="preserve">
+    <value>Co/Reaseguro</value>
+  </data>
+	<data name="valCompanyCRToolTip" xml:space="preserve">
+    <value>Código de la compañía a la que corresponde el movimiento.</value>
+  </data>
+	<data name="cbeBranchCaption" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+	<data name="cbeBranchToolTip" xml:space="preserve">
+    <value>Ramo al que pertenece la propuesta</value>
+  </data>
+	<data name="valProductCaption" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+	<data name="valProductToolTip" xml:space="preserve">
+    <value>Producto al que pertenece al propuesta</value>
+  </data>
+	<data name="tcnProponumCaption" xml:space="preserve">
+    <value>Propuesta</value>
+  </data>
+	<data name="tcnProponumToolTip" xml:space="preserve">
+    <value>Número identificativo de la propuesta a la que corresponde el movimiento.</value>
+  </data>
+	<data name="tcnBordereauxCaption" xml:space="preserve">
+    <value>Relación</value>
+  </data>
+	<data name="tcnBordereauxToolTip" xml:space="preserve">
+    <value>Número identificativo de la relación de cobro o de la remesa recibida.</value>
+  </data>
+	<data name="tcnClaimCaption" xml:space="preserve">
+    <value>Siniestro</value>
+  </data>
+	<data name="tcnClaimToolTip" xml:space="preserve">
+    <value>Número identificativo del siniestro al que pertenece el movimiento (recobro/salvamento/recuperado).</value>
+  </data>
+	<data name="tcnCaseNumberCaption" xml:space="preserve">
+    <value>Caso</value>
+  </data>
+	<data name="tcnCaseNumberToolTip" xml:space="preserve">
+    <value>Número de caso asociado al siniestro.</value>
+  </data>
+	<data name="AnchorFinanciamiento3Caption" xml:space="preserve">
+    <value>Financiamiento</value>
+  </data>
+	<data name="tcnContractCaption" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+	<data name="tcnContractToolTip" xml:space="preserve">
+    <value>Número identificativo del contrato de financiamiento al que corresponde el movimiento.</value>
+  </data>
+	<data name="tcnDraftCaption" xml:space="preserve">
+    <value>Cuota</value>
+  </data>
+	<data name="tcnDraftToolTip" xml:space="preserve">
+    <value>Número identificativo del cuota en el contrato de financiamiento al que corresponde el movimiento.</value>
+  </data>
+</root>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html id="app">
+<head>
+    <meta charset='UTF-8' />
+    <title>VisualTIME | 404 Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fasi/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fasi/app/css/master.css?rel=1526062220926" />
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box-error text-center animated fadeInDown">
+        <h1>404</h1>
+        <h3 id="ResourceNotFound" class="font-bold trn" data-i18n="app.form.ResourceNotFound"></h3>
+        <div id="ResourceNotFoundDetail" class="error-desc trn" data-i18n="app.form.ResourceNotFoundDetail"></div>
+    </div>
+
+    <!--MarkAsWidget-->
+    <script type="text/javascript" src="/fasi/assets/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/fasi/assets/js/i18next.min.js?rel=1526062220926"></script>
+    <!--MarkAsWidget-->
+
+    <script type="text/javascript">
+        var lng = "es";
+        if (localStorage.getItem('languageName') !== null) {
+            if (localStorage.getItem('languageName').toLowerCase().indexOf("-") !== -1) {
+                lng = localStorage.getItem('languageName').split('-')[0];
+            }
+            else {
+                lng = localStorage.getItem('languageName');
+            }
+        }
+
+        $(document).ready(function () {
+            $.i18n.init({
+                resGetPath: location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/fasi/error/locales/404.__lng__.json',
+                load: 'unspecific',
+                fallbackLng: false,
+                lng: lng
+            }, function (t) {
+                $('#app').i18n();
+            });
+
+        });
+    </script>
+</body>
+</html>

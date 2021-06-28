@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-table.min.css' />
+
+</head>
+<body>
+    <form id="HT5CambioCorreoClientesDemoMainForm">
+        <input type="hidden" id="HT5CambioCorreoClientesDemoFormId" name="HT5CambioCorreoClientesDemoFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zone0 zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zone0" class='panel panel-default'>
+                    <div class='panel-heading' title='zona'>zona</div>
+                 <div class="panel-body">
+    <!-- Container content -->
+                <!-- Container: AddressDLI grid -->
+                <div  class='col-md-12'>
+
+               <div id='AddressDLIContainer'>
+                    <div id="AddressDLItoolbar">
+                    <div class='form-inline'>
+                        <button id="AddressDLICreateBtn" type="button" class="btn btn-default" data-modal-title="Agregar">
+                            Agregar
+                        </button>
+                        <button id="AddressDLIRemoveBtn"  type="button" class="btn btn-danger" disabled data-title="Eliminar">
+                            <i class="glyphicon glyphicon-remove"></i>Eliminar
+                        </button>
+                    </div>
+                    </div>
+                    <div id='AddressDLITblPlaceHolder'></div>
+               </div>
+
+                </div>
+                <!-- End Container: AddressDLI grid -->
+    <!-- End Container content -->
+                 </div>
+               </div>
+                        </div>
+                        <!-- End Container: zone0 zone -->
+                        <!-- Container: zone1 zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zone1" class='panel panel-default hidden'>
+                    <div class='panel-heading' title=''></div>
+                 <div class="panel-body">
+    <!-- Container content -->
+                <!-- Container: Client grid -->
+                <div  class='col-md-12'>
+
+               <div id='ClientContainer'>
+                    <div id='ClientTblPlaceHolder'></div>
+               </div>
+
+                </div>
+                <!-- End Container: Client grid -->
+    <!-- End Container content -->
+                 </div>
+               </div>
+                        </div>
+                        <!-- End Container: zone1 zone -->
+                        <!-- Container: zone3 zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zone3">
+    <!-- Container content -->
+                <!-- button4 button -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <button id='button4' class='ladda-button btn center-block btn-default' data-style='expand-right' title='Actualiza la dirección de correo de los elementos indicados en el grid' ><span class='ladda-label'>Actualizar</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zone3 zone -->
+                        <!-- Container: zone2 zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zone2" class='panel panel-default hidden'>
+                    <div class='panel-heading' title='zona'>zona</div>
+                 <div class="panel-body">
+    <!-- Container content -->
+                <!-- DireccionABorrar numeric -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-4 text-left'>
+                      <label id='DireccionABorrarLabel' class='control-label' for='DireccionABorrar'>DireccionABorrar</label>
+                    </div>
+                    <div class='col-md-8'>
+                        <input class='form-control' id='DireccionABorrar' name='DireccionABorrar' title='numeric0' type='text' style='text-align: right'/>
+                    </div>
+                  </div>
+                </div>
+                <!-- button1 button -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <button id='button1' class='ladda-button btn pull-left btn-default' data-style='expand-right' title='button1' ><span class='ladda-label'>Borrar dirección</span><span class='ladda-spinner'></span></button>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+                 </div>
+               </div>
+                        </div>
+                        <!-- End Container: zone2 zone -->
+            <!-- End Container content -->
+
+    </form>
+
+
+
+        <div id='AddressDLIPopup' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='edit' aria-hidden='true'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title"><span>Información</span></h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <form id='AddressDLIEditForm'>
+                            <!-- Container content -->
+                                        <!-- RecordEffectiveDate datepicker -->
+                                        <div class='col-md-6 form-horizontal'>
+                                          <div class='form-group'>
+                                            <div class='col-md-4 text-left'>
+                                              <label id='RecordEffectiveDateLabel' class='control-label' for='RecordEffectiveDate'>Fecha de Efecto</label><span id='RecordEffectiveDateRequired' class='required-mark'>*</span>
+                                            </div>
+                                            <div class='col-md-8'>
+                                                <div class='input-group date' id='RecordEffectiveDate_group'>
+                                                    <input id='RecordEffectiveDate' name='RecordEffectiveDate' type='text' class='form-control' title='Fecha de Efecto del Registro' size='10' maxlength='10'/>
+                                                    <span class='input-group-addon'>
+                                                        <span class='glyphicon glyphicon-calendar'></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- Email text -->
+                                        <div class='col-md-6 form-horizontal'>
+                                          <div class='form-group'>
+                                            <div class='col-md-4 text-left'>
+                                              <label id='EmailLabel' class='control-label' for='Email'>Correo electrónico</label>
+                                            </div>
+                                            <div class='col-md-8'>
+                                                <input class='form-control' id='Email' name='Email' title='Email' type='text' size='60' maxlength='60'/>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- RecordOwner text -->
+                                        <div class='col-md-6 form-horizontal'>
+                                          <div class='form-group'>
+                                            <div class='col-md-4 text-left'>
+                                              <label id='RecordOwnerLabel' class='control-label' for='RecordOwner'>Propietario</label><span id='RecordOwnerRequired' class='required-mark'>*</span>
+                                            </div>
+                                            <div class='col-md-8'>
+                                                <input class='form-control' id='RecordOwner' name='RecordOwner' title='Propietario del Registro' type='text' size='50' maxlength='50'/>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- CustomString text -->
+                                        <div class='col-md-6 form-horizontal'>
+                                          <div class='form-group'>
+                                            <div class='col-md-4 text-left'>
+                                              <label id='CustomStringLabel' class='control-label' for='CustomString'>Nombre</label>
+                                            </div>
+                                            <div class='col-md-8'>
+                                                <input class='form-control' id='CustomString' name='CustomString' title='text10' type='text' size='50' maxlength='50'/>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- KeyToAddressRecord text -->
+                                        <div class='col-md-6 form-horizontal'>
+                                          <div class='form-group'>
+                                            <div class='col-md-4 text-left'>
+                                              <label id='KeyToAddressRecordLabel' class='control-label' for='KeyToAddressRecord'>Clave de Acceso a Dirección</label><span id='KeyToAddressRecordRequired' class='required-mark'>*</span>
+                                            </div>
+                                            <div class='col-md-8'>
+                                                <input class='form-control' id='KeyToAddressRecord' name='KeyToAddressRecord' title='Clave de Acceso A Dirección' type='text' size='50' maxlength='50'/>
+                                            </div>
+                                          </div>
+                                        </div>
+                            <!-- End Container content -->
+
+                        </form>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="AddressDLISaveBtn"  class="btn btn-warning">Guardar</button>
+                        <button class="btn"  data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    
+
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table.min.js'></script>
+    <script src='/fasi/assets/js/bootstrap-table-es-CR.min.js'></script>
+    <script src='/fasi/app/js/TableHelper.js?rel=20200117022707299'></script>
+    <script src='/fasi/assets/js/autoNumeric.min.js'></script>
+
+    <script src="/fasi/dli/forms/HT5CambioCorreoClientesDemo.js?rel=20200117022707299"></script>
+</body>
+</html>

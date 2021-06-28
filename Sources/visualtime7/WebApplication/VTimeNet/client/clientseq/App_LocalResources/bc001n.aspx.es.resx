@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnchorNombreCaption" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="AnchorLicenciaCaption" xml:space="preserve">
+    <value>Licencia de conducir</value>
+  </data>
+  <data name="AnchorControlCaption" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="tcdInpDateCaption" xml:space="preserve">
+    <value>Fecha de ingreso</value>
+  </data>
+  <data name="tcdInpDateToolTip" xml:space="preserve">
+    <value>Fecha en que ingresa el cliente al sistema</value>
+  </data>
+  <data name="AnchorNombre2Caption" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="tctLastNameCaption" xml:space="preserve">
+    <value>Apellido paterno</value>
+  </data>
+  <data name="tctLastNameToolTip" xml:space="preserve">
+    <value>Apellido paterno del cliente en tratamiento</value>
+  </data>
+  <data name="tctLastName2Caption" xml:space="preserve">
+    <value>Apellido materno</value>
+  </data>
+  <data name="tctLastName2ToolTip" xml:space="preserve">
+    <value>Apellido materno del cliente en tratamiento</value>
+  </data>
+  <data name="tctFirstNameCaption" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="tctFirstNameToolTip" xml:space="preserve">
+    <value>Nombres del cliente en tratamiento</value>
+  </data>
+  <data name="tcdBirthDateCaption" xml:space="preserve">
+    <value>Fecha de nacimiento</value>
+  </data>
+  <data name="tcdBirthDateToolTip" xml:space="preserve">
+    <value>Fecha de nacimiento del cliente</value>
+  </data>
+  <data name="cbeCivilstaCaption" xml:space="preserve">
+    <value>Estado civil</value>
+  </data>
+  <data name="cbeCivilstaToolTip" xml:space="preserve">
+    <value>Estado civil del cliente</value>
+  </data>
+  <data name="cbeSexCaption" xml:space="preserve">
+    <value>Sexo</value>
+  </data>
+  <data name="cbeSexToolTip" xml:space="preserve">
+    <value>Sexo del cliente</value>
+  </data>
+  <data name="cbeNationalityCaption" xml:space="preserve">
+    <value>Nacionalidad</value>
+  </data>
+  <data name="cbeNationalityToolTip" xml:space="preserve">
+    <value>Nacionalidad del Cliente</value>
+  </data>
+  <data name="cbeOccupatCaption" xml:space="preserve">
+    <value>Actividad laboral</value>
+  </data>
+  <data name="cbeOccupatToolTip" xml:space="preserve">
+    <value>Actividad económica principal del cliente</value>
+  </data>
+  <data name="cbeAreaCaption" xml:space="preserve">
+    <value>Rubro económico</value>
+  </data>
+  <data name="cbeAreaToolTip" xml:space="preserve">
+    <value>Rubro económico en el cual se desenvuelve el cliente</value>
+  </data>
+  <data name="cbeTitleCaption" xml:space="preserve">
+    <value>Profesión</value>
+  </data>
+  <data name="cbeTitleToolTip" xml:space="preserve">
+    <value>Profesión del cliente en tratamiento</value>
+  </data>
+  <data name="AnchorLicencia2Caption" xml:space="preserve">
+    <value>Licencia de conducir</value>
+  </data>
+  <data name="tcdDriverDatCaption" xml:space="preserve">
+    <value>Fecha de otorgamiento</value>
+  </data>
+  <data name="tcdDriverDatToolTip" xml:space="preserve">
+    <value>Fecha de expedición de la licencia de conducir del cliente</value>
+  </data>
+  <data name="tctDriverNumCaption" xml:space="preserve">
+    <value>Número de licencia de conducir</value>
+  </data>
+  <data name="tctDriverNumToolTip" xml:space="preserve">
+    <value>Número de licencia de conducir del cliente en tratamiento</value>
+  </data>
+  <data name="tcdDrivExpDatCaption" xml:space="preserve">
+    <value>Fecha de término</value>
+  </data>
+  <data name="tcdDrivExpDatToolTip" xml:space="preserve">
+    <value>Fecha de expiración de la licencia de conducir del cliente</value>
+  </data>
+  <data name="cbeTypDriverCaption" xml:space="preserve">
+    <value>Clase</value>
+  </data>
+  <data name="cbeTypDriverToolTip" xml:space="preserve">
+    <value>Tipo de licencia de conducir del cliente</value>
+  </data>
+  <data name="cbeLimitDrivCaption" xml:space="preserve">
+    <value>Restricciones</value>
+  </data>
+  <data name="cbeLimitDrivToolTip" xml:space="preserve">
+    <value>Restricciones para conducir del cliente en tratamiento</value>
+  </data>
+  <data name="AnchorControl2Caption" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="chkBlockadeCaption" xml:space="preserve">
+    <value>Bloqueado</value>
+  </data>
+  <data name="tcdDeathdateCaption" xml:space="preserve">
+    <value>Fecha de defunción</value>
+  </data>
+  <data name="tcdDeathdateToolTip" xml:space="preserve">
+    <value>Fecha de defunción del cliente. Si el cliente tiene póliza de vida, se actualiza con la fecha de ocurrencia del siniestro que afecte la cobertura de muerte.</value>
+  </data>
+  <data name="AnchorControl3Caption" xml:space="preserve">
+    <value>Información adicional</value>
+  </data>
+  <data name="cbeHealth_OrgCaption" xml:space="preserve">
+    <value>Institución de salud</value>
+  </data>
+  <data name="cbeHealth_OrgToolTip" xml:space="preserve">
+    <value>Institución de salud a la que se encuentra asociado el cliente en tratamiento</value>
+  </data>
+  <data name="cbeAfpCaption" xml:space="preserve">
+    <value>AFP</value>
+  </data>
+  <data name="cbeAfpToolTip" xml:space="preserve">
+    <value>Administradora de Fondo de Pensiones a la cual se encuentra asociado el cliente en tratamiento</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Condición de fumador</value>
+  </data>
+  <data name="optSmoking_3Caption" xml:space="preserve">
+    <value>No informado</value>
+  </data>
+  <data name="optSmoking_3ToolTip" xml:space="preserve">
+    <value>Si está seleccionado indica que el cliente no informó si fuma o no</value>
+  </data>
+  <data name="optSmoking_1Caption" xml:space="preserve">
+    <value>Fumador</value>
+  </data>
+  <data name="optSmoking_1ToolTip" xml:space="preserve">
+    <value>Si está marcado indica que el cliente es fumador</value>
+  </data>
+  <data name="optSmoking_2Caption" xml:space="preserve">
+    <value>No fumador</value>
+  </data>
+  <data name="optSmoking_2ToolTip" xml:space="preserve">
+    <value>Si está marcado indica que el cliente no es fumador</value>
+  </data>
+  <data name="tcdWeddCaption" xml:space="preserve">
+    <value>Fecha de matrimonio</value>
+  </data>
+  <data name="tcdWeddToolTip" xml:space="preserve">
+    <value>Fecha de matrimonio del cliente en tratamiento</value>
+  </data>
+  <data name="chkBill_IndCaption" xml:space="preserve">
+    <value>Indicador de factura</value>
+  </data>
+  <data name="tcdDependantCaption" xml:space="preserve">
+    <value>Fecha de trabajador dependiente</value>
+  </data>
+  <data name="tcdDependantToolTip" xml:space="preserve">
+    <value>Fecha en la cual el trabajador toma el estado de trabajador dependiente</value>
+  </data>
+  <data name="tcdIndependantCaption" xml:space="preserve">
+    <value>Fecha de  trabajador independiente</value>
+  </data>
+  <data name="tcdIndependantToolTip" xml:space="preserve">
+    <value>Fecha en la cual el trabajador toma el estado de trabajador independiente</value>
+  </data>
+  <data name="tcdRetirementCaption" xml:space="preserve">
+    <value>Fecha de  trabajador pensionado</value>
+  </data>
+  <data name="tcdRetirementToolTip" xml:space="preserve">
+    <value>Fecha en la cual el trabajador toma el estado de trabajador pensionado</value>
+  </data>
+  <data name="tctFatcaCaption" xml:space="preserve">
+    <value>Fatca</value>
+  </data>
+  <data name="tcdFatcaToolTip" xml:space="preserve">
+    <value>Fatca</value>
+  </data>
+  <data name="chkPEPCaption" xml:space="preserve">
+    <value>Persona politicamente expuesta</value>
+  </data>
+  <data name="chkUsPersonCaption" xml:space="preserve">
+    <value>Indicador de cuidadano EE.UU</value>
+  </data>
+  <data name="chkUSPERSON_1Caption" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="chkUSPERSON_1ToolTip" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="chkUSPERSON_2Caption" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="chkUSPERSON_2ToolTip" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="chkCRSCaption" xml:space="preserve">
+    <value>Persona con residencia tributaria en el extranjero</value>
+  </data>
+</root>

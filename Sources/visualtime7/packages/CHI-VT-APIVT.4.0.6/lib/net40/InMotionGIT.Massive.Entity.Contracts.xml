@@ -1,0 +1,4766 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Massive.Entity.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumControlProcessSponsorChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumErrorLogMasiveProcesChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumMasiveProcessLogChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumMassiveProcesChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumParticularconditionsformassiveprocessChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumProcessConfigurationSponsorChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumRulesForMassiveProcessChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumSponsorProcessCalendarChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumTemplateColumnsUploadPolicyChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumTemporalMassiveChargeChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Enumerations.EnumTMP_FIELDSHEETChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor">
+ <summary>
+ Sponsor Partner Process Control Table.
+ </summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.CreateNewControlProcessSponsor">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._ProcessIdentifier">
+<summary>
+Process code identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._LastProcessDate">
+<summary>
+Last process date.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._NextProcessDate">
+<summary>
+Next Process Date.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._NextNoticeProcessDate">
+<summary>
+Next Notice Process Date.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.ProcessIdentifier">
+<summary>
+Process code identifier (NKEY)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.LastProcessDate">
+<summary>
+Last process date. (DLAST_DATE)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.DLAST_DATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.NextProcessDate">
+<summary>
+Next Process Date. (DNEXT_DATE)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.DNEXT_DATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.NextNoticeProcessDate">
+<summary>
+Next Notice Process Date. (DNEXT_NOTICEDATE)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.DNEXT_NOTICEDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'CTROL_DATE_SPONSOR.NUSERCODE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.Compare(InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ControlProcessSponsorItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsor.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection">
+ <summary>
+ Collection for ControlProcessSponsor class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.AddControlProcessSponsor">
+ <summary>
+ Add an instance of class 'ControlProcessSponsor' in the ControlProcessSponsorCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.Compare(InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ControlProcessSponsorCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces">
+ <summary>
+ Error Log for massives process
+ </summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.CreateNewErrorLogMasiveProces">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._Key">
+<summary>
+Key of the temporary table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._RowNumber">
+<summary>
+Row number.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._SequenceNumber">
+<summary>
+Sequence Number.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ErrorConsecutive">
+<summary>
+Consecutive number of error
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._AgreementID">
+<summary>
+Discount or Agreement Code.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ErrorType">
+<summary>
+Type of error
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ConditionType">
+<summary>
+Type of condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ConditionSection">
+<summary>
+Section of the process where the condition applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._NKEY">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._Action">
+<summary>
+Action about error.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._IDRecordSequence">
+<summary>
+Record Sequence Identifier.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._WindowCode">
+<summary>
+Code of the window (logical code)
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ErrorDescription">
+<summary>
+Description of the generated error.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ExecutionInterrupt">
+<summary>
+Indicates whether the error should interrupt the execution of the process
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._RecordType">
+<summary>
+Type of Record
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._LineOfBusiness">
+<summary>
+Code of the line of business
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._ProductCode">
+<summary>
+Code of the product
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces._CertificateID">
+<summary>
+Number identifying the certificate
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.Key">
+<summary>
+Key of the temporary table. (SKEY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RowNumber">
+<summary>
+Row number. (NROW)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NROW'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SequenceNumber">
+<summary>
+Sequence Number. (NSEQ)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NSEQ'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ErrorConsecutive">
+<summary>
+Consecutive number of error (NCONSEC)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NCONSEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.AgreementID">
+<summary>
+Discount or Agreement Code. (NCOD_AGREE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NCOD_AGREE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ErrorType">
+<summary>
+Type of error (SERRORTYP)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SERRORTYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ConditionType">
+<summary>
+Type of condition (STYP_CONDI)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.STYP_CONDI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ConditionSection">
+<summary>
+Section of the process where the condition applies (NSECTION)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NSECTION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.NKEY">
+<summary>
+.
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.Action">
+<summary>
+Action about error. (SACTION)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SACTION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.IDRecordSequence">
+<summary>
+Record Sequence Identifier. (NCODERROR)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NCODERROR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.WindowCode">
+<summary>
+Code of the window (logical code) (SCODISPL)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SCODISPL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ErrorDescription">
+<summary>
+Description of the generated error. (SERRORMESSEROW)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SERRORMESSEROW'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ExecutionInterrupt">
+<summary>
+Indicates whether the error should interrupt the execution of the process (SBREAK)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SBREAK'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RecordType">
+<summary>
+Type of Record (SCERTYPE)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.SCERTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RecordTypeEnum">
+<summary>
+Type of Record
+</summary>
+<remarks>This property use a enumeration based on property 'RecordType'</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RecordTypeEnumText">
+<summary>
+Type of Record
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.LineOfBusiness">
+<summary>
+Code of the line of business (NBRANCH)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ProductCode">
+<summary>
+Code of the product (NPRODUCT)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application (NPOLICY)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NPOLICY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.CertificateID">
+<summary>
+Number identifying the certificate (NCERTIF)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_ERROR.NCERTIF'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.Compare(InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ErrorLogMasiveProcesItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ErrorTypeDescription">
+ <summary>
+ Type of error
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE153'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ConditionTypeDescription">
+ <summary>
+ Type of condition
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8204' on the table 'TABLE8204'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProces.ConditionSectionDescription">
+ <summary>
+ Section of the process where the condition applies
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8205' on the table 'TABLE8205'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection">
+ <summary>
+ Collection for ErrorLogMasiveProces class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.AddErrorLogMasiveProces">
+ <summary>
+ Add an instance of class 'ErrorLogMasiveProces' in the ErrorLogMasiveProcesCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.Compare(InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ErrorLogMasiveProcesCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog">
+ <summary>
+ Massive process log.
+ </summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.CreateNewMasiveProcessLog">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Key">
+<summary>
+Key of the temporary table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._RecordID">
+<summary>
+Record Identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._SequenceNumber">
+<summary>
+Record sequence number.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._RowNumber">
+<summary>
+Row number.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._AgreementCode">
+<summary>
+Discount or Agreement Code.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._RecordType">
+<summary>
+Type of Record. Possible values as per table TABLE5632
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Policy">
+<summary>
+Number identifying the Policy/Quotation/Application
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Certificate">
+<summary>
+Number identifying the certificate
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._CustomeCode">
+<summary>
+Customer code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._FigureClient">
+<summary>
+Code of the figure. Possible values according to table 12
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._BillNumber">
+<summary>
+Number identifying the bill
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._EffectiveDate">
+<summary>
+Effective Date of The Policy/Certificate.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._EndingDate">
+<summary>
+Ending date of the policy/certificate (end of the effective period).
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Capital">
+<summary>
+Capital
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._PremiumAmount">
+<summary>
+Premium of the Amount
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._CancellationDate">
+<summary>
+Cancellation date
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._ClaimNumber">
+<summary>
+Claim Number
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._ClaimDeclarationNumber">
+<summary>
+Claim Declaration Number (Denunciation).
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._ClaimsPaid">
+<summary>
+Claims Paid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._PremiumPaid">
+<summary>
+Premium Paid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._CancellationCause">
+<summary>
+Claim Description Canceled.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._BillControlDigit">
+<summary>
+Bill control digit
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Installment">
+<summary>
+Number of the installment related to the bill payment agreemen
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._InsuredLoadingCode">
+<summary>
+Code of loading the insured person
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._WayPay">
+<summary>
+Code of the payment method
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._FreqPay">
+<summary>
+Payment frequency of the premium. Possible values as per table TABLE36
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._CombinedPolicy">
+<summary>
+Combined policy number
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._Commission">
+<summary>
+Total commission amount of the bill
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._StipendAmount">
+<summary>
+Stipend amount
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._PremiumOriginCurrency">
+<summary>
+Amount in the original currency
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog._PremiumLocalCurrency">
+<summary>
+Amount in the local currency
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Key">
+<summary>
+Key of the temporary table. (SKEY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.SKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RecordID">
+<summary>
+Record Identifier (NKEY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SequenceNumber">
+<summary>
+Record sequence number. (NSEQ)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NSEQ'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RowNumber">
+<summary>
+Row number. (NROW)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NROW'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.AgreementCode">
+<summary>
+Discount or Agreement Code. (NCOD_AGREE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCOD_AGREE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RecordType">
+<summary>
+Type of Record. Possible values as per table TABLE5632 (SCERTYPE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.SCERTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RecordTypeEnum">
+<summary>
+Type of Record. Possible values as per table TABLE5632
+</summary>
+<remarks>This property use a enumeration based on property 'RecordType'</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RecordTypeEnumText">
+<summary>
+Type of Record. Possible values as per table TABLE5632
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Policy">
+<summary>
+Number identifying the Policy/Quotation/Application (NPOLICY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NPOLICY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Certificate">
+<summary>
+Number identifying the certificate (NCERTIF)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCERTIF'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.CustomeCode">
+<summary>
+Customer code (SCLIENT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.SCLIENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FigureClient">
+<summary>
+Code of the figure. Possible values according to table 12 (NROLE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NROLE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FigureClientEnum">
+<summary>
+Code of the figure. Possible values according to table 12
+</summary>
+<remarks>This property use a enumeration based on property 'FigureClient'</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FigureClientEnumText">
+<summary>
+Code of the figure. Possible values according to table 12
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.BillNumber">
+<summary>
+Number identifying the bill (NRECEIPT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NRECEIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.EffectiveDate">
+<summary>
+Effective Date of The Policy/Certificate. (DSTARTDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.DSTARTDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.EndingDate">
+<summary>
+Ending date of the policy/certificate (end of the effective period). (DEXPIRDAT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.DEXPIRDAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Capital">
+<summary>
+Capital (NCAPITAL)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCAPITAL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.PremiumAmount">
+<summary>
+Premium of the Amount (NPREMIUM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NPREMIUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.CancellationDate">
+<summary>
+Cancellation date (DNULLDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.DNULLDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.ClaimNumber">
+<summary>
+Claim Number (NCLAIM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCLAIM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.ClaimDeclarationNumber">
+<summary>
+Claim Declaration Number (Denunciation). (NDECLAREDCLAIM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NDECLAREDCLAIM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.ClaimsPaid">
+<summary>
+Claims Paid. (NCLAIMSPAID)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCLAIMSPAID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.PremiumPaid">
+<summary>
+Premium Paid. (NRECEIPTPAID)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NRECEIPTPAID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.CancellationCause">
+<summary>
+Claim Description Canceled. (SCANCELEDCLAIMS)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.SCANCELEDCLAIMS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.BillControlDigit">
+<summary>
+Bill control digit (NDIGIT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NDIGIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Installment">
+<summary>
+Number of the installment related to the bill payment agreemen (NPAYNUMBE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NPAYNUMBE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.InsuredLoadingCode">
+<summary>
+Code of loading the insured person (SITEM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.SITEM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.WayPay">
+<summary>
+Code of the payment method (NWAY_PAY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NWAY_PAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FreqPay">
+<summary>
+Payment frequency of the premium. Possible values as per table TABLE36 (NPAYFREQ)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NPAYFREQ'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FreqPayEnum">
+<summary>
+Payment frequency of the premium. Possible values as per table TABLE36
+</summary>
+<remarks>This property use a enumeration based on property 'FreqPay'</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.FreqPayEnumText">
+<summary>
+Payment frequency of the premium. Possible values as per table TABLE36
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.CombinedPolicy">
+<summary>
+Combined policy number (NCOMBPOLICY)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCOMBPOLICY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Commission">
+<summary>
+Total commission amount of the bill (NCOMMISION)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NCOMMISION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.StipendAmount">
+<summary>
+Stipend amount (NSTIPEND_AMOUNT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NSTIPEND_AMOUNT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.PremiumOriginCurrency">
+<summary>
+Amount in the original currency (NAMOUNT_ORI)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NAMOUNT_ORI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.PremiumLocalCurrency">
+<summary>
+Amount in the local currency (NAMOUNT_LOC)..
+</summary>
+<remarks>Data-source is 'MASSIVE_LOG_PROC.NAMOUNT_LOC'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.Compare(InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="MasiveProcessLogItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLog.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection">
+ <summary>
+ Collection for MasiveProcessLog class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.AddMasiveProcessLog">
+ <summary>
+ Add an instance of class 'MasiveProcessLog' in the MasiveProcessLogCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.Compare(InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MasiveProcessLogCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.MassiveProces">
+ <summary>
+ Mass Process
+ </summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.CreateNewMassiveProces">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._Key">
+<summary>
+Key of the temporary table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._AgreementCode">
+<summary>
+Discount or Agreement Code.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ProcessIdentifier">
+<summary>
+Record Identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._IDProcess">
+<summary>
+Consecutive process number according to sponsor and process
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._Filename">
+<summary>
+Name of the file
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._LotDescripcion">
+<summary>
+Lot descripcion of The Process
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ExecutionType">
+<summary>
+Execution type.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ProcessStatus">
+<summary>
+Massive Process Status
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ProcessDate">
+<summary>
+Process date
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._TotalRecordProcessed">
+<summary>
+Total record processed
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._TotalSuccessRecords">
+<summary>
+Total Success Records
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._TotalErrorRecords">
+<summary>
+Total Records with Error
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._CollectedPremiun">
+<summary>
+Collected Premiun
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._SuscribedPolicies">
+<summary>
+Suscribed Policies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._CanceledPolicies">
+<summary>
+Canceled Policies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ModifiedPolicies">
+<summary>
+Modified Policies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ClaimsReported">
+<summary>
+Claims Reported
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._DeclaredClaims">
+<summary>
+Declared Claims
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ClaimsPaidAmount">
+<summary>
+Claims paid Amount
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._TotalClaimsPaid">
+<summary>
+Total Claims paid
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._CanceledClaims">
+<summary>
+Canceled claims
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._CanceledCertificates">
+<summary>
+Canceled Certificates.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ModifiedCertificates">
+<summary>
+Modified Certificates
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._SuscribedCertificates">
+<summary>
+Suscribed Certificates.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.MassiveProces._ExecutionProcessDate">
+<summary>
+Execution Process Date
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.Key">
+<summary>
+Key of the temporary table. (SKEY)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.SKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.AgreementCode">
+<summary>
+Discount or Agreement Code. (NCOD_AGREE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCOD_AGREE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ProcessIdentifier">
+<summary>
+Record Identifier (NKEY)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.IDProcess">
+<summary>
+Consecutive process number according to sponsor and process (NPROCESS)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NPROCESS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.Filename">
+<summary>
+Name of the file (SFILENAME)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.SFILENAME'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.LotDescripcion">
+<summary>
+Lot descripcion of The Process (SLOT)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.SLOT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ExecutionType">
+<summary>
+Execution type. (STYPEEXECUTION)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.STYPEEXECUTION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ProcessStatus">
+<summary>
+Massive Process Status (NSTATUS)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NSTATUS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ProcessDate">
+<summary>
+Process date (DPROCESSDATE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.DPROCESSDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.TotalRecordProcessed">
+<summary>
+Total record processed (NTOTALRECPROC)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NTOTALRECPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.TotalSuccessRecords">
+<summary>
+Total Success Records (NSUCCESSRECPROC)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NSUCCESSRECPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.TotalErrorRecords">
+<summary>
+Total Records with Error (NERRORRECPROC)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NERRORRECPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.CollectedPremiun">
+<summary>
+Collected Premiun (NCOLLECTPREMIUM)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCOLLECTPREMIUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SuscribedPolicies">
+<summary>
+Suscribed Policies (NSUSCRIBEDPOLICIES)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NSUSCRIBEDPOLICIES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.CanceledPolicies">
+<summary>
+Canceled Policies (NCANCELEDPOLICIES)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCANCELEDPOLICIES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ModifiedPolicies">
+<summary>
+Modified Policies (NMODIFIEDPOLICIES)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NMODIFIEDPOLICIES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ClaimsReported">
+<summary>
+Claims Reported (NCLAIMSREPORTED)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCLAIMSREPORTED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.DeclaredClaims">
+<summary>
+Declared Claims (NDECLAREDCLAIMS)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NDECLAREDCLAIMS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ClaimsPaidAmount">
+<summary>
+Claims paid Amount (NTOTALCLAIMSPAID)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NTOTALCLAIMSPAID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.TotalClaimsPaid">
+<summary>
+Total Claims paid (NCLAIMSPAID)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCLAIMSPAID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.CanceledClaims">
+<summary>
+Canceled claims (NCANCELEDCLAIMS)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCANCELEDCLAIMS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.CanceledCertificates">
+<summary>
+Canceled Certificates. (NCANCELEDCERTIFICATE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NCANCELEDCERTIFICATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ModifiedCertificates">
+<summary>
+Modified Certificates (NMODIFIEDCERTIFICATE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NMODIFIEDCERTIFICATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SuscribedCertificates">
+<summary>
+Suscribed Certificates. (NSUSCRIBEDCERTIFICATE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NSUSCRIBEDCERTIFICATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application. (NPOLICY)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NPOLICY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ExecutionProcessDate">
+<summary>
+Execution Process Date (DEXECUTE)..
+</summary>
+<remarks>Data-source is 'MASS_PROC_SPONSOR.DEXECUTE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.Compare(InMotionGIT.Massive.Entity.Contracts.MassiveProces,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="MassiveProcesItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProces.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProces.ProcessStatusDescription">
+ <summary>
+ Massive Process Status
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8202' on the table 'TABLE8202'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection">
+ <summary>
+ Collection for MassiveProces class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.AddMassiveProces">
+ <summary>
+ Add an instance of class 'MassiveProces' in the MassiveProcesCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.Compare(InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.MassiveProcesCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess">
+ <summary>
+ Rules for massive processes
+ </summary>
+<remarks>Data-source is 'MASSIVE_RULES'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.CreateNewParticularconditionsformassiveprocess">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._RuleID">
+<summary>
+Rule identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._ErrorType">
+<summary>
+Type of error
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._NumeroError">
+<summary>
+Error number
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._TypeCondition">
+<summary>
+Type of condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._SectionProcesConditionAppliers">
+<summary>
+Section of the process where the condition applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._DescriptionoftheRule">
+<summary>
+Description of the Rule
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._IndicatesErrorYheExecution">
+<summary>
+Indicates whether the error should interrupt the execution of the process
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._EnableDisable">
+<summary>
+Indicator to enable / disable a rule
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._Business">
+<summary>
+line of business for which the rule applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._Dateofthecomputer">
+<summary>
+product for which the Condition applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._InterActionValidatiAppliesfaceCode">
+<summary>
+Action in which the validation applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess._CoverageValidation">
+<summary>
+Indicates if the validation can be omitted for continuity of coverage
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.RuleID">
+<summary>
+Rule identifier (NIDRULE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NIDRULE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.ErrorType">
+<summary>
+Type of error (SERRORTYP)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SERRORTYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.NumeroError">
+<summary>
+Error number (NERRORNUM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NERRORNUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.TypeCondition">
+<summary>
+Type of condition (STYP_CONDI)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.STYP_CONDI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SectionProcesConditionAppliers">
+<summary>
+Section of the process where the condition applies (NSECTION)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NSECTION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.DescriptionoftheRule">
+<summary>
+Description of the Rule (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.IndicatesErrorYheExecution">
+<summary>
+Indicates whether the error should interrupt the execution of the process (SBREAK)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SBREAK'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.EnableDisable">
+<summary>
+Indicator to enable / disable a rule (SENABLED)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SENABLED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.Business">
+<summary>
+line of business for which the rule applies (NBRANCH)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.Dateofthecomputer">
+<summary>
+product for which the Condition applies (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.InterActionValidatiAppliesfaceCode">
+<summary>
+Action in which the validation applies (NACTIONPROC)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NACTIONPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.CoverageValidation">
+<summary>
+Indicates if the validation can be omitted for continuity of coverage (SVIP)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SVIP'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.Compare(InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ParticularconditionsformassiveprocessItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.ErrorTypeDescription">
+ <summary>
+ Type of error
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE153'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.TypeConditionDescription">
+ <summary>
+ Type of condition
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8204' on the table 'TABLE8204'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.Particularconditionsformassiveprocess.SectionProcesConditionAppliersDescription">
+ <summary>
+ Section of the process where the condition applies
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8205' on the table 'TABLE8205'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection">
+ <summary>
+ Collection for Particularconditionsformassiveprocess class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.AddParticularconditionsformassiveprocess">
+ <summary>
+ Add an instance of class 'Particularconditionsformassiveprocess' in the ParticularconditionsformassiveprocessCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.Compare(InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ParticularconditionsformassiveprocessCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor">
+ <summary>
+ Process Configuration Sponsor
+ </summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.CreateNewProcessConfigurationSponsor">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._MassiveProcess">
+<summary>
+Massive Process Code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._AgreementCode">
+<summary>
+Discount or Agreement Code.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._DistributionChannel">
+<summary>
+Code of distribution channel
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._InterfaceCode">
+<summary>
+Interface Code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._ProcessIdentifier">
+<summary>
+Process code identifier.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._FileRecepction">
+<summary>
+File reception way
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._SendingResults">
+<summary>
+Way of sending results reception way.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._CollectionAllDebt">
+<summary>
+Indicator of collection of all the debt.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._CollectCurrentReceipt">
+<summary>
+Collection indicator of the current receipt
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._email">
+<summary>
+Responsible’s email.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._ExitInterfaceCode">
+<summary>
+Code of the exit interface.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._DateReceiptLoadFile">
+<summary>
+Date of receipt of the load file.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._UserResponsibleUploadingFile">
+<summary>
+User responsible for uploading the file.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._TemplateDescription">
+<summary>
+Description of the template.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._ExecutionFrequency">
+<summary>
+Frequency of execution of the automatic interface
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor._MultiSponsor">
+<summary>
+MultiSponsor Template Indicator
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.MassiveProcess">
+<summary>
+Massive Process Code (NPROCESS)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NPROCESS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.AgreementCode">
+<summary>
+Discount or Agreement Code. (NCOD_AGREE)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NCOD_AGREE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.DistributionChannel">
+<summary>
+Code of distribution channel (NSELLCHANNEL)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NSELLCHANNEL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.InterfaceCode">
+<summary>
+Interface Code (NSHEET)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NSHEET'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.ProcessIdentifier">
+<summary>
+Process code identifier. (NKEY)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.FileRecepction">
+<summary>
+File reception way (NBUSIN)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NBUSIN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SendingResults">
+<summary>
+Way of sending results reception way. (NBUSOUT)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NBUSOUT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.CollectionAllDebt">
+<summary>
+Indicator of collection of all the debt. (SCOLLECTDEBT)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.SCOLLECTDEBT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.CollectCurrentReceipt">
+<summary>
+Collection indicator of the current receipt (SCOLLCURRDEBT)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.SCOLLCURRDEBT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.email">
+<summary>
+Responsible’s email. (SMAIL)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.SMAIL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.ExitInterfaceCode">
+<summary>
+Code of the exit interface. (NSHEET_OUT)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NSHEET_OUT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.DateReceiptLoadFile">
+<summary>
+Date of receipt of the load file. (DRECEPTION_DAY)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.DRECEPTION_DAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.UserResponsibleUploadingFile">
+<summary>
+User responsible for uploading the file. (NUSERINCHARGE)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NUSERINCHARGE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.TemplateDescription">
+<summary>
+Description of the template. (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.ExecutionFrequency">
+<summary>
+Frequency of execution of the automatic interface (NPERIOD)..
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.NPERIOD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.MultiSponsor">
+<summary>
+MultiSponsor Template Indicator (SMULTISPONSOR)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'MASTER_MASS_SPONSOR.SMULTISPONSOR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.Compare(InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProcessConfigurationSponsorItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.MassiveProcessDescription">
+ <summary>
+ Massive Process Code
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE8200'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.DistributionChannelDescription">
+ <summary>
+ Code of distribution channel
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5532'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.FileRecepctionDescription">
+ <summary>
+ File reception way
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE8201'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsor.SendingResultsDescription">
+ <summary>
+ Way of sending results reception way.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE8201'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection">
+ <summary>
+ Collection for ProcessConfigurationSponsor class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.AddProcessConfigurationSponsor">
+ <summary>
+ Add an instance of class 'ProcessConfigurationSponsor' in the ProcessConfigurationSponsorCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.Compare(InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.ProcessConfigurationSponsorCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess">
+ <summary>
+ Rules for massive processes
+ </summary>
+<remarks>Data-source is 'MASSIVE_RULES'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.CreateNewRulesForMassiveProcess">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._RulesID">
+<summary>
+Rule identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ErrorNumber">
+<summary>
+Error number
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ErrorType">
+<summary>
+Type of error related to a window.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._Descriptionoftherule">
+<summary>
+Description of the rule
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._InterruptionProcess">
+<summary>
+Indicates whether the error should interrupt the execution of the process
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._RuleEnabled">
+<summary>
+Indicator to enable / disable a rule
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._CodeLineBusiness">
+<summary>
+Code of the line of business
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ProductCode">
+<summary>
+Code of the product
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ComputersDate">
+<summary>
+Date of the computer
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._User">
+<summary>
+UserCode
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._Action">
+<summary>
+Action in which the validation applies
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._CoverageContinuityIndicator">
+<summary>
+Indicates if the validation can be omitted for continuity of coverage
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ConditionType">
+<summary>
+Type of condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess._ProcessSection">
+<summary>
+Mass Process section
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.RulesID">
+<summary>
+Rule identifier (NIDRULE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NIDRULE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ErrorNumber">
+<summary>
+Error number (NERRORNUM)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NERRORNUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ErrorType">
+<summary>
+Type of error related to a window. (SERRORTYP)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SERRORTYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.Descriptionoftherule">
+<summary>
+Description of the rule (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.InterruptionProcess">
+<summary>
+Indicates whether the error should interrupt the execution of the process (SBREAK)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SBREAK'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.RuleEnabled">
+<summary>
+Indicator to enable / disable a rule (SENABLED)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SENABLED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.CodeLineBusiness">
+<summary>
+Code of the line of business (NBRANCH)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ProductCode">
+<summary>
+Code of the product (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ComputersDate">
+<summary>
+Date of the computer (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.User">
+<summary>
+UserCode (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.Action">
+<summary>
+Action in which the validation applies (NACTIONPROC)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NACTIONPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.CoverageContinuityIndicator">
+<summary>
+Indicates if the validation can be omitted for continuity of coverage (SVIP)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.SVIP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ConditionType">
+<summary>
+Type of condition (STYP_CONDI)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.STYP_CONDI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ProcessSection">
+<summary>
+Mass Process section (NSECTION)..
+</summary>
+<remarks>Data-source is 'MASSIVE_RULES.NSECTION'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.Compare(InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="RulesForMassiveProcessItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ErrorTypeDescription">
+ <summary>
+ Type of error related to a window.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE153'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ConditionTypeDescription">
+ <summary>
+ Type of condition
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8204' on the table 'TABLE8204'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcess.ProcessSectionDescription">
+ <summary>
+ Mass Process section
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE8205' on the table 'TABLE8205'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection">
+ <summary>
+ Collection for RulesForMassiveProcess class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.AddRulesForMassiveProcess">
+ <summary>
+ Add an instance of class 'RulesForMassiveProcess' in the RulesForMassiveProcessCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.Compare(InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.RulesForMassiveProcessCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar">
+ <summary>
+ Sponsor Process Calendar
+ </summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.CreateNewSponsorProcessCalendar">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._RecordID">
+<summary>
+Record Identifier
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._UniqueId">
+<summary>
+Consecutive Number, identifying The Record as sole
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._ProcessDay">
+<summary>
+Day when the process must be executed
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._NoticeDay">
+<summary>
+Notice days for process execution
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._ProcessDate">
+<summary>
+Date when the process must be executed
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._ProcessTime">
+<summary>
+Time when the process must be executed
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.RecordID">
+<summary>
+Record Identifier (NKEY)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.NKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.UniqueId">
+<summary>
+Consecutive Number, identifying The Record as sole (NID)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.NID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.ProcessDay">
+<summary>
+Day when the process must be executed (NDAY)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.NDAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.NoticeDay">
+<summary>
+Notice days for process execution (NNOTICEDAY)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.NNOTICEDAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.ProcessDate">
+<summary>
+Date when the process must be executed (DDATEPROC)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.DDATEPROC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.ProcessTime">
+<summary>
+Time when the process must be executed (SHOUR)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.SHOUR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'CALENDAR_SPONSOR.NUSERCODE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.Compare(InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="SponsorProcessCalendarItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendar.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection">
+ <summary>
+ Collection for SponsorProcessCalendar class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.AddSponsorProcessCalendar">
+ <summary>
+ Add an instance of class 'SponsorProcessCalendar' in the SponsorProcessCalendarCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.Compare(InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.SponsorProcessCalendarCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy">
+ <summary>
+ Columns Excel template to upload policies / certificates.
+ </summary>
+<remarks>Data-source is 'GROUP_COLUMNS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.CreateNewTemplateColumnsUploadPolicy">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._ConsecutiveNumber">
+<summary>
+Consecutive number identifying the record as unique.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._ExcelSpreadsheet">
+<summary>
+Worksheet code to which the column is associated.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._FieldName">
+<summary>
+Field name related to a column.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._ColumnName">
+<summary>
+Column name in the worksheet.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._Order">
+<summary>
+Order of the column in the worksheet.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._SourceOfValuesList">
+<summary>
+Name of the table or stored procedure to generate the list of values.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._FileName">
+<summary>
+File name related to the field.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._RequiredColumn">
+<summary>
+Column required indicator.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._Comment">
+<summary>
+Comment that must appear in the worksheet related to the column
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy._StatusUpdate">
+<summary>
+Indicator that the status has been updated. Unique Values 1-Affirmative/2-Negative
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.ConsecutiveNumber">
+<summary>
+Consecutive number identifying the record as unique. (NIDREC)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.NIDREC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.ExcelSpreadsheet">
+<summary>
+Worksheet code to which the column is associated. (NSHEET)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.NSHEET'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.FieldName">
+<summary>
+Field name related to a column. (SFIELD)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SFIELD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.ColumnName">
+<summary>
+Column name in the worksheet. (SCOLUMNNAME)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SCOLUMNNAME'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.Order">
+<summary>
+Order of the column in the worksheet. (NORDER)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.NORDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SourceOfValuesList">
+<summary>
+Name of the table or stored procedure to generate the list of values. (SVALUESLIST)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SVALUESLIST'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.FileName">
+<summary>
+File name related to the field. (STABLE)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.STABLE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.RequiredColumn">
+<summary>
+Column required indicator. (SREQUIRE)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SREQUIRE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.Comment">
+<summary>
+Comment that must appear in the worksheet related to the column (SCOMMENT)..
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SCOMMENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.StatusUpdate">
+<summary>
+Indicator that the status has been updated. Unique Values 1-Affirmative/2-Negative (SUPDATEIND)..
+Source 'InMotion Chile-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'GROUP_COLUMNS.SUPDATEIND'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.Compare(InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="TemplateColumnsUploadPolicyItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicy.ExcelSpreadsheetDescription">
+ <summary>
+ Worksheet code to which the column is associated.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE697'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection">
+ <summary>
+ Collection for TemplateColumnsUploadPolicy class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.AddTemplateColumnsUploadPolicy">
+ <summary>
+ Add an instance of class 'TemplateColumnsUploadPolicy' in the TemplateColumnsUploadPolicyCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.Compare(InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemplateColumnsUploadPolicyCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge">
+ <summary>
+ Temporal table to process bulk load or interfaces from a file
+ </summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.CreateNewTemporalMassiveCharge">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._RecordKey">
+<summary>
+Record key.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._Templatenumber">
+<summary>
+Template number or interface.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._FileName">
+<summary>
+Name of the file
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._FreeText">
+<summary>
+Free Text - Note Description.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._ProcessType">
+<summary>
+Process type.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.RecordKey">
+<summary>
+Record key. (SKEY)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.SKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.Templatenumber">
+<summary>
+Template number or interface. (NID)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.NID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.FileName">
+<summary>
+Name of the file (SFILENAME)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.SFILENAME'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.FreeText">
+<summary>
+Free Text - Note Description. (STEXT)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.STEXT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.ProcessType">
+<summary>
+Process type. (STYPE)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.STYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.UpdateTimeStamp">
+<summary>
+Computer date Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'T_FILE_MASIVECHARGE.NUSERCODE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.Compare(InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="TemporalMassiveChargeItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveCharge.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection">
+ <summary>
+ Collection for TemporalMassiveCharge class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.AddTemporalMassiveCharge">
+ <summary>
+ Add an instance of class 'TemporalMassiveCharge' in the TemporalMassiveChargeCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.Compare(InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TemporalMassiveChargeCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET">
+ <summary>
+ TemporaryTemplateFields
+ </summary>
+<remarks>Data-source is 'TMP_FIELDSHEET'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.CreateNewTMP_FIELDSHEET">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Key">
+<summary>
+Key of the temporary table
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._InterfaceCode">
+<summary>
+Interface Code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._FieldCode">
+<summary>
+Code of the field in the template interface.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._ComputerDate">
+<summary>
+Computer date when the record is updated or created
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._FieldType">
+<summary>
+Type of field for the interface
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._TableName">
+<summary>
+Name of the table to which the field belongs
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._UserCode">
+<summary>
+Name or description field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._FieldName">
+<summary>
+Name or description field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._ColumnName">
+<summary>
+Name of the column in the database
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Value">
+<summary>
+Default Value
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._RutineName">
+<summary>
+Name of the routine that calculates the value of the field.
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Order">
+<summary>
+Order to generate the output data of the interface
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._OrderOfApiriance">
+<summary>
+Order of appearance of the column in the template
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._TableNameorProcess">
+<summary>
+Table name or process (Store Procedure) from which the list of values is generated
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._FieldLength">
+<summary>
+Length of the field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._ObjectType">
+<summary>
+Object Types deployment
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._HomologousTableCode">
+<summary>
+Homologous table code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Operator">
+<summary>
+Logical code of the condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Condition">
+<summary>
+Logical code of the condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._CommentRelatedtotheField">
+<summary>
+Comment related to the field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._TextRelatedbytheCondition">
+<summary>
+Text related by the condition
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._RequiredField">
+<summary>
+It indicates whether the field is required
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._LastEntry">
+<summary>
+It Indicates whether to prosecute from the last entry reported by the interface
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._TypeOfField">
+<summary>
+Type of Field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._RigthParethensisIndicator">
+<summary>
+Indicator of right parenthesis
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._LeftParethensisIndicator">
+<summary>
+Indicator of left parenthesis
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._DecimalsOfTheField">
+<summary>
+Number of decimal digits in the field
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._ReportIndicator">
+<summary>
+It indicates that a report will be generated
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._Level">
+<summary>
+Level
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._DefinitionTypeCode">
+<summary>
+Definition Type Code
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._DuplicityOrder">
+<summary>
+Duplicity Order
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._AtributtDescription">
+<summary>
+Description of the attribute of the particular data
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._UpdateMark">
+<summary>
+Indicator that the status has been updated. Unique Values 1-Affirmative/2-Negative
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._MappedFields">
+<summary>
+Mapped Fields
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._LPADVAR">
+<summary>
+LPADVAR
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._RPADVAR">
+<summary>
+RPADVAR
+</summary>
+</member>
+<member name="F:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET._ConsecutiveNumber">
+<summary>
+Consecutive Number
+</summary>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Key">
+<summary>
+Key of the temporary table (SKEY)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SKEY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.InterfaceCode">
+<summary>
+Interface Code (NSHEET)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NSHEET'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.FieldCode">
+<summary>
+Code of the field in the template interface. (NFIELD)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NFIELD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.ComputerDate">
+<summary>
+Computer date when the record is updated or created (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.FieldType">
+<summary>
+Type of field for the interface (NFIELDTYPE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NFIELDTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.TableName">
+<summary>
+Name of the table to which the field belongs (STABLE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.STABLE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.UserCode">
+<summary>
+Name or description field (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.FieldName">
+<summary>
+Name or description field (SFIELDDESC)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SFIELDDESC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.ColumnName">
+<summary>
+Name of the column in the database (SCOLUMNNAME)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SCOLUMNNAME'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Value">
+<summary>
+Default Value (SVALUE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SVALUE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RutineName">
+<summary>
+Name of the routine that calculates the value of the field. (SRUTINE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SRUTINE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Order">
+<summary>
+Order to generate the output data of the interface (NROWORDER)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NROWORDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.OrderOfApiriance">
+<summary>
+Order of appearance of the column in the template (NFIELDORDER)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NFIELDORDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.TableNameorProcess">
+<summary>
+Table name or process (Store Procedure) from which the list of values is generated (SVALUESLIST)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SVALUESLIST'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.FieldLength">
+<summary>
+Length of the field (NFIELDLARGE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NFIELDLARGE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.ObjectType">
+<summary>
+Object Types deployment (NOBJTYPE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NOBJTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.HomologousTableCode">
+<summary>
+Homologous table code (NTABLEHOMO)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NTABLEHOMO'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Operator">
+<summary>
+Logical code of the condition (NOPERATOR)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NOPERATOR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Condition">
+<summary>
+Logical code of the condition (NCONDIT)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NCONDIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.CommentRelatedtotheField">
+<summary>
+Comment related to the field (SFIELDCOMMEN)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SFIELDCOMMEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.TextRelatedbytheCondition">
+<summary>
+Text related by the condition (SFIELDREL)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SFIELDREL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RequiredField">
+<summary>
+It indicates whether the field is required (SOBLIGATORY)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SOBLIGATORY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.LastEntry">
+<summary>
+It Indicates whether to prosecute from the last entry reported by the interface (SLASTMOVE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SLASTMOVE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.TypeOfField">
+<summary>
+Type of Field (NDATATYPE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NDATATYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RigthParethensisIndicator">
+<summary>
+Indicator of right parenthesis (SRPARENTH)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SRPARENTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.LeftParethensisIndicator">
+<summary>
+Indicator of left parenthesis (SLPARENTH)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SLPARENTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.DecimalsOfTheField">
+<summary>
+Number of decimal digits in the field (NDECIMAL)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NDECIMAL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.ReportIndicator">
+<summary>
+It indicates that a report will be generated (SREPORT)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SREPORT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Level">
+<summary>
+Level (NLEVEL)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NLEVEL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.DefinitionTypeCode">
+<summary>
+Definition Type Code (NDEFTYPE)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NDEFTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.DuplicityOrder">
+<summary>
+Duplicity Order (NCRITER_ORDER)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NCRITER_ORDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.AtributtDescription">
+<summary>
+Description of the attribute of the particular data (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.UpdateMark">
+<summary>
+Indicator that the status has been updated. Unique Values 1-Affirmative/2-Negative (SUPDATEIND)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SUPDATEIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.MappedFields">
+<summary>
+Mapped Fields (SMAPPING)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SMAPPING'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.LPADVAR">
+<summary>
+LPADVAR (SLPADVAR)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SLPADVAR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RPADVAR">
+<summary>
+RPADVAR (SRPADVAR)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.SRPADVAR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.ConsecutiveNumber">
+<summary>
+Consecutive Number (NIDREC)..
+</summary>
+<remarks>Data-source is 'TMP_FIELDSHEET.NIDREC'.</remarks>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.Compare(InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="TMP_FIELDSHEETItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEET.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection">
+ <summary>
+ Collection for TMP_FIELDSHEET class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.AddTMP_FIELDSHEET">
+ <summary>
+ Add an instance of class 'TMP_FIELDSHEET' in the TMP_FIELDSHEETCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.Compare(InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Massive.Entity.Contracts.TMP_FIELDSHEETCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+</members>
+</doc>

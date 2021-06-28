@@ -1,0 +1,21 @@
+1. CAMBIO:\VisualTIMENet\Services\FrontOffice\web.config
+
+    En la sección de <appSettings> se incorporaron la siguiente entrada
+
+       <add key="Linked.Address.DateFormat" value="dd/MM/yyyy"/>
+
+
+
+
+2. CAMBIO:\VisualTIMENet\WebApplication\web.config
+
+   En la sección de <appSettings> se eliminaron las siguientes entradas
+
+      <add key="Linked.FrontOffice.DateFormat" value="MM/dd/yyyy"/>
+      <add key="Linked.FrontOffice.Owner" value="dbo."/>
+      <add key="Linked.FrontOffice.NotesFormat" value="HTML"/>
+   
+      <add key="Linked.LatCombined.DateFormat" value="dd/MM/yyyy"/>
+      <add key="Linked.LatCombined.Owner" value=""/>
+     
+      <add key="Linked.Address.DateFormat" value="dd/MM/yyyy"/>

@@ -1,0 +1,93 @@
+﻿{
+  "app": {
+    "title": "Maestro de lista de valores",
+    "form": {
+             "LOOKUPMASTER_Grid_Message_Notify_insert4": "Se agregó correctamente el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_insert4": "Agregar registro",
+             "LOOKUPMASTER_Grid_Message_Notify_insert5": "No se pudo agregar el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_insert5": "Agregar registro",
+             "LOOKUPMASTER_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_update4": "Actualizar registro",
+             "LOOKUPMASTER_Grid_Message_Notify_update5": "No se pudo actualizar el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_update5": "Actualizar registro",
+             "LOOKUPMASTER_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_delete4": "Eliminar registro",
+             "LOOKUPMASTER_Grid_Message_Notify_delete5": "No se puede eliminar el registro",
+             "LOOKUPMASTER_Grid_Title_Notify_delete5": "Eliminar registro",
+             "LOOKUPMASTER_Grid_Title": "",
+             "LOOKUPMASTER_Grid_AddButtonCaption": "Agregar",
+             "LOOKUPMASTER_Grid_DeleteButtonCaption": "Eliminar",
+             "LOOKUPID_Label": "Identificador",
+             "LOOKUPMASTER_GridTbl_LOOKUPID_Title": "Identificador",
+             "LOOKUPID_Tooltip": "Identificador",
+             "LOOKUPID_Measure": "",
+             "LOOKUPID_Legend": "",
+             "LOOKUPID_Prefix": "",
+             "LOOKUPID_RequiredMessage": "El campo es requerido.",
+             "DESCRIPTION_Label": "Descripción",
+             "LOOKUPMASTER_GridTbl_DESCRIPTION_Title": "Descripción",
+             "DESCRIPTION_Tooltip": "Descripción",
+             "DESCRIPTION_Measure": "",
+             "DESCRIPTION_Legend": "",
+             "DESCRIPTION_Prefix": "",
+             "DESCRIPTION_Watermark": "",
+             "DESCRIPTION_RequiredMessage": "El campo es requerido.",
+             "KEY_Label": "Clave",
+             "LOOKUPMASTER_GridTbl_KEY_Title": "Clave",
+             "KEY_Tooltip": "Clave",
+             "KEY_Measure": "",
+             "KEY_Legend": "",
+             "KEY_Prefix": "",
+             "KEY_Watermark": "",
+             "KEY_RequiredMessage": "El campo es requerido.",
+             "RECORDSTATUS_Label": "Estado",
+             "LOOKUPMASTER_GridTbl_RECORDSTATUS_Title": "Estado",
+             "RECORDSTATUS_Tooltip": "Estado",
+             "RECORDSTATUS_Measure": "",
+             "RECORDSTATUS_Legend": "",
+             "RECORDSTATUS_Prefix": "",
+             "RECORDSTATUS_RequiredMessage": "El campo es requerido.",
+             "LASTUPDATEDBY_Label": "Actualizado por",
+             "LOOKUPMASTER_GridTbl_LASTUPDATEDBY_Title": "Actualizado por",
+             "LASTUPDATEDBY_Tooltip": "Usuario que actualizo por última vez el registro.",
+             "LASTUPDATEDBY_Measure": "",
+             "LASTUPDATEDBY_Legend": "",
+             "LASTUPDATEDBY_Prefix": "",
+             "LASTUPDATEDBY_Watermark": "",
+             "LASTUPDATEDON_Label": "Actualizado",
+             "LOOKUPMASTER_GridTbl_LASTUPDATEDON_Title": "Actualizado",
+             "LASTUPDATEDON_Tooltip": "Fecha que se actualizo por última vez el registro.",
+             "LASTUPDATEDON_Measure": "",
+             "LASTUPDATEDON_Legend": "",
+             "LASTUPDATEDON_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "LOOKUPID": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El campo es requerido."
+        },
+        "DESCRIPTION": {
+             "maxlength": "El campo permite 255 caracteres máximo",
+             "required": "El campo es requerido."
+        },
+        "KEY": {
+             "maxlength": "El campo permite 50 caracteres máximo",
+             "required": "El campo es requerido."
+        },
+        "RECORDSTATUS": {
+             "required": "El campo es requerido."
+        },
+        "LASTUPDATEDBY": {
+             "maxlength": "El campo permite 80 caracteres máximo"
+        },
+        "LASTUPDATEDON": {
+             "DatePicker": "The indicated date is not valid"
+        }
+    }
+  }
+}

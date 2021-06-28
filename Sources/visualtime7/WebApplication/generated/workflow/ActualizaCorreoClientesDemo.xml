@@ -1,0 +1,112 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="ActualizaCorreoClientesDemo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:iaa="clr-namespace:InMotionGIT.AddressManager.Activities;assembly=InMotionGIT.AddressManager.Activities" xmlns:iacg="clr-namespace:InMotionGIT.AddressManager.Contract.General;assembly=InMotionGIT.AddressManager.Contract" xmlns:iacm="clr-namespace:InMotionGIT.AddressManager.Contract.Models;assembly=InMotionGIT.AddressManager.Contract" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Client.Activities;assembly=InMotionGIT.Client.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:iccp="clr-namespace:InMotionGIT.Common.Contracts.Process;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="ConsumerInformation" Type="InArgument(iccp:ConsumerInformation)" />
+    <x:Property Name="CorreoColeccion" Type="InArgument(iacg:AddressDLICollection)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>654.4,676.8</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="ActualizaCorreoClientesDemo" sap:VirtualizedContainerService.HintSize="614.4,636.8">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="iacm:AddresseMailDLI" Default="[New InMotionGIT.AddressManager.Contract.Models.AddresseMailDLI]" Name="eMailAddress" />
+      <Variable x:TypeArguments="iacg:POBoxAddress" Default="[New InMotionGIT.AddressManager.Contract.General.POBoxAddress]" Name="poBoxAddress" />
+      <Variable x:TypeArguments="iacg:SocialNetwork" Default="[New InMotionGIT.AddressManager.Contract.General.SocialNetwork]" Name="SotialNetwork" />
+      <Variable x:TypeArguments="iacg:WebAddress" Default="[New InMotionGIT.AddressManager.Contract.General.WebAddress]" Name="WebAddress" />
+      <Variable x:TypeArguments="icec:Client" Name="cliente" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">218.5,144</av:Point>
+            <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,276 300,334.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="ActualizaCorreoClientesDemo." />
+            <icd:LocalizedString Language="2" Value="ActualizaCorreoClientesDemo." />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,334.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ForEach x:TypeArguments="iacm:AddressDLI" DisplayName="ForEach&lt;AddressDLI&gt;" sap:VirtualizedContainerService.HintSize="296,745.6" Values="[CorreoColeccion]">
+              <ActivityAction x:TypeArguments="iacm:AddressDLI">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="iacm:AddressDLI" Name="item" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="265.6,636.8">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="icc:ServiceResultData" Name="ServiceResultData" />
+                    <Variable x:TypeArguments="iacg:PhysicalAddress" Default="[New InMotionGIT.AddressManager.Contract.General.PhysicalAddress]" Name="PhysicalAddress" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <iaa:RetrieveeMail AddressId="[item.AddressID]" AddresseMailDLI="[eMailAddress]" Consumer="[ConsumerInformation]" sap:VirtualizedContainerService.HintSize="243.2,22.4" InternalAddressKey="[item.InternalAddressKey]" ProcessDate="[item.EffectiveDate]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[eMailAddress.eMailAddress.eMail]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[item.AddressDescription]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <iaa:PrepareToSyncAddress Address="[eMailAddress.Address]" Consumer="[ConsumerInformation]" sap:VirtualizedContainerService.HintSize="243.2,22.4" Latitude="0" Longitude="0" POBoxAddress="[poBoxAddress]" PhysicalAddress="[PhysicalAddress]" ProcessDate="[eMailAddress.Address.EffectiveDate]" ServiceResultData="[ServiceResultData]" SocialNetwork="[SotialNetwork]" WebAddress="[WebAddress]" eMailAddress="[eMailAddress.eMailAddress]" />
+                  <ica1:Retrieve EffectiveDate="{x:Null}" Email="{x:Null}" Exist="{x:Null}" AddressOnly="False" Client="[cliente]" ClientId="[item.RecordOwnerID]" DisplayName="RetrieveClienr" sap:VirtualizedContainerService.HintSize="243.2,22.4" />
+                  <Assign DisplayName="AssignAddressID" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int64">[Cliente.NADDRESSID]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int64">[convert.ToInt64(ServiceResultData.Id)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <Assign DisplayName="AssignIsDirty" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[cliente.IsDirty]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ica1:Synchronize EffectiveDate="{x:Null}" Synchronized="{x:Null}" AuditUserIdentify="9998" Client="[cliente]" DisplayName="SynchronizeCliente" GenerateClientId="False" sap:VirtualizedContainerService.HintSize="243.2,22.4" />
+                </Sequence>
+              </ActivityAction>
+            </ForEach>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

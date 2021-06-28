@@ -1,0 +1,1320 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="QuestionnaireRulesFullHematologyRedSeriesUW" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Correspondence.Activity;assembly=InMotionGIT.Correspondence.Activity" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icce="clr-namespace:InMotionGIT.Common.Contracts.Errors;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:ida="clr-namespace:InMotionGIT.DecisionTable.Activity;assembly=InMotionGIT.DecisionTable.Activity" xmlns:iq="clr-namespace:InMotionGIT.Questionnaires;assembly=InMotionGIT.Questionnaires" xmlns:iqb="clr-namespace:InMotionGIT.Questionnaires.Base;assembly=InMotionGIT.Questionnaires" xmlns:iqe="clr-namespace:InMotionGIT.Questionnaires.Enumerations;assembly=InMotionGIT.Questionnaires" xmlns:iua="clr-namespace:InMotionGIT.Underwriting.Activities;assembly=InMotionGIT.Underwriting.Activities" xmlns:iuc="clr-namespace:InMotionGIT.Underwriting.Contracts;assembly=InMotionGIT.Underwriting.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mv1="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:mvc="clr-namespace:Microsoft.VisualBasic.CompilerServices;assembly=Microsoft.VisualBasic" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s10="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=System.ServiceModel" xmlns:s4="clr-namespace:System;assembly=System.AddIn" xmlns:s5="clr-namespace:System;assembly=System.Drawing.Design" xmlns:s6="clr-namespace:System;assembly=System.Design" xmlns:s7="clr-namespace:System;assembly=System.Configuration.Install" xmlns:s8="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s9="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:srs2="clr-namespace:System.Runtime.Serialization;assembly=System.Workflow.ComponentModel" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="uwreqid" Type="InOutArgument(x:Int64)" />
+    <x:Property Name="FullHematology" Type="InOutArgument(iq:FullHematology)" />
+    <x:Property Name="UnderwritingCase" Type="InOutArgument(iuc:UnderwritingCase)" />
+    <x:Property Name="Gender" Type="InArgument(x:Int32)" />
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="PrimaryInsuredID" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>2084.8,6804.8</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="QuestionnaireRulesFullHematologyRedSeriesUW" sap:VirtualizedContainerService.HintSize="2044.8,6764.8" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="Days" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="Puntos" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="ElementFound" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">820,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">850,77.7 850,123.6</av:PointCollection>
+        <x:Double x:Key="Height">6729</x:Double>
+        <x:Double x:Key="Width">2030</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID27">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">768.4,123.6</av:Point>
+            <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">850,256.4 850,324.4</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="QuestionnaireRulesFullHematologyRedSeriesUW. Caso { Value /UnderwritingCase/UnderwritingCaseID }. Requerimiento { Value /uwreqid }" />
+            <icd:LocalizedString Language="2" Value="QuestionnaireRulesDiabetesUW. Caso { Value /uwcaseid }. Requerimiento { Value /uwreqid }" />
+            <icd:LocalizedString Language="3" Value="QuestionnaireRulesDiabetesUW. Caso { Value /uwcaseid }. Requerimiento { Value /uwreqid }" />
+          </ica:ProcessIdentifier.Identifier>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID28">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">750,324.4</av:Point>
+                <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">850,455.6 850,504</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ida:DecisionTable DisplayName="DecisionHematies" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+              <ida:DecisionTable.Parameters>
+                <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.Hematies]</InArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[Puntos]</OutArgument>
+              </ida:DecisionTable.Parameters>
+              <ida:DecisionTable.Settings>
+                <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="2" FirstColumn="67" FirstRow="1" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;3.79&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;3.8&lt;/column1&gt;&#xA;    &lt;column2&gt;5.8&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;5.81&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;4.49&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;4.5&lt;/column1&gt;&#xA;    &lt;column2&gt;6.5&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;6.51&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="7" RangeName="" SheetName="Sheet1" Source="Excel">
+                  <ida:EntitySettings.Elements>
+                    <ida:ElementSettings x:Name="__ReferenceID0" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                    <ida:ElementSettings x:Name="__ReferenceID1" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                    <ida:ElementSettings Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                    <ida:ElementSettings x:Name="__ReferenceID2" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                  </ida:EntitySettings.Elements>
+                  <ida:EntitySettings.InputElements>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                    <x:Reference>__ReferenceID1</x:Reference>
+                  </ida:EntitySettings.InputElements>
+                  <ida:EntitySettings.OuputElements>
+                    <x:Reference>__ReferenceID2</x:Reference>
+                  </ida:EntitySettings.OuputElements>
+                </ida:EntitySettings>
+              </ida:DecisionTable.Settings>
+            </ida:DecisionTable>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID35">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">750,504</av:Point>
+                    <av:Size x:Key="ShapeSize">200,72</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">950,540 1020,540</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hematies &quot; &amp; convert.toString(FullHematology.RedSeries.Hematies)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="HematiesApplyRuleH" Explanation="[&quot;Hematies. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                  <iua:ApplyRule.ExcludeClientID>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </iua:ApplyRule.ExcludeClientID>
+                  <iua:ApplyRule.Settings>
+                    <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hematies" EffectiveDate="2018-01-25" Explanation="Hematies fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="19" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                      <iuc:TabUnderwritingRule.RuleAlarms>
+                        <iuc:RuleAlarmsCollection Capacity="4">
+                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                            <iuc:RuleAlarms.StateInstance>
+                              <x:Array Type="x:Byte">
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                              </x:Array>
+                            </iuc:RuleAlarms.StateInstance>
+                          </iuc:RuleAlarms>
+                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                            <iuc:RuleAlarms.StateInstance>
+                              <x:Array Type="x:Byte">
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>255</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                                <x:Byte>0</x:Byte>
+                              </x:Array>
+                            </iuc:RuleAlarms.StateInstance>
+                          </iuc:RuleAlarms>
+                        </iuc:RuleAlarmsCollection>
+                      </iuc:TabUnderwritingRule.RuleAlarms>
+                    </iuc:TabUnderwritingRule>
+                  </iua:ApplyRule.Settings>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </iua:ApplyRule>
+                <FlowStep.Next>
+                  <FlowStep x:Name="__ReferenceID36">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">1020,504</av:Point>
+                        <av:Size x:Key="ShapeSize">200,72</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">1120,576 1120,606 840,606 840,634.4</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hematies &quot; &amp; convert.toString(FullHematology.RedSeries.Hematies)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="HematiesApplyRuleM" Explanation="[&quot;Hematies. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                      <iua:ApplyRule.ExcludeClientID>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </iua:ApplyRule.ExcludeClientID>
+                      <iua:ApplyRule.Settings>
+                        <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hematies" EffectiveDate="2018-01-25" Explanation="Hematies fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="19" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                          <iuc:TabUnderwritingRule.RuleAlarms>
+                            <iuc:RuleAlarmsCollection Capacity="4">
+                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                <iuc:RuleAlarms.StateInstance>
+                                  <x:Array Type="x:Byte">
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                  </x:Array>
+                                </iuc:RuleAlarms.StateInstance>
+                              </iuc:RuleAlarms>
+                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                <iuc:RuleAlarms.StateInstance>
+                                  <x:Array Type="x:Byte">
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>255</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                    <x:Byte>0</x:Byte>
+                                  </x:Array>
+                                </iuc:RuleAlarms.StateInstance>
+                              </iuc:RuleAlarms>
+                            </iuc:RuleAlarmsCollection>
+                          </iuc:TabUnderwritingRule.RuleAlarms>
+                        </iuc:TabUnderwritingRule>
+                      </iua:ApplyRule.Settings>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </iua:ApplyRule>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID29">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">740,634.4</av:Point>
+                            <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">840,765.6 840,814</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ida:DecisionTable DisplayName="DecisionHemoglobine" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                          <ida:DecisionTable.Parameters>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                            <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.Hemoglobin]</InArgument>
+                            <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.Hemoglobin]</InArgument>
+                            <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                          </ida:DecisionTable.Parameters>
+                          <ida:DecisionTable.Settings>
+                            <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="9" FirstColumn="67" FirstRow="8" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;11&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;12&lt;/column1&gt;&#xA;    &lt;column2&gt;16&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;17&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;13&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;14&lt;/column1&gt;&#xA;    &lt;column2&gt;18&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;19&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="14" RangeName="" SheetName="Sheet1" Source="Excel">
+                              <ida:EntitySettings.Elements>
+                                <ida:ElementSettings x:Name="__ReferenceID3" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                <ida:ElementSettings x:Name="__ReferenceID4" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                <ida:ElementSettings x:Name="__ReferenceID5" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                <ida:ElementSettings x:Name="__ReferenceID6" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                              </ida:EntitySettings.Elements>
+                              <ida:EntitySettings.InputElements>
+                                <x:Reference>__ReferenceID3</x:Reference>
+                                <x:Reference>__ReferenceID4</x:Reference>
+                                <x:Reference>__ReferenceID5</x:Reference>
+                              </ida:EntitySettings.InputElements>
+                              <ida:EntitySettings.OuputElements>
+                                <x:Reference>__ReferenceID6</x:Reference>
+                              </ida:EntitySettings.OuputElements>
+                            </ida:EntitySettings>
+                          </ida:DecisionTable.Settings>
+                        </ida:DecisionTable>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID37">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">740,814</av:Point>
+                                <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">940,850 1020,850</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hemoglobina &quot; &amp; convert.toString(FullHematology.RedSeries.Hemoglobin)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="HemoglobineApplyRuleH" Explanation="[&quot;Hemoglobina. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                              <iua:ApplyRule.ExcludeClientID>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </iua:ApplyRule.ExcludeClientID>
+                              <iua:ApplyRule.Settings>
+                                <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hemoglobina" EffectiveDate="2018-01-25" Explanation="Hemoglobina fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="20" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                  <iuc:TabUnderwritingRule.RuleAlarms>
+                                    <iuc:RuleAlarmsCollection Capacity="4">
+                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                        <iuc:RuleAlarms.StateInstance>
+                                          <x:Array Type="x:Byte">
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                          </x:Array>
+                                        </iuc:RuleAlarms.StateInstance>
+                                      </iuc:RuleAlarms>
+                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                        <iuc:RuleAlarms.StateInstance>
+                                          <x:Array Type="x:Byte">
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>255</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                            <x:Byte>0</x:Byte>
+                                          </x:Array>
+                                        </iuc:RuleAlarms.StateInstance>
+                                      </iuc:RuleAlarms>
+                                    </iuc:RuleAlarmsCollection>
+                                  </iuc:TabUnderwritingRule.RuleAlarms>
+                                </iuc:TabUnderwritingRule>
+                              </iua:ApplyRule.Settings>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </iua:ApplyRule>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID38">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">1020,814</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">1120,886 1120,916 840,916 840,944.4</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hemoglobina &quot; &amp; convert.toString(FullHematology.RedSeries.Hemoglobin)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="HemoglobineApplyRuleM" Explanation="[&quot;Hemoglobina. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                  <iua:ApplyRule.ExcludeClientID>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </iua:ApplyRule.ExcludeClientID>
+                                  <iua:ApplyRule.Settings>
+                                    <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hemoglobina" EffectiveDate="2018-01-25" Explanation="Hemoglobina fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="20" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                      <iuc:TabUnderwritingRule.RuleAlarms>
+                                        <iuc:RuleAlarmsCollection Capacity="4">
+                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                            <iuc:RuleAlarms.StateInstance>
+                                              <x:Array Type="x:Byte">
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                              </x:Array>
+                                            </iuc:RuleAlarms.StateInstance>
+                                          </iuc:RuleAlarms>
+                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                            <iuc:RuleAlarms.StateInstance>
+                                              <x:Array Type="x:Byte">
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>255</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                                <x:Byte>0</x:Byte>
+                                              </x:Array>
+                                            </iuc:RuleAlarms.StateInstance>
+                                          </iuc:RuleAlarms>
+                                        </iuc:RuleAlarmsCollection>
+                                      </iuc:TabUnderwritingRule.RuleAlarms>
+                                    </iuc:TabUnderwritingRule>
+                                  </iua:ApplyRule.Settings>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </iua:ApplyRule>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID30">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">740,944.4</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">840,1075.6 840,1124</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ida:DecisionTable DisplayName="DecisionHematrocit" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                                      <ida:DecisionTable.Parameters>
+                                        <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                                        <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.Hematocrit]</InArgument>
+                                        <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.Hematocrit]</InArgument>
+                                        <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                                      </ida:DecisionTable.Parameters>
+                                      <ida:DecisionTable.Settings>
+                                        <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="16" FirstColumn="67" FirstRow="15" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;36&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;37&lt;/column1&gt;&#xA;    &lt;column2&gt;47&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;48&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;40&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;41&lt;/column1&gt;&#xA;    &lt;column2&gt;53&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;54&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="21" RangeName="" SheetName="Sheet1" Source="Excel">
+                                          <ida:EntitySettings.Elements>
+                                            <ida:ElementSettings x:Name="__ReferenceID7" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                            <ida:ElementSettings x:Name="__ReferenceID8" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                            <ida:ElementSettings x:Name="__ReferenceID9" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                            <ida:ElementSettings x:Name="__ReferenceID10" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                                          </ida:EntitySettings.Elements>
+                                          <ida:EntitySettings.InputElements>
+                                            <x:Reference>__ReferenceID7</x:Reference>
+                                            <x:Reference>__ReferenceID8</x:Reference>
+                                            <x:Reference>__ReferenceID9</x:Reference>
+                                          </ida:EntitySettings.InputElements>
+                                          <ida:EntitySettings.OuputElements>
+                                            <x:Reference>__ReferenceID10</x:Reference>
+                                          </ida:EntitySettings.OuputElements>
+                                        </ida:EntitySettings>
+                                      </ida:DecisionTable.Settings>
+                                    </ida:DecisionTable>
+                                    <FlowStep.Next>
+                                      <FlowStep x:Name="__ReferenceID39">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">740,1124</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                            <av:PointCollection x:Key="ConnectorLocation">940,1160 1030,1160</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hematocrito &quot; &amp; convert.toString(FullHematology.RedSeries.Hematocrit)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="HematrocitApplyRuleH" Explanation="[&quot;Hematocrito. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                          <iua:ApplyRule.ExcludeClientID>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <Literal x:TypeArguments="x:String" Value="" />
+                                            </InArgument>
+                                          </iua:ApplyRule.ExcludeClientID>
+                                          <iua:ApplyRule.Settings>
+                                            <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hematocrito" EffectiveDate="2018-01-25" Explanation="Hematocrito fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="21" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                              <iuc:TabUnderwritingRule.RuleAlarms>
+                                                <iuc:RuleAlarmsCollection Capacity="4">
+                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                    <iuc:RuleAlarms.StateInstance>
+                                                      <x:Array Type="x:Byte">
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                      </x:Array>
+                                                    </iuc:RuleAlarms.StateInstance>
+                                                  </iuc:RuleAlarms>
+                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                    <iuc:RuleAlarms.StateInstance>
+                                                      <x:Array Type="x:Byte">
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>255</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                        <x:Byte>0</x:Byte>
+                                                      </x:Array>
+                                                    </iuc:RuleAlarms.StateInstance>
+                                                  </iuc:RuleAlarms>
+                                                </iuc:RuleAlarmsCollection>
+                                              </iuc:TabUnderwritingRule.RuleAlarms>
+                                            </iuc:TabUnderwritingRule>
+                                          </iua:ApplyRule.Settings>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </iua:ApplyRule>
+                                        <FlowStep.Next>
+                                          <FlowStep x:Name="__ReferenceID40">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">1030,1124</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">1130,1196 1130,1226 850,1226 850,1254.4</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;Hematocrito &quot; &amp; convert.toString(FullHematology.RedSeries.Hematocrit)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="HematrocitApplyRuleM" Explanation="[&quot;Hematocrito. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                              <iua:ApplyRule.ExcludeClientID>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                </InArgument>
+                                              </iua:ApplyRule.ExcludeClientID>
+                                              <iua:ApplyRule.Settings>
+                                                <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="Hematocrito" EffectiveDate="2018-01-25" Explanation="Hematocrito fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="21" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                  <iuc:TabUnderwritingRule.RuleAlarms>
+                                                    <iuc:RuleAlarmsCollection Capacity="4">
+                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                        <iuc:RuleAlarms.StateInstance>
+                                                          <x:Array Type="x:Byte">
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                          </x:Array>
+                                                        </iuc:RuleAlarms.StateInstance>
+                                                      </iuc:RuleAlarms>
+                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                        <iuc:RuleAlarms.StateInstance>
+                                                          <x:Array Type="x:Byte">
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>255</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                            <x:Byte>0</x:Byte>
+                                                          </x:Array>
+                                                        </iuc:RuleAlarms.StateInstance>
+                                                      </iuc:RuleAlarms>
+                                                    </iuc:RuleAlarmsCollection>
+                                                  </iuc:TabUnderwritingRule.RuleAlarms>
+                                                </iuc:TabUnderwritingRule>
+                                              </iua:ApplyRule.Settings>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </iua:ApplyRule>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID31">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">750,1254.4</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">850,1385.6 850,1434</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ida:DecisionTable DisplayName="DecisionMVC" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                                                  <ida:DecisionTable.Parameters>
+                                                    <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                                                    <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.MVC]</InArgument>
+                                                    <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.MVC]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                                                  </ida:DecisionTable.Parameters>
+                                                  <ida:DecisionTable.Settings>
+                                                    <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="23" FirstColumn="67" FirstRow="22" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;82&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;83&lt;/column1&gt;&#xA;    &lt;column2&gt;97&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;98&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;82&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;83&lt;/column1&gt;&#xA;    &lt;column2&gt;97&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;98&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="28" RangeName="" SheetName="Sheet1" Source="Excel">
+                                                      <ida:EntitySettings.Elements>
+                                                        <ida:ElementSettings x:Name="__ReferenceID11" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                                        <ida:ElementSettings x:Name="__ReferenceID12" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                                        <ida:ElementSettings x:Name="__ReferenceID13" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                                        <ida:ElementSettings x:Name="__ReferenceID14" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                                                      </ida:EntitySettings.Elements>
+                                                      <ida:EntitySettings.InputElements>
+                                                        <x:Reference>__ReferenceID11</x:Reference>
+                                                        <x:Reference>__ReferenceID12</x:Reference>
+                                                        <x:Reference>__ReferenceID13</x:Reference>
+                                                      </ida:EntitySettings.InputElements>
+                                                      <ida:EntitySettings.OuputElements>
+                                                        <x:Reference>__ReferenceID14</x:Reference>
+                                                      </ida:EntitySettings.OuputElements>
+                                                    </ida:EntitySettings>
+                                                  </ida:DecisionTable.Settings>
+                                                </ida:DecisionTable>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID41">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">750,1434</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">950,1470 1050,1470</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;VCM &quot; &amp; convert.toString(FullHematology.RedSeries.MVC)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="MVCApplyRuleH" Explanation="[&quot;VCM. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                      <iua:ApplyRule.ExcludeClientID>
+                                                        <InArgument x:TypeArguments="x:String">
+                                                          <Literal x:TypeArguments="x:String" Value="" />
+                                                        </InArgument>
+                                                      </iua:ApplyRule.ExcludeClientID>
+                                                      <iua:ApplyRule.Settings>
+                                                        <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="VCM" EffectiveDate="2018-01-25" Explanation="VCM  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="22" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                          <iuc:TabUnderwritingRule.RuleAlarms>
+                                                            <iuc:RuleAlarmsCollection Capacity="4">
+                                                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                <iuc:RuleAlarms.StateInstance>
+                                                                  <x:Array Type="x:Byte">
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                  </x:Array>
+                                                                </iuc:RuleAlarms.StateInstance>
+                                                              </iuc:RuleAlarms>
+                                                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                <iuc:RuleAlarms.StateInstance>
+                                                                  <x:Array Type="x:Byte">
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>255</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                    <x:Byte>0</x:Byte>
+                                                                  </x:Array>
+                                                                </iuc:RuleAlarms.StateInstance>
+                                                              </iuc:RuleAlarms>
+                                                            </iuc:RuleAlarmsCollection>
+                                                          </iuc:TabUnderwritingRule.RuleAlarms>
+                                                        </iuc:TabUnderwritingRule>
+                                                      </iua:ApplyRule.Settings>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </iua:ApplyRule>
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID42">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">1050,1434</av:Point>
+                                                            <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">1150,1506 1150,1536 850,1536 850,1574.4</av:PointCollection>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;VCM &quot; &amp; convert.toString(FullHematology.RedSeries.MVC)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="MVCApplyRuleM" Explanation="[&quot;VCM. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                          <iua:ApplyRule.ExcludeClientID>
+                                                            <InArgument x:TypeArguments="x:String">
+                                                              <Literal x:TypeArguments="x:String" Value="" />
+                                                            </InArgument>
+                                                          </iua:ApplyRule.ExcludeClientID>
+                                                          <iua:ApplyRule.Settings>
+                                                            <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="VCM" EffectiveDate="2018-01-25" Explanation="VCM fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="22" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                              <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                <iuc:RuleAlarmsCollection Capacity="4">
+                                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                    <iuc:RuleAlarms.StateInstance>
+                                                                      <x:Array Type="x:Byte">
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                      </x:Array>
+                                                                    </iuc:RuleAlarms.StateInstance>
+                                                                  </iuc:RuleAlarms>
+                                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                    <iuc:RuleAlarms.StateInstance>
+                                                                      <x:Array Type="x:Byte">
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>255</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                        <x:Byte>0</x:Byte>
+                                                                      </x:Array>
+                                                                    </iuc:RuleAlarms.StateInstance>
+                                                                  </iuc:RuleAlarms>
+                                                                </iuc:RuleAlarmsCollection>
+                                                              </iuc:TabUnderwritingRule.RuleAlarms>
+                                                            </iuc:TabUnderwritingRule>
+                                                          </iua:ApplyRule.Settings>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </iua:ApplyRule>
+                                                        <FlowStep.Next>
+                                                          <FlowStep x:Name="__ReferenceID32">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">750,1574.4</av:Point>
+                                                                <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">850,1705.6 850,1754</av:PointCollection>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ida:DecisionTable DisplayName="DecisionMCH" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                                                              <ida:DecisionTable.Parameters>
+                                                                <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.MCH]</InArgument>
+                                                                <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.MCH]</InArgument>
+                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                                                              </ida:DecisionTable.Parameters>
+                                                              <ida:DecisionTable.Settings>
+                                                                <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="30" FirstColumn="67" FirstRow="29" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;26&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;27&lt;/column1&gt;&#xA;    &lt;column2&gt;31&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;32&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;26&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;27&lt;/column1&gt;&#xA;    &lt;column2&gt;31&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;32&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="35" RangeName="" SheetName="Sheet1" Source="Excel">
+                                                                  <ida:EntitySettings.Elements>
+                                                                    <ida:ElementSettings x:Name="__ReferenceID15" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                                                    <ida:ElementSettings x:Name="__ReferenceID16" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                                                    <ida:ElementSettings x:Name="__ReferenceID17" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                                                    <ida:ElementSettings x:Name="__ReferenceID18" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                                                                  </ida:EntitySettings.Elements>
+                                                                  <ida:EntitySettings.InputElements>
+                                                                    <x:Reference>__ReferenceID15</x:Reference>
+                                                                    <x:Reference>__ReferenceID16</x:Reference>
+                                                                    <x:Reference>__ReferenceID17</x:Reference>
+                                                                  </ida:EntitySettings.InputElements>
+                                                                  <ida:EntitySettings.OuputElements>
+                                                                    <x:Reference>__ReferenceID18</x:Reference>
+                                                                  </ida:EntitySettings.OuputElements>
+                                                                </ida:EntitySettings>
+                                                              </ida:DecisionTable.Settings>
+                                                            </ida:DecisionTable>
+                                                            <FlowStep.Next>
+                                                              <FlowStep x:Name="__ReferenceID43">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <av:Point x:Key="ShapeLocation">750,1754</av:Point>
+                                                                    <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                    <av:PointCollection x:Key="ConnectorLocation">950,1790 980,1790 980,1780 1020,1780</av:PointCollection>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;HCM &quot; &amp; convert.toString(FullHematology.RedSeries.MCH)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="MCHApplyRuleH" Explanation="[&quot;HCM. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                  <iua:ApplyRule.ExcludeClientID>
+                                                                    <InArgument x:TypeArguments="x:String">
+                                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                                    </InArgument>
+                                                                  </iua:ApplyRule.ExcludeClientID>
+                                                                  <iua:ApplyRule.Settings>
+                                                                    <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="HCM" EffectiveDate="2018-01-25" Explanation="HCM  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="23" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                      <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                        <iuc:RuleAlarmsCollection Capacity="4">
+                                                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                            <iuc:RuleAlarms.StateInstance>
+                                                                              <x:Array Type="x:Byte">
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                              </x:Array>
+                                                                            </iuc:RuleAlarms.StateInstance>
+                                                                          </iuc:RuleAlarms>
+                                                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                            <iuc:RuleAlarms.StateInstance>
+                                                                              <x:Array Type="x:Byte">
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>255</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                                <x:Byte>0</x:Byte>
+                                                                              </x:Array>
+                                                                            </iuc:RuleAlarms.StateInstance>
+                                                                          </iuc:RuleAlarms>
+                                                                        </iuc:RuleAlarmsCollection>
+                                                                      </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                    </iuc:TabUnderwritingRule>
+                                                                  </iua:ApplyRule.Settings>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </iua:ApplyRule>
+                                                                <FlowStep.Next>
+                                                                  <FlowStep x:Name="__ReferenceID44">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <av:Point x:Key="ShapeLocation">1020,1744</av:Point>
+                                                                        <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">1120,1816 1120,1846 850,1846 850,1884.4</av:PointCollection>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;HCM &quot; &amp; convert.toString(FullHematology.RedSeries.MCH)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="MCHApplyRuleM" Explanation="[&quot;HCM. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                      <iua:ApplyRule.ExcludeClientID>
+                                                                        <InArgument x:TypeArguments="x:String">
+                                                                          <Literal x:TypeArguments="x:String" Value="" />
+                                                                        </InArgument>
+                                                                      </iua:ApplyRule.ExcludeClientID>
+                                                                      <iua:ApplyRule.Settings>
+                                                                        <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="HCM" EffectiveDate="2018-01-25" Explanation="HCM  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="23" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                          <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                            <iuc:RuleAlarmsCollection Capacity="4">
+                                                                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                                <iuc:RuleAlarms.StateInstance>
+                                                                                  <x:Array Type="x:Byte">
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                  </x:Array>
+                                                                                </iuc:RuleAlarms.StateInstance>
+                                                                              </iuc:RuleAlarms>
+                                                                              <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                                <iuc:RuleAlarms.StateInstance>
+                                                                                  <x:Array Type="x:Byte">
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>255</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                    <x:Byte>0</x:Byte>
+                                                                                  </x:Array>
+                                                                                </iuc:RuleAlarms.StateInstance>
+                                                                              </iuc:RuleAlarms>
+                                                                            </iuc:RuleAlarmsCollection>
+                                                                          </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                        </iuc:TabUnderwritingRule>
+                                                                      </iua:ApplyRule.Settings>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </iua:ApplyRule>
+                                                                    <FlowStep.Next>
+                                                                      <FlowStep x:Name="__ReferenceID33">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <av:Point x:Key="ShapeLocation">750,1884.4</av:Point>
+                                                                            <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                                                                            <av:PointCollection x:Key="ConnectorLocation">850,2015.6 850,2074</av:PointCollection>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ida:DecisionTable DisplayName="DecisionMCHC" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                                                                          <ida:DecisionTable.Parameters>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                                                                            <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.MCHC]</InArgument>
+                                                                            <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.MCHC]</InArgument>
+                                                                            <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                                                                          </ida:DecisionTable.Parameters>
+                                                                          <ida:DecisionTable.Settings>
+                                                                            <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="44" FirstColumn="67" FirstRow="43" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;337&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;338&lt;/column1&gt;&#xA;    &lt;column2&gt;342&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;343&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;337&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;338&lt;/column1&gt;&#xA;    &lt;column2&gt;342&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;343&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="49" RangeName="" SheetName="Sheet1" Source="Excel">
+                                                                              <ida:EntitySettings.Elements>
+                                                                                <ida:ElementSettings x:Name="__ReferenceID19" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                                                                <ida:ElementSettings x:Name="__ReferenceID20" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                                                                <ida:ElementSettings x:Name="__ReferenceID21" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                                                                <ida:ElementSettings x:Name="__ReferenceID22" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                                                                              </ida:EntitySettings.Elements>
+                                                                              <ida:EntitySettings.InputElements>
+                                                                                <x:Reference>__ReferenceID19</x:Reference>
+                                                                                <x:Reference>__ReferenceID20</x:Reference>
+                                                                                <x:Reference>__ReferenceID21</x:Reference>
+                                                                              </ida:EntitySettings.InputElements>
+                                                                              <ida:EntitySettings.OuputElements>
+                                                                                <x:Reference>__ReferenceID22</x:Reference>
+                                                                              </ida:EntitySettings.OuputElements>
+                                                                            </ida:EntitySettings>
+                                                                          </ida:DecisionTable.Settings>
+                                                                        </ida:DecisionTable>
+                                                                        <FlowStep.Next>
+                                                                          <FlowStep x:Name="__ReferenceID45">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <av:Point x:Key="ShapeLocation">750,2074</av:Point>
+                                                                                <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                                <av:PointCollection x:Key="ConnectorLocation">950,2110 1020,2110</av:PointCollection>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;CMHC  &quot; &amp; convert.toString(FullHematology.RedSeries.MCHC)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="MCHCApplyRuleH" Explanation="[&quot;CMHC. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                              <iua:ApplyRule.ExcludeClientID>
+                                                                                <InArgument x:TypeArguments="x:String">
+                                                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                                                </InArgument>
+                                                                              </iua:ApplyRule.ExcludeClientID>
+                                                                              <iua:ApplyRule.Settings>
+                                                                                <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="CMHC" EffectiveDate="2018-01-25" Explanation="CMHC  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="24" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                                  <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                    <iuc:RuleAlarmsCollection Capacity="4">
+                                                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                                        <iuc:RuleAlarms.StateInstance>
+                                                                                          <x:Array Type="x:Byte">
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                          </x:Array>
+                                                                                        </iuc:RuleAlarms.StateInstance>
+                                                                                      </iuc:RuleAlarms>
+                                                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                                        <iuc:RuleAlarms.StateInstance>
+                                                                                          <x:Array Type="x:Byte">
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>255</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                            <x:Byte>0</x:Byte>
+                                                                                          </x:Array>
+                                                                                        </iuc:RuleAlarms.StateInstance>
+                                                                                      </iuc:RuleAlarms>
+                                                                                    </iuc:RuleAlarmsCollection>
+                                                                                  </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                </iuc:TabUnderwritingRule>
+                                                                              </iua:ApplyRule.Settings>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </iua:ApplyRule>
+                                                                            <FlowStep.Next>
+                                                                              <FlowStep x:Name="__ReferenceID46">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <av:Point x:Key="ShapeLocation">1020,2074</av:Point>
+                                                                                    <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                                    <av:PointCollection x:Key="ConnectorLocation">1120,2146 1120,2176 860,2176 860,2224.4</av:PointCollection>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;CMHC  &quot; &amp; convert.toString(FullHematology.RedSeries.MCHC)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="MCHCApplyRuleM" Explanation="[&quot;CMHC. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                                  <iua:ApplyRule.ExcludeClientID>
+                                                                                    <InArgument x:TypeArguments="x:String">
+                                                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                                                    </InArgument>
+                                                                                  </iua:ApplyRule.ExcludeClientID>
+                                                                                  <iua:ApplyRule.Settings>
+                                                                                    <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="CMHC" EffectiveDate="2018-01-25" Explanation="CMHC  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="24" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                                      <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                        <iuc:RuleAlarmsCollection Capacity="4">
+                                                                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                                            <iuc:RuleAlarms.StateInstance>
+                                                                                              <x:Array Type="x:Byte">
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                              </x:Array>
+                                                                                            </iuc:RuleAlarms.StateInstance>
+                                                                                          </iuc:RuleAlarms>
+                                                                                          <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                                            <iuc:RuleAlarms.StateInstance>
+                                                                                              <x:Array Type="x:Byte">
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>255</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                                <x:Byte>0</x:Byte>
+                                                                                              </x:Array>
+                                                                                            </iuc:RuleAlarms.StateInstance>
+                                                                                          </iuc:RuleAlarms>
+                                                                                        </iuc:RuleAlarmsCollection>
+                                                                                      </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                    </iuc:TabUnderwritingRule>
+                                                                                  </iua:ApplyRule.Settings>
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                </iua:ApplyRule>
+                                                                                <FlowStep.Next>
+                                                                                  <FlowStep x:Name="__ReferenceID34">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <av:Point x:Key="ShapeLocation">760,2224.4</av:Point>
+                                                                                        <av:Size x:Key="ShapeSize">200,131.2</av:Size>
+                                                                                        <av:PointCollection x:Key="ConnectorLocation">860,2355.6 860,2414</av:PointCollection>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ida:DecisionTable DisplayName="DecisionRWD" HasBeenFound="[ElementFound]" sap:VirtualizedContainerService.HintSize="200,131.2">
+                                                                                      <ida:DecisionTable.Parameters>
+                                                                                        <InArgument x:TypeArguments="x:Int32" x:Key="Sexo">[Gender]</InArgument>
+                                                                                        <InArgument x:TypeArguments="x:Decimal" x:Key="Minimo">[FullHematology.RedSeries.RWD]</InArgument>
+                                                                                        <InArgument x:TypeArguments="x:Decimal" x:Key="Maximo">[FullHematology.RedSeries.RWD]</InArgument>
+                                                                                        <OutArgument x:TypeArguments="x:Int32" x:Key="Puntos">[puntos]</OutArgument>
+                                                                                      </ida:DecisionTable.Parameters>
+                                                                                      <ida:DecisionTable.Settings>
+                                                                                        <ida:EntitySettings CancellationDate="{x:Null}" Entity="{x:Null}" RecordEffectiveDate="{x:Null}" Repository="{x:Null}" ExcelFileName="C:\Users\aperez\Documents\MisDocumentosAfroditaCasa\UnderWriting\PuntosFullHematology.xlsx" ExpressionRow="51" FirstColumn="67" FirstRow="50" InternalDataTable="&lt;DocumentElement&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;9&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;10&lt;/column1&gt;&#xA;    &lt;column2&gt;14&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;1&lt;/column0&gt;&#xA;    &lt;column1&gt;15&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;0&lt;/column1&gt;&#xA;    &lt;column2&gt;9&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;10&lt;/column1&gt;&#xA;    &lt;column2&gt;14&lt;/column2&gt;&#xA;    &lt;column3&gt;0&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;  &lt;RangeExcel&gt;&#xA;    &lt;column0&gt;2&lt;/column0&gt;&#xA;    &lt;column1&gt;15&lt;/column1&gt;&#xA;    &lt;column2&gt;999999&lt;/column2&gt;&#xA;    &lt;column3&gt;5&lt;/column3&gt;&#xA;  &lt;/RangeExcel&gt;&#xA;&lt;/DocumentElement&gt;" InternalSchemaDataTable="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xA;&lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;  &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;RangeExcel&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;    &lt;xs:complexType&gt;&#xA;      &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;        &lt;xs:element name=&quot;RangeExcel&quot;&gt;&#xA;          &lt;xs:complexType&gt;&#xA;            &lt;xs:sequence&gt;&#xA;              &lt;xs:element name=&quot;column0&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;xs:element name=&quot;column3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;            &lt;/xs:sequence&gt;&#xA;          &lt;/xs:complexType&gt;&#xA;        &lt;/xs:element&gt;&#xA;      &lt;/xs:choice&gt;&#xA;    &lt;/xs:complexType&gt;&#xA;  &lt;/xs:element&gt;&#xA;&lt;/xs:schema&gt;" LastColumn="70" LastRow="56" RangeName="" SheetName="Sheet1" Source="Excel">
+                                                                                          <ida:EntitySettings.Elements>
+                                                                                            <ida:ElementSettings x:Name="__ReferenceID23" Caption="Sexo" Description="" Input="True" Name="Sexo" Operator="IsEqualTo" Output="False" ParameterName="Sexo" Scale="0" Type="Integer" />
+                                                                                            <ida:ElementSettings x:Name="__ReferenceID24" Caption="Minimo" Description="" Input="True" Name="Minimo" Operator="IsGreaterThanOrEqualTo" Output="False" ParameterName="Minimo" Scale="0" Type="Decimal" />
+                                                                                            <ida:ElementSettings x:Name="__ReferenceID25" Caption="Maximo" Description="" Input="True" Name="Maximo" Operator="IsLessThanOrEqualTo" Output="False" ParameterName="Maximo" Scale="0" Type="Decimal" />
+                                                                                            <ida:ElementSettings x:Name="__ReferenceID26" Caption="Puntos" Description="" Input="False" Name="Puntos" Operator="None" Output="True" ParameterName="Puntos" Scale="0" Type="Integer" />
+                                                                                          </ida:EntitySettings.Elements>
+                                                                                          <ida:EntitySettings.InputElements>
+                                                                                            <x:Reference>__ReferenceID23</x:Reference>
+                                                                                            <x:Reference>__ReferenceID24</x:Reference>
+                                                                                            <x:Reference>__ReferenceID25</x:Reference>
+                                                                                          </ida:EntitySettings.InputElements>
+                                                                                          <ida:EntitySettings.OuputElements>
+                                                                                            <x:Reference>__ReferenceID26</x:Reference>
+                                                                                          </ida:EntitySettings.OuputElements>
+                                                                                        </ida:EntitySettings>
+                                                                                      </ida:DecisionTable.Settings>
+                                                                                    </ida:DecisionTable>
+                                                                                    <FlowStep.Next>
+                                                                                      <FlowStep x:Name="__ReferenceID47">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <av:Point x:Key="ShapeLocation">760,2414</av:Point>
+                                                                                            <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                                            <av:PointCollection x:Key="ConnectorLocation">960,2450 1040,2450</av:PointCollection>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;ADE  &quot; &amp; convert.toString(FullHematology.RedSeries.RWD)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 2]" DisplayName="RWDApplyRuleH" Explanation="[&quot;ADE. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                                          <iua:ApplyRule.ExcludeClientID>
+                                                                                            <InArgument x:TypeArguments="x:String">
+                                                                                              <Literal x:TypeArguments="x:String" Value="" />
+                                                                                            </InArgument>
+                                                                                          </iua:ApplyRule.ExcludeClientID>
+                                                                                          <iua:ApplyRule.Settings>
+                                                                                            <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="ADE" EffectiveDate="2018-01-25" Explanation="ADE  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="25" RecordStatus="1" RequirementStatus="4" RequirementType="41" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                                              <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                                <iuc:RuleAlarmsCollection Capacity="4">
+                                                                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                                                    <iuc:RuleAlarms.StateInstance>
+                                                                                                      <x:Array Type="x:Byte">
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                      </x:Array>
+                                                                                                    </iuc:RuleAlarms.StateInstance>
+                                                                                                  </iuc:RuleAlarms>
+                                                                                                  <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                                                    <iuc:RuleAlarms.StateInstance>
+                                                                                                      <x:Array Type="x:Byte">
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>255</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                        <x:Byte>0</x:Byte>
+                                                                                                      </x:Array>
+                                                                                                    </iuc:RuleAlarms.StateInstance>
+                                                                                                  </iuc:RuleAlarms>
+                                                                                                </iuc:RuleAlarmsCollection>
+                                                                                              </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                            </iuc:TabUnderwritingRule>
+                                                                                          </iua:ApplyRule.Settings>
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                        </iua:ApplyRule>
+                                                                                        <FlowStep.Next>
+                                                                                          <FlowStep x:Name="__ReferenceID48">
+                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                <av:Point x:Key="ShapeLocation">1040,2414</av:Point>
+                                                                                                <av:Size x:Key="ShapeSize">200,72</av:Size>
+                                                                                                <av:PointCollection x:Key="ConnectorLocation">1339.6,2250.6 1339.6,2280.6 1079.6,2280.6 1079.6,2329</av:PointCollection>
+                                                                                              </scg:Dictionary>
+                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                            <iua:ApplyRule Exclusions="{x:Null}" MaximumSumInsured="{x:Null}" RuleList="{x:Null}" SurchargesDiscounts="{x:Null}" Answer="[&quot;ADE  &quot; &amp; convert.toString(FullHematology.RedSeries.RWD)]" AutomaticPoints="[Puntos]" ClientID="[PrimaryInsuredID]" Condition="[ElementFound = true andalso Puntos &lt;&gt; 0 andalso Gender = 1]" DisplayName="RWDApplyRuleM" Explanation="[&quot;ADE. Puntos: &quot; &amp; convert.ToString(Puntos)]" sap:VirtualizedContainerService.HintSize="200,72" UnderwritingCase="[UnderwritingCase]">
+                                                                                              <iua:ApplyRule.ExcludeClientID>
+                                                                                                <InArgument x:TypeArguments="x:String">
+                                                                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                                                                </InArgument>
+                                                                                              </iua:ApplyRule.ExcludeClientID>
+                                                                                              <iua:ApplyRule.Settings>
+                                                                                                <iuc:TabUnderwritingRule Answer="{x:Null}" ClientID="{x:Null}" CreatorUserDescription="{x:Null}" DegreeIdDescription="{x:Null}" ExtensionData="{x:Null}" ImpairmentCode="{x:Null}" ImpairmentCodeDescription="{x:Null}" QuestionIdDescription="{x:Null}" RecordStatusDescription="{x:Null}" RequirementStatusDescription="{x:Null}" RequirementTypeDescription="{x:Null}" RuleGuid="{x:Null}" ShortDescription="{x:Null}" StateInstance="{x:Null}" TRANSUNDERWRITINGRULEs="{x:Null}" Tag="{x:Null}" UnderwritingAreaDescription="{x:Null}" UnderwritingCaseTypeDescription="{x:Null}" UnderwritingRuleStatusDescription="{x:Null}" Description="ADE" EffectiveDate="2018-01-25" Explanation="ADE  fuera de los límites permitidos" IsDirty="True" IsManualRule="False" LineOfBusiness="2" QuestionId="25" RecordStatus="1" RequirementStatus="4" RequirementType="40" UnderwritingArea="1" UnderwritingCaseType="1" UnderwritingRuleStatus="1">
+                                                                                                  <iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                                    <iuc:RuleAlarmsCollection Capacity="4">
+                                                                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="6664" ProductDescription="Vida Entera Plus">
+                                                                                                        <iuc:RuleAlarms.StateInstance>
+                                                                                                          <x:Array Type="x:Byte">
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                          </x:Array>
+                                                                                                        </iuc:RuleAlarms.StateInstance>
+                                                                                                      </iuc:RuleAlarms>
+                                                                                                      <iuc:RuleAlarms DecisionComplement="{x:Null}" EffectiveDateDescription="{x:Null}" ExtensionData="{x:Null}" RuleRestrictions="{x:Null}" Tag="{x:Null}" AlarmType="1" AlarmTypeDescription="OK" Decision="3" DecisionDescription="Aprobada" IsDirty="True" LineOfBusiness="2" Product="605" ProductDescription="Mi Inversión Segura">
+                                                                                                        <iuc:RuleAlarms.StateInstance>
+                                                                                                          <x:Array Type="x:Byte">
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>255</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                            <x:Byte>0</x:Byte>
+                                                                                                          </x:Array>
+                                                                                                        </iuc:RuleAlarms.StateInstance>
+                                                                                                      </iuc:RuleAlarms>
+                                                                                                    </iuc:RuleAlarmsCollection>
+                                                                                                  </iuc:TabUnderwritingRule.RuleAlarms>
+                                                                                                </iuc:TabUnderwritingRule>
+                                                                                              </iua:ApplyRule.Settings>
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                            </iua:ApplyRule>
+                                                                                          </FlowStep>
+                                                                                        </FlowStep.Next>
+                                                                                      </FlowStep>
+                                                                                    </FlowStep.Next>
+                                                                                  </FlowStep>
+                                                                                </FlowStep.Next>
+                                                                              </FlowStep>
+                                                                            </FlowStep.Next>
+                                                                          </FlowStep>
+                                                                        </FlowStep.Next>
+                                                                      </FlowStep>
+                                                                    </FlowStep.Next>
+                                                                  </FlowStep>
+                                                                </FlowStep.Next>
+                                                              </FlowStep>
+                                                            </FlowStep.Next>
+                                                          </FlowStep>
+                                                        </FlowStep.Next>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowStep.Next>
+                                      </FlowStep>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID27</x:Reference>
+    <x:Reference>__ReferenceID28</x:Reference>
+    <x:Reference>__ReferenceID29</x:Reference>
+    <x:Reference>__ReferenceID30</x:Reference>
+    <x:Reference>__ReferenceID31</x:Reference>
+    <x:Reference>__ReferenceID32</x:Reference>
+    <x:Reference>__ReferenceID33</x:Reference>
+    <x:Reference>__ReferenceID34</x:Reference>
+    <x:Reference>__ReferenceID35</x:Reference>
+    <x:Reference>__ReferenceID36</x:Reference>
+    <x:Reference>__ReferenceID37</x:Reference>
+    <x:Reference>__ReferenceID38</x:Reference>
+    <x:Reference>__ReferenceID39</x:Reference>
+    <x:Reference>__ReferenceID40</x:Reference>
+    <x:Reference>__ReferenceID41</x:Reference>
+    <x:Reference>__ReferenceID42</x:Reference>
+    <x:Reference>__ReferenceID43</x:Reference>
+    <x:Reference>__ReferenceID44</x:Reference>
+    <x:Reference>__ReferenceID45</x:Reference>
+    <x:Reference>__ReferenceID46</x:Reference>
+    <x:Reference>__ReferenceID47</x:Reference>
+    <x:Reference>__ReferenceID48</x:Reference>
+  </Flowchart>
+</Activity>

@@ -1,0 +1,3250 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Client.DataAccess
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship">
+ <summary>
+ Relation table customers to automatically create.
+ </summary>
+<remarks>Data-source is 'TAB_RELAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationship,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationship,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationship,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.RetrieveByRelationshipToBeGenerated(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for AutomaticallyClientRelationship class</returns>
+ <remarks>Datasource is 'XIF1348TAB_RELAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.RetrieveByRelationship(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for AutomaticallyClientRelationship class</returns>
+ <remarks>Datasource is 'XIF2TAB_RELAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Find(System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Find(System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.ApplyChange(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationship,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AutomaticallyClientRelationshipItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.ApplyChange(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationship,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AutomaticallyClientRelationshipItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationshipCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticallyClientRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticallyClientRelationshipCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.AutomaticPaymentClient">
+ <summary>
+ Details for automatic payment by bank or credit card associated with the client.
+ </summary>
+<remarks>Data-source is 'DIR_DEBIT_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.RetrieveByBankCode(System.Int64,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for AutomaticPaymentClient class</returns>
+ <remarks>Datasource is 'XIF2144DIR_DEBIT_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for AutomaticPaymentClient class</returns>
+ <remarks>Datasource is 'XIF894DIR_DEBIT_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Find(System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Find(System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.ApplyChange(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AutomaticPaymentClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.ApplyChange(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="AutomaticPaymentClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="AutomaticPaymentClientItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClient,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="AutomaticPaymentClientItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClientCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.AutomaticPaymentClient.Synchronize(InMotionGIT.Client.Entity.Contracts.AutomaticPaymentClientCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.Client">
+ <summary>
+ Clients information.
+ </summary>
+<remarks>Data-source is 'CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Synchronize(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Synchronize(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByFirstNameLastNameLastName2(System.String,System.String,System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIE3CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByBirthDate(System.DateTime,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIE2CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByCompanyClassification(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF1CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByDrivingLicenseType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF2CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByDisability(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF3CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByNationality(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF4CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByDrivingLicenseRestrictions(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF5CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByInvoicing(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF6CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByMedicalInstitution(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF7CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByAFP(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF8CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByMailingPreference(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF9CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByProfession(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF10CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByCivilStatus(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF11CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByClientClassification(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF12CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByEconomicStanding(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF13CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByHousing(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF14CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByGender(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF15CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByLanguage(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF16CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByBranchOffice(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF17CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByTypeOfDisability(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF18CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByDisabilityCause(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF19CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByTypeOfPerson(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF20CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.RetrieveByEconomicArea(System.Int64,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for Client class</returns>
+ <remarks>Datasource is 'XIF21CLIENT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.ApplyChange(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.ApplyChange(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomString">
+ <summary>
+ Extensibility custom string property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomStringEx">
+ <summary>
+ Extensibility custom string ex property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomNumeric">
+ <summary>
+ Extensibility custom decimal property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomNumericEx">
+ <summary>
+ Extensibility custom decimal ex property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomDate">
+ <summary>
+ Extensibility custom date property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomDateEx">
+ <summary>
+ Extensibility custom date ex property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomBoolean">
+ <summary>
+ Extensibility custom boolean property.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.Client.CustomBooleanEx">
+ <summary>
+ Extensibility custom boolean ex property.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.Client.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientBankAccount">
+ <summary>
+ Banks accounts of a client.
+ </summary>
+<remarks>Data-source is 'BK_ACCOUNT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientBankAccount,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientBankAccount,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientBankAccount,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientBankAccount class</returns>
+ <remarks>Datasource is 'XIF1BK_ACCOUNT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String,System.Int64)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String,System.Int64,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String,System.Int64,System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Find(System.String,System.Int64,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientBankAccount,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientBankAccountItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientBankAccount,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientBankAccountItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientBankAccountCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientBankAccount.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientBankAccountCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int64,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientContactCompany">
+ <summary>
+ Client Contact Company.
+ </summary>
+<remarks>Data-source is 'CONTAC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.RetrieveByPosition(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientContactCompany class</returns>
+ <remarks>Datasource is 'XIF1315CONTAC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.RetrieveByContactID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientContactCompany class</returns>
+ <remarks>Datasource is 'XIF1349CONTAC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientContactCompany class</returns>
+ <remarks>Datasource is 'XIF37CONTAC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Find(System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Find(System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Find(System.String,System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Find(System.String,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientContactCompanyItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientContactCompanyItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="ClientContactCompanyItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.ClientContactCompany,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="ClientContactCompanyItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientContactCompanyCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientContactCompany.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientContactCompanyCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientDocument">
+ <summary>
+ 
+ </summary>
+<remarks>Data-source is 'CLIDOCUMENTS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientDocument,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientDocument,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientDocument,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientDocument class</returns>
+ <remarks>Datasource is 'XIF1CLIDOCUMENTS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.RetrieveByDocumentTypeDocumentClass(System.Int32,System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientDocument class</returns>
+ <remarks>Datasource is 'XIF2CLIDOCUMENTS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.RetrieveByClientID2(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientDocument class</returns>
+ <remarks>Datasource is 'XIF1CLIDOCUMENTS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.RetrieveByDocumentTypeDocumentNUmberClientID(System.Int32,System.String,System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientDocument class</returns>
+ <remarks>Datasource is 'XAK1CLIDOCUMENTS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String,System.Int32,System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Find(System.String,System.Int32,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientDocument,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientDocumentItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientDocument,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientDocumentItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientDocumentCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientDocument.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientDocumentCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientEvaluation">
+ <summary>
+ 
+ </summary>
+<remarks>Data-source is 'CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientEvaluation,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientEvaluation,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientEvaluation,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByYearsInTheMarket(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF1CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByRiskCountry(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF2CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByCompanyType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF3CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByProductService(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF4CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByRisk(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF5CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByCommercialActivities(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF6CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByBankReferences(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF7CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByCommercialReferences(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF8CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByJudicialReferences(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF9CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByPaymentTerm(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF10CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByInsuredPersons(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF11CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByProvidersPayment(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF12CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByDebtReason(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF13CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByCurrentRatio(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF14CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByQuickRatio(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF15CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByProfitability(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF16CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveBySalesGrowth(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF17CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByEconomicArea(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF18CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByFinancialIndicator(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF19CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByClassificationRating(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF20CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByRatingDescription(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF21CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByOriginCountry(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF22CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByLineOfBusiness(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF23CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientEvaluation class</returns>
+ <remarks>Datasource is 'XIF89666CLIENT_EVALRISK'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientEvaluation,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientEvaluationItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientEvaluation,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientEvaluationItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientEvaluationCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientEvaluation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientEvaluationCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientFinantialInformation">
+ <summary>
+ Financial information of the client.
+ </summary>
+<remarks>Data-source is 'FINANC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformation,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformation,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformation,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.RetrieveByConcept(System.Int64,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientFinantialInformation class</returns>
+ <remarks>Datasource is 'XIF835FINANC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.RetrieveByConceptStatus(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientFinantialInformation class</returns>
+ <remarks>Datasource is 'XIF859FINANC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientFinantialInformation class</returns>
+ <remarks>Datasource is 'XIF1345FINANC_CLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String,System.DateTime,System.Int64)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Find(System.String,System.DateTime,System.Int64,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformation,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientFinantialInformationItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformation,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientFinantialInformationItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformationCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientFinantialInformation.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientFinantialInformationCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.DateTime,System.Int64)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientHobby">
+ <summary>
+ Hobbies related with a client.
+ </summary>
+<remarks>Data-source is 'HOBBY'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientHobby,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientHobby,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientHobby,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.RetrieveByHobby(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientHobby class</returns>
+ <remarks>Datasource is 'XIF947HOBBY'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientHobby class</returns>
+ <remarks>Datasource is 'XIF946HOBBY'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Find(System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Find(System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientHobby,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientHobbyItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientHobby,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientHobbyItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientHobbyCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientHobby.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientHobbyCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientProcessingWindow">
+ <summary>
+ Sequence of windows for client updating.
+ </summary>
+<remarks>Data-source is 'TAB_WINCLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindow,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindow,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindow,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.RetrieveByWindowLogicalCode(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientProcessingWindow class</returns>
+ <remarks>Datasource is 'XIF316TAB_WINCLI'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String,System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String,System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Find(System.String,System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindow,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientProcessingWindowItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindow,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientProcessingWindowItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindowCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientProcessingWindow.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientProcessingWindowCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientSport">
+ <summary>
+ Sports associated with a client.
+ </summary>
+<remarks>Data-source is 'SPORT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientSport,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientSport,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientSport,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.RetrieveBySport(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientSport class</returns>
+ <remarks>Datasource is 'XIF948SPORT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientSport class</returns>
+ <remarks>Datasource is 'XIF1534SPORT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Find(System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Find(System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientSport,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientSportItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientSport,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientSportItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientSportCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientSport.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientSportCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.ClientsRelationship">
+ <summary>
+ Relationship among clients.
+ </summary>
+<remarks>Data-source is 'RELATIONS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.RetrieveByRelationship(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientsRelationship class</returns>
+ <remarks>Datasource is 'XIF29RELATIONS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.RetrieveByRelatedClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientsRelationship class</returns>
+ <remarks>Datasource is 'XIF1350RELATIONS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for ClientsRelationship class</returns>
+ <remarks>Datasource is 'XIF31RELATIONS'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String,System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String,System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Find(System.String,System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientsRelationshipItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.ApplyChange(InMotionGIT.Client.Entity.Contracts.ClientsRelationship,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="ClientsRelationshipItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientsRelationshipCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.ClientsRelationship.Synchronize(InMotionGIT.Client.Entity.Contracts.ClientsRelationshipCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.CommissionAgreement">
+ <summary>
+ Tabla de convenios (comisiones) de contratantes-bancos.
+ </summary>
+<remarks>Data-source is 'COMMISS_AGREE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Synchronize(InMotionGIT.Client.Entity.Contracts.CommissionAgreement,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Synchronize(InMotionGIT.Client.Entity.Contracts.CommissionAgreement,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.CommissionAgreement,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for CommissionAgreement class</returns>
+ <remarks>Datasource is 'XIF963COMMISS_AGREE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Find(System.String,System.Int32)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Find(System.String,System.Int32,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.ApplyChange(InMotionGIT.Client.Entity.Contracts.CommissionAgreement,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="CommissionAgreementItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.ApplyChange(InMotionGIT.Client.Entity.Contracts.CommissionAgreement,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="CommissionAgreementItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Synchronize(InMotionGIT.Client.Entity.Contracts.CommissionAgreementCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CommissionAgreement.Synchronize(InMotionGIT.Client.Entity.Contracts.CommissionAgreementCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.CreditCard">
+ <summary>
+ Credit Card of a Client.
+ </summary>
+<remarks>Data-source is 'CRED_CARD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Synchronize(InMotionGIT.Client.Entity.Contracts.CreditCard,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Synchronize(InMotionGIT.Client.Entity.Contracts.CreditCard,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.CreditCard,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for CreditCard class</returns>
+ <remarks>Datasource is 'XIF893CRED_CARD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.RetrieveByBankCode(System.Int64,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for CreditCard class</returns>
+ <remarks>Datasource is 'XIF2268CRED_CARD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.RetrieveByCreditCardType(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for CreditCard class</returns>
+ <remarks>Datasource is 'XIF2267CRED_CARD'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String,System.Int64)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String,System.Int64,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String,System.Int64,System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Find(System.String,System.Int64,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.ApplyChange(InMotionGIT.Client.Entity.Contracts.CreditCard,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="CreditCardItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.ApplyChange(InMotionGIT.Client.Entity.Contracts.CreditCard,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="CreditCardItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Synchronize(InMotionGIT.Client.Entity.Contracts.CreditCardCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.CreditCard.Synchronize(InMotionGIT.Client.Entity.Contracts.CreditCardCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int64,System.String)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.IdentifierClientType">
+ <summary>
+ 
+ </summary>
+<remarks>Data-source is 'CLIENT_TYP'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.Synchronize(InMotionGIT.Client.Entity.Contracts.IdentifierClientType,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.Synchronize(InMotionGIT.Client.Entity.Contracts.IdentifierClientType,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.IdentifierClientType,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.ApplyChange(InMotionGIT.Client.Entity.Contracts.IdentifierClientType,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="IdentifierClientTypeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.ApplyChange(InMotionGIT.Client.Entity.Contracts.IdentifierClientType,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="IdentifierClientTypeItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.Synchronize(InMotionGIT.Client.Entity.Contracts.IdentifierClientTypeCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.IdentifierClientType.Synchronize(InMotionGIT.Client.Entity.Contracts.IdentifierClientTypeCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticallyClientRelationship.Relationship">
+<summary>
+Code for relationship among clients.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticallyClientRelationship.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticallyClientRelationship.RelationshipToBeGenerated">
+<summary>
+Code for relationship among clients to be generated automatically
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticallyClientRelationship.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticallyClientRelationship.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.BankAccount">
+<summary>
+Number of the banking account or credit card
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.DirectDebitType">
+<summary>
+Type of direct debit.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.BankCode">
+<summary>
+Code of the bank.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.sBankAuth">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.AutomaticPaymentClient.PaymentDay">
+<summary>
+Payment day for the direct debit.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CurrentAccountIndicator">
+<summary>
+It indicates that the client has a current account.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Invoicing">
+<summary>
+FIELD DELETED FROM THE SYSTEM
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CivilStatus">
+<summary>
+Marital status of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.ApprovalDate">
+<summary>
+Date when the balance statement of the client is approved.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.BirthDate">
+<summary>
+Date of birth of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.BlockedClient">
+<summary>
+Blocked client indicator.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.ClientClassification">
+<summary>
+Classification of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.FirstName">
+<summary>
+First name and middle name of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.LastName">
+<summary>
+Last name of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DeathDate">
+<summary>
+Date when the client died, in case he/she did.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DriverLicenseEffectiveDate">
+<summary>
+Effective date of the driver&#39;s license.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Height">
+<summary>
+Height of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateOfIngress">
+<summary>
+Date when the information was first entered into the system.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Housing">
+<summary>
+Type of housing.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DriversLicense">
+<summary>
+Number of the driver license.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.NoteID">
+<summary>
+Number of the note containing the comments related to the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.BranchOffice">
+<summary>
+Code of the Branch Office
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.NumberOfVehicles">
+<summary>
+Number of vehicles owned by the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.NumberOfChildren">
+<summary>
+Number of children of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.RateForCreditInsurance">
+<summary>
+Rate of calculation (0/000 - per thousand) of the premium ( to be applied in credit policies).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.TaxCode">
+<summary>
+Tax Code.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Gender">
+<summary>
+Gender of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.SmokerIndicator">
+<summary>
+Smoker client indicator.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.TaxIdentificationNumber">
+<summary>
+Tax identification number.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Profession">
+<summary>
+Profession of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Weight">
+<summary>
+Weight of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Autochar">
+<summary>
+FIELD DELETED FROM THE SYSTEM
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CreditCardIndicator">
+<summary>
+Use of credit card indicator .
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.EconomicStanding">
+<summary>
+Economic standing of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Emplqua">
+<summary>
+FIELD DELETED FROM THE SYSTEM
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.ImageID">
+<summary>
+Number of the image related to the claim.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.TypeOfPerson">
+<summary>
+Code of the person type.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.EconomicArea">
+<summary>
+Economic area of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DriverLicenseExpiryDate">
+<summary>
+Expiration date of the driver&#39;s license.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DrivingLicenseType">
+<summary>
+Code of the driving license type.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Disability">
+<summary>
+Disability.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DrivingLicenseRestrictions">
+<summary>
+Driving license restrictions.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.LegalName">
+<summary>
+Legal name of the business client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.LastName2">
+<summary>
+Last name (2) of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.MedicalInstitution">
+<summary>
+Institution of health to which the client is affiliated.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.AFP">
+<summary>
+FIELD DELETED FROM THE SYSTEM
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.WeddingDate">
+<summary>
+Date of wedding of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.BillsDelivered">
+<summary>
+Indicator of delivery of bills.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.TypeOfDisability">
+<summary>
+Code of type of disability of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateOfClientDisability">
+<summary>
+Date of disability of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DisabilityCause">
+<summary>
+Cause of disability of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Nationality">
+<summary>
+Nationality code.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CheckDigit">
+<summary>
+Verificator digit of the client code
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateOfRetirement">
+<summary>
+Date when the status of the client changed from Employed to Retired.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateWhenClientBecameIndependant">
+<summary>
+Date from which worker is Independent.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateOfEmployment">
+<summary>
+Date from which worker is &#39;dependent&#39; (works for a company).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.MailingPreference">
+<summary>
+Number that identifies the mailing preference of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Language">
+<summary>
+Language in which the system shows the information.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Speciality">
+<summary>
+Occupation of the client
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CompanyType">
+<summary>
+When the client is for a company, this field indicates the type of company.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CompleteClientName">
+<summary>
+Complete name of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.DateAccountingProcess">
+<summary>
+Date accounting process
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.Concatenation">
+<summary>
+Concatenation of the fields related to the business draft (nBusinessTy + nCommerGrp + nCodKind).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.CompanyClassification">
+<summary>
+When the client is for a company, this field indicates the classification of the company.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.NADDRESSID">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.Client.NPHONEID">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.BankCode">
+<summary>
+Code of the bank.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.BankAccount">
+<summary>
+Number of the bank account.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.TypeOfBankAccount">
+<summary>
+Type of bank account.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientBankAccount.ReimbursementAccountIndicator">
+<summary>
+Indicates if the account for deposits of medical expenses reimbursement
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.ContactID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.Order">
+<summary>
+Order in which the client contacts are to be searched.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientContactCompany.Position">
+<summary>
+Position of the contact in the company.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.DocumentType">
+<summary>
+Type code of Client IDs
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.DocumentNUmber">
+<summary>
+Number/Code of the Client IDs (document number)
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.IdIssueDate">
+<summary>
+Issue date of the Client IDs
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.IdExpirationDate">
+<summary>
+Expiry date of the Client IDs.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.UserCode">
+<summary>
+Code of the user creating or updating the record
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientDocument.DocumentClass">
+<summary>
+Class of document or format In this case this field has the fixed value of Documents of Identification (2).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.OtherDatesOfRiskEvaluation">
+<summary>
+Client information.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.YearsInTheMarket">
+<summary>
+Company Profile Years of the business in the market
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.QuantityOfEmployees">
+<summary>
+Company Profile Number of employees
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.RiskCountry">
+<summary>
+Company Profile Risk Country
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CompanyType">
+<summary>
+Company Profile Type of company
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.ProductService">
+<summary>
+Company Profile Type of product/service
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Risk">
+<summary>
+Company Profile Risk
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CommercialActivities">
+<summary>
+Company Profile Commercial activities.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.BankReferences">
+<summary>
+Bank, commercial and judicial references Bank references
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CommercialReferences">
+<summary>
+Bank, commercial and judicial references Commercial references
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.JudicialReferences">
+<summary>
+Bank, commercial and judicial references Judicial references
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.PaymentTerm">
+<summary>
+Bank, commercial and judicial references
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.InsuredPersons">
+<summary>
+Bank, commercial and judicial references Years as insured persons
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.ProvidersPayment">
+<summary>
+Bank, commercial and judicial references Payment of Providers
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.ReferencesCode">
+<summary>
+Bank, commercial and judicial references
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.DICOMDescription">
+<summary>
+Bank, commercial and judicial references DICOM description
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.DebtReason">
+<summary>
+Reason for the debt
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CurrentRatio">
+<summary>
+Financial indicators Current ratio
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.QuickRatio">
+<summary>
+Financial indicators Quick Ratio
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Profitability">
+<summary>
+Financial Indicators Profitability
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.SalesGrowth">
+<summary>
+Financial Indicators Sales Growth
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.EconomicArea">
+<summary>
+Financial Indicators Economic area
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.FinancialIndicator">
+<summary>
+Financial Indicators Financial area
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.ClassificationRating">
+<summary>
+Classification of the client (Rating).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.RatingDescription">
+<summary>
+Description of the Rating
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.OriginCountry">
+<summary>
+Client information Country of origin
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Comments1">
+<summary>
+Company Profile Comments 1
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Comments2">
+<summary>
+Bank, commercial and judicial references Comments 2
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Comments3">
+<summary>
+Financial Indicators Comments 3
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Comments4">
+<summary>
+Rating Comments 4
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.LineOfBusiness">
+<summary>
+Client information Line of Business of the company
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.CreditLimit">
+<summary>
+Credit limit.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientEvaluation.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.DateOfTheInformation">
+<summary>
+Date of the client financial information.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.Concept">
+<summary>
+Concept code of the client financial information.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.Units">
+<summary>
+Number of units of the concept.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.NoteID">
+<summary>
+Number of the note containing the comments.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.Amount">
+<summary>
+Amount of this concept.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientFinantialInformation.ConceptStatus">
+<summary>
+Status of the concept
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientHobby.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientHobby.Hobby">
+<summary>
+Code of hobby.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientHobby.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientHobby.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.ClientType">
+<summary>
+Type of client to whom the windows sequence is defined
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.TypeOfSequence">
+<summary>
+Type of sequence or client updating.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.Sequence">
+<summary>
+Order in which the folders appear in the window.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.WindowLogicalCode">
+<summary>
+Code of the window (logical code).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.SelectedByDefault">
+<summary>
+Indicator of &#34;selected by default&#34; for the Treatment of policy.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.RequiredWindow">
+<summary>
+Indicator of required window
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientProcessingWindow.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientSport.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientSport.Sport">
+<summary>
+Code of the sport.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientSport.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientSport.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientsRelationship.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientsRelationship.RelatedClientID">
+<summary>
+Client ID of the related client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientsRelationship.Relationship">
+<summary>
+Code for relationship among clients.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientsRelationship.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.ClientsRelationship.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.Agreement">
+<summary>
+Agreement code for the agent in charge of collection.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.PercentageOfCommission">
+<summary>
+Percentage of commission.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.EffectiveDate">
+<summary>
+Effective date of the commission agreement
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.EndingDate">
+<summary>
+Ending date of the commission agreement.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CommissionAgreement.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.BankCode">
+<summary>
+Code of the bank.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.CreditCardNumber">
+<summary>
+Credit Card Number.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.CreditCardType">
+<summary>
+Type of the credit card.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.ExpirationDate">
+<summary>
+Expiration date of the credit card.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.CreditCard.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.TypeOfClient">
+<summary>
+Type of Client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.Descriptionofclienttype">
+<summary>
+Description of client type.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.Theclienttypecorrespondstothenaturalperson">
+<summary>
+The client type corresponds to the person.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.Theclienttypecorrespondstothetemporaryclientcodeidentification">
+<summary>
+The client type corresponds to the temporary client code identification.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.IdentifierClientType.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.ContentIndicators">
+<summary>
+Contents indicator vector (t one-alphanumeric characters elements).
+</summary>
+</member>
+<member name="P:InMotionGIT.Client.DataAccess.QueryStatement.WindowsClient.WindowsVector">
+<summary>
+Window Vector, 8 characters to identify the different windows of the client sequence of windows.
+</summary>
+</member>
+<member name="T:InMotionGIT.Client.DataAccess.WindowsClient">
+ <summary>
+ Windows associated to a client.
+ </summary>
+<remarks>Data-source is 'CLIENT_WIN'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Synchronize(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Synchronize(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.SynchronizeChildren(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ pending...
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.RetrieveByClientID(System.String,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="filter"></param>
+ <returns>Collection for WindowsClient class</returns>
+ <remarks>Datasource is 'XIF30CLIENT_WIN'.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Find(System.String,System.DateTime)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Find(System.String,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.ApplyChange(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.Boolean,System.DateTime)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="WindowsClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.ApplyChange(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.Boolean,System.DateTime,System.String@)">
+ <summary>
+ Method that allows you to apply changes in class
+ </summary>
+ <param name="WindowsClientItem">Instance to compare.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="apply">Defines whether the object is affected for changes.</param>
+ <param name="atDate">Defines the date of the call for history.</param>
+ <param name="compareResult">Display results of changes between the two objects.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="WindowsClientItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.CancelCurrentRecord(InMotionGIT.Client.Entity.Contracts.WindowsClient,System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Method that allows to perform an update in the tables of type history
+ </summary>
+ <param name="WindowsClientItem">Instance of the object to perform the update.</param>
+ <param name="auditUserIdentify">This identifies the user making the change.</param>
+ <param name="currentConnection">Current connection, this to improve performance.</param>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.FindByCondition(System.String)">
+ <summary>
+ Check if there is a record in the table using the primary key.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.FindByCondition(System.String,System.Data.Common.DbConnection)">
+ <summary>
+ Check if there is a record in the table using the primary key. It allows reuse of a connection to the database.
+ </summary>
+ <returns>True if the record exist or false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Synchronize(InMotionGIT.Client.Entity.Contracts.WindowsClientCollection,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Client.DataAccess.WindowsClient.Synchronize(InMotionGIT.Client.Entity.Contracts.WindowsClientCollection,System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.DateTime)">
+ <summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+ <param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+ <param name="atDate">Date of effect of the process used by the historical tables.</param>
+ <param name="currentConnection">missing.</param>
+ <param name="isParentNew">missing.</param>
+ <param name="isParentDeletedMark">missing.</param>
+ <returns>true if successful synchronization; otherwise, false.</returns>
+</member>
+</members>
+</doc>

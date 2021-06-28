@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Detalle del workflow</title>
+
+    <link href="../../Styles/Prototy/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../Styles/bootstrap-table.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <style>
+        .btn-circle-micro {
+            width: 19px;
+            height: 19px;
+            text-align: center;
+            padding: 1px 0;
+            font-size: 13px;
+            line-height: 0.1;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="margin-top: 10px;">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-history" aria-hidden="true"> Detalle de ejecución</i></a></li>
+            <li><a data-toggle="tab" href="#menu1"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Error</i></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <table class="table table-fit" id="Files" data-click-to-select="true">
+                    <thead>
+                        <tr>
+                            <th data-field="State" class="col-sm-1"  data-align="center" data-formatter="FormaterWorkflowState">Estado</th>
+                            <th data-field="RecordNumber" data-align="center" data-visible="false" class="col-sm-2">Registro</th>
+                            <th data-field="ActivityName" class="col-sm-4"  data-align="left" data-formatter="FormaterActivityName">Nombre</th>
+                            <th data-field="ActivityType" data-align="center" data-visible="false">Tipo</th>
+                            <th data-field="TimeStart" class="col-sm-2"  data-align="center">Inicio</th>
+                            <th data-field="TimeFinish" class="col-sm-2"  data-align="center">Fin</th>
+                            <th data-field="Duration"  data-align="right">Duración</th>
+                            <th data-field="Data" data-align="center" data-formatter="FormatterData">Traza</th>
+                        </tr>
+                    </thead>
+                    <tbody style="width: 400px"></tbody>
+                </table>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <div id="frmgSummary" class="form-group">
+                    <div class="d-flex flex-column">
+                        <label for="lblSummary" class="control-label">Sumario</label>
+                        <pre id="lblSummary" name="lblSummary" />
+                    </div>
+                </div>
+                <div id="frmgStack" class="form-group">
+                    <div class="d-flex flex-column">
+                        <label for="lblStack" class="control-label">Detalle</label>
+                        <pre id="lblStack" name="lblStack" class='pre-scrollable' style="height:400px; max-height:400px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div id="modalContent" class="modal-content">
+                <!--<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reason</h4>
+                </div>-->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="d-flex flex-column">
+                            <label for="lblData" class="control-label">Traza</label>
+                            <pre id="lblData" name="lblData" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../Scripts/jquery.min.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script src="../../Scripts/WorkFlowManagerDetails.js"></script>
+</body>
+</html>

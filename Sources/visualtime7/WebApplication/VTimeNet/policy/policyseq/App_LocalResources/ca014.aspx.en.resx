@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcnModulecColumnCaption" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="tcnModulecColumnToolTip" xml:space="preserve">
+    <value>Module associated with the policy</value>
+  </data>
+  <data name="tcnCoverColumnCaption" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="tcnCoverColumnToolTip" xml:space="preserve">
+    <value>Code of the coverage</value>
+  </data>
+  <data name="tctCoverColumnCaption" xml:space="preserve">
+    <value>Coverage</value>
+  </data>
+  <data name="tctCoverColumnToolTip" xml:space="preserve">
+    <value>Description of the coverage</value>
+  </data>
+  <data name="tcnCapitalColumnCaption" xml:space="preserve">
+    <value>Sum Insured</value>
+  </data>
+  <data name="tcnCapitalColumnToolTip" xml:space="preserve">
+    <value>Sum insured</value>
+  </data>
+  <data name="tcnCapital_waitColumnCaption" xml:space="preserve">
+    <value>Requested Sum Insured</value>
+  </data>
+  <data name="tcnCapital_waitColumnToolTip" xml:space="preserve">
+    <value>Sum insured requested by the insured</value>
+  </data>
+  <data name="tcnRatecoveColumnCaption" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="tcnRatecoveColumnToolTip" xml:space="preserve">
+    <value>Rate to be applied</value>
+  </data>
+  <data name="tcnPremiumColumnCaption" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="tcnPremiumColumnToolTip" xml:space="preserve">
+    <value>Premium to be collected</value>
+  </data>
+  <data name="cbeRetarifColumnCaption" xml:space="preserve">
+    <value>Recalculation</value>
+  </data>
+  <data name="cbeRetarifColumnToolTip" xml:space="preserve">
+    <value>Type of recalculation to be applied to the coverage</value>
+  </data>
+  <data name="tcnAgemininsColumnCaption" xml:space="preserve">
+    <value>Minimum Age</value>
+  </data>
+  <data name="tcnAgemininsColumnToolTip" xml:space="preserve">
+    <value>Age as of which the insured may be recorded in the coverage</value>
+  </data>
+  <data name="tcnAgemaxinsColumnCaption" xml:space="preserve">
+    <value>Maximum Age</value>
+  </data>
+  <data name="tcnAgemaxinsColumnToolTip" xml:space="preserve">
+    <value>Maximum permitted age for the insured to be recorded</value>
+  </data>
+  <data name="tcnAgemaxperColumnCaption" xml:space="preserve">
+    <value>Maximum Age of Continuance</value>
+  </data>
+  <data name="tcnAgemaxperColumnToolTip" xml:space="preserve">
+    <value>Maximum permitted age for the insured to be kept in the policy/certificate</value>
+  </data>
+  <data name="cbeTypdurinsColumnCaption" xml:space="preserve">
+    <value>Type of Insurance Duration</value>
+  </data>
+  <data name="cbeTypdurinsColumnToolTip" xml:space="preserve">
+    <value>It indicates how the duration of the insurance will be determined</value>
+  </data>
+  <data name="tcnDurinsurColumnCaption" xml:space="preserve">
+    <value>Duration of the Insurance</value>
+  </data>
+  <data name="tcnDurinsurColumnToolTip" xml:space="preserve">
+    <value>Duration of the insurance</value>
+  </data>
+  <data name="cbeTypdurpayColumnCaption" xml:space="preserve">
+    <value>Type of Payment Duration</value>
+  </data>
+  <data name="cbeTypdurpayColumnToolTip" xml:space="preserve">
+    <value>It indicates how the duration of payments is determined</value>
+  </data>
+  <data name="tcnDurpayColumnCaption" xml:space="preserve">
+    <value>Duration of Payments</value>
+  </data>
+  <data name="tcnDurpayColumnToolTip" xml:space="preserve">
+    <value>Duration of the payment</value>
+  </data>
+  <data name="cbeWait_typeColumnCaption" xml:space="preserve">
+    <value>Type of Elimination Period</value>
+  </data>
+  <data name="cbeWait_typeColumnToolTip" xml:space="preserve">
+    <value>It indicates the way in which the waiting period is expressed</value>
+  </data>
+  <data name="tcnWaitQColumnCaption" xml:space="preserve">
+    <value>Duration of the Elimination Period</value>
+  </data>
+  <data name="tcnWaitQColumnToolTip" xml:space="preserve">
+    <value>Duration of the waiting period</value>
+  </data>
+  <data name="tcdFerColumnCaption" xml:space="preserve">
+    <value>R.M.D.</value>
+  </data>
+  <data name="tcdFerColumnToolTip" xml:space="preserve">
+    <value>date of retroactive endorsement</value>
+  </data>
+  <data name="cbeCauseupdColumnCaption" xml:space="preserve">
+    <value>Reason of Modification</value>
+  </data>
+  <data name="cbeCauseupdColumnToolTip" xml:space="preserve">
+    <value>Reason why the coverage is modified</value>
+  </data>
+  <data name="valBranch_reiColumnCaption" xml:space="preserve">
+    <value>Reinsurance Line of Business</value>
+  </data>
+  <data name="valBranch_reiColumnToolTip" xml:space="preserve">
+    <value>Line of business associated with the coverage</value>
+  </data>
+  <data name="tcnCapital_reqColumnCaption" xml:space="preserve">
+    <value>Sum insured s / broadcast or endorsement</value>
+  </data>
+  <data name="tcnCapital_reqColumnToolTip" xml:space="preserve">
+    <value>Sum insured stated in the latest issue or endorsement of the policy</value>
+  </data>
+  <data name="2ColumnCaption" xml:space="preserve">
+    <value>Coverage</value>
+  </data>
+  <data name="valGroupCaption" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="valGroupToolTip" xml:space="preserve">
+    <value>Collective group associated with the certificate</value>
+  </data>
+  <data name="cbeCurrencDesCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="cbeCurrencDesToolTip" xml:space="preserve">
+    <value>Currency associated with the coverages</value>
+  </data>
+  <data name="AnchorDatos del cliente seleccionadoCaption" xml:space="preserve">
+    <value>Data on the selected client</value>
+  </data>
+  <data name="cbeRoleCaption" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="cbeRoleToolTip" xml:space="preserve">
+    <value>Role of the client</value>
+  </data>
+  <data name="tctClientCaption" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="tctClientToolTip" xml:space="preserve">
+    <value>Code of the client</value>
+  </data>
+  <data name="tctClienameToolTip" xml:space="preserve">
+    <value>Nombre del cliente</value>
+  </data>
+  <data name="tcdBirthdatCaption" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="tcdBirthdatToolTip" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="cbeSexClienCaption" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="cbeSexClienToolTip" xml:space="preserve">
+    <value>Gender of the client</value>
+  </data>
+  <data name="chkSmokingCaption" xml:space="preserve">
+    <value>Smoker</value>
+  </data>
+  <data name="tcnAgeCaption" xml:space="preserve">
+    <value>Actual Age</value>
+  </data>
+  <data name="tcnAgeToolTip" xml:space="preserve">
+    <value>Actual age of the client</value>
+  </data>
+  <data name="tcnAgeInsCaption" xml:space="preserve">
+    <value>Actuarial Age</value>
+  </data>
+  <data name="tcnAgeInsToolTip" xml:space="preserve">
+    <value>Actuarial age of the client</value>
+  </data>
+  <data name="tcnLEGAmountCaption" xml:space="preserve">
+    <value>WUL Policy</value>
+  </data>
+  <data name="tcnLEGAmountToolTip" xml:space="preserve">
+    <value>Guaranteed Issue limit associated with the policy</value>
+  </data>
+  <data name="btn_ApplyToolTip" xml:space="preserve">
+    <value>Se acepta las coberturas para la moneda/grupo en tratamiento</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Total Premium</value>
+  </data>
+  <data name="cbeFrancAplCaption" xml:space="preserve">
+    <value>(F/D) Aplica sobre</value>
+  </data>
+  <data name="cbeFrancAplToolTip" xml:space="preserve">
+    <value>(Franquicia/Deducible) Aplica sobre</value>
+  </data>
+  <data name="cbeFrandediCaption" xml:space="preserve">
+    <value>Franquicia/deducible</value>
+  </data>
+  <data name="cbeFrandediToolTip" xml:space="preserve">
+    <value>Indicador de franquicia/deducible</value>
+  </data>
+  <data name="tcnDiscountCaption" xml:space="preserve">
+    <value>(F/D) %Descuento</value>
+  </data>
+  <data name="tcnDiscountToolTip" xml:space="preserve">
+    <value>Porcentaje de descuento de franquicia/deducible</value>
+  </data>
+  <data name="tcnDisc_amounCaption" xml:space="preserve">
+    <value>(F/D) Monto de descuento</value>
+  </data>
+  <data name="tcnDisc_amounToolTip" xml:space="preserve">
+    <value>Monto de descuento de franquicia/deducible</value>
+  </data>
+  <data name="tcnFixamountCaption" xml:space="preserve">
+    <value>(F/D) Monto fijo</value>
+  </data>
+  <data name="tcnFixamountToolTip" xml:space="preserve">
+    <value>Monto fijo de franquicia/decucible</value>
+  </data>
+  <data name="tcnFraRateCaption" xml:space="preserve">
+    <value>(F/D) %</value>
+  </data>
+  <data name="tcnFraRateToolTip" xml:space="preserve">
+    <value>Porcentaje a aplicar de franquicia/deducible</value>
+  </data>
+  <data name="tcnMaxAmountCaption" xml:space="preserve">
+    <value>(F/D) Máximo</value>
+  </data>
+  <data name="tcnMaxAmountToolTip" xml:space="preserve">
+    <value>Monto máximo de franquicia/deducible</value>
+  </data>
+  <data name="tcnMinAmountCaption" xml:space="preserve">
+    <value>(F/D) Mínimo</value>
+  </data>
+  <data name="tcnMinAmountToolTip" xml:space="preserve">
+    <value>Monto mínimo de franquicia/deducible</value>
+  </data>
+</root>

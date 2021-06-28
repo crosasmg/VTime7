@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF3E4D19-78A4-491F-AD23-EDF3C516B20D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eGeneralQue</RootNamespace>
+    <AssemblyName>eGeneralQue</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eGeneralQue.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addresses.vb" />
+    <Compile Include="Beneficiar.vb" />
+    <Compile Include="Bk_accounts.vb" />
+    <Compile Include="Bulletins.vb" />
+    <Compile Include="Certificats.vb" />
+    <Compile Include="Certificnn.vb" />
+    <Compile Include="Cession_pr.vb" />
+    <Compile Include="Cheques.vb" />
+    <Compile Include="Claims.vb" />
+    <Compile Include="Claim_case.vb" />
+    <Compile Include="Claim_Ces.vb" />
+    <Compile Include="ClassificationClient.vb" />
+    <Compile Include="ClassPropertiesWin.vb" />
+    <Compile Include="ClassPropertyWin.vb" />
+    <Compile Include="Clauses.vb" />
+    <Compile Include="Clause_amend.vb" />
+    <Compile Include="Client.vb" />
+    <Compile Include="Clients.vb" />
+    <Compile Include="Client_EvalRisk.vb" />
+    <Compile Include="Cl_cover.vb" />
+    <Compile Include="Coinsuran.vb" />
+    <Compile Include="Comm_pol.vb" />
+    <Compile Include="Company.vb" />
+    <Compile Include="Contrats.vb" />
+    <Compile Include="Contr_proc.vb" />
+    <Compile Include="Cost.vb" />
+    <Compile Include="Covers.vb" />
+    <Compile Include="Cover_amend.vb" />
+    <Compile Include="CreditInf.vb" />
+    <Compile Include="Cred_cards.vb" />
+    <Compile Include="Curr_acc.vb" />
+    <Compile Include="Date_particular_amend.vb" />
+    <Compile Include="Detail_pre.vb" />
+    <Compile Include="Dir_debit.vb" />
+    <Compile Include="Disco_expr.vb" />
+    <Compile Include="Disc_xprem_amend.vb" />
+    <Compile Include="Distr_Cap.vb" />
+    <Compile Include="Drafts.vb" />
+    <Compile Include="FiscalResidencePol.vb" />
+    <Compile Include="Fiscal_Residence.vb" />
+    <Compile Include="Folder.vb" />
+    <Compile Include="Folders.vb" />
+    <Compile Include="Funds.vb" />
+    <Compile Include="Funds2.vb" />
+    <Compile Include="Funds3.vb" />
+    <Compile Include="FUNDSMATRIX.vb" />
+    <Compile Include="GeneralQue.vb" />
+    <Compile Include="GenFunct.vb" />
+    <Compile Include="Guarant_val.vb" />
+    <Compile Include="Guar_saving_detpol.vb" />
+    <Compile Include="Guar_saving_pol.vb" />
+    <Compile Include="History.vb" />
+    <Compile Include="History_amend.vb" />
+    <Compile Include="Insured_expdis.vb" />
+    <Compile Include="Intermediaries.vb" />
+    <Compile Include="LifeCov_Var.vb" />
+    <Compile Include="Life_docu.vb" />
+    <Compile Include="Loans.vb" />
+    <Compile Include="Move_acc.vb" />
+    <Compile Include="Move_Accpol.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Note.vb" />
+    <Compile Include="NotesImages.vb" />
+    <Compile Include="Origins.vb" />
+    <Compile Include="Part_contr.vb" />
+    <Compile Include="Phones.vb" />
+    <Compile Include="Policies.vb" />
+    <Compile Include="Policy.vb" />
+    <Compile Include="Premium.vb" />
+    <Compile Include="Premiums.vb" />
+    <Compile Include="Premium_mo.vb" />
+    <Compile Include="Properties.vb" />
+    <Compile Include="PropertyLibraries.vb" />
+    <Compile Include="PropertyLibrary.vb" />
+    <Compile Include="Propiedad.vb" />
+    <Compile Include="Provider.vb" />
+    <Compile Include="Rea_Cover.vb" />
+    <Compile Include="Rea_Ctacte.vb" />
+    <Compile Include="Reinsuran.vb" />
+    <Compile Include="Reinsurances.vb" />
+    <Compile Include="Reinsuran_his.vb" />
+    <Compile Include="Relations.vb" />
+    <Compile Include="Request.vb" />
+    <Compile Include="Roles_amend.vb" />
+    <Compile Include="SeqFolder.vb" />
+    <Compile Include="SeqFolders.vb" />
+    <Compile Include="tab_am_bil.vb" />
+    <Compile Include="Tab_prov_group.vb" />
+    <Compile Include="Tar_Am_Pol.vb" />
+    <Compile Include="ul_saving_move_pol.vb" />
+    <Compile Include="ViewProperties.vb" />
+    <Compile Include="ViewProperty.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eGeneralQue.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eAgent\eAgent.vbproj">
+      <Project>{EAADFD20-AC4B-4EDA-A340-B939958DA3E3}</Project>
+      <Name>eAgent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

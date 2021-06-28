@@ -1,0 +1,132 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="ActualizaAseguradosAdicionales" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:iacg="clr-namespace:InMotionGIT.AddressManager.Contract.General;assembly=InMotionGIT.AddressManager.Contract" xmlns:iacm="clr-namespace:InMotionGIT.AddressManager.Contract.Models;assembly=InMotionGIT.AddressManager.Contract" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:ica1="clr-namespace:InMotionGIT.Client.Activities;assembly=InMotionGIT.Client.Activities" xmlns:icag="clr-namespace:InMotionGIT.Common.Activities.General;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:iccp="clr-namespace:InMotionGIT.Common.Contracts.Process;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s6="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="RolesPolicy" Type="InOutArgument(ipec:RoleCollection)" />
+    <x:Property Name="FechaProceso" Type="InArgument(s:DateTime)" />
+    <x:Property Name="ProcesaAsegurado" Type="InArgument(x:Boolean)" />
+    <x:Property Name="UsercodeBO" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>713.6,916.8</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="ActualizaAseguradosAdicionales" sap:VirtualizedContainerService.HintSize="673.6,876.8">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="clientExistInDB" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134</av:PointCollection>
+        <x:Double x:Key="Height">840.92000000000007</x:Double>
+        <x:Double x:Key="Width">660</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">218.5,134</av:Point>
+            <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,266 300,354.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+          <ica:ProcessIdentifier.Identifier>
+            <icd:LocalizedString Language="1" Value="ActualizaAseguradosAdicionales." />
+            <icd:LocalizedString Language="2" Value="ValidaAseguradosAdicionales." />
+          </ica:ProcessIdentifier.Identifier>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ica:ProcessIdentifier>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,354.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ForEach x:TypeArguments="ipec:Role" DisplayName="ForEach&lt;Role&gt;" sap:VirtualizedContainerService.HintSize="763.2,787.2" Values="[RolesPolicy]">
+              <ActivityAction x:TypeArguments="ipec:Role">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ipec:Role" Name="item" />
+                </ActivityAction.Argument>
+                <If Condition="[(item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 2 andalso item.ClientRole &lt;&gt; 13 andalso ProcesaAsegurado = false) orelse (item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 13 andalso ProcesaAsegurado = true)]" DisplayName="If (item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 2 andalso item.ClientRole &lt;&gt; 13 andalso ProcesaAsegurado = false) orelse (item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 13 andalso ProcesaAsegurado = true)" sap:VirtualizedContainerService.HintSize="732.8,678.4">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="577.6,568">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="iacm:AddresseMailDLI" Name="emailAddress" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[item.Client.IsNew = true]" DisplayName="If clienteNuevo" sap:VirtualizedContainerService.HintSize="555.2,296">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="265.6,185.6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="AssignClienteNoExiste" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[clientExistInDB]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="265.6,185.6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="AssignClienteNoExiste" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[clientExistInDB]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <icag:ExecuteWorkflow CallMode="Synchronous" DisplayName="ExecuteCreaActualizaClienteSinDirecciones" sap:VirtualizedContainerService.HintSize="555.2,107.2" ModelId="e9b06935-167b-40df-ac9e-3420fbb5a8b0" Release="7" Tracking="True" WorkflowPath="CreaActualizaClienteSinDirecciones">
+                        <icag:ExecuteWorkflow.ChildArguments>
+                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="ClientExistInDB">[clientExistInDB]</InOutArgument>
+                          <InOutArgument x:TypeArguments="icc:Context" x:Key="context">[context]</InOutArgument>
+                          <InOutArgument x:TypeArguments="icec:Client" x:Key="Cliente">[item.Client]</InOutArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="FechaProceso">[FechaProceso]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="UsercodeBO">[UsercodeBO]</InArgument>
+                        </icag:ExecuteWorkflow.ChildArguments>
+                      </icag:ExecuteWorkflow>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </ActivityAction>
+            </ForEach>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

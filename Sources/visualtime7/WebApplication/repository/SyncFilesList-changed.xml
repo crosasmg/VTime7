@@ -1,0 +1,26 @@
+SyncFileList.xml
+
+ANTES
+<File name="InMotionGIT.PhoneManager.Proxy.dll"                  path="AssemblyPath" catalog="false" />
+
+AHORA
+<!--
+    Phone Services
+-->
+  <File name="InMotionGIT.PhoneManager.Proxy.dll"                  path="AssemblyPath"   catalog="false" />
+  <File name="InMotionGIT.PhoneManager.Contract.dll"               path="AssemblyPath"   catalog="true" />
+  <File name="InMotionGIT.PhoneManager.Activities.dll"             path="AssemblyPath"   catalog="false" />
+  
+  
+  
+ANTES
+  <File name="InMotionGIT.AddressManager.Activities.dll"           path="AssemblyPath" catalog="false" />
+  <File name="InMotionGIT.AddressManager.Proxy.dll"                path="AssemblyPath" catalog="false" />
+  <File name="InMotionGIT.PhoneManager.Activities.dll"             path="AssemblyPath" catalog="false" />
+  
+AHORA
+<!--
+    Address Services
+-->
+  <File name="InMotionGIT.AddressManager.Proxy.dll"                path="AssemblyPath"   catalog="false" />
+  <File name="InMotionGIT.AddressManager.Activities.dll"           path="AssemblyPath"   catalog="false" />

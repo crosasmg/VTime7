@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnchorFacturaciónCaption" xml:space="preserve">
+    <value>Facturación</value>
+  </data>
+  <data name="AnchorRevalorizaciónCaption" xml:space="preserve">
+    <value>Revalorización</value>
+  </data>
+  <data name="AnchorDatos de la cobranzaCaption" xml:space="preserve">
+    <value>Datos de la cobranza</value>
+  </data>
+  <data name="AnchorVía de cobroCaption" xml:space="preserve">
+    <value>Vía de cobro</value>
+  </data>
+  <data name="AnchorVariosCaption" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Emisión</value>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Vigencia</value>
+  </data>
+  <data name="tcdIssuedatCaption" xml:space="preserve">
+    <value>Emisión</value>
+    <comment>ID=12972</comment>
+  </data>
+  <data name="tcdIssuedatToolTip" xml:space="preserve">
+    <value>Fecha en que se ha emitido la póliza/certificado</value>
+    <comment>ID=12972</comment>
+  </data>
+  <data name="tcdDate_origiCaption" xml:space="preserve">
+    <value>Inicio original</value>
+  </data>
+  <data name="tcdDate_origiToolTip" xml:space="preserve">
+    <value>Fecha de inicio original de vigencia de la póliza</value>
+  </data>
+  <data name="tcdReqDateCaption" xml:space="preserve">
+    <value>Recepción</value>
+    <comment>ID=12974</comment>
+  </data>
+  <data name="tcdReqDateToolTip" xml:space="preserve">
+    <value>Fecha en que ha sido recibida la solicitud de la póliza/certificado</value>
+    <comment>ID=12974</comment>
+  </data>
+  <data name="tcnDurationCaption" xml:space="preserve">
+    <value>Meses de duración</value>
+    <comment>ID=12975</comment>
+  </data>
+  <data name="tcnDurationToolTip" xml:space="preserve">
+    <value>Meses de duración de la póliza en tratamiento</value>
+    <comment>ID=12975</comment>
+  </data>
+  <data name="tcnDurationDaysCaption" xml:space="preserve">
+    <value>Dias de duración</value>
+  </data>
+  <data name="tcnDurationDaysToolTip" xml:space="preserve">
+    <value>Dias de duración de la póliza en tratamiento</value>
+  </data>
+  <data name="tcdStartDateCaption" xml:space="preserve">
+    <value>Inicio</value>
+    <comment>ID=12975</comment>
+  </data>
+  <data name="tcdStartDateToolTip" xml:space="preserve">
+    <value>Fecha de inicio de vigencia de la póliza</value>
+    <comment>ID=12975</comment>
+  </data>
+  <data name="tcdExpirDateCaption" xml:space="preserve">
+    <value>Vencimiento</value>
+    <comment>ID=12968</comment>
+  </data>
+  <data name="tcdExpirDateToolTip" xml:space="preserve">
+    <value>Fecha de fin de vigencia de la póliza</value>
+    <comment>ID=12968</comment>
+  </data>
+  <data name="Anchor3Caption" xml:space="preserve">
+    <value>Titular del recibo</value>
+  </data>
+  <data name="tctClientCaption" xml:space="preserve">
+    <value>Titular</value>
+  </data>
+  <data name="tctClientToolTip" xml:space="preserve">
+    <value>Código que identifica al titular del recibo</value>
+  </data>
+  <data name="AnchorFacturación2Caption" xml:space="preserve">
+    <value>Facturación</value>
+  </data>
+  <data name="AnchorRevalorización2Caption" xml:space="preserve">
+    <value>Revalorización</value>
+  </data>
+  <data name="tcdTariffDateCaption" xml:space="preserve">
+    <value>Fecha tarifa</value>
+  </data>
+  <data name="tcdTariffDateToolTip" xml:space="preserve">
+    <value>Fecha de tarifa</value>
+  </data>
+  <data name="cbeIndexTypeCaption" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>ID=12971</comment>
+  </data>
+  <data name="cbeIndexTypeToolTip" xml:space="preserve">
+    <value>Tipo de revalorización a aplicar a la póliza al fin de vigencia</value>
+    <comment>ID=12971</comment>
+  </data>
+  <data name="optFreq_1Caption" xml:space="preserve">
+    <value>Corto plazo</value>
+  </data>
+  <data name="optFreq_1ToolTip" xml:space="preserve">
+    <value>Cobro de prima en base a tabla de corto plazo</value>
+  </data>
+  <data name="optFreq_2Caption" xml:space="preserve">
+    <value>Prorrata</value>
+  </data>
+  <data name="optFreq_2ToolTip" xml:space="preserve">
+    <value>Indica que la prima a cobrar se prorratea según la prima anual</value>
+  </data>
+  <data name="cbeIndexAplCaption" xml:space="preserve">
+    <value>Aplicación</value>
+    <comment>ID=12969</comment>
+  </data>
+  <data name="cbeIndexAplToolTip" xml:space="preserve">
+    <value>Indica sobre que aplica el indice de revalorización</value>
+    <comment>ID=12969</comment>
+  </data>
+  <data name="optFreq_3Caption" xml:space="preserve">
+    <value>Según frecuencia</value>
+  </data>
+  <data name="optFreq_3ToolTip" xml:space="preserve">
+    <value>Indica que la prima se cobra según una frecuencia determinada</value>
+  </data>
+  <data name="cbePayFreqToolTip" xml:space="preserve">
+    <value>Frecuencia de pago de la póliza</value>
+  </data>
+  <data name="tcnIndexRateCaption" xml:space="preserve">
+    <value>%</value>
+    <comment>ID=12970</comment>
+  </data>
+  <data name="tcnIndexRateToolTip" xml:space="preserve">
+    <value>Porcentaje de revalorización a aplicar</value>
+    <comment>ID=12970</comment>
+  </data>
+  <data name="cbeQuotaCaption" xml:space="preserve">
+    <value>Cuotas</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="cbeQuotaToolTip" xml:space="preserve">
+    <value>Cantidad de cuotas en las que vas a ser cancelada la póliza</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="cbeBill_indCaption" xml:space="preserve">
+    <value>Indicador de factura</value>
+  </data>
+  <data name="cbeBill_indOptions" xml:space="preserve">
+    <value>1|Facturación vencida,2|No Aplica,3|Facturación anticipada</value>
+  </data>
+  <data name="cbeBill_indToolTip" xml:space="preserve">
+    <value>Indicador de factura</value>
+  </data>
+  <data name="chkBill_IndCaption" xml:space="preserve">
+    <value>Indicador de factura</value>
+  </data>
+  <data name="chkBill_IndToolTip" xml:space="preserve">
+    <value>Indica si la póliza/certificado va a tener factura</value>
+  </data>
+  <data name="cbeReceipt_indCaption" xml:space="preserve">
+    <value>Indicador de generación de recibo</value>
+  </data>
+  <data name="cbeReceipt_indOptions" xml:space="preserve">
+    <value>1|Generación vencida,2|Generación anticipada</value>
+  </data>
+  <data name="cbeReceipt_indToolTip" xml:space="preserve">
+    <value>Indicador de generación de recibos</value>
+  </data>
+  <data name="tcnTerm_graceCaption" xml:space="preserve">
+    <value>Plazo de gracia</value>
+  </data>
+  <data name="tcnTerm_graceToolTip" xml:space="preserve">
+    <value>Plazo de gracia de cobranza anticipada o vencida</value>
+  </data>
+  <data name="AnchorDatos de la cobranza2Caption" xml:space="preserve">
+    <value>Datos de la cobranza</value>
+  </data>
+  <data name="AnchorVía de cobro2Caption" xml:space="preserve">
+    <value>Vía de cobro</value>
+  </data>
+  <data name="cbeWayPayCaption" xml:space="preserve">
+    <value>Vía de pago</value>
+    <comment>ID=12971</comment>
+  </data>
+  <data name="cbeWayPayToolTip" xml:space="preserve">
+    <value>Vía de pago de la póliza</value>
+    <comment>ID=12971</comment>
+  </data>
+  <data name="optDirTyp_CStr1Caption" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="optDirTyp_CStr1ToolTip" xml:space="preserve">
+    <value>Indica si toma los datos de vía de cobro a nivel de Cliente</value>
+  </data>
+  <data name="valCollectorCaption" xml:space="preserve">
+    <value>Cobrador</value>
+    <comment>ID="10295"</comment>
+  </data>
+  <data name="valCollectorToolTip" xml:space="preserve">
+    <value>Cobrador Asignado a la póliza</value>
+    <comment>ID="10295"</comment>
+  </data>
+  <data name="optDirTyp_CStr2Caption" xml:space="preserve">
+    <value>Póliza</value>
+  </data>
+  <data name="optDirTyp_CStr2ToolTip" xml:space="preserve">
+    <value>Indica si toma los datos de vía de cobro a nivel de Póliza</value>
+  </data>
+  <data name="valOriginCaption" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="valOriginToolTip" xml:space="preserve">
+    <value>Cuenta origen</value>
+  </data>
+  <data name="tcnAFPCommiCaption" xml:space="preserve">
+    <value>Comisión AFP</value>
+  </data>
+  <data name="tcnAFPCommiToolTip" xml:space="preserve">
+    <value>Monto de la comisión que cobra el AFP del cliente por trasladar los fondos a la empresa de seguro</value>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda en que se expresa el monto de la comisión</value>
+  </data>
+  <data name="tcnBillDayCaption" xml:space="preserve">
+    <value>Día de pago</value>
+    <comment>ID=12972</comment>
+  </data>
+  <data name="tcnBillDayToolTip" xml:space="preserve">
+    <value>Día de pago</value>
+    <comment>ID=12972</comment>
+  </data>
+  <data name="valAgreementCaption" xml:space="preserve">
+    <value>Convenio</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="valAgreementToolTip" xml:space="preserve">
+    <value>Convenio de pago y/o descuento asociado a la póliza</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="AnchorVarios2Caption" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="chkDeclarativeCaption" xml:space="preserve">
+    <value>Declarativa</value>
+  </data>
+  <data name="chkDeclarativeToolTip" xml:space="preserve">
+    <value>Indica que la póliza es declarativa</value>
+  </data>
+  <data name="tcnCopiesCaption" xml:space="preserve">
+    <value>Copias</value>
+    <comment>ID=12966</comment>
+  </data>
+  <data name="tcnCopiesToolTip" xml:space="preserve">
+    <value>Cantidad de veces que debe imprimirse el cuadro de póliza</value>
+    <comment>ID=12966</comment>
+  </data>
+  <data name="chkRenewalAutCaption" xml:space="preserve">
+    <value>Renovación automática</value>
+  </data>
+  <data name="chkRenewalAutToolTip" xml:space="preserve">
+    <value>Indica que la póliza será renovada al cumplir su vigencia</value>
+  </data>
+  <data name="tcnDaysNullCaption" xml:space="preserve">
+    <value>Aviso</value>
+    <comment>ID=12967</comment>
+  </data>
+  <data name="tcnDaysNullToolTip" xml:space="preserve">
+    <value>Cantidad de días del cliente para realizar la cancelación de cada recibo</value>
+    <comment>ID=12967</comment>
+  </data>
+  <data name="chkNoNullCaption" xml:space="preserve">
+    <value>Exonerada</value>
+  </data>
+  <data name="chkNoNullToolTip" xml:space="preserve">
+    <value>Indica que a la póliza no se le aplicarán las políticas de anulación</value>
+  </data>
+  <data name="tcnDays_quotCaption" xml:space="preserve">
+    <value>Días de validez</value>
+  </data>
+  <data name="tcnDays_quotToolTip" xml:space="preserve">
+    <value>Cantidad de días de validez de la cotización o propuesta</value>
+  </data>
+  <data name="chkExemptionCaption" xml:space="preserve">
+    <value>Exención</value>
+  </data>
+  <data name="chkExemptionToolTip" xml:space="preserve">
+    <value>Indica cuando el titular es declarado con incapacidad total o Permanente</value>
+  </data>
+  <data name="chksNopayrollCaption" xml:space="preserve">
+    <value>Póliza innominada</value>
+  </data>
+  <data name="chksNopayrollToolTip" xml:space="preserve">
+    <value>Indica que la póliza no tiene una nómina asociada</value>
+  </data>
+  <data name="chksLegCaption" xml:space="preserve">
+    <value>Cálculo del LEG</value>
+  </data>
+  <data name="chksLegToolTip" xml:space="preserve">
+    <value>Indica que se debe realizar el cálculo del LEG</value>
+  </data>
+  <data name="chksReinstCaption" xml:space="preserve">
+    <value>Permite rehabilitar</value>
+  </data>
+  <data name="chksReinstToolTip" xml:space="preserve">
+    <value>Se puede rehabilitar la póliza según lo indicado en el producto asociado</value>
+  </data>
+  <data name="cbeRepInsuredCaption" xml:space="preserve">
+    <value>Criterio de duplicidad</value>
+  </data>
+  <data name="cbeRepInsuredToolTip" xml:space="preserve">
+    <value>Indica el criterio de duplicidad de asegurados</value>
+  </data>
+  <data name="chksInsubankCaption" xml:space="preserve">
+    <value>BancaSeguros</value>
+  </data>
+  <data name="chksInsubankToolTip" xml:space="preserve">
+    <value>Indica que la póliza pertenece a BancaSeguros</value>
+  </data>
+  <data name="chkFracReceipCaption" xml:space="preserve">
+    <value>Genera proporcional el primer recibo</value>
+  </data>
+  <data name="chkFracReceipToolTip" xml:space="preserve">
+    <value>Indica que se genera de forma proporcional el primer recibo de la póliza</value>
+  </data>
+  <data name="valgroup_AgreeCaption" xml:space="preserve">
+    <value>Convenio colectivo</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="valgroup_AgreeToolTip" xml:space="preserve">
+    <value>Código del convenio colectivo asociado a la póliza en tratamiento</value>
+    <comment>ID=12973</comment>
+  </data>
+  <data name="tctcumul_codeCaption" xml:space="preserve">
+    <value>Código de cúmulo</value>
+  </data>
+  <data name="tctcumul_codeToolTip" xml:space="preserve">
+    <value>Código de cúmulo asociado a la póliza/certificado</value>
+  </data>
+  <data name="cbeDepreciationtableCaption" xml:space="preserve">
+    <value>Tabla de depreciación</value>
+  </data>
+  <data name="cbeDepreciationtableToolTip" xml:space="preserve">
+    <value>Tabla de depreciación</value>
+  </data>
+  <data name="chksIndqsamevalueCaption" xml:space="preserve">
+    <value>Indicador de cuotas iguales</value>
+  </data>
+  <data name="chksIndqsamevalueToolTip" xml:space="preserve">
+    <value>Permite indicarle al sistema que las cuotas deben ser repartidas de manera uniforme.</value>
+  </data>
+  <data name="chksInd_IFICaption" xml:space="preserve">
+    <value>IFI</value>
+  </data>
+  <data name="chksInd_IFIToolTip" xml:space="preserve">
+    <value>Permite indicarle al sistema que la póliza está financiada con el esquema IFI</value>
+  </data>
+  <data name="chksInd_MultiannualCaption" xml:space="preserve">
+    <value>Póliza Plurianual con depreciacion</value>
+  </data>
+  <data name="chksInd_MultiannualToolTip" xml:space="preserve">
+    <value>Indica que la póliza tiene un manejo plurianual con la depreciación anual del capital asegurado. </value>
+  </data>
+  <data name="cbenSpecialbusinessCaption" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="cbenSpecialbusinessToolTip" xml:space="preserve">
+    <value>Corresponde a la categoría que identifica a la póliza como un negocio especial</value>
+  </data>
+  <data name="tcnExtradayCaption" xml:space="preserve">
+    <value>Días Extras</value>
+  </data>
+  <data name="tcnExtradayToolTip" xml:space="preserve">
+    <value>Días Extras</value>
+  </data>
+  <data name="cbenFormPayCaption" xml:space="preserve">
+    <value>Forma de Pago</value>
+  </data>
+  <data name="cbenFormPayToolTip" xml:space="preserve">
+    <value>Forma de Pago para declarar la factura.</value>
+  </data>
+  <data name="cbenPromissory_NoteCaption" xml:space="preserve">
+    <value>Financiamiento con pagarés</value>
+  </data>
+  <data name="cbenPromissory_NoteToolTip" xml:space="preserve">
+    <value>Permite indicar que la póliza va a ser manejada con el esquema de “Pagarés”. Este campo se activa si la Frecuencia de pagos es Cuotas</value>
+  </data>
+</root>

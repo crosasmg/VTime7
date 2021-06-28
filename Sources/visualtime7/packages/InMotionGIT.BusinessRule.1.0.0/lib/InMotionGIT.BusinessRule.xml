@@ -1,0 +1,84 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.BusinessRule
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.BusinessRule.Contracts.ContextExecute.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ 
+ </summary>
+ <param name="queryString">Lista de las variables del contexto web, accesibles por 'Request.QueryString'.</param>
+ <param name="form"></param>
+ <param name="session"></param>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.BusinessRule.Contracts.ContextExecute.QueryString">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Request.QueryString'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.Form">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Request.Form'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.Session">
+ <summary>
+ Lista de las variables del contexto web, accesibles por 'Session'.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.RequestPath">
+ <summary>
+ Ruta completa de la página que se está procesando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.WindowLogicalCode">
+ <summary>
+ Código lógico de la transacción.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.MainAction">
+ <summary>
+ Acción seleccionada por el usuario en el menú principal.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.PopupAction">
+ <summary>
+ Acción seleccionada  por el usuario en el Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.IsPopup">
+ <summary>
+ Indica si el contexto de ejecución se encuentra procesando la ventana 'Popup' de un Grid.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.IsHeader">
+ <summary>
+ Indica si el contexto de ejecución  se encuentra procesando la cabecera de una página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.Loading">
+ <summary>
+ Indica si en el contexto de ejecución se esta cargando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.Validating">
+ <summary>
+ Indica si en el contexto de ejecución se esta validando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.Posting">
+ <summary>
+ Indica si en el contexto de ejecución se esta procesando.
+ </summary>
+</member>
+<member name="P:InMotionGIT.BusinessRule.Contracts.ContextExecute.PostingResult">
+ <summary>
+ Permite retornar el resultado del posteo
+ </summary>
+</member>
+</members>
+</doc>

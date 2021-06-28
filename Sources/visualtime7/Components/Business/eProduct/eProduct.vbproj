@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4EF1C50-30F8-4EB0-9D9C-8CFD624B6B0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eProduct</RootNamespace>
+    <AssemblyName>eProduct</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eProduct.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bas_sumins.vb" />
+    <Compile Include="Bas_suminses.vb" />
+    <Compile Include="Branches.vb" />
+    <Compile Include="Capital_age.vb" />
+    <Compile Include="Capital_ages.vb" />
+    <Compile Include="Cliallocla.vb" />
+    <Compile Include="Clialloclas.vb" />
+    <Compile Include="Cliallopro.vb" />
+    <Compile Include="Cliallopros.vb" />
+    <Compile Include="Client_req.vb" />
+    <Compile Include="Client_reqs.vb" />
+    <Compile Include="Cl_cov_bil.vb" />
+    <Compile Include="Cl_cov_bils.vb" />
+    <Compile Include="Comm_mod.vb" />
+    <Compile Include="Comm_mods.vb" />
+    <Compile Include="Conmutativ.vb" />
+    <Compile Include="Conmutativs.vb" />
+    <Compile Include="Conm_master.vb" />
+    <Compile Include="Cur_Allow.vb" />
+    <Compile Include="Cur_Allows.vb" />
+    <Compile Include="Disco_expr.vb" />
+    <Compile Include="Disco_exprs.vb" />
+    <Compile Include="Dsex_condi.vb" />
+    <Compile Include="Dsex_condis.vb" />
+    <Compile Include="Durinsu_prod.vb" />
+    <Compile Include="Durinsu_prods.vb" />
+    <Compile Include="Durpay_prod.vb" />
+    <Compile Include="Durpay_prods.vb" />
+    <Compile Include="Effect_dat.vb" />
+    <Compile Include="Effect_dats.vb" />
+    <Compile Include="Freq_way_prod.vb" />
+    <Compile Include="Freq_way_prods.vb" />
+    <Compile Include="Gen_cover.vb" />
+    <Compile Include="Gen_covers.vb" />
+    <Compile Include="lend_Agree_Pres.vb" />
+    <Compile Include="lend_Agree_Press.vb" />
+    <Compile Include="lend_Agree_Prod.vb" />
+    <Compile Include="lend_Agree_Prods.vb" />
+    <Compile Include="Life_cover.vb" />
+    <Compile Include="Life_covers.vb" />
+    <Compile Include="Life_load.vb" />
+    <Compile Include="Life_loads.vb" />
+    <Compile Include="Life_speci.vb" />
+    <Compile Include="Life_specis.vb" />
+    <Compile Include="Load_surr.vb" />
+    <Compile Include="Load_surrs.vb" />
+    <Compile Include="Mortality.vb" />
+    <Compile Include="Mortalitys.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Null_condi.vb" />
+    <Compile Include="Null_condis.vb" />
+    <Compile Include="Perc_DiscVP.vb" />
+    <Compile Include="Perc_DiscVPs.vb" />
+    <Compile Include="Plan_IntWar.vb" />
+    <Compile Include="Plan_IntWarrs.vb" />
+    <Compile Include="Plan_Intwar_Month.vb" />
+    <Compile Include="Plan_Loads.vb" />
+    <Compile Include="Plan_Loadss.vb" />
+    <Compile Include="Precov_apl.vb" />
+    <Compile Include="ProdLifeSeq.vb" />
+    <Compile Include="Prodsettlement.vb" />
+    <Compile Include="Product.vb" />
+    <Compile Include="Products.vb" />
+    <Compile Include="Product_ge.vb" />
+    <Compile Include="Product_limits.vb" />
+    <Compile Include="Product_limitss.vb" />
+    <Compile Include="Prod_addcap.vb" />
+    <Compile Include="Prod_addcaps.vb" />
+    <Compile Include="Prod_Am_Bil.vb" />
+    <Compile Include="Prod_Am_Bils.vb" />
+    <Compile Include="Prod_reserve.vb" />
+    <Compile Include="Prod_reserves.vb" />
+    <Compile Include="Prod_win.vb" />
+    <Compile Include="Rate_life.vb" />
+    <Compile Include="Rate_lifes.vb" />
+    <Compile Include="report_prod.vb" />
+    <Compile Include="report_prods.vb" />
+    <Compile Include="Section_po.vb" />
+    <Compile Include="Section_pos.vb" />
+    <Compile Include="Section_prod.vb" />
+    <Compile Include="Section_prods.vb" />
+    <Compile Include="Sequen_pol.vb" />
+    <Compile Include="Sequen_pols.vb" />
+    <Compile Include="Sumcov_apl.vb" />
+    <Compile Include="Surr_percent.vb" />
+    <Compile Include="Surr_percents.vb" />
+    <Compile Include="Surr_retention.vb" />
+    <Compile Include="Surr_retentions.vb" />
+    <Compile Include="Tab_ActiveLife.vb" />
+    <Compile Include="Tab_ActiveLifes.vb" />
+    <Compile Include="Tab_apv_warran.vb" />
+    <Compile Include="Tab_apv_warrans.vb" />
+    <Compile Include="Tab_bill_i.vb" />
+    <Compile Include="Tab_bill_is.vb" />
+    <Compile Include="Tab_Clause.vb" />
+    <Compile Include="Tab_Clauses.vb" />
+    <Compile Include="Tab_covrol.vb" />
+    <Compile Include="Tab_covrols.vb" />
+    <Compile Include="Tab_gencov.vb" />
+    <Compile Include="Tab_gencovs.vb" />
+    <Compile Include="Tab_lifcov.vb" />
+    <Compile Include="Tab_lifcovs.vb" />
+    <Compile Include="Tab_modul.vb" />
+    <Compile Include="Tab_moduls.vb" />
+    <Compile Include="Tab_reqexc.vb" />
+    <Compile Include="Tab_reqexcs.vb" />
+    <Compile Include="Tab_short.vb" />
+    <Compile Include="Tab_winpol.vb" />
+    <Compile Include="Tab_winpols.vb" />
+    <Compile Include="Tab_winpro.vb" />
+    <Compile Include="Tab_winpros.vb" />
+    <Compile Include="Tar_au_bon.vb" />
+    <Compile Include="Tar_au_bons.vb" />
+    <Compile Include="Way_pay_prod.vb" />
+    <Compile Include="Way_pay_prods.vb" />
+    <Compile Include="Win_file_g.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eProduct.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eGeneral\eGeneral.vbproj">
+      <Project>{67208FC2-FE0A-4D94-9FD0-28DA643EDF03}</Project>
+      <Name>eGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

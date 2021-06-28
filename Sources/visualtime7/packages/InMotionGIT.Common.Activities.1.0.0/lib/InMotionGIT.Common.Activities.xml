@@ -1,0 +1,580 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Common.Activities
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Common.Activities.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.es">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.identifier">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.identifierlogo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.insertCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.message">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.parameters">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.procedureAction">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.properties">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.pt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.removeCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.sortdown">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.sortup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.tableQuery">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.updateCom">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.My.Resources.Resources.us">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.DeleteDesigner">
+<summary>
+DeleteDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.DeleteDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.FindDesigner">
+<summary>
+FindDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.FindDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.InsertDesigner">
+<summary>
+InsertDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.InsertDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.CallProcedureDesigner">
+<summary>
+CallProcedureDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.CallProcedureDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.CallProcedureWithResultsetDesigner">
+<summary>
+CallProcedureWithResultsetDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.CallProcedureWithResultsetDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.RetrieveDesigner">
+<summary>
+RetrieveDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.RetrieveDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.RetrieveScalarDesigner">
+<summary>
+RetrieveScalarDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.RetrieveScalarDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.UpdateDesigner">
+<summary>
+UpdateDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.UpdateDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.AsyncTask">
+ <summary>
+ Async execute activity
+ </summary>
+ <remarks>
+ http://geekswithblogs.net/DavidPaquette/archive/2010/10/26/wf4-asynchronous-workflows.aspx
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.AsyncTaskDesigner">
+<summary>
+AsyncTaskDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.AsyncTaskDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.Email">
+ <summary>
+ CustomActivities responsible for send email
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.To">
+ <summary>
+Sets who then sent the email 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.CC">
+ <summary>
+Sets copy email 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.BCC">
+ <summary>
+Sets copy email
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.Subject">
+ <summary>
+Sets the email subject
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.Body">
+ <summary>
+Sets the body of the email
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Email.Attachment">
+ <summary>
+Sets the attachment of the email
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflow.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.General.ExecuteWorkflow"/> class.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.ExecuteWorkflow.WorkflowPath">
+ <summary>
+ Gets or sets the file path that specifies the location of the child XAML workflow to execute.
+ </summary>
+ <value>The workflow path.</value>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.ExecuteWorkflow.ChildArguments">
+ <summary>
+ Gets or sets the arguments of the child workflow.
+ </summary>
+ <value>The child arguments.</value>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflow.CacheMetadata(System.Activities.NativeActivityMetadata)">
+ <summary>
+ Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+ </summary>
+ <param name="metadata">The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflow.Execute(System.Activities.NativeActivityContext)">
+ <summary>
+ Execute the child workflow through to completion.
+ </summary>
+ <param name="context">The execution context in which the activity executes.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflow.Validate(System.Activities.NativeActivityMetadata,System.Activities.DynamicActivity)">
+ <summary>
+ Validates the arguments in ChildArguments property against the arguments of specified dynamicActivity instance by adding a validation error
+ to supplied metadata if the argument is wrong type, direction or does not exist.
+ </summary>
+ <param name="metadata">The metadata.</param>
+ <param name="dynamicActivity">The dynamic activity.</param>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner">
+<summary>
+ExecuteWorkflowDesigner
+</summary>
+</member>
+<member name="F:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.currentlyLoadedWorkflowPath">
+ <summary>
+ The file path of a the currently specified child workflow.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner"/> class.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.ExecuteWorkflowDesigner_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Loaded event of the ExecuteXamlWorkflowDesigner control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.DefineArgsButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.FileDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.InitDynamicArgumentDialog">
+ <summary>
+ Initialises the DynamicArgumentDialog instance with child workflow arguments by loading the specified child workflow then deriving its arguments.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.ExecuteWorkflowDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.Navigation.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.General.ExecuteWorkflow"/> class.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Navigation.WorkflowPath">
+ <summary>
+ Gets or sets the file path that specifies the location of the child XAML workflow to execute.
+ </summary>
+ <value>The workflow path.</value>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Navigation.ChildArguments">
+ <summary>
+ Gets or sets the arguments of the child workflow.
+ </summary>
+ <value>The child arguments.</value>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.Navigation.CacheMetadata(System.Activities.NativeActivityMetadata)">
+ <summary>
+ Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+ </summary>
+ <param name="metadata">The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.Navigation.Execute(System.Activities.NativeActivityContext)">
+ <summary>
+ Execute the child workflow through to completion.
+ </summary>
+ <param name="context">The execution context in which the activity executes.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.Navigation.Validate(System.Activities.NativeActivityMetadata,System.Activities.DynamicActivity)">
+ <summary>
+ Validates the arguments in ChildArguments property against the arguments of specified dynamicActivity instance by adding a validation error
+ to supplied metadata if the argument is wrong type, direction or does not exist.
+ </summary>
+ <param name="metadata">The metadata.</param>
+ <param name="dynamicActivity">The dynamic activity.</param>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.NavigationDesigner">
+<summary>
+NavigationDesigner
+</summary>
+</member>
+<member name="F:InMotionGIT.Common.Activities.General.NavigationDesigner.currentlyLoadedWorkflowPath">
+ <summary>
+ The file path of a the currently specified child workflow.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.General.NavigationDesigner"/> class.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.NavigationDesigner_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Loaded event of the ExecuteXamlWorkflowDesigner control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.DefineArgsButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.FileDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.InitDynamicArgumentDialog">
+ <summary>
+ Initialises the DynamicArgumentDialog instance with child workflow arguments by loading the specified child workflow then deriving its arguments.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.General.NavigationDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.General.Trace">
+ <summary>
+ CustomActivities responsible for generating trace
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Trace.Source">
+ <summary>
+ Source the generate
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Trace.Entry">
+ <summary>
+The contente of save in file
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Trace.Prefix">
+ <summary>
+The prefix of the name asigne in file
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Trace.ExceptionCurrent">
+ <summary>
+ The current exception
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Activities.General.Trace.TraceType">
+ <summary>
+ The type of Trace
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Activities.ProcessIdentifierDesigner">
+<summary>
+ProcessIdentifierDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ProcessIdentifierDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflow.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.ExecuteWorkflow"/> class.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Activities.ExecuteWorkflow.WorkflowPath">
+ <summary>
+ Gets or sets the file path that specifies the location of the child XAML workflow to execute.
+ </summary>
+ <value>The workflow path.</value>
+</member>
+<member name="P:InMotionGIT.Common.Activities.ExecuteWorkflow.ChildArguments">
+ <summary>
+ Gets or sets the arguments of the child workflow.
+ </summary>
+ <value>The child arguments.</value>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflow.CacheMetadata(System.Activities.NativeActivityMetadata)">
+ <summary>
+ Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+ </summary>
+ <param name="metadata">The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflow.Execute(System.Activities.NativeActivityContext)">
+ <summary>
+ Execute the child workflow through to completion.
+ </summary>
+ <param name="context">The execution context in which the activity executes.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflow.LoadDynamicActivityFromCache">
+ <summary>
+ Loads the dynamic activity from cache.
+ </summary>
+ <returns>The activity or null if WorkflowPath property does not have a value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflow.Validate(System.Activities.NativeActivityMetadata,System.Activities.DynamicActivity)">
+ <summary>
+ Validates the arguments in ChildArguments property against the arguments of specified dynamicActivity instance by adding a validation error
+ to supplied metadata if the argument is wrong type, direction or does not exist.
+ </summary>
+ <param name="metadata">The metadata.</param>
+ <param name="dynamicActivity">The dynamic activity.</param>
+</member>
+<member name="T:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner">
+<summary>
+ExecuteWorkflowDesigner
+</summary>
+</member>
+<member name="F:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.currentlyLoadedWorkflowPath">
+ <summary>
+ The file path of a the currently specified child workflow.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner"/> class.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.ExecuteWorkflowDesigner_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Loaded event of the ExecuteXamlWorkflowDesigner control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.DefineArgsButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.FileDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.InitDynamicArgumentDialog">
+ <summary>
+ Initialises the DynamicArgumentDialog instance with child workflow arguments by loading the specified child workflow then deriving its arguments.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.ExecuteWorkflowDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Activities.MyActivityDesigner">
+<summary>
+MyActivityDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Common.Activities.MyActivityDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

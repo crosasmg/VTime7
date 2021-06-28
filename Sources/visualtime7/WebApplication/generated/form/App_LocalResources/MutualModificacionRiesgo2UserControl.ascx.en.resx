@@ -1,0 +1,3611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader><data name="ProposalIDLabelResource.Text" xml:space="preserve">
+  <value>Proposal ID</value>
+</data>
+<data name="ProposalIDLabelResource.ToolTip" xml:space="preserve">
+  <value>Number identifying the Proposal.</value>
+</data>
+<data name="ProposalIDResource.ToolTip" xml:space="preserve">
+  <value>Number identifying the Proposal.</value>
+</data>
+<data name="ApplicationDateLabelResource.Text" xml:space="preserve">
+  <value>Application Date</value>
+</data>
+<data name="ApplicationDateLabelResource.ToolTip" xml:space="preserve">
+  <value>Date of application.</value>
+</data>
+<data name="ApplicationDateResource.ToolTip" xml:space="preserve">
+  <value>Date of application.</value>
+</data>
+<data name="FullProposalIdLabelResource.Text" xml:space="preserve">
+  <value>Full Proposal Id</value>
+</data>
+<data name="FullProposalIdLabelResource.ToolTip" xml:space="preserve">
+  <value>Identificación de la solicitud(cotización)</value>
+</data>
+<data name="FullProposalIdResource.ToolTip" xml:space="preserve">
+  <value>Identificación de la solicitud(cotización)</value>
+</data>
+<data name="DateQuotationAcceptedLabelResource.Text" xml:space="preserve">
+  <value>Date Quotation Accepted</value>
+</data>
+<data name="DateQuotationAcceptedLabelResource.ToolTip" xml:space="preserve">
+  <value>Date of acceptance of the quotation.</value>
+</data>
+<data name="DateQuotationAcceptedResource.ToolTip" xml:space="preserve">
+  <value>Date of acceptance of the quotation.</value>
+</data>
+<data name="DateQuotationAcceptedResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CumuloFALabelResource.Text" xml:space="preserve">
+  <value>Cumulo</value>
+</data>
+<data name="CumuloFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the cumulus</value>
+</data>
+<data name="CumuloFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the cumulus</value>
+</data>
+<data name="LineOfBusiness1FALabelResource.Text" xml:space="preserve">
+  <value>Line of Business</value>
+</data>
+<data name="LineOfBusiness1FALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the line of business.</value>
+</data>
+<data name="LineOfBusiness1FAResource.ToolTip" xml:space="preserve">
+  <value>Code of the line of business.</value>
+</data>
+<data name="LineOfBusiness1FAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="UnderwritingCaseIDLabelResource.Text" xml:space="preserve">
+  <value>Underwriting Case ID</value>
+</data>
+<data name="UnderwritingCaseIDLabelResource.ToolTip" xml:space="preserve">
+  <value>Identification of the subscription case.</value>
+</data>
+<data name="UnderwritingCaseIDResource.ToolTip" xml:space="preserve">
+  <value>Identification of the subscription case.</value>
+</data>
+<data name="UnderwritingCaseIDResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="UnderwritingCaseIDResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="DatosSolicitudFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosSolicitudFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ProductFAColumnNPRODUCTResource.Caption" xml:space="preserve">
+  <value>ProductCode</value>
+</data>
+<data name="ProductFAColumnSDESCRIPTResource.Caption" xml:space="preserve">
+  <value>Description</value>
+</data>
+<data name="ProductFALabelResource.Text" xml:space="preserve">
+  <value>Product</value>
+</data>
+<data name="ProductFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the product.</value>
+</data>
+<data name="ProductFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the product.</value>
+</data>
+<data name="TypeOfIndemnityFALabelResource.Text" xml:space="preserve">
+  <value>Type of Indemnity</value>
+</data>
+<data name="TypeOfIndemnityFALabelResource.ToolTip" xml:space="preserve">
+  <value>Type of Indemnity.</value>
+</data>
+<data name="TypeOfIndemnityFAResource.ToolTip" xml:space="preserve">
+  <value>Type of Indemnity.</value>
+</data>
+<data name="CoverageModuleFALabelResource.Text" xml:space="preserve">
+  <value>CoverageModule</value>
+</data>
+<data name="CoverageModuleFALabelResource.ToolTip" xml:space="preserve">
+  <value>Type of Indemnity.</value>
+</data>
+<data name="CoverageModuleFAResource.ToolTip" xml:space="preserve">
+  <value>Type of Indemnity.</value>
+</data>
+<data name="EffectiveDateLabelResource.Text" xml:space="preserve">
+  <value>Effective Date</value>
+</data>
+<data name="EffectiveDateLabelResource.ToolTip" xml:space="preserve">
+  <value>Effective date of the policy/certificate.</value>
+</data>
+<data name="EffectiveDateResource.ToolTip" xml:space="preserve">
+  <value>Effective date of the policy/certificate.</value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="DSPDatosSeguroFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DSPDatosSeguroFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CoverageFAResource.Caption" xml:space="preserve">
+  <value>Coverage</value>
+</data>
+<data name="CoberturasFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CoberturasFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone10Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone10Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="label0Resource.Text" xml:space="preserve">
+  <value>label 0</value>
+</data>
+<data name="label0Resource.ToolTip" xml:space="preserve">
+  <value>label0</value>
+</data>
+<data name="PrimaBasicaFALabelResource.Text" xml:space="preserve">
+  <value>PrimaBasica</value>
+</data>
+<data name="PrimaBasicaFALabelResource.ToolTip" xml:space="preserve">
+  <value>numeric5</value>
+</data>
+<data name="PrimaBasicaFAResource.ToolTip" xml:space="preserve">
+  <value>numeric5</value>
+</data>
+<data name="PrimaExcedenteFALabelResource.Text" xml:space="preserve">
+  <value>PrimaExcedente</value>
+</data>
+<data name="PrimaExcedenteFALabelResource.ToolTip" xml:space="preserve">
+  <value>numeric6</value>
+</data>
+<data name="PrimaExcedenteFAResource.ToolTip" xml:space="preserve">
+  <value>numeric6</value>
+</data>
+<data name="PrimaConvenidaFALabelResource.Text" xml:space="preserve">
+  <value>PrimaConvenida</value>
+</data>
+<data name="PrimaConvenidaFALabelResource.ToolTip" xml:space="preserve">
+  <value>numeric7</value>
+</data>
+<data name="PrimaConvenidaFAResource.ToolTip" xml:space="preserve">
+  <value>numeric7</value>
+</data>
+<data name="PrimaConvenidaFA0_MessageActionResource" xml:space="preserve">
+  <value>La prima convenida no puede ser mayor a la prima basica.</value>
+</data>
+<data name="PrimasProyectadasFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PrimasProyectadasFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosDelSeguroFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosDelSeguroFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ClientIDNumberAsegLabelResource.Text" xml:space="preserve">
+  <value>ClientIDNumber</value>
+</data>
+<data name="ClientIDNumberAsegLabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the client.</value>
+</data>
+<data name="ClientIDNumberAsegResource.ToolTip" xml:space="preserve">
+  <value>Code of the client.</value>
+</data>
+<data name="ClientIDNumberAsegResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ClientIDNumberAsegResource.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="FirstNamePrimaryInsuredFALabelResource.Text" xml:space="preserve">
+  <value>First Name</value>
+</data>
+<data name="FirstNamePrimaryInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNamePrimaryInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNamePrimaryInsuredFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FirstNamePrimaryInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameFALabelResource.Text" xml:space="preserve">
+  <value>Last Name</value>
+</data>
+<data name="LastNameFALabelResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameFAResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastName2FALabelResource.Text" xml:space="preserve">
+  <value>Last Name 2</value>
+</data>
+<data name="LastName2FALabelResource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2FAResource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2FAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="GenderFALabelResource.Text" xml:space="preserve">
+  <value>Gender</value>
+</data>
+<data name="GenderFALabelResource.ToolTip" xml:space="preserve">
+  <value>Gender of the client.</value>
+</data>
+<data name="GenderFAResource.ToolTip" xml:space="preserve">
+  <value>Gender of the client.</value>
+</data>
+<data name="GenderFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BirthDateFALabelResource.Text" xml:space="preserve">
+  <value>Birth Date</value>
+</data>
+<data name="BirthDateFALabelResource.ToolTip" xml:space="preserve">
+  <value>Date of birth of the client.</value>
+</data>
+<data name="BirthDateFAResource.ToolTip" xml:space="preserve">
+  <value>Date of birth of the client.</value>
+</data>
+<data name="ActuarialAgeFALabelResource.Text" xml:space="preserve">
+  <value>ActuarialAge</value>
+</data>
+<data name="ActuarialAgeFALabelResource.ToolTip" xml:space="preserve">
+  <value>numeric7</value>
+</data>
+<data name="ActuarialAgeFAResource.ToolTip" xml:space="preserve">
+  <value>numeric7</value>
+</data>
+<data name="CivilStatusFALabelResource.Text" xml:space="preserve">
+  <value>Civil Status</value>
+</data>
+<data name="CivilStatusFALabelResource.ToolTip" xml:space="preserve">
+  <value>Marital status of the client.</value>
+</data>
+<data name="CivilStatusFAResource.ToolTip" xml:space="preserve">
+  <value>Marital status of the client.</value>
+</data>
+<data name="CivilStatusFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="NationalityFALabelResource.Text" xml:space="preserve">
+  <value>Nationality</value>
+</data>
+<data name="NationalityFALabelResource.ToolTip" xml:space="preserve">
+  <value>Nationality code.</value>
+</data>
+<data name="NationalityFAResource.ToolTip" xml:space="preserve">
+  <value>Nationality code.</value>
+</data>
+<data name="NationalityFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MedicalInstitutionFALabelResource.Text" xml:space="preserve">
+  <value>Medical Institution</value>
+</data>
+<data name="MedicalInstitutionFALabelResource.ToolTip" xml:space="preserve">
+  <value>Institution of health to which the client is affiliated.</value>
+</data>
+<data name="MedicalInstitutionFAResource.ToolTip" xml:space="preserve">
+  <value>Institution of health to which the client is affiliated.</value>
+</data>
+<data name="MedicalInstitutionFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="SpecialityFALabelResource.Text" xml:space="preserve">
+  <value>Speciality</value>
+</data>
+<data name="SpecialityFALabelResource.ToolTip" xml:space="preserve">
+  <value>Occupation of the client</value>
+</data>
+<data name="SpecialityFAResource.ToolTip" xml:space="preserve">
+  <value>Occupation of the client</value>
+</data>
+<data name="SpecialityFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LaboresTxtFALabelResource.Text" xml:space="preserve">
+  <value>LaboresTxt</value>
+</data>
+<data name="LaboresTxtFALabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="LaboresTxtFAResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="LaboresTxtFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ProfessionFALabelResource.Text" xml:space="preserve">
+  <value>Profession</value>
+</data>
+<data name="ProfessionFALabelResource.ToolTip" xml:space="preserve">
+  <value>Profession of the client.</value>
+</data>
+<data name="ProfessionFAResource.ToolTip" xml:space="preserve">
+  <value>Profession of the client.</value>
+</data>
+<data name="ProfessionFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="EconomicAreaFALabelResource.Text" xml:space="preserve">
+  <value>Economic Area</value>
+</data>
+<data name="EconomicAreaFALabelResource.ToolTip" xml:space="preserve">
+  <value>Economic area of the client.</value>
+</data>
+<data name="EconomicAreaFAResource.ToolTip" xml:space="preserve">
+  <value>Economic area of the client.</value>
+</data>
+<data name="EconomicAreaFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="EconomicStandingFALabelResource.Text" xml:space="preserve">
+  <value>Economic Standing</value>
+</data>
+<data name="EconomicStandingFALabelResource.ToolTip" xml:space="preserve">
+  <value>Economic standing of the client.</value>
+</data>
+<data name="EconomicStandingFAResource.ToolTip" xml:space="preserve">
+  <value>Economic standing of the client.</value>
+</data>
+<data name="EconomicStandingFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Email</value>
+</data>
+<data name="eMailAddressInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="eMailAddressInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="eMailAddressInsuredFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressInsuredFAResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value>Invalid email</value>
+</data>
+<data name="DatosAsegFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosAsegFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbAddressInsuredFAResource.Text" xml:space="preserve">
+  <value>label 4</value>
+</data>
+<data name="LbAddressInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>label4</value>
+</data>
+<data name="StreetInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Street</value>
+</data>
+<data name="StreetInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>text3</value>
+</data>
+<data name="StreetInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>text3</value>
+</data>
+<data name="StreetInsuredFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StreetInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumberInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Building Number</value>
+</data>
+<data name="BuildingNumberInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumberInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumberInsuredFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumberInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FloorNumberInsuredFALabelResource.Text" xml:space="preserve">
+  <value>FloorNumber</value>
+</data>
+<data name="FloorNumberInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>numeric5</value>
+</data>
+<data name="FloorNumberInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>numeric5</value>
+</data>
+<data name="ApartmentNumberInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Apartment Number</value>
+</data>
+<data name="ApartmentNumberInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumberInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumberInsuredFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LocationPrimaryFALabelResource.Text" xml:space="preserve">
+  <value>Location</value>
+</data>
+<data name="LocationPrimaryFALabelResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationPrimaryFAResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationPrimaryFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AddressInsuredFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AddressInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CountryInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Country</value>
+</data>
+<data name="CountryInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist7</value>
+</data>
+<data name="CountryInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist7</value>
+</data>
+<data name="CountryInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StateOrProvinceInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Province</value>
+</data>
+<data name="StateOrProvinceInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist8</value>
+</data>
+<data name="StateOrProvinceInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist8</value>
+</data>
+<data name="StateOrProvinceInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LocationInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Location</value>
+</data>
+<data name="LocationInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist9</value>
+</data>
+<data name="LocationInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist9</value>
+</data>
+<data name="LocationInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MunicipalityCodeInsuredFALabelResource.Text" xml:space="preserve">
+  <value>Municipality</value>
+</data>
+<data name="MunicipalityCodeInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist10</value>
+</data>
+<data name="MunicipalityCodeInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist10</value>
+</data>
+<data name="MunicipalityCodeInsuredFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="zone9Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone9Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PhoneInsuredGridBtnResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneInsuredEditGridResource.Text" xml:space="preserve">
+  <value>Edit</value>
+</data>
+<data name="PhoneInsuredDeleteGridResource.Text" xml:space="preserve">
+  <value>Delete</value>
+</data>
+<data name="PhoneInsuredUpdateGridResource.Text" xml:space="preserve">
+  <value>Update</value>
+</data>
+<data name="PhoneInsuredCancelBtnGridResource.Text" xml:space="preserve">
+  <value>Cancel</value>
+</data>
+<data name="TelephoneTypeFieldResource.Caption" xml:space="preserve">
+  <value>Telephone Type</value>
+</data>
+<data name="TelephoneTypeFieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone type.</value>
+</data>
+<data name="TelephoneTypeFieldResource.PropertiesComboBox.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CountryCode1FieldResource.Caption" xml:space="preserve">
+  <value>Country Code</value>
+</data>
+<data name="CountryCode1FieldResource.ToolTip" xml:space="preserve">
+  <value>Code of country to call.</value>
+</data>
+<data name="CountryCode1FieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CountryCode1FieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AreaCodeFieldResource.Caption" xml:space="preserve">
+  <value>Area Code</value>
+</data>
+<data name="AreaCodeFieldResource.ToolTip" xml:space="preserve">
+  <value>Area Code.</value>
+</data>
+<data name="AreaCodeFieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AreaCodeFieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneNumber1FieldResource.Caption" xml:space="preserve">
+  <value>Phone Number</value>
+</data>
+<data name="PhoneNumber1FieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone number.</value>
+</data>
+<data name="PhoneNumber1FieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneNumber1FieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneInsuredResource.Caption" xml:space="preserve">
+  <value>Phone</value>
+</data>
+<data name="PhonesInsuredFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PhonesInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosAseguradoFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosAseguradoFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndHolderInsuredFALabelResource.Text" xml:space="preserve">
+  <value>IndPolicyInsured</value>
+</data>
+<data name="IndHolderInsuredFALabelResource.ToolTip" xml:space="preserve">
+  <value>checkbox33</value>
+</data>
+<data name="IndHolderInsuredFA.Text" xml:space="preserve">
+  <value>IndPolicyInsured</value>
+</data>
+<data name="IndHolderInsuredFA.ToolTip" xml:space="preserve">
+  <value>checkbox33</value>
+</data>
+<data name="ClientIDNumberPolicyOwnerLabelResource.Text" xml:space="preserve">
+  <value>ClientIDNumber</value>
+</data>
+<data name="ClientIDNumberPolicyOwnerLabelResource.ToolTip" xml:space="preserve">
+  <value>client1</value>
+</data>
+<data name="ClientIDNumberPolicyOwnerResource.ToolTip" xml:space="preserve">
+  <value>client1</value>
+</data>
+<data name="ClientIDNumberPolicyOwnerResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FirstNameOwnerFALabelResource.Text" xml:space="preserve">
+  <value>First Name</value>
+</data>
+<data name="FirstNameOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNameOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNameOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FirstNameOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Last Name</value>
+</data>
+<data name="LastNameOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastName2OwnerFALabelResource.Text" xml:space="preserve">
+  <value>Last Name 2</value>
+</data>
+<data name="LastName2OwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2OwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2OwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="GenderOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Gender</value>
+</data>
+<data name="GenderOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Gender of the client.</value>
+</data>
+<data name="GenderOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Gender of the client.</value>
+</data>
+<data name="GenderOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BirthDateOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Birth Date</value>
+</data>
+<data name="BirthDateOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Date of birth of the client.</value>
+</data>
+<data name="BirthDateOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Date of birth of the client.</value>
+</data>
+<data name="BirthDateOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="RelationInsOwnerFALabelResource.Text" xml:space="preserve">
+  <value>RelationInsured</value>
+</data>
+<data name="RelationInsOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist7</value>
+</data>
+<data name="RelationInsOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist7</value>
+</data>
+<data name="RelationInsOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="NationalityOwnerALabelResource.Text" xml:space="preserve">
+  <value>Nationality</value>
+</data>
+<data name="NationalityOwnerALabelResource.ToolTip" xml:space="preserve">
+  <value>Nationality code.</value>
+</data>
+<data name="NationalityOwnerAResource.ToolTip" xml:space="preserve">
+  <value>Nationality code.</value>
+</data>
+<data name="NationalityOwnerAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Email</value>
+</data>
+<data name="eMailAddressOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="eMailAddressOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="eMailAddressOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="eMailAddressOwnerFAResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value>Invalid email</value>
+</data>
+<data name="DatosContFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosContFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbAddressOwnerFAResource.Text" xml:space="preserve">
+  <value>label 0</value>
+</data>
+<data name="LbAddressOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>label0</value>
+</data>
+<data name="StreetPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Street</value>
+</data>
+<data name="StreetPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Address / Street.</value>
+</data>
+<data name="StreetPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Address / Street.</value>
+</data>
+<data name="StreetPolOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StreetPolOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>text 0</value>
+</data>
+<data name="BuildingNumPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="BuildingNumPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="BuildingNumPolOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumPolOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FloorNumPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Floor Number</value>
+</data>
+<data name="FloorNumPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="FloorNumPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="ApartmentNumPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Apartment Number</value>
+</data>
+<data name="ApartmentNumPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="LocationOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Location</value>
+</data>
+<data name="LocationOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationOwnerFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AddressOwnerFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AddressOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CountryPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Country</value>
+</data>
+<data name="CountryPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryPolOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="ProvincePolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>State or Province</value>
+</data>
+<data name="ProvincePolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="ProvincePolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="ProvincePolOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="CityCodeOwnerLabelResource.Text" xml:space="preserve">
+  <value>City Code</value>
+</data>
+<data name="CityCodeOwnerLabelResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="CityCodeOwnerResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="CityCodeOwnerResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MunicipalityPolOwnerFALabelResource.Text" xml:space="preserve">
+  <value>Municipality Code</value>
+</data>
+<data name="MunicipalityPolOwnerFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityPolOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityPolOwnerFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="AddressOwner1FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AddressOwner1FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PhoneOwnerFAGridBtnResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneOwnerFAEditGridResource.Text" xml:space="preserve">
+  <value>Edit</value>
+</data>
+<data name="PhoneOwnerFADeleteGridResource.Text" xml:space="preserve">
+  <value>Delete</value>
+</data>
+<data name="PhoneOwnerFAUpdateGridResource.Text" xml:space="preserve">
+  <value>Update</value>
+</data>
+<data name="PhoneOwnerFACancelBtnGridResource.Text" xml:space="preserve">
+  <value>Cancel</value>
+</data>
+<data name="PhoneTypeOwnerFAFieldResource.Caption" xml:space="preserve">
+  <value>Telephone Type</value>
+</data>
+<data name="PhoneTypeOwnerFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone type.</value>
+</data>
+<data name="PhoneTypeOwnerFAFieldResource.PropertiesComboBox.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CountryCodeOwnerFAFieldResource.Caption" xml:space="preserve">
+  <value>Country Code</value>
+</data>
+<data name="CountryCodeOwnerFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Code of country to call.</value>
+</data>
+<data name="CountryCodeOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="CountryCodeOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AreaCodeOwnerFAFieldResource.Caption" xml:space="preserve">
+  <value>Area Code</value>
+</data>
+<data name="AreaCodeOwnerFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Area Code.</value>
+</data>
+<data name="AreaCodeOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AreaCodeOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneNumberOwnerFAFieldResource.Caption" xml:space="preserve">
+  <value>Phone Number</value>
+</data>
+<data name="PhoneNumberOwnerFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone number.</value>
+</data>
+<data name="PhoneNumberOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneNumberOwnerFAFieldResource.PropertiesTextEdit.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneOwnerFAResource.Caption" xml:space="preserve">
+  <value>grid 1</value>
+</data>
+<data name="TelefonosOwnerFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="TelefonosOwnerFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosContratanteFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DatosContratanteFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AseguradoContratanteFAResource.Text" xml:space="preserve">
+  <value>tab 12</value>
+</data>
+<data name="AseguradoContratanteFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="InvestmentProfileFALabelResource.Text" xml:space="preserve">
+  <value>PerfilInversionista</value>
+</data>
+<data name="InvestmentProfileFALabelResource.ToolTip" xml:space="preserve">
+  <value>text12</value>
+</data>
+<data name="InvestmentProfileFAResource.ToolTip" xml:space="preserve">
+  <value>text12</value>
+</data>
+<data name="InvestmentProfileFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LbInvestFundFAResource.Text" xml:space="preserve">
+  <value>label 0</value>
+</data>
+<data name="LbInvestFundFAResource.ToolTip" xml:space="preserve">
+  <value>label0</value>
+</data>
+<data name="FundsRelatedtoPolicyFAResource.Caption" xml:space="preserve">
+  <value>FundOfMainPolicy</value>
+</data>
+<data name="GuaranteedInterestInInvestmentLabelResource.Text" xml:space="preserve">
+  <value>Guaranteed Interest in Investment</value>
+</data>
+<data name="GuaranteedInterestInInvestmentLabelResource.ToolTip" xml:space="preserve">
+  <value>Guaranteed interest in investment</value>
+</data>
+<data name="GuaranteedInterestInInvestmentResource.ToolTip" xml:space="preserve">
+  <value>Guaranteed interest in investment</value>
+</data>
+<data name="TotalParticipacionLabelResource.Text" xml:space="preserve">
+  <value>TotalParticipacion</value>
+</data>
+<data name="TotalParticipacionLabelResource.ToolTip" xml:space="preserve">
+  <value>numeric0</value>
+</data>
+<data name="TotalParticipacionResource.ToolTip" xml:space="preserve">
+  <value>numeric0</value>
+</data>
+<data name="zone4Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone4Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="InvDataFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="InvDataFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ImvestmentFAResource.Text" xml:space="preserve">
+  <value>tab 13</value>
+</data>
+<data name="ImvestmentFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="GBeneficiaryFAResource.Caption" xml:space="preserve">
+  <value>Beneficiary</value>
+</data>
+<data name="ZoneBenef1FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef1FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EditBeneficiaryFALabelResource.Text" xml:space="preserve">
+  <value>EditarBeneficiario</value>
+</data>
+<data name="EditBeneficiaryFALabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="EditBeneficiaryFAResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="ZoneBenef21FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef21FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ButEditBeneficiaryFAResource.Text" xml:space="preserve">
+  <value>button 18</value>
+</data>
+<data name="ButEditBeneficiaryFAResource.ToolTip" xml:space="preserve">
+  <value>button18</value>
+</data>
+<data name="ButEditBeneficiaryFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButEditBeneficiaryFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButEditBeneficiaryFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButEditBeneficiaryFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButEditBeneficiaryFA1_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar un Beneficiario</value>
+</data>
+<data name="ButAddBeneficiarFAResource.Text" xml:space="preserve">
+  <value>button 19</value>
+</data>
+<data name="ButAddBeneficiarFAResource.ToolTip" xml:space="preserve">
+  <value>button19</value>
+</data>
+<data name="ButAddBeneficiarFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButAddBeneficiarFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButAddBeneficiarFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButAddBeneficiarFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButDelBeneficaryFAResource.Text" xml:space="preserve">
+  <value>button 20</value>
+</data>
+<data name="ButDelBeneficaryFAResource.ToolTip" xml:space="preserve">
+  <value>button20</value>
+</data>
+<data name="ButDelBeneficaryFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButDelBeneficaryFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButDelBeneficaryFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButDelBeneficaryFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButDelBeneficaryFA2_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar un Beneficiario</value>
+</data>
+<data name="ZoneBenef22FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef22FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef2FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef2FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ClientIDStringBenefLabelResource.Text" xml:space="preserve">
+  <value>ClientIDString</value>
+</data>
+<data name="ClientIDStringBenefLabelResource.ToolTip" xml:space="preserve">
+  <value>client2</value>
+</data>
+<data name="ClientIDStringBenefResource.ToolTip" xml:space="preserve">
+  <value>client2</value>
+</data>
+<data name="ClientIDStringBenefResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ClientIDStringBenefResource.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ClientIDStringBenef3_MessageActionResource" xml:space="preserve">
+  <value>El RUT pertenece a una empresa.</value>
+</data>
+<data name="FirstNameBenFALabelResource.Text" xml:space="preserve">
+  <value>First Name</value>
+</data>
+<data name="FirstNameBenFALabelResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNameBenFAResource.ToolTip" xml:space="preserve">
+  <value>First name and middle name of the client.</value>
+</data>
+<data name="FirstNameBenFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastNameBeFALabelResource.Text" xml:space="preserve">
+  <value>Last Name</value>
+</data>
+<data name="LastNameBeFALabelResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameBeFAResource.ToolTip" xml:space="preserve">
+  <value>Last name of the client.</value>
+</data>
+<data name="LastNameBeFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LastName2LabelResource.Text" xml:space="preserve">
+  <value>Last Name 2</value>
+</data>
+<data name="LastName2LabelResource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2Resource.ToolTip" xml:space="preserve">
+  <value>Last name (2) of the client.</value>
+</data>
+<data name="LastName2Resource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PercShareBeFALabelResource.Text" xml:space="preserve">
+  <value>Percentage Share</value>
+</data>
+<data name="PercShareBeFALabelResource.ToolTip" xml:space="preserve">
+  <value>Percentage of share of the beneficiary.</value>
+</data>
+<data name="PercShareBeFAResource.ToolTip" xml:space="preserve">
+  <value>Percentage of share of the beneficiary.</value>
+</data>
+<data name="RelationshipLabelResource.Text" xml:space="preserve">
+  <value>Relationship</value>
+</data>
+<data name="RelationshipLabelResource.ToolTip" xml:space="preserve">
+  <value>Relationship of the beneficiary with the insured of the policy.</value>
+</data>
+<data name="RelationshipResource.ToolTip" xml:space="preserve">
+  <value>Relationship of the beneficiary with the insured of the policy.</value>
+</data>
+<data name="zone13Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone13Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbAddressBenefFAResource.Text" xml:space="preserve">
+  <value>label 0</value>
+</data>
+<data name="LbAddressBenefFAResource.ToolTip" xml:space="preserve">
+  <value>label0</value>
+</data>
+<data name="StreetOrUrlLabelResource.Text" xml:space="preserve">
+  <value>Street or Url</value>
+</data>
+<data name="StreetOrUrlLabelResource.ToolTip" xml:space="preserve">
+  <value>Address - Street - URL.</value>
+</data>
+<data name="StreetOrUrlResource.ToolTip" xml:space="preserve">
+  <value>Address - Street - URL.</value>
+</data>
+<data name="StreetOrUrlResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StreetOrUrlResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumberLabelResource.Text" xml:space="preserve">
+  <value>Building Number</value>
+</data>
+<data name="BuildingNumberLabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumberResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumberResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumberResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FloorNumberLabelResource.Text" xml:space="preserve">
+  <value>Floor Number</value>
+</data>
+<data name="FloorNumberLabelResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="FloorNumberResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="ApartmentNumberLabelResource.Text" xml:space="preserve">
+  <value>Apartment Number</value>
+</data>
+<data name="ApartmentNumberLabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumberResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumberResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LocationBenefFALabelResource.Text" xml:space="preserve">
+  <value>Location</value>
+</data>
+<data name="LocationBenefFALabelResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationBenefFAResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationBenefFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="AddressBeneficiarFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AddressBeneficiarFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CountryLabelResource.Text" xml:space="preserve">
+  <value>Country</value>
+</data>
+<data name="CountryLabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="StateOrProvinceLabelResource.Text" xml:space="preserve">
+  <value>State or Province</value>
+</data>
+<data name="StateOrProvinceLabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="StateOrProvinceResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="StateOrProvinceResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="CityCodeLabelResource.Text" xml:space="preserve">
+  <value>City Code</value>
+</data>
+<data name="CityCodeLabelResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="CityCodeResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="CityCodeResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MunicipalityCodeLabelResource.Text" xml:space="preserve">
+  <value>Municipality Code</value>
+</data>
+<data name="MunicipalityCodeLabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityCodeResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityCodeResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="zone5Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone5Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbPhonesBenefFAResource.Text" xml:space="preserve">
+  <value>label 7</value>
+</data>
+<data name="LbPhonesBenefFAResource.ToolTip" xml:space="preserve">
+  <value>label7</value>
+</data>
+<data name="PhoneBeneficiaryGridBtnResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PhoneBeneficiaryEditGridResource.Text" xml:space="preserve">
+  <value>Edit</value>
+</data>
+<data name="PhoneBeneficiaryDeleteGridResource.Text" xml:space="preserve">
+  <value>Delete</value>
+</data>
+<data name="PhoneBeneficiaryUpdateGridResource.Text" xml:space="preserve">
+  <value>Update</value>
+</data>
+<data name="PhoneBeneficiaryCancelBtnGridResource.Text" xml:space="preserve">
+  <value>Cancel</value>
+</data>
+<data name="PhoneTypeBeFAFieldResource.Caption" xml:space="preserve">
+  <value>Telephone Type</value>
+</data>
+<data name="PhoneTypeBeFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone type.</value>
+</data>
+<data name="CountryCodeFieldResource.Caption" xml:space="preserve">
+  <value>Country Code</value>
+</data>
+<data name="CountryCodeFieldResource.ToolTip" xml:space="preserve">
+  <value>Code of country to call.</value>
+</data>
+<data name="AreaCodeBenefFAFieldResource.Caption" xml:space="preserve">
+  <value>Area Code</value>
+</data>
+<data name="AreaCodeBenefFAFieldResource.ToolTip" xml:space="preserve">
+  <value>Area Code.</value>
+</data>
+<data name="PhoneNumberFieldResource.Caption" xml:space="preserve">
+  <value>Phone Number</value>
+</data>
+<data name="PhoneNumberFieldResource.ToolTip" xml:space="preserve">
+  <value>Telephone number.</value>
+</data>
+<data name="PhoneBeneficiaryResource.Caption" xml:space="preserve">
+  <value>Phone</value>
+</data>
+<data name="zone16Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone16Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EmailBenefFALabelResource.Text" xml:space="preserve">
+  <value>Email</value>
+</data>
+<data name="EmailBenefFALabelResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="EmailBenefFAResource.ToolTip" xml:space="preserve">
+  <value>Email address.</value>
+</data>
+<data name="EmailBenefFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="EmailBenefFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="EmailBenefFAResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value>Invalid email</value>
+</data>
+<data name="zone14Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone14Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PhonesBenefFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PhonesBenefFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ButBenefApplyFAResource.Text" xml:space="preserve">
+  <value>button 22</value>
+</data>
+<data name="ButBenefApplyFAResource.ToolTip" xml:space="preserve">
+  <value>button22</value>
+</data>
+<data name="ButBenefApplyFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButBenefApplyFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButBenefApplyFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButBenefApplyFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButBenefApplyFA4_MessageActionResource" xml:space="preserve">
+  <value>{ Value /Mensaje }</value>
+</data>
+<data name="ButBenefCancelFAResource.Text" xml:space="preserve">
+  <value>button 23</value>
+</data>
+<data name="ButBenefCancelFAResource.ToolTip" xml:space="preserve">
+  <value>button23</value>
+</data>
+<data name="ButBenefCancelFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButBenefCancelFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButBenefCancelFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButBenefCancelFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ZoneBenefBut2FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenefBut2FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef3FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneBenef3FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="BeneficiarDefFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="BeneficiarDefFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="BeneficiariesFAResource.Text" xml:space="preserve">
+  <value>tab 14</value>
+</data>
+<data name="BeneficiariesFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LbAutorizacion1FAResource.Text" xml:space="preserve">
+  <value>label 5</value>
+</data>
+<data name="LbAutorizacion1FAResource.ToolTip" xml:space="preserve">
+  <value>label5</value>
+</data>
+<data name="LbAutorizacion2FAResource.Text" xml:space="preserve">
+  <value>label 16</value>
+</data>
+<data name="LbAutorizacion2FAResource.ToolTip" xml:space="preserve">
+  <value>label16</value>
+</data>
+<data name="EmailLabels1FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EmailLabels1FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndicatorSendingCorrespondenceByEmail1ListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="IndicatorSendingCorrespondenceByEmail1ListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="IndicatorSendingCorrespondenceByEmail1LabelResource.Text" xml:space="preserve">
+  <value>Indicator Sending Correspondence by Email</value>
+</data>
+<data name="IndicatorSendingCorrespondenceByEmail1LabelResource.ToolTip" xml:space="preserve">
+  <value>Indicator sending correspondence by email</value>
+</data>
+<data name="IndicatorSendingCorrespondenceByEmail1Resource.ToolTip" xml:space="preserve">
+  <value>Indicator sending correspondence by email</value>
+</data>
+<data name="EmailLabels2FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EmailLabels2FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EmailLabelsFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="EmailLabelsFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbSendingPolFAResource.Text" xml:space="preserve">
+  <value>label 21</value>
+</data>
+<data name="LbSendingPolFAResource.ToolTip" xml:space="preserve">
+  <value>label21</value>
+</data>
+<data name="NTypeOfAddressListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="NTypeOfAddressListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="NTypeOfAddressListItemValue3Resource.Text" xml:space="preserve">
+  <value>Item2</value>
+</data>
+<data name="NTypeOfAddressListItemValue4Resource.Text" xml:space="preserve">
+  <value>Item3</value>
+</data>
+<data name="NTypeOfAddressLabelResource.Text" xml:space="preserve">
+  <value>NT ype of Address</value>
+</data>
+<data name="NTypeOfAddressLabelResource.ToolTip" xml:space="preserve">
+  <value>Type of address</value>
+</data>
+<data name="NTypeOfAddressResource.ToolTip" xml:space="preserve">
+  <value>Type of address</value>
+</data>
+<data name="NTypeOfAddress5_MessageActionResource" xml:space="preserve">
+  <value>Debe indicar una dirección de correo para el asegurado o el contratante</value>
+</data>
+<data name="NTypeOfAddress6_MessageActionResource" xml:space="preserve">
+  <value>Debe indicar una dirección para el asegurado o para el contratante</value>
+</data>
+<data name="IndPolicy1FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndPolicy1FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="LbAddFAResource.Text" xml:space="preserve">
+  <value>label 22</value>
+</data>
+<data name="LbAddFAResource.ToolTip" xml:space="preserve">
+  <value>label22</value>
+</data>
+<data name="IndPolicy2FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndPolicy2FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndPolicyAddFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="IndPolicyAddFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="StreetPolAddressFALabelResource.Text" xml:space="preserve">
+  <value>Street</value>
+</data>
+<data name="StreetPolAddressFALabelResource.ToolTip" xml:space="preserve">
+  <value>Address / Street.</value>
+</data>
+<data name="StreetPolAddressFAResource.ToolTip" xml:space="preserve">
+  <value>Address / Street.</value>
+</data>
+<data name="StreetPolAddressFAResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="StreetPolAddressFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumPolAddFALabelResource.Text" xml:space="preserve">
+  <value>Building Number</value>
+</data>
+<data name="BuildingNumPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Number of the building in the street.</value>
+</data>
+<data name="BuildingNumPolAddFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BuildingNumPolAddFAResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FloorNumPolAddFALabelResource.Text" xml:space="preserve">
+  <value>Floor Number</value>
+</data>
+<data name="FloorNumPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="FloorNumPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Floor number</value>
+</data>
+<data name="ApartmentNumPolAddFALabelResource.Text" xml:space="preserve">
+  <value>Apartment Number</value>
+</data>
+<data name="ApartmentNumPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="ApartmentNumPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Number of the apartment.</value>
+</data>
+<data name="LocationLabelResource.Text" xml:space="preserve">
+  <value>Location</value>
+</data>
+<data name="LocationLabelResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationResource.ToolTip" xml:space="preserve">
+  <value>Village or town.</value>
+</data>
+<data name="LocationResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PolicyAddressFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PolicyAddressFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CountryPolAddFALabelResource.Text" xml:space="preserve">
+  <value>Country</value>
+</data>
+<data name="CountryPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the country.</value>
+</data>
+<data name="CountryPolAddFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="ProvincePolAddFALabelResource.Text" xml:space="preserve">
+  <value>State or Province</value>
+</data>
+<data name="ProvincePolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="ProvincePolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the state or province.</value>
+</data>
+<data name="ProvincePolAddFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="LocationPolAddFALabelResource.Text" xml:space="preserve">
+  <value>City Code</value>
+</data>
+<data name="LocationPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="LocationPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>City code.</value>
+</data>
+<data name="LocationPolAddFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MunicipalityPolAddFALabelResource.Text" xml:space="preserve">
+  <value>Municipality Code</value>
+</data>
+<data name="MunicipalityPolAddFALabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityPolAddFAResource.ToolTip" xml:space="preserve">
+  <value>Code of the municipality.</value>
+</data>
+<data name="MunicipalityPolAddFAResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="PolicyAddressFA2Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PolicyAddressFA2Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="SendingAddressFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="SendingAddressFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PolSendingFAResource.Text" xml:space="preserve">
+  <value>tab 15</value>
+</data>
+<data name="PolSendingFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ClausesFAResource.Text" xml:space="preserve">
+  <value>label 11</value>
+</data>
+<data name="ClausesFAResource.ToolTip" xml:space="preserve">
+  <value>label11</value>
+</data>
+<data name="ClauseFAResource.Caption" xml:space="preserve">
+  <value>Clause</value>
+</data>
+<data name="zone21Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone21Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="Clausulas1FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="Clausulas1FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ClauseCodeLabelResource.Text" xml:space="preserve">
+  <value>ClauseCode</value>
+</data>
+<data name="ClauseCodeLabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist1</value>
+</data>
+<data name="ClauseCodeResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist1</value>
+</data>
+<data name="ZoneSpecialNote21FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNote21FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="butNotesEditFAResource.Text" xml:space="preserve">
+  <value>button 0</value>
+</data>
+<data name="butNotesEditFAResource.ToolTip" xml:space="preserve">
+  <value>button0</value>
+</data>
+<data name="butNotesEditFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="butNotesEditFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutNotesEditFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutNotesEditFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="butNotesEditFA7_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="butNotesEditFA8_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="butNotesDelFAResource.Text" xml:space="preserve">
+  <value>button 1</value>
+</data>
+<data name="butNotesDelFAResource.ToolTip" xml:space="preserve">
+  <value>button1</value>
+</data>
+<data name="butNotesDelFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="butNotesDelFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutNotesDelFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutNotesDelFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="butNotesDelFA9_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="butNotesDelFA10_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="butNotesAddFAResource.Text" xml:space="preserve">
+  <value>button 2</value>
+</data>
+<data name="butNotesAddFAResource.ToolTip" xml:space="preserve">
+  <value>button2</value>
+</data>
+<data name="butNotesAddFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="butNotesAddFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutNotesAddFAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutNotesAddFAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="butNotesAddFA11_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="butNotesAddFA12_MessageActionResource" xml:space="preserve">
+  <value>Debe seleccionar al menos una anotación.</value>
+</data>
+<data name="ZoneSpecialNote22FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNote22FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNote2FAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNote2FAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="FreeTextLabelResource.Text" xml:space="preserve">
+  <value>Free Text</value>
+</data>
+<data name="FreeTextLabelResource.ToolTip" xml:space="preserve">
+  <value>Free Text - Note Description.</value>
+</data>
+<data name="FreeTextResource.ToolTip" xml:space="preserve">
+  <value>Free Text - Note Description.</value>
+</data>
+<data name="FreeTextResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="DescriptionZoneResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DescriptionZoneResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="button3Resource.Text" xml:space="preserve">
+  <value>button 3</value>
+</data>
+<data name="button3Resource.ToolTip" xml:space="preserve">
+  <value>button3</value>
+</data>
+<data name="button3ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button3InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton3ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton3InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="BtnCancelarClauseResource.Text" xml:space="preserve">
+  <value>button 4</value>
+</data>
+<data name="BtnCancelarClauseResource.ToolTip" xml:space="preserve">
+  <value>button4</value>
+</data>
+<data name="BtnCancelarClauseConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BtnCancelarClauseInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleBtnCancelarClauseConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleBtnCancelarClauseInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="zone24Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone24Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNoteFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneSpecialNoteFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="TabSpecialNoteFAResource.Text" xml:space="preserve">
+  <value>tab 7</value>
+</data>
+<data name="TabSpecialNoteFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PaymentMethodListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="PaymentMethodListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="PaymentMethodLabelResource.Text" xml:space="preserve">
+  <value>PaymentMethod</value>
+</data>
+<data name="PaymentMethodLabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the payment method.</value>
+</data>
+<data name="PaymentMethodResource.ToolTip" xml:space="preserve">
+  <value>Code of the payment method.</value>
+</data>
+<data name="WayPayFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="WayPayFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone6Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone6Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AgreementDiscountCodeLabelResource.Text" xml:space="preserve">
+  <value>Agreement Discount Code</value>
+</data>
+<data name="AgreementDiscountCodeLabelResource.ToolTip" xml:space="preserve">
+  <value>Discount and/or Agreement Code.</value>
+</data>
+<data name="AgreementDiscountCodeResource.ToolTip" xml:space="preserve">
+  <value>Discount and/or Agreement Code.</value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="zone8Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone8Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CollectionMethodFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="CollectionMethodFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="NextPaymentsMethodFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="NextPaymentsMethodFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="BoletaLabelResource.Text" xml:space="preserve">
+  <value>Boleta</value>
+</data>
+<data name="BoletaLabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="BoletaResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="BoletaResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BoletaResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PrimaAperturaUFLabelResource.Text" xml:space="preserve">
+  <value>PrimaAperturaUF</value>
+</data>
+<data name="PrimaAperturaUFLabelResource.ToolTip" xml:space="preserve">
+  <value>Amount in local currency.</value>
+</data>
+<data name="PrimaAperturaUFResource.ToolTip" xml:space="preserve">
+  <value>Amount in local currency.</value>
+</data>
+<data name="ValorUFLabelResource.Text" xml:space="preserve">
+  <value>ValorUF</value>
+</data>
+<data name="ValorUFLabelResource.ToolTip" xml:space="preserve">
+  <value>Exchange rate used to convert the premium to local currency.</value>
+</data>
+<data name="ValorUFResource.ToolTip" xml:space="preserve">
+  <value>Exchange rate used to convert the premium to local currency.</value>
+</data>
+<data name="PrimaAperturaPesosLabelResource.Text" xml:space="preserve">
+  <value>PrimaAperturaPesos</value>
+</data>
+<data name="PrimaAperturaPesosLabelResource.ToolTip" xml:space="preserve">
+  <value>Premium amount of the entry.</value>
+</data>
+<data name="PrimaAperturaPesosResource.ToolTip" xml:space="preserve">
+  <value>Premium amount of the entry.</value>
+</data>
+<data name="PrimaAperturaPesosResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="PrimaAperturaPesosResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone17Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone17Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone0Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone0Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PayFormOptionListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="PayFormOptionListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="PayFormOptionLabelResource.Text" xml:space="preserve">
+  <value>PayFormOption</value>
+</data>
+<data name="PayFormOptionLabelResource.ToolTip" xml:space="preserve">
+  <value>radiobuttonlist0</value>
+</data>
+<data name="PayFormOptionResource.ToolTip" xml:space="preserve">
+  <value>radiobuttonlist0</value>
+</data>
+<data name="ComprobanteLabelResource.Text" xml:space="preserve">
+  <value>Comprobante</value>
+</data>
+<data name="ComprobanteLabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="ComprobanteResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="ComprobanteResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ComprobanteResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FechaDelDepositoLabelResource.Text" xml:space="preserve">
+  <value>FechaDelDeposito</value>
+</data>
+<data name="FechaDelDepositoLabelResource.ToolTip" xml:space="preserve">
+  <value>Date when the entry was posted in the accounting books.</value>
+</data>
+<data name="FechaDelDepositoResource.ToolTip" xml:space="preserve">
+  <value>Date when the entry was posted in the accounting books.</value>
+</data>
+<data name="FechaDelDepositoResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="BancoDelDepositoLabelResource.Text" xml:space="preserve">
+  <value>BancoDelDeposito</value>
+</data>
+<data name="BancoDelDepositoLabelResource.ToolTip" xml:space="preserve">
+  <value>Internal code of the banking institution or the savings and lending institution.</value>
+</data>
+<data name="BancoDelDepositoResource.ToolTip" xml:space="preserve">
+  <value>Internal code of the banking institution or the savings and lending institution.</value>
+</data>
+<data name="BancoDelDepositoResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="NumeroDeCuentaLabelResource.Text" xml:space="preserve">
+  <value>NumeroDeCuenta</value>
+</data>
+<data name="NumeroDeCuentaLabelResource.ToolTip" xml:space="preserve">
+  <value>text1</value>
+</data>
+<data name="NumeroDeCuentaResource.ToolTip" xml:space="preserve">
+  <value>text1</value>
+</data>
+<data name="NumeroDeCuentaResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="NumeroDeCuentaResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="FormaDePagoLabelResource.Text" xml:space="preserve">
+  <value>FormaDePago</value>
+</data>
+<data name="FormaDePagoLabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist0</value>
+</data>
+<data name="FormaDePagoResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist0</value>
+</data>
+<data name="FormaDePagoResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MontoDelDepositoLabelResource.Text" xml:space="preserve">
+  <value>MontoDelDeposito</value>
+</data>
+<data name="MontoDelDepositoLabelResource.ToolTip" xml:space="preserve">
+  <value>numeric1</value>
+</data>
+<data name="MontoDelDepositoResource.ToolTip" xml:space="preserve">
+  <value>numeric1</value>
+</data>
+<data name="MontoDelDepositoResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="MontoDelDepositoResource.ValidationSettings.RegularExpression.ErrorText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="zone2Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone2Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone18Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone18Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone11Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone11Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone1Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone1Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="FirstPremiumPayMethodFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="FirstPremiumPayMethodFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="WayPaymentFAResource.Text" xml:space="preserve">
+  <value>tab 0</value>
+</data>
+<data name="WayPaymentFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="WeightInsuredLabelResource.Text" xml:space="preserve">
+  <value>Weight of the insured</value>
+</data>
+<data name="WeightInsuredLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the weight of the insured</value>
+</data>
+<data name="WeightInsuredResource.ToolTip" xml:space="preserve">
+  <value>Indicates the weight of the insured</value>
+</data>
+<data name="zone27Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone27Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="HeightInsuredLabelResource.Text" xml:space="preserve">
+  <value>Height of the insured</value>
+</data>
+<data name="HeightInsuredLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the height of the insured</value>
+</data>
+<data name="HeightInsuredResource.ToolTip" xml:space="preserve">
+  <value>Indicates the height of the insured</value>
+</data>
+<data name="zone30Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone30Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DPSInsuredFAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DPSInsuredFAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="WeightVariationListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="WeightVariationListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="WeightVariationLabelResource.Text" xml:space="preserve">
+  <value>1.-It has changed its weight by more than 5 kg. in the last six months?</value>
+</data>
+<data name="WeightVariationLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates weight variation in the last six months</value>
+</data>
+<data name="WeightVariationResource.ToolTip" xml:space="preserve">
+  <value>It indicates weight variation in the last six months</value>
+</data>
+<data name="SurgicallyOperatedListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="SurgicallyOperatedListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="SurgicallyOperatedLabelResource.Text" xml:space="preserve">
+  <value>2.-It has been operated surgically?</value>
+</data>
+<data name="SurgicallyOperatedLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether it has been operated surgically</value>
+</data>
+<data name="SurgicallyOperatedResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether it has been operated surgically</value>
+</data>
+<data name="HospitalizedOnceListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HospitalizedOnceListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HospitalizedOnceLabelResource.Text" xml:space="preserve">
+  <value>3.-He has been hospitalized ever?</value>
+</data>
+<data name="HospitalizedOnceLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether he has ever been hospitalized</value>
+</data>
+<data name="HospitalizedOnceResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether he has ever been hospitalized</value>
+</data>
+<data name="SeriousAccidentListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="SeriousAccidentListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="SeriousAccidentLabelResource.Text" xml:space="preserve">
+  <value>4.-He has had an accident which left him physical consequences?</value>
+</data>
+<data name="SeriousAccidentLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates if you have had an accident with physical consequences</value>
+</data>
+<data name="SeriousAccidentResource.ToolTip" xml:space="preserve">
+  <value>It indicates if you have had an accident with physical consequences</value>
+</data>
+<data name="PhysicalAbnormalitiesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="PhysicalAbnormalitiesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="PhysicalAbnormalitiesLabelResource.Text" xml:space="preserve">
+  <value>5.-It presents an anomaly of constitution, deformation, amputation or physical disability?</value>
+</data>
+<data name="PhysicalAbnormalitiesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates physical abnormalities (deformation, amputation or disability)</value>
+</data>
+<data name="PhysicalAbnormalitiesResource.ToolTip" xml:space="preserve">
+  <value>Indicates physical abnormalities (deformation, amputation or disability)</value>
+</data>
+<data name="BenignMalignantTumorsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="BenignMalignantTumorsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="BenignMalignantTumorsLabelResource.Text" xml:space="preserve">
+  <value>6.-He has been or is being treated for cancer, tumors or other benign or malignant disorders?</value>
+</data>
+<data name="BenignMalignantTumorsLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether you have had or are undergoing cancer treatment, tumors or other benign or malignant disorders</value>
+</data>
+<data name="BenignMalignantTumorsResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether you have had or are undergoing cancer treatment, tumors or other benign or malignant disorders</value>
+</data>
+<data name="zone25Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone25Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="NerveDiseasesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="NerveDiseasesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="NerveDiseasesLabelResource.Text" xml:space="preserve">
+  <value>7.-Treatment for mental disorders, convulsions, paralysis or other nervous disease?</value>
+</data>
+<data name="NerveDiseasesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had treatment in mental disorders, convulsions, paralysis or other nervous disease</value>
+</data>
+<data name="NerveDiseasesResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had treatment in mental disorders, convulsions, paralysis or other nervous disease</value>
+</data>
+<data name="EyeDiseaseListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="EyeDiseaseListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="EyeDiseaseLabelResource.Text" xml:space="preserve">
+  <value>8.-Total or partial blindness, loss of an eye, cataract or some eye disease?</value>
+</data>
+<data name="EyeDiseaseLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had partial or total blindness, loss of an eye, cataract or some eye disease</value>
+</data>
+<data name="EyeDiseaseResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had partial or total blindness, loss of an eye, cataract or some eye disease</value>
+</data>
+<data name="AccentuatedDeafnessListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="AccentuatedDeafnessListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="AccentuatedDeafnessLabelResource.Text" xml:space="preserve">
+  <value>9.-Accentuated deafness?</value>
+</data>
+<data name="AccentuatedDeafnessLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether deafness has accentuated</value>
+</data>
+<data name="AccentuatedDeafnessResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether deafness has accentuated</value>
+</data>
+<data name="MetabolicDiseaseEndocrineSystemListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="MetabolicDiseaseEndocrineSystemListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="MetabolicDiseaseEndocrineSystemLabelResource.Text" xml:space="preserve">
+  <value>10.-Diabetes, goiter, hyperthyroidism or other metabolic disease of the endocrine system?</value>
+</data>
+<data name="MetabolicDiseaseEndocrineSystemLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether you have diabetes, goiter, hyperthyroidism or other metabolic disease of the endocrine system</value>
+</data>
+<data name="MetabolicDiseaseEndocrineSystemResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether you have diabetes, goiter, hyperthyroidism or other metabolic disease of the endocrine system</value>
+</data>
+<data name="HeartDiseaseListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HeartDiseaseListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HeartDiseaseLabelResource.Text" xml:space="preserve">
+  <value>11.-High blood pressure or heart disease?</value>
+</data>
+<data name="HeartDiseaseLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have high blood pressure or heart disease</value>
+</data>
+<data name="HeartDiseaseResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have high blood pressure or heart disease</value>
+</data>
+<data name="DiseasesMusculoskeletalSystemListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="DiseasesMusculoskeletalSystemListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="DiseasesMusculoskeletalSystemLabelResource.Text" xml:space="preserve">
+  <value>12.-Injury, or joint-related diseases of the musculoskeletal system?</value>
+</data>
+<data name="DiseasesMusculoskeletalSystemLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have traumatic injuries related to joint or musculoskeletal system diseases</value>
+</data>
+<data name="DiseasesMusculoskeletalSystemResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have traumatic injuries related to joint or musculoskeletal system diseases</value>
+</data>
+<data name="LungDiseasesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="LungDiseasesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="LungDiseasesLabelResource.Text" xml:space="preserve">
+  <value>13.-Bronchial asthma, chronic bronchitis or lung disease?</value>
+</data>
+<data name="LungDiseasesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have asthma, chronic bronchitis or lung disease</value>
+</data>
+<data name="LungDiseasesResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have asthma, chronic bronchitis or lung disease</value>
+</data>
+<data name="OperationGenitalsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="OperationGenitalsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="OperationGenitalsLabelResource.Text" xml:space="preserve">
+  <value>14.-Sinus disease or some operation to the genitals?</value>
+</data>
+<data name="OperationGenitalsLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had breast disease or any operation genitals</value>
+</data>
+<data name="OperationGenitalsResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had breast disease or any operation genitals</value>
+</data>
+<data name="CirrhosisOrStomachUlcerListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="CirrhosisOrStomachUlcerListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="CirrhosisOrStomachUlcerLabelResource.Text" xml:space="preserve">
+  <value>15.-Cirrhosis, stomach ulcers, diarrhea for more than a month?</value>
+</data>
+<data name="CirrhosisOrStomachUlcerLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had cirrhosis, stomach ulcers, diarrhea for more than a month</value>
+</data>
+<data name="CirrhosisOrStomachUlcerResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had cirrhosis, stomach ulcers, diarrhea for more than a month</value>
+</data>
+<data name="NephritisOrBladderDiseasesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="NephritisOrBladderDiseasesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="NephritisOrBladderDiseasesLabelResource.Text" xml:space="preserve">
+  <value>16.-Nephritis or bladder disease, prostate, kidney or urinary tract?</value>
+</data>
+<data name="NephritisOrBladderDiseasesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had nephritis or any disease of the bladder, prostate, kidney or urinary tract</value>
+</data>
+<data name="NephritisOrBladderDiseasesResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had nephritis or any disease of the bladder, prostate, kidney or urinary tract</value>
+</data>
+<data name="SexuallyTransmittedDiseaseListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="SexuallyTransmittedDiseaseListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="SexuallyTransmittedDiseaseLabelResource.Text" xml:space="preserve">
+  <value>17.-Sexually transmitted disease?</value>
+</data>
+<data name="SexuallyTransmittedDiseaseLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had sexually transmitted diseases</value>
+</data>
+<data name="SexuallyTransmittedDiseaseResource.ToolTip" xml:space="preserve">
+  <value>Indicate if you have had sexually transmitted diseases</value>
+</data>
+<data name="HIVDiseaseOrHepatitisBOrCListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HIVDiseaseOrHepatitisBOrCListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HIVDiseaseOrHepatitisBOrCLabelResource.Text" xml:space="preserve">
+  <value>18.-It is carrying the Human Immunodeficiency Virus (HIV), it has had Hepatitis B or C?</value>
+</data>
+<data name="HIVDiseaseOrHepatitisBOrCLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you had HIV, Hepatitis B or C</value>
+</data>
+<data name="HIVDiseaseOrHepatitisBOrCResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you had HIV, Hepatitis B or C</value>
+</data>
+<data name="AnotherSeriousIllnessListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="AnotherSeriousIllnessListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="AnotherSeriousIllnessLabelResource.Text" xml:space="preserve">
+  <value>19.-Any other serious illness not mentioned above?</value>
+</data>
+<data name="AnotherSeriousIllnessLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether he had another serious illness</value>
+</data>
+<data name="AnotherSeriousIllnessResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether he had another serious illness</value>
+</data>
+<data name="DrugsOrNarcoticsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="DrugsOrNarcoticsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="DrugsOrNarcoticsLabelResource.Text" xml:space="preserve">
+  <value>20.-Using or have used drugs or narcotics or permanently ocacional?</value>
+</data>
+<data name="DrugsOrNarcoticsLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether consumed drugs or narcotics</value>
+</data>
+<data name="DrugsOrNarcoticsResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether consumed drugs or narcotics</value>
+</data>
+<data name="MedicalTreatmentDrugsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="MedicalTreatmentDrugsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="MedicalTreatmentDrugsLabelResource.Text" xml:space="preserve">
+  <value>21.-It has been undergoing medical treatment due to drug or drugs?</value>
+</data>
+<data name="MedicalTreatmentDrugsLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether he has undergone medical treatment for drug or drugs</value>
+</data>
+<data name="MedicalTreatmentDrugsResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether he has undergone medical treatment for drug or drugs</value>
+</data>
+<data name="YouSmokeListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="YouSmokeListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="YouSmokeLabelResource.Text" xml:space="preserve">
+  <value>22.-You smoke?</value>
+</data>
+<data name="YouSmokeLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether the person smokes</value>
+</data>
+<data name="YouSmokeResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether the person smokes</value>
+</data>
+<data name="HowManyYearsSmokesLabelResource.Text" xml:space="preserve">
+  <value>how many years smokes?</value>
+</data>
+<data name="HowManyYearsSmokesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years of smoking</value>
+</data>
+<data name="HowManyYearsSmokesResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years of smoking</value>
+</data>
+<data name="HowManyCigarettesDayLabelResource.Text" xml:space="preserve">
+  <value>How many cigarettes a day?</value>
+</data>
+<data name="HowManyCigarettesDayLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of cigarettes smoked per day</value>
+</data>
+<data name="HowManyCigarettesDayResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of cigarettes smoked per day</value>
+</data>
+<data name="UstedFumaResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="UstedFumaResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="UsedToSmokeListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="UsedToSmokeListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="UsedToSmokeLabelResource.Text" xml:space="preserve">
+  <value>23.-Used to smoke?</value>
+</data>
+<data name="UsedToSmokeLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether the person smoked</value>
+</data>
+<data name="UsedToSmokeResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether the person smoked</value>
+</data>
+<data name="HowOldSmokedLabelResource.Text" xml:space="preserve">
+  <value>How old smoked?</value>
+</data>
+<data name="HowOldSmokedLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years you have smoked</value>
+</data>
+<data name="HowOldSmokedResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years you have smoked</value>
+</data>
+<data name="HowManyCigarettesSmokedDayLabelResource.Text" xml:space="preserve">
+  <value>How many cigarettes a day?</value>
+</data>
+<data name="HowManyCigarettesSmokedDayLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of cigarettes smoked per day</value>
+</data>
+<data name="HowManyCigarettesSmokedDayResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of cigarettes smoked per day</value>
+</data>
+<data name="HowLongNonsmokerLabelResource.Text" xml:space="preserve">
+  <value>How long nonsmoker?</value>
+</data>
+<data name="HowLongNonsmokerLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years that has not smoked</value>
+</data>
+<data name="HowLongNonsmokerResource.ToolTip" xml:space="preserve">
+  <value>Indicates the number of years that has not smoked</value>
+</data>
+<data name="zone54Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone54Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DrinkAlcoholicBeveragesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="DrinkAlcoholicBeveragesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="DrinkAlcoholicBeveragesLabelResource.Text" xml:space="preserve">
+  <value>24.-Ingests or has ingested alcoholic beverages?</value>
+</data>
+<data name="DrinkAlcoholicBeveragesLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have ingested alcoholic beverages</value>
+</data>
+<data name="DrinkAlcoholicBeveragesResource.ToolTip" xml:space="preserve">
+  <value>Indicates if you have ingested alcoholic beverages</value>
+</data>
+<data name="AlcoholConsumptionListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="AlcoholConsumptionListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="AlcoholConsumptionListItemValue3Resource.Text" xml:space="preserve">
+  <value>Item2</value>
+</data>
+<data name="AlcoholConsumptionLabelResource.Text" xml:space="preserve">
+  <value>Periods of consumption of alcoholic beverages: Daily, Weekly or Occasionally</value>
+</data>
+<data name="AlcoholConsumptionLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates periods of consumption of alcoholic beverages: Daily, Weekly or Occasionally</value>
+</data>
+<data name="AlcoholConsumptionResource.ToolTip" xml:space="preserve">
+  <value>Indicates periods of consumption of alcoholic beverages: Daily, Weekly or Occasionally</value>
+</data>
+<data name="zone59Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone59Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="SickConsumptionAlcoholicBeveragesListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="SickConsumptionAlcoholicBeveragesListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="SickConsumptionAlcoholicBeveragesLabelResource.Text" xml:space="preserve">
+  <value>25.-He&apos;s been sick or medical treatment for alcohol intake?</value>
+</data>
+<data name="SickConsumptionAlcoholicBeveragesLabelResource.ToolTip" xml:space="preserve">
+  <value>He&apos;s been sick or medical treatment for alcohol intake</value>
+</data>
+<data name="SickConsumptionAlcoholicBeveragesResource.ToolTip" xml:space="preserve">
+  <value>He&apos;s been sick or medical treatment for alcohol intake</value>
+</data>
+<data name="YouIngestedMedicationIllnessDiseaseListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="YouIngestedMedicationIllnessDiseaseListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="YouIngestedMedicationIllnessDiseaseLabelResource.Text" xml:space="preserve">
+  <value>26.-You ingested any medication for any illness or disease?</value>
+</data>
+<data name="YouIngestedMedicationIllnessDiseaseLabelResource.ToolTip" xml:space="preserve">
+  <value>You ingested any medication for any illness or disease</value>
+</data>
+<data name="YouIngestedMedicationIllnessDiseaseResource.ToolTip" xml:space="preserve">
+  <value>You ingested any medication for any illness or disease</value>
+</data>
+<data name="YouIngestedMedicationRegularListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="YouIngestedMedicationRegularListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="YouIngestedMedicationRegularLabelResource.Text" xml:space="preserve">
+  <value>27.-You ingested any medication on a regular basis?</value>
+</data>
+<data name="YouIngestedMedicationRegularLabelResource.ToolTip" xml:space="preserve">
+  <value>You ingested any medication on a regular basis</value>
+</data>
+<data name="YouIngestedMedicationRegularResource.ToolTip" xml:space="preserve">
+  <value>You ingested any medication on a regular basis</value>
+</data>
+<data name="HealthStatusCurrentlyListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HealthStatusCurrentlyListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HealthStatusCurrentlyListItemValue3Resource.Text" xml:space="preserve">
+  <value>Item2</value>
+</data>
+<data name="HealthStatusCurrentlyLabelResource.Text" xml:space="preserve">
+  <value>28.-How do you consider your current health status: Good, Fair or Poor?</value>
+</data>
+<data name="HealthStatusCurrentlyLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates current health status: Good, Fair or Poor</value>
+</data>
+<data name="HealthStatusCurrentlyResource.ToolTip" xml:space="preserve">
+  <value>Indicates current health status: Good, Fair or Poor</value>
+</data>
+<data name="HeRetiredListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HeRetiredListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HeRetiredLabelResource.Text" xml:space="preserve">
+  <value>29.-He is retired?</value>
+</data>
+<data name="HeRetiredLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is retired</value>
+</data>
+<data name="HeRetiredResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is retired</value>
+</data>
+<data name="HeRetiredMedicalReasonsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="HeRetiredMedicalReasonsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="HeRetiredMedicalReasonsLabelResource.Text" xml:space="preserve">
+  <value>He retired for medical reasons?</value>
+</data>
+<data name="HeRetiredMedicalReasonsLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is retired for medical reasons</value>
+</data>
+<data name="HeRetiredMedicalReasonsResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is retired for medical reasons</value>
+</data>
+<data name="zone12Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone12Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ActivityDangerousProfessionListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="ActivityDangerousProfessionListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="ActivityDangerousProfessionLabelResource.Text" xml:space="preserve">
+  <value>30.-Practice any activity, trade or profession that is risky or dangerous?</value>
+</data>
+<data name="ActivityDangerousProfessionLabelResource.ToolTip" xml:space="preserve">
+  <value>Practice any activity, trade or profession that is risky or dangerous</value>
+</data>
+<data name="ActivityDangerousProfessionResource.ToolTip" xml:space="preserve">
+  <value>Practice any activity, trade or profession that is risky or dangerous</value>
+</data>
+<data name="DangerousActivityPracticedLabelResource.Text" xml:space="preserve">
+  <value>Actividad, oficio o profesión peligrosa que realiza la persona</value>
+</data>
+<data name="DangerousActivityPracticedLabelResource.ToolTip" xml:space="preserve">
+  <value>Actividad, oficio o profesión peligrosa que realiza la persona</value>
+</data>
+<data name="DangerousActivityPracticedResource.ToolTip" xml:space="preserve">
+  <value>Actividad, oficio o profesión peligrosa que realiza la persona</value>
+</data>
+<data name="DActivityPracticedResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DActivityPracticedResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DangerousSportListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="DangerousSportListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="DangerousSportLabelResource.Text" xml:space="preserve">
+  <value>31.-Practice any sport that is risky or dangerous?</value>
+</data>
+<data name="DangerousSportLabelResource.ToolTip" xml:space="preserve">
+  <value>Practice any sport that is risky or dangerous</value>
+</data>
+<data name="DangerousSportResource.ToolTip" xml:space="preserve">
+  <value>Practice any sport that is risky or dangerous</value>
+</data>
+<data name="DangerousSportPracticedLabelResource.Text" xml:space="preserve">
+  <value>Deporte peligroso que realiza la persona</value>
+</data>
+<data name="DangerousSportPracticedLabelResource.ToolTip" xml:space="preserve">
+  <value>Deporte peligroso que realiza la persona</value>
+</data>
+<data name="DangerousSportPracticedResource.ToolTip" xml:space="preserve">
+  <value>Deporte peligroso que realiza la persona</value>
+</data>
+<data name="DSportPracticedResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DSportPracticedResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="AbnormalResultsTestsListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="AbnormalResultsTestsListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="AbnormalResultsTestsLabelResource.Text" xml:space="preserve">
+  <value>32.-Abnormal results on tests: chest radiograph, glycemia or electrocardiogram?</value>
+</data>
+<data name="AbnormalResultsTestsLabelResource.ToolTip" xml:space="preserve">
+  <value>Abnormal results on tests: chest radiograph, glycemia or electrocardiogram</value>
+</data>
+<data name="AbnormalResultsTestsResource.ToolTip" xml:space="preserve">
+  <value>Abnormal results on tests: chest radiograph, glycemia or electrocardiogram</value>
+</data>
+<data name="LifeInsuranceInForceListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="LifeInsuranceInForceListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="LifeInsuranceInForceLabelResource.Text" xml:space="preserve">
+  <value>33.-You have any life insurance in force?</value>
+</data>
+<data name="LifeInsuranceInForceLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether you have life insurance in force</value>
+</data>
+<data name="LifeInsuranceInForceResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether you have life insurance in force</value>
+</data>
+<data name="TimeInLifeInsuranceLabelResource.Text" xml:space="preserve">
+  <value>how long it has?</value>
+</data>
+<data name="TimeInLifeInsuranceLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates number of months that has had life insurance</value>
+</data>
+<data name="TimeInLifeInsuranceResource.ToolTip" xml:space="preserve">
+  <value>Indicates number of months that has had life insurance</value>
+</data>
+<data name="LifeInsuranceCompanyLabelResource.Text" xml:space="preserve">
+  <value>In what company?</value>
+</data>
+<data name="LifeInsuranceCompanyLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates which company has a life insurance</value>
+</data>
+<data name="LifeInsuranceCompanyResource.ToolTip" xml:space="preserve">
+  <value>It indicates which company has a life insurance</value>
+</data>
+<data name="LifeInsuranceCompanyResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="LifeInsuranceAcceptedWithSurchargeListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="LifeInsuranceAcceptedWithSurchargeListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="LifeInsuranceAcceptedWithSurchargeLabelResource.Text" xml:space="preserve">
+  <value>It was postponed, rejected or accepted with some kind of surcharge?</value>
+</data>
+<data name="LifeInsuranceAcceptedWithSurchargeLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether life insurance has been postponed, rejected or accepted with some kind of surcharge</value>
+</data>
+<data name="LifeInsuranceAcceptedWithSurchargeResource.ToolTip" xml:space="preserve">
+  <value>Indicates whether life insurance has been postponed, rejected or accepted with some kind of surcharge</value>
+</data>
+<data name="zone28Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone28Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="RejectedByHiringLifeInsuranceListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="RejectedByHiringLifeInsuranceListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="RejectedByHiringLifeInsuranceLabelResource.Text" xml:space="preserve">
+  <value>34.-It has been rejected by hiring a life insurance?</value>
+</data>
+<data name="RejectedByHiringLifeInsuranceLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether it has been rejected by hiring a life insurance</value>
+</data>
+<data name="RejectedByHiringLifeInsuranceResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether it has been rejected by hiring a life insurance</value>
+</data>
+<data name="AreYouPregnantListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item0</value>
+</data>
+<data name="AreYouPregnantListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="AreYouPregnantLabelResource.Text" xml:space="preserve">
+  <value>35.-If Female: Are you pregnant?</value>
+</data>
+<data name="AreYouPregnantLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is pregnant</value>
+</data>
+<data name="AreYouPregnantResource.ToolTip" xml:space="preserve">
+  <value>It indicates whether the person is pregnant</value>
+</data>
+<data name="HowManyWeeksPregnantLabelResource.Text" xml:space="preserve">
+  <value>How many weeks?</value>
+</data>
+<data name="HowManyWeeksPregnantLabelResource.ToolTip" xml:space="preserve">
+  <value>Indicates number of weeks pregnant</value>
+</data>
+<data name="HowManyWeeksPregnantResource.ToolTip" xml:space="preserve">
+  <value>Indicates number of weeks pregnant</value>
+</data>
+<data name="zone36Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone36Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone32Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone32Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ObservationsLabelResource.Text" xml:space="preserve">
+  <value>Observations</value>
+</data>
+<data name="ObservationsLabelResource.ToolTip" xml:space="preserve">
+  <value>It indicates observations made by the person</value>
+</data>
+<data name="ObservationsResource.ToolTip" xml:space="preserve">
+  <value>It indicates observations made by the person</value>
+</data>
+<data name="ObservationsResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ObservationsResource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="OBSERVACIONESResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="OBSERVACIONESResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DPSFAResource.Text" xml:space="preserve">
+  <value>tab 0</value>
+</data>
+<data name="DPSFAResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ExtraPremiumDiscountByInsuredResource.Caption" xml:space="preserve">
+  <value>ExtraPremiumDiscountByInsured</value>
+</data>
+<data name="RDConsultarLabelResource.Text" xml:space="preserve">
+  <value>RDConsultar</value>
+</data>
+<data name="RDConsultarLabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist8</value>
+</data>
+<data name="RDConsultarResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist8</value>
+</data>
+<data name="zone22Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone22Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="btAgregarResource.Text" xml:space="preserve">
+  <value>button 9</value>
+</data>
+<data name="btAgregarResource.ToolTip" xml:space="preserve">
+  <value>button9</value>
+</data>
+<data name="btAgregarConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btAgregarInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtAgregarConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtAgregarInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btAgregar13_MessageActionResource" xml:space="preserve">
+  <value>El recargo ya existe.</value>
+</data>
+<data name="btEditarResource.Text" xml:space="preserve">
+  <value>button 10</value>
+</data>
+<data name="btEditarResource.ToolTip" xml:space="preserve">
+  <value>button10</value>
+</data>
+<data name="btEditarConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btEditarInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtEditarConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtEditarInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btEditar14_MessageActionResource" xml:space="preserve">
+  <value>El recargo no esta asociado a la póliza.</value>
+</data>
+<data name="btDesestimarResource.Text" xml:space="preserve">
+  <value>button 12</value>
+</data>
+<data name="btDesestimarResource.ToolTip" xml:space="preserve">
+  <value>button12</value>
+</data>
+<data name="btDesestimarConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="btDesestimarInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebtDesestimarConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebtDesestimarInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="btDesestimar15_MessageActionResource" xml:space="preserve">
+  <value>El recargo no existe.</value>
+</data>
+<data name="zone33Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone33Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone3Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone3Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="nDisexprc1LabelResource.Text" xml:space="preserve">
+  <value>nD isexprc</value>
+</data>
+<data name="nDisexprc1LabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist13</value>
+</data>
+<data name="nDisexprc1Resource.ToolTip" xml:space="preserve">
+  <value>dropdownlist13</value>
+</data>
+<data name="nDisexprc1Resource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="TypeOfItem1LabelResource.Text" xml:space="preserve">
+  <value>Type of Item</value>
+</data>
+<data name="TypeOfItem1LabelResource.ToolTip" xml:space="preserve">
+  <value>Extra-premium, discount or tax indicator.</value>
+</data>
+<data name="TypeOfItem1Resource.ToolTip" xml:space="preserve">
+  <value>Extra-premium, discount or tax indicator.</value>
+</data>
+<data name="TypeOfItem1Resource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="CoverageModule1LabelResource.Text" xml:space="preserve">
+  <value>Coverage Module</value>
+</data>
+<data name="CoverageModule1LabelResource.ToolTip" xml:space="preserve">
+  <value>Code of The Module of The Coverage.</value>
+</data>
+<data name="CoverageModule1Resource.ToolTip" xml:space="preserve">
+  <value>Code of The Module of The Coverage.</value>
+</data>
+<data name="CoverageModule1Resource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="CoverageCode2LabelResource.Text" xml:space="preserve">
+  <value>Coverage Code</value>
+</data>
+<data name="CoverageCode2LabelResource.ToolTip" xml:space="preserve">
+  <value>Code of the coverage.</value>
+</data>
+<data name="CoverageCode2Resource.ToolTip" xml:space="preserve">
+  <value>Code of the coverage.</value>
+</data>
+<data name="CoverageCode2Resource.ValidationSettings.RequiredField.ErrorText" xml:space="preserve">
+  <value>The field is required.</value>
+</data>
+<data name="Rate1LabelResource.Text" xml:space="preserve">
+  <value>Rate</value>
+</data>
+<data name="Rate1LabelResource.ToolTip" xml:space="preserve">
+  <value>Surcharge/discount rate (the unit indicated in the field is expressed in sUnit).</value>
+</data>
+<data name="Rate1Resource.ToolTip" xml:space="preserve">
+  <value>Surcharge/discount rate (the unit indicated in the field is expressed in sUnit).</value>
+</data>
+<data name="Amount1LabelResource.Text" xml:space="preserve">
+  <value>Amount</value>
+</data>
+<data name="Amount1LabelResource.ToolTip" xml:space="preserve">
+  <value>Fixed amount to be added as a surcharge/discount</value>
+</data>
+<data name="Amount1Resource.ToolTip" xml:space="preserve">
+  <value>Fixed amount to be added as a surcharge/discount</value>
+</data>
+<data name="Cause1LabelResource.Text" xml:space="preserve">
+  <value>Cause</value>
+</data>
+<data name="Cause1LabelResource.ToolTip" xml:space="preserve">
+  <value>Extra-Rating/discount cause.</value>
+</data>
+<data name="Cause1Resource.ToolTip" xml:space="preserve">
+  <value>Extra-Rating/discount cause.</value>
+</data>
+<data name="PermanenteLabelResource.Text" xml:space="preserve">
+  <value>Extra Premium Permanent or Temporary</value>
+</data>
+<data name="PermanenteLabelResource.ToolTip" xml:space="preserve">
+  <value>Permanent/temporary extra premium indicator.</value>
+</data>
+<data name="PermanenteResource.ToolTip" xml:space="preserve">
+  <value>Permanent/temporary extra premium indicator.</value>
+</data>
+<data name="YearsLabelResource.Text" xml:space="preserve">
+  <value>Years</value>
+</data>
+<data name="YearsLabelResource.ToolTip" xml:space="preserve">
+  <value>Age to be added/subtracted to the insured for the extra-premium.</value>
+</data>
+<data name="YearsResource.ToolTip" xml:space="preserve">
+  <value>Age to be added/subtracted to the insured for the extra-premium.</value>
+</data>
+<data name="FeDesdeLabelResource.Text" xml:space="preserve">
+  <value>Extra Premium or Discount Effective Date</value>
+</data>
+<data name="FeDesdeLabelResource.ToolTip" xml:space="preserve">
+  <value>Effective date of the extra premium/discount.</value>
+</data>
+<data name="FeDesdeResource.ToolTip" xml:space="preserve">
+  <value>Effective date of the extra premium/discount.</value>
+</data>
+<data name="FeHastaLabelResource.Text" xml:space="preserve">
+  <value>Ending Date of Extra Premium or Discount</value>
+</data>
+<data name="FeHastaLabelResource.ToolTip" xml:space="preserve">
+  <value>Ending date of duration of the extra premium/discount.</value>
+</data>
+<data name="FeHastaResource.ToolTip" xml:space="preserve">
+  <value>Ending date of duration of the extra premium/discount.</value>
+</data>
+<data name="ActivityIDLabelResource.Text" xml:space="preserve">
+  <value>Activity ID</value>
+</data>
+<data name="ActivityIDLabelResource.ToolTip" xml:space="preserve">
+  <value>Hight risk activity of the client.</value>
+</data>
+<data name="ActivityIDResource.ToolTip" xml:space="preserve">
+  <value>Hight risk activity of the client.</value>
+</data>
+<data name="SportIDLabelResource.Text" xml:space="preserve">
+  <value>Sport ID</value>
+</data>
+<data name="SportIDLabelResource.ToolTip" xml:space="preserve">
+  <value>Hight Risk Sport of the client.</value>
+</data>
+<data name="SportIDResource.ToolTip" xml:space="preserve">
+  <value>Hight Risk Sport of the client.</value>
+</data>
+<data name="Status1ListItemValue1Resource.Text" xml:space="preserve">
+  <value>Item1</value>
+</data>
+<data name="Status1ListItemValue2Resource.Text" xml:space="preserve">
+  <value>Item2</value>
+</data>
+<data name="Status1LabelResource.Text" xml:space="preserve">
+  <value>Status</value>
+</data>
+<data name="Status1LabelResource.ToolTip" xml:space="preserve">
+  <value>dropdownlist2</value>
+</data>
+<data name="Status1Resource.ToolTip" xml:space="preserve">
+  <value>dropdownlist2</value>
+</data>
+<data name="ControlsDependencyResource.Text" xml:space="preserve">
+  <value>Wait...</value>
+</data>
+<data name="zone7Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone7Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="NoteTextLabelResource.Text" xml:space="preserve">
+  <value>NoteText</value>
+</data>
+<data name="NoteTextLabelResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="NoteTextResource.ToolTip" xml:space="preserve">
+  <value>text0</value>
+</data>
+<data name="NoteTextResource.NullText" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ZoneNotasRDResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneNotasRDResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="button20Resource.Text" xml:space="preserve">
+  <value>button 20</value>
+</data>
+<data name="button20Resource.ToolTip" xml:space="preserve">
+  <value>button20</value>
+</data>
+<data name="button20ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button20InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton20ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton20InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="button21Resource.Text" xml:space="preserve">
+  <value>button 21</value>
+</data>
+<data name="button21Resource.ToolTip" xml:space="preserve">
+  <value>button21</value>
+</data>
+<data name="button21ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button21InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton21ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton21InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="button2116_MessageActionResource" xml:space="preserve">
+  <value>{ Value /Mensaje }</value>
+</data>
+<data name="ZonaBotonesRDResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZonaBotonesRDResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneGralRDResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZoneGralRDResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="PrimaBase2LabelResource.Text" xml:space="preserve">
+  <value>PrimaBase2</value>
+</data>
+<data name="PrimaBase2LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric27</value>
+</data>
+<data name="PrimaBase2Resource.ToolTip" xml:space="preserve">
+  <value>numeric27</value>
+</data>
+<data name="RecargoAplicado2LabelResource.Text" xml:space="preserve">
+  <value>RecargoAplicado2</value>
+</data>
+<data name="RecargoAplicado2LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric28</value>
+</data>
+<data name="RecargoAplicado2Resource.ToolTip" xml:space="preserve">
+  <value>numeric28</value>
+</data>
+<data name="PrimaConvenida2LabelResource.Text" xml:space="preserve">
+  <value>PrimaConvenida2</value>
+</data>
+<data name="PrimaConvenida2LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric29</value>
+</data>
+<data name="PrimaConvenida2Resource.ToolTip" xml:space="preserve">
+  <value>numeric29</value>
+</data>
+<data name="zone23Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone23Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DescuentoLabelResource.Text" xml:space="preserve">
+  <value>Descuento</value>
+</data>
+<data name="DescuentoLabelResource.ToolTip" xml:space="preserve">
+  <value>numeric30</value>
+</data>
+<data name="DescuentoResource.ToolTip" xml:space="preserve">
+  <value>numeric30</value>
+</data>
+<data name="Descuento17_MessageActionResource" xml:space="preserve">
+  <value>El monto del descuento no puede ser mayor a los recargos aplicados</value>
+</data>
+<data name="PrimaBasica3LabelResource.Text" xml:space="preserve">
+  <value>PrimaBasica3</value>
+</data>
+<data name="PrimaBasica3LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric31</value>
+</data>
+<data name="PrimaBasica3Resource.ToolTip" xml:space="preserve">
+  <value>numeric31</value>
+</data>
+<data name="PrimaExcedente3LabelResource.Text" xml:space="preserve">
+  <value>PrimaExcedente3</value>
+</data>
+<data name="PrimaExcedente3LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric33</value>
+</data>
+<data name="PrimaExcedente3Resource.ToolTip" xml:space="preserve">
+  <value>numeric33</value>
+</data>
+<data name="PrimaConvenida3LabelResource.Text" xml:space="preserve">
+  <value>PrimaConvenida3</value>
+</data>
+<data name="PrimaConvenida3LabelResource.ToolTip" xml:space="preserve">
+  <value>numeric34</value>
+</data>
+<data name="PrimaConvenida3Resource.ToolTip" xml:space="preserve">
+  <value>numeric34</value>
+</data>
+<data name="zone26Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone26Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZonaPrimasFinalResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ZonaPrimasFinalResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone31Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone31Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="button16Resource.Text" xml:space="preserve">
+  <value>button 16</value>
+</data>
+<data name="button16Resource.ToolTip" xml:space="preserve">
+  <value>button16</value>
+</data>
+<data name="button16ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button16InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton16ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton16InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="button17Resource.Text" xml:space="preserve">
+  <value>button 17</value>
+</data>
+<data name="button17Resource.ToolTip" xml:space="preserve">
+  <value>button17</value>
+</data>
+<data name="button17ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button17InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton17ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton17InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="zone15Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone15Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone29Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone29Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="DocCumuloResource.Text" xml:space="preserve">
+  <value>tab 10</value>
+</data>
+<data name="DocCumuloResource.ToolTip" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button22Resource.Text" xml:space="preserve">
+  <value>button 22</value>
+</data>
+<data name="button22Resource.ToolTip" xml:space="preserve">
+  <value>button22</value>
+</data>
+<data name="button22ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button22InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton22ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton22InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="button23Resource.Text" xml:space="preserve">
+  <value>button 23</value>
+</data>
+<data name="button23Resource.ToolTip" xml:space="preserve">
+  <value>button23</value>
+</data>
+<data name="button23ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button23InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton23ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton23InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="zone19Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone19Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="button18Resource.Text" xml:space="preserve">
+  <value>button 18</value>
+</data>
+<data name="button18Resource.ToolTip" xml:space="preserve">
+  <value>button18</value>
+</data>
+<data name="button18ConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="button18InformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titlebutton18ConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titlebutton18InformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButSaveAResource.Text" xml:space="preserve">
+  <value>button 27</value>
+</data>
+<data name="ButSaveAResource.ToolTip" xml:space="preserve">
+  <value>button27</value>
+</data>
+<data name="ButSaveAConfirmationMessageResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+<data name="ButSaveAInformationMessageResource.Text" xml:space="preserve">
+  <value>Please wait...</value>
+</data>
+<data name="titleButSaveAConfirmationMessageResource.Text" xml:space="preserve">
+  <value>Confirm</value>
+</data>
+<data name="titleButSaveAInformationMessageResource.Text" xml:space="preserve">
+  <value>Information Message</value>
+</data>
+<data name="ButSaveA23_MessageActionResource" xml:space="preserve">
+  <value>{ Value /MensajeLocal }</value>
+</data>
+<data name="zone20Resource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="zone20Resource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ButtonsFormAResource.HeaderText" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="ButtonsFormAResource.ToolTip" xml:space="preserve">
+  <value>zone</value>
+</data>
+<data name="MutualModificacionRiesgo2InstructionResource.Text" xml:space="preserve">
+  <value></value>
+</data>
+</root>

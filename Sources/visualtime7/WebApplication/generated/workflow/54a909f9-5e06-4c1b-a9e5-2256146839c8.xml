@@ -1,0 +1,152 @@
+﻿<Activity mc:Ignorable="sap sads" x:Class="LlenaColeccionAseguradosSalud" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ica="clr-namespace:InMotionGIT.Common.Activities;assembly=InMotionGIT.Common.Activities" xmlns:icc="clr-namespace:InMotionGIT.Common.Contracts;assembly=InMotionGIT.Common.Contracts" xmlns:icd="clr-namespace:InMotionGIT.Common.DataType;assembly=InMotionGIT.Common" xmlns:ice="clr-namespace:InMotionGIT.Common.Extensions;assembly=InMotionGIT.Common" xmlns:icec="clr-namespace:InMotionGIT.Client.Entity.Contracts;assembly=InMotionGIT.Client.Entity.Contracts" xmlns:ipec="clr-namespace:InMotionGIT.Policy.Entity.Contracts;assembly=InMotionGIT.Policy.Entity.Contracts" xmlns:iq="clr-namespace:InMotionGIT.Questionnaires;assembly=InMotionGIT.Questionnaires" xmlns:iqb="clr-namespace:InMotionGIT.Questionnaires.Base;assembly=InMotionGIT.Questionnaires" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Core" xmlns:s3="clr-namespace:System;assembly=DevExpress.Utils.v13.1" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:s5="clr-namespace:System;assembly=System.ComponentModel.Composition" xmlns:s6="clr-namespace:System;assembly=System.Runtime.WindowsRuntime" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=DevExpress.Data.v13.1" xmlns:scg4="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization" xmlns:srs1="clr-namespace:System.Runtime.Serialization;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="context" Type="InOutArgument(icc:Context)" />
+    <x:Property Name="RiskInformationRoles" Type="InArgument(ipec:RoleCollection)" />
+    <x:Property Name="QuestionnaireByInsuredPersonCollection" Type="OutArgument(iq:QuestionnaireByInsuredPersonCollection)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>678.4,857.6</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Flowchart DisplayName="LlenaColeccionAseguradosSalud" sap:VirtualizedContainerService.HintSize="638.4,817.6">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="Consecutivo" />
+      <Variable x:TypeArguments="iq:QuestionnaireByInsuredPerson" Name="QuestionnaireInsuredPerson" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,153.6</av:PointCollection>
+        <x:Double x:Key="Width">623.99999999999989</x:Double>
+        <x:Double x:Key="Height">781.19999999999993</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID3</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">218.4,153.6</av:Point>
+          <av:Size x:Key="ShapeSize">163.2,132.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,286.4 300,359.6</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ica:ProcessIdentifier sap:VirtualizedContainerService.HintSize="163.2,132.8">
+        <ica:ProcessIdentifier.Identifier>
+          <icd:LocalizedString Language="1" Value="LlenaColeccionAseguradosSalud." />
+          <icd:LocalizedString Language="2" Value="LlenaColeccionAseguradosSalud." />
+        </ica:ProcessIdentifier.Identifier>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ica:ProcessIdentifier>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">178.4,359.6</av:Point>
+              <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,420.4 300,479.6</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="AssignConsecutivo1" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[Consecutivo]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">1</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">178.4,479.6</av:Point>
+                  <av:Size x:Key="ShapeSize">243.2,60.8</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,540.4 300,603.6</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="AssignNewQuestionnaireByInsuredPersonCollection" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="iq:QuestionnaireByInsuredPersonCollection">[QuestionnaireByInsuredPersonCollection]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="iq:QuestionnaireByInsuredPersonCollection">[New InMotionGIT.Questionnaires.QuestionnaireByInsuredPersonCollection]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">200,603.6</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ForEach x:TypeArguments="ipec:Role" DisplayName="ForEach&lt;Role&gt;" sap:VirtualizedContainerService.HintSize="200,52.8" Values="[RiskInformationRoles]">
+                    <ActivityAction x:TypeArguments="ipec:Role">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ipec:Role" Name="item" />
+                      </ActivityAction.Argument>
+                      <If Condition="[item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 13 andalso item.ClientRole &lt;&gt; 16]" DisplayName="If item.ClientRole &lt;&gt; 1 andalso item.ClientRole &lt;&gt; 13 andalso item.ClientRole &lt;&gt; 16" sap:VirtualizedContainerService.HintSize="464,560">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="265.6,449.6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="AssignQuestionnaireInsuredPerson" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="iq:QuestionnaireByInsuredPerson">[QuestionnaireInsuredPerson]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="iq:QuestionnaireByInsuredPerson">[New InMotionGIT.Questionnaires.QuestionnaireByInsuredPerson]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="AssignQuestionnaireInsuredPerson.ClientID" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[QuestionnaireInsuredPerson.ClientID]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[item.Client.ClientID]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="AssignQuestionnaireInsuredPerson.CompleteCliename" sap:VirtualizedContainerService.HintSize="243.2,60.8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[QuestionnaireInsuredPerson.CompleteCliename]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String" xml:space="preserve">[Item.Client.LastName &amp; " " &amp; Item.Client.LastName2 &amp; ", "  &amp; Item.Client.FirstName]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <AddToCollection x:TypeArguments="iq:QuestionnaireByInsuredPerson" Collection="[QuestionnaireByInsuredPersonCollection]" DisplayName="AddToCollection&lt;QuestionnaireByInsuredPerson&gt;" sap:VirtualizedContainerService.HintSize="243.2,22.4" Item="[QuestionnaireInsuredPerson]" />
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </ActivityAction>
+                  </ForEach>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+  </Flowchart>
+</Activity>

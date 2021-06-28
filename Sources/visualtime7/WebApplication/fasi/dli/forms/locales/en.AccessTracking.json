@@ -1,0 +1,87 @@
+﻿{
+  "app": {
+    "title": "Access Tracking",
+    "form": {
+             "zone0_Footer": "",
+             "zone0_Instruction": "",
+             "zone0_Title": "zone",
+             "zone0_Tooltip": "zone",
+             "StartDP_Label": "Start",
+             "StartDP_Tooltip": "",
+             "StartDP_Measure": "",
+             "StartDP_Legend": "",
+             "StartDP_Prefix": "",
+             "StartDP_RequiredMessage": "",
+             "StartDP_Validate1": "The start date must be less than or equal to the end date",
+             "FinishDP_Label": "Finish",
+             "FinishDP_Tooltip": "",
+             "FinishDP_Measure": "",
+             "FinishDP_Legend": "",
+             "FinishDP_Prefix": "",
+             "FinishDP_RequiredMessage": "",
+             "FinishDP_Validate1": "The end date must be greater than or equal to the end date",
+             "OkButton_Caption": "OK",
+             "OkButton_Tooltip": "",
+             "OkButton_ConfirmationMessage": "",
+             "OkButton_InformationMessage": "Please wait...",
+             "Client_Title": "",
+             "Client_AddButtonCaption": "Add",
+             "Client_DeleteButtonCaption": "Delete",
+             "DateOfIngress_Label": "Date of Ingress",
+             "ClientTbl_DateOfIngress_Title": "Date of Ingress",
+             "DateOfIngress_Tooltip": "Date when the information was first entered into the system.",
+             "DateOfIngress_Measure": "",
+             "DateOfIngress_Legend": "",
+             "DateOfIngress_Prefix": "",
+             "CustomString_Label": "Source",
+             "ClientTbl_CustomString_Title": "Source",
+             "CustomString_Tooltip": "CustomString",
+             "CustomString_Measure": "",
+             "CustomString_Legend": "",
+             "CustomString_Prefix": "",
+             "CustomString_Watermark": "",
+             "eMailAddressDefault_Label": "E-mail",
+             "ClientTbl_eMailAddressDefault_Title": "E-mail",
+             "eMailAddressDefault_Tooltip": "Email address.",
+             "eMailAddressDefault_Measure": "",
+             "eMailAddressDefault_Legend": "",
+             "eMailAddressDefault_Prefix": "",
+             "eMailAddressDefault_Watermark": "",
+             "LanguageDescription_Label": "Status",
+             "ClientTbl_LanguageDescription_Title": "Status",
+             "LanguageDescription_Tooltip": "Language in which the system shows the information.",
+             "LanguageDescription_Measure": "",
+             "LanguageDescription_Legend": "",
+             "LanguageDescription_Prefix": "",
+             "LanguageDescription_Watermark": "",
+             "CustomStringEx_Label": "Observation",
+             "ClientTbl_CustomStringEx_Title": "Observation",
+             "CustomStringEx_Tooltip": "CustomStringEx",
+             "CustomStringEx_Measure": "",
+             "CustomStringEx_Legend": "",
+             "CustomStringEx_Prefix": "",
+             "CustomStringEx_Watermark": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "DateOfIngress": {
+             "DatePicker": "La fecha indicada no es válida"
+        },
+        "CustomString": {
+             "maxlength": "The field allows 15 maximum characters"
+        },
+        "eMailAddressDefault": {
+             "maxlength": "The field allows 60 maximum characters"
+        },
+        "LanguageDescription": {
+             "maxlength": "The field allows 15 maximum characters"
+        },
+        "CustomStringEx": {
+             "maxlength": "The field allows 15 maximum characters"
+        }
+    }
+  }
+}

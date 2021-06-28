@@ -1,0 +1,39 @@
+﻿/* tab common styles */
+ul.tabs { list-style-type: none; margin: 0px; padding: 0px; }
+
+/* Usar la linea sin width para tabs horizontales, y con width para verticales */
+li.tab { float: left; margin: 0px 10px 0px 0px; height: 30px; width: 140px;}
+
+li.tab div.tab_wrapper { padding: 5px 20px 5px 15px; }
+li.tab a { font-size: 10pt; margin: 5px 5px 0px 50x; }
+li.tab span { font-size: 10pt; margin: 5px 5px 0px 50x; font-weight: bold; color: red}
+
+/* active tab caso para tabs verticales*/
+li.activetab { padding-left: 5px; width: 150px; background:white url(content_corners.gif) no-repeat scroll top left;} 
+li.activetab div.tab_wrapper { background:transparent url(content_corners.gif) no-repeat scroll top right;}
+li.activetab a { color: red; width: 150px; font-weight: bold}
+
+/* inactive tab caso para tabs verticales*/
+li.inactivetab { padding-left: 5px; width: 150px; background:white url(inactivetab_corners.gif) no-repeat scroll top left;} 
+li.inactivetab div.tab_wrapper { background:white url(inactivetab_corners.gif) no-repeat scroll top right ;}
+li.inactivetab a { color:#878787; width: 150px;}
+
+/* new tab */
+li.newtab { float: left; padding-top: 10px}
+
+/* Usar esta clase for tabs div en caso de Vertical Tabs */
+.ClassForTabsDiv
+{ position:absolute; 
+  left:60px; 
+  top:150px; 
+  width:150px; 
+  height:500px;
+}
+
+/* Usar este Position for content en caso de Vertical Tabs */
+.PositionForContent
+{position:absolute;
+ left:200px;
+}
+
+

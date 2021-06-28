@@ -1,0 +1,87 @@
+﻿{
+  "app": {
+    "title": "Rastro de acceso",
+    "form": {
+             "zone0_Footer": "",
+             "zone0_Instruction": "",
+             "zone0_Title": "zona",
+             "zone0_Tooltip": "zona",
+             "StartDP_Label": "Inicio",
+             "StartDP_Tooltip": "",
+             "StartDP_Measure": "",
+             "StartDP_Legend": "",
+             "StartDP_Prefix": "",
+             "StartDP_RequiredMessage": "",
+             "StartDP_Validate1": "La fecha de inicio debe ser menor o igual a la fecha de fin",
+             "FinishDP_Label": "Fin",
+             "FinishDP_Tooltip": "",
+             "FinishDP_Measure": "",
+             "FinishDP_Legend": "",
+             "FinishDP_Prefix": "",
+             "FinishDP_RequiredMessage": "",
+             "FinishDP_Validate1": "La fecha de fin debe ser mayor o igual a la fecha de fin",
+             "OkButton_Caption": "OK",
+             "OkButton_Tooltip": "",
+             "OkButton_ConfirmationMessage": "",
+             "OkButton_InformationMessage": "Por favor espere...",
+             "Client_Title": "",
+             "Client_AddButtonCaption": "Agregar",
+             "Client_DeleteButtonCaption": "Eliminar",
+             "DateOfIngress_Label": "Acceso",
+             "ClientTbl_DateOfIngress_Title": "Acceso",
+             "DateOfIngress_Tooltip": "Fecha de Ingreso",
+             "DateOfIngress_Measure": "",
+             "DateOfIngress_Legend": "",
+             "DateOfIngress_Prefix": "",
+             "CustomString_Label": "Fuente",
+             "ClientTbl_CustomString_Title": "Fuente",
+             "CustomString_Tooltip": "CustomString",
+             "CustomString_Measure": "",
+             "CustomString_Legend": "",
+             "CustomString_Prefix": "",
+             "CustomString_Watermark": "",
+             "eMailAddressDefault_Label": "Correo electrónico",
+             "ClientTbl_eMailAddressDefault_Title": "Correo electrónico",
+             "eMailAddressDefault_Tooltip": "Email",
+             "eMailAddressDefault_Measure": "",
+             "eMailAddressDefault_Legend": "",
+             "eMailAddressDefault_Prefix": "",
+             "eMailAddressDefault_Watermark": "",
+             "LanguageDescription_Label": "Estado",
+             "ClientTbl_LanguageDescription_Title": "Estado",
+             "LanguageDescription_Tooltip": "Lenguaje",
+             "LanguageDescription_Measure": "",
+             "LanguageDescription_Legend": "",
+             "LanguageDescription_Prefix": "",
+             "LanguageDescription_Watermark": "",
+             "CustomStringEx_Label": "Observación",
+             "ClientTbl_CustomStringEx_Title": "Observación",
+             "CustomStringEx_Tooltip": "CustomStringEx",
+             "CustomStringEx_Measure": "",
+             "CustomStringEx_Legend": "",
+             "CustomStringEx_Prefix": "",
+             "CustomStringEx_Watermark": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "DateOfIngress": {
+             "DatePicker": "The indicated date is not valid"
+        },
+        "CustomString": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "eMailAddressDefault": {
+             "maxlength": "El campo permite 60 caracteres máximo"
+        },
+        "LanguageDescription": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        },
+        "CustomStringEx": {
+             "maxlength": "El campo permite 15 caracteres máximo"
+        }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+﻿{
+  "app": {
+    "title": "Form1",
+    "form": {
+             "Beneficiary_Title": "Beneficiary",
+             "Beneficiary_AddButtonCaption": "Add",
+             "Beneficiary_DeleteButtonCaption": "Delete",
+             "ClientClientID_Label": "Client ID",
+             "BeneficiaryTbl_ClientID_Title": "Client ID",
+             "ClientClientID_Tooltip": "Code of the client.",
+             "ClientClientID_Measure": "",
+             "ClientClientID_Legend": "",
+             "ClientClientID_Prefix": "",
+             "ClientClientID_Watermark": "",
+             "ClientClientID_RequiredMessage": "The field is required.",
+             "FirstName_Label": "First Name",
+             "BeneficiaryTbl_ClientFirstName_Title": "First Name",
+             "FirstName_Tooltip": "First name and middle name of the client.",
+             "FirstName_Measure": "",
+             "FirstName_Legend": "",
+             "FirstName_Prefix": "",
+             "FirstName_Watermark": "",
+             "FirstName_RequiredMessage": "",
+             "LastName_Label": "Last Name",
+             "BeneficiaryTbl_ClientLastName_Title": "Last Name",
+             "LastName_Tooltip": "Last name of the client.",
+             "LastName_Measure": "",
+             "LastName_Legend": "",
+             "LastName_Prefix": "",
+             "LastName_Watermark": "",
+             "LastName2_Label": "Last Name 2",
+             "BeneficiaryTbl_ClientLastName2_Title": "Last Name 2",
+             "LastName2_Tooltip": "Last name (2) of the client.",
+             "LastName2_Measure": "",
+             "LastName2_Legend": "",
+             "LastName2_Prefix": "",
+             "LastName2_Watermark": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+    },
+    "validation": {
+    	"firstname" : {
+    		"required" : "The field is required.",
+    		"maxlength" : "The field allows 20 characters maximum",
+    		"uniquecolumnBeneficiaryFirstName" : "Field duplicated"
+    	}
+    }
+  }
+}

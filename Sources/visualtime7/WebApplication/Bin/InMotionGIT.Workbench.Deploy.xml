@@ -1,0 +1,144 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Workbench.Deploy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Workbench.Deploy.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Workbench.Deploy.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Workbench.Deploy.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.LoadSpecificationData(System.Xml.Linq.XDocument,System.String)">
+ <summary>
+ Load manifest file to create, update the current widget.
+ Carga el archivo manifiesto para crear, actualizar el widget actual
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.AddNavigationDirectoryRecords(System.Xml.Linq.XDocument,System.DateTime)">
+ <summary>
+ Insert, update table NavigationDirectory
+ Insertar, actualizar la tabla NavigationDirectory
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+ <param name="currentTime">Date now - fecha actual</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.FindCategory(System.Xml.Linq.XDocument)">
+ <summary>
+ Search the current category for to create whether not exist.
+ Buscar en la categoría actual para crearla si no existe.
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.FindOwner(System.Xml.Linq.XDocument)">
+ <summary>
+ Search the current owner for to create whether not exist.
+ Buscar en el propietario actual para crearlo si no existe.
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.InsertQueryWidget(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+ <summary>
+ Insert the record in the table 'Widget'
+ Insertar un registro en la tabla 'Widget'
+ </summary>
+ <param name="modelId">model identification - identificación del modelo</param>
+ <param name="name">name of model- nombre del modelo</param>
+ <param name="description">description of model- descripción del modelo</param>
+ <param name="url">url of model- link generado del modelo</param>
+ <param name="defaultState">default State of model- estado del modelo</param>
+ <param name="icon">iconof model- icono del modelo</param>
+ <param name="currentTime">Date now - fecha actual</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.UpdateQueryWidget(System.Int32,System.String,System.String,System.String,System.String,System.DateTime)">
+ <summary>
+ Update the record in the table 'Widget'
+ Actualizar el registro en la tabla 'Widget'
+ </summary>
+ <param name="idWidget">widget identification - identificación del widget</param>
+ <param name="description">description of model- descripción del modelo</param>
+ <param name="defaultState">default State of model- estado del modelo</param>
+ <param name="currentTime">Date now - fecha actual</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.InsertWidgetTrans(System.Xml.Linq.XDocument,System.Int32,System.DateTime)">
+ <summary>
+ Insert the record in the table 'WidgetTrans'
+ Insertar un registro en la tabla 'WidgetTrans'
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+ <param name="lastRow">'last identification of table - último código registrado en la tabla</param>
+ <param name="currentTime">Date now - fecha actual</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.UpdateWidgetTrans(System.Xml.Linq.XDocument,System.Int32,System.DateTime)">
+ <summary>
+ Update the record in the table 'WidgetTrans'
+ Actualizar el registro en la tabla 'WidgetTrans'
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+ <param name="idWidget">widget identification - identificación del widget</param>
+ <param name="currentTime">Date now - fecha actual</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.InsertWidgetsInRoles(System.Xml.Linq.XDocument,System.String,System.Int32)">
+ <summary>
+ Insert the record in the table 'WidgetsInRoles'
+ Insertar un registro en la tabla 'WidgetsInRoles'
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+ <param name="lastRow">'last identification of table - último código registrado en la tabla</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.DeleteRolesInWidget(System.Int32)">
+ <summary>
+ Delete the record in the table 'WidgetsInRoles'
+ Eliminar el registro en la tabla 'WidgetsInRoles'
+ </summary>
+ <param name="idWidget">widget identification - identificación del widget</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.ValidateRecordsWidget(System.String)">
+ <summary>
+ Validate the existence of the current widget
+ Validar la existencia del widget actual
+ </summary>
+ <param name="modelId">model identification - identificación del modelo</param>
+ <returns>Widget identification - identificación del widget</returns>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.GetLocalModelInformation(System.String,System.String,System.Int32,System.String@,System.String@)">
+ <summary>
+ Recuperar el nombre y titulo de un modelo que este publicado en el servidor.
+ </summary>
+ <param name="modelId">Identificación del modelo.</param>
+ <param name="subPath">Ruta complementaria a la carpeta generated donde se buscara la información del modelo.</param>
+ <param name="languageId">Lenguaje usado para ubicar la información.</param>
+ <param name="modelName">Nombre del modelo.</param>
+ <param name="title">Título del modelo.</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.RemoveResourcesFilesByDraftMode(System.Xml.Linq.XDocument)">
+ <summary>
+ Remove resources files by Draft Mode.
+ Eliminar los archivos de recursos.
+ </summary>
+ <param name="xmlManifest">Xml file - archivo xml</param>
+</member>
+<member name="M:InMotionGIT.Workbench.Deploy.DeploySupport.DeleteFilesByName(System.IO.DirectoryInfo,System.String)">
+ <summary>
+ Delete the located file 
+ Eliminar el archivo localizado
+ </summary>
+ <param name="directoryPath">Rsources's directory - folder de archivos de recursos</param>
+ <param name="fileName">File Name - nombre del archivo</param>
+</member>
+</members>
+</doc>

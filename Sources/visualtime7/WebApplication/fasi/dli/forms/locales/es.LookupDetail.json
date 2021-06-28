@@ -1,0 +1,131 @@
+﻿{
+  "app": {
+    "title": "Lista de valores",
+    "form": {
+             "LOOKUP_Grid_Message_Notify_insert4": "Se agregó correctamente el registro",
+             "LOOKUP_Grid_Title_Notify_insert4": "Agregar registro",
+             "LOOKUP_Grid_Message_Notify_insert5": "No se pudo agregar el registro",
+             "LOOKUP_Grid_Title_Notify_insert5": "Agregar registro",
+             "LOOKUP_Grid_Message_Notify_update4": "Se actualizó correctamente el registro",
+             "LOOKUP_Grid_Title_Notify_update4": "Actualizar registro",
+             "LOOKUP_Grid_Message_Notify_update5": "No se pudo actualizar el registro",
+             "LOOKUP_Grid_Title_Notify_update5": "Actualizar registro",
+             "LOOKUP_Grid_Message_Notify_delete4": "Se eliminó correctamente el registro",
+             "LOOKUP_Grid_Title_Notify_delete4": "Eliminar registro",
+             "LOOKUP_Grid_Message_Notify_delete5": "No se puede eliminar el registro",
+             "LOOKUP_Grid_Title_Notify_delete5": "Eliminar registro",
+             "LOOKUP_Grid_Title": "",
+             "LOOKUP_Grid_AddButtonCaption": "Agregar",
+             "LOOKUP_Grid_DeleteButtonCaption": "Eliminar",
+             "LOOKUPID_Label": "Lista",
+             "LOOKUP_GridTbl_LOOKUPID_Title": "Lista",
+             "LOOKUPID_Tooltip": "Identificador del Lenguaje",
+             "LOOKUPID_Measure": "",
+             "LOOKUPID_Legend": "",
+             "LOOKUPID_Prefix": "",
+             "LOOKUPID_RequiredMessage": "El campo es requerido.",
+             "LANGUAGEID_Label": "Lenguaje",
+             "LOOKUP_GridTbl_LANGUAGEID_Title": "Lenguaje",
+             "LANGUAGEID_Tooltip": "Nombre de Languaje",
+             "LANGUAGEID_Measure": "",
+             "LANGUAGEID_Legend": "",
+             "LANGUAGEID_Prefix": "",
+             "LANGUAGEID_RequiredMessage": "El campo es requerido.",
+             "CODE_Label": "Código",
+             "LOOKUP_GridTbl_CODE_Title": "Código",
+             "CODE_Tooltip": "Codigo del lenguaje",
+             "CODE_Measure": "",
+             "CODE_Legend": "",
+             "CODE_Prefix": "",
+             "DESCRIPTION_Label": "Descripción",
+             "LOOKUP_GridTbl_DESCRIPTION_Title": "Descripción",
+             "DESCRIPTION_Tooltip": "Descripción del Lenguaje",
+             "DESCRIPTION_Measure": "",
+             "DESCRIPTION_Legend": "",
+             "DESCRIPTION_Prefix": "",
+             "DESCRIPTION_Watermark": "",
+             "DESCRIPTION_RequiredMessage": "El campo es requerido.",
+             "QUERYORDER_Label": "Orden",
+             "LOOKUP_GridTbl_QUERYORDER_Title": "Orden",
+             "QUERYORDER_Tooltip": "Orden de la Consulta",
+             "QUERYORDER_Measure": "",
+             "QUERYORDER_Legend": "",
+             "QUERYORDER_Prefix": "",
+             "RECORDSTATUS_Label": "Estado",
+             "LOOKUP_GridTbl_RECORDSTATUS_Title": "Estado",
+             "RECORDSTATUS_Tooltip": "Estado del registro",
+             "RECORDSTATUS_Measure": "",
+             "RECORDSTATUS_Legend": "",
+             "RECORDSTATUS_Prefix": "",
+             "RECORDSTATUS_RequiredMessage": "El campo es requerido.",
+             "LASTUPDATEBY_Label": "Actualizado por",
+             "LOOKUP_GridTbl_LASTUPDATEBY_Title": "Actualizado por",
+             "LASTUPDATEBY_Tooltip": "Actualizado por",
+             "LASTUPDATEBY_Measure": "",
+             "LASTUPDATEBY_Legend": "",
+             "LASTUPDATEBY_Prefix": "",
+             "LASTUPDATEBY_Watermark": "",
+             "LASTUPDATEDON_Label": "Actualizado",
+             "LOOKUP_GridTbl_LASTUPDATEDON_Title": "Actualizado",
+             "LASTUPDATEDON_Tooltip": "Última actualización",
+             "LASTUPDATEDON_Measure": "",
+             "LASTUPDATEDON_Legend": "",
+             "LASTUPDATEDON_Prefix": "",
+             "FilterBar_Footer": "",
+             "FilterBar_Instruction": "",
+             "FilterBar_Title": "zona",
+             "FilterBar_Tooltip": "zona",
+             "filter_Label": "Lista",
+             "filter_Tooltip": "Lista",
+             "filter_Measure": "",
+             "filter_Legend": "",
+             "filter_Prefix": "",
+             "dropdownlist3_Label": "en",
+             "dropdownlist3_Tooltip": "en",
+             "dropdownlist3_Measure": "",
+             "dropdownlist3_Legend": "",
+             "dropdownlist3_Prefix": "",
+             "SetFilter_Caption": "Filtrar",
+             "SetFilter_Tooltip": "",
+             "SetFilter_ConfirmationMessage": "",
+             "SetFilter_InformationMessage": "Por favor espere...",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "LOOKUPID": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El campo es requerido."
+        },
+        "LANGUAGEID": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El campo es requerido."
+        },
+        "CODE": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999"
+        },
+        "DESCRIPTION": {
+             "maxlength": "El campo permite 255 caracteres máximo",
+             "required": "El campo es requerido."
+        },
+        "QUERYORDER": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999999"
+        },
+        "RECORDSTATUS": {
+             "required": "El campo es requerido."
+        },
+        "LASTUPDATEBY": {
+             "maxlength": "El campo permite 255 caracteres máximo"
+        },
+        "LASTUPDATEDON": {
+             "DatePicker": "The indicated date is not valid"
+        }
+    }
+  }
+}

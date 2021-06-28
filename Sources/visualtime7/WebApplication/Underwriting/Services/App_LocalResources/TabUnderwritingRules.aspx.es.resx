@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tblExclCause" xml:space="preserve">
+    <value>Causa</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclCoverage" xml:space="preserve">
+    <value>Cobertura</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclExclusionPeriodType" xml:space="preserve">
+    <value>Período de exclusión</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclExclusionType" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclImpairmentCode" xml:space="preserve">
+    <value>Enfermedad</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclProductModule" xml:space="preserve">
+    <value>Módulo</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclRatingTable" xml:space="preserve">
+    <value>Tarifa</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclWaitingPeriodDays" xml:space="preserve">
+    <value>Cantidad de días</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclWaitingPeriodMonths" xml:space="preserve">
+    <value>Cantidad de meses</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="tblExclWaitingPeriodYears" xml:space="preserve">
+    <value>Cantidad de años</value>
+    <comment>Encabezado tabla exclusiones</comment>
+  </data>
+  <data name="TbUwRAlarmType" xml:space="preserve">
+    <value>Tipo de alarma</value>
+  </data>
+  <data name="TbUwRCaseDecision" xml:space="preserve">
+    <value>Decisión del caso</value>
+  </data>
+  <data name="TbUwRCaseStage" xml:space="preserve">
+    <value>Etapa del caso</value>
+  </data>
+  <data name="TbUwRComment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="TbUwRProduct" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="tblDisExCurrencyCode" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExDiscountorextrapremiumcode" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExDiscountorExtraPremiumType" xml:space="preserve">
+    <value>Tipo</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExDOfFlatExtraPremiumDays" xml:space="preserve">
+    <value>Cantidad de días</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExDOfFlatExtraPremiumMonths" xml:space="preserve">
+    <value>Cantidad de meses</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExDOfFlatExtraPremiumYears" xml:space="preserve">
+    <value>Cantidad de años</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExExclusionPeriodType" xml:space="preserve">
+    <value>Periodo de aplicación</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExExtraPremiumPercentage" xml:space="preserve">
+    <value>Factor</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblDisExFlatExtraPremium" xml:space="preserve">
+    <value>Monto fijo</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="tblMaxInsSumCoverageCode" xml:space="preserve">
+    <value>Cobertura</value>
+    <comment>Máxima suma asegurada</comment>
+  </data>
+  <data name="tblMaxInsSumCurrencyCode" xml:space="preserve">
+    <value>Moneda</value>
+    <comment>Máxima suma asegurada</comment>
+  </data>
+  <data name="tblMaxInsSumMaximumInsuredAmount" xml:space="preserve">
+    <value>Máxima suma asegurada</value>
+    <comment>Máxima suma asegurada</comment>
+  </data>
+  <data name="tblMaxInsSumProductModule" xml:space="preserve">
+    <value>Módulo</value>
+    <comment>Máxima suma asegurada</comment>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>dialog buttons</comment>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Eliminar</value>
+    <comment>dialog buttons</comment>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Guardar</value>
+    <comment>dialog buttons</comment>
+  </data>
+  <data name="msgreqAlarmType" xml:space="preserve">
+    <value> Seleccione un Tipo de alarma.</value>
+    <comment>Alarma: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqDecision" xml:space="preserve">
+    <value> Seleccione un Decisión.</value>
+    <comment>Alarma: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqProduct" xml:space="preserve">
+    <value> Seleccione un producto.</value>
+    <comment>Alarma: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqStage" xml:space="preserve">
+    <value> Seleccione un Etapa.</value>
+    <comment>Alarma: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqCoverageCode" xml:space="preserve">
+    <value> Seleccione una cobertura.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqExclusionPeriodType" xml:space="preserve">
+    <value> Seleccione un Período de exclusión.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqExclusionType" xml:space="preserve">
+    <value> Seleccione un tipo.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqImpairmentCode" xml:space="preserve">
+    <value> Seleccione una enfermedad.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqPeriod" xml:space="preserve">
+    <value>Debe suministrar por lo menos un valor para las cantidades de días, meses o años.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqProductModule" xml:space="preserve">
+    <value> Seleccione un módulo.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqRatingTable" xml:space="preserve">
+    <value> Seleccione una tarifa.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqRoleCode" xml:space="preserve">
+    <value> Seleccione un rol.</value>
+    <comment>Alarma&gt;Exclusiones: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqDiscountorextrapremiumcode" xml:space="preserve">
+    <value>Seleccione una descripción.</value>
+    <comment>Alarma&gt;Discoexprem: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqDiscountorExtraPremiumType" xml:space="preserve">
+    <value>Seleccione un tipo.</value>
+    <comment>Alarma&gt;Discoexprem: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqExclusionPeriodTypeDisco" xml:space="preserve">
+    <value>Seleccione un período de aplicación.</value>
+    <comment>Alarma&gt;Discoexprem: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqExtraPremiumPercentage" xml:space="preserve">
+    <value>Seleccione valor para factor o monto.</value>
+    <comment>Alarma&gt;Discoexprem: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgreqMaximumInsuredAmount" xml:space="preserve">
+    <value>Seleccione un monto.</value>
+    <comment>Alarma&gt;MaxInsuredSum: Mensaje campo requerido</comment>
+  </data>
+  <data name="msgErrAlarmExist" xml:space="preserve">
+    <value>La alarma ya existe.</value>
+    <comment>Alarma: ya existe</comment>
+  </data>
+  <data name="btnLanguage" xml:space="preserve">
+    <value>Lenguaje: </value>
+  </data>
+  <data name="requiredFieldsText" xml:space="preserve">
+    <value>Campos requeridos: </value>
+    <comment>Mensaje TabUnderwritingRule</comment>
+  </data>
+  <data name="invalidEffectDate" xml:space="preserve">
+    <value>La fecha de efecto debe ser mayor o igual a </value>
+    <comment>Mensaje TabUnderwritingRule</comment>
+  </data>
+  <data name="greaterOrEqualThanToday" xml:space="preserve">
+    <value>La fecha de efecto debe ser mayor o igual a hoy.</value>
+    <comment>Mensaje TabUnderwritingRule</comment>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Ramo</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="EffectiveDate" xml:space="preserve">
+    <value>Fecha de efecto</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="ImpairmentCode" xml:space="preserve">
+    <value>Enfermedad</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="ImpairmentCodeDescription" xml:space="preserve">
+    <value>Enfermedad</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="LineOfBusinessDescription" xml:space="preserve">
+    <value>Ramo</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="RequirementType" xml:space="preserve">
+    <value>Tipo de requerimiento</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="RequirementTypeDescription" xml:space="preserve">
+    <value>Requerimiento</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingArea" xml:space="preserve">
+    <value>Area de suscripción</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingAreaDescription" xml:space="preserve">
+    <value>Area de suscripción</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingCaseType" xml:space="preserve">
+    <value>Tipo de caso</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingCaseTypeDescription" xml:space="preserve">
+    <value>Tipo de caso</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingRuleId" xml:space="preserve">
+    <value>Regla de suscripción</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingRuleIdDescription" xml:space="preserve">
+    <value>Descripción</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingRuleStatus" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="UnderwritingRuleStatusDescription" xml:space="preserve">
+    <value>Estado</value>
+    <comment>Pop-up help</comment>
+  </data>
+  <data name="ttipAlarmType" xml:space="preserve">
+    <value>Define el tipo de alarma que se desea asociar</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipCurrencyCode" xml:space="preserve">
+    <value>Muestra la moneda asociada al producto ó, la moneda según el recargo/descuento relacionado al tipo seleccionado</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipDecision" xml:space="preserve">
+    <value>Decisión que se toma del riesgo asegurado</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipDecisionComplement" xml:space="preserve">
+    <value>Descripción habilitada cuando el tipo de alarma es "Agregar texto"</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipDiscountorextrapremiumcode" xml:space="preserve">
+    <value>Recargo/Descuento a asociar al caso</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipDiscountorExtraPremiumType" xml:space="preserve">
+    <value>Tipo de recargo o descuento a asociar al caso</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipDOfFlatExtraPremiumDays" xml:space="preserve">
+    <value>Cantidad de días a partir de la vigencia de la cobertura durante la cual se aplicará el recargo</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipDOfFlatExtraPremiumMonths" xml:space="preserve">
+    <value>Cantidad de meses a partir de la vigencia de la cobertura durante la cual se aplicará el recargo</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipDOfFlatExtraPremiumYears" xml:space="preserve">
+    <value>Cantidad de años a partir de la vigencia de la cobertura durante la cual se aplicará el recargo</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipExclusionPeriodType" xml:space="preserve">
+    <value>Indica el período durante el cual el recargo se aplicará a la póliza</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipExtraPremiumPercentage" xml:space="preserve">
+    <value>Porcentaje a aplicar</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipFlatExtraPremium" xml:space="preserve">
+    <value>Monto fijo del recargo, o monto que se debe agregar después de aplicar el porcentaje</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+  <data name="ttipProduct" xml:space="preserve">
+    <value>Producto asociado al ramo seleccionado</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipStage" xml:space="preserve">
+    <value>Etapa o estado físico del caso</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipCause" xml:space="preserve">
+    <value>Causa por la cual se excluye la enfermedad</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipCoverageCode" xml:space="preserve">
+    <value>Cobertura del producto que se va a excluir en el caso</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipCoverageCode_mis" xml:space="preserve">
+    <value>Cobertura asociada al producto</value>
+    <comment>Tooltip limite suma asegurada</comment>
+  </data>
+  <data name="ttipCurrencyCode_mis" xml:space="preserve">
+    <value>Moneda en la cual está expresado el monto</value>
+    <comment>Tooltip limite suma asegurada</comment>
+  </data>
+  <data name="ttipExclusionPeriodType_ex" xml:space="preserve">
+    <value>Indica el período durante el cual la cobertura o enfermedad quedará excluida de la póliza</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipExclusionType" xml:space="preserve">
+    <value>Tipo de exclusión  </value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipImpairmentCode" xml:space="preserve">
+    <value>Enfermedad que se va a excluir en el caso</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipMaximumInsuredAmount" xml:space="preserve">
+    <value>Monto de la suma asegurada máxima de la cobertura</value>
+    <comment>Tooltip limite suma asegurada</comment>
+  </data>
+  <data name="ttipProductModule" xml:space="preserve">
+    <value>Módulo del producto para el cual aplica la exclusión</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipProductModule_mis" xml:space="preserve">
+    <value>Módulo asociado al producto </value>
+    <comment>Tooltip limite suma asegurada</comment>
+  </data>
+  <data name="ttipRatingTable" xml:space="preserve">
+    <value>Tarifa del producto para la cual aplican las exclusiones de las enfermedades cuando el tipo es "exclusión de enfermedad por tarifa"</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipWaitingPeriodDays" xml:space="preserve">
+    <value>Cantidad de días a partir de la vigencia de la cobertura durante la cual estará excluida de la póliza</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipWaitingPeriodMonths" xml:space="preserve">
+    <value>Cantidad de meses a partir de la vigencia de la cobertura durante la cual estará excluida de la póliza</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ttipWaitingPeriodYears" xml:space="preserve">
+    <value>Cantidad de años a partir de la vigencia de la cobertura durante la cual estará excluida de la póliza</value>
+    <comment>Tooltip exclusiones</comment>
+  </data>
+  <data name="ExistRestriction" xml:space="preserve">
+    <value>Ya existe una restriccion de este tipo</value>
+  </data>
+  <data name="msgFailed" xml:space="preserve">
+    <value>Operación fallida</value>
+  </data>
+  <data name="msgFillAlarm" xml:space="preserve">
+    <value>Alarma: Debe agregar al menos una alarma.</value>
+  </data>
+  <data name="msgFillDescoexprem" xml:space="preserve">
+    <value>Recargos y descuentos: Debe agregar al menos una restricción.</value>
+  </data>
+  <data name="msgFillExclusion" xml:space="preserve">
+    <value>Exclusion: Debe agregar al menos una restricción.</value>
+  </data>
+  <data name="msgFillMaxInsuredSum" xml:space="preserve">
+    <value>Máxima suma asegurada: Debe agregar al menos una restricción.</value>
+  </data>
+  <data name="msgSuccess" xml:space="preserve">
+    <value>Operación exitosa, regla generada # @rule@</value>
+  </data>
+  <data name="msgSuccessDelete" xml:space="preserve">
+    <value>Operación exitosa, regla eliminada # @rule@</value>
+  </data>
+  <data name="msgSuccessEdit" xml:space="preserve">
+    <value>Operación exitosa, regla editada # @rule@</value>
+  </data>
+  <data name="ConfirmChanges" xml:space="preserve">
+    <value>Confirmar cambios</value>
+  </data>
+  <data name="msgDeletedDenied" xml:space="preserve">
+    <value>No se puede eliminar, la regla esta en uso</value>
+  </data>
+  <data name="msgSuccessfull" xml:space="preserve">
+    <value>Operación exitosa</value>
+  </data>
+  <data name="msgSelectBranch" xml:space="preserve">
+    <value>Seleccione un ramo para agregar una alarma</value>
+  </data>
+  <data name="TbUwrHistory" xml:space="preserve">
+    <value>Se van a eliminar todos los registros históricos de la regla de suscripción.</value>
+  </data>
+  <data name="TbUwRCaseStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ttipStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="tblDisExXPremiumDiscountOnlyInsured" xml:space="preserve">
+    <value>Aplica sobre el asegurado</value>
+  </data>
+  <data name="TbUwRUpdOnlyRisk" xml:space="preserve">
+    <value>Modifica solo el riesgo asociado</value>
+  </data>
+  <data name="ttipUpdateOnlyAssociatedRisk" xml:space="preserve">
+    <value>Indica si solo el riesgo asociado es modificado</value>
+    <comment>ToolTip alarmas</comment>
+  </data>
+  <data name="ttipXPremiumDiscountOnlyInsured" xml:space="preserve">
+    <value>Indica si el recargo/descuento aplica sobre el asegurado</value>
+  </data>
+  <data name="tblDisExTypeOfUnit" xml:space="preserve">
+    <value>¿Tasa?</value>
+    <comment>Encabezado tabla recargos y descuentos</comment>
+  </data>
+  <data name="ttipTypeOfUnit" xml:space="preserve">
+    <value>¿Tasa?</value>
+    <comment>ToolTip recargos/descuentos</comment>
+  </data>
+</root>

@@ -1,0 +1,66 @@
+﻿{
+  "app": {
+    "title": "Mantenimiento de equipos",
+    "form": {
+             "UserGroup_Message_Notify_update4": "Se actualizó correctamente el grupo",
+             "UserGroup_Title_Notify_update4": "Actualización de grupo",
+             "UserGroup_Message_Notify_update6": "No se pudo actualizar el grupo",
+             "UserGroup_Title_Notify_update6": "Actualización de grupo",
+             "UserGroup_Message_Notify_delete6": "Se eliminó correctamente",
+             "UserGroup_Title_Notify_delete6": "Eliminación del grupo",
+             "UserGroup_Message_Notify_delete8": "Existe tareas que tiene vinculación con este grupo",
+             "UserGroup_Title_Notify_delete8": "Eliminación del grupo",
+             "UserGroup_Message_Notify_delete9": "No se puede eliminar el grupo",
+             "UserGroup_Title_Notify_delete9": "Eliminación del grupo",
+             "UserGroup_Message_Notify_delete11": "Existe tareas que tiene vinculación con este grupo",
+             "UserGroup_Title_Notify_delete11": "Eliminación del grupo",
+             "UserGroup_Message_Notify_insert4": "Se agregó correctamente el grupo",
+             "UserGroup_Title_Notify_insert4": "Agregar grupo",
+             "UserGroup_Message_Notify_insert6": "No se pudo agregar el grupo",
+             "UserGroup_Title_Notify_insert6": "Agregar grupo",
+             "UserGroup_Title": "",
+             "UserGroup_AddButtonCaption": "Agregar",
+             "UserGroup_DeleteButtonCaption": "Eliminar",
+             "Id_Label": "Identificador",
+             "UserGroupTbl_Id_Title": "Identificador",
+             "Id_Tooltip": "Id",
+             "Id_Measure": "",
+             "Id_Legend": "",
+             "Id_Prefix": "",
+             "Id_RequiredMessage": "El identificador es requerido",
+             "Description_Label": "Nombre",
+             "UserGroupTbl_Description_Title": "Nombre",
+             "Description_Tooltip": "Description",
+             "Description_Measure": "",
+             "Description_Legend": "",
+             "Description_Prefix": "",
+             "Description_Watermark": "",
+             "Description_RequiredMessage": "El nombre es requerido",
+             "OwnerId_Label": "Supervisor",
+             "UserGroupTbl_OwnerId_Title": "Supervisor",
+             "OwnerId_Tooltip": "Indica quien es el usuario propietario del equipo",
+             "OwnerId_Measure": "",
+             "OwnerId_Legend": "",
+             "OwnerId_Prefix": "",
+             "OwnerId_FirstEmptyMessage": "",
+             "GridViewPopup_SaveButtonCaption": "Guardar",
+             "GridViewPopup_CancelButtonCaption": "Cancelar",
+             "GridViewPopup_TitleCaption": "Información"
+
+    },
+    "validation": {
+        "Id": {
+             "AutoNumericMinValue": "El valor mínimo permitido es -99999",
+             "AutoNumericMaxValue": "El valor máximo permitido es 99999",
+             "required": "El identificador es requerido"
+        },
+        "Description": {
+             "maxlength": "El campo permite 39 caracteres máximo",
+             "required": "El nombre es requerido"
+        },
+        "OwnerId": {
+
+        }
+    }
+  }
+}

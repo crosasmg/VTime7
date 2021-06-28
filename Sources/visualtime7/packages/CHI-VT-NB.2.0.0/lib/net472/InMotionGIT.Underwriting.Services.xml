@@ -1,0 +1,3222 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Underwriting.Services
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Underwriting.Services.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Services.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Services.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.Apply(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, asociadas a un ramo/producto.
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="requirementClientId">Código del cliente asociado al requerimiento.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <param name="userId">Código del usuario que crea o actualiza la información.</param>
+ <param name="ruleList">indica una lista de reglas a ser aplicadas. La lista debe estar separada por comas.</param>
+ <param name="explanationRule">Explicación de la regla en caso que se desee una distinta a la agregada propiamente a la regla.</param>
+ <param name="answer">Respuesta a la regla.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ApplyOneRule(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime,System.Int32,System.String)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, según se configure.
+ </summary>
+ <param name="currentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="rule">Configuración de la regla a ser aplicada.</param>
+ <param name="requirementClientId">Código del cliente asociado al requerimiento.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <param name="userId">Código del usuario que crea o actualiza la información.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ApplyAlarmForProduct(InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.Int64,System.DateTime,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, asociadas a un ramo/producto.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="requirementId">Identificador del requerimiento al cual se le aplicara la regla.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ApplyAlarmOnly(InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.RuleAlarms,InMotionGIT.Underwriting.Contracts.Requirement,System.DateTime)">
+ <summary>
+ Aplica las reglas para las alarmas que no están vinculadas a ningún tipo de restricción.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="alarm">Alarma de la regla de suscripción</param>
+ <param name="requirement">Requerimiento al cual se le aplicara la regla.</param>
+ <param name="atDate">Fecha del proceso.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.AdNewRule(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.Requirement,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule)">
+ <summary>
+ Crea una nueva regla asociada al caso
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="requirement">Requerimiento al cual se le aplicara la regla.</param>
+ <param name="rule">Regla a ser aplicada.</param>
+ <returns>Regla aplicada</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.CalculateDiffPoint(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.Requirement,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule)">
+ <summary>
+ Calcula el balance de puntos asociados a la regla a ser aplicada.
+ </summary>
+ <param name="caseRule">Regla generada asociada a caso.</param>
+ <param name="uwcase">Instancia del caso de suscripción.</param>
+ <param name="requirement">Requerimiento al cual se le aplicara la regla.</param>
+ <param name="rule">Regla a ser aplicada.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ReCalculateDiffPoint(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.Requirement,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule)">
+ <summary>
+ Calcula el balance de puntos asociados a la regla editada.
+ </summary>
+ <param name="caseRule">Regla generada asociada a caso.</param>
+ <param name="uwcase">Instancia del caso de suscripción.</param>
+ <param name="requirement">Requerimiento al cual se le aplicara la regla.</param>
+ <param name="rule">Regla a ser aplicada.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.JoinDictionary(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ Realizar el unión entre dos variable del tipo diccionario.
+ </summary>
+ <param name="target">Variable donde se unificaran las listas.</param>
+ <param name="toAdd">Variable a unificar.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ApplyAlarmType(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.RuleAlarms,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule)">
+ <summary>
+ Aplica sobre el caso, la decisión y estado según  el tipo de alarma.
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="alarm">Alarma de la regla de suscripción</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.ApplyRequirementStatus(InMotionGIT.Underwriting.Contracts.Requirement,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule)">
+ <summary>
+ Aplica sobre el caso, la decisión y estado según  el tipo de alarma.
+ </summary>
+ <param name="requirement">Requerimiento al cual se le aplicara la regla.</param>
+ <param name="rule">Regla a ser aplicada.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.DeleteRule(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.UnderwritingRule,System.Int64)">
+ <summary>
+ Elimina una regla asociada al caso.
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="rule">Regla a ser eliminada.</param>
+ <param name="requirementId">Identificador del requerimiento al cual se le eliminara la regla.</param>
+ <returns>Valor booleano que representa si se logro o no eliminar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.AddApplyRuleNoteToDNE(InMotionGIT.Underwriting.Contracts.TabUnderwritingRule@,InMotionGIT.Underwriting.Contracts.ApplyRuleResult@,System.Int64,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="rule"></param>
+ <param name="result"></param>
+ <param name="requirementId"></param>
+ <param name="commentary"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ApplyRule.GenerateNote(System.String,InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="Explanation"></param>
+ <param name="UwCase"></param> 
+ <param name="token"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Coverages.ApplyMaximumSumInsured(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica las reglas asociadas al máximo de suma asegurada.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="resultApplyRule">Caso de suscripción.</param>
+ <param name="atDate">Fecha del proceso.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Coverages.ApplyExclusionCoverage(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica la regla de exclusión de cobertura.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="resultApplyRule">Caso de suscripción.</param>
+ <param name="atDate">Fecha del proceso</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Exclusion.ApplyExclusion(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,InMotionGIT.Underwriting.Contracts.RuleRestrictions,System.DateTime,System.String)">
+ <summary>
+ Aplica las reglas de exclusión por enfermedad o por cobertura.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Exclusion.ApplyExclusionImpairment(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica la regla de exclusión por enfermedad.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="atDate">Fecha del proceso</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Exclusion.ApplyExclusionImpairmentAmendment(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica la regla de exclusión por enfermedad al objeto Amendment.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="atDate">Fecha del proceso</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Exclusion.ApplyExclusionInsured(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica la regla de exclusión de cobertura.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="atDate">Fecha del proceso</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ExtraPremiumDiscount.ApplyExtraPremium(InMotionGIT.Underwriting.Contracts.ApplyRuleResult,InMotionGIT.Underwriting.Contracts.UnderwritingRule,System.DateTime)">
+ <summary>
+ Aplica las reglas de asociadas a los recargos o descuentos.
+ </summary>    
+ <param name="rule">Regla a ser aplicada.</param>        
+ <param name="resultApplyRule">Resultado de la aplicación de la regla de suscripción.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ExtraPremiumDiscount.ApplyExtraPremiumInsured(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica las reglas de asociadas a los recargos o descuentos.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="resultApplyRule">Resultado de la aplicación de la regla de suscripción.</param>   
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ExtraPremiumDiscount.ApplyAllExtraPremiumOrDiscountInPolicy(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica las reglas de asociadas a los recargos o descuentos.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="resultApplyRule">Resultado de la aplicación de la regla de suscripción.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.ExtraPremiumDiscount.ApplyAllFlatExtraPremiumOrDiscountInAmendment(InMotionGIT.Underwriting.Contracts.UnderwritingRule,InMotionGIT.Underwriting.Contracts.ApplyRuleResult,System.DateTime)">
+ <summary>
+ Aplica las reglas de asociadas a los recargos o descuentos al objeto Amendment.
+ </summary>
+ <param name="rule">Regla a ser aplicada.</param>
+ <param name="resultApplyRule">Resultado de la aplicación de la regla de suscripción.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.CaseHistory.GenerateHistoryUWCase(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.Requirement,InMotionGIT.Underwriting.Contracts.Enumerations.EnumEntryType,InMotionGIT.Underwriting.Contracts.Enumerations.EnumManualOrAutomatic,System.Int32,System.String)">
+ <summary>
+ Genera un nuevo registro en el historial de un caso de suscripción.
+ </summary>
+ <param name="uwCase">Instancia del caso a agregar el historial.</param>
+ <param name="requirement">Instancia del requerimiento.</param>
+ <param name="entryType">Tipo de movimiento realizado en la historia.</param>
+ <param name="manualOrAutomatic">Si es manual o automatico el movimiento.</param>
+ <param name="auditUser">Identificador del usuario que ejecuto la acción.</param>
+ <param name="remark">Obervaciones.</param>
+ <returns>Valor booleano que representa si se logro o no realizar la inserción en la historia del caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.CaseHistory.SelectAll(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene el historial de movimiento de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna el historial de movimientos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Requirement.DeleteRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un requerimiento de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementID">Identificador del requerimiento a eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Requirement.InsertRequirementOnCache(System.Int32,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String,System.Int32,System.Int64,System.Decimal,System.Decimal,System.Int64,System.Int64,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Crea un nuevo requerimiento y lo inserta en la instancia del caso que se encuentra en caché..
+ </summary>
+ <param name="requirementType">Tipo de requerimiento.</param>
+ <param name="clientId">Identificador del cliente.</param>
+ <param name="processType">Tipo de proceso.</param>
+ <param name="underwritingArea">Área de suscripción.</param>
+ <param name="requirementDate">Fecha de solicitud requerimiento.</param>
+ <param name="receptionDate">Fecha de recepción del requerimiento.</param>
+ <param name="status">Estado del requerimiento.</param>
+ <param name="alarmType">Tipo de alarma.</param>
+ <param name="providerID">Identificador del proveedor.</param>
+ <param name="payer">Pagador.</param>
+ <param name="requirementID">Identificador del requerimiento.</param>
+ <param name="cost">Costo del requerimiento.</param>
+ <param name="costDueAmount">Monto a pagar.</param>
+ <param name="totalCredits">Total de créditos.</param>
+ <param name="totalDebits">Total de débitos</param>
+ <param name="balance">Balance del requerimiento.</param>
+ <param name="codigoAcord"></param>
+ <param name="creatorUserCode">Identificador del usuario que crea el requerimiento.</param>
+ <param name="formId">Identificador de la forma.</param>
+ <param name="language">Identificador del lenguaje.</param>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Requirement.SelectAllRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los requerimientos asociados a un caso, con sus respectivos valores.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de requerimientos asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Requirement.SelectDecisions(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene una colección de las decisiones aplicadas al caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna la colección de las decisiones aplicadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Requirement.UpdateRequirement(InMotionGIT.Underwriting.Contracts.Requirement,System.Boolean)">
+ <summary>
+ Actualiza la información de un requerimiento.
+ </summary>
+ <param name="requerimient">Información del requerimiento a modificar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Restriction.SelectAllRestriction(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Selecciona todas las restricciones creadas al caso de suscripción.
+ </summary>
+ <param name="caseId">Idenficador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de las restricciones.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Restriction.SelectRestrictionByUnderwritingRuleId(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Selecciona la información de una restricción filtrada por identificador de una regla de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="UnderwritingRuleId">Identificador de la regla de suscripción.</param>
+ <param name="requirementId">Idenficador del requerimiento.</param>
+ <param name="AlarmType">Tipo de alarma.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna la información de una restricción asociada a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.FillRoleInCaseInformation(InMotionGIT.Underwriting.Contracts.UnderwritingCase@)">
+ <summary>
+ This method fills the role in case information when the object underwriting case is asked at first time (by RetrieveByKey method)
+ on class UnderwritingCase on custom folder
+ </summary>
+ <param name="instance">Sets the underwriting case instance</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.SelectAllRoleInCase(System.Int64,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.SelectAllRoleInCaseByRequirementType(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso filtrado por un tipo de requerimiento.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementType">Identificador del tipo de requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.DeleteRoleInCase(System.Int64,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleInCase">Instancia del rol que se desea eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.DeleteRoleInCase(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleIdToDelete">Identificador del rol a eliminar</param>
+ <param name="clientIdDelete">Identificador del cliente.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.AddRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Agrega un nuevo rol a un caso de suscripción.
+ </summary>
+ <param name="newRoleInCase">Instancia de rol a incluir.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si la operación se realizo o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.UpdateRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Actualiza un rol asociado a un caso de suscripción.
+ </summary>
+ <param name="originalRole">Instancia del rol que se desea actualizar.</param>
+ <param name="newRole">Instancia del rol con la información a actualizar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.SelectProviders(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los proveedores seleccionados en un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de proveedores.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.SelectProvidersByFilter(System.Int32,System.String)">
+ <summary>
+ Obtiene los proveedores filtrados por el nombre.
+ </summary>
+ <param name="lineOfBusiness">Identificador del ramo.</param>
+ <param name="filterName">Cadena de carácteres para filtrar por el nombre del proveedor.</param>
+ <returns>Retorna una lista de proveedores.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.InitializeClient(System.String,InMotionGIT.Underwriting.Contracts.RoleInCase@)">
+ <summary>
+ Initialize the client object with the id specified
+ </summary>
+ <param name="clientId">Sets the client id</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.GetActuarialAge(InMotionGIT.Underwriting.Contracts.RoleInCase)">
+ <summary>
+ Gets the client actuarial age
+ </summary>
+ <param name="roleInCase"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.RoleActivesByRequirementTypeLkp(System.Collections.Generic.List{InMotionGIT.Underwriting.Contracts.RoleInCase},System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento por rol' según el lenguaje y tipo de requerimiento.
+ </summary>
+ <param name="requirementType">Tipo de requirimiento sobre el cual se filtrarán los tipos de requerimiento.</param> 
+ <param name="languageID">Lenguaje en que se muestra la información.</param> 
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.RoleInCase.AddRoleInCaseByProvider(System.String)">
+ <summary>
+ Agrega un nuevo rol a un caso de suscripción.
+ </summary>
+ <param name="providerId">Identificador del proveedor a incluir como rol.</param>
+ <returns>Nuevo rol construido a base de un proveedor.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.BytesToString(System.Byte[])">
+ <summary>
+  Convierte de un array de bytes a String
+ </summary>
+ <param name="arrayValue">Array de bytes a convertir</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.UWCaseRequiresManualEvaluation(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ Evalua si el caso tiene una restricción que requiera evaluación manual y adicionalmente se tengan requerimientos pendientes.
+ </summary>
+ <param name="UnderwritingCase"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.ChangeRiskInformationObjectByAmendment(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.String)">
+ <summary> 
+ Reemplaza la información de los objetos del risk information (CoverageWithCalculatedPremium, ExtraPremiumDiscountByInsureds, ExcludedIllnessInHealthPolicies) por la información que se encuentra dentro del objeto amendment. 
+ </summary>
+ <param name="currentRiskInformation">Risk Information que será reemplazado.</param>
+ <returns> Risk Information luego de reemplazar la información de los objetos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.CompareRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase@,InMotionGIT.Policy.Entity.Contracts.Role,System.Boolean)">
+ <summary>
+ Compara un objeto tipo Rol de Policy Contracts con uno RoleInCase de Underwriting Contracts.
+ </summary>
+ <param name="RoleInCase"></param>
+ <param name="Role"></param>
+ <param name="ImplementChanges"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GetActualCaseHistoryId(System.Int64,System.Int64)">
+ <summary>
+ 
+ </summary>
+ <param name="UnderwritingCaseId"></param>
+ <param name="CaseHistoryId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GetCaseHistory(System.Int64,System.Int64)">
+ <summary>
+ Retorna un objeto Case History.
+ </summary>
+ <param name="UnderwritingCaseId"></param>
+ <param name="CaseHistoryId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.IsDifferentRisk(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ 
+ </summary>
+ <param name="UnderWritingCase"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.CompareDiscountExtraPremiumTaxOfPolicies(InMotionGIT.Policy.Entity.Contracts.DiscountExtraPremiumTaxOfPolicyCollection,InMotionGIT.Policy.Entity.Contracts.DiscountExtraPremiumTaxOfPolicyCollection)">
+ <summary>
+ Compara DiscountExtraPremium
+ </summary>
+ <param name="ActualDiscountExtraPremiumTaxOfPolicies"></param>
+ <param name="LastDiscountExtraPremiumTaxOfPolicies"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.RemoveInstance(System.Int32)">
+ <summary>
+ Elimina del caché una instancia del objeto underwriting case.
+ </summary>
+ <param name="caseId">Número del caso.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.RetrieveInstance(System.Int32,System.Boolean)">
+ <summary>
+ Retorna una instancia del objeto underwriting case almacenado en caché en caso de que exista, a partir de un número de caso.
+ en caso que no exista la clave en caché se busca en base de datos y se almacena en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obliga a obtener de nuevo la información del caso de la BD.</param>
+ <returns>Instancia del objeto underwriting case en base a su identificador.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.RetrieveRiskInformatioByRelease(System.Int32,System.Int32)">
+ <summary>
+ 'Get Last instance of UnderwritingCaseRisk
+ </summary>
+ <param name="UnderwritingCaseID"></param>
+ <param name="Release"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.RetrieveUnderwritingCaseByRelease(System.Int32,System.Int32)">
+ <summary>
+ 'Get Last instance of UnderwritingCaseRisk
+ </summary>
+ <param name="UnderwritingCaseID"></param>
+ <param name="Release"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.RetrieveUnderwritingCaseRiskOld(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ 
+ </summary>
+ <param name="UnderWritingCase"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.StorageInstance(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ Guarda en caché una instancia del objeto underwriting case.
+ </summary>
+ <param name="value">Instancia del objeto underwriting case a almacenar en caché.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.StringToBytes(System.String)">
+ <summary>
+  Convierte de un value tipo string a un array de bytes()
+ </summary>
+ <param name="value">value de string a convertir</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GetLastHistoryIfManual(InMotionGIT.Underwriting.Contracts.CaseHistoryCollection,System.Int32)">
+ <summary>
+ Obtiene ultimo historial si el registro es manual
+ </summary>
+ <param name="caseHistoryCollection"></param>
+ <param name="lockedBy"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.isManualEditionMovement(InMotionGIT.Underwriting.Contracts.CaseHistory)">
+ <summary>
+ Verifica y retorna true si el registro historial del caso fue editado manualmente.
+ </summary>
+ <param name="caseHistory"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GetLastHistory(InMotionGIT.Underwriting.Contracts.CaseHistoryCollection)">
+ <summary>
+ Obtiene el ultimo registro de la colección de historia del caso.
+ </summary>
+ <param name="caseHistoryCollection"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GetLastHistoryWithoutEditionEntry(InMotionGIT.Underwriting.Contracts.CaseHistoryCollection,System.Int32)">
+ <summary>
+ Obtiene el ultimo registro de la colección de historia del caso, que no tenga como entry type edicion cancelada.
+ </summary>
+ <param name="caseHistoryCollection"></param>
+ <param name="lockedBy"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.AssignFaceAmountByRiskInformationCoverage(InMotionGIT.Underwriting.Contracts.UnderwritingCase@)">
+ <summary>
+ Asigna al FaceAmount del caso el valor de la cobertura principal del caso.
+ </summary>
+ <param name="value">Caso de suscripción en tratamiento.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.CreateSequence(System.Int64,System.String)">
+ <summary>
+ It creates or generates a sequence if there is no sequence related to the CaseId in the DB
+ </summary>
+ <returns>SequenceId</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.Support.GenerateTypeOfNoteTag(System.Int32,System.Int32,System.Int64)">
+ <summary>
+ It generates tagId Case
+ </summary>
+ <param name="sequenceId">SequenceId</param>
+ <param name="consequenceId">ConsequenceId</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingCase.SelectAll(System.String,System.Boolean)">
+ <summary>
+ Obtiene una instancia del objeto underwriting case de base de datos o caché por medio del identificador de un caso.
+ </summary>
+ <param name="underwritingCaseId">Identificado del caso.</param>
+ <param name="wasLocked">Valor booleano, si el objeto se encuentra bloqueado establecer en verdadero, de lo contrario falso.</param>
+ <returns>Retorna una instancia de un caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingCase.SelectCaseInfo(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+  Obtiene información relacionada a un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Número de caso a buscar.</param>
+ <param name="languageId">Identificador del idioma.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna un objeto Dictionary con toda la información relacionada a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingCase.UpdateLockedObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualiza un caso que se encuentra bloqueado por modificación.
+ </summary>
+ <param name="uwCase">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario que realiza la modificación.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingCase.UpdateObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualizar objeto en base de datos.
+ </summary>
+ <param name="instance">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la actualización o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingRule.SelectAllUnderwritingRule(System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene lista de reglas asociadas a un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de reglas de suscripción asociadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingRule.SelectUnderwritingRuleByRuleId(System.Int32,System.Int32,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene toda la información relaciona a una regla de suscripción de un caso específico.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla de suscripción.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Información de la regla de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Helpers.UnderwritingRule.DeleteUnderwritingRule(System.Int32,System.Int32,System.String,System.Boolean,System.Int32,System.Boolean)">
+ <summary>
+ Elimina una regla de suscripción de un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla.</param>
+ <param name="allRecord">Valor booleano que representa si se eliminan todas las restricciones asociadas a la regla.</param>
+ <param name="userId">Identificador de la regla.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Instancia del caso de suscripción con las modificaciones realizadas.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Inspectors.Inspector.ValidateAccessToSchedule(System.String)">
+ <summary>
+ Validates the request for the scheduler.
+ </summary>
+ <param name="operationName"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.RetrieveUnderwritingCasesByGuide(System.Int64,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, una lista con la información de los casos de suscripción, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.RetrieveGuide(System.Int64,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, instancia con información de la guía, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.SyncronizeGuide(InMotionGIT.Underwriting.Contracts.Guide,System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>
+ <param name="guide">Instancia de la guía.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.SyncronizeUnderwritingCaseGuide(System.Collections.Generic.List{InMotionGIT.Underwriting.Contracts.UnderwritingCaseGuide},System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción asociado a una guía, en la base de datos.
+ </summary>
+ <param name="underwritingcases">lista de casos de suscripción asociados a una guía.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.RetrieveUnderwritingCasesGuide(System.Int32,System.Int32,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="guideType">Tipo de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, instancia con información de caso de los casos de suscripción por guía, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.GuideTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple del 'Tipo de guía' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabGuideStatus' y 'TransGuideStatus' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.GuideStatusLkp(System.Int32)">
+ <summary>
+  Lista de valores simple de la 'Estado de la guía' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="languageID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.LocationCaseLkp(System.Int32)">
+ <summary>
+  Lista de valores simple de la 'Ubicación del caso asociado a una guía'.
+ </summary>
+ <param name="languageID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.GuideTypeDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del tipo de guía.
+ </summary>
+ <param name="guideType">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción del tipo de guía.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.GuideStatusDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del status de una guía.
+ </summary>
+ <param name="guideStatusCode">Identificacion del status de la guía</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción del status de la guía </returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IGuide.LocationCaseDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la ubicación del caso.
+ </summary>
+ <param name="location">Identificación de la ubicación del caso de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.AlarmTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de alarmas' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabAlarmType' y 'TransAlarmType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.CurrencyLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Monedas' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabCurrency' y 'TransCurrency' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.DecisionTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de decisión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDecisionType' y 'TransDecisionType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.DegreeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Nivel de la enfermedad' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDegree' y 'TransDegree' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.DiscountOrExtraPremiumLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de recargos y descuentos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDiscountOrExtraPremium' y 'TransDiscountOrExtraPremium' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.EntryTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipo de transacción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabEntryType' y 'TransEntryType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.ExclusionPeriodTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Períodos de exclusión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabExclusionPeriodType' y 'TransExclusionPeriodType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.ExclusionTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de exclusión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabExclusionType' y 'TransExclusionType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.GenderLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Género del cliente' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabGender' y 'TransGender' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.GetListModuleByRiskInformation(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Permite obtener los módulos asociadas al producto de la póliza y que se encuentran en el risk information.
+ </summary>
+ <param name="underwritingCaseId">Identificador del caso.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageId">Lenguaje en que se muestra la información.</param>
+ <returns>Retorna lista de módulos relacionados al producto que se encuentran en el risk information.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.GetListCoverageByRiskInformation(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Permite obtener las coberturas asociadas al producto de la póliza y que se encuentran en el risk information.
+ </summary>
+ <param name="underwritingCaseId">Identificador del caso.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageId">Lenguaje en que se muestra la información.</param>
+ <returns>Retorna lista de coberturas relacionadas al producto que se encuentran en el risk information.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.IllnessTypeByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabIllnessType' y 'TransIllnessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.IllnessTypeDescription(System.String,System.Int32)">
+ <summary>
+ Descripción de la enfermedad.
+ </summary>
+ <param name="impairmentCode">Identificación de la enfermedad</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.IllnessTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de enfermedad' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabIllnessType' y 'TransIllnessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.ManualOrAutomaticTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Origen de la información' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabManualOrAutomaticType' y 'TransManualOrAutomaticType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.PayableByTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Pagador del requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabPayableByType' y 'TransPayableByType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.ProcessTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipo de proceso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabProcessType' y 'TransProcessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.QuestionDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la pregunta.
+ </summary>
+ <param name="questionId">Identificación de la pregunta</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.QuestionsFromRequirementFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de las 'Preguntas de cuestionarios' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabQuestionsFromRequirement' y 'TransQuestionsFromRequirement' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.QuestionsFromRequirementLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Preguntas de cuestionarios' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabQuestionsFromRequirement' y 'TransQuestionsFromRequirement' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RejectionReasonLkp(System.Int32)">
+ <summary>
+ Retorna una lista de valores simple correspondiente a los 'Tipos de Razones de Rechazo' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de razones de rechazo.</returns>
+ <remarks>La tablas 'TabRejectionReason' y 'TransRejectionReason' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementStatusTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Estados de los requerimientos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementStatusType' y 'TransRequirementStatusType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeActivesByClientRoleLkp(System.Int64,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje y rol del cliente indicado.
+ </summary>
+ <param name="UnderwritingCaseId">Identificador del caso de suscripción.</param> 
+ <param name="ClientID">Cliente seleccionado.</param> 
+ <param name="languageID">Lenguaje en que se muestra la información.</param> 
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeByRoleInUWCaseLkp(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje y rol del cliente indicado contenidos en el objeto underwritingcase.
+ </summary>
+ <param name="UnderwritingCase">Identificador del caso de suscripción.</param> 
+ <param name="ClientID">Cliente seleccionado.</param> 
+ <param name="languageID">Lenguaje en que se muestra la información.</param> 
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeActivesByRoleLkp(System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según el rol y lenguaje. 
+ </summary>
+ <param name="RoleCode">Tipo de rol sobre el cual se filtrarán los tipos de requerimiento.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeActivesByRolesLkp(System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según el rol y lenguaje. 
+ </summary>
+ <param name="RoleCodes">Roles sobre los cuales se filtrarán los tipos de requerimiento.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeActivesLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según el lenguaje. 
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeByFilterLkp(System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Tipos de requerimiento' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeByProductLkp(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el ramo, producto y lenguaje.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeByProductLookup(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de los 'Tipos de requerimiento' según el ramo, producto y lenguaje.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del tipo de requisito.
+ </summary>
+ <param name="requirementType">Tipo de requisito</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RequirementTypeLookup(System.Int32)">
+ <summary>
+ Lista de los 'Tipos de requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RestrictionTypeLkp(System.Int32)">
+ <summary>
+ Retorna los datos de una sola regla de suscripción según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RetrieveTabUnderwritingRuleByRuleId(System.Int32,System.Int32)">
+ <summary>
+ Recupera al información de una 'Aplicación de reglas de suscripción' por su identificación.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, una instancia de la regla, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RetrieveTabUnderwritingRuleValidByRuleId(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Recupera la información de una 'Regla de suscripción' por su identificación.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="lastVersion">Valor booleano si es verdadero se obtiene la versión válida hasta la fecha actual, si es falso se obtiene la última versión de la regla.</param>
+ <returns>En caso de estar registrada, una instancia de la regla, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RiskClassTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Categoría de riesgos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRiskClassType' y 'TransRiskClassType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RoleActivesByRequirementTypeLkp(System.Int32,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento por rol' que se encuentren activos según el tipo de requerimiento, roles y lenguaje. 
+ </summary>
+ <param name="requirementType">Tipo de requerimiento sobre el cual se filtrarán los tipos de requerimiento por rol.</param>
+ <param name="roleCodes">Roles sobre los cuales se filtrarán los tipos de requerimiento.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.RolesLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de rol' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.StageByRoleFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+  Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <param name="rolId">Rol del usuario.</param>
+ <returns>Registros asociados al producto, ramo y rol de usuario correspondiente pertenecientes a las tablas 'TabStageCase' y 'TransStageCase' que se encuentren activos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.StageDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la etapa de suscripción.
+ </summary>
+ <param name="stage">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.StageFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+  Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.StageLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabStageCase' y 'TransStageCase' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingAreaTypeActiveLkp(System.Int32)">
+ <summary>
+ Lista de valores activos del 'Área de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingAreaType' y 'TransUnderwritingAreaType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingAreaTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Áreas de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingAreaType' y 'TransUnderwritingAreaType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseLookup(System.Int32)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseLookupByFilter(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros</param>
+ <param name="orderBy">Indica el campo por el cual se van a ordernar los registros</param>
+ <param name="sortOrder">Indica el orden de los registros (ASC, DESC)</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseLookupByFilterWithoutPagination(System.Int32,System.String)">
+ <summary>
+ Lista de casos de suscripción existentes, sin uso de paginación.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseLookupByFilterCount(System.Int32,System.String,System.String)">
+ Cantidad de casos de suscripción existentes.
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros</param>
+ <param name="orderBy">Indica el campo por el cual se van a ordernar los registros</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseStatusTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de estado de un caso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabTabUnderwritingCaseSType' y 'TransTabUnderwritingCaseSType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingCaseTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de caso de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingCaseType' y 'TransUnderwritingCaseType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingRuleByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Aplicación de reglas de suscripción' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingRuleDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la regla de suscripción.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingRuleLookup(System.Int32,System.Boolean)">
+ <summary>
+ Lista de las 'Aplicación de reglas de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingRulesTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Estados de una regla de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRulesType' y 'TransUnderwritingRulesType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.StageByRolesFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <param name="rolesCode">String de roles separados por pipe '|'.</param>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Indica si se debe o no reutilizar la información del cache.</param>
+ <returns>Registros asociados al producto, ramo y rol de usuario correspondiente pertenecientes a las tablas 'TabStageCase' y 'TransStageCase' que se encuentren activos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ILookups.UnderwritingRuleDistinctByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores sin duplicados de las 'Reglas de suscripción' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>        
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRequirement.InsertRequirementOnCache(System.Int32,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String,System.Int32,System.Int64,System.Decimal,System.Decimal,System.Int64,System.Int64,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Crea un nuevo requerimiento y lo inserta en la instancia del caso que se encuentra en caché.
+ </summary>
+ <param name="requirementType">Tipo de requerimiento.</param>
+ <param name="clientId">Identificador del cliente.</param>
+ <param name="processType">Tipo de proceso.</param>
+ <param name="underwritingArea">Área de suscripción.</param>
+ <param name="requirementDate">Fecha de solicitud requerimiento.</param>
+ <param name="receptionDate">Fecha de recepción del requerimiento.</param>
+ <param name="status">Estado del requerimiento.</param>
+ <param name="alarmType">Tipo de alarma.</param>
+ <param name="providerID">Identificador del proveedor.</param>
+ <param name="payer">Pagador.</param>
+ <param name="requirementID">Identificador del requerimiento.</param>
+ <param name="cost">Costo del requerimiento.</param>
+ <param name="costDueAmount">Monto a pagar.</param>
+ <param name="totalCredits">Total de créditos.</param>
+ <param name="totalDebits">Total de débitos</param>
+ <param name="balance">Balance del requerimiento.</param>
+ <param name="codigoAcord"></param>
+ <param name="creatorUserCode">Identificador del usuario que crea el requerimiento.</param>
+ <param name="formId">Identificador de la forma.</param>
+ <param name="language">Identificador del lenguaje.</param>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRequirement.SelectAllRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los requerimientos asociados a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de requerimientos asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRequirement.SelectDecisions(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene una colección de las decisiones aplicadas al caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna la colección de las decisiones aplicadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRequirement.UpdateRequirement(InMotionGIT.Underwriting.Contracts.Requirement,System.Boolean)">
+ <summary>
+ Actualiza la información de un requerimiento.
+ </summary>
+ <param name="requerimient">Información del requerimiento a modificar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRequirement.DeleteRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un requerimiento de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementID">Identificador del requerimiento a eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRestriction.SelectAllRestriction(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Selecciona todas las restricciones creadas al caso de suscripción.
+ </summary>
+ <param name="caseId">Idenficador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de las restricciones.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRestriction.SelectRestrictionByUnderwritingRuleId(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Selecciona la información de una restricción filtrada por identificador de una regla de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Idenficador del requerimiento.</param>
+ <param name="UnderwritingRuleId">Identificador de la regla de suscripción.</param>
+ <param name="AlarmType">Tipo de alarma.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna la información de una restricción asociada a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.SelectAllRoleInCase(System.Int64,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.SelectAllRoleInCaseByRequirementType(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso filtrado por un tipo de requerimiento.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementType">Identificador del tipo de requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.DeleteRoleInCaseByInstance(System.Int64,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleInCase">Instancia del rol que se desea eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.DeleteRoleInCaseByRoleId(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleIdToDelete">Identificador del rol a eliminar</param>
+ <param name="clientIdDelete">Identificador del cliente.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.AddRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Agrega un nuevo rol a un caso de suscripción.
+ </summary>
+ <param name="newRoleInCase">Instancia de rol a incluir.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si la operación se realizo o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.UpdateRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Actualiza un rol asociado a un caso de suscripción.
+ </summary>
+ <param name="originalRole">Instancia del rol que se desea actualizar.</param>
+ <param name="newRole">Instancia del rol con la información a actualizar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.SelectProviders(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los proveedores seleccionados en un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de proveedores.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRoleInCase.SelectProvidersByFilter(System.Int32,System.String)">
+ <summary>
+ Obtiene los proveedores filtrados por el nombre.
+ </summary>
+ <param name="lineOfBusiness">Identificador del ramo.</param>
+ <param name="filterName">Cadena de carácteres para filtrar por el nombre del proveedor.</param>
+ <returns>Retorna una lista de proveedores filtrado por nombre.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IRuleAlarms.RuleAlarmsSynchronize(InMotionGIT.Underwriting.Contracts.RuleAlarms,System.String,System.DateTime)">
+ <summary>
+ Sincroniza una instancia de tipo RuleAlarms.
+ </summary>
+ <param name="value">Instancia de tipo RuleAlarms</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Identificación de la alarma</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ISupport.RetrieveInstance(System.Int32,System.Boolean)">
+ <summary>
+ Obtiene una instancia de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obliga a obtener de nuevo la información del caso de la BD.</param>
+ <returns>Retorna instancia de un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ISupport.StorageInstance(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ Guarda en caché una instancia del objeto underwriting case.
+ </summary>
+ <param name="value">Instancia del objeto underwriting case a almacenar en caché.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ITabUnderwritingRule.TabUnderwritingRuleSynchronize(InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime)">
+ <summary>
+ Sincroniza una instancia de tipo TabUnderwritingRule.
+ </summary>
+ <param name="value">Instancia de tipo TabUnderwritingRule</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Identificación de la regla</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ITabUnderwritingRule.RetrieveTabUnderwritingRuleInstanceByRuleId(System.Int32,System.DateTime,System.Int32)">
+ <summary>
+ Obtiene una instancia de tipo TabUnderwritingRule.
+ </summary>
+ <param name="underwritingRuleId">Instancia de tipo TabUnderwritingRule</param>
+ <param name="effectDate">Fecha de efecto</param>
+ <param name="languageId">Id del lenguaje</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ITabUnderwritingRule.UnderwritingRuleLookupById(System.Int32,System.DateTime,System.Int32)">
+ <summary>
+ Obtiene una instancia de tipo TabUnderwritingRule.
+ </summary>
+ <param name="underwritingRuleId">Instancia de tipo TabUnderwritingRule</param>
+ <param name="effectDate">Fecha de efecto</param>
+ <param name="languageId">Id del lenguaje</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ITabUnderwritingRule.RetrieveTabUnderwritingRuleInstanceWithoutChilds(System.Int32,System.DateTime,System.Int32)">
+ <summary>
+ Obtiene una instancia de tipo TabUnderwritingRule.
+ </summary>
+ <param name="underwritingRuleId">Instancia de tipo TabUnderwritingRule</param>
+ <param name="effectDate">Fecha de efecto</param>
+ <param name="languageId">Id del lenguaje</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.ITabUnderwritingRule.RetrieveByRuleGuid(System.String,System.Int32)">
+ <summary>
+ Obtiene una regla por su identificador global.
+ </summary>
+ <param name="ruleGuid">Identificador global de la regla.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Retorna la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCase.SelectCaseInfo(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene información de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna objeto Dictionary con información del caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCase.SelectUnderwritingCase(System.String,System.Boolean)">
+ <summary>
+ Obtiene una instancia del objeto underwriting case de base de datos o caché por medio del identificador de un caso.
+ </summary>
+ <param name="underwritingCaseId">Identificador del caso.</param>
+ <param name="wasLocked">Valor booleano, si el objeto se encuentra bloqueado establecer en verdadero, de lo contrario falso.</param>
+ <returns>Retorna una instancia de un caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCase.UpdateLockedObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualiza un caso que se encuentra bloqueado por modificación.
+ </summary>
+ <param name="uwCase">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario que realiza la modificación.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCase.UpdateObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualiza un objeto underwriting case en base de datos.
+ </summary>
+ <param name="instance">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la actualización o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCase.UpdateWFStatusInCase(System.Int32,InMotionGIT.Underwriting.Contracts.Enumerations.EnumWorkFlowStatus)">
+ <summary>
+ Actualiza el estado del workflow en ejecución de un caso.
+ </summary>
+ <param name="caseId">Identificador del caso a actualizar.</param>
+ <param name="WFStatus">Identificador del estado en el que se encuentra el workflow.</param>
+ <returns>Valor booleano que representa si se logro realizar la actualización o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseLocked.RetrieveUnderwritingCaseLocked(System.Int64,System.DateTime)">
+ <summary>
+ Retorna el un una instancia de UnderwritingCaseLocked.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Instancia de tipo UnderwritingCaseLocked</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseLocked.RetrieveUnderwritingCaseByLocked(System.Int64,System.DateTime)">
+ <summary>
+ Retorna una instancia de UnderwritingCase.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Instancia de tipo UnderwritingCase</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseLocked.UnderwritingCaseLockedSynchronize(InMotionGIT.Underwriting.Contracts.UnderwritingCaseLocked,System.String,System.DateTime)">
+ <summary>
+ Sincroniza una instancia de tipo UnderwritingCaseLocked en la tabla.
+ </summary>
+ <param name="value">Instancia de UnderwritingCaseLocked</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseLocked.UnderwritingCaseLockedSynchronizeIncludingChildren(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.DateTime,System.Boolean)">
+ <summary>
+ Sincroniza una instancia de tipo UnderwritingCaseLocked en la tabla, así como instancias de tablas relacionadas.
+ </summary>
+ <param name="value">Instancia de UnderwritingCase</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="ValidateRiskHistory">Parámetro que indica si se debe validar el objeto Risk History</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseRisk.UnderwritingCaseRiskSynchronizeInLockedMode(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.DateTime,System.Boolean)">
+ <summary>
+ Sincroniza una instancia de tipo UnderwritingCaseRisk en la tabla.
+ </summary>
+ <param name="value">Instancia de UnderwritingCaseRisk</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseRisk.RetrieveUnderwritingCaseRiskByUnderwritingCaseId(System.Int64)">
+ <summary>
+ Obtiene colección del objeto UnderwritingCaseRisk.
+ </summary>
+ <param name="UnderwritingCaseID">Id por el cual se realizará la búsqueda de la colección del objeto UnderwritingCaseRisk.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingCaseRisk.RetrieveUnderwritingCaseRiskByUWCaseIdWithoutRiskData(System.Int64)">
+ <summary>
+ Obtiene colección del objeto UnderwritingCaseRisk sin la info del risk information.
+ </summary>
+ <param name="UnderwritingCaseID">Id por el cual se realizará la búsqueda de la colección del objeto UnderwritingCaseRisk.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.AcceptCase(System.Int64,System.String,System.Boolean,System.Int64,System.Int64,System.Int32)">
+ <summary>
+ Establece que el caso de suscripción, fue aceptado.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se acepta el caso.</param>
+ <param name="withChanges">Indica si el caso fue aceptado con cambios manuales.</param>
+ <param name="policyID">Número que identifica la póliza asociada al caso de suscripción.</param>
+ <param name="proposalID">Número de identificación de la propuesta asociada al caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.AddRequirement(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime,InMotionGIT.Underwriting.Contracts.RoleInCase,System.String,System.String,InMotionGIT.Underwriting.Contracts.Enumerations.EnumRequirementStatus,System.Int32,System.Int32)">
+ <summary>
+ Agrega un requerimiento, a un caso de suscripción.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementType">Tipo de Requerimiento.</param>
+ <param name="RequirementDate">Fecha de solicitud.</param>
+ <param name="roleInCaseItem">Rol al cual se le debe agregar el requerimiento.</param>
+ <param name="requirementURLLink">Ruta de la planilla que maneja el requerimiento.</param>
+ <param name="formId">Id asociado a la instancia de la planilla asociada al requerimiento.</param>
+ <param name="RequirementStatus">Estado del requerimiento.</param>
+ <returns>Instancia del caso con el requerimiento agregado.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.AddRole(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Client.Entity.Contracts.Client,InMotionGIT.Common.Contracts.Enumerations.EnumRole)">
+ <summary>
+ Agrega un rol al caso de suscripción, a partir de la información de un cliente.
+ </summary>
+ <param name="caseInstance">Instancia del caso de suscripción.</param>
+ <param name="clientToAdd">Instancia con la información del cliente.</param>
+ <param name="role">Rol a ser agregado.</param>
+ <returns>Instancia del caso con el rol agregado.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.CaseChangeRiskClassification(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Crea  registro en historia del caso , si se cambia la clasificación del riesgo.
+ </summary>
+ <param name="value"></param>
+ <param name="auditUserIdentify"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.CaseChangeStage(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32)">
+ <summary>
+ Crea registro en historia del caso , si se cambia la etapa.
+ </summary>
+ <param name="value"></param>
+ <param name="auditUserIdentify"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.CaseLockForEditing(System.Int64,System.String,System.Int32)">
+ <summary>
+ Bloquea un caso suscripción para su edición.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón del bloqueo.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <returns>Instancia bloqueada con información de caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.CaseUnLock(System.Int64,System.String,System.Int32)">
+ <summary>
+ Desbloquea un caso suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón del desbloqueo.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <returns>Instancia desbloqueada con información de caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.ChangeRequirementStatus(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int64,InMotionGIT.Underwriting.Contracts.Enumerations.EnumRequirementStatus,System.Int32)">
+ <summary>
+ Cambia el estado de un requerimiento, para un caso de suscripción.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementID">Identificación del requerimiento.</param>
+ <param name="requirementStatus">Nuevo estado del requerimiento.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.CloseCase(System.Int64,System.String,System.Int32,System.Int32)">
+ <summary>
+ Cierra o declina, un caso suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se declina el caso.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="rejectionReason">Motivo por el cual el caso es declinado.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.DeclineListOfCasesByFilter">
+ <summary>
+ Cierra o declina, una lista de casos de suscripción.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.GenerateHistoryUWCase(System.Int64,System.Int64,InMotionGIT.Underwriting.Contracts.Enumerations.EnumEntryType,InMotionGIT.Underwriting.Contracts.Enumerations.EnumManualOrAutomatic,System.Int32,System.String)">
+ <summary>
+ Genera un nuevo registro en el historial de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="entryType">Tipo de movimiento realizado en la historia.</param>
+ <param name="manualOrAutomatic">Si es manual o automatico el movimiento.</param>
+ <param name="auditUser">Identificador del usuario que ejecuto la acción.</param>
+ <param name="remark">Obervaciones.</param>
+ <returns>Valor booleano que representa si se logro o no realizar la inserción en la historia del caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.GenerateUnderwritingCaseId">
+ <summary>
+ Genera una nueva identificación del caso de suscripción.
+ </summary>
+ <returns>Identificación del caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.OpenCase(System.Int64,System.String,System.Int32,System.Int64,System.Int64)">
+ <summary>
+ Abre un caso suscripción ya cerrado.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se abre nuevamente el caso.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="decision">Decisión que tendrá el caso al momento que sea aperturado.</param>
+ <param name="status">Status del caso aperturado.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.Retrieve(System.Int64,System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="lockedInformation">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="riskInformation">Indica si se debe o no incluir la información de la póliza asociada al caso.</param>
+ <param name="includeLastRiskInstance">Indica si se debe o no incluir la instancia de la póliza asociada al caso.</param>
+ <param name="changeRiskByAmendment">Indica si se reemplaza la información de los objetos del risk information (CoverageWithCalculatedPremium, ExtraPremiumDiscountByInsureds, ExcludedIllnessInHealthPolicies) por la información que se encuentra dentro del objeto amendment.</param>
+ <returns>En caso de estar registrada, instancia con información de caso de suscripción, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveCaseRisk(System.Int64,System.Int32)">
+ <summary>
+ Recupera la información de la póliza asociada al caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="release">Número de revisión o versión</param>
+ <returns>En caso de estar registrada, una instancia de la póliza asociada al caso, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveGuideByUnderWritingCaseID(System.Int64,System.Int32,System.DateTime,System.Object,System.Int32)">
+ <summary>
+ Retorna una colección de guias buscando por underwritingcaseguideid.
+ </summary>
+ <param name="underwritingCaseId">Identificación del caso de suscripción.</param>
+ <param name="guideType">Tipo de guia.</param>
+ <param name="atDate">Fecha de la operación.</param>
+ <param name="withLookups"></param>
+ <param name="Language">Identificado del lenguaje.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveRequirementByFilter(System.DateTime,System.DateTime,System.Int32,System.Int32)">
+ <summary>
+ Lista de casos y requerimientos filtrados por fecha de creación.
+ </summary>
+ <param name="dateFrom">Fecha inicial de creación de los requerimientos.</param>
+ <param name="dateTo">Fecha final de creación de los requerimientos.</param>
+ <param name="status">Estado del caso.</param>
+ <param name="requirementType">Tipo de requerimiento.</param>
+ <returns>Lista de requerimientos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveRiskInformation(System.Int64,System.Int32)">
+ <summary>
+ Recupera la información de la póliza asociada al caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="release">Número de revisión o versión</param>
+ <returns>En caso de estar registrada, una instancia del risk information asociada al caso, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveRoleInCase(System.Int32,System.Int64,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente y etapa. 
+ </summary>    
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="languageID">Código del lenguaje</param>
+ <returns>Lista de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveUnderwritingCaseAndRequirementByFilter(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int64)">
+ <summary>
+ Lista de casos y requerimientos filtrados por fecha de creación.
+ </summary>
+ <param name="dateFrom">Fecha inicial de creación de caso de suscripción.</param>
+ <param name="dateTo">Fecha final de creación de caso de suscripción.</param>
+ <param name="status">Estado del caso.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="policyID">Código de póliza.</param>
+ <returns>Lista de casos y requerimientos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el estado del caso, el ramo, el producto y/o la póliza.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveUnderwritingCaseByClientId(System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente. 
+ </summary>
+ <param name="clientId">Código del cliente.</param>
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <returns>Lista simple de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveUnderwritingCaseByPolicyId(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+ <summary>
+ Lista de casos asociados a una póliza. 
+ </summary>
+ <param name="recordType">Tipo de registro.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="policyID">Código de póliza.</param>
+ <param name="certificateID">Número de identificación del certificado.</param>
+ <returns>Lista de casos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveUnderwritingCaseByStage(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente y etapa. 
+ </summary>
+ <param name="clientId">Código del cliente.</param>
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="stage">Código de la etapa</param>
+ <param name="languageID">Código del lenguaje</param>
+ <returns>Lista de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.RetrieveUnderwritingCaseHistory(System.Int64,System.Int64,System.DateTime)">
+ <summary>
+ Retorna una instancia de CaseHistory.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="caseHistoryId">Identificación del id de historial del caso de suscripción.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Instancia de tipo UnderwritingCaseLocked</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.SelectAllCaseHistory(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene el historial de movimiento de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna el historial de movimientos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.Setup(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Int32,System.Int32)">
+ <summary>
+ Crea un caso de suscripción a partir de una póliza.
+ </summary>
+ <param name="riskInstance">Instancia de la póliza.</param>
+ <returns>Instancia de caso un de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.Synchronize(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>
+ <param name="value">Instancia del caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingManager.SynchronizeUnderwriting(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime,System.Int64,System.Int64)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>
+ <param name="value">Instancia del caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="status">Status del caso.</param>
+ <param name="decision">Decisión del caso.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.IsTabUnderwritingRuleInUse(System.Int32)">
+ <summary>
+ Determina sin una regla de suscripcion de se encuentra en uso.
+ </summary>
+ <param name="underwritingruleid">Id de la regla de suscripción definida a verificar.</param>
+ <returns>Verdadero o Falso según sea el caso.</returns>
+ <remarks>
+ Determina sin una regla de suscripcion de TabUnderwritingRule se 
+ encuentra en uso en UnderwritingRule.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.ApplyRuleOld(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int64,InMotionGIT.Underwriting.Contracts.UnderwritingRule)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, según se configure.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementID">Identificación del requerimiento.</param>
+ <param name="rule">Configuración de la regla a ser aplicada.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.ApplyRuleToCase(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime,System.Boolean,System.Int32,System.String,System.String,System.String,System.String)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, asociadas a un ramo/producto.
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="requirementClientId">Código del cliente asociado al requerimiento.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <param name="userId">Código del usuario que crea o actualiza la información.</param>
+ <param name="saveRuleInAmendment">Setting booleano que representa si se guarda o no la información dentro del Amendment Information o fuera.</param>
+ <param name="ruleList">indica una lista de reglas a ser aplicadas. La lista debe estar separada por comas.</param>
+ <param name="explanationRule">Explicación de la regla en caso que se desee una distinta a la agregada propiamente a la regla.</param>
+ <param name="answer">Respuesta a la regla.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.SelectAllUnderwritingRule(System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene lista de reglas asociadas a un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de reglas de suscripción asociadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.SelectUnderwritingRuleByRuleId(System.Int32,System.Int32,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene toda la información relaciona a una regla de suscripción de un caso específico.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla de suscripción.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Información de la regla de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.DeleteUnderwritingRule(System.Int32,System.Int32,System.String,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+ <summary>
+ Elimina una regla de suscripción de un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla.</param>
+ <param name="allRecord">Valor booleano que representa si se eliminan todas las restricciones asociadas a la regla.</param>
+ <param name="userId">Identificador de la regla.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <param name="saveRuleInAmendment">Valor booleano que representa en donde se guarda la restricción True = AmendmentInformation False = Fuera del AmendmentInformation</param>
+ <returns>Instancia del caso de suscripción con las modificaciones realizadas.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.RetrieveRuleAlarmInstance(System.Int32)">
+ <summary>
+ Permite obtener del caché las alarmas asociada a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <returns>Retorna colección de alarmas.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.StorageRuleAlarmInstance(System.Int32,InMotionGIT.Underwriting.Contracts.RuleAlarmsCollection)">
+ <summary>
+ Permite guardar en el caché alarmas asociadas a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="alarm">Colección de alarmas.</param>
+ <returns>Valor booleano que representa si se almacenaron o no los datos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.Interfaces.IUnderwritingRule.RemoveRuleAlarmInstance(System.Int32)">
+ <summary>
+ Permite eliminar del caché alarmas asociadas a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <returns>Valor booleano que representa si se eliminaron o no los datos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.AcceptCase(System.Int64,System.String,System.Boolean,System.Int64,System.Int64,System.Int32)">
+ <summary>
+ Establece que el caso de suscripción, fue aceptado.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se acepta el caso.</param>
+ <param name="withChanges">Indica si el caso fue aceptado con cambios manuales.</param>
+ <param name="policyID">Número que identifica la póliza asociada al caso de suscripción.</param>
+ <param name="proposalID">Número de identificación de la propuesta asociada al caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.AddRequirement(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime,InMotionGIT.Underwriting.Contracts.RoleInCase,System.String,System.String,InMotionGIT.Underwriting.Contracts.Enumerations.EnumRequirementStatus,System.Int32,System.Int32)">
+ <summary>
+ Agrega un requerimiento, a un caso de suscripción.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementType">Tipo de Requerimiento.</param>
+ <param name="RequirementDate">Fecha de solicitud.</param>
+ <param name="roleInCaseItem">Rol al cual se le debe agregar el requerimiento.</param>
+ <param name="requirementURLLink">Ruta de la planilla que maneja el requerimiento.</param>
+ <param name="formId">Id asociado a la instancia de la planilla asociada al requerimiento.</param>
+ <param name="RequirementStatus">Estado del requerimiento.</param>
+ <param name="auditUser">Código del usuario que crea o actualiza la información.</param>
+ <param name="languageId">Lenguaje en que se muestra la información.</param>
+ <returns>Instancia del requerimiento agregado.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.AddRole(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Client.Entity.Contracts.Client,InMotionGIT.Common.Contracts.Enumerations.EnumRole)">
+ <summary>
+ Agrega un rol al caso de suscripción, a partir de la información de un cliente.
+ </summary>
+ <param name="caseInstance">Instancia del caso de suscripción.</param>
+ <param name="clientToAdd">Instancia con la información del cliente.</param>
+ <param name="role">Rol a ser agregado.</param>
+ <returns>Instancia del rol agregado al caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CaseChangeRiskClassification(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Crea  registro en historia del caso , si se cambia el riesgo.
+ </summary>
+ <param name="value"></param>
+ <param name="auditUserIdentify"></param>
+ <param name="Language"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CaseChangeStage(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32)">
+ <summary>
+ Crea  registro en historia del caso , si se cambia la etapa.
+ </summary>
+ <param name="value"></param>
+ <param name="auditUserIdentify"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CaseLockForEditing(System.Int64,System.String,System.Int32)">
+ <summary>
+ Bloquea un caso suscripción para su edición.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón del bloqueo.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <returns>Instancia bloqueada con información de caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CaseUnLock(System.Int64,System.String,System.Int32)">
+ <summary>
+ Desbloquea un caso suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón del desbloqueo.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <returns>Instancia desbloqueada con información de caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ChangeRequirementStatus(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int64,InMotionGIT.Underwriting.Contracts.Enumerations.EnumRequirementStatus,System.Int32)">
+ <summary>
+ Cambia el estado de un requerimiento, para un caso de suscripción.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementID">Identificación del requerimiento.</param>
+ <param name="requirementStatus">Nuevo estado del requerimiento.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CloseCase(System.Int64,System.String,System.Int32,System.Int32)">
+ <summary>
+ Cierra o declina, un caso suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se declina el caso.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="rejectionReason">Motivo por el cual el caso es declinado.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DeclineListOfCasesByFilter">
+ <summary>
+ Cierra o declina, una lista de casos de suscripción filtrados por condicion a la decisión.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GenerateHistoryUWCase(System.Int64,System.Int64,InMotionGIT.Underwriting.Contracts.Enumerations.EnumEntryType,InMotionGIT.Underwriting.Contracts.Enumerations.EnumManualOrAutomatic,System.Int32,System.String)">
+ <summary>
+ Genera un nuevo registro en el historial de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="entryType">Tipo de movimiento realizado en la historia.</param>
+ <param name="manualOrAutomatic">Si es manual o automatico el movimiento.</param>
+ <param name="auditUser">Identificador del usuario que ejecuto la acción.</param>
+ <param name="remark">Obervaciones.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GenerateUnderwritingCaseId">
+ <summary>
+ Genera una nueva identificación del caso de suscripción.
+ </summary>
+ <returns>Identificación del caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.OpenCase(System.Int64,System.String,System.Int32,System.Int64,System.Int64)">
+ <summary>
+ Abre un caso suscripción ya cerrado.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="remarks">Razón por la cual se abre nuevamente el caso.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="decision">Decisión que tendrá el caso al momento que sea aperturado.</param>
+ <param name="status">Status del caso aperturado.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.Retrieve(System.Int64,System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="lockedInformation">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="riskInformation">Indica si se debe o no incluir la información de la póliza asociada al caso.</param>
+ <param name="includeLastRiskInstance">Indica si se debe o no incluir la instancia de la póliza asociada al caso.</param>
+ <param name="changeRiskByAmendment">Indica si se reemplaza la información de los objetos del risk information (CoverageWithCalculatedPremium, ExtraPremiumDiscountByInsureds, ExcludedIllnessInHealthPolicies) por la información que se encuentra dentro del objeto amendment.</param>
+ <returns>En caso de estar registrada, instancia con información de caso de suscripción, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRuleDistinctByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores sin duplicados de las 'Reglas de suscripción' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveInstance(System.Int32,System.Boolean)">
+ <summary>
+ Obtiene una instancia de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obliga a obtener de nuevo la información del caso de la BD.</param>
+ <returns>Retorna instancia de un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveCaseRisk(System.Int64,System.Int32)">
+ <summary>
+ Recupera la información de la póliza asociada al caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="release">Número de revisión o versión</param>
+ <returns>En caso de estar registrada, una instancia de la póliza asociada al caso, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveRequirementByFilter(System.DateTime,System.DateTime,System.Int32,System.Int32)">
+ <summary>
+ Lista de casos y requerimientos filtrados por fecha de creación.
+ </summary>
+ <param name="dateFrom">Fecha inicial de creación de los requerimeintos.</param>
+ <param name="dateTo">Fecha final de creación de los requerimeintos.</param>
+ <param name="status">Estado del caso.</param>
+ <param name="requirementType">Tipo de requerimiento.</param>
+ <returns>Lista de requerimientos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveRiskInformation(System.Int64,System.Int32)">
+ <summary>
+ Recupera la información de la póliza asociada al caso de suscripción.
+ </summary>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="release">Número de revisión o versión</param>
+ <returns>En caso de estar registrada, una instancia del risk information asociada al caso, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveRoleInCase(System.Int32,System.Int64,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente y etapa. 
+ </summary>    
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="underwritingCaseID">Identificación del caso de suscripción.</param>
+ <param name="languageID">Código del lenguaje</param>
+ <returns>Lista de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseAndRequirementByFilter(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int64)">
+ <summary>
+ Lista de casos y requerimientos filtrados por fecha de creación.
+ </summary>
+ <param name="dateFrom">Fecha inicial de creación de caso de suscripción.</param>
+ <param name="dateTo">Fecha final de creación de caso de suscripción.</param>
+ <param name="status">Estado del caso.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="policyID">Código de póliza.</param>
+ <returns>Lista de casos y requerimientos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el estado del caso, el ramo, el producto y/o la póliza.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseByClientId(System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente. 
+ </summary>
+ <param name="clientId">Código del cliente.</param>
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <returns>Lista simple de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseByPolicyId(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+ <summary>
+ Lista de casos asociados a una póliza. 
+ </summary>
+ <param name="recordType">Tipo de registro.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="policyID">Código de póliza.</param>
+ <param name="certificateID">Número de identificación del certificado.</param>
+ <returns>Lista de casos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseByStage(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista simple de casos asociados a una cliente y etapa. 
+ </summary>
+ <param name="clientId">Código del cliente.</param>
+ <param name="role">Papel del cliente en el caso de suscripción.</param>
+ <param name="lineOfBusiness">Línea de negocio.</param>
+ <param name="productId">Código del producto</param>
+ <param name="stage">Código de la etapa</param>
+ <param name="languageID">Código del lenguaje</param>
+ <returns>Lista de casos.</returns>
+ <remarks>Permite indicar de forma opcional (el valor cero no es tomado en cuenta) el rol de cliente, el ramo y el producto.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseHistory(System.Int64,System.Int64,System.DateTime)">
+ <summary>
+ Retorna el una instancia del Underwritingcaselocked
+ </summary>
+ <param name="UnderwritingCaseID"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllCaseHistory(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene el historial de movimiento de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna el historial de movimientos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectCaseInfo(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene información de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna objeto Dictionary con información del caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectUnderwritingCase(System.String,System.Boolean)">
+ <summary>
+ Obtiene una instancia del objeto underwriting case de base de datos o caché por medio del identificador de un caso.
+ </summary>
+ <param name="underwritingCaseId">Identificado del caso.</param>
+ <param name="wasLocked">Valor booleano, si el objeto se encuentra bloqueado establecer en verdadero, de lo contrario falso.</param>
+ <returns>Retorna una instancia de un caso de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.Synchronize(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos utilizando paralelismo en el proceso de guardado.
+ </summary>
+ <param name="value">Instancia del caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SynchronizeUnderwriting(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.DateTime,System.Int64,System.Int64)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>
+ <param name="value">Instancia del caso de suscripción.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="status">Status del caso.</param>
+ <param name="decision">Decisión del caso.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeActivesByClientRoleLkp(System.Int64,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje y rol del cliente indicado.
+ </summary>
+ <param name="UnderwritingCaseId">Identificador del caso de suscripción.</param> 
+ <param name="ClientID">Cliente seleccionado.</param> 
+ <param name="languageID">Lenguaje en que se muestra la información.</param> 
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeByRoleInUWCaseLkp(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje y rol del cliente indicado.
+ </summary>
+ <param name="UnderwritingCase">Caso de suscripción.</param> 
+ <param name="ClientID">Cliente seleccionado.</param> 
+ <param name="languageID">Lenguaje en que se muestra la información.</param> 
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeByFilterLkp(System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Tipos de requerimiento' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeActivesLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según el lenguaje. 
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RoleActivesByRequirementTypeLkp(System.Int32,System.String,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento por rol' que se encuentren activos según el tipo de requerimiento, roles y lenguaje. 
+ </summary>
+ <param name="RequirementType">Tipo de requerimiento sobre el cual se filtrarán los tipos de requerimiento por rol.</param>
+ <param name="RoleCodes">Roles sobre los cuales se filtrarán los tipos de requerimiento.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeActivesByRoleLkp(System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según el rol y slenguaje. 
+ </summary>
+ <param name="RoleCode">Tipo de rol sobre el cual se filtrarán los tipos de requerimiento.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeActivesByRolesLkp(System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' que se encuentren activos según los roles definidos y el lenguaje. 
+ </summary>
+ <param name="roleCodes">Roles sobre los cuales se filtrarán los tipos de requerimiento.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabRequirementType' y 'TransRequirementType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseRiskByUnderwritingCaseId(System.Int64)">
+ <summary>
+ 
+ </summary>
+ <param name="underwritingCaseId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseRiskByUWCaseIdWithoutRiskData(System.Int64)">
+ <summary>
+ 
+ </summary>
+ <param name="underwritingCaseId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseRiskSynchronizeInLockedMode(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.DateTime,System.Boolean)">
+ <summary>
+  Sincroniza una instancia de tipo UnderwritingCaseRisk en la tabla.
+ </summary>
+ <param name="value">Instancia de UnderwritingCase</param>
+ <param name="auditUserIdentify"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveTabUnderwritingRuleByRuleId(System.Int32,System.Int32)">
+ <summary>
+ Recupera al información de una 'Aplicación de reglas de suscripción' por su identificación.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, una instancia de la regla, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveTabUnderwritingRuleValidByRuleId(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Recupera la información de una 'Regla de suscripción' por su identificación.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="lastVersion">Valor booleano si es verdadero se obtiene la versión válida hasta la fecha actual, si es falso se obtiene la última versión de la regla.</param>
+ <returns>En caso de estar registrada, una instancia de la regla, en caso contrario de retorna nulo.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.IllnessTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de enfermedad' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabIllnessType' y 'TransIllnessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.AlarmTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de alarmas' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabAlarmType' y 'TransAlarmType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DecisionTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de decisión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDecisionType' y 'TransDecisionType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DegreeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Nivel de la enfermedad' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDegree' y 'TransDegree' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ExclusionPeriodTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Períodos de exclusión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabExclusionPeriodType' y 'TransExclusionPeriodType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ExclusionTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de exclusión' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabExclusionType' y 'TransExclusionType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.QuestionsFromRequirementLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Preguntas de cuestionarios' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabQuestionsFromRequirement' y 'TransQuestionsFromRequirement' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementStatusTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Estados de los requerimientos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementStatusType' y 'TransRequirementStatusType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeLookup(System.Int32)">
+ <summary>
+ Lista de los 'Tipos de requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingAreaTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Áreas de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingAreaType' y 'TransUnderwritingAreaType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RiskClassTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Categoría de riesgos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRiskClassType' y 'TransRiskClassType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de caso de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingCaseType' y 'TransUnderwritingCaseType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseStatusTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de estado de un caso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabTabUnderwritingCaseSType' y 'TransTabUnderwritingCaseSType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.EntryTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipo de transacción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabEntryType' y 'TransEntryType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ManualOrAutomaticTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Origen de la información' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabManualOrAutomaticType' y 'TransManualOrAutomaticType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ProcessTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipo de proceso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabProcessType' y 'TransProcessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.PayableByTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Pagador del requerimiento' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabPayableByType' y 'TransPayableByType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.CurrencyLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de las 'Monedas' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabCurrency' y 'TransCurrency' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RolesLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de rol' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRoleType' y 'TransRoleType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RejectionReasonLkp(System.Int32)">
+ <summary>
+ Retorna una lista de valores simple correspondiente a los 'Tipos de Razones de Rechazo' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de razones de rechazo.</returns>
+ <remarks>La tablas 'TabRejectionReason' y 'TransRejectionReason' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GenderLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Género del cliente' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabGender' y 'TransGender' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GetListCoverageByRiskInformation(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Permite obtener las coberturas asociadas al producto de la póliza y que se encuentran en el risk information.
+ </summary>
+ <param name="underwritingCaseId">Identificador del caso.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageId">Lenguaje en que se muestra la información.</param>
+ <returns>Retorna lista de coberturas relacionadas al producto que se encuentran en el risk information.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GetListModuleByRiskInformation(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Permite obtener los módulos asociadas al producto de la póliza y que se encuentran en el risk information.
+ </summary>
+ <param name="underwritingCaseId">Identificador del caso.</param>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageId">Lenguaje en que se muestra la información.</param>
+ <returns>Retorna lista de módulos relacionados al producto que se encuentran en el risk information.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLookup(System.Int32)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLookupByFilter(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros</param>
+ <param name="orderBy">Indica el campo por el cual se van a ordernar los registros</param>
+ <param name="sortOrder">Indica el orden de los registros (ASC, DESC)</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLookupByFilterWithoutPagination(System.Int32,System.String)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros.</param>    
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLookupByFilterCount(System.Int32,System.String,System.String)">
+ <summary>
+ Lista de casos de suscripción existentes.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Indica los valores que van a filtrar los registros</param>
+ <param name="orderBy">Indica el campo por el cual se van a ordernar los registros</param>
+ <returns>Lista de casos.</returns>
+ <remarks>'UnderwritingCase' es la tabla principal del origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLockedSynchronize(InMotionGIT.Underwriting.Contracts.UnderwritingCaseLocked,System.String,System.DateTime)">
+ <summary>
+  Sincroniza una instancia de tipo UnderwritingCaseLocked en la tabla.
+ </summary>
+ <param name="value">Instancia de UnderwritingCaseLocked</param>
+ <param name="auditUserIdentify"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingCaseLockedSynchronizeIncludingChildren(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String,System.DateTime,System.Boolean)">
+ <summary>
+  Sincroniza una instancia de tipo UnderwritingCaseLocked en la tabla.
+ </summary>
+ <param name="value">Instancia de UnderwritingCaseLocked</param>
+ <param name="auditUserIdentify"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseLocked(System.Int64,System.DateTime)">
+ <summary>
+ Retorna el una instancia del Underwritingcaselocked
+ </summary>
+ <param name="UnderwritingCaseID"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCaseByLocked(System.Int64,System.DateTime)">
+ <summary>
+ Retorna el una instancia del Underwritingcaselocked
+ </summary>
+ <param name="UnderwritingCaseID"></param>
+ <param name="atDate"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.TabUnderwritingRuleSynchronize(InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime)">
+ <summary>
+ Sincroniza una instancia de tipo TabUnderwritingRule
+ </summary>
+ <param name="value">Instancia de tipo TabUnderwritingRule</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Identificación de la regla</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveByRuleGuid(System.String,System.Int32)">
+ <summary>
+ Obtiene una regla por su identificador global.
+ </summary>
+ <param name="ruleGuid">Identificador global de la regla.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Retorna instancia de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RuleAlarmsSynchronize(InMotionGIT.Underwriting.Contracts.RuleAlarms,System.String,System.DateTime)">
+ <summary>
+ Sincroniza una instancia de tipo RuleAlarms
+ </summary>
+ <param name="value">Instancia de tipo RuleAlarms</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Identificación de la RuleAlarms</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveRuleAlarms(System.Int32,System.DateTime,System.String,System.Boolean,System.Int32)">
+ <summary>
+ Retorna alarma por rules I
+ </summary>
+ <param name="UnderwritingRuleId"></param>
+ <param name="atDate"></param>
+ <param name="filter"></param>
+ <param name="withLookups"></param>
+ <param name="languageForLookups"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DiscountOrExtraPremiumLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de recargos y descuentos' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabDiscountOrExtraPremium' y 'TransDiscountOrExtraPremium' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeByProductLkp(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de requerimiento' según el ramo, producto y lenguaje.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeByProductLookup(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de los 'Tipos de requerimiento' según el ramo, producto y lenguaje.
+ </summary>
+ <param name="lineOfBusiness">Código del ramo.</param>
+ <param name="productId">Código del producto.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabRequirementType' y 'TransRequirementType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RestrictionTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de restricciones' según el ramo, producto y lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabRestrictionType' y 'TransRestrictionType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.IllnessTypeByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Tipos de enfermedad' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabIllnessType' y 'TransIllnessType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.QuestionsFromRequirementFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de las 'Preguntas de cuestionarios' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabQuestionsFromRequirement' y 'TransQuestionsFromRequirement' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRuleByFilterLkp(System.Int32,System.String,System.Int32,System.Int32)">
+ <summary>
+ Lista filtrada de valores simple de los 'Aplicación de reglas de suscripción' según el lenguaje y filtro indicado.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <param name="filter">Valor usado para filtrar la lista.</param>
+ <param name="index">Indica el registros inicial a recuperar</param>
+ <param name="limit">Limita la cantidad de registros a recuperar</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRuleDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de de la regla de suscripción.
+ </summary>
+ <param name="underwritingRuleId">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.IllnessTypeDescription(System.String,System.Int32)">
+ <summary>
+ Descripción de la enfermedad.
+ </summary>
+ <param name="illnessCode">Identificación de la enfermedad</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.QuestionDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la pregunta.
+ </summary>
+ <param name="questionId">Identificación de la pregunta</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StageLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabStageCase' y 'TransStageCase' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StorageInstance(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ Guarda en caché una instancia del objeto underwriting case.
+ </summary>
+ <param name="value">Instancia del objeto underwriting case a almacenar en caché.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StageFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StageByRoleFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <param name="roleCode">Rol del usuario.</param>
+ <returns>Registros asociados al producto, ramo y rol de usuario correspondiente pertenecientes a las tablas 'TabStageCase' y 'TransStageCase' que se encuentren activos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StageByRolesFilterLkp(System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Lista de valores simple de los 'Etapa del caso' según el Ramo producto  y tipo de caso.
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productId"></param>
+ <param name="underwritingCaseType"></param>
+ <param name="languageID"></param>
+ <param name="rolesCode">String de roles separados por pipe '|'.</param>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Indica si se debe o no reutilizar la información del cache.</param>
+ <returns>Registros asociados al producto, ramo y rol de usuario correspondiente pertenecientes a las tablas 'TabStageCase' y 'TransStageCase' que se encuentren activos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRulesTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Estados de una regla de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingRulesType' y 'TransUnderwritingRulesType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRuleLookup(System.Int32,System.Boolean)">
+ <summary>
+ Lista de las 'Aplicación de reglas de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista.</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingRuleLookupById(System.Int32,System.DateTime,System.Int32)">
+ <summary>
+ Reglas de suscripción extendida según el lenguaje.
+ </summary>
+ <param name="UnderwritingRuleId">Id de la regla de suscripción</param>
+ <param name="effectDate">Fecha de efecto</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Regla de suscripción</returns>
+ <remarks>Las tablas 'TabUnderwritingRule' y 'TransUnderwritingRule' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RequirementTypeDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del tipo de requisito.
+ </summary>
+ <param name="requirementType">Tipo de requisito</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UpdateLockedObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualiza un caso que se encuentra bloqueado por modificación.
+ </summary>
+ <param name="uwCase">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario que realiza la modificación.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UpdateObjectInDB(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int32,System.Int32)">
+ <summary>
+ Actualiza un objeto underwriting case en base de datos.
+ </summary>
+ <param name="instance">Instancia del caso a actualizar.</param>
+ <param name="userId">Identificador del usuario.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <returns>Valor booleano que representa si se logro realizar la actualización o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UpdateWFStatusInCase(System.Int32,InMotionGIT.Underwriting.Contracts.Enumerations.EnumWorkFlowStatus)">
+ <summary>
+ Actualiza el estado del workflow en ejecución de un caso.
+ </summary>
+ <param name="caseId">Identificador del caso a actualizar.</param>
+ <param name="WFStatus">Identificador del estado en el que se encuentra el workflow.</param>
+ <returns>Valor booleano que representa si se logro realizar la actualización o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCasesByGuide(System.Int64,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, una lista con la información de los casos de suscripción, en caso contrario de retorna nulo.</returns>    
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveGuide(System.Int64,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, instancia con información de la guía, en caso contrario de retorna nulo.</returns>    
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SyncronizeGuide(InMotionGIT.Underwriting.Contracts.Guide,System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>
+ <param name="guide">Instancia de la guía.</param>
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>    
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SyncronizeUnderwritingCaseGuide(System.Collections.Generic.List{InMotionGIT.Underwriting.Contracts.UnderwritingCaseGuide},System.Int32,System.DateTime)">
+ <summary>
+ Sincroniza la información de un caso de suscripción, en la base de datos.
+ </summary>    
+ <param name="underwritingcases">Lista de casos en la guía.</param>    
+ <param name="auditUserIdentify">Código del usuario que crea o actualiza la información.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <returns>Verdadero en caso de que la sincronización sea exitosa, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveUnderwritingCasesGuide(System.Int32,System.Int32,System.Int32,System.DateTime,System.Boolean,System.Int32)">
+ <summary>
+ Recupera la información de un caso de suscripción.
+ </summary>
+ <param name="guideID">Identificación de la guía.</param>
+ <param name="guideType">Tipo de la guía.</param>
+ <param name="atDate">Fecha de validez de la información.</param>
+ <param name="withLookUps">Indica si se debe o no incluir la información bloqueada de edición.</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>En caso de estar registrada, instancia con información de caso de los casos de suscripción por guía, en caso contrario de retorna nulo.</returns>    
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GuideStatusLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de status de una guía' que se encuentren activos según el lenguaje. 
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabGuideStatus' y 'TransGuideStatus' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GuideTypeLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de los 'Tipos de guia ' que se encuentren activos según el lenguaje. 
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabGuideType' y 'TransGuideType' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.LocationCaseLkp(System.Int32)">
+ <summary>
+ Lista de valores simple de la 'Ubicación de un caso' que se encuentren activos según el lenguaje. 
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <remarks>Registros de las tablas 'TabLocationCase' y 'TransLocationCase' que se encuentren activos</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GuideTypeDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del tipo de guía.
+ </summary>
+ <param name="guideType">Identificación de la regla de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción del tipo de guía.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.GuideStatusDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción del status de una guía.
+ </summary>
+ <param name="guideStatusCode">Identificacion del status de la guía</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción del status de la guía </returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.LocationCaseDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la ubicación del caso.
+ </summary>
+ <param name="location">Identificación de la ubicación del caso de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StageDescription(System.Int32,System.Int32)">
+ <summary>
+ Descripción de la etapa del caso.
+ </summary>
+ <param name="stage">Identificación de la etapa del caso de suscripción</param>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns> Retorna la descripción de la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UnderwritingAreaTypeActiveLkp(System.Int32)">
+ <summary>
+ Lista de valores activos del 'Área de suscripción' según el lenguaje.
+ </summary>
+ <param name="languageID">Lenguaje en que se muestra la información.</param>
+ <returns>Lista de valores.</returns>
+ <remarks>Las tablas 'TabUnderwritingAreaType' y 'TransUnderwritingAreaType' son el origen de los datos.</remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.IsTabUnderwritingRuleInUse(System.Int32)">
+ <summary>
+ Determina sin una regla de suscripcion de se encuentra en uso.
+ </summary>
+ <param name="underwritingruleid">Id de la regla de suscripción definida a verificar.</param>
+ <returns>Verdadero o Falso según sea el caso.</returns>
+ <remarks>
+ Determina sin una regla de suscripcion de TabUnderwritingRule se 
+ encuentra en uso en UnderwritingRule.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ApplyRuleOld(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.Int64,InMotionGIT.Underwriting.Contracts.UnderwritingRule)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, según se configure.
+ </summary>
+ <param name="curentUnderwritingCase">Instancia del caso de suscripción.</param>
+ <param name="requirementID">Identificación del requerimiento.</param>
+ <param name="rule">Configuración de la regla a ser aplicada.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.ApplyRuleToCase(InMotionGIT.Underwriting.Contracts.UnderwritingCase,InMotionGIT.Underwriting.Contracts.TabUnderwritingRule,System.String,System.DateTime,System.Boolean,System.Int32,System.String,System.String,System.String,System.String)">
+ <summary>
+ Aplica una regla de suscripción a un requerimiento, asociadas a un ramo/producto.
+ </summary>
+ <param name="uwcase">Caso de suscripción.</param>
+ <param name="requirementClientId">Código del cliente asociado al requerimiento.</param>
+ <param name="atDate">Fecha del proceso</param>
+ <param name="userId">Código del usuario que crea o actualiza la información.</param>
+ <param name="saveRuleInAmendment">Setting booleano que representa si se guarda o no la información dentro del Amendment Information o fuera.</param>
+ <param name="ruleList">indica una lista de reglas a ser aplicadas. La lista debe estar separada por comas.</param>
+ <param name="explanationRule">Explicación de la regla en caso que se desee una distinta a la agregada propiamente a la regla.</param>
+ <param name="answer">Respuesta a la regla.</param>
+ <returns>Observaciones generadas al intentar aplicar la regla.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllUnderwritingRule(System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene lista de reglas asociadas a un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de reglas de suscripción asociadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectUnderwritingRuleByRuleId(System.Int32,System.Int32,System.String,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene toda la información relaciona a una regla de suscripción de un caso específico.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla de suscripción.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Información de la regla de suscripción.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DeleteUnderwritingRule(System.Int32,System.Int32,System.String,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+ <summary>
+ Elimina una regla de suscripción de un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementId">Identificador del requerimiento.</param>
+ <param name="underRuleId">Identificador de la regla.</param>
+ <param name="allRecord">Valor booleano que representa si se eliminan todas las restricciones asociadas a la regla.</param>
+ <param name="userId">Identificador de la regla.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <param name="saveRuleInAmendment">Valor booleano que representa en donde se guarda la restricción True = AmendmentInformation False = Fuera del AmendmentInformation</param>
+ <returns>Instancia del caso de suscripción con las modificaciones realizadas.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.StorageRuleAlarmInstance(System.Int32,InMotionGIT.Underwriting.Contracts.RuleAlarmsCollection)">
+ <summary>
+ Permite guardar en el caché alarmas asociadas a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="alarm">Colección de alarmas.</param>
+ <returns>Valor booleano que representa si se almacenaron o no los datos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RetrieveRuleAlarmInstance(System.Int32)">
+ <summary>
+ Permite obtener del caché las alarmas asociada a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <returns>Retorna colección de alarmas.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.RemoveRuleAlarmInstance(System.Int32)">
+ <summary>
+ Permite eliminar del caché alarmas asociadas a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <returns>Valor booleano que representa si se eliminaron o no los datos.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.InsertRequirementOnCache(System.Int32,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32,System.String,System.Int32,System.Int64,System.Decimal,System.Decimal,System.Int64,System.Int64,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Crea un nuevo requerimiento y lo inserta en la instancia del caso que se encuentra en caché.
+ </summary>
+ <param name="requirementType">Tipo de requerimiento.</param>
+ <param name="clientId">Identificador del cliente.</param>
+ <param name="processType">Tipo de proceso.</param>
+ <param name="underwritingArea">Área de suscripción.</param>
+ <param name="requirementDate">Fecha de solicitud requerimiento.</param>
+ <param name="receptionDate">Fecha de recepción del requerimiento.</param>
+ <param name="status">Estado del requerimiento.</param>
+ <param name="alarmType">Tipo de alarma.</param>
+ <param name="providerID">Identificador del proveedor.</param>
+ <param name="payer">Pagador.</param>
+ <param name="requirementID">Identificador del requerimiento.</param>
+ <param name="cost">Costo del requerimiento.</param>
+ <param name="costDueAmount">Monto a pagar.</param>
+ <param name="totalCredits">Total de créditos.</param>
+ <param name="totalDebits">Total de débitos</param>
+ <param name="balance">Balance del requerimiento.</param>
+ <param name="codigoAcord"></param>
+ <param name="creatorUserCode">Identificador del usuario que crea el requerimiento.</param>
+ <param name="formId">Identificador de la forma.</param>
+ <param name="language">Identificador del lenguaje.</param>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los requerimientos asociados a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Colección de requerimientos asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectDecisions(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene una colección de las decisiones aplicadas al caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna la colección de las decisiones aplicadas a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UpdateRequirement(InMotionGIT.Underwriting.Contracts.Requirement,System.Boolean)">
+ <summary>
+ Actualiza la información de un requerimiento.
+ </summary>
+ <param name="requerimient">Información del requerimiento a modificar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DeleteRequirement(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un requerimiento de un caso almacenado en caché.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementID">Identificador del requerimiento a eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se logro realizar la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllRestriction(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Selecciona todas las restricciones creadas al caso de suscripción.
+ </summary>
+ <param name="caseId">Idenficador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de las restricciones.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectRestrictionByUnderwritingRuleId(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene toda la información relacionada a una restricción específica.
+ </summary>
+ <param name="caseId">Idenficador del caso.</param>
+ <param name="requirementId">Idenficador del requerimiento.</param>
+ <param name="UnderwritingRuleId">Idenficador de la regla.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de las restricciones.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllRoleInCase(System.Int64,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles asociados a un caso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectAllRoleInCaseByRequirementType(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los roles asociados a un caso filtrado por un tipo de requerimiento.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="requirementType">Identificador del tipo de requerimiento.</param>
+ <param name="languageId">Identificador del lenguaje.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una colección de roles.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DeleteRoleInCaseByInstance(System.Int64,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleInCase">Instancia del rol que se desea eliminar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.DeleteRoleInCaseByRoleId(System.Int64,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Elimina un rol de un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="roleIdToDelete">Identificador del rol a eliminar</param>
+ <param name="clientIdDelete">Identificador del cliente.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo o no el proceso.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.AddRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Agrega un nuevo rol a un caso de suscripción.
+ </summary>
+ <param name="newRoleInCase">Instancia de rol a incluir.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si la operación se realizo o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.UpdateRoleInCase(InMotionGIT.Underwriting.Contracts.RoleInCase,InMotionGIT.Underwriting.Contracts.RoleInCase,System.Boolean)">
+ <summary>
+ Actualiza un rol asociado a un caso de suscripción.
+ </summary>
+ <param name="originalRole">Instancia del rol que se desea actualizar.</param>
+ <param name="newRole">Instancia del rol con la información a actualizar.</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Valor booleano que representa si se realizo la operación o no.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectProviders(System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Obtiene los proveedores seleccionados en un caso de suscripción.
+ </summary>
+ <param name="caseId">Identificador del caso.</param>
+ <param name="languageId">Identificador del lenguaje</param>
+ <param name="forcedLoading">Valor booleano que representa si se obtiene el caso de BD o del caché. True = BD, False = Caché.</param>
+ <returns>Retorna una lista de proveedores.</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Services.UnderwritingManager.SelectProvidersByFilter(System.Int32,System.String)">
+ <summary>
+ Obtiene los proveedores filtrados por el nombre.
+ </summary>
+ <param name="lineOfBusiness">Identificador del ramo.</param>
+ <param name="filterName">Cadena de carácteres para filtrar por el nombre del proveedor.</param>
+ <returns>Retorna una lista de proveedores.</returns>
+</member>
+</members>
+</doc>

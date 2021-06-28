@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblDesBranchCaption" xml:space="preserve">
+    <value>Line of Business / Product</value>
+  </data>
+  <data name="lblDesBranchToolTip" xml:space="preserve">
+    <value>Line of business associated with the policy</value>
+  </data>
+  <data name="lblEffecdateCaption" xml:space="preserve">
+    <value>Effective Date</value>
+  </data>
+  <data name="lblEffecdateToolTip" xml:space="preserve">
+    <value>Effective date of the transaction</value>
+  </data>
+  <data name="AnchorClaveCaption" xml:space="preserve">
+    <value>Quotation Key</value>
+  </data>
+  <data name="AnchorClave2Caption" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="cbeTransactioCaption" xml:space="preserve">
+    <value>Transaction</value>
+  </data>
+  <data name="cbeTransactioToolTip" xml:space="preserve">
+    <value>Type of transaction to execute</value>
+  </data>
+  <data name="tcdEffecdateCaption" xml:space="preserve">
+    <value>Effective Date</value>
+  </data>
+  <data name="tcdEffecdateToolTip" xml:space="preserve">
+    <value>Effective date to which the transaction is applied</value>
+  </data>
+  <data name="cbeOfficeCaption" xml:space="preserve">
+    <value>Branch Office</value>
+  </data>
+  <data name="cbeOfficeToolTip" xml:space="preserve">
+    <value>Branch office to which the policy in process belgons</value>
+  </data>
+  <data name="cbeOfficeAgenCaption" xml:space="preserve">
+    <value>Local Office</value>
+  </data>
+  <data name="cbeOfficeAgenToolTip" xml:space="preserve">
+    <value>Office to which the policy being processed belongs</value>
+  </data>
+  <data name="cbeAgencyCaption" xml:space="preserve">
+    <value>Field Office</value>
+  </data>
+  <data name="cbeAgencyToolTip" xml:space="preserve">
+    <value>Agency to which the policy in process belongs</value>
+  </data>
+  <data name="cbeSellchannelCaption" xml:space="preserve">
+    <value>Sales Channel</value>
+  </data>
+  <data name="cbeSellchannelToolTip" xml:space="preserve">
+    <value>Distribution channel to which the policy belongs</value>
+  </data>
+  <data name="cbeBranchCaption" xml:space="preserve">
+    <value>Line of Business</value>
+  </data>
+  <data name="cbeBranchToolTip" xml:space="preserve">
+    <value>Line of Business</value>
+  </data>
+  <data name="valProductCaption" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="valProductToolTip" xml:space="preserve">
+    <value>Products of the Line of Business</value>
+  </data>
+  <data name="tcnPolicyCaption" xml:space="preserve">
+    <value>Quotation N°</value>
+  </data>
+  <data name="tcnPolicyToolTip" xml:space="preserve">
+    <value>Number identifying the policy in process</value>
+  </data>
+  <data name="tcnPolicyDestCaption" xml:space="preserve">
+    <value>Target Policy Number</value>
+  </data>
+  <data name="tcnPolicyDestToolTip" xml:space="preserve">
+    <value>Number identifying the target Policy</value>
+  </data>
+  <data name="valCertifCaption" xml:space="preserve">
+    <value>Insured Person Code</value>
+  </data>
+  <data name="valCertifToolTip" xml:space="preserve">
+    <value>Certificates of the Policy</value>
+  </data>
+  <data name="tcnCertificatCaption" xml:space="preserve">
+    <value>Certificate</value>
+  </data>
+  <data name="tcnQuotPropCaption" xml:space="preserve">
+    <value>Quotation / Proposal</value>
+  </data>
+  <data name="tcnQuotPropToolTip" xml:space="preserve">
+    <value>Number identifying the quotation or proposal</value>
+  </data>
+  <data name="tcnProp_RegCaption" xml:space="preserve">
+    <value>Cleared Proposal</value>
+  </data>
+  <data name="tcnProp_RegToolTip" xml:space="preserve">
+    <value>Number of the regulated proposal</value>
+  </data>
+  <data name="tcnServ_orderCaption" xml:space="preserve">
+    <value>Inspection number</value>
+  </data>
+  <data name="tcnServ_orderToolTip" xml:space="preserve">
+    <value>Number of the inspection associated with the policy</value>
+  </data>
+  <data name="tcnFolioCaption" xml:space="preserve">
+    <value>Alternative Policy Number (external)</value>
+  </data>
+  <data name="tcnFolioToolTip" xml:space="preserve">
+    <value>Alternative Policy Number. Use this number when policies are numbered by external entities or numbers are preprinted on existing forms (commonly external sales)</value>
+  </data>
+  <data name="tcnRenewalNumCaption" xml:space="preserve">
+    <value>Quantity of Renewals</value>
+  </data>
+  <data name="tcnRenewalNumToolTip" xml:space="preserve">
+    <value>Number of renewals performed to a policy</value>
+  </data>
+  <data name="AnchorTipo de negocioCaption" xml:space="preserve">
+    <value>Type of Business</value>
+  </data>
+  <data name="optBussines_1Caption" xml:space="preserve">
+    <value>Direct</value>
+  </data>
+  <data name="optBussines_2Caption" xml:space="preserve">
+    <value>Accepted Reinsurance</value>
+  </data>
+  <data name="optBussines_3Caption" xml:space="preserve">
+    <value>Accepted Coinsurance</value>
+  </data>
+  <data name="AnchorTipo de pólizaCaption" xml:space="preserve">
+    <value>Policy Type</value>
+  </data>
+  <data name="optType_1Caption" xml:space="preserve">
+    <value>Individual</value>
+  </data>
+  <data name="optType_2Caption" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="optType_3Caption" xml:space="preserve">
+    <value>Multiple Location</value>
+  </data>
+  <data name="AnchorRelacionesCaption" xml:space="preserve">
+    <value>Referential Information</value>
+  </data>
+  <data name="tcdLedgerDateCaption" xml:space="preserve">
+    <value>Accounting Date</value>
+  </data>
+  <data name="tcdLedgerDateToolTip" xml:space="preserve">
+    <value>Date when it is booked in accounting</value>
+  </data>
+  <data name="AnchorModificaciónCaption" xml:space="preserve">
+    <value>Endorsement</value>
+  </data>
+  <data name="valType_amendCaption" xml:space="preserve">
+    <value>Type of Endorsement</value>
+  </data>
+  <data name="valType_amendToolTip" xml:space="preserve">
+    <value>Type of endorsement or modification that will be made to the policy/certificate</value>
+  </data>
+  <data name="tcdFerCaption" xml:space="preserve">
+    <value>R.E.D.</value>
+  </data>
+  <data name="tcdFerToolTip" xml:space="preserve">
+    <value>Retroactive Endorsemente Date (Modification in the past)</value>
+  </data>
+  <data name="chkConvertionCaption" xml:space="preserve">
+    <value>Impact certifictes?</value>
+  </data>
+  <data name="AnchorFecha de vencimientoCaption" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="tcdExpDateCaption" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="tcdExpDateToolTip" xml:space="preserve">
+    <value>Date until which the temporary modification is effective</value>
+  </data>
+  <data name="optBussines_1ToolTip" xml:space="preserve">
+    <value>The information pertains to a direct insurance business</value>
+  </data>
+  <data name="optBussines_2ToolTip" xml:space="preserve">
+    <value>The information pertains to a coinsurance accepted business</value>
+  </data>
+  <data name="optBussines_3ToolTip" xml:space="preserve">
+    <value>The information pertains to a reinsurance accepted business</value>
+  </data>
+  <data name="optType_1ToolTip" xml:space="preserve">
+    <value>Type of policy  Individual</value>
+  </data>
+  <data name="optType_2ToolTip" xml:space="preserve">
+    <value>Type of policy Group</value>
+  </data>
+  <data name="optType_3ToolTip" xml:space="preserve">
+    <value>Type of policy Multiple Location</value>
+  </data>
+  <data name="cbeOffice_AssociatedCaption" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="cbeOffice_AssociatedToolTip" xml:space="preserve">
+    <value>The Office at which the associated policy belongs</value>
+  </data>
+  <data name="AnchorPolicy_AssociatedCaption" xml:space="preserve">
+    <value>Policy associated</value>
+  </data>
+  <data name="cbeAgency_AssociatedCaption" xml:space="preserve">
+    <value>Agency</value>
+  </data>
+  <data name="cbeAgency_AssociatedToolTip" xml:space="preserve">
+    <value>The agency that owns the associated policy</value>
+  </data>
+  <data name="cbeBranch_AssociatedCaption" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="cbeBranch_AssociatedToolTip" xml:space="preserve">
+    <value>The branch associated to the policy belongs</value>
+  </data>
+  <data name="cbeOfficeAgen_AssociatedCaption" xml:space="preserve">
+    <value>Local Office</value>
+  </data>
+  <data name="cbeOfficeAgen_AssociatedToolTip" xml:space="preserve">
+    <value>Local Office  to which the policy associated being processed belongs</value>
+  </data>
+  <data name="tcnCertificate_AssociatedCaption" xml:space="preserve">
+    <value>Certificate</value>
+  </data>
+  <data name="tcnCertificate_AssociatedToolTip" xml:space="preserve">
+    <value>Certificate Number of the Policy Associated</value>
+  </data>
+  <data name="tcnPolicy_AssociatedCaption" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="tcnPolicy_AssociatedToolTip" xml:space="preserve">
+    <value>Policy Associated Number</value>
+  </data>
+  <data name="valProduct_AssociatedCaption" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="valProduct_AssociatedToolTip" xml:space="preserve">
+    <value>Product associated to the policy belongs</value>
+  </data>
+  <data name="NTYPEACCOUNT_Caption" xml:space="preserve">
+    <value>Type Account</value>
+  </data>
+  <data name="NTYPEACCOUNT_ToolTip" xml:space="preserve">
+    <value>Type of account</value>
+  </data>
+  <data name="nPolicy_TransferToolTip" xml:space="preserve">
+    <value>It indicates the policy number from the external system originating the transaction VisualTIME</value>
+  </data>
+  <data name="nPolicy_Transfer_Caption" xml:space="preserve">
+    <value>transferred Policy</value>
+  </data>
+  <data name="tcnProcess_numToolTip" xml:space="preserve">
+    <value>It corresponds to the order of process related to the transaction</value>
+  </data>
+  <data name="tcnProcess_num_Caption" xml:space="preserve">
+    <value>Order Issue</value>
+  </data>
+</root>

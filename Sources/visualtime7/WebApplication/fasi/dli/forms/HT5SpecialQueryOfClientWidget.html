@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html id='app' lang='es' xml:lang='es'>
+<head>
+    <link rel='stylesheet' href='/fasi/assets/css/bootstrap-datetimepicker.min.css' />
+
+</head>
+<body>
+    <form id="HT5SpecialQueryOfClientMainForm">
+        <input type="hidden" id="HT5SpecialQueryOfClientFormId" name="HT5SpecialQueryOfClientFormId" value="" />
+        <div id="alerts-container"></div>
+            <!-- Container content -->
+                        <!-- Container: zone0 zone -->
+                        <div  class='col-md-12'>
+
+                  <div id="zone0">
+    <!-- Container content -->
+                <!-- Container: zone2 zone -->
+                <div  class='col-md-3'>
+
+                  <div id="zone2">
+    <!-- Container content -->
+                <!-- image1 Image -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-12'>
+                                     <img src='/images/Logos/logo.png' id='image1' data-i18n="[alt]app.form.image1_Caption;[title]app.form.image1_Tooltip" class='img-responsive ' alt=''/>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- image0 Image -->
+                <div class='col-md-12 form-horizontal'>
+                  <div class='form-group'>
+                    <div class='col-md-12'>
+                                     <img src='/images/Banners/Customer Service/3.jpg' id='image0' data-i18n="[alt]app.form.image0_Caption;[title]app.form.image0_Tooltip" class='img-responsive ' alt='' height='100' />
+
+                    </div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone2 zone -->
+                <!-- Container: zone9 zone -->
+                <div  class='col-md-3'>
+
+                  <div id="zone9">
+    <!-- Container content -->
+                <!-- label4 label -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group text-center'>
+                                  <label id='label4' data-i18n="[html]app.form.label4_Label;[title]app.form.label4_Tooltip" title='Seleccione la forma en como desea realizar la búsqueda del cliente' style='font-weight: bold;'>Seleccione la forma en como desea realizar la búsqueda del cliente</label>
+
+                  </div>
+                </div>
+                <!-- TipoDeBusqueda radiobuttonlist -->
+                        <div class='col-md-12 margin-top-1'></div>
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='TipoDeBusquedaLabel' data-i18n="[html]app.form.TipoDeBusqueda_Label" class='control-label' for='TipoDeBusqueda'></label><span id='TipoDeBusquedaRequired' class='required-mark'>*</span>
+                                <div id='TipoDeBusquedaWrap'>
+                <div class='radio'>
+                  <label><input type='radio' name='TipoDeBusqueda' id='TipoDeBusqueda_1' title='Seleccione la forma en como desea realizar la búsqueda del cliente' value='1'/>                  <span data-i18n="app.form.TipoDeBusqueda_1_Display" >eMail</span>
+                </label>
+                </div>
+                <div class='radio'>
+                  <label><input type='radio' name='TipoDeBusqueda' id='TipoDeBusqueda_2' value='2'/>                  <span data-i18n="app.form.TipoDeBusqueda_2_Display" >Cuenta banco</span>
+                </label>
+                </div>
+                <div class='radio'>
+                  <label><input type='radio' name='TipoDeBusqueda' id='TipoDeBusqueda_3' value='3'/>                  <span data-i18n="app.form.TipoDeBusqueda_3_Display" >Tarjeta de crédito</span>
+                </label>
+                </div>
+                <div class='radio'>
+                  <label><input type='radio' name='TipoDeBusqueda' id='TipoDeBusqueda_4' value='4'/>                  <span data-i18n="app.form.TipoDeBusqueda_4_Display" >Fecha de nacimiento</span>
+                </label>
+                </div>
+                <div class='radio'>
+                  <label><input type='radio' name='TipoDeBusqueda' id='TipoDeBusqueda_5' value='5'/>                  <span data-i18n="app.form.TipoDeBusqueda_5_Display" >Ubicación</span>
+                </label>
+                </div>
+                <div id='TipoDeBusqueda_validate'></div>
+            </div>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone9 zone -->
+                <!-- Container: zone10 zone -->
+                <div  class='col-md-3'>
+
+                  <div id="zone10">
+    <!-- Container content -->
+                <!-- Container: zone5 zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zone5">
+    <!-- Container content -->
+                <!-- eMail text -->
+                        <div class='col-md-12 margin-top-2'></div>
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='eMailLabel' data-i18n="[html]app.form.eMail_Label" class='control-label hidden' for='eMail'>eMail</label><span id='eMailRequired' class='required-mark hidden'>*</span>
+                        <input class='form-control hidden' id='eMail' data-i18n="[title]app.form.eMail_Tooltip;[placeholder]app.form.eMail_Watermark" name='eMail' title='Dirección del correo electrónico.' type='email' placeholder='usuario@proveedor.com' size='60' maxlength='60'/>
+                  </div>
+                </div>
+                <!-- BankAccount text -->
+                        <div class='col-md-12 margin-top-1'></div>
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='BankAccountLabel' data-i18n="[html]app.form.BankAccount_Label" class='control-label hidden' for='BankAccount'>Cuenta</label><span id='BankAccountRequired' class='required-mark hidden'>*</span>
+                        <input class='form-control hidden' id='BankAccount' data-i18n="[title]app.form.BankAccount_Tooltip;[placeholder]app.form.BankAccount_Watermark" name='BankAccount' title='Número de la cuenta bancaria.' type='text' size='25' maxlength='25'/>
+                  </div>
+                </div>
+                <!-- CreditCardNumber text -->
+                        <div class='col-md-12 margin-top-1'></div>
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='CreditCardNumberLabel' data-i18n="[html]app.form.CreditCardNumber_Label" class='control-label hidden' for='CreditCardNumber'>Tarjeta</label><span id='CreditCardNumberRequired' class='required-mark hidden'>*</span>
+                        <input class='form-control hidden' id='CreditCardNumber' data-i18n="[title]app.form.CreditCardNumber_Tooltip;[placeholder]app.form.CreditCardNumber_Watermark" name='CreditCardNumber' title='Número que identifica a la tarjeta de crédito.' type='text' size='20' maxlength='20'/>
+                  </div>
+                </div>
+                <!-- BirthDate datepicker -->
+                        <div class='col-md-12 margin-top-1'></div>
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='BirthDateLabel' data-i18n="[html]app.form.BirthDate_Label" class='control-label hidden' for='BirthDate'>Fecha de nacimiento</label><span id='BirthDateRequired' class='required-mark hidden'>*</span>
+                        <div class='input-group date hidden' id='BirthDate_group'>
+                                    <input id='BirthDate' name='BirthDate' type='text' class='form-control hidden' title='Fecha de nacimiento del cliente.' size='10' data-i18n="[title]app.form.BirthDate_Tooltip" maxlength='10'/>
+                                    <span class='input-group-addon'>
+                                        <span class='glyphicon glyphicon-calendar'></span>
+                                    </span>
+                                </div>
+                  </div>
+                </div>
+                <!-- Code dropdownlist -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='CodeLabel' data-i18n="[html]app.form.Code_Label" class='control-label hidden' for='Code'>País</label><span id='CodeRequired' class='required-mark hidden'>*</span>
+                        <select id='Code' name='Code' class='form-control hidden' data-i18n="[title]app.form.Code_Tooltip" title='dropdownlist8'>
+                                </select>
+
+                  </div>
+                </div>
+                <!-- ZipCode text -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='ZipCodeLabel' data-i18n="[html]app.form.ZipCode_Label" class='control-label hidden' for='ZipCode'>Código postal</label><span id='ZipCodeRequired' class='required-mark hidden'>*</span>
+                        <input class='form-control hidden' id='ZipCode' data-i18n="[title]app.form.ZipCode_Tooltip;[placeholder]app.form.ZipCode_Watermark" name='ZipCode' title='Código Postal' type='text' size='10' maxlength='10'/>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone5 zone -->
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone10 zone -->
+                <!-- Container: zoneConsulta zone -->
+                <div  class='col-md-3'>
+
+                  <div id="zoneConsulta">
+    <!-- Container content -->
+                <!-- Container: zone1 zone -->
+                <div  class='col-md-12'>
+
+                  <div id="zone1" class='hidden'>
+    <!-- Container content -->
+                <!-- ClientID dropdownlist -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <label id='ClientIDLabel' data-i18n="[html]app.form.ClientID_Label" class='control-label' for='ClientID'>Seleccione cliente a consultar</label>
+                        <select id='ClientID' name='ClientID' class='form-control' data-i18n="[title]app.form.ClientID_Tooltip" title='Clientes encontrados que coinciden con el valor de búsqueda indicado.'>
+                                </select>
+
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zone1 zone -->
+                <!-- button1 button -->
+                <div class='col-md-12 form-vertical'>
+                  <div class='form-group'>
+                    <div class='input-group'><button id='button1' class='ladda-button btn pull-left btn-default' data-style='expand-right' title='Se realiza la búsqueda del cliente con base al valor indicado' data-i18n="[title]app.form.button1_Tooltip">
+   <span class='ladda-label' data-i18n="app.form.button1_Caption">Buscar cliente</span>   <img src='/images/Library/16x16_ASPNetIcons/zoom_16x16.gif' id='button1Image'/><span class='ladda-spinner'></span></button>
+<span class='input-group-btn'><button id='button3' class='ladda-button btn pull-left hidden btn-default' data-style='expand-right' title='Se inicializa la búsqueda realizada, a fin de realizar una nueva búsqueda.' data-i18n="[title]app.form.button3_Tooltip">
+   <span class='ladda-label' data-i18n="app.form.button3_Caption">Reiniciar</span>   <img src='/images/Library/16x16_ASPNetIcons/undo1_16x16.gif' id='button3Image'/><span class='ladda-spinner'></span></button>
+</span></div>
+                  </div>
+                </div>
+    <!-- End Container content -->
+               </div>
+                </div>
+                <!-- End Container: zoneConsulta zone -->
+    <!-- End Container content -->
+               </div>
+                        </div>
+                        <!-- End Container: zone0 zone -->
+            <!-- End Container content -->
+
+    </form>
+
+
+
+
+
+    
+
+    <script src='/fasi/assets/js/bootstrap-datetimepicker.min.js'></script>
+    <script src='/fasi/assets/js/i18next.min.js'></script>
+
+    <script src="/fasi/dli/forms/HT5SpecialQueryOfClient.js?rel=20200527010729388"></script>
+</body>
+</html>

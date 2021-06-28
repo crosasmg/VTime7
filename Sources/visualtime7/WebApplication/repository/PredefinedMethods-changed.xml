@@ -1,0 +1,178 @@
+PredefinedMethods.xml
+
+ANTES
+
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.PrepareToSyncAddress" Alias="Synchronize the address" IsShared="false" Summary="Create or update the address.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    											IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="address"		 				Caption="Address" 				  							Type="InMotionGIT.AddressManager.Contract.General.Address"    		IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="physicalAddress" 				Caption="Physical address"		   							Type="InMotionGIT.AddressManager.Contract.General.PhysicalAddress"  IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="eMail" 						Caption="eMail address"  									Type="InMotionGIT.AddressManager.Contract.General.eMailAddress"  	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="otherAddressesSocialNetworks"  Caption="Social network" 									Type="InMotionGIT.AddressManager.Contract.General.SocialNetwork" 	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="poBox" 						Caption="POBox" 				  							Type="InMotionGIT.AddressManager.Contract.General.POBoxAddress"    	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="webAddress" 					Caption="Web address"   									Type="InMotionGIT.AddressManager.Contract.General.WebAddress"    	IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="latitud" 						Caption="Latitude of the physical address"					Type="System.String"    											IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="longitud" 						Caption="Longitude of the physical address"  				Type="System.String"  												IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"		IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.Common.Contracts.ServiceResultData" />
+  </CallMethodAction>
+  
+AHORA
+
+<CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.PrepareToSyncAddress" Alias="Synchronize address" IsShared="false" Summary="Create or update the address.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    											IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="address"		 				Caption="Address" 				  							Type="InMotionGIT.AddressManager.Contract.General.Address"    		IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="physicalAddress" 				Caption="Physical address"		   							Type="InMotionGIT.AddressManager.Contract.General.PhysicalAddress"  IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="eMail" 						Caption="eMail address"  									Type="InMotionGIT.AddressManager.Contract.General.eMailAddress"  	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="otherAddressesSocialNetworks"  Caption="Social network" 									Type="InMotionGIT.AddressManager.Contract.General.SocialNetwork" 	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="poBox" 						Caption="POBox" 				  							Type="InMotionGIT.AddressManager.Contract.General.POBoxAddress"    	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="webAddress" 					Caption="Web address"   									Type="InMotionGIT.AddressManager.Contract.General.WebAddress"    	IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="latitud" 						Caption="Latitude of the physical address"					Type="System.String"    											IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="longitud" 						Caption="Longitude of the physical address"  				Type="System.String"  												IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"		IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.Common.Contracts.ServiceResultData" />
+  </CallMethodAction>
+  
+  
+  
+  
+ANTES
+<CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.RetrieveAddressesByIdDLI" Alias="Retrieve addresses by id" IsShared="false" Summary="Retrieve addresses by id.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    															IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="userCompany"					Caption="User company of the address"  						Type="InMotionGIT.Common.DataType.LookUpValueExtend"								IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="addressId"						Caption="Id value of the address"  							Type="System.Int32"																	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"						IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfAddress"					Caption="Type of address"									Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress"			IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfPhysicalAddress"			Caption="Type of physical address"  						Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfPhysicalAddress"	IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.AddressManager.Contract.General.AddressSTOCollection" />
+  </CallMethodAction>
+  
+ AHORA
+ <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.RetrieveAddressesByIdDLI" Alias="Retrieve addresses by id" IsShared="false" Summary="Retrieve addresses by id.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    															IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="userCompany"					Caption="User company of the address"  						Type="InMotionGIT.Common.DataType.LookUpValueExtend"								IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="addressId"						Caption="Id value of the address"  							Type="System.Int32"																	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"						IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfAddress"					Caption="Type of address"									Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress"			IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfPhysicalAddress"			Caption="Type of physical address"  						Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfPhysicalAddress"	IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.AddressManager.Contract.General.AddressDLICollection" />
+  </CallMethodAction>
+  
+  
+  
+ANTES
+<CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.RetrieveAddressesDLI" Alias="Retrieve addresses by owner" IsShared="false" Summary="Retrieve addresses by owner.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    															IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="userCompany"					Caption="User company of the address"  						Type="InMotionGIT.Common.DataType.LookUpValueExtend"								IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerType"				Caption="Record owner type"  								Type="InMotionGIT.Common.Contracts.Enumerations.EnumRecordOwnerType"				IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerId"					Caption="Record owner id" 									Type="System.String"																IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"						IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfAddress"					Caption="Type of address"									Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress"			IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfPhysicalAddress"			Caption="Type of physical address"  						Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfPhysicalAddress"	IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.AddressManager.Contract.General.AddressSTOCollection" />
+  </CallMethodAction>
+  
+AHORA
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.RetrieveAddressesDLI" Alias="Retrieve addresses by owner" IsShared="false" Summary="Retrieve addresses by owner.">
+    <Parameters>
+	  <ParameterMethod Name="processDate" 					Caption="Process date"			   							Type="System.DateTime"    															IsOptional="false" 	TypePassVariable="ByValue" />
+      <ParameterMethod Name="userCompany"					Caption="User company of the address"  						Type="InMotionGIT.Common.DataType.LookUpValueExtend"								IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerType"				Caption="Record owner type"  								Type="InMotionGIT.Common.Contracts.Enumerations.EnumRecordOwnerType"				IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerId"					Caption="Record owner id" 									Type="System.String"																IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"						IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfAddress"					Caption="Type of address"									Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfAddress"			IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="typeOfPhysicalAddress"			Caption="Type of physical address"  						Type="InMotionGIT.AddressManager.Contract.Enumerations.EnumTypeOfPhysicalAddress"	IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.AddressManager.Contract.General.AddressDLICollection" />
+  </CallMethodAction>
+  
+  
+  
+ANTES
+No se encontraba la siguiente sección, favor colocar al final de los métodos predefinidos de direcciones
+  
+AHORA
+
+<CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.AddressManager.Proxy.AddressManager.PublicClient.BuildCompleteAddressToStreetAddress" Alias="Build complete address to street address" 		IsShared="false" Summary="Builds the street address from the complete address.">
+    <Parameters>
+	  <ParameterMethod Name="physicalAddress"				Caption="Physical address"			   						Type="InMotionGIT.AddressManager.Contract.General.PhysicalAddress"	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   					Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"		IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.AddressManager.Contract.General.StreetAddress" />
+  </CallMethodAction>
+  
+
+ANTES
+No se encontraban los métodos predefinidos para teléfonos, agregar luego de direcciones
+
+<!-- Phones -->
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.DeletePhoneRelatedToOwner" Alias="Deletes a phone from the owner" IsShared="false" Summary="Deletes a phone from the owner.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerType"		Caption="Record owner type"  								Type="InMotionGIT.Common.Contracts.Enumerations.EnumRecordOwnerType"	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerId"			Caption="Owner id of the phone"								Type="System.String"													IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="phoneId"				Caption="Id of the phone"									Type="System.Int32"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="internalPhoneKey"		Caption="Internal id of the phone"							Type="System.Int32"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.Common.Contracts.ServiceResultData" />
+  </CallMethodAction>
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.RetrievePhoneByInternalPhoneKey" Alias="Retrieves a phone by it's internal key" IsShared="false" Summary="Retrieves a phone by it's internal key.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="phoneId"				Caption="Id of the phone"									Type="System.Int32"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="internalPhoneKey"		Caption="Internal id of the phone"							Type="System.Int32"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.PhoneManager.Contract.General.Phone" />
+  </CallMethodAction>
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.RetrievePhones" Alias="Retrieve the phones of the owner" IsShared="false" Summary="Retrieve the phones of the owner.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerType"		Caption="Record owner type"  								Type="InMotionGIT.Common.Contracts.Enumerations.EnumRecordOwnerType"	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerId"			Caption="Owner id of the phone"								Type="System.String"													IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.PhoneManager.Contract.General.PhoneCollection" />
+  </CallMethodAction>
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.RetrievePhonesByPhoneID" Alias="Retrieve the phones of the owner by id" IsShared="false" Summary="Retrieve the phones of the owner by id.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="phoneId"				Caption="Id of the phone"									Type="System.Int32"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.PhoneManager.Contract.General.PhoneCollection" />
+  </CallMethodAction>
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.SynchronizePhone" Alias="Synchronize Phone" IsShared="false" Summary="Updates or create a phone to the owner.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="phone"					Caption="Phone"												Type="InMotionGIT.PhoneManager.Contract.General.Phone"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.Common.Contracts.ServiceResultData" />
+  </CallMethodAction>
+  
+  <CallMethodAction Enabled="true" StatementKind="Function" Source="Predefined" Name="InMotionGIT.PhoneManager.Proxy.PhoneManager.PublicClient.SynchronizePhonesRelatedToOwner" Alias="Synchronize Phones" IsShared="false" Summary="Updates or create a phone to the owner.">
+    <Parameters>
+	  <ParameterMethod Name="userCompany" 			Caption="User company of the phone"  						Type="InMotionGIT.Common.DataType.LookUpValue"							IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerType"		Caption="Record owner type"  								Type="InMotionGIT.Common.Contracts.Enumerations.EnumRecordOwnerType"	IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="recordOwnerId"			Caption="Owner id of the phone"								Type="System.String"													IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="phone"					Caption="Phone"												Type="InMotionGIT.PhoneManager.Contract.General.PhoneCollection"														IsOptional="false" 	TypePassVariable="ByValue" />
+	  <ParameterMethod Name="consumer"   			Caption="Consumer Object/pass as null until completed"		Type="InMotionGIT.Common.Contracts.Process.ConsumerInformation"			IsOptional="false" 	TypePassVariable="ByValue" />
+    </Parameters>
+    <Result Type="InMotionGIT.Common.Contracts.ServiceResultData" />
+  </CallMethodAction>

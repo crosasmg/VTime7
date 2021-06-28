@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.FrontOffice.Support
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.FrontOffice.Support.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.My.Resources.Resources.IncorrectPasswordFormat">
+<summary>
+  Looks up a localized string similar to Password is not formatted properly.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.My.Resources.Resources.SecurityValidate">
+<summary>
+  Looks up a localized string similar to The connection to the system from this computer (&apos;{0}&apos;) is temporarily disabled..
+</summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.AuthenticationHelper.IsTicketSecurityExistAndValid(System.String)">
+ <summary>
+ Method for validating whether a cookie validation type and if that pertenesca and if the user only if it exists
+ for the user that this ticket is not expired this username
+ </summary>
+ <param name="UserName">User Name of the user that login</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.BackOffice.GetUrlTransaction(System.String)">
+ <summary>
+  Genera la URL para realizar el Go To
+ </summary>
+ <param name="prefix"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.BackOffice.GetTransaction(System.String)">
+ <summary>
+ Obtiene las lista de transacciones filtradas validada
+ </summary>
+ <param name="prefix">Argumento de búsqueda</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.BackOffice.IsAllowed(System.String,System.String,System.String)">
+ <summary>
+ Define si esta permite o no el acceder a la transacción
+ </summary>
+ <param name="userCode">Código de usuario</param>
+ <param name="userSchema">Esquema de seguridad de back office</param>
+ <param name="transactionCode">Código de transacción </param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult">
+ <summary>
+ Estructura de respuesta para las acciones de tipo servidor del Form Designer.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.Success">
+ <summary>
+ Indica que la acción fue ejecutado exitosamente.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.Code">
+ <summary>
+ Código usando en la respuesta, normalmente usado para errores.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.Reason">
+ <summary>
+ Razón de la respuesta, normalmente usado para errores.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.DataBehavior">
+ <summary>
+ Estructura para definir comportamiento de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.Count">
+ <summary>
+ Cantidad de registros procesados.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.Data">
+ <summary>
+ Datos a ser retornados.
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddRedirect(System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, un redireccionamiento.
+ </summary>
+ <param name="redirect">URL a ser invocado</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddRedirect(System.String,System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, un redireccionamiento.
+ </summary>
+ <param name="redirect">URL a ser invocado</param>
+ <param name="setting">Define características del redireccionamiento para el caso de las popup.</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddControlBehavior(System.String,System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, el cambio de una propiedad visual de un control.
+ </summary>
+ <param name="id">Identificador del control</param>
+ <param name="[property]">Propiedad a ser cambiada</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddNotifySplash(System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, un notificación de pantalla completa (splash)
+ </summary>
+ <param name="message">Mensaje a mostrar en la notificación</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddNotifyPopup(System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, un notificación de tipo popup
+ </summary>
+ <param name="message">Mensaje a mostrar en la notificación</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.NotifyModeToastOn">
+ <summary>
+ Establece que la notificaciones se muestren en una popup tipo toast
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.NotifyModeAlertOn">
+ <summary>
+ Establece que la notificaciones se muestren en la cabecera de la página.
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataType.ServerActionResult.AddNotify(System.String,System.String,System.String)">
+ <summary>
+ Agrega a la estructura de comportamiento, un mensaje de error, advertencia o informativo.
+ </summary>
+ <param name="type">Tipo de mensaje error, advertencia o informativo</param>
+ <param name="message">Mensaje a mostrar en la notificación</param>
+ <param name="controlName">Nombre del control asociado al mensaje</param>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataType.DataBehaviorType">
+ <summary>
+ Estructura para definir el comportamiento de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.DataBehaviorType.redirect">
+ <summary>
+ URL a ser invocado
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.DataBehaviorType.redirectsetting">
+ <summary>
+ Define características del redireccionamiento para el caso de las popup.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.DataBehaviorType.controlbehavior">
+ <summary>
+ Estructura para definir el comportamiento de los controles de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.DataBehaviorType.notify">
+ <summary>
+ Estructura para definir el comportamiento de las notificaciones de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataType.ControlBehaviorType">
+ <summary>
+ Estructura para definir el comportamiento de los controles de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ControlBehaviorType.id">
+ <summary>
+ Identificador del control
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.ControlBehaviorType.property">
+ <summary>
+ Propiedad a ser cambiada
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataType.NotifyType">
+ <summary>
+ Estructura para definir el comportamiento de las notificaciones de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.NotifyType.mode">
+ <summary>
+ Indica si las notificaciones se deben mostrar en forma de popup tipo "toast" o en la cabecera de la página "alert"
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.NotifyType.splash">
+ <summary>
+ Mensaje a desplegar como notificación de pantalla completa
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.NotifyType.popup">
+ <summary>
+ Lista de mensajes a ser desplegado en forma de popup
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.NotifyType.messages">
+ <summary>
+ Estructura para definir las notificaciones de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataType.Notify">
+ <summary>
+ Estructura para definir las notificaciones de la forma, desde las acciones del servidor.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.Notify.type">
+ <summary>
+ Tipo de mensaje error, advertencia o informativo
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.Notify.controlname">
+ <summary>
+ Nombre del control asociado al mensaje
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataType.Notify.message">
+ <summary>
+ Mensaje a mostrar en la notificación
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.SetParent">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.UserId">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.DocumentId">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.CreationDate">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.UpdateDate">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.Tag">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.Content">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.Page">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.filter">
+<summary>
+
+</summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCache.Clone">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.SetParent">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.Id">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.Name">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.Description">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.XSLTQueryTemplate">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.WorkFlowAssembly">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.WorkFlowParameters">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.ASPXEditPage">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.TableName">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.ColumnListDefine">
+<summary>
+
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.CreatorUserCode">
+<summary>
+Code of the user who creates the information. Information for audit.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.CreationDate">
+<summary>
+Date when the information is created. Information for audit.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.UpdateUserCode">
+<summary>
+Code of the user who updates the information. Information for audit. When the record is created, this field has the code of the user who creates the information.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.UpdateDate">
+<summary>
+Date when the information is updated. Information for audit. When the record is created, this field has the date of creation.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.filter">
+<summary>
+
+</summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentList.Clone">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataAccessLayer.DatabaseHelper">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCacheCollection">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCacheCollection.AddDocumentCache">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentCacheCollection.Clone">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentListCollection">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentListCollection.AddDocumentList">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.DataAccessLayer.DocumentListCollection.Clone">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Enumerations.SelectEnumValue``1(``0,System.Int32)">
+ <summary>
+ Allow get value from enumm list from selected value a DropDownList
+ </summary>
+ <typeparam name="T">Enum type</typeparam>
+ <param name="value">Selected Item</param>
+ <returns>Enum value</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Enumerations.SelectEnumValue``1(``0,System.String)">
+ <summary>
+ Allow get value from enumm list from selected value a DropDownList
+ </summary>
+ <typeparam name="T">Enum type</typeparam>
+ <param name="value">Selected Item</param>
+ <returns>Enum value</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Enumerations.LanguageFromCurrentThreadCulture">
+ <summary>
+ Return the language by current thread culture
+ </summary>
+ <returns>EnumLanguage value</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.KeyValidator.KeyValidator(System.String)">
+ <summary>
+ Validator key for boor
+ </summary>
+ <param name="key"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.KeyValidator.GetOfNumberDayOfWeek(System.DateTime)">
+ <summary>
+ Get of Number Day of week.
+ </summary>
+ <param name="currentDate"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.KeyValidator.GetWeekInMonth(System.DateTime)">
+ <summary>
+ Get Week in Month
+ </summary>
+ <param name="currentDate"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Language.LanguageGetAllName">
+ <summary>
+ Obtener todos las traducciones de los posibles languages con el culture info actual /Get all possible translations of languages with the current culture info
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Language.UpdateLanguage(InMotionGIT.FrontOffice.Proxy.UserService.AuthenticationInformation)">
+ <summary>
+Actualiza el lenguaje del usuario/User language updated
+ </summary>
+ <param name="userInformation"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Language.LanguageIdToEnumLanguage(System.Int32)">
+ <summary>
+ Convert LanguageId to EnumLanguage
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Language.CulturalNameToLanguageId(System.String)">
+ <summary>
+ Convert CulturalName to LanguageId
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Language.LanguageEnumToCulturalName(InMotionGIT.Common.Enumerations.EnumLanguage)">
+ <summary>
+ Convert LanguageEnum to CulturalName
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.Helpers.Page">
+ <summary>
+ Class of helper page from InMotionGIT.FrontOffice.Service
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Page.PageNative(System.String)">
+ <summary>
+
+ </summary>
+ <param name="pageTitle"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Page.GetCurrentPageName">
+ <summary>
+ Get namefile by current request
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Page.GetNamePageSpecial(System.String,System.String,System.Boolean)">
+ <summary>
+ Get file in path
+ </summary>
+ <param name="path"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Page.ReloadedPage">
+ <summary>
+ Realiza un load del curren page
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.Theme.ThemeGetAll">
+ <summary>
+ Optiene todos los directorios que estan ubicados en el App_Themes
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Helpers.ValidateFormat.MailAddress(System.String)">
+ <summary>
+ Permite validar una dirección de correo electronico.
+ </summary>
+ <param name="EmailAddressValue">dirección de correo a validar</param>
+ <returns>la dirección de correo valida</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.InitializeOneBackOfficeUser(System.String,System.Int32,System.Boolean)">
+ <summary>
+ Permite la inicialización de un usuario del backoffice en los esquemas de datos del frontoffice.
+ </summary>
+ <param name="currentUserName">Nombre del usuario actual</param>
+ <param name="userCode">Código del usuario del backoffice a ser inicializado</param>
+ <param name="sendEmailWithCredentials">Indica si se debe enviar correo con credenciales</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.InitializeBackOfficeRoles(System.Collections.Generic.List{System.String})">
+ <summary>
+ Permite la inicialización uno o mas roles del backoffice (Esquema de seguridad) en los esquemas de datos del frontoffice.
+ </summary>
+ <param name="roleList">Lista de roles a ser inicializada, si la lista esta vacia se toman todo los esquemas activo del backoffice.</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.InitializeAdminUser(System.String)">
+ <summary>
+ Permite la inicialización del usuario administrador del frontoffice.
+ </summary>
+ <param name="currentUserName">Nombre del usuario actual</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.CleanWorkflowTrackingInformation">
+ <summary>
+ Limpia la información de traza para los workflows
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.CleanAnonymousUsersInformation">
+ <summary>
+ Limpia la información de cualquier usuario anonimo
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.CleanAllUsersInformation">
+ <summary>
+ Limpia la información de cualquier todos los usuarios del frontoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.CleanAllRoleInformation">
+ <summary>
+ Limpia la información de cualquier todos los roles del frontoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.InitializeFrontOfficeRoles">
+ <summary>
+ Crea los roles por default usado por el frontoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.InitializeWidgetsInRolesDefaultConfiguration">
+ <summary>
+ Crea la configuración inicial de los widgets por rol
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.CopyUserConfiguration(System.String,System.String)">
+ <summary>
+ Permite copiar la configuración de un usuario específico
+ </summary>
+ <param name="userName">Nombre del usuario a ser copiado</param>
+ <param name="copyConfigurationOption">Indica el modo de copia</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.PageListOrigin(System.Int32)">
+ <summary>
+ Configuración de paginas de un usuario
+ </summary>
+ <param name="UserIdOrigin">Identificación de un usuario</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.WidgetInstanceFromPage(System.Collections.Generic.List{InMotionGIT.FrontOffice.Contracts.Page})">
+ <summary>
+ Carga la información de los widgets vinculados a una lista de paginas.
+ </summary>
+ <param name="pages">Lista de paginas.</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.WidgetInstanceTransFromWidgetInstance(System.Collections.Generic.List{InMotionGIT.FrontOffice.Contracts.WidgetInstance})">
+ <summary>
+ Carga la información de traducción asociados a una lista de widgets.
+ </summary>
+ <param name="widgets">Lista de widgets.</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.int_CopyUserConfiguration(System.Collections.Generic.List{InMotionGIT.FrontOffice.Contracts.Page},System.Collections.Generic.List{InMotionGIT.FrontOffice.Contracts.WidgetInstance},System.Collections.Generic.List{InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans},System.Int32,System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Proceso de copiado de la configuración de un usuario.
+ </summary>
+ <param name="listPageOrigin"></param>
+ <param name="listWidgetInstance"></param>
+ <param name="listWidgetIntanceTrans"></param>
+ <param name="userIdOrigin"></param>
+ <param name="userIdDestiny"></param>
+ <param name="copyConfigurationOption"></param>
+ <param name="roleNameOrigin"></param>
+ <param name="roleNameDestiny"></param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.GetBackOfficeSchemesToStringList">
+ <summary>
+ Recupera una lista separada por coma de los esquemas de seguridad activos del backoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.GetBackOfficeSchemes">
+ <summary>
+ Recupera un datatable con la lista de esquemas de seguridad activos del backoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.RetrieveDataUsersFrontOffice">
+ <summary>
+ Recupera una lista de usuario del frontoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.GetBackOfficeUsers">
+ <summary>
+ Recupera un datatable con la lista de usuario del backoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Initialization.GetFrontOfficeSchemes">
+ <summary>
+ Recupera un datatable con la lista de roles de seguridad del frontoffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Integrations.STS.STS_UsersDelete(System.String)">
+ <summary>
+ Elimina un usuario del STST por medio de la dirección de correo electrónico
+ </summary>
+ <param name="email">Correo electrónico del usuario</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Integrations.STS.Create(InMotionGIT.FrontOffice.Support.Integrations.UserDTO,System.Boolean)">
+ <summary>
+ Método de creación de usuario
+ </summary>
+ <param name="item">Contrato del usuario a crear</param>
+ <param name="VerifyExist">Si se verifica el usuario</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.Integrations.STS.Find(System.String,System.String)">
+ <summary>
+  Método que verifica la existencia de un usuario por medio de email
+ </summary>
+ <param name="Email">Email a buscar</param>
+ <param name="Token">Token de validación</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.ID">
+ <summary>
+ ID
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Sender">
+ <summary>
+ Sender
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Receiver">
+ <summary>
+ Receiver
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Subject">
+ <summary>
+ Subject
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Body">
+ <summary>
+ Body
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Priority">
+ <summary>
+ Priority
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.State">
+ <summary>
+ State
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.UnRead">
+ <summary>
+ Un Read
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Received">
+ <summary>
+ Received
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Sended">
+ <summary>
+ Sended
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.Readed">
+ <summary>
+ Readed
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.SourceId">
+ <summary>
+ Source Id
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC.MailJobId">
+ <summary>
+ Mail Job Id
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.Create(InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC)">
+ <summary>
+ Crea un registro en la tabla SMC.
+ </summary>
+ <param name="smcItem">Instancia de SMC</param>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.Retrieve(System.Int32)">
+ <summary>
+ Recupera un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.RetrieveAll">
+ <summary>
+ Recupera una lista de registros en la tabla SMC.
+ </summary>
+ <returns>Lista de instancias de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.RetrieveLastKey">
+ <summary>
+ Verifica si existe un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <returns>Verdadero si existe el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.RetrieveByPage(System.Int32,System.Int32,System.String)">
+ <summary>
+ Recupera una lista de registros en la tabla SMC.
+ </summary>
+ <returns>Lista de instancias de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.Update(InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC)">
+ <summary>
+ Actualiza un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="smcItem">Instancia de SMC</param>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.Delete(System.Int32)">
+ <summary>
+ Elimina un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Verdadero si se pudo eliminar el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.Count(System.Int32)">
+ <summary>
+ Verifica si existe un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Verdadero si existe el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.DataAccess.SMC.DataRowMapper(System.Data.DataRow)">
+ <summary>
+ Permite hacer el mapeo entre una fila de un datatable hacia una instancia de SMC.
+ </summary>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Support.prototype.Services.SMC">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.Create(InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC,System.Int32)">
+ <summary>
+ Crea un registro en la tabla SMC.
+ </summary>
+ <param name="smcItem">Instancia de SMC</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.RetrieveByKey(System.Int32)">
+ <summary>
+ Recupera un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.RetrieveAll">
+ <summary>
+ Recupera una lista de registros en la tabla SMC.
+ </summary>
+ <returns>Lista de instancias de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.RetrieveLastKey">
+ <summary>
+ Verifica si existe un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <returns>Verdadero si existe el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.RetrieveByPage(System.Int32,System.Int32,System.String)">
+ <summary>
+ Recupera una lista de registros en la tabla SMC.
+ </summary>
+ <returns>Lista de instancias de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.Update(InMotionGIT.FrontOffice.Support.prototype.Contracts.SMC,System.Int32)">
+ <summary>
+ Actualiza un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="smcItem">Instancia de SMC</param>
+ <returns>Instancia de SMC</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.Delete(System.Int32)">
+ <summary>
+ Elimina un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Verdadero si se pudo eliminar el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.prototype.Services.SMC.Count(System.Int32)">
+ <summary>
+ Verifica si existe un registro en la tabla SMC por medio de su clave primaria.
+ </summary>
+ <param name="id"></param>
+ <returns>Verdadero si existe el registro, en caso contrario falso.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.UserManager(System.String,System.String,System.String,System.String,System.String@,System.String,InMotionGIT.Membership.Providers.Enumerations.enumUserType,System.String,System.String,System.Data.DataRow,System.Boolean,System.Boolean)">
+ <summary>
+ Maintenance of the portal user (Add, Update, Delete)
+ </summary>
+ <param name="action">Type of action to be executed..</param>
+ <param name="userName">Iniciales del usuario//UserName for the membership user</param>
+ <param name="newUserName">Iniciales del usuario.//Initials of the User.</param>
+ <param name="password">Palabra clave de acceso al sistema.//Password for access to the system.</param>
+ <param name="email">Email of the user.</param>
+ <param name="rolesList">Roles asignados al usuario.</param>
+ <param name="userType">Tipo de usuario asignado.</param>
+ <param name="secretQuestion">Pregunta secreta.</param>
+ <param name="secretAnswer">Respuesta secreta.</param>
+ <param name="currentUserRow">Data row que contiene los datos asignados en el BackOffice del usuario de seguridad.</param>
+ <param name="invalidPassword">es True si la contraseña no tienen la mínima cantidad caracteres posibles.</param>
+ <param name="deleteRelatedData">Respuesta de seguridad </param>
+ <returns>true if the user was created, updated or removed; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.UserManager(System.String,System.String,System.String,System.String,System.String@,System.String,InMotionGIT.Membership.Providers.Enumerations.enumUserType,System.String,System.String,System.Data.DataRow,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+ <summary>
+ Maintenance of the portal user (Add, Update, Delete)
+ </summary>
+ <param name="action">Type of action to be executed..</param>
+ <param name="userName">Iniciales del usuario//UserName for the membership user</param>
+ <param name="newUserName">Iniciales del usuario.//Initials of the User.</param>
+ <param name="password">Palabra clave de acceso al sistema.//Password for access to the system.</param>
+ <param name="email">Email of the user.</param>
+ <param name="rolesList">Roles asignados al usuario.</param>
+ <param name="userType">Tipo de usuario asignado.</param>
+ <param name="secretQuestion">Pregunta secreta.</param>
+ <param name="secretAnswer">Respuesta secreta.</param>
+ <param name="currentUserRow">Data row que contiene los datos asignados en el BackOffice del usuario de seguridad.</param>
+ <param name="invalidPassword">es True si la contraseña no tienen la mínima cantidad caracteres posibles.</param>
+ <param name="deleteRelatedData">Respuesta de seguridad </param>
+ <param name="sendEmail">Si envia o no el email </param>
+ <returns>true if the user was created, updated or removed; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.ChangePasswordUser(System.String,System.String,System.String)">
+ <summary>
+  Change the password of the user in the portal
+ </summary>
+ <param name="userName">Name of the user..</param>
+ <param name="oldPassword">Current password of the user..</param>
+ <param name="newPassword">New password of the user..</param>
+ <returns>true if the password has been changed; otherwise, false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.RoleManager(System.String,System.String,System.Boolean)">
+ <summary>
+ Maintenance of the portal user roles (Add, Delete)
+ </summary>
+ <param name="action">Type of action to be executed..</param>
+ <param name="schemaCode">Code of the schema..</param>
+ <param name="isBackOffice">Defined is beyond BackOffice..</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.RoleManager(System.String,System.String)">
+ <summary>
+ Maintenance of the portal user roles (Add, Delete)
+ </summary>
+ <param name="action">Type of action to be executed..</param>
+ <param name="schemaCode">Code of the schema..</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.AddPortalUser(System.String,System.String,System.String,System.String,InMotionGIT.Membership.Providers.Enumerations.enumUserType,System.String,System.String,System.Data.DataRow,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+ <summary>
+ Crea un usuario en las tablas de seguridad de AspNet usando la clase Membership (System.Web.Security)
+ </summary>
+ <param name="userName">Iniciales del usuario.//Initials of the User.</param>
+ <param name="password">Palabra clave de acceso al sistema.//Password for access to the system.</param>
+ <param name="email">Email of the user.</param>
+ <param name="rolesList">Roles asignados al usuario.</param>
+ <param name="userType">Tipo de usuario asignado.</param>
+ <param name="secretQuestion">Pregunta secreta.</param>
+ <param name="secretAnswer">Respuesta secreta.</param>
+ <param name="currentUserRow">Data row que contiene los datos asignados en el BackOffice del usuario de seguridad.</param>
+ <param name="invalidPassword">es True si la contraseña no tienen la mínima cantidad caracteres posibles.</param>
+ <returns>Indicador si se ejecuto correctamente la función.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.CreatePortalUser(InMotionGIT.FrontOffice.Proxy.UserService.UserInformation)">
+ <summary>
+ Crea un usuario de FrontOffice en el portal
+ </summary>
+ <param name="userInformation"></param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.UpdatePortalUser(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataRow,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+ <summary>
+ Actualiza la información de un usuario en las tablas de seguridad de
+ AspNet usando la clase Membership (System.Web.Security)
+ </summary>
+ <param name="currentUserName">Iniciales del usuario//UserName for the membership user</param>
+ <param name="newUserName">Nuevas iniciales del usuario//New UserName for the membership user</param>
+ <param name="newPassword">Nuevo password del usuario//New Password for the membership user</param>
+ <param name="newEmail">Correo electrónico del usuario</param>
+ <param name="newRolesList">Nuevos roles asignados al usuario.</param>
+ <param name="secretQuestion">Pregunta secreta.</param>
+ <param name="secretAnswer">Respuesta secreta.</param>
+ <param name="currentUserRow">Data row que contiene los datos asignados en el BackOffice del usuario de seguridad.</param>
+ <returns>Indicador si se ejecuto correctamente la función</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.LockedUser(System.String,System.Boolean)">
+ <summary>
+ Changes state to idle and locked property of a specific user
+ </summary>
+ <param name="userName">Username must modify</param>
+ <param name="Active">State in which you want to stop the user</param>
+ <returns>Returns the status of the action</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.DeletePortalUser(System.String,System.Boolean)">
+ <summary>
+ Borra un usuario en las tablas de seguridad de
+ AspNet usando la clase Membership (System.Web.Security)
+ </summary>
+ <param name="sUserName">Iniciales del usuario.//Initials of the User.</param>
+ <param name="deleteRelatedData">Respuesta de seguridad </param>
+ <returns>Indicador si se ejecuto correctamente la función</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.GetUsersBackOfficeLookup">
+ <summary>
+ Método que permite la extracción de un lookup.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.GetDataUsersBackOffice(System.Int32,System.Int32)">
+ <summary>
+ Execute the query for returns all users of the BackOffice
+ </summary>
+ <param name="userCode">Code of the User.</param>
+ <returns>DataTable with all users of BackOffice.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.User.CreateUserBackOffice">
+ <summary>
+ Create the new user in the FrontOffice
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Support.WorkflowRuntime.ContextFactory(System.Int32,System.String)">
+ <summary>
+ Devuelve una instancia de contexto para ser usada en los workflows.
+ </summary>
+ <param name="currentLanguage">Lenguaje actual del usuario</param>
+ <param name="sourceId">Identificador de la forma/planilla que ejecuta el workflow</param>
+ <returns>Instancia del context para el workflow</returns>
+</member>
+</members>
+</doc>

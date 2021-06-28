@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.DecisionTable.Activity
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.DecisionTable.Activity.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.DecisionTable.Activity.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.DecisionTable.Activity.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTable.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:InMotionGIT.DecisionTable.Activity.DecisionTable"/> class.
+ </summary>
+</member>
+<member name="P:InMotionGIT.DecisionTable.Activity.DecisionTable.Settings">
+ <summary>
+ Gets or sets the settings for decision table.
+ </summary>
+ <value>Decision table's settings.</value>
+</member>
+<member name="P:InMotionGIT.DecisionTable.Activity.DecisionTable.Parameters">
+ <summary>
+ Gets or sets the parameters of the workflow execute.
+ </summary>
+ <value>Parameters execute.</value>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTable.CacheMetadata(System.Activities.NativeActivityMetadata)">
+ <summary>
+ Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+ </summary>
+ <param name="metadata">The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.</param>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTable.Execute(System.Activities.NativeActivityContext)">
+ <summary>
+ Execute the child workflow through to completion.
+ </summary>
+ <param name="context">The execution context in which the activity executes.</param>
+</member>
+<member name="T:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner">
+<summary>
+DecisionTableDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner.ExecuteWorkflowDesigner_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Loaded event of the ExecuteXamlWorkflowDesigner control.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner.SettingDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner.ParametersButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner.InitDynamicArgumentDialog">
+ <summary>
+ Initialises the DynamicArgumentDialog instance with child workflow arguments by loading the specified child workflow then deriving its arguments.
+ </summary>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.DecisionTableDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:InMotionGIT.DecisionTable.Activity.Generator.GenerateDecisionTableClass(InMotionGIT.DecisionTable.Activity.EntitySettings)">
+ <summary>
+ Create an function for validate the rules
+ </summary>
+ <param name="settings"></param>
+ <returns>Generated code</returns>
+</member>
+</members>
+</doc>

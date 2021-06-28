@@ -1,0 +1,69 @@
+﻿{
+  "app": {
+    "title": "Role maintenance",
+    "form": {
+             "Role_Message_Notify_insert4": "Successfully added role",
+             "Role_Title_Notify_insert4": "Add role",
+             "Role_Message_Notify_insert6": "The role wasn't added correctly",
+             "Role_Title_Notify_insert6": "Add role",
+             "Role_Message_Notify_update3": "Successfully updated role",
+             "Role_Title_Notify_update3": "Updated role",
+             "Role_Message_Notify_update6": "The role wasn't update correctly",
+             "Role_Title_Notify_update6": "Updated role",
+             "Role_Message_Notify_delete6": "Successfully deleted role",
+             "Role_Title_Notify_delete6": "Role Elimination",
+             "Role_Message_Notify_delete8": "The role couldn't be deleted because it's associated with one or more users",
+             "Role_Title_Notify_delete8": "Role Elimination",
+             "Role_Message_Notify_delete9": "Couldn't delete the role",
+             "Role_Title_Notify_delete9": "Role Elimination",
+             "Role_Message_Notify_delete11": "The role couldn't be deleted because it's associated with one or more users",
+             "Role_Title_Notify_delete11": "Role Elimination",
+             "Role_Title": "",
+             "Role_AddButtonCaption": "Add",
+             "Role_DeleteButtonCaption": "Delete",
+             "Id_Label": "Identifier",
+             "RoleTbl_Id_Title": "Identifier",
+             "Id_Tooltip": "Id",
+             "Id_Measure": "",
+             "Id_Legend": "",
+             "Id_Prefix": "",
+             "Name_Label": "Name",
+             "RoleTbl_Name_Title": "Name",
+             "Name_Tooltip": "Name",
+             "Name_Measure": "",
+             "Name_Legend": "",
+             "Name_Prefix": "",
+             "Name_Watermark": "",
+             "Name_RequiredMessage": "The name is required",
+             "SecurityLevel_Label": "Security Level",
+             "RoleTbl_SecurityLevel_Title": "Security Level",
+             "SecurityLevel_Tooltip": "Security Level",
+             "SecurityLevel_Measure": "",
+             "SecurityLevel_Legend": "",
+             "SecurityLevel_Prefix": "",
+             "IsBackOfficeSource_Label": "Backoffice Role",
+             "RoleTbl_IsBackOfficeSource_Title": "Backoffice Role",
+             "IsBackOfficeSource_Tooltip": "Backoffice Role",
+             "IsBackOfficeSource_Legend": "",
+             "IsBackOfficeSource_Prefix": "",
+             "GridViewPopup_SaveButtonCaption": "Save",
+             "GridViewPopup_CancelButtonCaption": "Cancel",
+             "GridViewPopup_TitleCaption": "Information"
+
+    },
+    "validation": {
+        "Id": {
+             "AutoNumericMinValue": "The minimum value allowed is -99999",
+             "AutoNumericMaxValue": "The maximum value allowed is 99999"
+        },
+        "Name": {
+             "maxlength": "The field allows 15 maximum characters",
+             "required": "The name is required"
+        },
+        "SecurityLevel": {
+             "AutoNumericMinValue": "The minimum value allowed is 1",
+             "AutoNumericMaxValue": "The maximum value allowed is 9"
+        }
+    }
+  }
+}

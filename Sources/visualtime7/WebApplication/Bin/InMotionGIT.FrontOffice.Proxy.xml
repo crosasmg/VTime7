@@ -1,0 +1,857 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.FrontOffice.Proxy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.AccountLockedResource">
+<summary>
+  Looks up a localized string similar to The account is locked. You will be sent an email within minutes with a notification.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.InactiveUserMessageResource">
+<summary>
+  Looks up a localized string similar to The account is inactive. Contact the administrator.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.InvalidEmailMessageResource">
+<summary>
+  Looks up a localized string similar to Invalid e-mail/userName or password. Did you register before?.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.InvalidMessageResource">
+<summary>
+  Looks up a localized string similar to Invalid account. Try another.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.MessageLoginFailResource">
+<summary>
+  Looks up a localized string similar to Access denied, check your user exists in Backoffice.
+</summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.My.Resources.Resources.TokenExpired">
+<summary>
+  Looks up a localized string similar to Your token has expired..
+</summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.AuthenticationHelper.IsTicketSecurityExistAndValid(System.String)">
+ <summary>
+ Method for validating whether a cookie validation type and if that pertenesca and if the user only if it exists
+ for the user that this ticket is not expired this username
+ </summary>
+ <param name="UserName">User Name of the user that login</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helper.NewManagerClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del repositorio.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada segun los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helper.GetRealDeployWeb(System.String)">
+ <summary>
+ Build the real deploy web - Construye la dirección del deploy
+ </summary>
+ <param name="path">Current deploy web - Dirección del deploy </param>
+ <returns>Real Deploy Web - Dirección real del deploy </returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.AppInfo.AppInfo">
+ <summary>
+ Permite obetener información de todos los fuentes que conforma la aplicación.
+ </summary>
+ <returns>Informacíon de los fuentes</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ExistCrendencialInForm">
+ <summary>
+ Verifica si existe  la variable 'UserName' en el forms
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ExistTokenInQueryString">
+ <summary>
+ Verifica si existe  la variable 'UserName' en el forms
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ValidateAcccesUserLogin">
+ <summary>
+ Valida los credenciales que provienen del form en el submit
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ValidateAcccesUserLogin(System.Boolean,System.String@)">
+ <summary>
+
+ </summary>
+ <param name="forceUser">Forzó a realizar una asignando el usuario en el contexto para identity</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ValidateAcccesByToken(System.Boolean,System.String@)">
+ <summary>
+
+ </summary>
+ <param name="forceUser">Forzar a realizar una asignación del usuario en el contexto para identity</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.UserNameByForm">
+ <summary>
+ Obtiene el valor del form cuando se hace un submit 'UserName'
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ValidateCredentials(System.String,System.String,System.Int32)">
+ <summary>
+ Solo realiza la validación del usuario y contraseña
+ </summary>
+ <param name="user"></param>
+ <param name="password"></param>
+ <param name="companyId"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Authentication.ValidateCredentials(System.String,System.String,System.Int32,System.String@)">
+ <summary>
+ Solo realiza la validación del usuario y contraseña
+ </summary>
+ <param name="user"></param>
+ <param name="password"></param>
+ <param name="companyId"></param>
+ <param name="Message"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Email.SendEmailProcess(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Process, replace the data and sends the email.
+ Procesar, reemplazar los datos y envía el correo electrónico.
+ </summary>
+ <param name="to">
+ Email to send mail - Correo electrónico a enviar el correo
+ </param>
+ <param name="cc">
+ Copy email to also send mail - Copia de correo electrónico para enviar también el correo
+ </param>
+ <param name="bcc">
+ Bcc email to also send mail - Copia oculta de correo electrónico para enviar también el correo
+ </param>
+ <param name="attachment">
+ Attachment - Archivo adjunto
+ </param>
+ <param name="subjectFilePath">
+ Subject File Path - Ruta del archivo que contiene el asunto
+ </param>
+ <param name="bodyFilePath">
+ Body File Path - Ruta del archivo que contiene el cuerpo
+ </param>
+ <param name="target">
+ Dictionary with parameter's values - Diccionario con los valores de parámetros
+ </param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Email.SendMailWithTemplate(InMotionGIT.FrontOffice.Contracts.Parameter)">
+ <summary>
+ Sending email with template for service with the OneWay property / Envío de email con template por servicio con la propiedad OneWay
+ </summary>
+ <param name="Parameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Email.SendMail(InMotionGIT.FrontOffice.Contracts.Parameter)">
+ <summary>
+ Sending email service with the OneWay property/Envío de email por servicio con la propiedad OneWay
+ </summary>
+ <param name="Parameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Email.SendMailTest(InMotionGIT.FrontOffice.Contracts.Parameter)">
+ <summary>
+ Sending email service with the OneWay property/Envío de email por servicio con la propiedad OneWay
+ </summary>
+ <param name="Parameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Email.SendEmailReturn(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+  Method settee for send e mail
+ </summary>
+ <param name="to">Sets who then sent the email </param>
+ <param name="cc">Sets copy email </param>
+ <param name="bcc">Sets copy email</param>
+ <param name="subject">Sets the email subject</param>
+ <param name="body">Sets the body of the email</param>
+ <param name="attachment">Sets the attachment of the email</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.FrontOfficeHelper.GetUserPageSetupAll(System.Int32,System.Int32,System.String)">
+ <summary>
+ Obtiene la información del usuario de todas paginas y contenido
+ </summary>
+ <param name="userId">User code. // Código de usuario.</param>
+ <param name="LanguageId">Language id. // Código de lenguaje.</param>
+ <param name="rolesAssigned">Role name. // Nombre del rol.</param>
+ <returns>UserPageSetup instance. // Instancia de UserPageSetup.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.ManagerInstance.GetRealDeployWeb(System.String)">
+ <summary>
+ Build the real deploy web - Construye la dirección del deploy
+ </summary>
+ <param name="path">Current deploy web - Dirección del deploy </param>
+ <returns>Real Deploy Web - Dirección real del deploy </returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper">
+ <summary>
+ Mappers Class. // Clase Mappers.
+ </summary>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.PageEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a Page entity to a contract. // Mapea una entidad de página a un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>Page contract. // Contrato Page.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.UserSettingEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a User Setting entity to a contract. // Mapea el UserSetting hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>UserSetting contract. // Contrato UserSetting.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.WidgetInstanceEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a Widget instance entity to a contract. // Mapea el WidgetInstance hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>WidgetInstance contract. // Contrato WidgetInstance</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.WidgetInstanceTransEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a Widget instance trans entity to a contract. // Mapea un WidgetInstaceTrans hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>WidgetInstanceTrans contract. // Contrato WidgetInstanceTrans.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.WidgetEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a Widget entity to a contract. // Mapea un Widget hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>Widget contract. // Contrato Widget.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.WidgetTransEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a WidgetTrans entity to a contract. // Mapea un WidgetTrans hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>WidgetTrans contract. // Contrato WidgetTrans.</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Mapper.WidgetInRoleEntityToContract(System.Data.DataRow)">
+ <summary>
+ Maps a WidgetInRole entity to contract. // Mapea un WidgetInRole hacia un contrato.
+ </summary>
+ <param name="ItemRow">Item Row. // Fila.</param>
+ <returns>WidgetInRole contract. // Contrato WidgetInRole.</returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.Helpers.Menu">
+ <summary>
+ Class support for MenuServices / Clase de ayuda para el MenuServices
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Menu.FullWindowsList(System.String,System.String,System.Int32)">
+ <summary>
+ Method to make the call but paged FullWindowsList / Método que permite hacer el llamado de FullWindowsList pero paginado
+ </summary>
+ <param name="filter">Filter/Filtro</param>
+ <param name="schemaCode">Schema code / Codigo de esquema</param>
+ <param name="CompanyId">Company Id / Identificador de compañia </param>
+ <returns>MenuInformation list/Lista de MenuInformation</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Page.SetPagesDefault(InMotionGIT.FrontOffice.Proxy.UserService.UserInformation@)">
+ <summary>
+ Set default page to user / realiza la asignacion de
+ </summary>
+ <param name="user"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.ProxyIntances.GetIntanceFrontOfficeManager">
+ <summary>
+ Retorna una instancia de 'InMotionGIT.FrontOffice.Proxy.FrontOfficeManager.ManagerClient'
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.RoleManager.IsRoleNotValidForAccess(System.String,System.String)">
+ <summary>
+ Valida si el rol del usuario es valido con respecto a lista de roles permitidos
+ </summary>
+ <param name="userName">Nombre del usuario</param>
+ <param name="rolesList">Lista de roles permitidos</param>
+ <returns>Verdadero en caso de no ser valida, falso en caso contrario</returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.RoleManager.ValidateAccess(System.String,System.String)">
+ <summary>
+  Valida el acceso de un usuario a una ventana con los roles actuales
+ </summary>
+ <param name="userName">Nombre del usuario</param>
+ <param name="rolesName">Roles separados por ';' para consultar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.RoleManager.ValidateAccess(InMotionGIT.Membership.Providers.MemberContext,System.String)">
+ <summary>
+  Valida el acceso de un usuario a una ventana con los roles actuales
+ </summary>
+ <param name="UserInfo">Instancia del membercontext</param>
+ <param name="rolesName">Roles separados por ';' para consultar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.RoleManager.ValidateAcccesRole(System.String,System.String)">
+ <summary>
+ Valida el Role con respecto al usuario
+ </summary>
+ <param name="userName"></param>
+ <param name="rolesName"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.RoleManager.DeleteRoleBackOffice(System.String)">
+ <summary>
+  Elimina el role de BackOffice vinculada a un usuario
+ </summary>
+ <param name="userName">Usuario que se desea eliminar el role de BackOffice</param>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.Helpers.UsersAndGrups">
+ <summary>
+ Class support for Users of InMotionGIT.Membership.Provider / Clase de ayuda para el Users of InMotionGIT.Membership.Provider
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.UsersAndGrups.UserLkp(System.Boolean,InMotionGIT.FrontOffice.Proxy.FrontOfficeManager.ManagerClient)">
+ <summary>
+ Lookup de usuarios en el sistema,muestra lista de usuarios por nombre real y código
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.UsersAndGrups.UserDescription(System.Int32,InMotionGIT.FrontOffice.Proxy.FrontOfficeManager.ManagerClient)">
+ <summary>
+ Retorna del nombre real del usuario de usuarios en el sistema,muestra lista de usuarios por nombre real y código
+ </summary>
+ <param name="userId">Id del usuario a buscar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.UserSetting.UserSettingUpdate(System.Int32,System.Int32)">
+ <summary>
+ Cambia el pagina que se toma como ultimo proceso
+ </summary>
+ <param name="userId"></param>
+ <param name="pageId"></param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Widgets.WidgetByRoles(System.Collections.Generic.List{System.String})">
+ <summary>
+ Obtiene los id de los widget vinculados al roles específicos
+ </summary>
+ <param name="rolesName">Roles a consultar</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Widgets.WidgetInstanceSwapByRole(System.String,System.String,System.String)">
+ <summary>
+  Sincroniza las instancias de widgetinstace asignadas ya un usuario con un rol especifico a cambiar por otro role
+ </summary>
+ <param name="userName">Usuario a aplicar el cambio</param>
+ <param name="currentRole">Rol asignado por el usuario</param>
+ <param name="roleTarget">Role que se va asignar el usuario</param>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Language.LanguageGetAllName">
+ <summary>
+ Obtener todos las traducciones de los posibles languages con el culture info actual /Get all possible translations of languages with the current culture info
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Language.UpdateLanguage(InMotionGIT.FrontOffice.Proxy.UserService.AuthenticationInformation)">
+ <summary>
+Actualiza el lenguaje del usuario/User language updated
+ </summary>
+ <param name="userInformation"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Language.LanguageIdToEnumLanguage(System.Int32)">
+ <summary>
+ Convert LanguageId to EnumLanguage
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Language.CulturalNameToLanguageId(System.String)">
+ <summary>
+ Convert CulturalName to LanguageId
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.FrontOffice.Proxy.Helpers.Language.LanguageEnumToCulturalName(InMotionGIT.Common.Enumerations.EnumLanguage)">
+ <summary>
+ Convert LanguageEnum to CulturalName
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.ModelAudit">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.ModelDependencies">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.ModelSpecifications">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.ModelTags">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.Name">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.Title">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.Description">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.Kind">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.OwnerId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.CategoryId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.LastRelease">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.Summary">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.IsLocked">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.LockedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.LockedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.CreatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.CreatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.LastUpdatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.LastUpdatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.IsDeleted">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.DeletedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.DeletedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.PublishedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.PublishedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Model.PasswordForChange">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.Consecutive">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.CreatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.CreatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.Operation">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.Release">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.Summary">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelAudit.Label">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner.OwnerId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Owner.Name">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag.TagId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Tag.Name">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category.CategoryId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Category.Name">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.DependencyModel">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.DependencyModel.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.DependencyModel.Release">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.DependencyModel.Kind">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.DependencyModel.Link">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Release">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Name">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Title">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Description">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Kind">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.OwnerId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.CategoryId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.ExtensionData">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.SpecificationArray">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.ExtendArray">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Comment">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Label">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.IsLocked">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.LockedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.LockedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.IsDeleted">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.DeletedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.DeletedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.CreatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.CreatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.LastUpdatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.LastUpdatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.OldModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.OldRelease">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Tags">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.Dependency">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.Specification.ReadOnly">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelTag.TagId">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.Release">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.Summary">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.Specification">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.Extend">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.Label">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.LastUpdatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.LastUpdatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.PublishedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelSpecification.PublishedOn">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.IsNew">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.IsDirty">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.IsDeletedMark">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.ModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.Release">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.Consecutive">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.RelatedKind">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.RelatedModelId">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.RelatedRelease">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.RelatedLink">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.LastUpdatedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.LastUpdatedOn">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.Name">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.Title">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.LockedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.DeletedBy">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.DependencyCount">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.ModelDependency.RelatedNewRelease">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Query">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Form">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Workflow">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.CRUD">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Transaction">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.SpecialUrl">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Url">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.BusinessRule">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Letter">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Dashboard">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Report">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Snap">
+<remarks/>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Proxy.RepositoryManagerServices.EnumModelKind.Interface">
+<remarks/>
+</member>
+</members>
+</doc>

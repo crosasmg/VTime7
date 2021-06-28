@@ -1,0 +1,533 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.FrontOffice.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.FrontOffice.Contracts.AttachmentFile">
+ <summary>
+ Contrato para almacenar information de attachment del los email
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.AttachmentFile.Name">
+ <summary>
+ Define el nombre de archivo
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.AttachmentFile.Extend">
+ <summary>
+ Define la extension del archivo
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Contracts.AttachmentFile.FileRaw">
+ <summary>
+ Contiene el archivo en formato bytes
+ </summary>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Contracts.AttachmentFile.CreationDate">
+ <summary>
+ Fecha de creation 
+ </summary>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Contracts.AttachmentFile.ModificationDate">
+ <summary>
+ Fecha de modificación
+ </summary>
+</member>
+<member name="F:InMotionGIT.FrontOffice.Contracts.AttachmentFile.ReadDate">
+ <summary>
+  Fecha de lectura
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.MailReponser">
+ <summary>
+ MailResponder contract. // Contrato de MailResponder.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.MailReponser.JobId">
+ <summary>
+ Job Id. // Código de trabajo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.MailReponser.JobStatus">
+ <summary>
+ Job status. // Estado de trabajo.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.Page">
+ <summary>
+ Page contract. // Contrato Página
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.ID">
+ <summary>
+ Page id. // Código de página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.Title">
+ <summary>
+ Page title. // Título de la página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.TranslationTitle">
+ <summary>
+ Translation Title. // Titulo de traducción.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.UserId">
+ <summary>
+ User code. // Código de usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.VersionNo">
+ <summary>
+ Version number. // Número de versión.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.LayoutType">
+ <summary>
+ Layout type code. // Códigode tipo de layout.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Page.IsLoad">
+ <summary>
+ Is Load. // Esta cargada
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.To">
+ <summary>
+ Define el destinatario del e-mail
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.CC">
+ <summary>
+ Define los integrantes de la copia
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.BCC">
+ <summary>
+ Define los integrantes de la copia oculta
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.Subject">
+ <summary>
+ Define el titulos del email
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.Body">
+ <summary>
+ Define el cuerpo del email
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.Attachment">
+ <summary>
+ Define el nombre del archivo a adjuntar
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.TemplateName">
+ <summary>
+ Define el nombre de plantilla a utilizar
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.UserType">
+ <summary>
+  Define el tipo de usuario
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.Language">
+ <summary>
+ Establece el lenguaje a usar
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.ParameterInternal">
+ <summary>
+ Arreglo de parámetros para uso interno
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.AttachmentFiles">
+ <summary>
+ Colección de archivos a adjuntar.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.Email">
+ <summary>
+ Email a quien va dirigido.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.SMC">
+ <summary>
+ If is true, the Service Message Center will used to send the e-mail.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Parameter.AccessToken">
+ <summary>
+ Object encapsulating the security identity of a process.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.Settings">
+ <summary>
+ Settings contract. // Contrato de propiedades.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Settings.CurrentPageId">
+ <summary>
+ Current page id. // Código de la página actual.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Settings.CurrentPage">
+ <summary>
+ Page instance. // Instancia página (Page).
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Settings.UserSettingCurrent">
+ <summary>
+ Current user settings. // Propiedades actuales de usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Settings.CurrentPages">
+ <summary>
+ List of Pages. // Lista de Páginas (Page).
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.UserPageSetup">
+ <summary>
+ User Page Setup contract. // Contrato de setup de página para un usuario..
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserPageSetup.Pages">
+ <summary>
+ Page instance. // Instancia página (Page).
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserPageSetup.UserSetting">
+ <summary>
+ User settings propertys. // Propiedades de usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserPageSetup.WidgetInstances">
+ <summary>
+ WidgetInstances list. // Lista de instancias de Widget (WidgetInstances).
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserPageSetup.Id">
+ <summary>
+ UserPageSetup id. // Código de UserPageSetup.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.UserSetting">
+ <summary>
+ User Settings contract. // Contrato de propiedades de usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserSetting.UserId">
+ <summary>
+ User code. // Código de usuario.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.UserSetting.CurrentPageId">
+ <summary>
+ Current page id. // Código de la página actual.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.Widget">
+ <summary>
+ Widget contract. // Contrato Widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.ID">
+ <summary>
+ Widget id. // Código de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.Name">
+ <summary>
+ Widget name. // Nombre de Widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.Url">
+ <summary>
+ Widget URL. // URL de Widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.Description">
+ <summary>
+ Widget description. // Descripción de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.VersionNo">
+ <summary>
+ Widget version number. // Número de versión del Widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.IsDefault">
+ <summary>
+ Is default indicator. // Indicador si es default.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.DefaultState">
+ <summary>
+ Default state. // Estado default.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.Icon">
+ <summary>
+ Icon route. // Ruta de icono asociado.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.OrderNo">
+ <summary>
+ Order number. // Número de orden.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.IsAnonymouAllow">
+ <summary>
+ Is anonymous allow indicator. // Indicador de anónimo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.ModelId">
+ <summary>
+ Model id. // Código de modelo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.IsEditAllow">
+ <summary>
+ Is edit allow indicator. // Indicador si modificación está permitida.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.IsAllowedToEditTheTitle">
+ <summary>
+ Is allowed to edit the title indicator. // Indicador si está permitido editar el titulo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.Sequence">
+ <summary>
+ Sequence number. // Número de secuencia.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.LanguageID">
+ <summary>
+ Language id. // Código de lenguaje.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.Widget.WidgetInst">
+ <summary>
+ Widget instance. // Instancia de Widget.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.WidgetInRole">
+ <summary>
+ Widget in role contract. // Contrato de Widget en roles.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.ID">
+ <summary>
+ WidgetInRole id. // Código del contrato.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.WidgetId">
+ <summary>
+ Widget id. // Código de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.RoleId">
+ <summary>
+ Role id. // Código de rol.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.IsDefault">
+ <summary>
+ Is default indicator. // Indicador si es default.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.IsEditAllow">
+ <summary>
+ Is edit allow indicator. // Indicador si está permitido editar.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.IsAllowedToEditTheTitle">
+ <summary>
+ Is allowed to edit the title indicator. // Indicador si está permitido editar el titulo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.Sequence">
+ <summary>
+ Sequence number. // Número de secuencia.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInRole.RoleName">
+ <summary>
+ Role name. // Nombre del rol.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.WidgetInstance">
+ <summary>
+ Widget instance contract. // Contrato de instancia de Widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Id">
+ <summary>
+ WidgetInstance id. // Código de WidgetInstance.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.PageId">
+ <summary>
+ Page id. // Código de página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.WidgetId">
+ <summary>
+ Widget id. // Código de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.ColumnNo">
+ <summary>
+ Column number. // Número de columna.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.OrderNo">
+ <summary>
+ Order number. // Número de orden.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Expanded">
+ <summary>
+ Expanded indicator. // Indicador de expansión.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Title">
+ <summary>
+ Title. // Titulo.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.State">
+ <summary>
+ State. // Estado.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.VersionNo">
+ <summary>
+ Version number. // Número de versión.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Visible">
+ <summary>
+ Visible indicator. // Indicador de invisible.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.LanguageID">
+ <summary>
+ Language id. // Código de lenguaje.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.IsDefault">
+ <summary>
+ Is default indicator. // Indicador si es default.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.IsEditAllow">
+ <summary>
+ Is edit allow indicator. // Indicador si está permitido editar.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.IsAllowedToEditTheTitle">
+ <summary>
+ Is allowed to edit the title indicator. // Indicador si está permitido editar el titulo.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Sequence">
+ <summary>
+ Sequence number. // Número de secuencia.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstance.Url">
+ <summary>
+ URL code. // Código URL.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans">
+ <summary>
+ WidgetInstanceTrans contract. // Contrato de instancia de traducción de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans.Id">
+ <summary>
+ WidgetInstanceTrans id. // Código de WidgetInstanceTrans.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans.PageId">
+ <summary>
+ Page id. // Código de la página.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans.WidgetId">
+ <summary>
+ Widget id. // Código de widget.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans.LanguageID">
+ <summary>
+ Language id. // Código de lenguaje.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetInstanceTrans.Title">
+ <summary>
+ Title. // Titulo.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.WidgetTrans">
+ <summary>
+ WidgetTrans contract. // Contrato de traducción de widgets.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetTrans.ID">
+ <summary>
+ WidgetTrans id. // Código de WidgetTrans.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetTrans.LanguageID">
+ <summary>
+ Language id. // Código de lenguaje.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetTrans.Name">
+ <summary>
+ Name. // Nombre.
+ </summary>
+</member>
+<member name="P:InMotionGIT.FrontOffice.Contracts.WidgetTrans.Description">
+ <summary>
+ Description. // Descripción.
+ </summary>
+</member>
+<member name="T:InMotionGIT.FrontOffice.Contracts.Enumerations.EnumJobStatus">
+ <summary>
+ Job status numeration. // Enumeración de estado de trabajo.
+ </summary>
+</member>
+</members>
+</doc>

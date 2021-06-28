@@ -1,0 +1,196 @@
+﻿body {
+    font-size: 13px;
+}
+
+.btn {
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 2px;
+}
+
+label {
+    font-weight: normal;
+    display: inline;
+}
+
+.required-mark {
+    color: #ea4444;
+    padding-left: 3px;
+}
+
+label.error {
+    color: red;
+    font-style: italic;
+}
+
+input[type='number'] {
+    text-align: right;
+}
+
+.panel-borderless {
+    border: 0;
+    box-shadow: none;
+}
+
+.currency {
+    width: 15%;
+}
+
+table > caption {
+    border-bottom: 1px solid;
+    border-color: inherit;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-p {
+    font-size: 11px;
+    margin-top: 15px;
+    color: darkgrey;
+}
+
+.sectionTitle-dashed {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px dashed #e7eaec;
+    background-color: #ffffff;
+    border-style: dashed !important;
+    font-weight: normal;
+}
+
+.sectionTitle-solid {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e7eaec;
+    background-color: rgba(0, 0, 0, 0);
+    border-style: solid !important;
+    font-weight: normal;
+}
+
+.note-element-form-designer > .note {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.note-footer-element-form-designer > a {
+    margin-left: 5px;
+}
+
+.main-image-logo {
+    background-image: url(/fasi/app/img/logo-header.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 43px;
+    width: 160px;
+}
+.margin-top-1 {
+    margin-top: 2rem !important;
+}
+.margin-top-2 {
+    margin-top: 4rem !important;
+}
+.margin-top-3 {
+    margin-top: 6rem !important;
+}
+.margin-top-4 {
+    margin-top: 8rem !important;
+}
+.margin-top-5 {
+    margin-top: 10rem !important;
+}
+
+#off-canvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    padding: 0;
+    box-shadow: 0px 0px 10px #888888;
+    display: none;
+    padding-bottom:62px;
+}
+#off-canvas #off-canvas-header {
+    background: #f3f3f4;
+    padding: 15px;
+    border-bottom: 1px solid #e7eaec;
+}
+#off-canvas #off-canvas-header h2{
+    margin-top: 0;
+    margin-bottom: 7px;
+    font-size:21px;
+}
+#off-canvas #off-canvas-header h2 .fa{
+    margin-right:10px;
+}
+#off-canvas #off-canvas-header #closeoffCanvas {
+    font-size: 34px;
+    margin:-6px -5px 0 0;
+    opacity: 0.4;
+}
+#off-canvas iframe {
+    padding:5px;
+}
+#off-canvas #off-canvas-content {
+    padding:25px 10px 5px 10px;
+}
+
+.dynamicModal.modal .modal-dialog {
+    height:90%;
+}
+
+.dynamicModal.modal .modal-content.default-size{
+    height:70%;
+}
+.dynamicModal.modal .modal-body {
+    padding-bottom:35px;
+    height:90%;
+}
+.dynamicModal.modal .internalContent {
+    padding-top:15px;
+    height:100%;
+    width:100%;
+}
+
+#off-canvas iframe,
+.dynamicPopover iframe,
+.dynamicModal iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.dynamicPopover.popover .popover-content {
+    height:200px;
+}
+
+.dynamicPopover.popover .popover-title {
+    margin-top:0;
+}
+
+.nav-tabs > li > a.disabled {
+    pointer-events: none;
+}
+
+.DisableColumnLink {
+    color: currentColor;
+    cursor: not-allowed;
+    text-decoration: none;
+    pointer-events: none;
+    display: inline-block;
+}

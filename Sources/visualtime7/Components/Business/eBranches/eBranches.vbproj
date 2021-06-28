@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37BE667A-C9D0-469B-A9D6-4C70CE30C15D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eBranches</RootNamespace>
+    <AssemblyName>eBranches</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eBranches.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>eBranches.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>eBranches.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveLife.vb" />
+    <Compile Include="Age_collect.vb" />
+    <Compile Include="Age_collects.vb" />
+    <Compile Include="Agreement_al.vb" />
+    <Compile Include="Auto_db.vb" />
+    <Compile Include="auto_dbs.vb" />
+    <Compile Include="Au_bon_mod.vb" />
+    <Compile Include="Au_bon_mods.vb" />
+    <Compile Include="Cap_crelife.vb" />
+    <Compile Include="Cap_crelifes.vb" />
+    <Compile Include="Cap_educind.vb" />
+    <Compile Include="Cap_educinds.vb" />
+    <Compile Include="Constantes.vb" />
+    <Compile Include="Crit_sort.vb" />
+    <Compile Include="Crit_sorts.vb" />
+    <Compile Include="Ctrol_premin.vb" />
+    <Compile Include="Ctrol_premins.vb" />
+    <Compile Include="Deduc_Auto.vb" />
+    <Compile Include="Disc_pb.vb" />
+    <Compile Include="Disc_pbs.vb" />
+    <Compile Include="Disc_percentage.vb" />
+    <Compile Include="Disc_percentages.vb" />
+    <Compile Include="Disc_perc_year.vb" />
+    <Compile Include="Disc_perc_years.vb" />
+    <Compile Include="Disc_quantity.vb" />
+    <Compile Include="Disc_quantitys.vb" />
+    <Compile Include="Disc_riskInsu.vb" />
+    <Compile Include="Disc_riskInsus.vb" />
+    <Compile Include="Fire.vb" />
+    <Compile Include="Fires.vb" />
+    <Compile Include="FPay_AllowClass.vb" />
+    <Compile Include="FPay_AllowClasss.vb" />
+    <Compile Include="Funds_Switch.vb" />
+    <Compile Include="Funds_Switchs.vb" />
+    <Compile Include="Guar_saving_allow.vb" />
+    <Compile Include="Guar_saving_allows.vb" />
+    <Compile Include="Guar_saving_prod.vb" />
+    <Compile Include="Guar_saving_rent.vb" />
+    <Compile Include="Guar_saving_rents.vb" />
+    <Compile Include="Health.vb" />
+    <Compile Include="Insured_he.vb" />
+    <Compile Include="Interm_agre.vb" />
+    <Compile Include="Interm_agres.vb" />
+    <Compile Include="Int_typ_agre.vb" />
+    <Compile Include="Int_typ_agres.vb" />
+    <Compile Include="Leg.vb" />
+    <Compile Include="Level_param.vb" />
+    <Compile Include="Level_params.vb" />
+    <Compile Include="Life.vb" />
+    <Compile Include="Limits_age.vb" />
+    <Compile Include="Limits_ages.vb" />
+    <Compile Include="LocateTar_Soat.vb" />
+    <Compile Include="LocateTar_Soats.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Plan_agre.vb" />
+    <Compile Include="Plan_agres.vb" />
+    <Compile Include="Plan_intwar_day.vb" />
+    <Compile Include="Plan_intwar_days.vb" />
+    <Compile Include="Ratings.vb" />
+    <Compile Include="Ratingss.vb" />
+    <Compile Include="Res_cost.vb" />
+    <Compile Include="Res_costs.vb" />
+    <Compile Include="Series.vb" />
+    <Compile Include="Seriess.vb" />
+    <Compile Include="TabSeismicFloodZone.vb" />
+    <Compile Include="TabSeismicFloodZones.vb" />
+    <Compile Include="Tab_Am_Bab.vb" />
+    <Compile Include="Tab_Am_Bil.vb" />
+    <Compile Include="Tab_am_Bils.vb" />
+    <Compile Include="Tab_am_cli.vb" />
+    <Compile Include="Tab_am_clis.vb" />
+    <Compile Include="Tab_am_excprod.vb" />
+    <Compile Include="Tab_am_excprods.vb" />
+    <Compile Include="Tab_am_gex.vb" />
+    <Compile Include="Tab_am_gexs.vb" />
+    <Compile Include="tab_am_ill.vb" />
+    <Compile Include="tab_am_ills.vb" />
+    <Compile Include="tab_am_lim.vb" />
+    <Compile Include="tab_am_lims.vb" />
+    <Compile Include="Tab_au_val.vb" />
+    <Compile Include="tab_au_vals.vb" />
+    <Compile Include="Tab_au_veh.vb" />
+    <Compile Include="Tab_branch_quant.vb" />
+    <Compile Include="Tab_branch_quants.vb" />
+    <Compile Include="Tab_Capital.vb" />
+    <Compile Include="Tab_Capitals.vb" />
+    <Compile Include="tab_comm_al.vb" />
+    <Compile Include="tab_comm_als.vb" />
+    <Compile Include="Tab_damage.vb" />
+    <Compile Include="Tab_damages.vb" />
+    <Compile Include="Tab_Fn_Inst.vb" />
+    <Compile Include="Tab_Fn_Insts.vb" />
+    <Compile Include="Tab_Interest.vb" />
+    <Compile Include="Tab_Interests.vb" />
+    <Compile Include="Tab_in_bus.vb" />
+    <Compile Include="Tab_in_buss.vb" />
+    <Compile Include="Tab_Ord_Origin.vb" />
+    <Compile Include="Tab_Ord_Origins.vb" />
+    <Compile Include="Tab_Rescost.vb" />
+    <Compile Include="Tab_Rescosts.vb" />
+    <Compile Include="Tab_ships.vb" />
+    <Compile Include="Tab_shipss.vb" />
+    <Compile Include="Tab_Ul_Costs.vb" />
+    <Compile Include="Tab_Ul_Costss.vb" />
+    <Compile Include="Tar_activity.vb" />
+    <Compile Include="Tar_activitys.vb" />
+    <Compile Include="Tar_ActLife.vb" />
+    <Compile Include="Tar_ActLifes.vb" />
+    <Compile Include="Tar_am_bas.vb" />
+    <Compile Include="Tar_am_basprod.vb" />
+    <Compile Include="Tar_am_basprods.vb" />
+    <Compile Include="Tar_am_detprod.vb" />
+    <Compile Include="Tar_am_detprods.vb" />
+    <Compile Include="Tar_am_pol.vb" />
+    <Compile Include="Tar_am_pols.vb" />
+    <Compile Include="Tar_Apv.vb" />
+    <Compile Include="Tar_Apvs.vb" />
+    <Compile Include="Tar_build.vb" />
+    <Compile Include="Tar_builds.vb" />
+    <Compile Include="Tar_cover_fh.vb" />
+    <Compile Include="Tar_cover_fhs.vb" />
+    <Compile Include="Tar_firecat.vb" />
+    <Compile Include="Tar_firecats.vb" />
+    <Compile Include="Tar_fire_fh.vb" />
+    <Compile Include="Tar_fire_fhs.vb" />
+    <Compile Include="Tar_Health.vb" />
+    <Compile Include="Tar_Healths.vb" />
+    <Compile Include="Tar_prem_SOAP.vb" />
+    <Compile Include="Tar_prem_SOAPs.vb" />
+    <Compile Include="Tar_rc_bas.vb" />
+    <Compile Include="Tar_rc_bass.vb" />
+    <Compile Include="Tar_rc_des.vb" />
+    <Compile Include="Tar_rc_dess.vb" />
+    <Compile Include="tar_rc_fac.vb" />
+    <Compile Include="tar_rc_facs.vb" />
+    <Compile Include="Tar_schooltrad.vb" />
+    <Compile Include="Tar_schooltrads.vb" />
+    <Compile Include="Tar_sef.vb" />
+    <Compile Include="Tar_sefs.vb" />
+    <Compile Include="Tar_SOAT.vb" />
+    <Compile Include="Tar_SOATs.vb" />
+    <Compile Include="Tar_theft_cap.vb" />
+    <Compile Include="Tar_theft_caps.vb" />
+    <Compile Include="tar_theft_cash.vb" />
+    <Compile Include="tar_theft_cashs.vb" />
+    <Compile Include="Tar_theft_con.vb" />
+    <Compile Include="Tar_theft_cons.vb" />
+    <Compile Include="Tar_tralife.vb" />
+    <Compile Include="Tar_tralifes.vb" />
+    <Compile Include="tar_tr_mer.vb" />
+    <Compile Include="tar_tr_mers.vb" />
+    <Compile Include="TypeLocation.vb" />
+    <Compile Include="TypeLocations.vb" />
+    <Compile Include="Veh_allow.vb" />
+    <Compile Include="Veh_allows.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="eBranches.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eProduct\eProduct.vbproj">
+      <Project>{E4EF1C50-30F8-4EB0-9D9C-8CFD624B6B0A}</Project>
+      <Name>eProduct</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

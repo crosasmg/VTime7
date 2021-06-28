@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tcnDraftColumnCaption" xml:space="preserve">
+    <value>Installments</value>
+  </data>
+  <data name="tcnDraftColumnToolTip" xml:space="preserve">
+    <value>Number of the installment</value>
+  </data>
+  <data name="tcdExpirdatColumnCaption" xml:space="preserve">
+    <value>Limit Date</value>
+  </data>
+  <data name="tcdExpirdatColumnToolTip" xml:space="preserve">
+    <value>Due date of each draft</value>
+  </data>
+  <data name="tcnAmountColumnCaption" xml:space="preserve">
+    <value>Unit Value</value>
+  </data>
+  <data name="tcnAmountColumnToolTip" xml:space="preserve">
+    <value>Amount of each installment</value>
+  </data>
+  <data name="tcnAmount_siColumnCaption" xml:space="preserve">
+    <value>Amount &lt;BR&gt;  no interest</value>
+  </data>
+  <data name="tcnAmount_siColumnToolTip" xml:space="preserve">
+    <value>Amount of each of the installments without interest</value>
+  </data>
+  <data name="tcnIntammouColumnCaption" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="tcnIntammouColumnToolTip" xml:space="preserve">
+    <value>Amount of each of the installments without interest</value>
+  </data>
+  <data name="tcnAmount_afeColumnCaption" xml:space="preserve">
+    <value>Amount &lt;BR&gt; affected</value>
+  </data>
+  <data name="tcnAmount_afeColumnToolTip" xml:space="preserve">
+    <value>Taxable amount of each quota</value>
+  </data>
+  <data name="tcnAmount_exenColumnCaption" xml:space="preserve">
+    <value>Amount &lt;BR&gt; exempt</value>
+  </data>
+  <data name="tcnAmount_exenColumnToolTip" xml:space="preserve">
+    <value>Amount exempt from each of the shares</value>
+  </data>
+  <data name="tcnIvaColumnCaption" xml:space="preserve">
+    <value>Sale Tax</value>
+  </data>
+  <data name="tcnIvaColumnToolTip" xml:space="preserve">
+    <value>Amount of taxes each of the shares</value>
+  </data>
+  <data name="tcnCommissionColumnCaption" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="tcnCommissionColumnToolTip" xml:space="preserve">
+    <value>Commission amount associated with each of the installments</value>
+  </data>
+  <data name="cbeStatus_draColumnCaption" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="cbeStatus_draColumnToolTip" xml:space="preserve">
+    <value>Status of the draft associated witht he financial agreement</value>
+  </data>
+  <data name="tcnContrat_refColumnCaption" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="tcnContrat_refColumnToolTip" xml:space="preserve">
+    <value>Number of the financing agreement associated with the installment</value>
+  </data>
+  <data name="tcnContratCaption" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="tcnContratToolTip" xml:space="preserve">
+    <value>Number of the financing agreement</value>
+  </data>
+  <data name="cbeWay_PayCaption" xml:space="preserve">
+    <value>Payment means</value>
+  </data>
+  <data name="cbeWay_PayToolTip" xml:space="preserve">
+    <value>Collection method associated with the policy in process</value>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Currency associated with the bill</value>
+  </data>
+  <data name="tcnPremiumCaption" xml:space="preserve">
+    <value>Premium of the Bill</value>
+  </data>
+  <data name="tcnPremiumToolTip" xml:space="preserve">
+    <value>Total premium of the bill in issuing or modification status</value>
+  </data>
+  <data name="tcnPremiumPCaption" xml:space="preserve">
+    <value>Pending Amount</value>
+  </data>
+  <data name="tcnPremiumPToolTip" xml:space="preserve">
+    <value>Sum of the outstanding drafts amounts</value>
+  </data>
+  <data name="tcnPremiumTCaption" xml:space="preserve">
+    <value>Total Premium</value>
+  </data>
+  <data name="tcnPremiumTToolTip" xml:space="preserve">
+    <value>Total premium</value>
+  </data>
+  <data name="cbeQuotaCaption" xml:space="preserve">
+    <value>Number of Installments</value>
+  </data>
+  <data name="cbeQuotaToolTip" xml:space="preserve">
+    <value>Number of draft of the bill in process</value>
+  </data>
+  <data name="lblFirst_DrafCaption" xml:space="preserve">
+    <value>First Installment Payment Date</value>
+  </data>
+  <data name="lblFirst_DrafToolTip" xml:space="preserve">
+    <value>Collecting date of the first draft</value>
+  </data>
+  <data name="tcnInterestCaption" xml:space="preserve">
+    <value>% Interest</value>
+  </data>
+  <data name="tcnInterestToolTip" xml:space="preserve">
+    <value>Percentage to be applied according to the number of installments</value>
+  </data>
+  <data name="tcnInitialCaption" xml:space="preserve">
+    <value>Initial Pay</value>
+  </data>
+  <data name="tcnInitialToolTip" xml:space="preserve">
+    <value>First draft amount</value>
+  </data>
+</root>

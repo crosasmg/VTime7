@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2595899A-A2A1-48ED-A1DE-27787D69E450}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InMotionGIT.Report.Crystal.Tests</RootNamespace>
+    <AssemblyName>InMotionGIT.Report.Crystal.Tests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InMotionGIT.Report.Crystal.Tests.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InMotionGIT.Report.Crystal.Tests.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InMotionGIT.Report.Crystal.Tests.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InMotionGIT.Bill.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=437313037914fde8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Bill.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Claim.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=118dbebc102ecbe2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Claim.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Client.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Client.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Client.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=45503acc67f9bceb, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Client.Proxy.3.0.38\lib\InMotionGIT.Client.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Collecting.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2ad6a4008c4bb684, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Collecting.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f15c8eb20a17aaf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Common.1.0.23\lib\InMotionGIT.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Common.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7931fa949d754f28, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Common.Contracts.1.0.1\lib\InMotionGIT.Common.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="InMotionGIT.CoReinsurance.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1445ad6ac4cc7955, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.CoReinsurance.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Extended.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Extended.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Financing.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8ac824570f549f7d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Financing.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.General.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c5ccb9e3f3101426, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.General.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.General.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=506abf1e02075ff8, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.General.Proxy.3.0.38\lib\InMotionGIT.General.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Intermedia.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4522a1e044fad828, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Intermedia.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Massive.Entity.Contracts">
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Massive.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Policy.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ba7d24d77725be42, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Policy.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.PolicyManager.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5c7c4937c49d8c7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.PolicyManager.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.PolicyManager.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4c9a607fd36c7981, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\VisualTIMENet\Components\Services\BackOffice\InMotionGIT.PolicyManager.Services\bin\InMotionGIT.PolicyManager.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Product.Entity.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6ec7cdeef2b2acd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Product.Entity.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Product.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4cb431f27ebaef0b, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMotionGIT.Product.Proxy.3.0.38\lib\InMotionGIT.Product.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="InMotionGIT.Report.Crystal.Proxy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7dff89c1034ec2fd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebApplication\Bin\InMotionGIT.Report.Crystal.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Thinktecture.IdentityModel.Client.Net45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Client.4.0.1\lib\net45\Thinktecture.IdentityModel.Client.Net45.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Import Include="InMotionGIT.Common.Extensions" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Reports\ClientInformationSampleTest.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Helpers\TestTools.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InMotionGIT.Report.Crystal.Tests.snk" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InMotionGIT.Report.Crystal.Designs\InMotionGIT.Report.Crystal.Designs.vbproj">
+      <Project>{292e76b6-a070-4f2d-9f49-8ae9ebdb300e}</Project>
+      <Name>InMotionGIT.Report.Crystal.Designs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InMotionGIT.Report.Crystal.Mappers\InMotionGIT.Report.Crystal.Mappers.vbproj">
+      <Project>{ee27865b-eaea-4fbe-9297-785064f15704}</Project>
+      <Name>InMotionGIT.Report.Crystal.Mappers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XMLSamples\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

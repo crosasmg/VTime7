@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageResource.Title" xml:space="preserve">
+    <value>Initialization</value>
+  </data>
+  <data name="ASPxLabelResource.Text" xml:space="preserve">
+    <value>Are you sure want to execute the operation?</value>
+  </data>
+  <data name="popupMessageHeaderResource.Text" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="InitializeButtonResource.Text" xml:space="preserve">
+    <value>Initialize</value>
+  </data>
+  <data name="TaskCheckBoxResource.Text" xml:space="preserve">
+    <value>Agenda Tasks</value>
+  </data>
+  <data name="WorkflowsCheckBoxResource.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="zoneInstructionLabelResource.Text" xml:space="preserve">
+    <value>This section will clean the system information.</value>
+  </data>
+  <data name="MessageLabelResource.Text" xml:space="preserve">
+    <value>You should select some option for start the operation.</value>
+  </data>
+  <data name="popupMessageTextHeader.Text" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="CleanButtonResource.Text" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="GenerateInstructionLabelResource.Text" xml:space="preserve">
+    <value>This section generates the information needed to activate the portal.</value>
+  </data>
+  <data name="OneUsersInitCheckBoxResource.Text" xml:space="preserve">
+    <value>Create VisualTIME specific users in the Portal</value>
+  </data>
+  <data name="RolesAndUsersCheckBoxResource.Text" xml:space="preserve">
+    <value>Portal Roles and Users</value>
+  </data>
+  <data name="RolesConfigCheckBoxResource.Text" xml:space="preserve">
+    <value>Create roles setup</value>
+  </data>
+  <data name="RolesInitCheckBoxResource.Text" xml:space="preserve">
+    <value>Create VisualTIME roles in the Portal</value>
+  </data>
+  <data name="UsersInitCheckBoxResource.Text" xml:space="preserve">
+    <value>Create VisualTIME users in the Portal</value>
+  </data>
+  <data name="RolesAndUsersCallbackPanelMessage" xml:space="preserve">
+    <value>We have created the user 'admin', please re-enter with that user. You will be redirected in:</value>
+  </data>
+  <data name="DocumentCacheCheckBoxResource.Text" xml:space="preserve">
+    <value>Document cache information</value>
+  </data>
+  <data name="WidgetsInRolesInitCheckBoxResource.Text" xml:space="preserve">
+    <value>Create initial configuration for widgets by role</value>
+  </data>
+  <data name="AnonymousUsersCheckBoxResource.Text" xml:space="preserve">
+    <value>Anonymous Users</value>
+  </data>
+  <data name="NavigationDirectoryCheckBoxResource.Text" xml:space="preserve">
+    <value>Navigation directory</value>
+  </data>
+  <data name="CopyUserConfigurationCheckBoxResource.Text" xml:space="preserve">
+    <value>Copy the configuration of a specific user</value>
+  </data>
+  <data name="ASPxRoundPanel1Resource.HeaderText" xml:space="preserve">
+    <value>Initialization</value>
+  </data>
+  <data name="CopyUserConfigurationOption1.Text" xml:space="preserve">
+    <value>Respect the configuration of the Role / Schema in the target user</value>
+  </data>
+  <data name="CopyUserConfigurationOption2.Text" xml:space="preserve">
+    <value>Copy the Widgets to the Role / Schema associated to the User Destination</value>
+  </data>
+  <data name="SendCredentialsAllUsersCheckBoxResource.Text" xml:space="preserve">
+    <value>Send credentials by e-mail</value>
+  </data>
+  <data name="SendCredentialsSomeUsersCheckBoxResource.Text" xml:space="preserve">
+    <value>Send credentials by e-mail</value>
+  </data>
+  <data name="FIRSTNAMEColumnResource.Caption" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="LASTNAMEColumnResource.Caption" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="OneUsersInitTokenBoxResource.NullText" xml:space="preserve">
+    <value>Please, type the user name of VisualTIME</value>
+  </data>
+  <data name="USERNAMEColumnResource.Caption" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="chkCreateRoleBackOffice.Text" xml:space="preserve">
+    <value>Specifically select the role</value>
+  </data>
+  <data name="MessageRoleInitProcess" xml:space="preserve">
+    <value>The process of creating roles and special widgets started</value>
+  </data>
+  <data name="MessageRoleInitProcessCorrectly" xml:space="preserve">
+    <value>The roles and widgets generated correctly</value>
+  </data>
+  <data name="SecuritySection.Header" xml:space="preserve">
+    <value>This section will generate the users for the security schema.</value>
+  </data>
+  <data name="SecuritySection.Alert" xml:space="preserve">
+    <value>This operation may take several seconds, depending on the amount of users.</value>
+  </data>
+  <data name="SecuritySection.Text" xml:space="preserve">
+    <value>Synchronize users</value>
+  </data>
+  <data name="RolesAndUsersCallbackPanelMessageAdmin" xml:space="preserve">
+    <value>We have created the user 'admin', please re-enter with that user and password '{pass}'. You will be redirected in:</value>
+  </data>
+  <data name="originUsersLabel" xml:space="preserve">
+    <value>Origin user</value>
+  </data>
+  <data name="targetUsersLabel" xml:space="preserve">
+    <value>Target users</value>
+  </data>
+</root>

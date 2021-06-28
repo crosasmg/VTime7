@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Collecting.Proxy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Collecting.Proxy.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Collecting.Proxy.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Collecting.Proxy.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:InMotionGIT.Collecting.Proxy.Manager.targetConnection">
+ <summary>
+ NOTAS DE PROGRAMACIÓN - por cada método:
+ Si la operación es RETRIEVE de algún objeto (directamente al data access, no una búsqueda especifica) debe tener como base los siguientes parámetros:
+ - childFilter As String - Para filtrar las propiedades internas del objeto - Defecto "All"
+ - withLookupInformation As Boolean - Para que la búsqueda retorne los lookup del objeto.
+ 
+ TODOS los métodos deben tener como parámetro (y en este orden):
+ - accessToken As String - Parámetro de token - puede usarse vacio si no está habilitado.
+ - provider As String - Nombre del provider de conexión - Defecto "CORE"
+ - companyID As Integer - Multicompañia - Defecto 0
+ </summary>
+</member>
+</members>
+</doc>

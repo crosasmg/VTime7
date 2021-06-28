@@ -1,0 +1,310 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Client.Proxy
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Client.Proxy.Helpers.Support.NewManagerClientInstance">
+ <summary>
+ Retorna una instancia de cliente para el servicios del underwriting.
+ </summary>
+ <returns>Instancia</returns>
+ <remarks>La instancia retornada ya esta configurada según los setting para que apunte al servidor donde se encuentran los servicios</remarks>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Helpers.Support.GetRealDeployWeb(System.String)">
+ <summary>
+ Build the real deploy web - Construye la dirección del deploy
+ </summary>
+ <param name="path">Current deploy web - Dirección del deploy </param>
+ <returns>Real Deploy Web - Dirección real del deploy </returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RUTValidateSeparately(System.String,System.String)">
+ <summary>
+ Check the client id and his validation code by separate. // Revisa y valida el código de cliente y su digito verificador por separado.
+ </summary>
+ <param name="rut">Client id. // Código de cliente.</param>
+ <param name="checkDigit">Validate code. // Digito verificador.</param>
+ <returns>True if is correct, false if is wrong. // Verdadero si es correcto, falso en caso de que contenga error.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RUTValidateSeparately(System.String,System.String,System.String,System.String)">
+ <summary>
+ Check the client id and his validation code by separate. // Revisa y valida el código de cliente y su digito verificador por separado.
+ </summary>
+ <param name="rut">Client id. // Código de cliente.</param>
+ <param name="checkDigit">Validate code. // Digito verificador.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if is correct, false if is wrong. // Verdadero si es correcto, falso en caso de que contenga error.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RUTValidate(System.String,System.String)">
+ <summary>
+ Check the client id and his validation code together. // Revisa y valida el código de cliente y su digito verificador juntos.
+ </summary>
+ <param name="rut">Client id. // Código de cliente.</param>
+ <param name="checkDigit">Validate code. // Digito verificador.</param>
+ <returns>True if is correct, false if is wrong. // Verdadero si es correcto, falso en caso de que contenga error.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RUTValidate(System.String,System.String,System.String,System.String)">
+ <summary>
+ Check the client id and his validation code together. // Revisa y valida el código de cliente y su digito verificador juntos.
+ </summary>
+ <param name="rut">Client id. // Código de cliente.</param>
+ <param name="checkDigit">Validate code. // Digito verificador.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if is correct, false if is wrong. // Verdadero si es correcto, falso en caso de que contenga error.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RetrieveByFilter(System.String,System.String,System.String,System.String)">
+ <summary>
+ Retrieve by filter. // Retornar por filtro.
+ </summary>
+ <param name="clientID">Client id. // Id de cliente.</param>
+ <param name="email">Email. // Email.</param>
+ <param name="documentNumber">Document number. // Número de documento.</param>
+ <param name="childFilter">Child filter. // Filtro hijo.</param>
+ <returns>Client. // Cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.RetrieveByFilter(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Retrieve by filter. // Retornar por filtro.
+ </summary>
+ <param name="clientID">Client id. // Id de cliente.</param>
+ <param name="email">Email. // Email.</param>
+ <param name="documentNumber">Document number. // Número de documento.</param>
+ <param name="childFilter">Child filter. // Filtro hijo.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client. // Cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Retrieve(System.String,System.DateTime,System.String)">
+ <summary>
+ Retrieve the entire information of a client, allowing indicate the level of detail. // Recupera toda la información de un cliente, permitiendo indicar el nivel de detalle que se quiere incluir.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Related Estructures. // Estructuras relacionadas.</param>
+ <returns>Client information. // Información de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Retrieve(System.String,System.DateTime,System.String,System.Boolean)">
+ <summary>
+ Retrieve the entire information of a client, allowing indicate the level of detail. // Recupera toda la información de un cliente, permitiendo indicar el nivel de detalle que se quiere incluir.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Related Estructures. // Estructuras relacionadas.</param>
+ <returns>Client information. // Información de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Retrieve(System.String,System.DateTime,System.Boolean,System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Retrieve the entire information of a client, allowing indicate the level of detail. // Recupera toda la información de un cliente, permitiendo indicar el nivel de detalle que se quiere incluir.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="atDate">Operation Date. // Fecha de validez de la información.</param>
+ <param name="childFilter">Related Estructures. // Estructuras relacionadas.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client information. // Información de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Find(System.String)">
+ <summary>
+ Allow check the existence of a client with his id. // Permite verifica la existencia de un cliente por medio del código del mismo.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <returns>True if exists, False if doesn't exist. // Verdadero en caso de existir el cliente, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Find(System.String,System.String,System.String)">
+ <summary>
+ Allow check the existence of a client with his id. // Permite verifica la existencia de un cliente por medio del código del mismo.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if exists, False if doesn't exist. // Verdadero en caso de existir el cliente, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.FindByFilter(System.String,System.String,System.String)">
+ <summary>
+ Allow check the existence of a client with his id or email. // Permite verifica la existencia de un cliente por medio del código del mismo o de su correo electrónico.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="eMail">Client email. // Correo electrónico.</param>
+ <param name="documentNumber">Document number. // Correo electrónico.</param>
+ <returns>True if exists, False if it doesn't exist. // Verdadero en caso de existir el cliente, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.FindByFilter(System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Allow check the existence of a client with his id or email. // Permite verifica la existencia de un cliente por medio del código del mismo o de su correo electrónico.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="eMail">Client email. // Correo electrónico.</param>
+ <param name="documentNumber">Document number. // Correo electrónico.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if exists, False if it doesn't exist. // Verdadero en caso de existir el cliente, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Search(InMotionGIT.Client.Entity.Contracts.Enumerations.EnumTypeOfPerson,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Returns the list Of customers who meet the criteria. // Retorna la lista de los clientes que cumplan con los criterios de búsqueda.
+ </summary>
+ <param name="typeOfPerson">Person type. // Tipo de persona. Valores posibles según la tabla TABLE5006.</param>
+ <param name="clientID">Client id. // Código que identifica al cliente.</param>
+ <param name="firstName">Client name(s). // Nombre(s) del cliente.</param>
+ <param name="lastName">Client lastname. // Apellido paterno del cliente.</param>
+ <param name="secondLastName">Client second lastname. // Apellido materno del cliente.</param>
+ <param name="birthDate">Client birthdate. // Fecha de nacimiento del cliente.</param>
+ <param name="gender">Client gender. // Sexo del cliente. Valores posibles según la tabla TABLE18.</param>
+ <param name="startIndex">Index to get the first register. // Indice usado para ubicar el primer registro a retornar</param>
+ <param name="endIndex">Index to get the last register. // Indice usado para ubicar el último registro a retornar.</param>
+ <returns>List of the clients found. // Lista de los clientes encontrados</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Search(InMotionGIT.Client.Entity.Contracts.Enumerations.EnumTypeOfPerson,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Returns the list Of customers who meet the criteria. // Retorna la lista de los clientes que cumplan con los criterios de búsqueda.
+ </summary>
+ <param name="typeOfPerson">Person type. // Tipo de persona. Valores posibles según la tabla TABLE5006.</param>
+ <param name="clientID">Client id. // Código que identifica al cliente.</param>
+ <param name="firstName">Client name(s). // Nombre(s) del cliente.</param>
+ <param name="lastName">Client lastname. // Apellido paterno del cliente.</param>
+ <param name="secondLastName">Client second lastname. // Apellido materno del cliente.</param>
+ <param name="birthDate">Client birthdate. // Fecha de nacimiento del cliente.</param>
+ <param name="gender">Client gender. // Sexo del cliente. Valores posibles según la tabla TABLE18.</param>
+ <param name="startIndex">Index to get the first register. // Indice usado para ubicar el primer registro a retornar</param>
+ <param name="endIndex">Index to get the last register. // Indice usado para ubicar el último registro a retornar.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>List of the clients found. // Lista de los clientes encontrados</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.ApplyChange(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime)">
+ <summary>
+ Prepare a instance of a client to be modified. // Prepara una instancia de cliente para ser modificada.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="apply">Indicates if the change must be applied or just make a compare between both. // Indica si se deben aplicar los cambios sobre la instancia que se retorna o solo se realiza la comparación.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>Client information. // Información de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.ApplyChange(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime,System.String,System.String,System.Int32)">
+ <summary>
+ Prepare a instance of a client to be modified. // Prepara una instancia de cliente para ser modificada.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="apply">Indicates if the change must be applied or just make a compare between both. // Indica si se deben aplicar los cambios sobre la instancia que se retorna o solo se realiza la comparación.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client information. // Información de un cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.GenerateClientIdentify">
+ <summary>
+ Generate a new client id. // Genera de forma automática un nuevo código de cliente.
+ </summary>
+ <returns>New client id. // Nuevo código de cliente</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.GenerateClientIdentify(System.String,System.String)">
+ <summary>
+ Generate a new client id. // Genera de forma automática un nuevo código de cliente.
+ </summary>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>New client id. // Nuevo código de cliente</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Setup(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime)">
+ <summary>
+ Prepare and validates the information that is required to create a client. // Prepara y valida la información necesaria para la creación de un cliente.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <returns>Client information. // Datos del cliente.</returns>
+ <remarks>In case of error, return the same inputs including a list under the property Errors that explain the execution and validation errors. // En caso de existir error de validación, los mismo se retornas en forma de una lista de error bajo la propiedad errors expuesta por la instancia de la Información del cliente.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Setup(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime,System.String,System.String)">
+ <summary>
+ Prepare and validates the information that is required to create a client. // Prepara y valida la información necesaria para la creación de un cliente.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client information. // Datos del cliente.</returns>
+ <remarks>In case of error, return the same inputs including a list under the property Errors that explain the execution and validation errors. // En caso de existir error de validación, los mismo se retornas en forma de una lista de error bajo la propiedad errors expuesta por la instancia de la Información del cliente.</remarks>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Synchonize(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime)">
+ <summary>
+ Synchronize a client information. // Sincroniza la información de un cliente.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <returns>Client information synchronized. // Datos del cliente sincronizado.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.Synchonize(InMotionGIT.Client.Entity.Contracts.Client,System.Boolean,System.DateTime,System.String,System.String)">
+ <summary>
+ Synchronize a client information. // Sincroniza la información de un cliente.
+ </summary>
+ <param name="clientInstance">Client information. // Información de un cliente.</param>
+ <param name="generateClientId">Indicates if is necessary create a new client id. // Indica si se debe generar el código del cliente en caso de llegar vacío.</param>
+ <param name="atDate">Operation date. // Fecha de validez de la información.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client information synchronized. // Datos del cliente sincronizado.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.ExpandClientId(System.String)">
+ <summary>
+ Transform a client id into the needed format. // Transforma el código de un cliente en el formato requerido.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <returns>Client id in the format needed. // Código de un cliente en el formato requerido.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.ExpandClientId(System.String,System.String,System.String)">
+ <summary>
+ Transform a client id into the needed format. // Transforma el código de un cliente en el formato requerido.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Client id in the format needed. // Código de un cliente en el formato requerido.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.CalculateVerifyDigit(System.String)">
+ <summary>
+ Calculates the validation code of a client id. // Calcula el dígito verificador de un código de cliente.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <returns>Validation code. // Dígito verificador.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.CalculateVerifyDigit(System.String,System.String,System.String)">
+ <summary>
+ Calculates the validation code of a client id. // Calcula el dígito verificador de un código de cliente.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Validation code. // Dígito verificador.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.IsBusinessRUT(System.String)">
+ <summary>
+ Allow to know if the client id is of a company or a person. Valid only in Chile // Permite saber si el rut corresponde a una empresa. Condición valida solo en Chile.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <returns>True if is a company, False for person // Verdadero en caso de que el rut corresponda a una empresa, en caso contrario de retorna falso.</returns>
+ <remarks>
+ In case that the client id is equals or higher than 50.000.000, the client id correspond to a company.
+ En el caso de que el número del RUT sea mayor o igual a 50.000.000, se trata de un RUT que corresponde a una empresa.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.IsBusinessRUT(System.String,System.String,System.String)">
+ <summary>
+ Allow to know if the client id is of a company or a person. Valid only in Chile // Permite saber si el rut corresponde a una empresa. Condición valida solo en Chile.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>True if is a company, False for person // Verdadero en caso de que el rut corresponda a una empresa, en caso contrario de retorna falso.</returns>
+ <remarks>
+ In case that the client id is equals or higher than 50.000.000, the client id correspond to a company.
+ En el caso de que el número del RUT sea mayor o igual a 50.000.000, se trata de un RUT que corresponde a una empresa.
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.CompleteClientName(System.String)">
+ <summary>
+ Retrieve the complete client name using the client id. // Recupera el nombre completo de un cliente, por medio de código del mismo.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <returns>Complete client name. // Nombre del cliente.</returns>
+</member>
+<member name="M:InMotionGIT.Client.Proxy.Manager.CompleteClientName(System.String,System.String,System.String)">
+ <summary>
+ Retrieve the complete client name using the client id. // Recupera el nombre completo de un cliente, por medio de código del mismo.
+ </summary>
+ <param name="clientId">Client id. // Código que identifica al cliente.</param>
+ <param name="provider">Código de proveedor del servicio. // Provider code of the service.</param>
+ <returns>Complete client name. // Nombre del cliente.</returns>
+</member>
+</members>
+</doc>

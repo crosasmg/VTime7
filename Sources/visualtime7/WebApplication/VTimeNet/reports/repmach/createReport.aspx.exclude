@@ -1,0 +1,78 @@
+<%@ Page Language="VB" explicit="true" %>
+<%@ Import namespace="eWRpt" %>
+<script language="VB" runat="Server">
+
+
+    Public Sub Main()
+
+        Dim mstrExportPath As Object
+        Dim mstrParameters As String
+        Dim lobjSpecRec As ADODB._Recordset
+        Dim lobjWRptRep As eWRpt.clsReport
+        Dim lstrCodispl As String
+        Dim lstrCommand As String
+
+        lstrCodispl = Request.QueryString("sCodisPl")
+
+        lobjWRptRep = New eWRpt.clsReport
+        lobjSpecRec = lobjWRptRep.GetSpecifications(lobjWRptRep.TranslateWebPath(Request.ServerVariables("PATH_TRANSLATED")) & "\" & Session("SpecificationFile"), lstrCodispl)
+        'UPGRADE_NOTE: Object lobjWRptRep may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+        lobjWRptRep = Nothing
+
+        If Not lobjSpecRec.EOF Then
+            lobjSpecRec.MoveFirst()
+        End If
+
+        '+Se carga nombre del reporte y el primer parametro que corresponde al cursor    	    
+        mstrParameters = "URL=" & getFile(lobjSpecRec.Fields("esPlantillaRPT"))
+        mstrParameters = mstrParameters & "&sp="
+        lobjSpecRec.MoveFirst()
+        While Not lobjSpecRec.EOF
+            If IIF(IsDBNull(lobjSpecRec.Fields.Item("prVisible").Value), Nothing, lobjSpecRec.Fields.Item("prVisible").Value) = 1 Then
+                mstrParameters = mstrParameters & "&sp=" & Request.Form(lobjSpecRec.Fields("prNombre"))
+            Else
+                mstrParameters = mstrParameters & "&sp=" & Session(lobjSpecRec.Fields("prNombre"))
+            End If
+            lobjSpecRec.MoveNext()
+        End While
+        lobjSpecRec.Close()
+        'UPGRADE_NOTE: Object lobjSpecRec may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
+        lobjSpecRec = Nothing
+
+        lstrCommand = "../../Common/Reports/CEReport.aspx?" & mstrParameters
+        Response.Write("<SCRIPT>")
+        Response.Write("window.open('" & lstrCommand & "','Rep" & lstrCodispl & "','toolbar=no');")
+        Response.Write("top.document.location.reload();")
+        Response.Write("</" & "Script>")
+    End Sub
+
+    '
+    '    
+    Function getFile(ByRef sPath As Object) As String
+        Dim sFile As String
+        Dim lintPos As Integer
+        Dim arrTemp() As String
+
+        arrTemp = Split(sPath, "\")
+
+        lintPos = UBound(arrTemp)
+        If lintPos >= 0 Then
+            sFile = arrTemp(lintPos)
+        End If
+
+        arrTemp = Split(sFile, ".")
+        getFile = arrTemp(0)
+
+    End Function
+
+</script>
+<!-- #INCLUDE FILE="Parameters.aspx" -->
+<%
+
+Call Main()
+
+%>
+
+
+
+

@@ -1,0 +1,1223 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Mutual.Service
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Mutual.Service.DispatchGuide">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._LineOfBusinessDescription">
+<summary>
+Description of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._ProductDescription">
+<summary>
+Description of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._UnderwritingCaseID">
+<summary>
+Identification of the subscription case.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._CompleteClientName">
+<summary>
+Complete name of the client.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._FaceAmount">
+<summary>
+Insured amount of the subscription case.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._Premium">
+<summary>
+Premium amount.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._Age">
+<summary>
+Age of the the principal insured.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._Stage">
+<summary>
+Stage of the case.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._StageDescription">
+<summary>
+Description Stage of the case.
+</summary>
+</member>
+<member name="F:InMotionGIT.Mutual.Service.DispatchGuide._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH).
+</summary>
+<remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.LineOfBusinessDescription">
+<summary>
+Description of the line of business. 
+</summary>
+<remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.ProductCode">
+<summary>
+Code of the product. (NPRODUCT).
+</summary>
+<remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.ProductDescription">
+<summary>
+Description of the product. 
+</summary>
+<remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.UnderwritingCaseID">
+<summary>
+Identification of the subscription case.
+</summary>
+<remarks>Datasource is 'UnderwritingCase.UnderwritingCaseID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.CompleteClientName">
+<summary>
+Complete name of the client. (SCLIENAME).
+</summary>
+<remarks>.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.FaceAmount">
+<summary>
+Insured amount of the subscription case.
+</summary>
+<remarks>Datasource is 'UnderwritingCase.FaceAmount'.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.Premium">
+<summary>
+Premium amount.
+</summary>
+<remarks>Datasource is 'UnderwritingCase.Premium'.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.Age">
+<summary>
+Age of the the principal insured.
+</summary>
+<remarks>Datasource is 'UnderwritingCase.Age'.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.Stage">
+<summary>
+Stage of the case.
+</summary>
+<remarks>Datasource is 'UnderwritingCase.Stage'.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.StageDescription">
+<summary>
+Stage of the case description
+</summary>
+<remarks>.</remarks>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.DispatchGuide.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.CapitalsPoliciesInForce">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.FirstPremiumPayment">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.RetrieveClient(System.String,System.String)">
+ <summary>
+ RetrieveClient // Consultar datos de cliente
+ </summary>
+ <param name="clientID"></param>
+ <param name="typeClient"></param>
+ <returns>Client</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.UpdateRequestStatus(System.Decimal,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+ <summary>
+ Update Request Status // Actualización de estado de solicitud
+ </summary>
+ <param name="ProductID"></param>
+ <param name="FullProposalID"></param>
+ <param name="VirtualStateId"></param>
+ <param name="VirtualDepartmentId"></param>
+ <param name="PhysicalStateId"></param>
+ <param name="PhysicalDepartmentId"></param>
+ <param name="UserCode"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.UpdateHeaderRequest(System.String,System.Decimal,System.String,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+ <summary>
+ Updating request header information // Actualización de información de cabecera de la solicitud
+ </summary>
+ <param name="FullProposalID"></param>
+ <param name="PolicyID"></param>
+ <param name="clientID"></param>
+ <param name="PayerClientID"></param>
+ <param name="ProductID"></param>
+ <param name="InsuredAmount"></param>
+ <param name="Premium"></param>
+ <param name="AgreedPremium"></param>
+ <param name="UserCode"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.FirstPremiumPaymentRecord(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String)">
+ <summary>
+ First premium payment record // Registro de pago de primera prima
+ </summary>
+ <param name="underwritingCase"></param>
+ <param name="userClientID"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.CreatePolicyholder(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.Decimal,System.Decimal,System.Decimal,System.DateTime,System.Decimal,System.Decimal)">
+ <summary>
+ Creation of Policyholder // Creación de contratante
+ </summary>
+ <param name="riskInformation"></param>
+ <param name="userClientID"></param>    
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.VerifyFirstPremiumPayment(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.DateTime,System.Decimal)">
+ <summary>
+ Verify first premium payment posting // Verificar contabilización de pago de primera prima
+ </summary>
+ <param name="ProductID"></param>
+ <param name="FullProposalID"></param>
+ <returns>InMotionGIT.Mutual.Service.FirstPremiumPayment</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.SumOfCapitalsPoliciesInForce(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Int32,System.DateTime)">
+ <summary>
+ Sum of capitals of policies in force // Suma de capitales de pólizas vigentes
+ </summary>
+ <param name="clientID"></param>
+ <param name="HeapAmount"></param>
+ <param name="CurrencyId"></param>
+ <returns>InMotionGIT.Mutual.Service.CapitalsPoliciesInForce</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.GetNumberIntermediaryRequests(System.String,System.Decimal,System.Decimal,System.Decimal)">
+ <summary>
+ Associate application number with intermediary // Asociar número de solicitud a intermediario 
+ </summary>
+ <param name="clientID"></param>
+ <param name="ProductID"></param>
+ <returns>Common.DataType.LookUpValueCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.SendGuideWS(System.Decimal,System.Decimal,System.String,InMotionGIT.Underwriting.Contracts.UnderwritingCaseCollection)">
+ <summary>
+ Generation of guide of deposits to box // Generación de guía de depósitos a caja
+ </summary>
+ <param name="ProductID"></param>
+ <param name="GuideID"></param>
+ <param name="UserCode"></param>
+ <param name="ArrayRequest"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.RetrieveUnderwritingCasesForGuides(System.String,System.Int32,System.Int32)">
+ <summary>
+ Retorna una coleccion de casos a ser asociados a una guía
+ </summary>
+ <param name="clientId"></param>
+ <param name="stage"></param>
+ <param name="languageID"></param>
+ <returns>UnderwritingCaseForGuideCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.IMutualManager.GetApplications">
+ <summary>
+ 
+ </summary>
+ <returns>Returns a list of objects of RiskInformation type.</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.CalculateHeapInBO(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime)">
+ <summary>
+ Control function to calculate Heap Back Office
+ </summary>
+ <param name="riskInformation"></param>
+ <param name="effectiveDate"></param>
+ <returns>Decimal</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.CalculateRangeTolerance(System.DateTime,System.Decimal,System.Decimal)">
+ <summary>
+ Function to calculate tolerance range
+ </summary>
+ <param name="effectiveDate"></param>
+ <param name="codeCurrency"></param>
+ <param name="premiumProposal"></param>
+ <returns>Decimal</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.FindFirstPremium(InMotionGIT.Policy.Entity.Contracts.Role,System.DateTime,System.Decimal@)">
+ <summary>
+ Function to find the first premium
+ </summary>
+ <param name="Role"></param>
+ <param name="effectiveDate"></param>
+ <param name="PremiumProposal"></param>
+ <returns>Decimal</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.CheckFirstPremium(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime)">
+ <summary>
+ Function to check first premium
+ </summary>
+ <param name="riskInformation"></param>
+ <param name="effectiveDate"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.ExpandClientId(System.String)">
+ <summary>
+ Transform a client id into the needed format. // Transforma el código de un cliente en el formato requerido.
+ </summary>
+ <param name="clientId">Client id. // Código de cliente.</param>
+ <returns>Client id in the format needed. // Código de un cliente en el formato requerido.</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.FirstDayMonth(System.DateTime,System.Boolean)">
+ <summary>
+ Returns a date with the first day of the month following the date received
+ </summary>
+ <param name="effectiveDate"></param>
+ <returns>Date</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.GetReaFunds(System.Decimal,System.Decimal,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Function to obtain investor profile through SP REAFUNDS
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productCode"></param>
+ <param name="sourceAccount"></param>
+ <param name="effectiveDate"></param>
+ <returns>Policy.Entity.Contracts.InvestmentFundRelatedToPolicyCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.GetReaFunds2(System.Decimal,System.Decimal,System.Decimal,System.DateTime,System.Data.Common.DbConnection)">
+ <summary>
+ Function to obtain investor profile through SP REAFUNDS
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productCode"></param>
+ <param name="sourceAccount"></param>
+ <param name="effectiveDate"></param>
+ <returns>Policy.Entity.Contracts.InvestmentFundRelatedToPolicyCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.GetInvestorProfile(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.DateTime)">
+ <summary>
+ Function to obtain investor profile
+ </summary>
+ <param name="lineOfBusiness"></param>
+ <param name="productCode"></param>
+ <param name="sourceAccount"></param>
+ <param name="typeProfile"></param>
+ <param name="effectiveDate"></param>
+ <returns>Policy.Entity.Contracts.InvestmentFundRelatedToPolicyCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.GetNumberIntermediaryRequests(System.String,System.Decimal,System.Decimal,System.Decimal)">
+ <summary>
+ Associate application number with intermediary // Asociar número de solicitud a intermediario 
+ </summary>
+ <param name="clientID"></param>
+ <param name="ProductID"></param>
+ <returns>Common.DataType.LookUpValueCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.RetrieveClient(System.String,System.String)">
+ <summary>
+ RetrieveClient // Consultar datos de cliente
+ </summary>
+ <param name="clientID"></param>
+ <param name="typeClient"></param>
+ <returns>Client.Entity.Contracts.Client</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.SumOfCapitalsPoliciesInForce(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.Int32,System.DateTime)">
+ <summary>
+ Sum of capitals of policies in force // Suma de capitales de pólizas vigentes
+ </summary>
+ <param name="clientID"></param>
+ <param name="HeapAmount"></param>
+ <param name="CurrencyId"></param>
+ <returns>InMotionGIT.Mutual.Service.CapitalsPoliciesInForce</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.UpdateRequestStatus(System.Decimal,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+ <summary>
+ Update Request Status // Actualización de estado de solicitud
+ </summary>
+ <param name="ProductID"></param>
+ <param name="FullProposalID"></param>
+ <param name="VirtualStateId"></param>
+ <param name="VirtualDepartmentId"></param>
+ <param name="PhysicalStateId"></param>
+ <param name="PhysicalDepartmentId"></param>
+ <param name="userClientID"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.UpdateHeaderRequest(System.String,System.Decimal,System.String,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+ <summary>
+ Updating request header information // Actualización de información de cabecera de la solicitud
+ </summary>
+ <param name="FullProposalID"></param>
+ <param name="PolicyID"></param>
+ <param name="clientID"></param>
+ <param name="PayerClientID"></param>
+ <param name="ProductID"></param>
+ <param name="InsuredAmount"></param>
+ <param name="Premium"></param>
+ <param name="AgreedPremium"></param>
+ <param name="userClientID"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.FirstPremiumPaymentRecord(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.String)">
+ <summary>
+ First premium payment record // Registro de pago de primera prima
+ </summary>
+ <param name="underwritingCase"></param>
+ <param name="userClientID"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.SendGuideWS(System.Decimal,System.Decimal,System.String,InMotionGIT.Underwriting.Contracts.UnderwritingCaseCollection)">
+ <summary>
+ Generation of guide of deposits to box // Generación de guía de depósitos a caja
+ </summary>
+ <param name="ProductID"></param>
+ <param name="GuideID"></param>
+ <param name="userClientID"></param>
+ <param name="underwritingCases"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.VerifyFirstPremiumPayment(InMotionGIT.Underwriting.Contracts.UnderwritingCase,System.DateTime,System.Decimal)">
+ <summary>
+ Verify first premium payment posting // Verificar contabilización de pago de primera prima
+ </summary>
+ <returns>InMotionGIT.Mutual.Service.FirstPremiumPayment</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.CreatePolicyHolder(InMotionGIT.Client.Entity.Contracts.Client,System.String,System.Decimal,System.Decimal,System.Decimal,System.DateTime,System.Decimal,System.Decimal)">
+ <summary>
+ Creation of Policyholder // Creación de contratante 
+ </summary>
+ <param name="riskInformation"></param>
+ <param name="ClientEntity"></param>
+ <param name="userClientID"></param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.RetrieveUnderwritingCasesForGuides(System.String,System.Int32,System.Int32)">
+ <summary>
+ Retorna una coleccion de casos a ser asociados a una guía
+ </summary>
+ <param name="clientId"></param>
+ <param name="stage"></param>
+ <param name="languageID"></param>
+ <returns>UnderwritingCaseForGuideCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.ConvertToUnderwritingCaseGuideCollection(InMotionGIT.Mutual.Contracts.UnderwritingCaseForGuideCollection,System.Int32,System.Boolean@)">
+ <summary>
+ Converts an UnderwritingCaseForGuideCollection object to an UnderwritingCaseGuideCollection object.
+ </summary>
+ <param name="underwritingCaseForGuideList"></param>
+ <returns>Returns an UnderwritingCaseGuideCollection object.</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.RePrintGuide(InMotionGIT.Underwriting.Contracts.Guide@,System.Int32)">
+ <summary>
+ Retorna una coleccion de casos a ser asociados a una guía
+ </summary>
+ <param name="guide"></param>    
+ <param name="languageID"></param>
+ <returns>UnderwritingCaseForGuideCollection</returns>
+</member>
+<member name="M:InMotionGIT.Mutual.Service.MutualManager.UpdateClientInformationFromDB(InMotionGIT.Policy.Entity.Contracts.RiskInformation,System.DateTime)">
+ <summary>
+ Actualiza la información de cliente de los roles de una póliza
+ </summary>
+ <param name="risk">Contrato de proceso de póliza</param>
+ <param name="atDate">Fecha de operación</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_solicutudes_x_intermediario">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_solicutudes_x_intermediario.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_solicutudes_x_intermediario.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_solicutudes_x_intermediario.NRPLAN">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_creacion_contratante">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_creacion_contratante.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_creacion_contratante.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.ESTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRPOLI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDPRODUCT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.FCVIGE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DVRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NOMBRES">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.APEPAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.APEMAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSSEXO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.FCNACI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.ESTCIV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NACIONALIDAD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.SISTSALUD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.TPFONO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDACTLAB">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSACTLAB">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDRENTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSEMAIL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDAREAFONO1">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRFONO1">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDAREAFONO2">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRFONO2">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSCALLE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.NRCALLE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSBLOCK">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSDEPTO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.DSSECTOR">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.CDCOMUNA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.USMODI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_creacion_contratante.TIPO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.SNCONTABI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.FCPAGO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.FCCONTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_verificar_contabilizacion_pago_primera_prima.MTPAGO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_verificar_contabilizacion_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_verificar_contabilizacion_pago_primera_prima.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_verificar_contabilizacion_pago_primera_prima.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_verificar_contabilizacion_pago_primera_prima.NROSOL">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_generacion_guia_deposito_caja">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_generacion_guia_deposito_caja.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_generacion_guia_deposito_caja.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_generacion_guia_deposito_caja">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_generacion_guia_deposito_caja.DSSOLI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_registro_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_registro_pago_primera_prima.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_registro_pago_primera_prima.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NROBOLETA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NRODEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.MTOBOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.MTODEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.FECBOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.FECDEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.DEPCTACT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.NROBCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.MODPAGO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.CDUNIDAD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_registro_pago_primera_prima.USCREA">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_informacion_cabecera_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_informacion_cabecera_solicitud.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_informacion_cabecera_solicitud.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRPOLI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRRUTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.CAPSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRPRBA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.NRPRCV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_informacion_cabecera_solicitud.USMODI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_estado_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_estado_solicitud.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_actualizacion_estado_solicitud.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.CODESTV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.CODDEPV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.CODESTF">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.CODDEPF">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_actualizacion_estado_solicitud.USMODI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.MTCUMCORE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.MTCUMTOT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.SNMAXCUM">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_suma_capital_poliza_vigente.DSMSJCUM">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_suma_capital_poliza_vigente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_suma_capital_poliza_vigente.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_suma_capital_poliza_vigente.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_suma_capital_poliza_vigente.MTOCUMVT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_suma_capital_poliza_vigente.CDUNIDAD">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.NOMBRE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.APEPAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.APEMAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.STSEXO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_datos_cliente.FECNAC">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.entrada_datos_cliente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_datos_cliente.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_datos_cliente.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.entrada_datos_cliente.TPCLIENTE">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualServices.salida_solicutudes_x_intermediario">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualServices.salida_solicutudes_x_intermediario.NROSOL">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_solicutudes_x_intermediario">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_solicutudes_x_intermediario.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_solicutudes_x_intermediario.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_solicutudes_x_intermediario.NRPLAN">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_creacion_contratante">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_creacion_contratante.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_creacion_contratante.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRPOLI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.FCVIGE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DVRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NOMBRES">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.APEPAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.APEMAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSSEXO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.FCNACI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.ESTCIV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NACIONALIDAD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.SISTSALUD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.TPFONO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.CDACTLAB">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSACTLAB">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.CDRENTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSEMAIL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.CDAREAFONO1">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRFONO1">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.CDAREAFONO2">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRFONO2">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSCALLE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.NRCALLE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSBLOCK">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSDEPTO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.DSSECTOR">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.CDCOMUNA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_creacion_contratante.USMODI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.SNCONTABI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.FCPAGO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.FCCONTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_verificar_contabilizacion_pago_primera_prima.MTPAGO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_verificar_contabilizacion_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_verificar_contabilizacion_pago_primera_prima.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_verificar_contabilizacion_pago_primera_prima.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_verificar_contabilizacion_pago_primera_prima.NROSOL">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_generacion_guia_deposito_caja">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_generacion_guia_deposito_caja.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_generacion_guia_deposito_caja.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_generacion_guia_deposito_caja">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_generacion_guia_deposito_caja.DSSOLI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_registro_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_registro_pago_primera_prima.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_registro_pago_primera_prima.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NROBOLETA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NRODEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.MTOBOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.MTODEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.FECBOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.FECDEP">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.DEPCTACT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.NROBCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.MODPAGO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.CDUNIDAD">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_registro_pago_primera_prima.USCREA">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_informacion_cabecera_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_informacion_cabecera_solicitud.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_informacion_cabecera_solicitud.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRPOLI">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRRUTA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRRUCO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.CAPSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRPRBA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.NRPRCV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_informacion_cabecera_solicitud.USMODI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_estado_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_estado_solicitud.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_actualizacion_estado_solicitud.DSRESULTADO">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.NRPLAN">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.NROSOL">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.CODESTV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.CODDEPV">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.CODESTF">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.CODDEPF">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_actualizacion_estado_solicitud.USMODI">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.MTCUMCORE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.MTCUMTOT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.SNMAXCUM">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_suma_capital_poliza_vigente.DSMSJCUM">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_suma_capital_poliza_vigente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_suma_capital_poliza_vigente.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_suma_capital_poliza_vigente.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_suma_capital_poliza_vigente.MTOCUMVT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_suma_capital_poliza_vigente.CDUNIDAD">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.CDRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.DSRESULTADO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.NOMBRE">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.APEPAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.APEMAT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.STSEXO">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_datos_cliente.FECNAC">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.entrada_datos_cliente">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_datos_cliente.NRRUTCIA">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_datos_cliente.NRRUT">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.entrada_datos_cliente.TPCLIENTE">
+<remarks/>
+</member>
+<member name="T:InMotionGIT.Mutual.Service.MutualService.salida_solicutudes_x_intermediario">
+<remarks/>
+</member>
+<member name="P:InMotionGIT.Mutual.Service.MutualService.salida_solicutudes_x_intermediario.NROSOL">
+<remarks/>
+</member>
+</members>
+</doc>

@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.FASI.Support</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.FASI.Support.Handlers.LanguageHandler">
+            <summary>
+            Class by manager all relation by language
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.LanguageByCultureName(System.String)">
+            <summary>
+            Retorna el id y el culture name code.
+            </summary>
+            <param name="languageName">Culture name</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.Synchronization(System.Int32@,System.String@)">
+            <summary>
+            Process that verification if exist fields in sessions and not found create fields that language
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.LanguagesEnable">
+            <summary>
+            Show enable language
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.LanguageId">
+            <summary>
+            Return value of the LanguageId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.LanguageIdDefault">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.LanguageName">
+            <summary>
+            Return value of the LangaugeName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.LanguageHandler.ContextLanguageId">
+            <summary>
+            Retorna el código del lenguaje actual según el contexto.
+            </summary>
+            <returns>Código de lenguaje</returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Support.Handlers.CacheHandler">
+            <summary>
+            Clase de manejo de cache.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.CacheHandler.RemoveStartWith(System.String)">
+            <summary>
+            Permite hacer el clean por key por start.
+            </summary>
+            <param name="Key">Clave para eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.CacheHandler.Remove(System.String)">
+            <summary>
+            Permite hacer el clean por key.
+            </summary>
+            <param name="Key">Clave para eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Support.Handlers.UpgradeInfoHandler">
+            <summary>
+            Permite hacer uso de Upgrade Info
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Handlers.UpgradeInfoHandler.Version">
+            <summary>
+            Obtiene las revisiones de los archivos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Support.Members">
+            <summary>
+            Clase que permite controlar el controlador de members
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.RoleByIdByNames(System.String[])">
+            <summary>
+            Retorna los ids de los roles seleccionados por nombre
+            </summary>
+            <param name="names">Nombre de los roles</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UpdateRoles(System.String,System.String,System.String)">
+            <summary>
+            Método para realizar el update de los roles en el sts
+            </summary>
+            <param name="email"></param>
+            <param name="roles"></param>
+            <param name="rolesId"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UserAdmin(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Crea el usuario de Admin.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.AcceptAllCertifications(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Bypass the cert validation.
+            </summary>
+            <param name="sender"></param>
+            <param name="certificate"></param>
+            <param name="chain"></param>
+            <param name="sslPolicyErrors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.Controller(System.String)">
+            <summary>
+            Define el controlador a llamar esto para poder hacer una transaction
+            </summary>
+            <param name="controllerName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.CreatePortalUser(InMotionGIT.FASI.Contracts.Security.UserInformation,System.Boolean)">
+            <summary>
+            Crea un usuario en FASI y STS.
+            </summary>
+            <param name="user">Usuario para crear la en el sistema de STS</param>
+            <param name="State"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UserDeleteById(System.Int32,System.Boolean)">
+            <summary>
+            Elimina un usuario de Fasi por su Id
+            </summary>
+            <param name="DeleteAllRelatedData">Define si elimina todos los datos relacionados con el usuario</param>
+            <param name="userId">Define si elimina todos los datos relacionados con el usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UserDeleteByUserName(System.String,System.Boolean)">
+            <summary>
+            Elimina un usuario de Fasi por nombre
+            </summary>
+            <param name="UserName">Nombre del usuario</param>
+            <param name="DeleteAllRelatedData">Define si elimina todos los datos relacionados con el usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UserStatusChange(System.Int32,System.Boolean)">
+            <summary>
+             Cambio el estado del usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.UserCreateSTS(InMotionGIT.FASI.Support.Entities.UserDTO)">
+            <summary>
+             Crea un usuario en el STS
+            </summary>
+            <param name="item">Nombre usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Members.GetAnonymousToken">
+            <summary>
+            Obtiene el token de la sección
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.TokenUpdateByLanguageIdAndLanguageName(System.Int32,System.String)">
+            <summary>
+             Realiza un update de los propiedades de languageId y el languageName
+            </summary>
+            <param name="languageId"></param>
+            <param name="languageName"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.ValidateFormsAuthenticationTicketOnly(InMotionGIT.FASI.Contracts.Security.UserInformation)">
+             <summary>
+            
+             </summary>
+             <param name="user"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.LogOut">
+            <summary>
+            Método que proporciona el logout de usuario
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.AuthorizationProcess">
+            <summary>
+            Realiza una validación procesos de web method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.AuthorizationProcess(System.String)">
+            <summary>
+            Método que realiza validación de procesos de authorization de llamado de peticiones
+            </summary>
+            <param name="AllowRoles">Roles permitios por el método</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.AuthorizationProcess(System.String[],System.Boolean,System.String)">
+            <summary>
+            Método que realiza validación de procesos de authorization de llamado de peticiones
+            </summary>
+            <param name="AllowRoles">Roles permitios por el método</param>
+            <param name="IsThrow">Define si es o no el throw de la exception</param>
+            <param name="Token">Valor opcional para el token</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.AuthorizationProcess(System.String,System.Boolean,System.String)">
+            <summary>
+            Método que realiza validación de procesos de authorization de llamado de peticiones
+            </summary>
+            <param name="AllowRoles">Roles permitios por el método</param>
+            <param name="IsThrow">Define si es o no el throw de la exception</param>
+            <param name="Token">Valor opcional para el token</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.UserCheckEquals(System.String,System.Int32)">
+            <summary>
+            Método que valida si el usuario es igual al current
+            </summary>
+            <param name="token">Token del usuario</param>
+            <param name="userId">Id del current id</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.UserAnonymous(System.String)">
+            <summary>
+            Método que retorna el id de user anonymous
+            </summary>
+            <param name="token">Token de autorización</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.GetUserInformation(System.String)">
+            <summary>
+            Obtiene informaciones del usuario autenticado
+            </summary>
+            <returns>Información del usuario</returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.Token">
+            <summary>
+            Retorna el token de un email o un usuario anónimo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.IsALive(System.Boolean,System.String,System.Boolean,System.String[],System.String)">
+            <summary>
+            Permite mantener activa la sesión establecida en el browser
+            </summary>
+            <param name="IsFirst">Indica si es la primera vez que se usa la aplicación</param>
+            <param name="SessionId">Identificador de la sesión registrada en el browser</param>
+            <param name="TokenRenew">Indica que se debe renovar el token</param>
+            <param name="Roles">Define los roles autorizados</param>
+            <param name="tokenValue">Define token de auto login</param>
+            <returns>Información del usuario y su sesión</returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.GetCurrentMomentTimezone">
+            <summary>
+            Obtiene el objeto timezone listo para agregar a moment.tz desde el SO
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.Authentication.GetTransitionDate(System.TimeZoneInfo.TransitionTime,System.Int32)">
+            <summary>
+            Obtiene la fecha desde cualquier tipo de regla de cambio del SO por año.
+            </summary>
+            <param name="transitionTime"></param>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Support.utils.JSONResources">
+            <summary>
+            Soporte al manejo de archivo de recursos tipo JSON.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Support.utils.JSONResources.LocalResource(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Devuleve una texto existente en un archivo de recurso tipo JSON usando en HTML5.
+            </summary>
+            <param name="path">Ruta fisica de la planilla o consulta.</param>
+            <param name="filename">Nombre de la planilla o consulta.</param>
+            <param name="language">Lenguaje de presentación al usuario.</param>
+            <param name="key">Clave del texto existente en le archivo de recurso.</param>
+            <param name="defaultText">Texto usado como valor en caso de no existir el archivo de recurso o no encontrar la clave en el archivo existente.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

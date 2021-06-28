@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnchorCaption" xml:space="preserve">
+    <value>Capital</value>
+    <comment>ID=100363</comment>
+  </data>
+  <data name="ChkCapitalCaption" xml:space="preserve">
+    <value>Capital en función de la prima</value>
+  </data>
+  <data name="ChkCapitalToolTip" xml:space="preserve">
+    <value>Indica que el capital se calcula en función a la prima</value>
+  </data>
+  <data name="optCapital_1Caption" xml:space="preserve">
+    <value>Libre</value>
+  </data>
+  <data name="optCapital_1ToolTip" xml:space="preserve">
+    <value>Indica que el capital será determinado por el usuario al momento de la emisión de la póliza</value>
+  </data>
+  <data name="optCapital_2Caption" xml:space="preserve">
+    <value>Fijo</value>
+  </data>
+  <data name="optCapital_2ToolTip" xml:space="preserve">
+    <value>Indica que el monto del capital es un monto fijo definido para el producto</value>
+  </data>
+  <data name="tcnPriceCaption" xml:space="preserve">
+    <value>Monto</value>
+    <comment>ID=14109</comment>
+  </data>
+  <data name="tcnPriceToolTip" xml:space="preserve">
+    <value>Monto de capital fijo a asignar a la cobertura</value>
+    <comment>ID=14109</comment>
+  </data>
+  <data name="Anchor2Caption" xml:space="preserve">
+    <value>Prima</value>
+    <comment>ID=100364</comment>
+  </data>
+  <data name="ChkPremiumCaption" xml:space="preserve">
+    <value>Prima en función del capital</value>
+  </data>
+  <data name="ChkPremiumToolTip" xml:space="preserve">
+    <value>Indica que la prima se calcula en función del capital</value>
+  </data>
+  <data name="valCoverCaption" xml:space="preserve">
+    <value>En cobertura</value>
+    <comment>ID=14103</comment>
+  </data>
+  <data name="valCoverToolTip" xml:space="preserve">
+    <value>Cobertura genérica que incluye la prima de la cobertura en tratamiento</value>
+    <comment>ID=14103</comment>
+  </data>
+  <data name="tctRutinCaption" xml:space="preserve">
+    <value>Rutina</value>
+    <comment>ID=14111</comment>
+  </data>
+  <data name="tctRutinToolTip" xml:space="preserve">
+    <value>Rutina a utilizar para la determinación y/o validación de la prima de la cobertura</value>
+    <comment>ID=14111</comment>
+  </data>
+  <data name="tcnRateCaption" xml:space="preserve">
+    <value>Tasa</value>
+    <comment>ID=14110</comment>
+  </data>
+  <data name="tcnRateToolTip" xml:space="preserve">
+    <value>Tasa (pormilaje) a aplicar al capital para obtener la prima de la cobertura</value>
+    <comment>ID=14110</comment>
+  </data>
+  <data name="Anchor3Caption" xml:space="preserve">
+    <value>Siniestros</value>
+    <comment>ID=100365</comment>
+  </data>
+  <data name="tctDeathCaption" xml:space="preserve">
+    <value>Muerte</value>
+    <comment>ID=14108</comment>
+  </data>
+  <data name="tctDeathToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de indemnización en caso de muerte</value>
+    <comment>ID=14108</comment>
+  </data>
+  <data name="tctDoubleIndemCaption" xml:space="preserve">
+    <value>Doble indemnización</value>
+    <comment>ID=14107</comment>
+  </data>
+  <data name="tctDoubleIndemToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de doble indemnización en caso de muerte</value>
+    <comment>ID=14107</comment>
+  </data>
+  <data name="tctTriIndemCaption" xml:space="preserve">
+    <value>Triple indemnización</value>
+    <comment>ID=14106</comment>
+  </data>
+  <data name="tctTriIndemToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de triple indemnización en caso de muerte</value>
+    <comment>ID=14106</comment>
+  </data>
+  <data name="tctSurvivalCaption" xml:space="preserve">
+    <value>Supervivencia</value>
+    <comment>ID=14105</comment>
+  </data>
+  <data name="tctSurvivalToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de indemnización en caso de supervivencia</value>
+    <comment>ID=14105</comment>
+  </data>
+  <data name="tctInabilityCaption" xml:space="preserve">
+    <value>Incapacidad</value>
+    <comment>ID=14112</comment>
+  </data>
+  <data name="tctInabilityToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de indemnización en caso de incapacidad</value>
+    <comment>ID=14112</comment>
+  </data>
+  <data name="tctInvalidCaption" xml:space="preserve">
+    <value>Invalidez</value>
+    <comment>ID=14104</comment>
+  </data>
+  <data name="tctInvalidToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de indemnización en caso de invalidez</value>
+    <comment>ID=14104</comment>
+  </data>
+  <data name="tctClillnessCaption" xml:space="preserve">
+    <value>Enfermedad</value>
+    <comment>ID=14113</comment>
+  </data>
+  <data name="tctClillnessToolTip" xml:space="preserve">
+    <value>Rutina/fórmula a utilizar para obtener el monto de indemnización en caso de enfermedad</value>
+    <comment>ID=14113</comment>
+  </data>
+</root>

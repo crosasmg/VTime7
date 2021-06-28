@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAADFD20-AC4B-4EDA-A340-B939958DA3E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eAgent</RootNamespace>
+    <AssemblyName>eAgent</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>eAgent.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\WebApplication\Bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accomp_factor.vb" />
+    <Compile Include="accomp_factors.vb" />
+    <Compile Include="AccountStatement\AccountHolder.vb" />
+    <Compile Include="AccountStatement\AccountStatement.vb" />
+    <Compile Include="AccountStatement\BillItem.vb" />
+    <Compile Include="AccountStatement\BonusPoints.vb" />
+    <Compile Include="AccountStatement\Client.vb" />
+    <Compile Include="AccountStatement\Clients.vb" />
+    <Compile Include="AccountStatement\CommissionDetail.vb" />
+    <Compile Include="AccountStatement\ConsumerInformation.vb" />
+    <Compile Include="AccountStatement\Data.vb" />
+    <Compile Include="AccountStatement\DataList.vb" />
+    <Compile Include="AccountStatement\History.vb" />
+    <Compile Include="AccountStatement\Item.vb" />
+    <Compile Include="AccountStatement\LookUp.vb" />
+    <Compile Include="AccountStatement\LookUpAlphaNumeric.vb" />
+    <Compile Include="AccountStatement\LookUpLineOfBusiness.vb" />
+    <Compile Include="AccountStatement\LookUpProduct.vb" />
+    <Compile Include="AccountStatement\Opremium.vb" />
+    <Compile Include="AccountStatement\Phone.vb" />
+    <Compile Include="AccountStatement\Redemption.vb" />
+    <Compile Include="AccountStatement\Redemptions.vb" />
+    <Compile Include="AccountStatement\Reward.vb" />
+    <Compile Include="AccountStatement\RewardInfo.vb" />
+    <Compile Include="AccountStatement\Root.vb" />
+    <Compile Include="AccountStatement\SecurityInformation.vb" />
+    <Compile Include="AccountStatement\StatementInfo.vb" />
+    <Compile Include="AccountStatement\Transaction.vb" />
+    <Compile Include="Advance_users.vb" />
+    <Compile Include="Advance_userss.vb" />
+    <Compile Include="Agencie.vb" />
+    <Compile Include="Agencies.vb" />
+    <Compile Include="Agents.vb" />
+    <Compile Include="Agent_rate.vb" />
+    <Compile Include="Agent_rates.vb" />
+    <Compile Include="average_prod.vb" />
+    <Compile Include="average_prods.vb" />
+    <Compile Include="bonus_gen.vb" />
+    <Compile Include="bonus_gens.vb" />
+    <Compile Include="branprod_allow.vb" />
+    <Compile Include="branprod_allows.vb" />
+    <Compile Include="Bud_agen.vb" />
+    <Compile Include="Bud_agens.vb" />
+    <Compile Include="commiss_agree.vb" />
+    <Compile Include="commiss_agrees.vb" />
+    <Compile Include="commis_his.vb" />
+    <Compile Include="Commis_hiss.vb" />
+    <Compile Include="Constantes.vb" />
+    <Compile Include="contrat_pay.vb" />
+    <Compile Include="Contrat_Pays.vb" />
+    <Compile Include="contrat_pay_detail.vb" />
+    <Compile Include="contrat_pay_details.vb" />
+    <Compile Include="Det_comgen.vb" />
+    <Compile Include="Det_comgens.vb" />
+    <Compile Include="Det_comlif.vb" />
+    <Compile Include="Det_comlifs.vb" />
+    <Compile Include="Disex_int_d.vb" />
+    <Compile Include="Disex_int_ds.vb" />
+    <Compile Include="excess_maint.vb" />
+    <Compile Include="excess_maints.vb" />
+    <Compile Include="gen_bonsup.vb" />
+    <Compile Include="gen_bonsups.vb" />
+    <Compile Include="Goals.vb" />
+    <Compile Include="Goalss.vb" />
+    <Compile Include="Intermedia.vb" />
+    <Compile Include="Intermedias.vb" />
+    <Compile Include="Intermed_his.vb" />
+    <Compile Include="Intermed_partic.vb" />
+    <Compile Include="Intermed_partics.vb" />
+    <Compile Include="Interm_bud.vb" />
+    <Compile Include="Interm_buds.vb" />
+    <Compile Include="interm_param.vb" />
+    <Compile Include="interm_params.vb" />
+    <Compile Include="Interm_typ.vb" />
+    <Compile Include="Interm_typs.vb" />
+    <Compile Include="Int_fixval.vb" />
+    <Compile Include="Int_fixvals.vb" />
+    <Compile Include="Loans_int.vb" />
+    <Compile Include="Loans_ints.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="pay_comm.vb" />
+    <Compile Include="pay_comms.vb" />
+    <Compile Include="PercentAdvanc.vb" />
+    <Compile Include="PercentAdvances.vb" />
+    <Compile Include="Supervis_commis.vb" />
+    <Compile Include="Supervis_commiss.vb" />
+    <Compile Include="Tab_comlif.vb" />
+    <Compile Include="Tab_Commission.vb" />
+    <Compile Include="Tab_commissions.vb" />
+    <Compile Include="Tab_compro.vb" />
+    <Compile Include="Tab_compros.vb" />
+    <Compile Include="Tab_comrat.vb" />
+    <Compile Include="Tab_comrats.vb" />
+    <Compile Include="tab_goals.vb" />
+    <Compile Include="tab_goalss.vb" />
+    <Compile Include="Tab_Spec_Comm.vb" />
+    <Compile Include="Tab_Spec_Comms.vb" />
+    <Compile Include="tax_fixval.vb" />
+    <Compile Include="tax_fixvals.vb" />
+    <Compile Include="ValAgentRep.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\eFunctions\eFunctions.vbproj">
+      <Project>{CD9D885D-AAC1-4B99-8009-F821DF7D80AC}</Project>
+      <Name>eFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eGeneral\eGeneral.vbproj">
+      <Project>{67208FC2-FE0A-4D94-9FD0-28DA643EDF03}</Project>
+      <Name>eGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eRemoteDB\eRemoteDB.vbproj">
+      <Project>{4A827208-C6DF-4B5B-A7B6-22252F08F803}</Project>
+      <Name>eRemoteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\eSecurity\eSecurity.vbproj">
+      <Project>{313C7A89-276C-422C-A6E0-E1B3709AD869}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eClient\eClient.vbproj">
+      <Project>{30582942-2DF4-4212-AB9D-DF0C18291AAE}</Project>
+      <Name>eClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eProduct\eProduct.vbproj">
+      <Project>{E4EF1C50-30F8-4EB0-9D9C-8CFD624B6B0A}</Project>
+      <Name>eProduct</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="eAgent.snk" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

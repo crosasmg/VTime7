@@ -1,0 +1,457 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GIT.Quote.Base
+</name>
+</assembly>
+<members>
+<member name="P:GIT.Quote.Base.Address.StreetOrUrl">
+	<summary>
+Address - Street - URL.
+</summary>
+	<remarks>Datasource is 'Address.sStreet'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.Street">
+	<summary>
+Address / Street.
+</summary>
+	<remarks>Datasource is 'Address.sStreet1'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.StateOrProvince">
+	<summary>
+Code of the state or province.
+</summary>
+	<remarks>Datasource is 'Address.nProvince'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.City">
+	<summary>
+City/Location/Province.
+</summary>
+	<remarks>Datasource is 'Address.sZone'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.CityCode">
+	<summary>
+City code.
+</summary>
+	<remarks>Datasource is 'Address.nLocal'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.ZipCode">
+	<summary>
+Zip code.
+</summary>
+	<remarks>Datasource is 'Address.nZip_code'</remarks>
+</member><member name="P:GIT.Quote.Base.Address.TypeofAddress">
+	<summary>
+Type of address.
+</summary>
+	<remarks>Datasource is 'Address.nTypeofAddress'</remarks>
+</member><member name="T:GIT.Quote.Base.Address">
+	<summary>
+ Addresses.
+ </summary>
+	<remarks>Datasource is 'Address'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.EffectiveDate">
+	<summary>
+Effective date of the policy.
+</summary>
+	<remarks>Datasource is 'Policy.dStartdate'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.InsuredAmount">
+	<summary>
+Insured amount of the policy/certificate.
+</summary>
+	<remarks>Datasource is 'Policy.nCapital'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.AnnualPremium">
+	<summary>
+Annual premium amount of the policy.
+</summary>
+	<remarks>Datasource is 'Policy.nPremium'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.NetPremium">
+	<summary>
+Net premium amount.
+</summary>
+	<remarks>Datasource is 'Premium.nPremiumn'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.RatePerThousand">
+	<summary>
+Rate to apply (o/oo).
+</summary>
+	<remarks>Datasource is 'Cover.nRatecove'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.IssueDate">
+	<summary>
+Date when the policy/certificate is written.
+</summary>
+	<remarks>Datasource is 'Policy.dIssuedat'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.DurationInMonths">
+	<summary>
+Number of months of duration of the policy/certificate.
+</summary>
+	<remarks>Datasource is 'Certificat.nDuration'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.PaymentFrequency">
+	<summary>
+Code of the payment frequency.
+</summary>
+	<remarks>Datasource is 'Policy.nPayfreq'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.TaxPercentage">
+	<summary>
+Percentage amount (related to the premium amount).
+</summary>
+	<remarks>Datasource is 'Cover.None'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.TaxAmount">
+	<summary>
+Tax amount (related to the premium amount).
+</summary>
+	<remarks>Datasource is 'Cover.nTaxAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.FranchiseOrDeductiblePercentage">
+	<summary>
+Franchise or deductible percentage to be applied.
+</summary>
+	<remarks>Datasource is 'Cover.nRate'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.AnnualExtraPremium">
+	<summary>
+Anual amount of the surcharge.
+</summary>
+	<remarks>Datasource is 'Cover.nRecAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.AnnualDiscount">
+	<summary>
+Annual amount of the discount.
+</summary>
+	<remarks>Datasource is 'Cover.nDescAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.InsuranceDuration">
+	<summary>
+Duration of insurance.
+</summary>
+	<remarks>Datasource is 'Life.nInsur_time'</remarks>
+</member><member name="P:GIT.Quote.Base.Information.DurationOfPayments">
+	<summary>
+Duration of premium payments.
+</summary>
+	<remarks>Datasource is 'Life.nPay_time'</remarks>
+</member><member name="T:GIT.Quote.Base.Information">
+	<summary>
+ Contains all the information related to the payment plan and options selected by the client.
+ </summary>
+</member><member name="P:GIT.Quote.Base.Coverage.SelectedByDefault">
+	<summary>
+Selected by default.
+</summary>
+	<remarks>Datasource is 'Gen_cover.sDefaulti'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.SelectedByDefaultText">
+	<summary>
+Selected by default (VisualTime switch).
+</summary>
+	<remarks>Datasource is 'Gen_cover.sDefaulti'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.Role">
+	<summary>
+Role of the client in the policy.
+</summary>
+	<remarks>Datasource is 'Roles.nRole'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.RoleDescription">
+	<summary>
+Role of the client in the policy.
+</summary>
+	<remarks>Datasource is 'Table12.sDescript'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.CompleteClientName">
+	<summary>
+Complete name of the client. In case of persons, this field includes last name and first name, in case of businesses, it is the name of the company.
+</summary>
+	<remarks>Datasource is 'Client.sCliename'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.CoverageCode">
+	<summary>
+Code of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.nCover'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.CoverageDescription">
+	<summary>
+Code of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.sDescript'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.ClientID">
+	<summary>
+Code of the client.
+</summary>
+	<remarks>Datasource is 'Cover.sClient'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.InsuredAmount">
+	<summary>
+Insured amount of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.nCapital'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.AnnualPremium">
+	<summary>
+Annual premium amount of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.nPremium'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.RatePerThousand">
+	<summary>
+Rate to apply (o/oo).
+</summary>
+	<remarks>Datasource is 'Cover.nRatecove'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.Share">
+	<summary>
+Percentage of share of the coinsurance company on the total risk insured.
+</summary>
+	<remarks>Datasource is 'Coinsuran.nShare'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.TaxAmount">
+	<summary>
+Tax amount (related to the premium amount).
+</summary>
+	<remarks>Datasource is 'Cover.nTaxAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.FranchiseOrDeductiblePercentage">
+	<summary>
+Franchise or deductible percentage to be applied.
+</summary>
+	<remarks>Datasource is 'Cover.nRate'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.AnnualExtraPremium">
+	<summary>
+Anual amount of the surcharge.
+</summary>
+	<remarks>Datasource is 'Cover.nRecAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.AnnualDiscount">
+	<summary>
+Annual amount of the discount.
+</summary>
+	<remarks>Datasource is 'Cover.nDescAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.Coverage.Age">
+	<summary>
+Age of the insured at the moment of the transaction.
+</summary>
+	<remarks>Datasource is 'Cover_life.nAge'</remarks>
+</member><member name="T:GIT.Quote.Base.Coverage">
+	<summary>
+ Coverage
+ </summary>
+</member><member name="T:GIT.Quote.Base.CoverageCollection">
+	<summary>
+ Collection for Coverage class
+ </summary>
+</member><member name="P:GIT.Quote.Base.Person.Role">
+	<summary>
+Role of the client in the policy.
+</summary>
+	<remarks>Datasource is 'Roles.nRole'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.ClientID">
+	<summary>
+Code of the client.
+</summary>
+	<remarks>Datasource is 'Client.sClient'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.FirstName">
+	<summary>
+First name and middle name of the client.
+</summary>
+	<remarks>Datasource is 'Client.sFirstname'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.LastName">
+	<summary>
+Last name of the client.
+</summary>
+	<remarks>Datasource is 'Client.sLastname'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.LastName2">
+	<summary>
+Last name (2) of the client.
+</summary>
+	<remarks>Datasource is 'Client.sLastName2'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.Gender">
+	<summary>
+Gender of the client.
+</summary>
+	<remarks>Datasource is 'Client.sSexClien'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.BirthDate">
+	<summary>
+Date of birth of the client.
+</summary>
+	<remarks>Datasource is 'Client.dBirthdat'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.Email">
+	<summary>
+Email address.
+</summary>
+	<remarks>Datasource is 'Address.sE_mail'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.InsuredAmount">
+	<summary>
+Insured amount of the policy/certificate.
+</summary>
+	<remarks>Datasource is 'Policy.nCapital'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.AnnualPremium">
+	<summary>
+Annual premium amount of the policy.
+</summary>
+	<remarks>Datasource is 'Policy.nPremium'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.RatePerThousand">
+	<summary>
+Rate to apply (o/oo).
+</summary>
+	<remarks>Datasource is 'Cover.nRatecove'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.SmokerIndicator">
+	<summary>
+Smoker client indicator.
+</summary>
+	<remarks>Datasource is 'Client.sSmoking'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.Weight">
+	<summary>
+Weight of the client.
+</summary>
+	<remarks>Datasource is 'Client.nWeight'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.Height">
+	<summary>
+Height of the client.
+</summary>
+	<remarks>Datasource is 'Client.nHeight'</remarks>
+</member><member name="P:GIT.Quote.Base.Person.CoverageHospitalizationSurgery">
+	<sumary>
+ Whether you want hospitalization and surgery coverage
+</sumary>
+</member><member name="P:GIT.Quote.Base.Person.CoverageMaternity">
+	<sumary>
+ Whether you want maternity coverage
+</sumary>
+</member><member name="P:GIT.Quote.Base.Person.CoverageFuneralService">
+	<sumary>
+ Whether you want funeral service coverage
+</sumary>
+</member><member name="P:GIT.Quote.Base.Person.CoverageLife">
+	<sumary>
+ Whether you want life coverage
+</sumary>
+</member><member name="P:GIT.Quote.Base.Person.CoveragePrivatePlotOrCremation">
+	<sumary>
+ Whether you want private plot or cremation coverage
+</sumary>
+</member><member name="T:GIT.Quote.Base.Person">
+	<summary>
+ Clients information.
+ </summary>
+	<remarks>Datasource is 'Client'</remarks>
+</member><member name="T:GIT.Quote.Base.PersonCollection">
+	<summary>
+ Collection for Person class
+ </summary>
+</member><member name="P:GIT.Quote.Base.GuaranteedValue.Age">
+	<summary>
+Edad actuarial del asegurado.
+</summary>
+	<remarks>Datasource is 'Guarant_val.nAge'</remarks>
+</member><member name="P:GIT.Quote.Base.GuaranteedValue.Year">
+	<summary>
+Year of the non-forfeiture values.
+</summary>
+	<remarks>Datasource is 'Guarant_val.nYear'</remarks>
+</member><member name="P:GIT.Quote.Base.GuaranteedValue.Month">
+	<summary>
+Month of the non-forfeiture values
+</summary>
+	<remarks>Datasource is 'Guarant_val.nMonth'</remarks>
+</member><member name="P:GIT.Quote.Base.GuaranteedValue.SurrenderValue">
+	<summary>
+Surrender value for the year.
+</summary>
+	<remarks>Datasource is 'Guarant_val.nResc_val'</remarks>
+</member><member name="T:GIT.Quote.Base.GuaranteedValue">
+	<summary>
+ Table of  non-forfeiture values of a policy
+ </summary>
+	<remarks>Datasource is 'Guarant_val'</remarks>
+</member><member name="T:GIT.Quote.Base.GuaranteedValueCollection">
+	<summary>
+ Collection for RescueValue class
+ </summary>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.InsuredAmount">
+	<summary>
+Insured amount of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.nCapital'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.AnnualPremium">
+	<summary>
+Annual premium amount of the coverage.
+</summary>
+	<remarks>Datasource is 'Cover.nPremium'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.RatePerThousand">
+	<summary>
+Rate to apply (o/oo).
+</summary>
+	<remarks>Datasource is 'Cover.nRatecove'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.TaxAmount">
+	<summary>
+Tax amount (related to the premium amount).
+</summary>
+	<remarks>Datasource is 'Cover.nTaxAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.AnnualExtraPremium">
+	<summary>
+Anual amount of the surcharge.
+</summary>
+	<remarks>Datasource is 'Cover.nRecAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.AnnualDiscount">
+	<summary>
+Annual amount of the discount.
+</summary>
+	<remarks>Datasource is 'Cover.nDescAmount'</remarks>
+</member><member name="P:GIT.Quote.Base.TemporaryCalculate.Age">
+	<summary>
+Age of the insured at the moment of the transaction.
+</summary>
+	<remarks>Datasource is 'Cover_life.nAge'</remarks>
+</member><member name="T:GIT.Quote.Base.TemporaryCalculate">
+	<summary>
+	</summary>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.ClientID">
+	<summary>
+Code of the client.
+</summary>
+	<remarks>Datasource is 'Client.sClient'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.FirstName">
+	<summary>
+First name and middle name of the client.
+</summary>
+	<remarks>Datasource is 'Client.sFirstname'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.LastName">
+	<summary>
+Last name of the client.
+</summary>
+	<remarks>Datasource is 'Client.sLastname'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.LastName2">
+	<summary>
+Last name (2) of the client.
+</summary>
+	<remarks>Datasource is 'Client.sLastName2'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.Gender">
+	<summary>
+Gender of the client.
+</summary>
+	<remarks>Datasource is 'Client.sSexClien'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.BirthDate">
+	<summary>
+Date of birth of the client.
+</summary>
+	<remarks>Datasource is 'Client.dBirthdat'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.SmokerIndicator">
+	<summary>
+Smoker client indicator.
+</summary>
+	<remarks>Datasource is 'Client.sSmoking'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.Weight">
+	<summary>
+Weight of the client.
+</summary>
+	<remarks>Datasource is 'Client.nWeight'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.Height">
+	<summary>
+Height of the client.
+</summary>
+	<remarks>Datasource is 'Client.nHeight'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.Email">
+	<summary>
+Email address.
+</summary>
+	<remarks>Datasource is 'Address.sE_mail'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.Role">
+	<summary>
+Role of the client in the policy.
+</summary>
+	<remarks>Datasource is 'Roles.nRole'</remarks>
+</member><member name="P:GIT.Quote.Base.PolicyOwner.TypeofAddress">
+	<summary>
+Type of address.
+</summary>
+	<remarks>Datasource is 'Address.nTypeofAddress'</remarks>
+</member><member name="T:GIT.Quote.Base.PolicyOwner">
+	<summary>
+ Clients information.
+ </summary>
+	<remarks>Datasource is 'Client'</remarks>
+</member><member name="T:GIT.Quote.Base.MultiOptions">
+	<summary>
+	</summary>
+</member>
+</members>
+</doc>

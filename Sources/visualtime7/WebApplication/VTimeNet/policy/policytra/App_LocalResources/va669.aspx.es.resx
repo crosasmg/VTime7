@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnchorDatos PolizaCaption" xml:space="preserve">
+    <value>Datos de la póliza</value>
+  </data>
+  <data name="tctClientCaption" xml:space="preserve">
+    <value>Contratante del seguro</value>
+  </data>
+  <data name="tctClientToolTip" xml:space="preserve">
+    <value>Rut del contratante de la póliza</value>
+  </data>
+  <data name="tctClienameToolTip" xml:space="preserve">
+    <value>Nombre del contratante de la póliza</value>
+  </data>
+  <data name="AnchorVigenciaCaption" xml:space="preserve">
+    <value>Vigencia de la póliza</value>
+  </data>
+  <data name="AnchorPrimaCaption" xml:space="preserve">
+    <value>Datos de la prima</value>
+  </data>
+  <data name="tcdFromCaption" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="tcdFromToolTip" xml:space="preserve">
+    <value>Fecha de inicio de vigencia de la póliza</value>
+  </data>
+  <data name="cbeCurrencyCaption" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="cbeCurrencyToolTip" xml:space="preserve">
+    <value>Moneda asociada a la póiza</value>
+  </data>
+  <data name="tcdToCaption" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="tcdToToolTip" xml:space="preserve">
+    <value>Fecha de término de vigencia de la póliza</value>
+  </data>
+  <data name="tcnYearBasPremCaption" xml:space="preserve">
+    <value>Prima básica anual</value>
+  </data>
+  <data name="tcnYearBasPremToolTip" xml:space="preserve">
+    <value>Prima básica anual de la póliza certificado en tratamiento</value>
+  </data>
+  <data name="tcnPremContributionCaption" xml:space="preserve">
+    <value>Aportes realizados</value>
+  </data>
+  <data name="tcnPremContributionToolTip" xml:space="preserve">
+    <value>Aportes realizados por el cliente hasta la fecha de ejecución del proceso</value>
+  </data>
+  <data name="tcnMinPremCaption" xml:space="preserve">
+    <value>Prima mínima</value>
+  </data>
+  <data name="tcnMinPremToolTip" xml:space="preserve">
+    <value>Prima mínima asociada a la póliza certificado entratamiento</value>
+  </data>
+  <data name="tcdLastContribCaption" xml:space="preserve">
+    <value>Último aporte realizado</value>
+  </data>
+  <data name="tcdLastContribToolTip" xml:space="preserve">
+    <value>Fecha del último movimiento de aporte de prima realizado a la póliza certificado en tratamiento</value>
+  </data>
+  <data name="tcnProjPremCaption" xml:space="preserve">
+    <value>Prima proyectada anual</value>
+  </data>
+  <data name="tcnProjPremToolTip" xml:space="preserve">
+    <value>Prima proyectada anual asociada a la póliza certificado en tratamiento</value>
+  </data>
+  <data name="tcdLastModCaption" xml:space="preserve">
+    <value>Última modificación</value>
+  </data>
+  <data name="tcdLastModToolTip" xml:space="preserve">
+    <value>Fecha de la última modificación asociada a la póliza certificado en tratamiento</value>
+  </data>
+  <data name="tcnProjPremPayCaption" xml:space="preserve">
+    <value>Prima proyectada según frecuencia de pago</value>
+  </data>
+  <data name="tcnProjPremPayToolTip" xml:space="preserve">
+    <value>Monto de prima que el cliente debe pagar según frecuencia de pago asociada a la póliza</value>
+  </data>
+  <data name="tcnAddPremCaption" xml:space="preserve">
+    <value>Prima adicional</value>
+  </data>
+  <data name="tcnAddPremToolTip" xml:space="preserve">
+    <value>Monto de aporte de prima adicional</value>
+  </data>
+  <data name="AnchorDatos Poliza2Caption" xml:space="preserve">
+    <value>Rentabilidad</value>
+  </data>
+  <data name="tcnProjRentCaption" xml:space="preserve">
+    <value>% Rentabilidad proyectada</value>
+  </data>
+  <data name="tcnProjRentToolTip" xml:space="preserve">
+    <value>Porcentaje de rentabilidad proyectada asociada a la póliza certificado en tratamiento</value>
+  </data>
+  <data name="tcnWarrRentCaption" xml:space="preserve">
+    <value>% Rentabilidad garantizada</value>
+  </data>
+  <data name="tcnWarrRentToolTip" xml:space="preserve">
+    <value>Porcentaje de rentabilidad garantizada asociada a la póliza certificado en tratamiento</value>
+  </data>
+  <data name="AnchorRescatesCaption" xml:space="preserve">
+    <value>Rescates</value>
+  </data>
+  <data name="tcnSurrYearCaption" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="tcnSurrYearToolTip" xml:space="preserve">
+    <value>Año del rescate</value>
+  </data>
+  <data name="tcnSurrMonthCaption" xml:space="preserve">
+    <value>Mes</value>
+  </data>
+  <data name="tcnSurrMonthToolTip" xml:space="preserve">
+    <value>Mes del rescate</value>
+  </data>
+  <data name="tcnSurrAmountCaption" xml:space="preserve">
+    <value>Monto de rescate</value>
+  </data>
+  <data name="tcnSurrAmountToolTip" xml:space="preserve">
+    <value>Monto del rescate en el año mes indicado</value>
+  </data>
+  <data name="AnchorPrima proyectadaCaption" xml:space="preserve">
+    <value>Prima proyectada</value>
+  </data>
+  <data name="tcnTargetVPCaption" xml:space="preserve">
+    <value>Valor póliza objetivo</value>
+  </data>
+  <data name="tcnTargetVPToolTip" xml:space="preserve">
+    <value>Monto del valor póliza objetivo que el cliente quiere obtener al finalizar la póliza</value>
+  </data>
+  <data name="bntCalcProjPremToolTip" xml:space="preserve">
+    <value>Calcular Prima Sugerida</value>
+  </data>
+  <data name="tcnProposalProjPremCaption" xml:space="preserve">
+    <value>Prima proyectada sugerida</value>
+  </data>
+  <data name="tcnProposalProjPremToolTip" xml:space="preserve">
+    <value>Monto de prima proyectada anual que deberá pagar el cliente si desea obtener el valor póliza objetivo indicado en la página</value>
+  </data>
+  <data name="AnchorIlustracionCaption" xml:space="preserve">
+    <value>Ilustración</value>
+  </data>
+  <data name="chkIllustPrintCaption" xml:space="preserve">
+    <value>Impresión de la ilustración</value>
+  </data>
+  <data name="chkShowIllustrationCaption" xml:space="preserve">
+    <value>Realizar cálculo de ilustración</value>
+  </data>
+  <data name="tcnIniYearColumnCaption" xml:space="preserve">
+    <value>Año Inicial</value>
+  </data>
+  <data name="tcnIniYearColumnToolTip" xml:space="preserve">
+    <value>Año inicial del plan de pago</value>
+  </data>
+  <data name="tcnEndYearColumnCaption" xml:space="preserve">
+    <value>Año Final</value>
+  </data>
+  <data name="tcnEndYearColumnToolTip" xml:space="preserve">
+    <value>Año final del plan de pago</value>
+  </data>
+  <data name="tcnYearPremColumnCaption" xml:space="preserve">
+    <value>Prima anual a pagar</value>
+  </data>
+  <data name="tcnYearPremColumnToolTip" xml:space="preserve">
+    <value>Monto de prima/aporte anual asociado al rango de años del plan de pago que se define</value>
+  </data>
+  <data name="AnchorPlan de pagoCaption" xml:space="preserve">
+    <value>Plan de pago</value>
+  </data>
+</root>

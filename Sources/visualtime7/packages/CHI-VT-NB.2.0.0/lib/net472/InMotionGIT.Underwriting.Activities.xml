@@ -1,0 +1,385 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Underwriting.Activities
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Underwriting.Activities.ActivateTemporaryResourcesDNE.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ Performs the execution of the activity.
+ </summary>
+ <param name="context">The execution context under which the activity executes</param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.AcceptCase">
+ <summary>
+ It states that the case of subscription was accepted.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.UnderwritingCaseID">
+ <summary>
+ Identification of the subscription case.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.Remarks">
+ <summary>
+ Reason why the case is accepted.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.WithChanges">
+ <summary>
+ It indicates whether the case was accepted with manual changes.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.PolicyId">
+ <summary>
+ Number identifying the Policy/Quotation/Application.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.ProposalID">
+ <summary>
+ Number identifying the Proposal.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.AcceptCase.AuditUserIdentify">
+ <summary>
+ Audit User Identify.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.AcceptCase.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ Performs the execution of the activity.
+ </summary>
+ <param name="context">The execution context under which the activity executes</param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.CreateClientInPortal">
+ <summary>
+ It states that the case of subscription was accepted.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.CreateClientInPortal.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ 
+ </summary>
+ <param name="context"></param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.DurationSelector">
+<summary>
+DurationSelector
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.DurationSelector.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.RuleSettings">
+<summary>
+RuleSettings
+</summary>
+</member>
+<member name="F:InMotionGIT.Underwriting.Activities.RuleSettings._worker">
+ <summary>
+ Objecto para realizar las lecturas de forma asincrona
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.RuleSettings.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.CloseCase">
+ <summary>
+ Closes or declines, a case subscription.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.CloseCase.UnderwritingCaseID">
+ <summary>
+ Identification of the subscription case.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.CloseCase.Remarks">
+ <summary>
+ Reason why the case is declined.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.CloseCase.AuditUserIdentify">
+ <summary>
+ Audit User Identify.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.CloseCase.RejectionReason">
+ <summary>
+ Rejection Reason.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.CloseCase.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ Performs the execution of the activity.
+ </summary>
+ <param name="context">The execution context under which the activity executes</param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.GenerateHistoryUWCase">
+ <summary>
+ Generate History To Underwriting Case.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.Helpers.Utility">
+ <summary>
+ Utility de soporte a los workflows
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.Helpers.Utility.ExtractContextInstanceFromWorkflowDataContext(System.Activities.WorkflowDataContext)">
+ <summary>
+ Devuelve la instancia de la clase context usada como parámetro del workflow.
+ </summary>
+ <param name="dataContext">Instancia del tipo dataContext del workflow</param>
+ <returns>En caso de existir el argumento context se retorna la instancia, en caso contrario se retorna nulo</returns>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.Helpers.Utility.ExtractContextInstanceFromWorkflowDataContext(System.Activities.WorkflowDataContext,System.Collections.Generic.Dictionary{System.String,System.Object}@)">
+ <summary>
+ Devuelve la instancia de la clase context usada como parámetro del workflow.
+ </summary>
+ <param name="dataContext">Instancia del tipo dataContext del workflow</param>
+ <param name="workflowProperties">Lista de propiedades del workflow a ser llenada por la función</param>
+ <returns>En caso de existir el argumento context se retorna la instancia, en caso contrario se retorna nulo</returns>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.OpenCase">
+ <summary>
+ Open a case subscription.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.OpenCase.UnderwritingCaseID">
+ <summary>
+ Identification of the subscription case.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.OpenCase.Remarks">
+ <summary>
+ Reason why the case is declined.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.OpenCase.AuditUserIdentify">
+ <summary>
+ Audit User Identify.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.OpenCase.Decision">
+ <summary>
+ Decision of the case.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.OpenCase.Status">
+ <summary>
+ Status of the case.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.OpenCase.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ Performs the execution of the activity.
+ </summary>
+ <param name="context">The execution context under which the activity executes</param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.ReceiveGuide">
+ <summary>
+ Synchronizes information of a guide in the database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.RetrieveGuide">
+ <summary>
+ Retrieves information from a case of subscription.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.SaveGuide">
+ <summary>
+ Synchronizes information of a guide in the database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.AssignDecisionStatusCaseRestrictions">
+ <summary>
+ Synchronizes information a case of subscription in the database.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.AssignDecisionStatusCaseRestrictions.AssignStatusDecisionToCaseBasedRestrictions(InMotionGIT.Underwriting.Contracts.UnderwritingCase)">
+ <summary>
+ Assign Decision and Status of the Case based on Restrictions
+ //
+ Asigna el estado/decisión a caso con base a las reglas aplicadas
+ </summary>
+ <param name="UnderwritingCase"></param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.TranslateRequirementLinks">
+ <summary>
+ It states that the case of subscription was accepted.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UpdateRequirementByType">
+ <summary> Change the status of a requirement by type, for a case of subscription.</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UpdateUWCase">
+ <summary>
+ Update underwriting case information.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.UpdateUWCase.Execute(System.Activities.CodeActivityContext)">
+ <summary>
+ Performs the execution of the activity.
+ </summary>
+ <param name="context">The execution context under which the activity executes</param>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UpdateWorkFlowStatusInCase">
+ <summary>
+ Update status of the workflow execution of a case.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWApplyRule">
+ <summary>
+ Apply a subscription rule a requirement, as set.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.BaseCodeActivityDesigner">
+<summary>
+BaseCodeActivityDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.BaseCodeActivityDesigner.SettingDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.BaseCodeActivityDesigner.ParametersButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the Click event of the DefineArgsButton control to launch a DynamicArgumentDialog instance for argument editing.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.BaseCodeActivityDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.RequirementSettings">
+<summary>
+RequirementSettings
+</summary>
+</member>
+<member name="F:InMotionGIT.Underwriting.Activities.RequirementSettings._worker">
+ <summary>
+ Objecto para realizar las lecturas de forma asincrona
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.RequirementSettings.RequirementTypeSelected">
+ <summary>
+ Lista de codigos para los tipos de requerimenitos seleccionados
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.RequirementSettings.RequirementDescriptionSelected">
+ <summary>
+ Lista con las descripciones de los tipos de requerimientos seleccionados
+ </summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.RequirementSettings.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.RetrieveUWCase">
+ <summary>
+ Retrieves information from a case of subscription.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWApplyRuleDesigner">
+<summary>
+UWApplyRuleDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.UWApplyRuleDesigner.SettingDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.UWApplyRuleDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseAddCommunication">
+ <summary>
+ Add a role to the case of subscription, from a client.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseRequirementChange">
+ <summary>
+ Change the status of a request, for a case of subscription.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.UWCaseRequirementChange.AuditUserIdentify">
+ <summary>
+ Audit User Identify.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseRequirementsDesigner">
+<summary>
+UWCaseRequirementsDesigner
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.UWCaseRequirementsDesigner.SettingDialogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Handles the PropertyChanged event of the ModelItem control and detects if the workflow path has been modified. If changed, initialises
+ the DynamicArgumentDialog with the newly identified child's workflow arguments.
+ </summary>
+ <param name="sender">The source of the event.</param>
+ <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.UWCaseRequirementsDesigner.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseSetup">
+ <summary>
+ Create a case of subscription from a policy.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.SaveUWCase">
+ <summary>
+ Synchronizes information a case of subscription in the database.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseRequirements">
+ <summary>
+ Add a requirement, a case of subscription.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Underwriting.Activities.UWCaseRequirements.AuditUserIdentify">
+ <summary>
+ Audit User Identify.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.UWCaseAddRole">
+ <summary>
+ Add a role to the case of subscription, from a client.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Underwriting.Activities.PropertyEditorResources">
+<summary>
+PropertyEditorResources
+</summary>
+</member>
+<member name="M:InMotionGIT.Underwriting.Activities.PropertyEditorResources.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="H5MantCategoriaRiesgoActions.aspx.vb" Inherits="dli.forms.H5MantCategoriaRiesgoActions" %>

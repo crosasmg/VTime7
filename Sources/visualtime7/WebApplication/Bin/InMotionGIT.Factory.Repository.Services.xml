@@ -1,0 +1,2039 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Factory.Repository.Services
+</name>
+</assembly>
+<members>
+<member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Owner.OwnerId">
+	<summary>
+OwnerId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Owner.Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.Title">
+	<summary>
+Title
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.Description">
+	<summary>
+Description
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.Kind">
+	<summary>
+Kind
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.OwnerId">
+	<summary>
+OwnerId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.CategoryId">
+	<summary>
+CategoryId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.LastRelease">
+	<summary>
+LastRelease
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.IsLocked">
+	<summary>
+IsLocked
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.LockedBy">
+	<summary>
+LockedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.LockedOn">
+	<summary>
+LockedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.IsDeleted">
+	<summary>
+IsDeleted
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.DeletedBy">
+	<summary>
+DeletedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.DeletedOn">
+	<summary>
+DeletedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Model.PasswordForChange">
+	<summary>
+PasswordForChange
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.Release">
+	<summary>
+Release
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.Specification">
+	<summary>
+Specification
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.Extend">
+	<summary>
+Extend
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.Label">
+	<summary>
+Label
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelSpecification.PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Authorized.Name">
+	<summary>
+Name
+</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumModelAuditChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAudit.CreateNewModelAudit">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAudit.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._Consecutive">
+	<summary>
+Consecutive
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._Operation">
+	<summary>
+Operation
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._Release">
+	<summary>
+Release
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelAudit._Label">
+	<summary>
+Label
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.ModelId">
+	<summary>
+ModelId
+</summary>
+	<remarks>Datasource is 'ModelAudit.ModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Consecutive">
+	<summary>
+Consecutive
+</summary>
+	<remarks>Datasource is 'ModelAudit.Consecutive'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+	<remarks>Datasource is 'ModelAudit.CreatedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+	<remarks>Datasource is 'ModelAudit.CreatedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Operation">
+	<summary>
+Operation
+</summary>
+	<remarks>Datasource is 'ModelAudit.Operation'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Release">
+	<summary>
+Release
+</summary>
+	<remarks>Datasource is 'ModelAudit.Release'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Summary">
+	<summary>
+Summary
+</summary>
+	<remarks>Datasource is 'ModelAudit.Summary'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelAudit.Label">
+	<summary>
+Label
+</summary>
+	<remarks>Datasource is 'ModelAudit.Label'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAudit.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAudit.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAudit.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelAudit">
+	<summary>
+ ModelAudit
+ </summary>
+	<remarks>Datasource is 'ModelAudit'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAuditCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAuditCollection.AddModelAudit">
+	<summary>
+ Add an instance of class 'ModelAudit' in the ModelAuditCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAuditCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelAuditCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelAuditCollection">
+	<summary>
+ Collection for ModelAudit class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Specification.Changed">
+	<summary>
+ This property is used as an aid in the design and its purpose is to indicate whether the model has been changed
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Specification.ReadOnly">
+	<summary>
+ This property is used as an aid in the design and its purpose is to indicate whether the model is read only
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.Name">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.Title">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.LockedBy">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.DeletedBy">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.DependencyCount">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.RelatedNewRelease">
+	<summary>
+	</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumOwnerChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Owner.CreateNewOwner">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Owner.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._OwnerId">
+	<summary>
+OwnerId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Owner._Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.OwnerId">
+	<summary>
+OwnerId
+</summary>
+	<remarks>Datasource is 'Owners.OwnerId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Owner.Name">
+	<summary>
+Name
+</summary>
+	<remarks>Datasource is 'Owners.Name'.</remarks>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Owner">
+	<summary>
+ Owners
+ </summary>
+	<remarks>Datasource is 'Owners'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.OwnerCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.OwnerCollection.AddOwner">
+	<summary>
+ Add an instance of class 'Owner' in the OwnerCollection.
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.OwnerCollection">
+	<summary>
+ Collection for Owner class
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumVersionChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Version.CreateNewVersion">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Version.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._Release">
+	<summary>
+Release
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._EffectiveDate">
+	<summary>
+EffectiveDate
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._CancellationDate">
+	<summary>
+CancellationDate
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Version._Comments">
+	<summary>
+Comments
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.Release">
+	<summary>
+Release
+</summary>
+	<remarks>Datasource is 'Version.Release'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.EffectiveDate">
+	<summary>
+EffectiveDate
+</summary>
+	<remarks>Datasource is 'Version.EffectiveDate'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.CancellationDate">
+	<summary>
+CancellationDate
+</summary>
+	<remarks>Datasource is 'Version.CancellationDate'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Version.Comments">
+	<summary>
+Comments
+</summary>
+	<remarks>Datasource is 'Version.Comments'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Version.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Version.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Version.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Version">
+	<summary>
+ Version
+ </summary>
+	<remarks>Datasource is 'Version'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.VersionCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.VersionCollection.AddVersion">
+	<summary>
+ Add an instance of class 'Version' in the VersionCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.VersionCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.VersionCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.Int32)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.VersionCollection">
+	<summary>
+ Collection for Version class
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumModelChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.CreateNewModel">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._Name">
+	<summary>
+Name
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._Title">
+	<summary>
+Title
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._Description">
+	<summary>
+Description
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._Kind">
+	<summary>
+Kind
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._OwnerId">
+	<summary>
+OwnerId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._CategoryId">
+	<summary>
+CategoryId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._LastRelease">
+	<summary>
+LastRelease
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._IsLocked">
+	<summary>
+IsLocked
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._LockedBy">
+	<summary>
+LockedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._LockedOn">
+	<summary>
+LockedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._IsDeleted">
+	<summary>
+IsDeleted
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._DeletedBy">
+	<summary>
+DeletedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._DeletedOn">
+	<summary>
+DeletedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._PasswordForChange">
+	<summary>
+PasswordForChange
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._ModelAudit">
+	<summary>
+ModelAudit
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._ModelDependencies">
+	<summary>
+ModelDependency
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._ModelSpecifications">
+	<summary>
+ModelSpecification
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Model._ModelTags">
+	<summary>
+ModelTags
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.ModelId">
+	<summary>
+ModelId
+</summary>
+	<remarks>Datasource is 'Model.ModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Name">
+	<summary>
+Name
+</summary>
+	<remarks>Datasource is 'Model.Name'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Title">
+	<summary>
+Title
+</summary>
+	<remarks>Datasource is 'Model.Title'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Description">
+	<summary>
+Description
+</summary>
+	<remarks>Datasource is 'Model.Description'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Kind">
+	<summary>
+Kind
+</summary>
+	<remarks>Datasource is 'Model.Kind'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.OwnerId">
+	<summary>
+OwnerId
+</summary>
+	<remarks>Datasource is 'Model.OwnerId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.CategoryId">
+	<summary>
+CategoryId
+</summary>
+	<remarks>Datasource is 'Model.CategoryId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.LastRelease">
+	<summary>
+LastRelease
+</summary>
+	<remarks>Datasource is 'Model.LastRelease'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.Summary">
+	<summary>
+Summary
+</summary>
+	<remarks>Datasource is 'Model.Summary'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.IsLocked">
+	<summary>
+IsLocked
+</summary>
+	<remarks>Datasource is 'Model.IsLocked'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.LockedBy">
+	<summary>
+LockedBy
+</summary>
+	<remarks>Datasource is 'Model.LockedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.LockedOn">
+	<summary>
+LockedOn
+</summary>
+	<remarks>Datasource is 'Model.LockedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+	<remarks>Datasource is 'Model.CreatedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+	<remarks>Datasource is 'Model.CreatedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+	<remarks>Datasource is 'Model.LastUpdatedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+	<remarks>Datasource is 'Model.LastUpdatedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.IsDeleted">
+	<summary>
+IsDeleted
+</summary>
+	<remarks>Datasource is 'Model.IsDeleted'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.DeletedBy">
+	<summary>
+DeletedBy
+</summary>
+	<remarks>Datasource is 'Model.DeletedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.DeletedOn">
+	<summary>
+DeletedOn
+</summary>
+	<remarks>Datasource is 'Model.DeletedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+	<remarks>Datasource is 'Model.PublishedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+	<remarks>Datasource is 'Model.PublishedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.PasswordForChange">
+	<summary>
+PasswordForChange
+</summary>
+	<remarks>Datasource is 'Model.PasswordForChange'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelAuditInstance">
+	<summary>
+	</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.ModelAudit">
+	<summary>
+ModelAudit
+</summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelDependenciesInstance">
+	<summary>
+Initializes the 'ModelDependencies' collection.
+</summary>
+	<returns>The collection initialized.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelDependencyItem(System.Boolean)">
+	<summary>
+Add a new item to the collection of 'ModelDependencies', allowing or not, that this collection is already initialized.
+</summary>
+	<param name="clear">Indicates that you must first initialize the collection.</param>
+	<returns>Instance of the 'ModelDependency' class, previously added to the collection.</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.ModelDependencies">
+	<summary>
+ModelDependency
+</summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelSpecificationsInstance">
+	<summary>
+Initializes the 'ModelSpecifications' collection.
+</summary>
+	<returns>The collection initialized.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelSpecificationItem(System.Boolean)">
+	<summary>
+Add a new item to the collection of 'ModelSpecifications', allowing or not, that this collection is already initialized.
+</summary>
+	<param name="clear">Indicates that you must first initialize the collection.</param>
+	<returns>Instance of the 'ModelSpecification' class, previously added to the collection.</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.ModelSpecifications">
+	<summary>
+ModelSpecification
+</summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelTagsInstance">
+	<summary>
+Initializes the 'ModelTags' collection.
+</summary>
+	<returns>The collection initialized.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.NewModelTagItem(System.Boolean)">
+	<summary>
+Add a new item to the collection of 'ModelTags', allowing or not, that this collection is already initialized.
+</summary>
+	<param name="clear">Indicates that you must first initialize the collection.</param>
+	<returns>Instance of the 'ModelTag' class, previously added to the collection.</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Model.ModelTags">
+	<summary>
+ModelTags
+</summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Model.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Model">
+	<summary>
+ Model
+ </summary>
+	<remarks>Datasource is 'Model'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelCollection.AddModel">
+	<summary>
+ Add an instance of class 'Model' in the ModelCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelCollection">
+	<summary>
+ Collection for Model class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.ClassId">
+	<summary>
+ClassId
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.MemberId">
+	<summary>
+Member Id
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.MemberType">
+	<summary>
+Member Type
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Name">
+	<summary>
+Nmae
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Type">
+	<summary>
+Type
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Summary">
+	<summary>
+Summary
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.IsEnum">
+	<summary>
+Is Enum
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Parameters">
+	<summary>
+Parameters
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.CanRead">
+	<summary>
+Can Read
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.CanWrite">
+	<summary>
+Can Write
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.IsCollection">
+	<summary>
+Is Collection
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.ItemTypeFullName">
+	<summary>
+Item Type Full Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.EnglishCaption">
+	<summary>
+English Caption
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.EnglishToolTip">
+	<summary>
+English Tool Tip
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.SpanishCaption">
+	<summary>
+Spanish Caption
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.SpanishToolTip">
+	<summary>
+Spanish Tool Tip
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Size">
+	<summary>
+Size
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Precision">
+	<summary>
+Precision
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.Scale">
+	<summary>
+Scale
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.IsRequired">
+	<summary>
+Is Required
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.LookUpTableName">
+	<summary>
+look Up Table Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.LookUpKeyField">
+	<summary>
+Look Up Key Field
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassMember.LookUpDescriptionField">
+	<summary>
+Look Up Description Field
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumAuthorizedChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Authorized.CreateNewAuthorized">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Authorized.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Authorized._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Authorized._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Authorized._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Authorized._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Authorized._Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Authorized.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Authorized.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Authorized.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Authorized.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Authorized.Name">
+	<summary>
+Name
+</summary>
+	<remarks>Datasource is 'Authorized.Name'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Authorized.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Authorized.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Authorized.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Authorized">
+	<summary>
+ Authorized
+ </summary>
+	<remarks>Datasource is 'Authorized'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.AuthorizedCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.AuthorizedCollection.AddAuthorized">
+	<summary>
+ Add an instance of class 'Authorized' in the AuthorizedCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.AuthorizedCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.AuthorizedCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.AuthorizedCollection">
+	<summary>
+ Collection for Authorized class
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumModelTagChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTag.CreateNewModelTag">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTag.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelTag._TagId">
+	<summary>
+TagId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.ModelId">
+	<summary>
+ModelId
+</summary>
+	<remarks>Datasource is 'ModelTags.ModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelTag.TagId">
+	<summary>
+TagId
+</summary>
+	<remarks>Datasource is 'ModelTags.TagId'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTag.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTag.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTag.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelTag">
+	<summary>
+ ModelTags
+ </summary>
+	<remarks>Datasource is 'ModelTags'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTagCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTagCollection.AddModelTag">
+	<summary>
+ Add an instance of class 'ModelTag' in the ModelTagCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTagCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelTagCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelTagCollection">
+	<summary>
+ Collection for ModelTag class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Tag.TagId">
+	<summary>
+TagId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Tag.Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Version.Release">
+	<summary>
+Release
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Version.EffectiveDate">
+	<summary>
+EffectiveDate
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Version.CancellationDate">
+	<summary>
+CancellationDate
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Version.Comments">
+	<summary>
+Comments
+</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumCategoryChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Category.CreateNewCategory">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Category.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._CategoryId">
+	<summary>
+CategoryId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Category._Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.CategoryId">
+	<summary>
+CategoryId
+</summary>
+	<remarks>Datasource is 'Category.CategoryId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Category.Name">
+	<summary>
+Name
+</summary>
+	<remarks>Datasource is 'Category.Name'.</remarks>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Category">
+	<summary>
+ Category
+ </summary>
+	<remarks>Datasource is 'Category'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.CategoryCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.CategoryCollection.AddCategory">
+	<summary>
+ Add an instance of class 'Category' in the CategoryCollection.
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.CategoryCollection">
+	<summary>
+ Collection for Category class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.ClassId">
+	<summary>
+Class Id
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.AssemblyName">
+	<summary>
+Assembly Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.NamespaceIdentify">
+	<summary>
+Namespace Identify
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.ClassName">
+	<summary>
+Class Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.BaseTypeFullName">
+	<summary>
+Base Type Full Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.Summary">
+	<summary>
+Summary
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.IsCollection">
+	<summary>
+Is Collection
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.IsEnum">
+	<summary>
+Is Enum
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.ItemTypeFullName">
+	<summary>
+Item Type Full Name
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.HaveMethods">
+	<summary>
+Have Methods
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.EnglishTitle">
+	<summary>
+English Title
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.SpanishTitle">
+	<summary>
+Spanish Title
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.IsVirtual">
+	<summary>
+Is Virtual
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.IsMustInherit">
+	<summary>
+Is Must Inherit
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Catalog.Contracts.ClassInformation.TypeStructureMember">
+	<summary>
+Type STructure Member
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumTagChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Tag.CreateNewTag">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.Tag.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._TagId">
+	<summary>
+TagId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.Tag._Name">
+	<summary>
+Name
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.TagId">
+	<summary>
+TagId
+</summary>
+	<remarks>Datasource is 'Tags.TagId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.Tag.Name">
+	<summary>
+Name
+</summary>
+	<remarks>Datasource is 'Tags.Name'.</remarks>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Tag">
+	<summary>
+ Tags
+ </summary>
+	<remarks>Datasource is 'Tags'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.TagCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.TagCollection.AddTag">
+	<summary>
+ Add an instance of class 'Tag' in the TagCollection.
+ </summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.TagCollection">
+	<summary>
+ Collection for Tag class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumModelDependencyChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependency.CreateNewModelDependency">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependency.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._Release">
+	<summary>
+Release
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._Consecutive">
+	<summary>
+Consecutive
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._RelatedKind">
+	<summary>
+RelatedKind
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._RelatedModelId">
+	<summary>
+RelatedModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._RelatedRelease">
+	<summary>
+RelatedRelease
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._RelatedLink">
+	<summary>
+RelatedLink
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelDependency._LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.ModelId">
+	<summary>
+ModelId
+</summary>
+	<remarks>Datasource is 'ModelDependency.ModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.Release">
+	<summary>
+Release
+</summary>
+	<remarks>Datasource is 'ModelDependency.Release'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.Consecutive">
+	<summary>
+Consecutive
+</summary>
+	<remarks>Datasource is 'ModelDependency.Consecutive'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.RelatedKind">
+	<summary>
+RelatedKind
+</summary>
+	<remarks>Datasource is 'ModelDependency.RelatedKind'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.RelatedModelId">
+	<summary>
+RelatedModelId
+</summary>
+	<remarks>Datasource is 'ModelDependency.RelatedModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.RelatedRelease">
+	<summary>
+RelatedRelease
+</summary>
+	<remarks>Datasource is 'ModelDependency.RelatedRelease'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.RelatedLink">
+	<summary>
+RelatedLink
+</summary>
+	<remarks>Datasource is 'ModelDependency.RelatedLink'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+	<remarks>Datasource is 'ModelDependency.LastUpdatedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelDependency.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+	<remarks>Datasource is 'ModelDependency.LastUpdatedOn'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependency.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependency.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependency.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelDependency">
+	<summary>
+ ModelDependency
+ </summary>
+	<remarks>Datasource is 'ModelDependency'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependencyCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependencyCollection.AddModelDependency">
+	<summary>
+ Add an instance of class 'ModelDependency' in the ModelDependencyCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependencyCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelDependencyCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32,System.Int32)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelDependencyCollection">
+	<summary>
+ Collection for ModelDependency class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelTag.ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelTag.TagId">
+	<summary>
+TagId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.Consecutive">
+	<summary>
+Consecutive
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.CreatedBy">
+	<summary>
+CreatedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.CreatedOn">
+	<summary>
+CreatedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.Operation">
+	<summary>
+Operation
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.Release">
+	<summary>
+Release
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelAudit.Label">
+	<summary>
+Label
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.Release">
+	<summary>
+Release
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.Consecutive">
+	<summary>
+Consecutive
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.RelatedKind">
+	<summary>
+RelatedKind
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.RelatedModelId">
+	<summary>
+RelatedModelId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.RelatedRelease">
+	<summary>
+RelatedRelease
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.RelatedLink">
+	<summary>
+RelatedLink
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.ModelDependency.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.Enumerations.EnumModelSpecificationChild">
+	<summary>
+ Define classes hierarchically.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecification.CreateNewModelSpecification">
+	<summary>
+ This is the public class factory method.
+ </summary>
+	<returns></returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecification.Clone">
+	<summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._isNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._isDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._isDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._ModelId">
+	<summary>
+ModelId
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._Release">
+	<summary>
+Release
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._Summary">
+	<summary>
+Summary
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._Specification">
+	<summary>
+Specification
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._Extend">
+	<summary>
+Extend
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._Label">
+	<summary>
+Label
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+</member><member name="F:InMotionGIT.Factory.Repository.Services.ModelSpecification._PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.IsNew">
+	<summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+	<value>true if the object is loaded from database; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.IsDirty">
+	<summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+	<value>true if the object is modified; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.IsDeletedMark">
+	<summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+	<value>true if the object is delete masked; otherwise, false.</value>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Tag">
+	<summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+	<value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+	<returns>System.Object</returns>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.ModelId">
+	<summary>
+ModelId
+</summary>
+	<remarks>Datasource is 'ModelSpecification.ModelId'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Release">
+	<summary>
+Release
+</summary>
+	<remarks>Datasource is 'ModelSpecification.Release'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Summary">
+	<summary>
+Summary
+</summary>
+	<remarks>Datasource is 'ModelSpecification.Summary'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Specification">
+	<summary>
+Specification
+</summary>
+	<remarks>Datasource is 'ModelSpecification.Specification'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Extend">
+	<summary>
+Extend
+</summary>
+	<remarks>Datasource is 'ModelSpecification.Extend'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.Label">
+	<summary>
+Label
+</summary>
+	<remarks>Datasource is 'ModelSpecification.Label'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.LastUpdatedBy">
+	<summary>
+LastUpdatedBy
+</summary>
+	<remarks>Datasource is 'ModelSpecification.LastUpdatedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.LastUpdatedOn">
+	<summary>
+LastUpdatedOn
+</summary>
+	<remarks>Datasource is 'ModelSpecification.LastUpdatedOn'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.PublishedBy">
+	<summary>
+PublishedBy
+</summary>
+	<remarks>Datasource is 'ModelSpecification.PublishedBy'.</remarks>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.ModelSpecification.PublishedOn">
+	<summary>
+PublishedOn
+</summary>
+	<remarks>Datasource is 'ModelSpecification.PublishedOn'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecification.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecification.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecification.SynchronizeChildren(System.String,System.DateTime,System.Data.Common.DbConnection)">
+	<summary>
+ pending...
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelSpecification">
+	<summary>
+ ModelSpecification
+ </summary>
+	<remarks>Datasource is 'ModelSpecification'.</remarks>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecificationCollection.Clone">
+	<summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecificationCollection.AddModelSpecification">
+	<summary>
+ Add an instance of class 'ModelSpecification' in the ModelSpecificationCollection.
+ </summary>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecificationCollection.Synchronize(System.String,System.DateTime)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="M:InMotionGIT.Factory.Repository.Services.ModelSpecificationCollection.Synchronize(System.String,System.DateTime,System.Data.Common.DbConnection,System.Boolean,System.Boolean,System.String,System.Int32)">
+	<summary>
+ Computes the set of modified objects to be inserted, updated, or deleted, and executes the appropriate commands to implement the changes to the database.
+ </summary>
+	<param name="auditUserIdentify">Code of the user creating or updating the information.</param>
+	<param name="atDate">Date of effect of the process used by the historical tables.</param>
+	<param name="currentConnection">missing.</param>
+	<param name="isParentNew">missing.</param>
+	<param name="isParentDeletedMark">missing.</param>
+	<returns>true if successful synchronization; otherwise, false.</returns>
+</member><member name="T:InMotionGIT.Factory.Repository.Services.ModelSpecificationCollection">
+	<summary>
+ Collection for ModelSpecification class
+ </summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Category.CategoryId">
+	<summary>
+CategoryId
+</summary>
+</member><member name="P:InMotionGIT.Factory.Repository.Services.QueryStatement.Category.Name">
+	<summary>
+Name
+</summary>
+</member>
+</members>
+</doc>

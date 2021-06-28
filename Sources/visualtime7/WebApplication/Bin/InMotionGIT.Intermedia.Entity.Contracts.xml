@@ -1,0 +1,4894 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Intermedia.Entity.Contracts
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumCommissionAgreementChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumCommissionsLifeChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumCommissionsPropertyAndCasualtyChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumDetailCommissionLifeChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumDetailCommissionPropertyAndCasualtyChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumProducerChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumProducerParticularInformationChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumProducersLoanChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumProducersTypeChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Enumerations.EnumProductByProducerChild">
+ <summary>
+ Define classes hierarchically.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement">
+ <summary>
+ Tabla de convenios (comisiones) de contratantes-bancos.
+ </summary>
+<remarks>Data-source is 'COMMISS_AGREE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.CreateNewCommissionAgreement">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._Agreement">
+<summary>
+Agreement code for the agent in charge of collection.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._PercentageOfCommission">
+<summary>
+Percentage of commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._EffectiveDate">
+<summary>
+Effective date of the commission agreement
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._EndingDate">
+<summary>
+Ending date of the commission agreement.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.ClientID">
+<summary>
+Code of the client. (SCLIENT)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.SCLIENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.Agreement">
+<summary>
+Agreement code for the agent in charge of collection. (NAGREEMENT)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.NAGREEMENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.PercentageOfCommission">
+<summary>
+Percentage of commission. (NPERC_COMM)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.NPERC_COMM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.EffectiveDate">
+<summary>
+Effective date of the commission agreement (DINIT_DATE)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.DINIT_DATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.EndingDate">
+<summary>
+Ending date of the commission agreement. (DEND_DATE)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.DEND_DATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'COMMISS_AGREE.NUSERCODE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="CommissionAgreementItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreement.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection">
+ <summary>
+ Collection for CommissionAgreement class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.AddCommissionAgreement">
+ <summary>
+ Add an instance of class 'CommissionAgreement' in the CommissionAgreementCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionAgreementCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife">
+ <summary>
+ Table of life commissions.
+ </summary>
+<remarks>Data-source is 'TAB_COMLIF'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.CreateNewCommissionsLife">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._LifeCommissionTable">
+<summary>
+Code of the life commissions table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._Description">
+<summary>
+Description of the table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._ShortDescription">
+<summary>
+Short description of the table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife._DetailCommisssionLives">
+<summary>
+Details of commissions for Life insurance.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.LifeCommissionTable">
+<summary>
+Code of the life commissions table. (NCOMTABLI)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.NCOMTABLI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.Description">
+<summary>
+Description of the table. (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.ShortDescription">
+<summary>
+Short description of the table. (SSHORT_DES)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.SSHORT_DES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.RecordStatus">
+<summary>
+Status of the record. (SSTATREGT)..
+</summary>
+<remarks>Data-source is 'TAB_COMLIF.SSTATREGT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.RecordStatusEnum">
+<summary>
+Status of the record.
+</summary>
+<remarks>This property use a enumeration based on property 'RecordStatus'</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.RecordStatusEnumText">
+<summary>
+Status of the record.
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.NewDetailCommisssionLivesInstance">
+<summary>
+Initializes the 'DetailCommisssionLives' collection.
+</summary>
+ <returns>The collection initialized.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.NewDetailCommissionLifeItem(System.Boolean)">
+<summary>
+Add a new item to the collection of 'DetailCommisssionLives', allowing or not, that this collection is already initialized.
+</summary>
+ <param name="clear">Indicates that you must first initialize the collection.</param>
+ <returns>Instance of the 'DetailCommissionLife' class, previously added to the collection.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.DetailCommisssionLives">
+<summary>
+Details of commissions for Life insurance. collection.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="CommissionsLifeItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLife.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection">
+ <summary>
+ Collection for CommissionsLife class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.AddCommissionsLife">
+ <summary>
+ Add an instance of class 'CommissionsLife' in the CommissionsLifeCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsLifeCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty">
+ <summary>
+ Table of commissions for general line of business.
+ </summary>
+<remarks>Data-source is 'TAB_COMGEN'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.CreateNewCommissionsPropertyAndCasualty">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._PropertyAndCasualtyCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._Description">
+<summary>
+Description of the table of commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._ShortDescription">
+<summary>
+Short description of the table of commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty._DetailCommisssionPropertyAndCasualties">
+<summary>
+Details of commissions for Property And Casualty.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.PropertyAndCasualtyCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance. (NCOMTABGE)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.NCOMTABGE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.Description">
+<summary>
+Description of the table of commissions. (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.ShortDescription">
+<summary>
+Short description of the table of commissions. (SSHORT_DES)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.SSHORT_DES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.RecordStatus">
+<summary>
+Status of the record. (SSTATREGT)..
+</summary>
+<remarks>Data-source is 'TAB_COMGEN.SSTATREGT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.RecordStatusEnum">
+<summary>
+Status of the record.
+</summary>
+<remarks>This property use a enumeration based on property 'RecordStatus'</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.RecordStatusEnumText">
+<summary>
+Status of the record.
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.NewDetailCommisssionPropertyAndCasualtiesInstance">
+<summary>
+Initializes the 'DetailCommisssionPropertyAndCasualties' collection.
+</summary>
+ <returns>The collection initialized.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.NewDetailCommissionPropertyAndCasualtyItem(System.Boolean)">
+<summary>
+Add a new item to the collection of 'DetailCommisssionPropertyAndCasualties', allowing or not, that this collection is already initialized.
+</summary>
+ <param name="clear">Indicates that you must first initialize the collection.</param>
+ <returns>Instance of the 'DetailCommissionPropertyAndCasualty' class, previously added to the collection.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.DetailCommisssionPropertyAndCasualties">
+<summary>
+Details of commissions for Property And Casualty. collection.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="CommissionsPropertyAndCasualtyItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualty.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection">
+ <summary>
+ Collection for CommissionsPropertyAndCasualty class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.AddCommissionsPropertyAndCasualty">
+ <summary>
+ Add an instance of class 'CommissionsPropertyAndCasualty' in the CommissionsPropertyAndCasualtyCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.CommissionsPropertyAndCasualtyCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife">
+ <summary>
+ Details of commissions for Life insurance.
+ </summary>
+<remarks>Data-source is 'DET_COMLIF'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CreateNewDetailCommissionLife">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._LifeCommissionTable">
+<summary>
+Code of the life commissions table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._YearOfThePolicy">
+<summary>
+Year of the policy to earn the commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._LowestLimitForPolicyDuration">
+<summary>
+Lowest limit for the range of policy duration for the commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._PaymentMethod">
+<summary>
+Code of the payment method.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._DistributionChannel">
+<summary>
+Code of distribution channel.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CommissionPercentage">
+<summary>
+Commission Percentage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._HighestLimitForPolicyDuration">
+<summary>
+Highest limit for the range of policy duration for the commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CommissionAmount">
+<summary>
+Commission amount.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._CommissionType">
+<summary>
+Commission type
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._NCOMSCHEMETYPE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._SDURATIONTYPE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._TypeOfContract">
+<summary>
+Type of contract
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife._dEffecdateOld">
+<summary>
+pending
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.LifeCommissionTable">
+<summary>
+Code of the life commissions table. (NCOMTABLI)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NCOMTABLI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.YearOfThePolicy">
+<summary>
+Year of the policy to earn the commission. (NPOLICY_DUR)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NPOLICY_DUR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.LowestLimitForPolicyDuration">
+<summary>
+Lowest limit for the range of policy duration for the commission. (NMIN_DURAT)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NMIN_DURAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CoverageModule">
+<summary>
+Code of The Module of The Coverage. (NMODULEC)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NMODULEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CoverageCode">
+<summary>
+Code of the coverage. (NCOVER)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NCOVER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.PaymentMethod">
+<summary>
+Code of the payment method. (NWAY_PAY)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NWAY_PAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.DistributionChannel">
+<summary>
+Code of distribution channel. (NSELLCHANNEL)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NSELLCHANNEL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.RecordEffectiveDate">
+<summary>
+Date from which the record is valid. (DEFFECDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.DEFFECDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CommissionPercentage">
+<summary>
+Commission Percentage. (NPERCENT)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NPERCENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CancellationDate">
+<summary>
+Date when the record is cancelled. (DNULLDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.DNULLDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.HighestLimitForPolicyDuration">
+<summary>
+Highest limit for the range of policy duration for the commission. (NMAX_DURAT)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NMAX_DURAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.Currency">
+<summary>
+Code of The Currency. (NCURRENCY)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NCURRENCY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CommissionAmount">
+<summary>
+Commission amount. (NAMOUNT)..
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NAMOUNT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.CommissionType">
+<summary>
+Commission type (NCOMISSIONTYPE)..
+Source 'SMG Life Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NCOMISSIONTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.NCOMSCHEMETYPE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NCOMSCHEMETYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SDURATIONTYPE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMLIF.SDURATIONTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.TypeOfContract">
+<summary>
+Type of contract (NTYPE_CONTRAT)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMLIF.NTYPE_CONTRAT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.Compare(InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="DetailCommissionLifeItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.LineOfBusinessDescription">
+ <summary>
+ Code of the line of business.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE10'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLife.TypeOfContractDescription">
+ <summary>
+ Type of contract
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE9108' on the table 'TABLE9108'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection">
+ <summary>
+ Collection for DetailCommissionLife class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.AddDetailCommissionLife">
+ <summary>
+ Add an instance of class 'DetailCommissionLife' in the DetailCommissionLifeCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionLifeCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty">
+ <summary>
+ Details of commissions for Property And Casualty.
+ </summary>
+<remarks>Data-source is 'DET_COMGEN'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.CreateNewDetailCommissionPropertyAndCasualty">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._PandCCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._nModulec">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._CoverageCode">
+<summary>
+Code of the coverage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._PaymentMethod">
+<summary>
+Code of the payment method.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._InitialMonth">
+<summary>
+Initial month for the commission
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._Duration">
+<summary>
+Quantity of months of duration of the policy/certificate.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._RecordEffectiveDate">
+<summary>
+Date from which the record is valid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._CancellationDate">
+<summary>
+Date when the record is cancelled.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._CommissionAmount">
+<summary>
+Commission amount.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._nFinal_month">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._CommissionPercentage">
+<summary>
+Commission Percentage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._PaymentFrequency">
+<summary>
+Code of the payment frequency related to the commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._Installments">
+<summary>
+Number of installments in which the commission is paid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._NTYPE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._NUSE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._NCONSEC">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._TypeOfContract">
+<summary>
+Type of contract
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._DistributionChannel">
+<summary>
+Code of distribution channel
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty._dEffecdateOld">
+<summary>
+pending
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PandCCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance. (NCOMTABGE)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NCOMTABGE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.nModulec">
+<summary>
+.
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NMODULEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.CoverageCode">
+<summary>
+Code of the coverage. (NCOVER)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NCOVER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PaymentMethod">
+<summary>
+Code of the payment method. (NWAY_PAY)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NWAY_PAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.InitialMonth">
+<summary>
+Initial month for the commission (NINIT_MONTH)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NINIT_MONTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Duration">
+<summary>
+Quantity of months of duration of the policy/certificate. (NDURATION)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NDURATION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.RecordEffectiveDate">
+<summary>
+Date from which the record is valid. (DEFFECDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.DEFFECDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.CancellationDate">
+<summary>
+Date when the record is cancelled. (DNULLDATE)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.DNULLDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Currency">
+<summary>
+Code of The Currency. (NCURRENCY)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NCURRENCY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.CommissionAmount">
+<summary>
+Commission amount. (NAMOUNT)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NAMOUNT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.nFinal_month">
+<summary>
+.
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NFINAL_MONTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.CommissionPercentage">
+<summary>
+Commission Percentage. (NPERCENT)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NPERCENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PaymentFrequency">
+<summary>
+Code of the payment frequency related to the commission. (NPAYFREQ)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NPAYFREQ'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PaymentFrequencyEnum">
+<summary>
+Code of the payment frequency related to the commission.
+</summary>
+<remarks>This property use a enumeration based on property 'PaymentFrequency'</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PaymentFrequencyEnumText">
+<summary>
+Code of the payment frequency related to the commission.
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Installments">
+<summary>
+Number of installments in which the commission is paid. (NINSTALLMENTS)..
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NINSTALLMENTS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.NTYPE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.NUSE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NUSE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.NCONSEC">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NCONSEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.TypeOfContract">
+<summary>
+Type of contract (NTYPE_CONTRAT)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NTYPE_CONTRAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.DistributionChannel">
+<summary>
+Code of distribution channel (NSELLCHANNEL)..
+Source 'Cardif Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'DET_COMGEN.NSELLCHANNEL'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.Compare(InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="DetailCommissionPropertyAndCasualtyItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.LineOfBusinessDescription">
+ <summary>
+ Code of the line of business.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE10'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.PaymentFrequencyDescription">
+ <summary>
+ Code of the payment frequency related to the commission.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE36'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.TypeOfContractDescription">
+ <summary>
+ Type of contract
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE9108' on the table 'TABLE9108'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualty.DistributionChannelDescription">
+ <summary>
+ Code of distribution channel
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5532'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection">
+ <summary>
+ Collection for DetailCommissionPropertyAndCasualty class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.AddDetailCommissionPropertyAndCasualty">
+ <summary>
+ Add an instance of class 'DetailCommissionPropertyAndCasualty' in the DetailCommissionPropertyAndCasualtyCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.DetailCommissionPropertyAndCasualtyCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.Producer">
+ <summary>
+ General information about producers.
+ </summary>
+<remarks>Data-source is 'INTERMEDIA'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.CreateNewProducer">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducerCode">
+<summary>
+Code of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ClientID">
+<summary>
+Code of the client.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._PandCCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._LifeCommissionTable">
+<summary>
+Code of the life commissions table.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._RecordDate">
+<summary>
+Date when the information was first entered into the system.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducerStatus">
+<summary>
+Status of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducerType">
+<summary>
+Type of producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._CancellationCode">
+<summary>
+Code of reason why the Producer was cancelled.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._CancellationDate">
+<summary>
+Date when the producer is cancelled or suspended.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._BranchOffice">
+<summary>
+Code of the Branch Office
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SupervisorForLifeInsurance">
+<summary>
+Code of the supervisor of the Life line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ExcessCommissionsTable">
+<summary>
+Code of table of excess commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._WithholdingTaxRate">
+<summary>
+Tax percentage to be withheld from the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._IncludedInCollectionAgreement">
+<summary>
+It indicates that it is included in the payment agreement.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NoteID">
+<summary>
+Number of the note containing the comments related to the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducerScheme">
+<summary>
+Table code of the economic scheme related to the producer (it is recorded in the economic scheme table DisEx_Int_M).
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._sInter_id">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._InterestOnDebt">
+<summary>
+Interests on debt on an agreement account.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._LifeProducer">
+<summary>
+Indicator of life producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._PropertyAndCasualtyProducer">
+<summary>
+It indicates that the producer works for property &#38; casual lines of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._LifeCommissionsSchema">
+<summary>
+Payment scheme for life commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._PropertyAndCasualtyCommissions">
+<summary>
+Scheme for property &#38; casual commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._FiscalRegimen">
+<summary>
+Tributary regimen (invoice, fine)
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SupervisorForPropertyAndCasualty">
+<summary>
+Code of the supervisor of the property &#38; casualty line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._InsuranceAssistantPropertyAndCasualty">
+<summary>
+Code of the insurance assistant.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._PropertyAndCasualtyGoalsTableBase">
+<summary>
+Base table of goals for Property &#38; Casualty.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._LifeGoalsTableBase">
+<summary>
+Base table of goals for Life.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._InsuranceAssistantForLifeInsurance">
+<summary>
+Code of the insurance assistant.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._Agency">
+<summary>
+Code of Agency.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._OfficeCode">
+<summary>
+Code of Office.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._TableOfSpecialLifeCommissions">
+<summary>
+Number of the table of special commissions of life.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._LastCommissionDate">
+<summary>
+Date of the last liquidation of commissions.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ValidProducer">
+<summary>
+Validity indicator of the producer code (if it is marked, will be available during policy issue).
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SocialSecurityCode">
+<summary>
+Social security code
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SocialSecurityTypeOfDocument">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._RetentionType">
+<summary>
+Retention type of social work
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NPROMOTER">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NINTERIDTYPE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DINTERIDSTARTDAT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DINTERIDEXPIRDAT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DINTERIDORIGDAT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SCNSFRECORD">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DCNFSRECDATE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DLASTCURRACC">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SBAILNUMBER">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DBAILSTARTDATE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DBAILEXPIRDATE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NBAILAMOUNT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SBAILCOMPANY">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SLIABILITYPOL">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DLIABILITYPOLEX">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NACCOUNTEXECU">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NGOALTYPE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SRETIREPLANIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NRETIREPERC">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NCONSINDEX">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SCONVENTIONIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SNOVELIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SFIRSTYEARIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SACTIVEIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NQUANACTIAGEN">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NQUANNINENINETY">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NREGISTEREDAGEN">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NRECRUIT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NPRODRECRUIT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SNINENINETYIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SRECRUITIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SPRODRECRUIT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SCONTPRINTIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DLASTACCMOVE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DLASTCOMMPAY">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SPROVIDER">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NCALCPREMIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NCALCPREMGROUP">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NCALCPREMCOMB">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SBRONCE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._STITANIUM">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SSILVER">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SGOLD">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SPLATINUM">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SDEVBONUSFIRT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SDEVBONUSSECT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SDEVBONUSTHIT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SDEVBONUSFORT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SDEVBONUSFIFT">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SECONOBONUSIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._DLASTHISTDATE">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._STRANSITORYP">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._NMAINPROMOTER">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._SINTCONVENTIONIND">
+<summary>
+
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProductByProducers">
+<summary>
+Line of business and products allowed by producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducerParticularInformation">
+<summary>
+Particular information of producers.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._ProducersLoans">
+<summary>
+Loans from producers.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerCode">
+<summary>
+Code of the producer. (NINTERMED)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINTERMED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ClientID">
+<summary>
+Code of the client. (SCLIENT)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SCLIENT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.PandCCommisionTable">
+<summary>
+Code of the commission table for P&#38;C insurance. (NCOMTABGE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCOMTABGE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LifeCommissionTable">
+<summary>
+Code of the life commissions table. (NCOMTABLI)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCOMTABLI'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.RecordDate">
+<summary>
+Date when the information was first entered into the system. (DINPDATE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DINPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerStatus">
+<summary>
+Status of the producer. (NINT_STATUS)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINT_STATUS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerType">
+<summary>
+Type of producer. (NINTERTYP)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINTERTYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.CancellationCode">
+<summary>
+Code of reason why the Producer was cancelled. (NNULLCODE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NNULLCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.CancellationDate">
+<summary>
+Date when the producer is cancelled or suspended. (DNULLDATE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DNULLDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.BranchOffice">
+<summary>
+Code of the Branch Office (NOFFICE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NOFFICE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SupervisorForLifeInsurance">
+<summary>
+Code of the supervisor of the Life line of business. (NSUPERVIS)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NSUPERVIS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ExcessCommissionsTable">
+<summary>
+Code of table of excess commissions. (NTABLE_COD)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NTABLE_COD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.WithholdingTaxRate">
+<summary>
+Tax percentage to be withheld from the producer. (NTAX)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NTAX'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.IncludedInCollectionAgreement">
+<summary>
+It indicates that it is included in the payment agreement. (SCOL_AGREE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SCOL_AGREE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NoteID">
+<summary>
+Number of the note containing the comments related to the producer. (NNOTENUM)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NNOTENUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerScheme">
+<summary>
+Table code of the economic scheme related to the producer (it is recorded in the economic scheme table DisEx_Int_M). (NECO_SCHE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NECO_SCHE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.sInter_id">
+<summary>
+.
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SINTER_ID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.InterestOnDebt">
+<summary>
+Interests on debt on an agreement account. (SAGREEINT)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SAGREEINT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LifeProducer">
+<summary>
+Indicator of life producer. (SLIFE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SLIFE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.PropertyAndCasualtyProducer">
+<summary>
+It indicates that the producer works for property &#38; casual lines of business. (SNONLIFE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SNONLIFE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LifeCommissionsSchema">
+<summary>
+Payment scheme for life commissions. (NLIFE_SCHE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NLIFE_SCHE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.PropertyAndCasualtyCommissions">
+<summary>
+Scheme for property &#38; casual commissions. (NGEN_SCHE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NGEN_SCHE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.FiscalRegimen">
+<summary>
+Tributary regimen (invoice, fine) (NLEGAL_SCH)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NLEGAL_SCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SupervisorForPropertyAndCasualty">
+<summary>
+Code of the supervisor of the property &#38; casualty line of business. (NSUP_GEN)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NSUP_GEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.InsuranceAssistantPropertyAndCasualty">
+<summary>
+Code of the insurance assistant. (NINSU_ASSIST)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINSU_ASSIST'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.PropertyAndCasualtyGoalsTableBase">
+<summary>
+Base table of goals for Property &#38; Casualty. (NGOAL_GEN)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NGOAL_GEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LifeGoalsTableBase">
+<summary>
+Base table of goals for Life. (NGOAL_LIFE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NGOAL_LIFE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.InsuranceAssistantForLifeInsurance">
+<summary>
+Code of the insurance assistant. (NINSU_ASSISTLIF)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINSU_ASSISTLIF'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.Agency">
+<summary>
+Code of Agency. (NAGENCY)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NAGENCY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.OfficeCode">
+<summary>
+Code of Office. (NOFFICEAGEN)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NOFFICEAGEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.TableOfSpecialLifeCommissions">
+<summary>
+Number of the table of special commissions of life. (NSLC_TAB_NR)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NSLC_TAB_NR'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LastCommissionDate">
+<summary>
+Date of the last liquidation of commissions. (DCOMMIDATE)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DCOMMIDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ValidProducer">
+<summary>
+Validity indicator of the producer code (if it is marked, will be available during policy issue). (SVALID)..
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SVALID'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SocialSecurityCode">
+<summary>
+Social security code (NOSSEGCODE)..
+Source 'SMG Life Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NOSSEGCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SocialSecurityTypeOfDocument">
+<summary>
+ (NOSSEGTYPE)..
+Source 'SMG Life Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NOSSEGTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.RetentionType">
+<summary>
+Retention type of social work (NSOCIALRETENTION)..
+Source 'SMG Life Argentina-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NSOCIALRETENTION'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NPROMOTER">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NPROMOTER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NINTERIDTYPE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NINTERIDTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DINTERIDSTARTDAT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DINTERIDSTARTDAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DINTERIDEXPIRDAT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DINTERIDEXPIRDAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DINTERIDORIGDAT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DINTERIDORIGDAT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SCNSFRECORD">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SCNSFRECORD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DCNFSRECDATE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DCNFSRECDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DLASTCURRACC">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DLASTCURRACC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SBAILNUMBER">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SBAILNUMBER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DBAILSTARTDATE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DBAILSTARTDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DBAILEXPIRDATE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DBAILEXPIRDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NBAILAMOUNT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NBAILAMOUNT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SBAILCOMPANY">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SBAILCOMPANY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SLIABILITYPOL">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SLIABILITYPOL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DLIABILITYPOLEX">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DLIABILITYPOLEX'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NACCOUNTEXECU">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NACCOUNTEXECU'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NGOALTYPE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NGOALTYPE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SRETIREPLANIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SRETIREPLANIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NRETIREPERC">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NRETIREPERC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NCONSINDEX">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCONSINDEX'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SCONVENTIONIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SCONVENTIONIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SNOVELIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SNOVELIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SFIRSTYEARIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SFIRSTYEARIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SACTIVEIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SACTIVEIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NQUANACTIAGEN">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NQUANACTIAGEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NQUANNINENINETY">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NQUANNINENINETY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NREGISTEREDAGEN">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NREGISTEREDAGEN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NRECRUIT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NRECRUIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NPRODRECRUIT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NPRODRECRUIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SNINENINETYIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SNINENINETYIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SRECRUITIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SRECRUITIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SPRODRECRUIT">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SPRODRECRUIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SCONTPRINTIND">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SCONTPRINTIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DLASTACCMOVE">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DLASTACCMOVE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DLASTCOMMPAY">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DLASTCOMMPAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SPROVIDER">
+<summary>
+.
+Source 'Insignia Life México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SPROVIDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NCALCPREMIND">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCALCPREMIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NCALCPREMGROUP">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCALCPREMGROUP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NCALCPREMCOMB">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NCALCPREMCOMB'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SBRONCE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SBRONCE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.STITANIUM">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.STITANIUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SSILVER">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SSILVER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SGOLD">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SGOLD'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SPLATINUM">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SPLATINUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SDEVBONUSFIRT">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SDEVBONUSFIRT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SDEVBONUSSECT">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SDEVBONUSSECT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SDEVBONUSTHIT">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SDEVBONUSTHIT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SDEVBONUSFORT">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SDEVBONUSFORT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SDEVBONUSFIFT">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SDEVBONUSFIFT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SECONOBONUSIND">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SECONOBONUSIND'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.DLASTHISTDATE">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.DLASTHISTDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.STRANSITORYP">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.STRANSITORYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.NMAINPROMOTER">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.NMAINPROMOTER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.SINTCONVENTIONIND">
+<summary>
+.
+Source 'Seguros Afirme México-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERMEDIA.SINTCONVENTIONIND'.</remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.Producer._Notes">
+<summary>
+Notes.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.Notes">
+<summary>
+Notes.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewNotesInstance">
+<summary>
+Initializes the 'Notes' collection.
+</summary>
+ <returns>The collection initialized.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewNoteItem(System.Boolean)">
+<summary>
+Add a new item to the collection of 'Notes', allowing or not, that this collection is already initialized.
+</summary>
+ <param name="clear">Indicates that you must first initialize the collection.</param>
+ <returns>Instance of the 'Notes' class, previously added to the collection.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewProductByProducersInstance">
+<summary>
+Initializes the 'ProductByProducers' collection.
+</summary>
+ <returns>The collection initialized.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewProductByProducerItem(System.Boolean)">
+<summary>
+Add a new item to the collection of 'ProductByProducers', allowing or not, that this collection is already initialized.
+</summary>
+ <param name="clear">Indicates that you must first initialize the collection.</param>
+ <returns>Instance of the 'ProductByProducer' class, previously added to the collection.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProductByProducers">
+<summary>
+Line of business and products allowed by producer. collection.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewProducerParticularInformationInstance">
+<summary>
+Initializes the 'ProducerParticularInformation' instance.
+</summary>
+ <returns>The 'ProducerParticularInformation' class instance.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerParticularInformation">
+<summary>
+Particular information of producers. collection.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewProducersLoansInstance">
+<summary>
+Initializes the 'ProducersLoans' collection.
+</summary>
+ <returns>The collection initialized.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.NewProducersLoanItem(System.Boolean)">
+<summary>
+Add a new item to the collection of 'ProducersLoans', allowing or not, that this collection is already initialized.
+</summary>
+ <param name="clear">Indicates that you must first initialize the collection.</param>
+ <returns>Instance of the 'ProducersLoan' class, previously added to the collection.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducersLoans">
+<summary>
+Loans from producers. collection.
+</summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.Compare(InMotionGIT.Intermedia.Entity.Contracts.Producer,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProducerItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.Producer.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.ProducerStatusDescription">
+ <summary>
+ Status of the producer.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE200'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.CancellationCodeDescription">
+ <summary>
+ Code of reason why the Producer was cancelled.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE163'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.BranchOfficeDescription">
+ <summary>
+ Code of the Branch Office
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE9'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.LifeCommissionsSchemaDescription">
+ <summary>
+ Payment scheme for life commissions.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5500'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.PropertyAndCasualtyCommissionsDescription">
+ <summary>
+ Scheme for property &#38; casual commissions.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5500'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.FiscalRegimenDescription">
+ <summary>
+ Tributary regimen (invoice, fine)
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5501'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.AgencyDescription">
+ <summary>
+ Code of Agency.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5555'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.OfficeCodeDescription">
+ <summary>
+ Code of Office.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5556'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.RetentionTypeDescription">
+ <summary>
+ Retention type of social work
+ </summary>
+ <remarks>
+ This property is associated with the field 'TABLE6724' on the table 'TABLE6724'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.Producer.eMailAddressDefault">
+<summary>
+Email address. (SE_MAIL).
+</summary>
+<remarks>Datasource is 'ADDRESS.SE_MAIL'.</remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection">
+ <summary>
+ Collection for Producer class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.AddProducer">
+ <summary>
+ Add an instance of class 'Producer' in the ProducerCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation">
+ <summary>
+ Particular information of producers.
+ </summary>
+<remarks>Data-source is 'INTERMED_PARTIC'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.CreateNewProducerParticularInformation">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._ProducerCode">
+<summary>
+Code of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._ProducerLicense">
+<summary>
+License as a producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._ProducerAuthorizationDate">
+<summary>
+Date of producer authorization.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._GuaranteePolicyID">
+<summary>
+Number of policy of guarantee.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation._OfficialLicense">
+<summary>
+Official document of license for the broker.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.ProducerCode">
+<summary>
+Code of the producer. (NINTERMED)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.NINTERMED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.ProducerLicense">
+<summary>
+License as a producer. (NSUPERIN_NUM)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.NSUPERIN_NUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.ProducerAuthorizationDate">
+<summary>
+Date of producer authorization. (DSUPERIN_NUM)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.DSUPERIN_NUM'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.GuaranteePolicyID">
+<summary>
+Number of policy of guarantee. (NWARRAN_POL)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.NWARRAN_POL'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.OfficialLicense">
+<summary>
+Official document of license for the broker. (NCIRCULAR_DOC)..
+</summary>
+<remarks>Data-source is 'INTERMED_PARTIC.NCIRCULAR_DOC'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProducerParticularInformationItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformation.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection">
+ <summary>
+ Collection for ProducerParticularInformation class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.AddProducerParticularInformation">
+ <summary>
+ Add an instance of class 'ProducerParticularInformation' in the ProducerParticularInformationCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducerParticularInformationCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan">
+ <summary>
+ Loans from producers.
+ </summary>
+<remarks>Data-source is 'LOANS_INT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.CreateNewProducersLoan">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._ProducerCode">
+<summary>
+Code of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._Loan">
+<summary>
+Loan number.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._MonthlyQuota">
+<summary>
+Monthly quota for the loan.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._Currency">
+<summary>
+Code of The Currency.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._DateOfLastPayment">
+<summary>
+Date of the last payment.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._DateOfLoan">
+<summary>
+Date of the loan.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._PaymentMode">
+<summary>
+Payment mode of the loan.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._LoanAmount">
+<summary>
+Loan amount.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._LastPaymentAmount">
+<summary>
+Amount of the last payment.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._InterestRate">
+<summary>
+Interest percentage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._Withholding">
+<summary>
+Retention percentage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._PaymentOrder">
+<summary>
+Number of the payment order.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._CurrentLoanBalance">
+<summary>
+Current loan balance.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._TypeOfLoan">
+<summary>
+Type of loan or advance payment.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._LoanStatus">
+<summary>
+Status of the loan or advance payment.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._TypeOfPaymentOrder">
+<summary>
+Type of payment order.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._ModeOfCommissionAdvance">
+<summary>
+Code of mode of commission advancement.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._CommissionBase">
+<summary>
+Commission amount used as base to calculate the advance commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._PercentageAdvanced">
+<summary>
+Percentage advanced on the commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan._DateHumanResourcesInterface">
+<summary>
+Date when the record was sent to the human resource interface.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.ProducerCode">
+<summary>
+Code of the producer. (NINTERMED)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NINTERMED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Loan">
+<summary>
+Loan number. (NLOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NLOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.MonthlyQuota">
+<summary>
+Monthly quota for the loan. (NCUOMONTH)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NCUOMONTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Currency">
+<summary>
+Code of The Currency. (NCURRENCY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NCURRENCY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.DateOfLastPayment">
+<summary>
+Date of the last payment. (DDATE_PAY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.DDATE_PAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.DateOfLoan">
+<summary>
+Date of the loan. (DDATELOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.DDATELOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.PaymentMode">
+<summary>
+Payment mode of the loan. (NFOR_PAY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NFOR_PAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.LoanAmount">
+<summary>
+Loan amount. (NAMOLOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NAMOLOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.LastPaymentAmount">
+<summary>
+Amount of the last payment. (NAMOLASTPAY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NAMOLASTPAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.InterestRate">
+<summary>
+Interest percentage. (NRATE_INT)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NRATE_INT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Withholding">
+<summary>
+Retention percentage. (NRATE_RET)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NRATE_RET'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.PaymentOrder">
+<summary>
+Number of the payment order. (NREQUEST_NU)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NREQUEST_NU'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.CurrentLoanBalance">
+<summary>
+Current loan balance. (NBALANLOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NBALANLOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.TypeOfLoan">
+<summary>
+Type of loan or advance payment. (NTYPELOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NTYPELOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.LoanStatus">
+<summary>
+Status of the loan or advance payment. (SSTATLOAN)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.SSTATLOAN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.TypeOfPaymentOrder">
+<summary>
+Type of payment order. (SPAYORDER)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.SPAYORDER'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.PolicyID">
+<summary>
+Number identifying the Policy/Quotation/Application. (NPOLICY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NPOLICY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.ModeOfCommissionAdvance">
+<summary>
+Code of mode of commission advancement. (NCODMODPAY)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NCODMODPAY'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.CommissionBase">
+<summary>
+Commission amount used as base to calculate the advance commission. (NCOMMBASE)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NCOMMBASE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.PercentageAdvanced">
+<summary>
+Percentage advanced on the commission. (NLOAN_PERC)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.NLOAN_PERC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.DateHumanResourcesInterface">
+<summary>
+Date when the record was sent to the human resource interface. (DSENDDATE)..
+</summary>
+<remarks>Data-source is 'LOANS_INT.DSENDDATE'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProducersLoanItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.PaymentModeDescription">
+ <summary>
+ Payment mode of the loan.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE180'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.TypeOfLoanDescription">
+ <summary>
+ Type of loan or advance payment.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE245'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.LoanStatusDescription">
+ <summary>
+ Status of the loan or advance payment.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE191'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.TypeOfPaymentOrderDescription">
+ <summary>
+ Type of payment order.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE193'.
+ </remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoan.ModeOfCommissionAdvanceDescription">
+ <summary>
+ Code of mode of commission advancement.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE5601'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection">
+ <summary>
+ Collection for ProducersLoan class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.AddProducersLoan">
+ <summary>
+ Add an instance of class 'ProducersLoan' in the ProducersLoanCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersLoanCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducersType">
+ <summary>
+ Types of producers.
+ </summary>
+<remarks>Data-source is 'INTERM_TYP'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.CreateNewProducersType">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._ProducerType">
+<summary>
+Type of producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._Description">
+<summary>
+Description of a producer type.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._ParticipatesInPolicyCommissions">
+<summary>
+It indicates that this type of producer receives commission from the policy.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._ShortDescription">
+<summary>
+Short description of the type of producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._RecordStatus">
+<summary>
+Status of the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._TypeOfCurrentAccount">
+<summary>
+Type of current account of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._ReportsToInsuranceCommission">
+<summary>
+It indicates that this type of producer reports to the Insurance Commission.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._AddingCertificatesAllowed">
+<summary>
+It indicates whether the producer is enabled to add certificates to groups.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProducersType._FigureIntermediaryActs">
+<summary>
+Figure with which the intermediary acts.
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.ProducerType">
+<summary>
+Type of producer. (NINTERTYP)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.NINTERTYP'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.Description">
+<summary>
+Description of a producer type. (SDESCRIPT)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SDESCRIPT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.ParticipatesInPolicyCommissions">
+<summary>
+It indicates that this type of producer receives commission from the policy. (SPARTICIN)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SPARTICIN'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.ShortDescription">
+<summary>
+Short description of the type of producer. (SSHORT_DES)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SSHORT_DES'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.RecordStatus">
+<summary>
+Status of the record. (SSTATREGT)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SSTATREGT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.RecordStatusEnum">
+<summary>
+Status of the record.
+</summary>
+<remarks>This property use a enumeration based on property 'RecordStatus'</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.RecordStatusEnumText">
+<summary>
+Status of the record.
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.TypeOfCurrentAccount">
+<summary>
+Type of current account of the producer. (NTYP_ACCO)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.NTYP_ACCO'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.ReportsToInsuranceCommission">
+<summary>
+It indicates that this type of producer reports to the Insurance Commission. (SIND_FECU)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SIND_FECU'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.AddingCertificatesAllowed">
+<summary>
+It indicates whether the producer is enabled to add certificates to groups. (SGEN_CERTIF)..
+</summary>
+<remarks>Data-source is 'INTERM_TYP.SGEN_CERTIF'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.FigureIntermediaryActs">
+<summary>
+Figure with which the intermediary acts. (NROLE)..
+Source 'Colombia Oficial-BackOffice (INSUDB)'
+</summary>
+<remarks>Data-source is 'INTERM_TYP.NROLE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.FigureIntermediaryActsEnum">
+<summary>
+Figure with which the intermediary acts.
+</summary>
+<remarks>This property use a enumeration based on property 'FigureIntermediaryActs'</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.FigureIntermediaryActsEnumText">
+<summary>
+Figure with which the intermediary acts.
+</summary>
+<remarks>This helper property is used in decision table on Workflows</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducersType,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProducersTypeItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersType.TypeOfCurrentAccountDescription">
+ <summary>
+ Type of current account of the producer.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE400'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection">
+ <summary>
+ Collection for ProducersType class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.AddProducersType">
+ <summary>
+ Add an instance of class 'ProducersType' in the ProducersTypeCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProducersTypeCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer">
+ <summary>
+ Line of business and products allowed by producer.
+ </summary>
+<remarks>Data-source is 'BRANPROD_ALLOW'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.CreateNewProductByProducer">
+ <summary>
+ It will initialize an instance of the current object and set the object´s state for Insert operation
+ </summary>
+ <returns>An instance of the object.</returns>
+ <remarks> </remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.Clone">
+ <summary>
+ Creates a new object that is a copy of the current instance.
+ </summary>
+ <returns>A new object that is a copy of this instance.</returns>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._stateInstance">
+ <summary>
+ Gets or sets the instancia state.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._isNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._ProducerCode">
+<summary>
+Code of the producer.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._LineOfBusiness">
+<summary>
+Code of the line of business.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._ProductCode">
+<summary>
+Code of the product.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._CoverageModule">
+<summary>
+Code of The Module of The Coverage.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._Installments">
+<summary>
+Number of installments in which the commission is paid.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._EffectiveMonth">
+<summary>
+Starting month of effective period of the policy associated with the number of drafts
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._LastEffectiveMonth">
+<summary>
+Ending month of effective period of the policy associated with the number of drafts
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._UserCode">
+<summary>
+Code of the user creating or updating the record.
+</summary>
+</member>
+<member name="F:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer._NoteNumber">
+<summary>
+Note number
+</summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.StateInstance">
+ <summary>
+ Gets or sets the instance state.
+ </summary>
+ <value>The state of the internal properties of the instance in an array of bytes.</value>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically insert the record into the database.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.IsDirty">
+ <summary>
+ Gets or sets the object´s state for Update operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically update the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.IsDeletedMark">
+ <summary>
+ Gets or sets the object´s state for Delete operation.
+ </summary>
+ <value>A boolean value based on the property state</value>
+ <remarks>If the property value is true, it will phisically delete the record into the database. The typical "VisualTIME's historical" operation won't be handled</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.ProducerCode">
+<summary>
+Code of the producer. (NINTERMED)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NINTERMED'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.LineOfBusiness">
+<summary>
+Code of the line of business. (NBRANCH)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NBRANCH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.ProductCode">
+<summary>
+Code of the product. (NPRODUCT)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NPRODUCT'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.CoverageModule">
+<summary>
+Code of The Module of The Coverage. (NMODULEC)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NMODULEC'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.Installments">
+<summary>
+Number of installments in which the commission is paid. (NINSTALLMENTS)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NINSTALLMENTS'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.EffectiveMonth">
+<summary>
+Starting month of effective period of the policy associated with the number of drafts (NSTARTMONTH)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NSTARTMONTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.LastEffectiveMonth">
+<summary>
+Ending month of effective period of the policy associated with the number of drafts (NENDMONTH)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NENDMONTH'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.UpdateTimeStamp">
+<summary>
+Computer date when the record is updated or created. (DCOMPDATE)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.DCOMPDATE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.UserCode">
+<summary>
+Code of the user creating or updating the record. (NUSERCODE)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NUSERCODE'.</remarks>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.NoteNumber">
+<summary>
+Note number (NNOTE_INT)..
+</summary>
+<remarks>Data-source is 'BRANPROD_ALLOW.NNOTE_INT'.</remarks>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.InitPropertyChanged">
+ <summary>
+ Initializes the trace level changes properties.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SetPropertyChanged(System.Boolean)">
+ <summary>
+ It sets all the properties that were changed or not.
+ </summary>
+ <param name="changed">Indicator if the property should be given changed or not</param>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.IsPropertyChanged(System.String)">
+ <summary>
+ It lets you know if any property of the class has been changed.
+ </summary>
+ <param name="propertyName"></param>
+ <returns>true if the property is modified; otherwise, false.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.GetEntityPropertyValue(System.String,System.String)">
+ <summary>
+ It allows you to get the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">Property name</param>
+ <returns>The value contained by the property if present</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SetEntityPropertyValue(System.String,System.String,System.Object)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SetEntityPropertyValue(System.String,System.String,System.Object,System.Int32)">
+ <summary>
+ It allows you to set the value of a generic property, within the current class or some of the child class.
+ </summary>
+ <param name="entityName">Entity name</param>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <param name="index">Indicates the index for instance if the entity is a collection</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.GetPropertyValue(System.String)">
+ <summary>
+ It lets get the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <returns>Property value.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SetPropertyValue(System.String,System.Object)">
+ <summary>
+ It sets the value of a property generically.
+ </summary>
+ <param name="propertyName">property name.</param>
+ <param name="value">Property value.</param>
+ <returns>True if the property exists, false otherwise.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a class, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="ProductByProducerItem">Instance to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance.</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SaveIntance">
+ <summary>
+ Method that allows a guardian of the state of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.SaveIntanceChildren">
+ <summary>
+ Method that allows a guardian of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the state of the current instance
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.RestoreIntanceChildren">
+ <summary>
+ Method that allows a restoration of the state of the current instance so their children.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducer.LineOfBusinessDescription">
+ <summary>
+ Code of the line of business.
+ </summary>
+ <remarks>
+ This property is associated with the field 'SDESCRIPT' on the table 'TABLE10'.
+ </remarks>
+</member>
+<member name="T:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection">
+ <summary>
+ Collection for ProductByProducer class
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.Clone">
+ <summary>
+ Creates a new collection that is a copy of the current instance.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.AddProductByProducer">
+ <summary>
+ Add an instance of class 'ProductByProducer' in the ProductByProducerCollection.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.Compare(InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection,System.Boolean,System.Boolean)">
+ <summary>
+ Compare a collection, regarding the current, generating a summary of the properties changed.
+ </summary>
+ <param name="items">Collection to compare.</param>
+ <param name="applyChange">It indicates that the detected changes are applied to the current instance..</param>
+ <param name="excludeAuditProperties">It indicates whether the properties audit included in the comparison.</param>
+ <returns>Summary of the properties changed.</returns>
+</member>
+<member name="P:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.IsDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.SaveIntance">
+ <summary>
+ Method that allows you to save the state of the collection
+ </summary>
+</member>
+<member name="M:InMotionGIT.Intermedia.Entity.Contracts.ProductByProducerCollection.RestoreIntance">
+ <summary>
+ Method that allows a restoration of the status of the collection
+ </summary>
+</member>
+</members>
+</doc>

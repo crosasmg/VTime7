@@ -1,0 +1,30 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+    <dxrp:ASPxRoundPanel SkinID="GroupBoxNotBorder" runat="server"
+        View="GroupBox" ShowDefaultImages="False" BackColor="White" CssPostfix="Office2010Silver">
+        <BottomRightCorner Height="3px" Width="3px" />
+        <NoHeaderTopRightCorner Height="3px" Width="3px" />
+        <Border BorderStyle="Solid" BorderColor="#7A7A7A" BorderWidth="1px" />
+        <HeaderStyle BackColor="White" Font-Bold="True" />
+        <TopRightCorner Height="3px" Width="3px" />
+        <BorderRight BorderStyle="None" />
+        <BorderBottom BorderStyle="None" />
+        <NoHeaderTopLeftCorner Height="3px" Width="3px" Url="~/App_Themes/HorizontalWhiteOrange/Zone/GroupBoxRounded/blank.png" />
+        <TopLeftCorner Height="3px" Width="3px" />
+        <BottomLeftCorner Height="3px" Width="3px" />
+        <BorderLeft BorderStyle="None" />
+    </dxrp:ASPxRoundPanel>
