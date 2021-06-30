@@ -1287,44 +1287,140 @@ insUpdpremium_stat_Err:
 		'UPGRADE_NOTE: Object objNewMember may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		objNewMember = Nothing
 	End Function
-	
-	
+
+
 	'**%FindPremiumQuery: This routine reads the premium invoices that are pending to be printed
 	'%FindPremiumQuery: Permite seleccionar todas las recibos pendientes por imprimir.
 	Public Function FindPremiumQuery(ByVal sClient As String, Optional ByVal lblnFind As Boolean = True) As Boolean
 		Dim lrecFindPremiumQuery As eRemoteDB.Execute
-		
+
 		On Error GoTo FindPremiumQuery_Err
 		lrecFindPremiumQuery = New eRemoteDB.Execute
 		FindPremiumQuery = True
-		
+
 		If lblnFind Then
 			'**+Stored procedure parameters definition 'reaPremiumUnprinted'.
 			'+Definición de parámetros para stored procedure 'reaPremiumUnprinted'.
 			With lrecFindPremiumQuery
 				.StoredProcedure = "reaPremiumQueryByClient"
 				.Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				
+
 				If .Run Then
-					
+
 					Do While Not .EOF
 						Call Add_PremiumQuery(.FieldToClass("sCertype"), .FieldToClass("nBranch"), .FieldToClass("sDescBranch"), .FieldToClass("nProduct"), .FieldToClass("sDescProduct"), .FieldToClass("nPolicy"), .FieldToClass("nReceipt"), .FieldToClass("nCertif"), .FieldToClass("sClient"), .FieldToClass("nBalance"), .FieldToClass("dEffecdate"), .FieldToClass("dExpirDat"), .FieldToClass("nStatus_pre"), .FieldToClass("sDescStatus_pre"))
 						.RNext()
-					Loop 
+					Loop
 					.RCloseRec()
 				Else
 					FindPremiumQuery = False
 				End If
 			End With
 		End If
-		
-FindPremiumQuery_Err: 
+
+FindPremiumQuery_Err:
 		If Err.Number Then
 			FindPremiumQuery = False
 		End If
 		'UPGRADE_NOTE: Object lrecFindPremiumQuery may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecFindPremiumQuery = Nothing
 		On Error GoTo 0
+	End Function
+
+	'%Objetivo: Esta función permite realizar la búsqueda de la información en la tabla 'Premium' si la
+	'%          póliza es individual y si es colectiva busca información en la tabla Policy_His.
+	'%Parámetros:
+	'%      sCertype -
+	'%      nBranch  -
+	'%      nProduct -
+	'%      nPolicy  -
+	'%      nCertif  -
+	'------------------------------------------------------------------------------------------------------------------------
+	Public Function FindReceipt_Pol(ByVal sCertype As String,
+									 ByVal nBranch As Integer,
+									 ByVal nProduct As Integer,
+									 ByVal nPolicy As Double,
+									 ByVal nCertif As Double,
+									 ByVal sPolitype As String,
+									 ByVal nPremium As Double,
+									 ByVal dEffecdate As Date,
+									 ByVal sDevReceipt As String) As Boolean
+		'------------------------------------------------------------------------------------------------------------------------
+		Dim lclsPremium As eRemoteDB.Execute
+		Dim lclsPremiumItem As Premium
+
+		On Error GoTo FindReceipt_Pol_err
+
+		lclsPremium = New eRemoteDB.Execute
+
+		With lclsPremium
+			.StoredProcedure = "reaReceipt2_pol"
+			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sPoliType", sPolitype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPremium", nPremium, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sDevReceipt", sDevReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+			If .Run(True) Then
+				Do While Not .EOF
+					lclsPremiumItem = New Premium
+					lclsPremiumItem.nReceipt = .FieldToClass("nReceipt")
+					lclsPremiumItem.dEffecdate = .FieldToClass("dEffecdate")
+					lclsPremiumItem.dExpirDat = .FieldToClass("dExpirDat")
+					lclsPremiumItem.nPremium = .FieldToClass("nPremium")
+					lclsPremiumItem.sCadena = .FieldToClass("sShort_Des")
+
+					lclsPremiumItem.nCurrency = .FieldToClass("nCurrency")
+					lclsPremiumItem.nTratypei = .FieldToClass("nTratypei")
+					lclsPremiumItem.sLeadinvo = .FieldToClass("sLeadinvo")
+					lclsPremiumItem.sClient = .FieldToClass("sClient")
+					lclsPremiumItem.sCliename = .FieldToClass("sCliename")
+
+					lclsPremiumItem.nContrat = .FieldToClass("nContrat") 'RQ2019-470 MDP AFU
+
+					Call Add_SCO6000(lclsPremiumItem)
+
+					lclsPremiumItem = Nothing
+					.RNext()
+				Loop
+
+				FindReceipt_Pol = True
+				.RCloseRec()
+			Else
+				FindReceipt_Pol = False
+			End If
+		End With
+
+
+FindReceipt_Pol_err:
+		lclsPremium = Nothing
+	End Function
+
+	'%Add_CO003: Agrega un elemento a la colección de convenios de pago.
+	'--------------------------------------------------------------------------------
+	Public Function Add_SCO6000(ByVal lclsPremium As Premium) As Premium
+		'--------------------------------------------------------------------------------
+
+		On Error GoTo Add_SCO6000_err
+
+		With lclsPremium
+			mCol.Add(lclsPremium, .nReceipt &
+								  .dEffecdate &
+								  .dExpirDat &
+								  .nPremium &
+								  .nTratypei)
+
+		End With
+
+		'+ Retorna el objeto creado
+		Add_SCO6000 = lclsPremium
+
+Add_SCO6000_err:
+		Add_SCO6000 = Nothing
 	End Function
 End Class
 

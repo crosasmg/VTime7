@@ -77,7 +77,8 @@ Public Class TDetail_pre
 	Public mclsCertificat As ePolicy.Certificat
 	Public mclsProduct As eProduct.Product
 	Public mclsPremium As eCollection.Premium
-	
+	Public mclsPremium2 As eCollection.Premium
+
 	Public bError As Boolean
 	Public sExist As String
 	
@@ -122,10 +123,23 @@ Public Class TDetail_pre
 	Public nProductpay As Integer ' NUMBER     22   0     5    N
 	Public nPolicypay As Double ' NUMBER     22   0     10   N
 	Public nCertifpay As Double ' NUMBER     22   0     10   N
-	
+
 	'-Valores por pago a cuenta de cliente
 	Public sClientpay As String ' CHAR       14   0     0    S
-	
+
+	Public nReceiptCollec As Double
+	Public nPremium_Origi As Double
+	Public nPercent As Double
+	Public nAmount As Double
+	Public nRole As Integer
+	Public sModulec As String
+
+	Public sPolitype As String
+	Public sColinvot As String
+
+	'- Indica los números de movimientos pendientes a facturar generados
+	Public sOut_moveme As String
+
 	'InsPreCA027: Función que realiza el cálculo de recibo automático
 	Public Function InsPreCA027(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, ByVal nTransaction As Integer, ByVal dLedgerDate As Date, ByVal nUsercode As Integer, ByVal nSessionId As String, Optional ByVal dNulldate As Date = eRemoteDB.Constants.dtmNull, Optional ByVal nRateDevo As Double = 0, Optional ByVal nMovement As Integer = 1, Optional ByVal sOptReceipt As String = "", Optional ByVal sOptDev As String = "", Optional ByVal nPayFreq As Integer = 0, Optional ByVal nOption As Integer = 0, Optional ByVal sRehabProc As String = "", Optional ByVal sAdicCover As String = "") As Collection
 		Dim lcolTDetail_pres As TDetail_pres
@@ -543,30 +557,36 @@ Update_Err:
 		'UPGRADE_NOTE: Object lrecinsUpdTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecinsUpdTDetail_pre = Nothing
 	End Function
-	
+
 	'% insPrem_det: se distribuye la prima del rec/desc/imp entre los elementos sobre los cuales
 	'%              aplica
-	Private Function insPrem_det(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPrem_det_old As Short) As Boolean
+	Private Function insPrem_det(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPrem_det_old As Short, Optional ByVal nOrigin As Integer = 0) As Boolean
 		Dim lrecRemote As eRemoteDB.Execute
-		
+
 		On Error GoTo insPrem_det_err
-		
+
 		lrecRemote = New eRemoteDB.Execute
-		
+
 		With lrecRemote
-			.StoredProcedure = "inspostCA028Upd"
-			.Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 25, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+			If nOrigin = 2 Then
+				.StoredProcedure = "inspostCA080Upd"
+			Else
+				.StoredProcedure = "inspostCA028Upd"
+			End If
+
+			.Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 25, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sType_detai", sType_detai, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sType_detai", sType_detai, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCode", nCode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCurrency", nCurrency, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBill_item", nBill_item, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch_est", nBranch_est, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch_led", nBranch_led, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch_rei", nBranch_rei, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sAddsuini", sAddsuini, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sAddsuini", sAddsuini, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nModulec", nModulec, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCommi_rate", nCommi_rate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 16, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCommision", nCommision, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -582,17 +602,17 @@ Update_Err:
 			.Parameters.Add("nPrem_act", nPrem_act, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCommi_anu", nCommi_anu, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nId_Bill", nId_Bill, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sAddTax", sAddtax, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sAddTax", sAddtax, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPremiumA", nPremiumA, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPremiumE", nPremiumE, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPrem_det", nPrem_det, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPrem_det_old", nPrem_det_old, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sPrem_det", sPrem_det, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sPrem_det", sPrem_det, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			insPrem_det = .Run(False)
 		End With
-		
-insPrem_det_err: 
+
+insPrem_det_err:
 		If Err.Number Then
 			insPrem_det = False
 		End If
@@ -600,7 +620,7 @@ insPrem_det_err:
 		'UPGRADE_NOTE: Object lrecRemote may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecRemote = Nothing
 	End Function
-	
+
 	'% insValCA028_K: Realiza la validación de los campos del encabezado de la ventana
 	Public Function insValCA028_K(ByVal sCodispl As String, ByVal nBranch As String, ByVal nProduct As String, ByVal nPolicy As String, ByVal nCertif As String) As String
 		Dim lobjErrors As eFunctions.Errors
@@ -959,101 +979,210 @@ insValCA028_Err:
 		'UPGRADE_NOTE: Object lclsCertificat may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lclsCertificat = Nothing
 	End Function
-	
+
 	'%insPostCA028: Se realiza la actualización de los datos en la ventana CA028 (Folder)
-    Public Function inspostCA028Upd(ByVal sCodispl As String, ByVal sKey As String, ByVal sAction As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, Optional ByVal nCurrency As Integer = 0, Optional ByVal nType As Integer = 0, Optional ByVal nBill_item As Integer = 0, Optional ByVal nBranch_est As Integer = 0, Optional ByVal nBranch_led As Integer = 0, Optional ByVal nBranch_rei As Integer = 0, Optional ByVal nCapital As Double = 0, Optional ByVal nItem As Integer = 0, Optional ByVal nCommi_rate As Double = 0, Optional ByVal nCommision As Double = 0, Optional ByVal nModulec As Integer = 0, Optional ByVal nPremiumA As Double = 0, Optional ByVal nPremiumE As Double = 0, Optional ByVal sAddsuini As String = "", Optional ByVal sOptType As String = "", Optional ByVal nId_Bill As Integer = 0, Optional ByVal sClient As String = "", Optional ByVal sAddtax As String = "", Optional ByVal nUsercode As Integer = 0, Optional ByVal nSessionId As String = "", Optional ByVal nPrem_det As Short = 0, Optional ByVal nPrem_det_old As Short = 0, Optional ByVal sPrem_det As String = "") As Boolean
+	Public Function inspostCA028Upd(ByVal sCodispl As String, ByVal sKey As String, ByVal sAction As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, Optional ByVal nCurrency As Integer = 0, Optional ByVal nType As Integer = 0, Optional ByVal nBill_item As Integer = 0, Optional ByVal nBranch_est As Integer = 0, Optional ByVal nBranch_led As Integer = 0, Optional ByVal nBranch_rei As Integer = 0, Optional ByVal nCapital As Double = 0, Optional ByVal nItem As Integer = 0, Optional ByVal nCommi_rate As Double = 0, Optional ByVal nCommision As Double = 0, Optional ByVal nModulec As Integer = 0, Optional ByVal nPremiumA As Double = 0, Optional ByVal nPremiumE As Double = 0, Optional ByVal sAddsuini As String = "", Optional ByVal sOptType As String = "", Optional ByVal nId_Bill As Integer = 0, Optional ByVal sClient As String = "", Optional ByVal sAddtax As String = "", Optional ByVal nUsercode As Integer = 0, Optional ByVal nSessionId As String = "", Optional ByVal nPrem_det As Short = 0, Optional ByVal nPrem_det_old As Short = 0, Optional ByVal sPrem_det As String = "") As Boolean
 
-        On Error GoTo insPostCA028Upd_Err
+		On Error GoTo insPostCA028Upd_Err
 
-        inspostCA028Upd = True
+		inspostCA028Upd = True
 
 
-        With Me
-            .dEffecdate = dEffecdate
-            .sKey = sKey
-            .nBill_item = nBill_item
-            .nBranch_est = nBranch_est
-            .nBranch_led = nBranch_led
-            .nBranch_rei = nBranch_rei
-            .sAddsuini = IIf(sAddsuini = String.Empty, "2", sAddsuini)
-            .nModulec = nModulec
-            .nCode = nItem
-            .sType_detai = CStr(nType)
-            .sClient = sClient
+		With Me
+			.dEffecdate = dEffecdate
+			.sKey = sKey
+			.nBill_item = nBill_item
+			.nBranch_est = nBranch_est
+			.nBranch_led = nBranch_led
+			.nBranch_rei = nBranch_rei
+			.sAddsuini = IIf(sAddsuini = String.Empty, "2", sAddsuini)
+			.nModulec = nModulec
+			.nCode = nItem
+			.sType_detai = CStr(nType)
+			.sClient = sClient
 
-            If sAction = "Del" Then
-                nPremium = eRemoteDB.Constants.intNull
-                .nCapi_ini = eRemoteDB.Constants.intNull
-                .nCapital = eRemoteDB.Constants.intNull
-                .nCommi_anu = eRemoteDB.Constants.intNull
-                .nCommi_rate = eRemoteDB.Constants.intNull
-                .nCommision = eRemoteDB.Constants.intNull
-                .nCurrency = eRemoteDB.Constants.intNull
-                .nP_Adjust = eRemoteDB.Constants.intNull
-                .nP_NotCons = eRemoteDB.Constants.intNull
-                .nP_Outstand = eRemoteDB.Constants.intNull
-                .nPrem_act = eRemoteDB.Constants.intNull
-                .nPrem_ini = eRemoteDB.Constants.intNull
-                .nPremium = eRemoteDB.Constants.intNull
-                .nPremium_an = eRemoteDB.Constants.intNull
-                .nPremiumA = eRemoteDB.Constants.intNull
-                .nPremiumE = eRemoteDB.Constants.intNull
-                .nTax = eRemoteDB.Constants.intNull
-                .nId_Bill = eRemoteDB.Constants.intNull
-                .sAddtax = String.Empty
-            Else
-                nPremium = IIf(nPremiumA = eRemoteDB.Constants.intNull, 0, nPremiumA) + IIf(nPremiumE = eRemoteDB.Constants.intNull, 0, nPremiumE)
+			If sAction = "Del" Then
+				nPremium = eRemoteDB.Constants.intNull
+				.nCapi_ini = eRemoteDB.Constants.intNull
+				.nCapital = eRemoteDB.Constants.intNull
+				.nCommi_anu = eRemoteDB.Constants.intNull
+				.nCommi_rate = eRemoteDB.Constants.intNull
+				.nCommision = eRemoteDB.Constants.intNull
+				.nCurrency = eRemoteDB.Constants.intNull
+				.nP_Adjust = eRemoteDB.Constants.intNull
+				.nP_NotCons = eRemoteDB.Constants.intNull
+				.nP_Outstand = eRemoteDB.Constants.intNull
+				.nPrem_act = eRemoteDB.Constants.intNull
+				.nPrem_ini = eRemoteDB.Constants.intNull
+				.nPremium = eRemoteDB.Constants.intNull
+				.nPremium_an = eRemoteDB.Constants.intNull
+				.nPremiumA = eRemoteDB.Constants.intNull
+				.nPremiumE = eRemoteDB.Constants.intNull
+				.nTax = eRemoteDB.Constants.intNull
+				.nId_Bill = eRemoteDB.Constants.intNull
+				.sAddtax = String.Empty
+			Else
+				nPremium = IIf(nPremiumA = eRemoteDB.Constants.intNull, 0, nPremiumA) + IIf(nPremiumE = eRemoteDB.Constants.intNull, 0, nPremiumE)
 
-                '+ Si se trata de un descuento se coloca la prima en negativo
-                If nType = CDbl("3") Then
-                    nPremium = (nPremium * -1)
-                End If
+				'+ Si se trata de un descuento se coloca la prima en negativo
+				If nType = CDbl("3") Then
+					nPremium = (nPremium * -1)
+				End If
 
-                '+ Si el recibo es de devolución se coloca la prima negativa
-                If sOptType = "2" Then
-                    nPremium = (nPremium * -1)
-                End If
+				'+ Si el recibo es de devolución se coloca la prima negativa
+				If sOptType = "2" Then
+					nPremium = (nPremium * -1)
+				End If
 
-                .nCapi_ini = nCapital
-                .nCapital = nCapital
-                .nCommi_anu = nCommi_rate
-                .nCommi_rate = nCommi_rate
-                .nCommision = nCommision
-                .nCurrency = nCurrency
-                .nP_Adjust = 0
-                .nP_NotCons = 0
-                .nP_Outstand = 0
-                .nPrem_act = nPremium
-                .nPrem_ini = nPremium
-                .nPremium = nPremium
-                .nPremium_an = nPremium
-                .nPremiumA = nPremiumA
-                .nPremiumE = nPremiumE
-                .nTax = 0
-                .nId_Bill = nId_Bill
-                .sAddtax = IIf(sAddtax = String.Empty, "2", "1")
-            End If
-            .nPrem_det = nPrem_det
-            .sPrem_det = sPrem_det
+				.nCapi_ini = nCapital
+				.nCapital = nCapital
+				.nCommi_anu = nCommi_rate
+				.nCommi_rate = nCommi_rate
+				.nCommision = nCommision
+				.nCurrency = nCurrency
+				.nP_Adjust = 0
+				.nP_NotCons = 0
+				.nP_Outstand = 0
+				.nPrem_act = nPremium
+				.nPrem_ini = nPremium
+				.nPremium = nPremium
+				.nPremium_an = nPremium
+				.nPremiumA = nPremiumA
+				.nPremiumE = nPremiumE
+				.nTax = 0
+				.nId_Bill = nId_Bill
+				.sAddtax = IIf(sAddtax = String.Empty, "2", "1")
+			End If
+			.nPrem_det = nPrem_det
+			.sPrem_det = sPrem_det
 
-            inspostCA028Upd = insPrem_det(nBranch, nProduct, nPrem_det_old)
-        End With
+			inspostCA028Upd = insPrem_det(nBranch, nProduct, nPrem_det_old, 1)
+		End With
 
 insPostCA028Upd_Err:
-        If Err.Number Then
-            inspostCA028Upd = False
-        End If
-        On Error GoTo 0
-    End Function
-	
+		If Err.Number Then
+			inspostCA028Upd = False
+		End If
+		On Error GoTo 0
+	End Function
+
+	Public Function inspostCA080Upd(ByVal sCodispl As String, ByVal sKey As String, ByVal sAction As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, Optional ByVal nCurrency As Integer = 0, Optional ByVal nType As Integer = 0, Optional ByVal nBill_item As Integer = 0, Optional ByVal nBranch_est As Integer = 0, Optional ByVal nBranch_led As Integer = 0, Optional ByVal nBranch_rei As Integer = 0, Optional ByVal nCapital As Double = 0, Optional ByVal nItem As Integer = 0, Optional ByVal nCommi_rate As Double = 0, Optional ByVal nCommision As Double = 0, Optional ByVal nModulec As Integer = 0, Optional ByVal nPremiumA As Double = 0, Optional ByVal nPremiumE As Double = 0, Optional ByVal sAddsuini As String = "", Optional ByVal sOptType As String = "", Optional ByVal nId_Bill As Integer = 0, Optional ByVal sClient As String = "", Optional ByVal sAddtax As String = "", Optional ByVal nUsercode As Integer = 0, Optional ByVal nSessionId As String = "", Optional ByVal nPrem_det As Short = 0, Optional ByVal nPrem_det_old As Short = 0, Optional ByVal sPrem_det As String = "", Optional ByVal nReceiptCollec As Double = 0) As Boolean
+		Dim lcolTDetail_pre As TDetail_pres
+
+		On Error GoTo inspostCA080Upd_err
+
+		inspostCA080Upd = True
+
+		lcolTDetail_pre = New TDetail_pres
+
+		If nCommi_rate < 0 Then
+			nCommi_rate = 0
+		End If
+
+		With Me
+			.dEffecdate = dEffecdate
+			.sKey = lcolTDetail_pre.sKey(nUsercode, nSessionId, False)
+			.nBill_item = nBill_item
+			.nBranch_est = nBranch_est
+			.nBranch_led = nBranch_led
+			.nBranch_rei = nBranch_rei
+			.sAddsuini = IIf(sAddsuini = vbNullString, "2", sAddsuini)
+			.nModulec = nModulec
+			.nCode = nItem
+			.sType_detai = nType
+			.sClient = sClient
+			.nReceiptCollec = nReceiptCollec
+
+			If sAction = "Del" Then
+				nPremium = eRemoteDB.Constants.intNull
+				.nCapi_ini = eRemoteDB.Constants.intNull
+				.nCapital = eRemoteDB.Constants.intNull
+				.nCommi_anu = eRemoteDB.Constants.intNull
+				.nCommi_rate = eRemoteDB.Constants.intNull
+				.nCommision = eRemoteDB.Constants.intNull
+				.nCurrency = eRemoteDB.Constants.intNull
+				.nP_Adjust = eRemoteDB.Constants.intNull
+				.nP_NotCons = eRemoteDB.Constants.intNull
+				.nP_Outstand = eRemoteDB.Constants.intNull
+				.nPrem_act = eRemoteDB.Constants.intNull
+				.nPrem_ini = eRemoteDB.Constants.intNull
+				.nPremium = eRemoteDB.Constants.intNull
+				.nPremium_an = eRemoteDB.Constants.intNull
+				.nPremiumA = eRemoteDB.Constants.intNull
+				.nPremiumE = eRemoteDB.Constants.intNull
+				.nTax = eRemoteDB.Constants.intNull
+				.nId_Bill = eRemoteDB.Constants.intNull
+				.sAddtax = vbNullString
+			Else
+				nPremium = IIf(nPremiumA = eRemoteDB.Constants.intNull, 0, nPremiumA) + IIf(nPremiumE = eRemoteDB.Constants.intNull, 0, nPremiumE)
+				nPremiumA = IIf(nPremiumA = eRemoteDB.Constants.intNull, 0, nPremiumA)
+				nPremiumE = IIf(nPremiumE = eRemoteDB.Constants.intNull, 0, nPremiumE)
+
+				'+ Si se trata de un descuento se coloca la prima en negativo
+				If nType = "3" Or nType = "6" Then
+					nPremium = (nPremium * -1)
+					nPremiumA = (nPremiumA * -1)
+					nPremiumE = (nPremiumE * -1)
+					If nCommision > 0 Then
+						nCommision = (nCommision * -1)
+					End If
+				End If
+
+				'+ Si el recibo es de devolución se coloca la prima negativa
+				If sOptType = "2" Then
+					nPremium = (nPremium * -1)
+					nPremiumA = (nPremiumA * -1)
+					nPremiumE = (nPremiumE * -1)
+					If nCommision > 0 Then
+						nCommision = (nCommision * -1)
+					End If
+				End If
+
+				.nCapi_ini = nCapital
+				.nCapital = nCapital
+				.nCommi_anu = (nPremium * nCommi_rate) / 100
+				.nCommi_rate = nCommi_rate
+
+				If (nCommision <> 0) And (nCommision <> eRemoteDB.Constants.intNull) Then
+					.nCommision = nCommision
+				Else
+					If nType <> 4 Then
+						.nCommision = (nPremium * nCommi_rate) / 100
+					End If
+				End If
+
+				.nCurrency = nCurrency
+				.nP_Adjust = 0
+				.nP_NotCons = 0
+				.nP_Outstand = 0
+				.nPrem_act = nPremium
+				.nPrem_ini = nPremium
+				.nPremium = nPremium
+				.nPremium_an = nPremium
+				.nPremiumA = nPremiumA
+				.nPremiumE = nPremiumE
+				.nTax = 0
+				.nId_Bill = nId_Bill
+				.sAddtax = IIf(sAddtax = vbNullString, "2", "1")
+			End If
+			.nPrem_det = nPrem_det
+			.sPrem_det = sPrem_det
+
+			inspostCA080Upd = insPrem_det(nBranch, nProduct, nPrem_det_old, 2)
+		End With
+
+inspostCA080Upd_err:
+		lcolTDetail_pre = Nothing
+	End Function
+
 	'% CreManReceipt: Función que se utiliza para la emisión del recibo manual
 	Public Function CreManReceipt() As Boolean
 		Dim lrecinsManreceipt As eRemoteDB.Execute
-		
+
 		On Error GoTo CreManReceipt_Err
-		
+
 		lrecinsManreceipt = New eRemoteDB.Execute
-		
+
 		With lrecinsManreceipt
 			.StoredProcedure = "insManreceipt"
 			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -1068,7 +1197,7 @@ insPostCA028Upd_Err:
 			.Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nUserCode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("dExpirdat", dExpirdat, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("dStartDate", dStartdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nTratypei", nTratypei, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nType", nType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -1076,7 +1205,7 @@ insPostCA028Upd_Err:
 			.Parameters.Add("nWay_pay", nWay_pay, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sTypExecute", sTypExecute, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sAdjust", sAdjust, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nAdjReceipt", nAdjReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nAdjReceipt", nAdjReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nTypePay", nTypepay, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sCertypePay", sCertypePay, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranchPay", nBranchpay, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -1086,8 +1215,8 @@ insPostCA028Upd_Err:
 			.Parameters.Add("sClientPay", sClientpay, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			CreManReceipt = .Run(False)
 		End With
-		
-CreManReceipt_Err: 
+
+CreManReceipt_Err:
 		If Err.Number Then
 			CreManReceipt = False
 		End If
@@ -1095,14 +1224,13 @@ CreManReceipt_Err:
 		'UPGRADE_NOTE: Object lrecinsManreceipt may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecinsManreceipt = Nothing
 	End Function
-	
-	
+
 	'%insPostCA028: Se realiza la actualización de los datos en la ventana CA028 (Folder)
 	Public Function insPostCA028(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, ByVal dExpirDate As Date, ByVal nCurrency As Integer, ByVal sClient As String, ByVal nReceipt As Double, ByVal nTratypei As Integer, ByVal nType As Integer, ByVal sOrigReceipt As String, ByVal nUsercode As Integer, ByVal sTypExecute As String, ByVal sDelReceipt As String, ByVal sKey As String, ByVal sAdjust As String, ByVal nAdjReceipt As Double, ByVal nAdjAmount As Double, ByVal nTypepay As Integer, Optional ByVal sCertypePay As String = "", Optional ByVal nBranchpay As Integer = 0, Optional ByVal nProductpay As Integer = 0, Optional ByVal nPolicypay As Double = 0, Optional ByVal nCertifpay As Double = 0, Optional ByVal sClientpay As String = "") As Boolean
 		Dim lclsGeneral As eGeneral.GeneralFunction
-		
+
 		On Error GoTo insPostCA028_Err
-		
+
 		If sDelReceipt = "1" Then
 			insPostCA028 = insdelReceiptData(sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt)
 		Else
@@ -1114,7 +1242,7 @@ CreManReceipt_Err:
 				'UPGRADE_NOTE: Object lclsGeneral may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 				lclsGeneral = Nothing
 			End If
-			
+
 			Me.nReceipt = nReceipt
 			Me.sCertype = sCertype
 			Me.nBranch = nBranch
@@ -1143,8 +1271,8 @@ CreManReceipt_Err:
 			Me.sClientpay = sClientpay
 			insPostCA028 = Me.CreManReceipt
 		End If
-		
-insPostCA028_Err: 
+
+insPostCA028_Err:
 		If Err.Number Then
 			insPostCA028 = False
 		End If
@@ -1152,6 +1280,134 @@ insPostCA028_Err:
 		'UPGRADE_NOTE: Object lclsGeneral may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lclsGeneral = Nothing
 	End Function
+
+	Public Function insPostCA080(ByVal sCertype As String,
+							 ByVal nBranch As Integer,
+							 ByVal nProduct As Integer,
+							 ByVal nPolicy As Double,
+							 ByVal nCertif As Double,
+							 ByVal dEffecdate As Date,
+							 ByVal sPolitype As String,
+							 ByVal nCurrency As Integer,
+							 ByVal sClient As String,
+							 ByVal dExpirDate As Date,
+							 ByVal nReceipt As Double,
+							 ByVal nRecrelatedcoll As Double,
+							 ByVal dIssueDat As Date,
+							 ByVal dStarDate As Date,
+							 ByVal nProvince As Integer,
+							 ByVal nTratypei As Integer,
+							 ByVal nType As Integer,
+							 ByVal sOrigReceipt As String,
+							 ByVal nSessionId As String,
+							 ByVal nUsercode As Integer,
+							 ByVal sTypExecute As String,
+							 ByVal sDelreceipt As String,
+							 ByVal sExist As String,
+							 Optional ByVal sOnSeq As String = "",
+							 Optional ByVal sDevReceipt As String = "2",
+							 Optional ByVal nProceedingNum As Double = 0,
+							 Optional ByVal nContrat As Double = 0,
+							 Optional ByVal nDraft As Integer = 0,
+							 Optional ByVal skey As String = "") As Boolean
+
+		Dim lclsPolicy As ePolicy.Policy
+		Dim lclsCertificat As ePolicy.Certificat
+		Dim lclsGeneral As eGeneral.GeneralFunction
+		Dim lcolTDetail_pre As ePolicy.TDetail_pres
+		Dim lclsPolicy_his As ePolicy.Policy_his
+		Dim nTransactio_aux As Long
+
+		On Error GoTo insPostCA080_err
+
+		lclsPolicy = New ePolicy.Policy
+		lclsPolicy_his = New ePolicy.Policy_his
+
+		If sDelreceipt = "1" Then
+			insPostCA080 = insdelReceiptData(sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, 2)
+		Else
+			If nReceipt <> eRemoteDB.Constants.intNull Then
+				Call insdelReceiptData(sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, 2)
+			End If
+
+			If lclsPolicy.Find(sCertype, nBranch, nProduct, nPolicy) Then
+				Me.sPolitype = lclsPolicy.sPolitype
+				Me.sColinvot = lclsPolicy.sColinvot
+			End If
+
+			If sOnSeq = "1" Or (Me.sPolitype = 2 And Me.sColinvot <> "2") Then
+				insPostCA080 = lclsPolicy_his.FindLastMovement(sCertype, nBranch, nProduct, nPolicy, nCertif)
+				nTransactio_aux = lclsPolicy_his.nTransactio
+			Else
+				insPostCA080 = lclsPolicy.UpdateLastTransac(sCertype, nBranch, nProduct, nPolicy, nUsercode)
+				nTransactio_aux = lclsPolicy.NTRANSACTIO
+			End If
+
+			If insPostCA080 Then
+				lclsCertificat = New ePolicy.Certificat
+
+				With lclsCertificat
+					If .Find(sCertype, nBranch, nProduct, nPolicy, nCertif) Then
+						lcolTDetail_pre = New ePolicy.TDetail_pres
+						If nReceipt = eRemoteDB.Constants.intNull And Not (sPolitype = "2" And sColinvot <> "2" And sDevReceipt <> "1") Then
+							lclsGeneral = New eGeneral.GeneralFunction
+							nReceipt = lclsGeneral.Find_Numerator(4, 0, nUsercode, sCertype, nBranch, nProduct, 0, 0)
+						End If
+						Me.nReceipt = nReceipt
+						.sCertype = sCertype
+						.nBranch = nBranch
+						.nProduct = nProduct
+						.nPolicy = nPolicy
+						.nCertif = nCertif
+						.dEffecdate = dEffecdate
+						.sPolitype = sPolitype
+						.nCurrency = nCurrency
+						.nTransac = nTransactio_aux
+						.sKey = skey 'lcolTDetail_pre.sKey(nUsercode, nSessionId, False)
+						Me.sKey = .sKey
+						.nPayfreq = 1
+						.nProctype = 61
+						.sClient = sClient
+						.nUsercode = nUsercode
+						.dExpirdat = dExpirDate
+						.nReceipt = nReceipt
+						.nRecrelatedcoll = nRecrelatedcoll
+						.dIssuedate = dIssueDat
+						.dStartdate = dStarDate
+						.nProvince = nProvince
+						.nTratypei = nTratypei
+						.nType = nType
+						.sOrigReceipt = sOrigReceipt
+						.sTypExecute = sTypExecute
+						.sOnSeq = IIf((sOnSeq = vbNullString), "2", sOnSeq)
+						.nMovement = lclsPolicy_his.nMovement
+						.sDevReceipt = sDevReceipt
+						.nProceedingNum = nProceedingNum
+						.nContrat = nContrat
+						.nDraft = nDraft
+
+						insPostCA080 = .CreManReceiptN
+
+						If InStr(.sOut_moveme, ",") > 0 Then
+							sOut_moveme = IIf(Left(.sOut_moveme, 3) = " , ", Right(.sOut_moveme, Len(.sOut_moveme) - 3), .sOut_moveme)
+						Else
+							sOut_moveme = .sOut_moveme
+						End If
+					End If
+				End With
+			End If
+		End If
+
+insPostCA080_err:
+
+		lclsPolicy = Nothing
+		lclsCertificat = Nothing
+		lcolTDetail_pre = Nothing
+		lclsGeneral = Nothing
+		lclsPolicy_his = Nothing
+
+	End Function
+
 	'% insvalDatepolicy: Se realizan las validaciones sobre las fecha de emisión y vigencia
 	'%                   de la póliza
 	Private Sub insvalDatepolicy(ByVal sCodispl As String, ByRef lclsErrors As eFunctions.Errors, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dGeneralDate As Date, ByVal bValidAll As Boolean, ByVal clsPolicy As ePolicy.Policy, ByVal clsCertificat As ePolicy.Certificat, ByVal sFieldDescript As String)
@@ -1269,9 +1525,9 @@ insvalDatepolicy_Err:
 			If mclsProduct.Find(nBranch, nProduct, Me.dIssuedat, True) Then
 				lblnFind = mclsPolicy.Find(sCertype, nBranch, nProduct, nPolicy, True)
 				Call mclsCertificat.Find(sCertype, nBranch, nProduct, nPolicy, nCertif, True)
-				'+Se busca recibo de emision
-				'           Call mclsPremium.FindPolicyIssue(sCertype, nBranch, nProduct, nPolicy, nCertif)
-			End If
+                '+Se busca recibo de emision
+                Call mclsPremium.FindPolicyIssue(sCertype, nBranch, nProduct, nPolicy, nCertif)
+            End If
 			'        If lblnFind Then
 			'            sReload = IIf(sReload = String.Empty, "1", "2")
 			'            lstrKey = mcolTDetail_pre.sKey(nUsercode, nSessionId, IIf(sReload = "1", True, False))
@@ -1365,20 +1621,26 @@ Delete_err:
 	Public Function inspostCA027A(ByVal sDelReceipt As String, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nReceipt As Double) As Boolean
 		inspostCA027A = True
 		If sDelReceipt = "1" Then
-			inspostCA027A = insdelReceiptData(sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt)
+			inspostCA027A = insdelReceiptData(sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, 1)
 		End If
 	End Function
-	
+
 	'% insdelReceiptData: Se eliminan los datos asociados al recibo
-	Public Function insdelReceiptData(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nReceipt As Double) As Boolean
+	Public Function insdelReceiptData(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nReceipt As Double, Optional ByVal nOrigin As Integer = 0) As Boolean
 		Dim lclsRemote As eRemoteDB.Execute
 		On Error GoTo insdelReceiptData_Err
-		
+
 		lclsRemote = New eRemoteDB.Execute
-		
+
 		With lclsRemote
-			.StoredProcedure = "delReceiptdata"
-			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+			If nOrigin = 2 Then
+				.StoredProcedure = "delReceiptdataN"
+			Else
+				.StoredProcedure = "delReceiptdata"
+			End If
+
+			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -1388,8 +1650,8 @@ Delete_err:
 			.Parameters.Add("nCommit", 1, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			insdelReceiptData = .Run(False)
 		End With
-		
-insdelReceiptData_Err: 
+
+insdelReceiptData_Err:
 		If Err.Number Then
 			insdelReceiptData = False
 		End If
@@ -1397,7 +1659,7 @@ insdelReceiptData_Err:
 		lclsRemote = Nothing
 		On Error GoTo 0
 	End Function
-	
+
 	'InsPreCA027: Función que realiza el cálculo de recibo automático
 	Public Function InsValPreCA027A(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, ByVal nTransaction As Integer) As Integer
 		Dim lclsRemote As eRemoteDB.Execute
@@ -1476,44 +1738,1034 @@ insValCA028_1_Err:
 		'UPGRADE_NOTE: Object lrecinsvalCA028_1 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecinsvalCA028_1 = Nothing
 	End Function
-	
-	'% insValCA028_1: Realiza la validación de los campos de la zona de detalle de la ventana
-	Public Function Val_nreceiptauto(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date) As Boolean
-		Dim lrecval_nreceiptauto As eRemoteDB.Execute
-		
-		On Error GoTo val_nreceiptauto_Err
-		
-		lrecval_nreceiptauto = New eRemoteDB.Execute
-		
-		'+
-		'+ Definición de store procedure val_nreceiptauto al 05-17-2004 12:33:28
-		'+
-		With lrecval_nreceiptauto
-			.StoredProcedure = "val_nreceiptauto"
-			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nOption", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			
-			If .Run(False) Then
-				Val_nreceiptauto = IIf((.Parameters("nOption").Value = 1), True, False)
-			Else
-				Val_nreceiptauto = True
+
+    '% insValCA028_1: Realiza la validación de los campos de la zona de detalle de la ventana
+    Public Function Val_nreceiptauto(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date) As Boolean
+        Dim lrecval_nreceiptauto As eRemoteDB.Execute
+
+        On Error GoTo val_nreceiptauto_Err
+
+        lrecval_nreceiptauto = New eRemoteDB.Execute
+
+        '+
+        '+ Definición de store procedure val_nreceiptauto al 05-17-2004 12:33:28
+        '+
+        With lrecval_nreceiptauto
+            .StoredProcedure = "val_nreceiptauto"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nOption", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+            If .Run(False) Then
+                Val_nreceiptauto = IIf((.Parameters("nOption").Value = 1), True, False)
+            Else
+                Val_nreceiptauto = True
+            End If
+        End With
+
+val_nreceiptauto_Err:
+        If Err.Number Then
+            Val_nreceiptauto = True
+        End If
+        'UPGRADE_NOTE: Object lrecval_nreceiptauto may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecval_nreceiptauto = Nothing
+        On Error GoTo 0
+
+    End Function
+
+
+	'% insValCA080_K: Realiza la validación de los campos del encabezado de la ventana
+	'--------------------------------------------------------------------------------    
+	Public Function insValCA080_K(ByVal sCodispl As String,
+                                  ByVal nBranch As String,
+                                  ByVal nProduct As String,
+                                  ByVal nPolicy As String,
+                                  ByVal nCertif As String,
+                                  Optional ByVal sSche_Code As String = "",
+                                  Optional ByVal nProceedingNum As Double = 0) As String
+        '--------------------------------------------------------------------------------
+        Dim lobjErrors As eFunctions.Errors
+        Dim lclsPolicy As ePolicy.Policy
+        Dim lclsCertificat As ePolicy.Certificat
+        Dim lclsPrem_annuities As ePolicy.Prem_annuities
+        Dim lclsProduct_li As eProduct.Product
+        Dim lblnValid As Boolean
+        Dim sValid As String
+
+        'Dim lclsValPolCliBlock As ePolicy.ValPolCliBlock 
+
+        Dim larrCadena() As String
+        Dim sErrorsCadena As String
+        Dim x As Integer
+
+        On Error GoTo insValCA080_K_err
+
+        lobjErrors = New eFunctions.Errors
+        lclsPolicy = New ePolicy.Policy
+        lclsCertificat = New ePolicy.Certificat
+        lclsPrem_annuities = New Prem_annuities
+        lclsProduct_li = New eProduct.Product
+        'lclsValPolCliBlock = New ePolicy.ValPolCliBlock
+
+        lblnValid = True
+
+        '+ El ramo debe estar lleno
+        If nBranch = CStr(eRemoteDB.Constants.intNull) Then
+            Call lobjErrors.ErrorMessage(sCodispl, 9064)
+            lblnValid = False
+        End If
+
+        '+ El producto debe estar lleno
+        If nProduct = CStr(eRemoteDB.Constants.intNull) Then
+            Call lobjErrors.ErrorMessage(sCodispl, 1014)
+            lblnValid = False
+        End If
+
+        '+ La póliza debe estar llena
+        If nPolicy = CStr(eRemoteDB.Constants.intNull) Then
+            Call lobjErrors.ErrorMessage(sCodispl, 3003)
+        Else
+            If lblnValid Then
+                With lclsPolicy
+                    '+ La póliza debe corresponder con un registro válido
+                    If Not .Find("2", nBranch, nProduct, nPolicy) Then
+                        Call lobjErrors.ErrorMessage(sCodispl, 3001)
+                        lblnValid = False
+                    Else
+                        'If lclsValPolCliBlock.InsValPoliCertBlock("2", nBranch, nProduct, nPolicy, nCertif) Then
+                        ' Call lobjErrors.ErrorMessage(sCodispl, 94941)
+                        'Else
+                        '+ La póliza no puede estar anulada
+                        If .nNullcode <> 0 And
+                                .nNullcode <> CStr(eRemoteDB.Constants.intNull) Then
+                            Call lobjErrors.ErrorMessage(sCodispl, 3063)
+                        Else
+                            '+ La póliza debe estar en un estado válido
+                            If .sStatus_pol <> "1" And
+                                    .sStatus_pol <> "4" And
+                                    .sStatus_pol <> "5" Then
+                                Call lobjErrors.ErrorMessage(sCodispl, 3882)
+                            End If
+                        End If
+
+                        If nCertif <= 0 Then
+                            '+ El certificado debe estar lleno, si corresponde a una póliza colectiva
+                            If .sPolitype = "2" Then
+                                Call lobjErrors.ErrorMessage(sCodispl, 3006)
+                            End If
+                        Else
+                            If nCertif > 0 Then
+                                With lclsCertificat
+                                    If .Find("2", nBranch, nProduct, nPolicy, nCertif) Then
+                                        '+ El certificado debe estar en un estado válido
+                                        If .sStatusva <> "1" And
+                                               .sStatusva <> "4" And
+                                               .sStatusva <> "5" Then
+                                            Call lobjErrors.ErrorMessage(sCodispl, 3883)
+                                        End If
+                                    Else
+                                        '+ Si el certificado no existe
+                                        Call lobjErrors.ErrorMessage(sCodispl, 3010)
+                                    End If
+                                End With
+                            End If
+                        End If
+                        'End If
+                    End If
+                End With
+            End If
+        End If
+
+        insValCA080_K = lobjErrors.Confirm
+
+        lobjErrors = Nothing
+        lclsPolicy = Nothing
+        lclsCertificat = Nothing
+        lclsPrem_annuities = Nothing
+        lclsProduct_li = Nothing
+
+        'lclsValPolCliBlock = Nothing
+
+insValCA080_K_err:
+        If Err.Number Then
+            insValCA080_K = "insValCA080_K: " & Err.Description
+        End If
+        On Error GoTo 0
+        'UPGRADE_NOTE: Object lobjErrors may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lobjErrors = Nothing
+        'UPGRADE_NOTE: Object lclsPolicy may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsPolicy = Nothing
+        'UPGRADE_NOTE: Object lclsCertificat may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsCertificat = Nothing
+        'UPGRADE_NOTE: Object lclsPrem_annuities may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsPrem_annuities = Nothing
+        'UPGRADE_NOTE: Object lclsProduct_li may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsProduct_li = Nothing
+    End Function
+
+	'% insValCA080: Realiza la validación de los campos de la zona de detalle de la ventana
+	'--------------------------------------------------------------------------------
+	Public Function insValCA080(ByVal sWindowType As String,
+								ByVal sCodispl As String,
+								ByVal nBranch As Integer,
+								ByVal nProduct As Integer,
+								ByVal nPolicy As Double,
+								ByVal nCertif As Double,
+								Optional ByVal nRecordCount As Integer = 0,
+								Optional ByVal dStartdate As Date = #12:00:00 AM#,
+								Optional ByVal dExpirdat As Date = #12:00:00 AM#,
+								Optional ByVal nReceipt As Double = 0,
+								Optional ByVal dIssuedate As Date = #12:00:00 AM#,
+								Optional ByVal nSource As Integer = 0,
+								Optional ByVal sOrigReceipt As String = "",
+								Optional ByVal nCapital As Double = 0,
+								Optional ByVal nCommi_rate As Double = 0,
+								Optional ByVal nCommission As Double = 0,
+								Optional ByVal sType As String = "",
+								Optional ByVal sCacalili As String = "",
+								Optional ByVal sCommissi_i As String = "",
+								Optional ByVal nPremiumA As Double = 0,
+								Optional ByVal nPremiumE As Double = 0,
+								Optional ByVal nPremium As Double = 0,
+								Optional ByVal nPrem_det As Double = 0,
+								Optional ByVal sPrem_det As String = "",
+								Optional ByVal nDisexprc As Integer = 0,
+								Optional ByVal nRecrelatedcoll As Double = 0,
+								Optional ByVal nPremRelatedColl As Double = 0,
+								Optional ByVal nPremiumTot_All As Double = 0,
+								Optional ByVal nPremium_All As Double = 0,
+								Optional ByVal nTypeReceipt As Integer = 0,
+								Optional sDelreceipt As String = "",
+								Optional sClient As String = "",
+								Optional ByVal sCodisplOrigin As String = "",
+								Optional ByVal nPercent As Double = 0,
+								Optional ByVal nUsercode As Double = 0,
+								Optional ByVal nSessionId As String = "",
+								Optional ByVal sDevReceipt As String = "2",
+								Optional ByVal nContrat As Double = 0,
+								Optional ByVal nCoupon As Integer = 0,
+								Optional ByVal nCouponAmount As Double = 0#) As String
+		'--------------------------------------------------------------------------------
+		Dim lobjErrors As eFunctions.Errors
+		Dim lclsPolicy As ePolicy.Policy
+		Dim lclsCommission As ePolicy.Commission
+		Dim lclsPremium As Object
+		Dim lclsCertificat As ePolicy.Certificat
+		Dim lblnCommAsso As Boolean
+		Dim lblnPolicyExist As Boolean
+		Dim lclsDsex_condi As eProduct.Dsex_condi
+		Dim lclsRoles As ePolicy.Roles
+		Dim lclsClient As eClient.Client
+		'Dim lclsClient_BlockHis As eClient.Client_blockHis
+		Dim lstrErrors As String
+		Dim nCertif_aux As Double
+		Dim lcolTDetail_pre As ePolicy.TDetail_pres
+
+		'Dim lclsValPolCliBlock As ePolicy.ValPolCliBlock 
+		Dim lstrError As String
+
+		On Error GoTo insValCA080_err
+
+		lobjErrors = New eFunctions.Errors
+		lclsPolicy = New ePolicy.Policy
+		lclsCertificat = New ePolicy.Certificat
+		lclsRoles = New ePolicy.Roles
+		lclsClient = New eClient.Client
+		'lclsClient_BlockHis = New eClient.Client_blockHis
+		'lclsValPolCliBlock = New ePolicy.ValPolCliBlock
+
+		If sWindowType = "PopUp" Then
+
+			If nTypeReceipt = 2 And nRecrelatedcoll = CStr(eRemoteDB.Constants.intNull) Then
+				Call lobjErrors.ErrorMessage(sCodispl, 90339)
 			End If
-		End With
-		
-val_nreceiptauto_Err: 
-		If Err.Number Then
-			Val_nreceiptauto = True
+
+			'+ Validaciones del capital
+			If nCapital = CStr(eRemoteDB.Constants.intNull) Then
+				If sType = "1" And
+			   sCacalili = "2" Then
+					If nPremiumA <> CStr(eRemoteDB.Constants.intNull) Or
+				   nPremiumE <> CStr(eRemoteDB.Constants.intNull) Then
+						'+ Si se trata de una cobertura, no se indicó capital ilimitado y se indicó importe de prima
+						'+ debe estar lleno
+						Call lobjErrors.ErrorMessage(sCodispl, 3819)
+					End If
+				End If
+			Else
+				If sType = "1" Then
+					'+ Si se trata de una cobertura, y se indicó capital ilimitado, no debe tener valor
+					If sCacalili = "1" Then
+						Call lobjErrors.ErrorMessage(sCodispl, 3818, , eFunctions.Errors.TextAlign.LeftAling, , 1103, ": ")
+					End If
+				Else
+					'+ Si no se trata de una cobertura, no debe tener valor
+					Call lobjErrors.ErrorMessage(sCodispl, 3817, , eFunctions.Errors.TextAlign.LeftAling, , 1103, ": ")
+				End If
+			End If
+
+			'+ Validaciones del % de comisión y monto de comisión fija
+			If nCommission <> CStr(eRemoteDB.Constants.intNull) And
+		   nCommi_rate <> CStr(eRemoteDB.Constants.intNull) Then
+				'+ Debe indicar % o Monto de comisión, no ambos
+				Call lobjErrors.ErrorMessage(sCodispl, 5113)
+			Else
+				If nCommission = CStr(eRemoteDB.Constants.intNull) And
+			   nCommi_rate = CStr(eRemoteDB.Constants.intNull) Then
+					lclsCommission = New ePolicy.Commission
+					'+ Se verifica si la póliza tiene una comisión asociada
+					lblnCommAsso = lclsCommission.Find_CommAsso("2", nBranch, nProduct, nPolicy, nCertif, dEffecdate)
+					If sType = "1" Then
+						'+ Si se trata de una cobertura, y la póliza tiene una comisión asociada, debe estar lleno
+						If lblnCommAsso Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3821)
+						End If
+					ElseIf sType = "2" Or
+					   sType = "3" Then
+						'+ Si se trata de un recargo/descuento, y la póliza tiene una comisión asociada,
+						'+ y en el producto se indicó que el recargo/descuento participa en la comisión,
+						'+ debe estar lleno
+						If lblnCommAsso And
+					   sCommissi_i = "1" Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3821)
+						End If
+					End If
+				Else
+					'+ Si no se indicó prima a facturar, el % o el monto de comisión no deben estar llenos
+					If nPremiumA = CStr(eRemoteDB.Constants.intNull) And
+				   nPremiumE = CStr(eRemoteDB.Constants.intNull) Then
+						If nCommi_rate <> CStr(eRemoteDB.Constants.intNull) Then
+							If sType <> "4" Then
+								Call lobjErrors.ErrorMessage(sCodispl, 13865, , eFunctions.Errors.TextAlign.LeftAling, "% ", 1037, ": ")
+							End If
+						End If
+						If nCommission <> CStr(eRemoteDB.Constants.intNull) Then
+							If sType <> "4" Then
+								Call lobjErrors.ErrorMessage(sCodispl, 13865, , eFunctions.Errors.TextAlign.LeftAling, , 1038, ": ")
+							End If
+						End If
+					End If
+					'+ Si se trata de un impuesto, el % o el monto de comisión no deben estar llenos
+					If sType = "4" Then
+						If nCommi_rate <> CStr(eRemoteDB.Constants.intNull) Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3820, , eFunctions.Errors.TextAlign.LeftAling, "% ", 1037, ": ")
+						End If
+						If nCommission <> CStr(eRemoteDB.Constants.intNull) Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3820, , eFunctions.Errors.TextAlign.LeftAling, , 1038, ":")
+						End If
+					End If
+				End If
+			End If
+
+			If nPremiumA = CStr(eRemoteDB.Constants.intNull) And
+		   nPremiumE = CStr(eRemoteDB.Constants.intNull) Then
+				If nPrem_det = 1 Or
+			  nPrem_det = 3 Then
+					'+ Debe indicarse monto de prima a facturar (Afecta o exenta) si el campo "prima por desglose"
+					'+ tiene valor = "Distribuir entre los detalles" o "No hay desglose"
+					Call lobjErrors.ErrorMessage(sCodispl, 55614)
+				Else
+					'+ Si el campo "prima por desglose" tiene valor = "Detallar prima", se debe haber generado el detalle
+					sPrem_det = IIf(sPrem_det = vbNullString, "2", sPrem_det)
+					If sPrem_det = "2" Then
+						Call lobjErrors.ErrorMessage(sCodispl, 56039)
+					End If
+				End If
+			Else
+				If nPremium = CStr(eRemoteDB.Constants.intNull) Then
+					nPremium = 0
+				End If
+
+				If sType = "1" Then
+					If nPrem_det = 3 And nTypeReceipt = 2 Then
+
+						lstrErrors = ValPremiumCA080("2", nBranch,
+												nProduct, nPolicy, nCertif,
+												dStartdate, nPremiumA, nSessionId,
+												nUsercode, nRecrelatedcoll)
+
+						Call lobjErrors.ErrorMessage(sCodispl, , , , , , lstrErrors)
+
+
+					End If
+				End If
+
+				'El mensaje 3316 sólo se debe enviar para los ramos que no estén configurados
+				'en la condición 276 de Condition_Serv (Ramo 58: Agrario)
+				If nPremiumA <> 0 And nPremiumA <> CStr(eRemoteDB.Constants.intNull) Then
+					If System.Math.Abs(nPremiumA) > System.Math.Abs(nPremium) And nPrem_det <> 2 And sType = "1" Then
+						Call lobjErrors.ErrorMessage(sCodispl, 3316)
+					End If
+				End If
+
+				If nPremiumE <> 0 And nPremiumE <> CStr(eRemoteDB.Constants.intNull) Then
+					If System.Math.Abs(nPremiumE) > System.Math.Abs(nPremium) And nPrem_det <> 2 And sType = "1" Then
+						Call lobjErrors.ErrorMessage(sCodispl, 3316)
+					End If
+				End If
+
+				If Not (valDisco_Expr(nBranch, nProduct, dEffecdate, nDisexprc) And sType = "4" And nTypeReceipt = 2) Then
+					If nPremiumA <= 0 Then
+						Call lobjErrors.ErrorMessage(sCodispl, 60198)
+					End If
+				End If
+			End If
+
+			If nPrem_det = 3 And
+		   sType <> "1" And
+		   sType <> "7" Then
+				lclsDsex_condi = New eProduct.Dsex_condi
+				If lclsDsex_condi.valExist_product(nBranch, nProduct, nDisexprc, dStartdate) Then
+					Call lobjErrors.ErrorMessage(sCodispl, 56172)
+				End If
+			End If
+		Else
+			'+ Si no se trata de la poppup
+
+			'+ Se valida que el porcentaje de comision no sea mayor a 100%
+			If nPercent >= 100 Then
+				Call lobjErrors.ErrorMessage(sCodispl, 90528)
+			End If
+
+			If sDelreceipt <> "1" Then
+
+				lblnPolicyExist = lclsPolicy.Find("2", nBranch, nProduct, nPolicy)
+
+				'If nCertif <> 0 Then
+				Call lclsCertificat.Find("2", nBranch, nProduct, nPolicy, nCertif)
+				'End If
+
+				'+ Validaciones sobre el campo "Titular"
+				If sClient = vbNullString And sCodispl <> "CA080A" Then
+					Call lobjErrors.ErrorMessage(sCodispl, 3016)
+				Else
+					'+ Si es una póliza colectiva o multilocalidad/innominada y la facturacion es por poliza,
+					'+ por situación de riesgo o por contratante/certificado se debe buscar el rol asociado a la póliza
+					'+ matriz dado a que el recibo esta asociado a ella
+					If lclsPolicy.sPolitype <> "1" And
+				   lclsPolicy.sColinvot <> "2" And
+				   lclsPolicy.sColinvot <> "4" Then
+						nCertif_aux = 0
+					Else
+						nCertif_aux = nCertif
+					End If
+
+					'Primero se va a buscar a nivel de certificado y si no se encuentra a ese nivel, buscar a nivel de matriz
+					If Not lclsRoles.valExistsRoles("2", nBranch, nProduct, nPolicy, nCertif, CStr(eRemoteDB.Constants.intNull), sClient, dStartdate) Then
+						'+ Si el cliente no forma parte de los clientes de la póliza no se puede colocar como titular del recibo
+						If Not lclsRoles.valExistsRoles("2", nBranch, nProduct, nPolicy, nCertif_aux, CStr(eRemoteDB.Constants.intNull), sClient, dStartdate) Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3343)
+						End If
+					End If
+					'}
+				End If
+
+				'+ Se valida que el número del recibo de cobro asociado pertenezca a la póliza
+				If nRecrelatedcoll <> CStr(eRemoteDB.Constants.intNull) Then
+					lclsPremium = CreateObject("eCollection.Premium")
+					With lclsPremium
+
+						If Not .Find("2", nRecrelatedcoll, nBranch, nProduct, 0, 0, , 1) Then
+							Call lobjErrors.ErrorMessage(sCodispl, 9046)
+						Else
+							If .nType <> 1 Then
+								Call lobjErrors.ErrorMessage(sCodispl, 90339)
+							Else
+								If nPremiumTot_All <> 0 And nPremiumTot_All <> CStr(eRemoteDB.Constants.intNull) And nPremRelatedColl <> 0 And nPremRelatedColl <> CStr(eRemoteDB.Constants.intNull) Then
+									nPremium_All = nPremium_All + GetPremiumMPF(nBranch, nProduct, nPolicy, nCertif, nReceipt, nRecrelatedcoll)
+									If System.Math.Abs(nPremRelatedColl) < System.Math.Abs(nPremium_All) Then
+										Call lobjErrors.ErrorMessage(sCodispl, 60590)
+									End If
+								End If
+
+								If (dStartdate < lclsPremium.dEffecdate) Or (dExpirdat > lclsPremium.dExpirdat) Then
+									Call lobjErrors.ErrorMessage(sCodispl, 767096)
+								End If
+
+								If dStartdate < .dEffecdate Then
+									Call lobjErrors.ErrorMessage(sCodispl, 90369)
+								End If
+							End If
+						End If
+					End With
+					lclsPremium = Nothing
+				Else
+					If nTypeReceipt = 2 Then
+						Call lobjErrors.ErrorMessage(sCodispl, 90339)
+					End If
+				End If
+
+				'+ La prima total no debe ser 0
+				If nPremiumTot_All = 0 Or nPremiumTot_All = CStr(eRemoteDB.Constants.intNull) Then
+					Call lobjErrors.ErrorMessage(sCodispl, 767030)
+				End If
+
+				'+ La prima no debe ser 0
+				If nPremium_All = 0 Or nPremium_All = CStr(eRemoteDB.Constants.intNull) Then
+					Call lobjErrors.ErrorMessage(sCodispl, 767029)
+				End If
+
+
+				'+ Se debe haber seleccionado una linea
+				If nRecordCount = 0 Then
+					Call lobjErrors.ErrorMessage(sCodispl, 3814)
+				End If
+
+				lblnPolicyExist = lclsPolicy.Find("2", nBranch, nProduct, nPolicy)
+
+				If nCertif <> 0 Then
+					Call lclsCertificat.Find("2", nBranch, nProduct, nPolicy, nCertif)
+				End If
+
+				'+ Validaciones de la fecha de Vigencia - Desde
+
+				Call insvalDatepolicy(sCodispl, lobjErrors, "2",
+								  nBranch, nProduct, nPolicy,
+								  nCertif, dStartdate, False,
+								  lclsPolicy, lclsCertificat,
+								  "Vigencia - Desde") ', sCodisplOrigin)
+
+				'+ Validaciones de la fecha de Vigencia - Hasta
+				Call insvalDatepolicy(sCodispl, lobjErrors, "2",
+								  nBranch, nProduct, nPolicy,
+								  nCertif, dExpirdat, False,
+								  lclsPolicy, lclsCertificat,
+								  "Vigencia - Hasta") ', sCodisplOrigin)
+
+				'+s Origin = Me.GetCertificat_Origin(nBranch, nPolicy, nCertif)
+				Dim lValPeriod As Integer
+				lValPeriod = Me.insvalPolicyPeriod(nBranch, nPolicy, nCertif, dStartdate, dExpirdat)
+
+				If lValPeriod <> 1 Then
+					Call lobjErrors.ErrorMessage(sCodispl, 94924)
+				End If
+
+				'+ Fecha de vigencia - hasta debe ser posterior o igual a fecha de vigencia - desde
+				If dStartdate <> CStr(eRemoteDB.Constants.intNull) And
+			   dExpirdat <> CStr(eRemoteDB.Constants.intNull) Then
+					If dStartdate > dExpirdat Then
+						Call lobjErrors.ErrorMessage(sCodispl, 11425)
+					End If
+
+					'+ Fecha de vigencia - hasta no debe ser igual a la fecha de vigencia - desde
+					If dStartdate = dExpirdat Then
+						Call lobjErrors.ErrorMessage(sCodispl, 90529)
+					End If
+
+				End If
+
+
+				'+ Validaciones del recibo
+				If nReceipt <> CStr(eRemoteDB.Constants.intNull) Then
+					lclsPremium = CreateObject("eCollection.Premium")
+					With lclsPremium
+						If sCodispl = "CA080A" Then
+							If .Find("2", nReceipt, 0, 0, 0, 0) Then
+								If sDelreceipt <> "1" And (dStartdate <> .dEffecdate Or nPolicy <> .nPolicy) Then
+									Call lobjErrors.ErrorMessage(sCodispl, 5002)
+								End If
+							End If
+						Else
+							If .Find("2", nReceipt, 0, 0, 0, 0) Then
+								Call lobjErrors.ErrorMessage(sCodispl, 5002)
+							End If
+						End If
+					End With
+					lclsPremium = Nothing
+				End If
+
+				'+ Validaciones de la fecha de emisión
+				Call insvalDatepolicy_CA080(sCodispl, lobjErrors, "2",
+										nBranch, nProduct, nPolicy,
+										nCertif, dStartdate, True,
+										lclsPolicy, lclsCertificat,
+										"Emisión")
+
+				'+ Validaciones del campo Origen
+				If nSource = CStr(eRemoteDB.Constants.intNull) Then
+					'+ Debe estar lleno
+					Call lobjErrors.ErrorMessage(sCodispl, 3094)
+				End If
+
+				'+ Validaciones del recibo lider
+				If lblnPolicyExist Then
+					'+ Si la póliza corresponde a un negocio aceptado, debe estar lleno
+					If lclsPolicy.sBussityp <> "1" Then
+						If sOrigReceipt = vbNullString Then
+							Call lobjErrors.ErrorMessage(sCodispl, 3096)
+						End If
+					End If
+				End If
+
+			End If
+			lstrErrors = insValCA080DB("2", nBranch,
+								   nProduct, nPolicy, nCertif,
+								   dStartdate, dExpirdat, sWindowType,
+								   nTypeReceipt, sDelreceipt)
+
+			Call lobjErrors.ErrorMessage(sCodispl, , , , , , lstrErrors)
+
+			'Valida si se ha ingresado el 19% de IGV para el monto afecto
+			If ((lclsPolicy.sPolitype = "2" And lclsPolicy.sColinvot = "2") Or (lclsPolicy.sPolitype = "1" Or lclsPolicy.sPolitype = "3") Or (sDevReceipt = "1")) And lclsPolicy.sBussityp = "1" Then
+				lcolTDetail_pre = New TDetail_pres
+				If Not ValTaxIGV(nBranch, nProduct, dStartdate, lcolTDetail_pre.sKey(nUsercode, nSessionId, False), nRecrelatedcoll) Then
+					Call lobjErrors.ErrorMessage(sCodispl, 94632)
+				End If
+			End If
+
+			If nTypeReceipt = 2 Then 'Si es devolucion
+				If nContrat > 0 And nCoupon < 0 Then
+					Call lobjErrors.ErrorMessage(sCodispl, 95084)
+				End If
+			End If
+
+			If nTypeReceipt = 2 Then 'Si es devolucion
+				If nContrat > 0 And nCoupon > 0 Then 'Si ingreso un contrato
+					Dim nTotalPrima As Double
+					nTotalPrima = nPremiumTot_All * -1
+					If nCouponAmount < nTotalPrima Then
+						Call lobjErrors.ErrorMessage(sCodispl, 767106)
+					End If
+				End If
+			End If
+
 		End If
-		'UPGRADE_NOTE: Object lrecval_nreceiptauto may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lrecval_nreceiptauto = Nothing
-		On Error GoTo 0
-		
+
+		insValCA080 = lobjErrors.Confirm
+
+insValCA080_err:
+		lobjErrors = Nothing
+		lclsCommission = Nothing
+		lclsDsex_condi = Nothing
+		lclsPolicy = Nothing
+		lclsCertificat = Nothing
+		lclsRoles = Nothing
+		lcolTDetail_pre = Nothing
 	End Function
+
+
+
+	'ValPremiumCA080: Este metodo se encarga de realizar las validaciones de los montos a la coberturas
+	'%                  descritas en el funcional de la ventana "CA080"
+	'--------------------------------------------------------------------------------
+	Private Function ValPremiumCA080(ByVal sCertype As String,
+                                     ByVal nBranch As Long,
+                                     ByVal nProduct As Long,
+                                     ByVal nPolicy As Double,
+                                     ByVal nCertif As Double,
+                                     ByVal dEffecdate As Date,
+                                     ByVal nPremium As Double,
+                                     ByVal nSessionId As Double,
+                                     ByVal nUsercode As Long,
+                                     ByVal nReceiptdev As Long) As String
+        Dim lrecValPremiumCA080 As eRemoteDB.Execute
+        Dim lstrKey As String
+
+        On Error GoTo ValPremiumCA080_err
+
+        lrecValPremiumCA080 = New eRemoteDB.Execute
+        mcolTDetail_pre = New TDetail_pres
+        lstrKey = mcolTDetail_pre.sKey(nUsercode, nSessionId, False)
+
+        If nReceiptdev < 0 Then
+            nReceiptdev = 0
+        End If
+
+        With lrecValPremiumCA080
+            .StoredProcedure = "ValPremiumCA080"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("namountcov", nPremium, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 18, 6, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nreceiptdev", nReceiptdev, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("skey", lstrKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("Arrayerrors", "", eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 4000, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            If .Run(False) Then
+                ValPremiumCA080 = .Parameters("Arrayerrors").Value
+            End If
+
+        End With
+
+ValPremiumCA080_err:
+        If Err.Number Then
+            ValPremiumCA080 = "ValPremiumCA080: " & Err.Description
+        End If
+        On Error GoTo 0
+        lrecValPremiumCA080 = Nothing
+    End Function
+
+    Public Function valDisco_Expr(ByVal nBranch As Long, ByVal nProduct As Long,
+                              ByVal dEffecdate As Date, ByVal nDisexprc As Integer) As Boolean
+        Dim lrecvalDisco_Expr As eRemoteDB.Execute
+
+        On Error GoTo valDisco_Expr_err
+
+        lrecvalDisco_Expr = New eRemoteDB.Execute
+
+        With lrecvalDisco_Expr
+            .StoredProcedure = "VALDISCO_EXPR"
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nDisExprc", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nReturn", 0, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Run(False)
+            valDisco_Expr = IIf(.Parameters("nReturn").Value = 1, True, False)
+        End With
+
+valDisco_Expr_err:
+        lrecvalDisco_Expr = Nothing
+    End Function
+
+    '% insvalDatepolicy_CA080: Se realizan las validaciones sobre las fecha de emisión y vigencia
+    '%                   de la póliza
+    '--------------------------------------------------------------------------------
+    Private Sub insvalDatepolicy_CA080(ByVal sCodispl As String,
+                                       ByRef lclsErrors As eFunctions.Errors,
+                                       ByVal sCertype As String,
+                                       ByVal nBranch As Long,
+                                       ByVal nProduct As Long,
+                                       ByVal nPolicy As Double,
+                                       ByVal nCertif As Double,
+                                       ByVal dGeneralDate As Date,
+                                       ByVal bValidAll As Boolean,
+                                       ByVal clsPolicy As ePolicy.Policy,
+                                       ByVal clsCertificat As ePolicy.Certificat,
+                                       ByVal sFieldDescript As String)
+        '--------------------------------------------------------------------------------
+        Dim lclsctrol_date As eGeneral.Ctrol_date
+        Dim lobjObject As Object
+
+        On Error GoTo insvalDatepolicy_CA080_err
+
+        sFieldDescript = sFieldDescript & ":"
+
+        With lclsErrors
+            '+ La fecha debe estar llena
+            If dGeneralDate = eRemoteDB.Constants.dtmNull Then
+                .ErrorMessage(sCodispl, 1012, , eFunctions.Errors.TextAlign.LeftAling, sFieldDescript)
+            Else
+                If nCertif = 0 Then
+                    lobjObject = clsPolicy
+                Else
+                    lobjObject = clsCertificat
+                End If
+
+                '+ La fecha debe estar dentro del periodo de vigencia de la póliza
+                If Not (dGeneralDate >= lobjObject.dStartDate And
+                       (dGeneralDate <= lobjObject.dExpirdat Or
+                       lobjObject.dExpirdat = eRemoteDB.Constants.dtmNull)) Then
+                    .ErrorMessage(sCodispl, 90370, , eFunctions.Errors.TextAlign.LeftAling, sFieldDescript)
+                Else
+                    '+ La fecha debe ser posterior al periodo contable en vigor
+                    If bValidAll Then
+                        lclsctrol_date = New eGeneral.Ctrol_date
+                        If lclsctrol_date.Find(1) Then
+                            If Not dGeneralDate >= lclsctrol_date.dEffecdate Then
+                                .ErrorMessage(sCodispl, 1006, , eFunctions.Errors.TextAlign.LeftAling, sFieldDescript)
+                            End If
+                        End If
+
+                        '+ La fecha debe ser posterior al último proceso de asientos automáticos
+
+                        If lclsctrol_date.Find(1) Then
+                            If Not dGeneralDate > lclsctrol_date.dEffecdate Then
+                                .ErrorMessage(sCodispl, 1008, , eFunctions.Errors.TextAlign.LeftAling, sFieldDescript)
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        End With
+
+insvalDatepolicy_CA080_err:
+        lobjObject = Nothing
+        lclsctrol_date = Nothing
+    End Sub
+
+    '%insvalPolicyPeriod: Valida que las fechas ingresadas pertenezcan al mismo periodo de vigencia de la poliza
+    '--------------------------------------------------------------------------------
+    Public Function insvalPolicyPeriod(ByVal nBranch As Long,
+                                ByVal nPolicy As Double,
+                                ByVal nCertif As Double,
+                                ByVal dStartDate As Date,
+                                ByVal dExpirdat As Date) As Integer
+        '--------------------------------------------------------------------------------
+        Dim lrecreapolcer_client As eRemoteDB.Execute
+
+        On Error GoTo insvalPolicyPeriod_err
+
+        lrecreapolcer_client = New eRemoteDB.Execute
+
+        '+ Definición de parámetros para stored procedured 'VALPOLICY_PERIOD'
+        With lrecreapolcer_client
+            .StoredProcedure = "VALPOLICY_PERIOD"
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dStartDate", dStartDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dExpirDat", dExpirdat, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nValid", 0, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Run(False)
+            insvalPolicyPeriod = .Parameters("nValid").Value
+        End With
+
+insvalPolicyPeriod_err:
+        lrecreapolcer_client = Nothing
+    End Function
+
+    '%insValCA028DB: Este metodo se encarga de realizar las validaciones que son accesando la BD
+    '%                  descritas en el funcional de la ventana "CA028"
+    '--------------------------------------------------------------------------------
+    Private Function insValCA080DB(ByVal sCertype As String,
+                                   ByVal nBranch As Long,
+                                   ByVal nProduct As Long,
+                                   ByVal nPolicy As Double,
+                                   ByVal nCertif As Double,
+                                   ByVal dStartDate As Date,
+                                   ByVal dExpirdat As Date,
+                                   ByVal sWindowType As String,
+                                   ByVal nTypeReceipt As Long,
+                                   ByVal sDelreceipt As String) As String
+        '--------------------------------------------------------------------------------
+        Dim lrecinsValCA080DB As eRemoteDB.Execute
+
+        '+Definición de parámetros para stored procedure 'InsValCA010'
+
+        On Error GoTo insValCA080DB_err
+
+        lrecinsValCA080DB = New eRemoteDB.Execute
+        With lrecinsValCA080DB
+            .StoredProcedure = "InsValCA028"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dStartDate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dExpirdat", dExpirdat, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sWindowType", sWindowType, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 6, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nTypeReceipt", nTypeReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sDelreceipt", sDelreceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 6, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("Arrayerrors", vbNullString, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 4000, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Run(False)
+            insValCA080DB = .Parameters("Arrayerrors").Value
+        End With
+
+insValCA080DB_err:
+        lrecinsValCA080DB = Nothing
+    End Function
+
+    Public Function ValTaxIGV(ByVal nBranch As Long, ByVal nProduct As Long,
+                              ByVal dEffecdate As Date, sKey As String,
+                              Optional ByVal nRecrelatedcoll As Double = 0) As Boolean
+        Dim lFindTaxIGV As eRemoteDB.Execute
+
+        On Error GoTo ValTaxIGV_err
+
+        lFindTaxIGV = New eRemoteDB.Execute
+        With lFindTaxIGV
+            .StoredProcedure = "INSVALTAXIGV"
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nRecrelatedcoll", nRecrelatedcoll, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nResult", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Run(False)
+            ValTaxIGV = IIf(.Parameters("nResult").Value = 2, False, True)
+        End With
+
+ValTaxIGV_err:
+        lFindTaxIGV = Nothing
+    End Function
+
+	Public Function GetPremiumMPF(ByVal nBranch As Long, ByVal nProduct As Long,
+								  ByVal nPolicy As Double, ByVal nCertif As Double,
+								  ByVal nReceipt As Double, ByVal nRecrelatedcoll As Double) As Double
+		Dim lGetPremiumMPF As eRemoteDB.Execute
+
+		On Error GoTo GetPremiumMPF_err
+
+		lGetPremiumMPF = New eRemoteDB.Execute
+		With lGetPremiumMPF
+			.StoredProcedure = "REAPENDINGMOVEMENTSBYCERTIF"
+			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nRecrelatedColl", nRecrelatedcoll, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPremium", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Run(False)
+			GetPremiumMPF = .Parameters("nPremium").Value
+		End With
+
+GetPremiumMPF_err:
+		lGetPremiumMPF = Nothing
+	End Function
+
+	'% inspreCA080: Se buscan los datos necesarios para el manejo de la transacción
+	'--------------------------------------------------------------------------------
+	Public Sub inspreCA080(ByVal sCertype As String,
+						   ByVal nBranch As Integer,
+						   ByVal nProduct As Integer,
+						   ByVal nPolicy As Double,
+						   ByVal nCertif As Double,
+						   ByVal dSessionEffecdate As Date,
+						   ByVal dEffecdate As Date,
+						   ByVal dExpirdat As Date,
+						   ByVal nTypeReceipt As Integer,
+						   ByVal nReceipt As Double,
+						   ByVal nCurrency As Integer,
+						   ByVal dIssueDat As Date,
+						   ByVal nTratypei As Integer,
+						   ByVal sOrigReceipt As String,
+						   ByVal nSessionId As String,
+						   ByVal nUsercode As Integer,
+						   ByVal sReload As String,
+						   ByVal nReceiptCollec As Double,
+						   ByVal bSequence As Boolean,
+						   ByVal nRecDevEqualColl As Double,
+						   ByVal sClient As String)
+		'--------------------------------------------------------------------------------
+		Dim lblnFind As Boolean
+		Dim lstrKey As String
+		Dim lclsPolicy_his As ePolicy.Policy_his
+		Dim lclsPremium As eCollection.Premium
+		Dim lclsOut_Moveme As eCollection.Out_moveme
+		Dim lclsClient As eClient.Client
+
+		On Error GoTo inspreCA080_err
+
+		mcolTDetail_pre = New TDetail_pres
+		mclsPolicy = New Policy
+		mclsCertificat = New Certificat
+		mclsProduct = New eProduct.Product
+		mclsPremium = New eCollection.Premium
+		mclsPremium2 = New eCollection.Premium
+		lclsPolicy_his = New ePolicy.Policy_his
+		lclsPremium = New eCollection.Premium
+		lclsOut_Moveme = New eCollection.Out_moveme
+		lclsClient = New eClient.Client
+
+		With Me
+			.nTypeReceipt = IIf(nTypeReceipt = CStr(eRemoteDB.Constants.intNull), 1, nTypeReceipt)
+			.nTratypei = nTratypei
+			.nReceipt = nReceipt
+			.nReceiptCollec = nReceiptCollec
+			.nCurrency = nCurrency
+			.dIssuedat = IIf(dIssueDat = eRemoteDB.Constants.dtmNull, Today, dIssueDat)
+			.sOrigReceipt = sOrigReceipt
+			.dExpirdat = IIf(dSessionEffecdate = eRemoteDB.Constants.dtmNull, dExpirdat, mclsCertificat.dNextReceip)
+			.dEffecdate = IIf(dSessionEffecdate = eRemoteDB.Constants.dtmNull, dEffecdate, dSessionEffecdate)
+		End With
+
+		bError = False
+		sExist = "2"
+		If bSequence Then
+
+			If lclsPolicy_his.FindLastMovement(sCertype, nBranch, nProduct, nPolicy, nCertif) Then
+				If lclsPolicy_his.nReceipt <> CStr(eRemoteDB.Constants.intNull) Then
+					If lclsPremium.Find2(sCertype, lclsPolicy_his.nReceipt, nBranch, nProduct, 0, 0, , 2) Then
+						Me.nTypeReceipt = lclsPremium.nType
+						Me.nReceipt = lclsPremium.nReceipt
+						Me.nReceiptCollec = lclsPremium.nRecrelatedcoll
+						Me.nCurrency = lclsPremium.nCurrency
+						Me.dIssuedat = lclsPremium.dIssuedat
+						Me.sOrigReceipt = lclsPremium.sOrigReceipt
+						sExist = "1"
+						If lclsPremium.sManauti = "2" Then
+							bError = True
+						End If
+					End If
+				End If
+			End If
+
+			If mclsPolicy.Find(sCertype, nBranch, nProduct, nPolicy, True) Then
+				If mclsPolicy.sColinvot <> "2" Then
+					If lclsOut_Moveme.reaMaxDateOutMoveme("2",
+														  nBranch,
+														  nProduct,
+														  nPolicy,
+														  nCertif,
+														  1) Then
+						If lclsOut_Moveme.dMaxEffecdate = dSessionEffecdate Then
+							bError = True
+						End If
+					End If
+				End If
+			End If
+			'+ Si está dentro de la secuencia, se toma por defecto el origen "Modificación"
+			'+ (valores posibles Table24)
+			Me.nTratypei = 3
+		End If
+
+		If Not bError Then
+			If mclsProduct.Find(nBranch, nProduct, Me.dIssuedat, True) Then
+				lblnFind = mclsPolicy.Find(sCertype, nBranch, nProduct, nPolicy, True)
+
+				If mclsCertificat.Find(sCertype, nBranch, nProduct, nPolicy, nCertif, True) Then
+
+					If lclsClient.Find(mclsCertificat.sClient) Then
+						If lclsClient.sBlockade = "1" Or lclsClient.dDeathdat <> eRemoteDB.Constants.dtmNull Then
+							mclsCertificat.sClient = vbNullString
+						End If
+					End If
+
+				End If
+
+				Call mclsPremium2.Find2(sCertype, Me.nReceiptCollec, nBranch, nProduct, 0, 0, , 2)
+				Me.nTratypei = mclsPremium2.nTratypei
+
+				Call mclsPremium.FindPolicyIssue(sCertype, nBranch, nProduct, nPolicy, nCertif)
+			End If
+
+			If lblnFind Then
+
+				If sReload = vbNullString Then
+					sReload = "1"
+				End If
+
+				'sReload = IIf(sReload = vbNullString, "1", "2")
+
+				If dEffecdate = eRemoteDB.Constants.dtmNull Then
+					Me.dEffecdate = mclsPolicy.dStartdate
+				End If
+
+				lstrKey = mcolTDetail_pre.sKey(nUsercode, nSessionId, IIf(sReload = "1", True, False))
+				Me.sKey = lstrKey
+				Call mcolTDetail_pre.FindManReceiptN(sCertype,
+													 nBranch,
+													 nProduct,
+													 nPolicy,
+													 nCertif,
+													 Me.dEffecdate,
+													 mclsProduct.sBrancht,
+													 0,
+													 mclsPolicy.sPolitype,
+													 nCurrency,
+													 0,
+													 lstrKey,
+													 sReload,
+													 Me.nReceipt,
+													 nReceiptCollec,
+													 nRecDevEqualColl,
+													 sClient)
+			End If
+		End If
+
+inspreCA080_err:
+		lclsPolicy_his = Nothing
+		lclsPremium = Nothing
+		lclsClient = Nothing
+	End Sub
+
 End Class
 
 

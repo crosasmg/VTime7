@@ -122,7 +122,8 @@ Public Class Premium
 	Public nReceipt_Min As Double 'int        4      10    0     no       (n/a)              (n/a)
 	Public nContrat_Max As Double 'int        4      10    0     no       (n/a)              (n/a)
 	Public nContrat_Min As Double 'int        4      10    0     no       (n/a)              (n/a)
-	
+	Public nRecrelatedcoll As Double
+
 	'- Propiedades auxiliares
 	Public sDescWay_Pay As String
 	Public nCount As Integer
@@ -466,8 +467,10 @@ Public Class Premium
 		Me.sDescStatus_pre = String.Empty
 		Me.sDescCard_type = String.Empty
 		Me.sDescCurrency = String.Empty
-		
+
 		Me.nIntertyp = eRemoteDB.Constants.intNull
+		Me.nRecrelatedcoll = CStr(eRemoteDB.Constants.intNull)
+
 		bError = False
 		nErrornum = eRemoteDB.Constants.intNull
 	End Sub
@@ -5049,9 +5052,9 @@ lrecinsValInterComm_Err:
 		On Error GoTo InsReaCA017_Err
 		
 		If sPolitype = "1" Or (nCertif <> 0 And sColinvot = "2") Or nCertif = 0 Then
-			
-			mobjPremium = eRemoteDB.NetHelper.CreateClassInstance("ePolicy.Detail_pre")
-			If mobjPremium.LoadReceipts(sCertype, nReceipt, 0, 0, dEffecdate, nBranch, nProduct) Then
+
+            mobjPremium = eRemoteDB.NetHelper.CreateClassInstance("ePolicy.Detail_pre")
+            If mobjPremium.LoadReceipts(sCertype, nReceipt, 0, 0, dEffecdate, nBranch, nProduct) Then
 				
 				If mobjPremium.ReceiptItem(0) Then
 					InsReaCA017 = True
@@ -5528,41 +5531,160 @@ Find_Err:
         lrecreaPremium_Receipt = Nothing
     End Function
 
-    '%valPremiumExist: Esta rutina permite validar si el recibo ingresado
-    '%existe en la tabla Premium (Información general del recibo), para mandar el mensaje
-    '%de error correspondiente.
-    Public Function valPremiumExist_COC009(ByVal lstrCertype As String, ByVal llngBranch As Integer, ByVal llngProduct As Integer, ByVal ldblReceipt As Double, ByVal llngDigit As Integer, ByVal llngPaynumbe As Integer, ByVal lstrGeneralNumerator As TypeNumeratorPOL_REC, Optional ByRef lintTypePremium As Integer = 0, Optional ByVal lstrOrigReceipt As String = "") As Boolean
-        Dim lrecvalPremiumExists As eRemoteDB.Execute
-        Dim lintExists As Short
+	'%valPremiumExist: Esta rutina permite validar si el recibo ingresado
+	'%existe en la tabla Premium (Información general del recibo), para mandar el mensaje
+	'%de error correspondiente.
+	Public Function valPremiumExist_COC009(ByVal lstrCertype As String, ByVal llngBranch As Integer, ByVal llngProduct As Integer, ByVal ldblReceipt As Double, ByVal llngDigit As Integer, ByVal llngPaynumbe As Integer, ByVal lstrGeneralNumerator As TypeNumeratorPOL_REC, Optional ByRef lintTypePremium As Integer = 0, Optional ByVal lstrOrigReceipt As String = "") As Boolean
+		Dim lrecvalPremiumExists As eRemoteDB.Execute
+		Dim lintExists As Short
 
-        On Error GoTo valPremiumExist_Err
+		On Error GoTo valPremiumExist_Err
 
-        lrecvalPremiumExists = New eRemoteDB.Execute
+		lrecvalPremiumExists = New eRemoteDB.Execute
 
-        With lrecvalPremiumExists
-            .StoredProcedure = "valPremiumExists_COC009"
-            .Parameters.Add("sCertype", lstrCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nBranch", llngBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nProduct", llngProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nReceipt", IIf(lintTypePremium = 0, ldblReceipt, 0), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nDigit", llngDigit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nPayNumbe", llngPaynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("sOrigReceipt", IIf(lintTypePremium = 0, 0, lstrOrigReceipt), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("sGeneralNum", lstrGeneralNumerator, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nExists", lintExists, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Run(False)
-            blnError = (.Parameters.Item("nExists").Value = 1)
-            valPremiumExist_COC009 = blnError
-        End With
+		With lrecvalPremiumExists
+			.StoredProcedure = "valPremiumExists_COC009"
+			.Parameters.Add("sCertype", lstrCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nBranch", llngBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nProduct", llngProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nReceipt", IIf(lintTypePremium = 0, ldblReceipt, 0), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nDigit", llngDigit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPayNumbe", llngPaynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sOrigReceipt", IIf(lintTypePremium = 0, 0, lstrOrigReceipt), eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sGeneralNum", lstrGeneralNumerator, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nExists", lintExists, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Run(False)
+			blnError = (.Parameters.Item("nExists").Value = 1)
+			valPremiumExist_COC009 = blnError
+		End With
 
 valPremiumExist_Err:
-        If Err.Number Then
-            valPremiumExist_COC009 = False
-        End If
-        On Error GoTo 0
-        'UPGRADE_NOTE: Object lrecvalPremiumExists may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-        lrecvalPremiumExists = Nothing
-    End Function
+		If Err.Number Then
+			valPremiumExist_COC009 = False
+		End If
+		On Error GoTo 0
+		'UPGRADE_NOTE: Object lrecvalPremiumExists may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+		lrecvalPremiumExists = Nothing
+	End Function
+
+	'% Find2: Busca los datos correspondiente a un recibo en la tabla Premium.
+	'--------------------------------------------------------------------------------
+	Public Function Find2(ByVal certype As String,
+						 ByVal Receipt As Double,
+						 ByVal branch As Long,
+						 ByVal product As Long,
+						 ByVal Digit As Long,
+						 ByVal Paynumbe As Long,
+						 Optional ByVal lblnFind2 As Boolean = False,
+						 Optional ByVal nValidateStatus As Integer = 0) As Boolean
+		'--------------------------------------------------------------------------------
+		Dim lrecreaPremium_Receipt As eRemoteDB.Execute
+
+		On Error GoTo Find2_err
+
+		lrecreaPremium_Receipt = New eRemoteDB.Execute
+
+		If (certype = sCertype And
+			Receipt = nReceipt And
+			branch = nBranch And
+			product = nProduct And
+			Digit = nDigit And
+			Paynumbe = nPaynumbe) Or
+			lblnFind2 Then
+			Find2 = True
+		Else
+
+			'+ Definición de parámetros para stored procedure 'insudb.reaPremiumF_Receipt'
+			'+ Información leída el 23/09/1999 1:02:48 PM
+			With lrecreaPremium_Receipt
+				.StoredProcedure = "insreaPremium_Receiptnpkg.insreaPremium_Receipt"
+				.Parameters.Add("sCertype", certype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nReceipt", Receipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nBranch", branch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nProduct", product, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nDigit", Digit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nPaynumbe", Paynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+				.Parameters.Add("nValidateStatus", nValidateStatus, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+				If .Run Then
+					sCertype = .FieldToClass("sCertype")
+					nReceipt = .FieldToClass("nReceipt")
+					nDigit = .FieldToClass("nDigit")
+					nPaynumbe = .FieldToClass("nPaynumbe")
+					sClient = .FieldToClass("sClient")
+					sCessions = .FieldToClass("sCessions")
+					sDirdebit = .FieldToClass("sDirdebit")
+					sLeadinvo = .FieldToClass("sLeadinvo")
+					sManauti = .FieldToClass("sManauti")
+					sRenewal = .FieldToClass("sRenewal")
+					sStatusva = .FieldToClass("sStatusva")
+					sSubstiti = .FieldToClass("sSubstiti")
+					sConColl = .FieldToClass("sConColl")
+					dEffecdate = .FieldToClass("dEffecdate")
+					dExpirDat = .FieldToClass("dExpirdat")
+					dIssuedat = .FieldToClass("dIssuedat")
+					dNulldate = .FieldToClass("dNulldate")
+					dPayDate = .FieldToClass("dPaydate")
+					dStatdate = .FieldToClass("dStatdate")
+					nBalance = .FieldToClass("nBalance")
+					nComamou = .FieldToClass("nComamou")
+					nExchange = .FieldToClass("nExchange")
+					nIntammou = .FieldToClass("nIntammou")
+					nParticip = .FieldToClass("nParticip")
+					nPremium = .FieldToClass("nPremium")
+					nPremiuml = .FieldToClass("nPremiuml")
+					nPremiumn = .FieldToClass("nPremiumn")
+					nPremiums = .FieldToClass("nPremiums")
+					nRate = .FieldToClass("nRate")
+					nTaxamou = .FieldToClass("nTaxamou")
+					nCollecto = .FieldToClass("nCollecto")
+					nContrat = .FieldToClass("nContrat")
+					nInspecto = .FieldToClass("nInspecto")
+					nIntermed = .FieldToClass("nIntermed")
+					nPolicy = .FieldToClass("nPolicy")
+					nSustit = .FieldToClass("nSustit")
+					nTransactio = .FieldToClass("nTransactio")
+					nStatus_pre = .FieldToClass("nStatus_pre")
+					nNullcode = .FieldToClass("nNullcode")
+					nCurrency = .FieldToClass("nCurrency")
+					nNoteNum = .FieldToClass("nNotenum")
+					nOffice = .FieldToClass("nOffice")
+					nType = .FieldToClass("nType")
+					nBranch = .FieldToClass("nBranch")
+					nTratypei = .FieldToClass("nTratypei")
+					nProduct = .FieldToClass("nProduct")
+					nUsercode = .FieldToClass("nUsercode")
+					nPeriod = .FieldToClass("nPeriod")
+					nCompany = .FieldToClass("nCompany")
+					sOrigReceipt = .FieldToClass("sOrigReceipt")
+					sCliename = .FieldToClass("sCliename")
+					sCurrency = .FieldToClass("sDescript")
+					nCertif = .FieldToClass("nCertif")
+					nProponum = .FieldToClass("nProponum", eRemoteDB.Constants.intNull)
+					nBulletins = .FieldToClass("nBulletins", eRemoteDB.Constants.intNull)
+					dCollSus_ini = .FieldToClass("dCollsus_ini")
+					dCollSus_end = .FieldToClass("dCollsus_end")
+					nSus_reason = .FieldToClass("nSus_reason")
+					sSus_origi = .FieldToClass("sSus_origi")
+					nInsur_area = .FieldToClass("nInsur_area", eRemoteDB.Constants.intNull)
+					nCollector = .FieldToClass("nCollector", eRemoteDB.Constants.intNull)
+					sDesBranch = .FieldToClass("sDescBranch")
+					sDescProd = .FieldToClass("sDescProduct")
+					nRecrelatedcoll = .FieldToClass("nRecRelatedColl")
+
+					Find2 = True
+					.RCloseRec()
+				Else
+					Find2 = False
+				End If
+			End With
+
+		End If
+
+Find2_err:
+		lrecreaPremium_Receipt = Nothing
+	End Function
+
 End Class
 
 

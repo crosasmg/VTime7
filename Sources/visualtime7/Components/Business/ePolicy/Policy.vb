@@ -7139,7 +7139,38 @@ EquivalentFieldToClass_Err:
         On Error GoTo 0
     End Function
 
+    '%Update_dexpirdat: Se actualiza la fecha de proxima facturación
+    '--------------------------------------------------------------------------------
+    Public Function Update_dNextReceip(ByVal sCertype As String,
+                                       ByVal nBranch As Long,
+                                       ByVal nProduct As Long,
+                                       ByVal nPolicy As Double,
+                                       ByVal nCertif As Double,
+                                       ByVal dNextReceip As Date,
+                                       ByVal nUsercode As Long) As Boolean
+        '--------------------------------------------------------------------------------
+        Dim lrecUpddNextReceip As eRemoteDB.Execute
 
+        On Error GoTo Update_dNextReceip_err
+
+        lrecUpddNextReceip = New eRemoteDB.Execute
+
+        '+Definición de parámetros para stored procedure 'insudb.Upddexpirdat
+        With lrecUpddNextReceip
+            .StoredProcedure = "upddNextReceip"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nUsercode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dNextReceip", dNextReceip, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            Update_dNextReceip = .Run(False)
+        End With
+
+Update_dNextReceip_err:
+        lrecUpddNextReceip = Nothing
+    End Function
 
 
 

@@ -41,17 +41,19 @@ Public Class Out_moveme
 	Public nPremAnual As Double
 	Public sDescript As String
 	Public nBill_item As Integer
-	
+
+	Public dMaxEffecdate As Date
+
 	'**%Update_Status: Updates the transaction status.
 	'%Update_Status: Realiza las actualizaciones al estado del movimiento.
 	Public Function Update_Status(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nUsercode As Integer, ByVal sStatus_mov As String) As Boolean
-		
+
 		Dim lrecupdOut_moveme_sStatus_mov As eRemoteDB.Execute
-		
+
 		On Error GoTo Update_Status_Err
-		
+
 		lrecupdOut_moveme_sStatus_mov = New eRemoteDB.Execute
-		
+
 		'**+Stored procedure parameters definition 'insudb.updOut_moveme_sStatus_mov'
 		'**+Data on 12/11/2000 16:07:41
 		'+Definición de parámetros para stored procedure 'insudb.updOut_moveme_sStatus_mov'
@@ -67,14 +69,53 @@ Public Class Out_moveme
 			.Parameters.Add("sStatus_mov", sStatus_mov, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			Update_Status = .Run(False)
 		End With
-		
-Update_Status_Err: 
+
+Update_Status_Err:
 		If Err.Number Then
 			Update_Status = False
 		End If
 		'UPGRADE_NOTE: Object lrecupdOut_moveme_sStatus_mov may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lrecupdOut_moveme_sStatus_mov = Nothing
 		On Error GoTo 0
+	End Function
+
+	'**%reaMaxDateOutMoveme: it find the maximum date in the group of records to be proccessed
+	'%reaMaxDateOutMoveme: busca la máxima fecha para el grupo de registros a procesar
+	'--------------------------------------------------------------------------------
+	Public Function reaMaxDateOutMoveme(ByVal sCertype As String,
+										ByVal nBranch As Long,
+										ByVal nProduct As Long,
+										ByVal nPolicy As Double,
+										Optional ByVal nCertif As Double = 0,
+										Optional ByVal nIndCA028 As Integer = 0) As Boolean
+		'--------------------------------------------------------------------------------
+		Dim lrecreaOut_moveme As eRemoteDB.Execute
+
+		On Error GoTo reaMaxDateOutMoveme_err
+
+		lrecreaOut_moveme = New eRemoteDB.Execute
+
+		With lrecreaOut_moveme
+			.StoredProcedure = "reaMaxDateOutMoveme"
+			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("dEffecdate", Today, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nIndCA028", nIndCA028, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+			If .Run(False) Then
+				dMaxEffecdate = .Parameters.Item("dEffecdate").Value
+				reaMaxDateOutMoveme = True
+			Else
+				dMaxEffecdate = Today
+				reaMaxDateOutMoveme = False
+			End If
+		End With
+
+reaMaxDateOutMoveme_err:
+		lrecreaOut_moveme = Nothing
 	End Function
 End Class
 

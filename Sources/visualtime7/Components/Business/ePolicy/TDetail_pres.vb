@@ -17,7 +17,8 @@ Public Class TDetail_pres
 	Private mdblManTotCommision As Double
 	Private mdblManTotPremio As Double
 	Private mblnManCalc As Boolean
-	
+	Private mdblManTotPremComm As Double
+
 	'**% Add: Adds a new instance of the TDetail_pre class to the collection
 	'% Add: Añade una nueva instancia de la clase TDetail_pre a la colección
 	Public Function Add(ByVal lclsTDetail_pre As TDetail_pre) As TDetail_pre
@@ -57,10 +58,10 @@ Public Class TDetail_pres
 			.Parameters.Add("nGroup_Insu", nGroup_insu, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sAddData", sReload, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sAdjust", sAdjust, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nAdjReceipt", nAdjReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nAdjAmount", nAdjAmount, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sAdjust", sAdjust, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nAdjReceipt", nAdjReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nAdjAmount", nAdjAmount, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 6, 18, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			If .Run Then
 				mblnManCalc = False
 				Do While Not .EOF
@@ -113,77 +114,79 @@ FindManReceipt_Err:
 		'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lclsTDetail_pre = Nothing
 	End Function
-	
-	'% inspreCA028_1: Se buscan los datos a mostrar en la transacción
-	Public Sub inspreCA028_1(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nDisexprc As Integer, ByVal dEffecdate As Date, ByVal sProc_data As String, ByVal nSessionId As String, ByVal nUsercode As Integer, ByVal nMainAction As Short)
-		Dim lclsRemote As eRemoteDB.Execute
-		Dim lclsTDetail_pre As TDetail_pre
-		Dim lstrKey As String
-		
-		On Error GoTo inspreCA028_1_Err
-		
-		lclsRemote = New eRemoteDB.Execute
-		
-		lstrKey = sKey(nUsercode, nSessionId, False)
-		If nMainAction = eFunctions.Menues.TypeActions.clngActionQuery Then
-			sProc_data = "1"
-		End If
-		
-		With lclsRemote
-			.StoredProcedure = "insreaReceipt_CA028_1"
-			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nDisexprc", nDisexprc, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sProc_data", sProc_data, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sKey", lstrKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			If .Run() Then
-				Do While Not .EOF
-					lclsTDetail_pre = New ePolicy.TDetail_pre
-					lclsTDetail_pre.nItem = .FieldToClass("nCode")
-					lclsTDetail_pre.sType_detai = .FieldToClass("sType_detai")
-					lclsTDetail_pre.nType = CShort(lclsTDetail_pre.sType_detai)
-					lclsTDetail_pre.sShort_des = .FieldToClass("sShort_des")
-					lclsTDetail_pre.sCacalili = .FieldToClass("sCacalili")
-					lclsTDetail_pre.nBill_item = .FieldToClass("nBill_item")
-					lclsTDetail_pre.nBranch_est = .FieldToClass("nBranch_est")
-					lclsTDetail_pre.nBranch_led = .FieldToClass("nBranch_led")
-					lclsTDetail_pre.nBranch_rei = .FieldToClass("nBranch_rei")
-					lclsTDetail_pre.sAddsuini = .FieldToClass("sAddsuini")
-					lclsTDetail_pre.nModulec = .FieldToClass("nModulec")
-					lclsTDetail_pre.sCommissi_i = .FieldToClass("sCommissi_i")
-					lclsTDetail_pre.sAddtaxin = .FieldToClass("sAddtaxin")
-					lclsTDetail_pre.sClient = .FieldToClass("sClient")
-					lclsTDetail_pre.nCapital = .FieldToClass("nCapital")
-					lclsTDetail_pre.sAddtax = .FieldToClass("sAddtax")
-					lclsTDetail_pre.nCommission = .FieldToClass("nCommision")
-					lclsTDetail_pre.nCommi_rate = .FieldToClass("nCommi_rate")
-					lclsTDetail_pre.nPremiumA = .FieldToClass("nPremiumA")
-					lclsTDetail_pre.nPremiumE = .FieldToClass("nPremiumE")
-					lclsTDetail_pre.nPremium = .FieldToClass("nPremium")
-					lclsTDetail_pre.nPremium = IIf(lclsTDetail_pre.nPremium = eRemoteDB.Constants.intNull, 0, lclsTDetail_pre.nPremium)
-					lclsTDetail_pre.sPrem_det = .FieldToClass("sPrem_det")
-					lclsTDetail_pre.nPrem_det = .FieldToClass("nPrem_det")
-					lclsTDetail_pre.nAplic_code = .FieldToClass("nAplic_code")
-					lclsTDetail_pre.nAplication = .FieldToClass("nAplication")
-					lclsTDetail_pre.nId_Bill = .FieldToClass("nId_Bill")
-					Call Add(lclsTDetail_pre)
-					'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-					lclsTDetail_pre = Nothing
-					.RNext()
-				Loop 
-				.RCloseRec()
-			End If
-		End With
-		
-inspreCA028_1_Err: 
-		'UPGRADE_NOTE: Object lclsRemote may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lclsRemote = Nothing
-		'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		lclsTDetail_pre = Nothing
-		On Error GoTo 0
-	End Sub
-	
+
+    '% inspreCA028_1: Se buscan los datos a mostrar en la transacción
+    'Public Sub inspreCA028_1(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nDisexprc As Integer, ByVal dEffecdate As Date, ByVal sProc_data As String, ByVal nSessionId As String, ByVal nUsercode As Integer, ByVal nMainAction As Short)
+    Public Sub inspreCA028_1(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nDisexprc As Integer, ByVal dEffecdate As Date, ByVal sProc_data As String, ByVal nSessionId As String, ByVal nUsercode As Integer, ByVal nMainAction As Short, Optional ByVal sKey As String = "")
+        Dim lclsRemote As eRemoteDB.Execute
+        Dim lclsTDetail_pre As TDetail_pre
+        Dim lstrKey As String
+
+        On Error GoTo inspreCA028_1_Err
+
+        lclsRemote = New eRemoteDB.Execute
+
+        'lstrKey = sKey(nUsercode, nSessionId, False)
+        lstrKey = sKey
+        If nMainAction = eFunctions.Menues.TypeActions.clngActionQuery Then
+            sProc_data = "1"
+        End If
+
+        With lclsRemote
+            .StoredProcedure = "insreaReceipt_CA028_1"
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nDisexprc", nDisexprc, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sProc_data", sProc_data, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sKey", lstrKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            If .Run() Then
+                Do While Not .EOF
+                    lclsTDetail_pre = New ePolicy.TDetail_pre
+                    lclsTDetail_pre.nItem = .FieldToClass("nCode")
+                    lclsTDetail_pre.sType_detai = .FieldToClass("sType_detai")
+                    lclsTDetail_pre.nType = CShort(lclsTDetail_pre.sType_detai)
+                    lclsTDetail_pre.sShort_des = .FieldToClass("sShort_des")
+                    lclsTDetail_pre.sCacalili = .FieldToClass("sCacalili")
+                    lclsTDetail_pre.nBill_item = .FieldToClass("nBill_item")
+                    lclsTDetail_pre.nBranch_est = .FieldToClass("nBranch_est")
+                    lclsTDetail_pre.nBranch_led = .FieldToClass("nBranch_led")
+                    lclsTDetail_pre.nBranch_rei = .FieldToClass("nBranch_rei")
+                    lclsTDetail_pre.sAddsuini = .FieldToClass("sAddsuini")
+                    lclsTDetail_pre.nModulec = .FieldToClass("nModulec")
+                    lclsTDetail_pre.sCommissi_i = .FieldToClass("sCommissi_i")
+                    lclsTDetail_pre.sAddtaxin = .FieldToClass("sAddtaxin")
+                    lclsTDetail_pre.sClient = .FieldToClass("sClient")
+                    lclsTDetail_pre.nCapital = .FieldToClass("nCapital")
+                    lclsTDetail_pre.sAddtax = .FieldToClass("sAddtax")
+                    lclsTDetail_pre.nCommission = .FieldToClass("nCommision")
+                    lclsTDetail_pre.nCommi_rate = .FieldToClass("nCommi_rate")
+                    lclsTDetail_pre.nPremiumA = .FieldToClass("nPremiumA")
+                    lclsTDetail_pre.nPremiumE = .FieldToClass("nPremiumE")
+                    lclsTDetail_pre.nPremium = .FieldToClass("nPremium")
+                    lclsTDetail_pre.nPremium = IIf(lclsTDetail_pre.nPremium = eRemoteDB.Constants.intNull, 0, lclsTDetail_pre.nPremium)
+                    lclsTDetail_pre.sPrem_det = .FieldToClass("sPrem_det")
+                    lclsTDetail_pre.nPrem_det = .FieldToClass("nPrem_det")
+                    lclsTDetail_pre.nAplic_code = .FieldToClass("nAplic_code")
+                    lclsTDetail_pre.nAplication = .FieldToClass("nAplication")
+                    lclsTDetail_pre.nId_Bill = .FieldToClass("nId_Bill")
+                    Call Add(lclsTDetail_pre)
+                    'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+                    lclsTDetail_pre = Nothing
+                    .RNext()
+                Loop
+                .RCloseRec()
+            End If
+        End With
+
+inspreCA028_1_Err:
+        'UPGRADE_NOTE: Object lclsRemote may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsRemote = Nothing
+        'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lclsTDetail_pre = Nothing
+        On Error GoTo 0
+    End Sub
+
 	'**% Premio. This property restores the premium total of the records contained in the collection.
 	'%Premio: Esta propiedad devuelve el total de las primas de los registros contenidos en la
 	'%coleccion
@@ -195,7 +198,19 @@ inspreCA028_1_Err:
 			Premio = mdblManTotPremio
 		End Get
 	End Property
-	
+
+	'**% Premio. This property restores the premium total of the records contained in the collection.
+	'%Premio: Esta propiedad devuelve el total de las primas de los registros contenidos en la
+	'%coleccion
+	Public ReadOnly Property Premio_Alt() As Double
+		Get
+			If Not mblnManCalc Then
+				Call insCalTotAmo_Alt()
+			End If
+			Premio_Alt = mdblManTotPremio
+		End Get
+	End Property
+
 	'**% TotPremium: This property restores the premium total of the records containes in the collection.
 	'%TotPremium: Esta propiedad devuelve el total de las primas de los registros contenidos en la
 	'%coleccion
@@ -207,7 +222,19 @@ inspreCA028_1_Err:
 			TotPremium = mdblManTotPremium
 		End Get
 	End Property
-	
+
+	'**% TotPremium: This property restores the premium total of the records containes in the collection.
+	'%TotPremium: Esta propiedad devuelve el total de las primas de los registros contenidos en la
+	'%coleccion
+	Public ReadOnly Property TotPremium_Alt() As Double
+		Get
+			If Not mblnManCalc Then
+				Call insCalTotAmo_Alt()
+			End If
+			TotPremium_Alt = mdblManTotPremium
+		End Get
+	End Property
+
 	'**% Capital: This property restores the sum total of the records coantined in the collection.
 	'%Capital: Esta propiedad devuelve el total del capital de los registros contenidos en la
 	'%coleccion
@@ -231,7 +258,7 @@ inspreCA028_1_Err:
 			Premium = mdblManTotPremium
 		End Get
 	End Property
-	
+
 	'**% Commission. This property restores the commission total of the records contained in the collection.
 	'%Comisión: Esta propiedad devuelve el total de la comisión de los registros contenidos en la
 	'%coleccion
@@ -243,28 +270,44 @@ inspreCA028_1_Err:
 			Commission = mdblManTotCommision
 		End Get
 	End Property
+
+	'**% TotPremium: This property restores the premium total of the records containes in the collection.
+	'%TotPremium: Esta propiedad devuelve el total de las primas de los registros contenidos en la
+	'%coleccion 
+	'--------------------------------------------------------------------------------
+	Public ReadOnly Property TotPremComm() As Double
+		Get
+			'--------------------------------------------------------------------------------
+			If Not mblnManCalc Then
+				Call insCalTotAmo()
+			End If
+			TotPremComm = mdblManTotPremComm
+		End Get
+	End Property
+
 	'% sKey: Devuelve la llave de lectura del registro de recibo manual
 	Public ReadOnly Property sKey(ByVal nUsercode As Integer, ByVal nSessionId As String, Optional ByVal bDelTmp As Boolean = True) As String
 		Get
 			Dim lclsGeneralFunctions As eGeneral.GeneralFunction
-			Dim lstrKey As String
-			
-			On Error GoTo sKey_err
-			
-			'lstrKey = "MR" & CStr(nSessionId) & "-" & CStr(nUsercode)
-			
-			lclsGeneralFunctions = New eGeneral.GeneralFunction
-			
-			With lclsGeneralFunctions
-				lstrKey = .getsKey(nUsercode)
-			End With
-			
-			'    If bDelTmp Then
-			'       Set lclsGeneralFunctions = New TDetail_pre
-			'      Call lclsTDetail_pre.Delete(lstrKey)
-			' End If
-			
-			sKey = lstrKey
+            Dim lstrKey As String
+            'Dim lclsTDetail_pre As ePolicy.TDetail_pre
+
+            On Error GoTo sKey_err
+
+            'lstrKey = "MR" & CStr(nSessionId) & "-" & CStr(nUsercode)
+
+            lclsGeneralFunctions = New eGeneral.GeneralFunction
+
+            With lclsGeneralFunctions
+                lstrKey = .getsKey(nUsercode)
+            End With
+
+            'If bDelTmp Then
+            '    lclsTDetail_pre = New TDetail_pre
+            '    Call lclsTDetail_pre.Delete(lstrKey)
+            'End If
+
+            sKey = lstrKey
 			
 sKey_err: 
 			On Error GoTo 0
@@ -312,18 +355,18 @@ sKey_err:
 		'UPGRADE_TODO: Uncomment and change the following line to return the collection enumerator. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="95F9AAD0-1319-4921-95F0-B9D3C4FF7F1C"'
 		GetEnumerator = mCol.GetEnumerator
 	End Function
-	
+
 	'**% insCalTotAmo: This function is in charge of calculate the premium totals, commission and sum.
 	'%insCalTotAmo. Esta funcion se encarga de calcular los totales de prima, comission y capital
 	Private Sub insCalTotAmo()
 		Dim lclsDetail_pre As TDetail_pre
-		
+
 		mdblManTotCapital = 0
 		mdblManTotPremium = 0
 		mdblManTotCommision = 0
 		mdblManTotPremio = 0
 		mblnManCalc = True
-		For	Each lclsDetail_pre In mCol
+		For Each lclsDetail_pre In mCol
 			If lclsDetail_pre.nType <> 4 Then
 				mdblManTotCapital = mdblManTotCapital + IIf(lclsDetail_pre.nCapital <> eRemoteDB.Constants.intNull, lclsDetail_pre.nCapital, 0)
 				mdblManTotPremium = mdblManTotPremium + IIf(lclsDetail_pre.nPremium <> eRemoteDB.Constants.intNull, lclsDetail_pre.nPremium, 0) + lclsDetail_pre.nDet_premium
@@ -342,7 +385,175 @@ sKey_err:
 			mdblManTotCommision = mdblManTotCommision + lclsDetail_pre.nDet_commi_rate
 		Next lclsDetail_pre
 	End Sub
-	
+
+	'**% insCalTotAmo: This function is in charge of calculate the premium totals, commission and sum.
+	'%insCalTotAmo. Esta funcion se encarga de calcular los totales de prima, comission y capital
+	'--------------------------------------------------------------------------------
+	Private Sub insCalTotAmo_Alt()
+		'--------------------------------------------------------------------------------
+		Dim lclsDetail_pre As TDetail_pre
+
+		mdblManTotCapital = 0
+		mdblManTotPremium = 0
+		mdblManTotCommision = 0
+		mdblManTotPremio = 0
+		mdblManTotPremComm = 0
+		mblnManCalc = True
+		For Each lclsDetail_pre In mCol
+			If lclsDetail_pre.nType <> 4 And lclsDetail_pre.nType <> 3 Then
+				mdblManTotCapital = mdblManTotCapital + IIf(lclsDetail_pre.nCapital <> eRemoteDB.Constants.intNull, lclsDetail_pre.nCapital, 0)
+				mdblManTotPremium = mdblManTotPremium + IIf(lclsDetail_pre.nPremium <> eRemoteDB.Constants.intNull, lclsDetail_pre.nPremium, 0)
+			End If
+			If lclsDetail_pre.nPremium <> eRemoteDB.Constants.intNull And
+		   lclsDetail_pre.nPremium <> 0 Then
+				mdblManTotPremio = mdblManTotPremio + (lclsDetail_pre.nPremium)
+				If lclsDetail_pre.nCommission = eRemoteDB.Constants.intNull Or
+			   lclsDetail_pre.nCommission = 0 Then
+					If lclsDetail_pre.nCommi_rate <> eRemoteDB.Constants.intNull And
+				   lclsDetail_pre.nCommi_rate <> 0 Then
+						If (lclsDetail_pre.nType <> 4) And
+					   (lclsDetail_pre.sCommissi_i <> "2") Then
+							mdblManTotCommision = mdblManTotCommision + (lclsDetail_pre.nPremium * lclsDetail_pre.nCommi_rate / 100)
+							mdblManTotPremComm = mdblManTotPremComm + lclsDetail_pre.nPremium
+						End If
+					Else
+						If lclsDetail_pre.nPercent <> eRemoteDB.Constants.intNull And
+						lclsDetail_pre.nPercent <> 0 Then
+							If (lclsDetail_pre.nType <> 4) And
+						   (lclsDetail_pre.sCommissi_i <> "2") Then
+								mdblManTotCommision = mdblManTotCommision + (lclsDetail_pre.nPremium * lclsDetail_pre.nPercent / 100)
+								mdblManTotPremComm = mdblManTotPremComm + lclsDetail_pre.nPremium
+							End If
+						End If
+					End If
+				End If
+
+				If lclsDetail_pre.nCommission <> eRemoteDB.Constants.intNull And
+			   lclsDetail_pre.nCommission <> 0 Then
+					If (lclsDetail_pre.nType <> 4) And
+				   (lclsDetail_pre.sCommissi_i <> "2") Then
+						mdblManTotCommision = mdblManTotCommision + lclsDetail_pre.nCommission
+						mdblManTotPremComm = mdblManTotPremComm + lclsDetail_pre.nPremium
+					End If
+				Else
+					If lclsDetail_pre.nAmount <> eRemoteDB.Constants.intNull And
+				   lclsDetail_pre.nAmount <> 0 Then
+						If (lclsDetail_pre.nType <> 4) And
+					   (lclsDetail_pre.sCommissi_i <> "2") Then
+							mdblManTotCommision = mdblManTotCommision + lclsDetail_pre.nAmount
+							mdblManTotPremComm = mdblManTotPremComm + lclsDetail_pre.nPremium
+						End If
+					End If
+				End If
+			End If
+		Next
+	End Sub
+
+	'**% Find: Restores a collection of objetcs of the TDetail_pre type.
+	'% Find: Devuelve una coleccion de objetos de tipo TDetail_pre
+	Public Function FindManReceiptN(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, Optional ByVal sBrancht As String = "", Optional ByVal nModulec As Integer = 0, Optional ByVal sPolitype As String = "", Optional ByVal nCurrency As Integer = 0, Optional ByVal nGroup_insu As Integer = 0, Optional ByVal sKey As String = "", Optional ByVal sReload As String = "", Optional ByVal nReceipt As Double = 0, Optional ByVal nReceiptCollec As Double = 0, Optional ByVal nRecDevEqualColl As Double = 0, Optional ByVal sClient As String = "") As Boolean
+		'**- Variable definition lrecinsreaCover_Disc_Pol
+		'- Se define la variable lrecinsreaCover_Disc_Pol
+
+		Dim lrecinsreaCover_Disc_Pol As eRemoteDB.Execute
+		Dim lclsTDetail_pre As ePolicy.TDetail_pre
+
+		On Error GoTo FindManReceiptN_Err
+
+		lrecinsreaCover_Disc_Pol = New eRemoteDB.Execute
+
+		'**+ Parameter definition for stored procedure 'insudb.insreaCover_Disc_Pol'
+		'+Definición de parámetros para stored procedure 'insudb.insreaCover_Disc_Pol'
+		'**+ Information read on January 24,2001  11:40:30
+		'+Información leída el 24/01/2001 11:40:30
+
+		With lrecinsreaCover_Disc_Pol
+			If nRecDevEqualColl = 1 And nReceiptCollec > 0 Then
+				.StoredProcedure = "insManReceiptDev"
+			Else
+				.StoredProcedure = "insreaCover_Disc_Pol_N"
+			End If
+
+			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("dEffecDate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sBrancht", sBrancht, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nModulec", nModulec, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sPolitype", sPolitype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nGroup_Insu", nGroup_insu, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("sAddData", sReload, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nReceipt", nReceipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			.Parameters.Add("nReceiptCollec", nReceiptCollec, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+			If .StoredProcedure = "insreaCover_Disc_Pol_N" Then
+				.Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+			End If
+
+			If .Run Then
+				mblnManCalc = False
+				Do While Not .EOF
+					lclsTDetail_pre = New ePolicy.TDetail_pre
+					lclsTDetail_pre.nItem = .FieldToClass("nCode")
+					lclsTDetail_pre.sType_detai = .FieldToClass("sType_detai")
+					lclsTDetail_pre.nType = CShort(lclsTDetail_pre.sType_detai)
+					lclsTDetail_pre.sModulec = .FieldToClass("sModulec")
+					lclsTDetail_pre.sShort_des = .FieldToClass("sShort_des")
+					lclsTDetail_pre.sCacalili = .FieldToClass("sCacalili")
+					lclsTDetail_pre.nBill_item = .FieldToClass("nBill_item")
+					lclsTDetail_pre.nBranch_est = .FieldToClass("nBranch_est")
+					lclsTDetail_pre.nBranch_led = .FieldToClass("nBranch_led")
+					lclsTDetail_pre.nBranch_rei = .FieldToClass("nBranch_rei")
+					lclsTDetail_pre.sAddsuini = .FieldToClass("sAddsuini")
+					lclsTDetail_pre.nModulec = .FieldToClass("nModulec")
+					lclsTDetail_pre.sCommissi_i = .FieldToClass("sCommissi_i")
+					lclsTDetail_pre.sAddtaxin = .FieldToClass("sAddtaxin")
+					lclsTDetail_pre.sClient = .FieldToClass("sClient")
+					lclsTDetail_pre.nCapital = .FieldToClass("nCapital")
+					lclsTDetail_pre.sAddtax = .FieldToClass("sAddtax")
+					lclsTDetail_pre.nCommission = .FieldToClass("nCommision")
+					lclsTDetail_pre.nCommi_rate = .FieldToClass("nCommi_rate")
+					lclsTDetail_pre.nPremiumA = .FieldToClass("nPremiumA")
+					lclsTDetail_pre.nPremiumE = .FieldToClass("nPremiumE")
+					lclsTDetail_pre.nPremium = .FieldToClass("nPremium")
+					lclsTDetail_pre.nPremium_Origi = .FieldToClass("nPremium_Origi")
+					lclsTDetail_pre.nPrem_det = .FieldToClass("nPrem_det")
+					lclsTDetail_pre.sPrem_det = .FieldToClass("sPrem_det")
+					lclsTDetail_pre.nDet_premium = .FieldToClass("nDet_premium")
+					lclsTDetail_pre.nDet_commision = .FieldToClass("nDet_commision")
+					lclsTDetail_pre.nDet_commi_rate = .FieldToClass("nDet_commi_rate")
+					lclsTDetail_pre.nReceiptCollec = .FieldToClass("nRecRelatedColl")
+					lclsTDetail_pre.nPercent = .FieldToClass("nPercent")
+					lclsTDetail_pre.nAmount = .FieldToClass("nAmount")
+					lclsTDetail_pre.nId_Bill = .FieldToClass("nId_Bill")
+					lclsTDetail_pre.nRole = .FieldToClass("nRole")
+					lclsTDetail_pre.nCertif = .FieldToClass("nCertif")
+
+					Call Add(lclsTDetail_pre)
+					'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+					lclsTDetail_pre = Nothing
+
+					.RNext()
+				Loop
+				.RCloseRec()
+				FindManReceiptN = True
+			End If
+		End With
+
+FindManReceiptN_Err:
+		If Err.Number Then
+			FindManReceiptN = False
+		End If
+		On Error GoTo 0
+		'UPGRADE_NOTE: Object lrecinsreaCover_Disc_Pol may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+		lrecinsreaCover_Disc_Pol = Nothing
+		'UPGRADE_NOTE: Object lclsTDetail_pre may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+		lclsTDetail_pre = Nothing
+	End Function
+
 	'*** Remove: remoes an element from the collection.
 	'* Remove: elimina un elemento de la colección
 	Public Sub Remove(ByRef vntIndexKey As Object)
