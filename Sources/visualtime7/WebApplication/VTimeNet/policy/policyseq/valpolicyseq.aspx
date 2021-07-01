@@ -123,7 +123,7 @@
                 End With
 
 
-                '+ CA727: Reportes automáticos de la póliza
+            '+ CA727: Reportes automáticos de la póliza
             Case "CA727"
                 mobjPolicySeq = New ePolicy.PolReport
 
@@ -133,7 +133,7 @@
                     End If
                 End With
 
-                '+ VI665: Recargo por actividad del grupo (Vida Colectivo).
+            '+ VI665: Recargo por actividad del grupo (Vida Colectivo).
             Case "VI665"
                 mobjPolicySeq = New ePolicy.Activ_Group
                 With Request
@@ -141,7 +141,7 @@
                         insvalSequence = mobjPolicySeq.insValVI665("VI665", Request.QueryString.Item("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSpeciality"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble))
                     End If
                 End With
-                '+ VI8000: Ahorros garantizados.
+            '+ VI8000: Ahorros garantizados.
             Case "VI8000"
                 mobjPolicySeq = New ePolicy.Guar_Saving_Pol
                 With Request
@@ -159,7 +159,7 @@
 
                 End With
 
-           '+ CA054: Capital Despreciados.
+            '+ CA054: Capital Despreciados.
             Case "CA054"
                 mobjPolicySeq = New ePolicy.DepreciatedCapital
                 With Request
@@ -169,7 +169,7 @@
                         insvalSequence = Nothing
                     End If
                 End With
-                '+ VI681: Recargos/Descuentos de los asegurados (VIDA).
+            '+ VI681: Recargos/Descuentos de los asegurados (VIDA).
             Case "VI681"
                 lclsInsured_expdis = New ePolicy.Insured_expdis
                 With Request
@@ -181,7 +181,7 @@
                 End With
                 lclsInsured_expdis = Nothing
 
-                '+ Tratamiento de pólizas
+            '+ Tratamiento de pólizas
             Case "CA001"
                 Session("PageRetCA050") = "CA001"
                 With Request
@@ -201,7 +201,7 @@
                     ' mobjApvc = Nothing
                     'End If
                 End With
-                ' + *********Fin  modificación apvc********* 
+            ' + *********Fin  modificación apvc********* 
 
 
             Case "CA001C"
@@ -210,24 +210,24 @@
                     insvalSequence = mobjPolicySeq.insValCA001(.QueryString("sCodispl"), mobjValues.StringToType(.Form.Item("cbeTransactio"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcdEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeOffice"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeBranch"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCertificat"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("optType"), mobjValues.StringToType(.Form.Item("tcdLedgerDate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), mobjValues.StringToType(.Form.Item("tcdExpDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeAgency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeOfficeAgen"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeSellChannel"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valType_amend"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnServ_order"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnQuotProp"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDigit"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnProp_reg"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+ CA003: Vía de cobro 
+            '+ CA003: Vía de cobro 
             Case "CA003"
                 With Request
                     insvalSequence = mobjPolicySeq.insValCA003("CA003", .Form.Item("optBank"), .Form.Item("tctClient"), mobjValues.StringToType(.Form.Item("cbeBankExt"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("valAccount"), mobjValues.StringToType(.Form.Item("cbeTyp_Account"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeTyp_crecard"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcdDateExpir"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctBankAuth"), .Form.Item("valCredi_card"), mobjValues.StringToType(.Form.Item("hddWay_pay"), eFunctions.Values.eTypeData.etdLong), .Form.Item("hddDirind"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble))
                 End With
-                '+ CA004: Datos para la facturación
+            '+ CA004: Datos para la facturación
             Case "CA004"
                 With Request
                     insvalSequence = mobjPolicySeq.insValCA004("CA004", mobjValues.StringToType(.Form.Item("tcdIssuedat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdReqDate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctClient"), mobjValues.StringToType(.Form.Item("tcdExpirDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdStartDate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("optFreq"), mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeQuota"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeIndexApl"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeIndexType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndexRate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), Session("sPolitype"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.QueryString.Item("Action"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.QueryString.Item("nHolder"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valAgreement"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeSendAddr"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeDepreciationtable"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("chksInd_Multiannual"), .Form.Item("chksInd_IFI"), mobjValues.StringToType(.Form.Item("tcnExtraDay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenFormPay"), eFunctions.Values.eTypeData.etdInteger, True), mobjValues.StringToType(.Form.Item("cbenPromissory_Note"), eFunctions.Values.eTypeData.etdInteger,  True))
                 End With
 
-                '+ CA006: Grupos de colectivos
-                '+ Inf. general del colectivo     
+            '+ CA006: Grupos de colectivos
+            '+ Inf. general del colectivo     
             Case "CA006"
                 With Request
                     insvalSequence = mobjPolicySeq.insValCA006(Session("sCertype"), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), "CA006", .Form.Item("sColtimre"), .Form.Item("cbeColInvot"), .Form.Item("cbeColReint"), .Form.Item("cbeTypModule"), .Form.Item("cbeTypClause"), .Form.Item("cbeTypDiscxp"), .Form.Item("cbeDocuTyp"), mobjValues.StringToType(.Form.Item("tcnQCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbenTypeExc"), eFunctions.Values.eTypeData.etdInteger))
                 End With
-                '+ VA1410: Ilustración del valor póliza VUL
+            '+ VA1410: Ilustración del valor póliza VUL
             Case "VI1410"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -257,8 +257,8 @@
                         insvalSequence = mobjPolicySeq.InsValVI1410("VI1410", Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnPremfreq"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremium1"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddnPremimin"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremdeal"), eFunctions.Values.eTypeData.etdDouble), Session("nTransaction"))
                     End If
                 End With
-                '**+ CA008: Risk Situations.
-                '+ CA008: Situaciones de riesgo.
+            '**+ CA008: Risk Situations.
+            '+ CA008: Situaciones de riesgo.
 
             Case "CA008"
                 mobjPolicySeq = New ePolicy.Situation
@@ -276,7 +276,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA002: Convenios de la cobranza de la póliza
+            '+ CA002: Convenios de la cobranza de la póliza
             Case "CA002"
                 mobjPolicySeq = New ePolicy.Agreement_pol
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -292,7 +292,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA009: Capitales básicos Asegurados
+            '+ CA009: Capitales básicos Asegurados
             Case "CA009"
                 mobjPolicySeq = New ePolicy.Sum_insur
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -304,7 +304,7 @@
                     insvalSequence = mobjPolicySeq.insValCA009(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble))
                 End If
 
-                '+ CA010: Bienes asegurables de la póliza
+            '+ CA010: Bienes asegurables de la póliza
             Case "CA010"
                 With Request
                     mobjPolicySeq = New ePolicy.Property_Renamed
@@ -315,7 +315,7 @@
                     End If
                 End With
 
-                '+ CA010: Bienes asegurables de la póliza
+            '+ CA010: Bienes asegurables de la póliza
             Case "CA060"
                 With Request
                     mobjPolicySeq = New ePolicy.Cover_Detail
@@ -343,7 +343,7 @@
                     insvalSequence = vbNullString
                 End If
 
-                '+ CA012: Elementos de Protección            
+            '+ CA012: Elementos de Protección            
             Case "CA012"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     With Request
@@ -354,7 +354,7 @@
                     insvalSequence = vbNullString
                 End If
 
-                '+ CA013: Módulos de Póliza Individual o Certificado
+            '+ CA013: Módulos de Póliza Individual o Certificado
             Case "CA013", "CA013A"
                 With Request
                     If Request.QueryString.Item("WindowType") <> "PopUp" Then
@@ -379,7 +379,7 @@
                     End If
                 End With
 
-                '+ CA014: Coberturas de la póliza 
+            '+ CA014: Coberturas de la póliza 
             Case "CA014", "CA014A"
                 mobjPolicySeq = New ePolicy.Cover
                 With Request
@@ -496,14 +496,14 @@
                     End If
                 End With
 
-                '+ CA015: Franquicia/Deducible de la Póliza
+            '+ CA015: Franquicia/Deducible de la Póliza
             Case "CA015", "CA15-1"
                 mobjPolicySeq = New ePolicy.Franchise
                 With Request
                     insvalSequence = mobjPolicySeq.insValCA015(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), CStr(Session("nTransaction")), Session("sTypeCompanyUser"), .Form.Item("optFranchiseType"), .Form.Item("cbeFranqApl"), mobjValues.StringToType(.Form.Item("cbeCurrencyFD"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDiscountPerc"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDiscountAmou"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchisePerc"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseAmou"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseMin"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseMax"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+ CA016: Recargos/descuentos/impuestos de una póliza individual o certificado
+            '+ CA016: Recargos/descuentos/impuestos de una póliza individual o certificado
             Case "CA016", "CA016A"
                 mobjPolicySeq = New ePolicy.Disc_xprem
                 With Request
@@ -514,7 +514,7 @@
                     End If
                 End With
 
-                '+ CA017: Emisión de Recibos de una póliza
+            '+ CA017: Emisión de Recibos de una póliza
             Case "CA017"
                 With Request
 
@@ -522,7 +522,7 @@
                 End With
 
 
-                '+ CA017A: Cuotas del recibo 
+            '+ CA017A: Cuotas del recibo 
             Case "CA017A"
                 With Request
                     If .QueryString.Item("WindowType") <> "PopUp" Then
@@ -533,14 +533,14 @@
                         End If
                     End If
                 End With
-                '+ CA017B: Emisión de Recibos de una póliza solicitud de endoso           
+            '+ CA017B: Emisión de Recibos de una póliza solicitud de endoso           
             Case "CA017B"
                 With Request
 
                     insvalSequence = mobjPolicySeq.insValCA017("CA017B", Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("dEffecdate"), mobjValues.StringToType(.Form.Item("cboReceipts"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddsList"), mobjValues.StringToType(.Form.Item("hddPremium"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+ CA020: Distribución de Coaseguro
+            '+ CA020: Distribución de Coaseguro
             Case "CA020"
                 With Request
                     mobjPolicySeq = New ePolicy.Coinsuran
@@ -552,7 +552,7 @@
                 End With
 
 
-                '+ CA021: Cesión de Reaseguro - 
+            '+ CA021: Cesión de Reaseguro - 
             Case "CA021"
 
                 If Not Session("bQuery") Then
@@ -581,7 +581,7 @@
                 End If
 
 
-                '+ CA021A: Cesión de Reaseguro Póliza Matriz
+            '+ CA021A: Cesión de Reaseguro Póliza Matriz
             Case "CA021A"
 
                 If Not Session("bQuery") Then
@@ -612,7 +612,7 @@
                     insvalSequence = vbNullString
                 End If
 
-                '+ CA022: Cláusula/descriptivo/condición especial        
+            '+ CA022: Cláusula/descriptivo/condición especial        
             Case "CA022"
                 mobjPolicySeq = New ePolicy.Clause
                 With Request
@@ -623,12 +623,12 @@
                     End If
                 End With
 
-                '+ CA022A: Cláusulas de la póliza matriz
+            '+ CA022A: Cláusulas de la póliza matriz
             Case "CA022A"
                 mobjPolicySeq = New ePolicy.Claus_co_gp
                 insvalSequence = mobjPolicySeq.insValCA022A(Request.QueryString.Item("sCodispl"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("hddnClause"), Request.Form.Item("hddnSelClause"), mobjValues.StringToType(Request.Form.Item("valGroup"), eFunctions.Values.eTypeData.etdDouble))
 
-                '+ CA023: Beneficiarios identificados por código            
+            '+ CA023: Beneficiarios identificados por código            
             Case "CA023"
                 mobjPolicySeq = New ePolicy.Beneficiar
                 With Request
@@ -643,7 +643,7 @@
                     insvalSequence = mobjPolicySeq.insValCA023(.QueryString("Action"), .QueryString("sCodispl"), .QueryString("WindowType"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), .Form.Item("dtcClient"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(nModulec, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(nCover, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnParticip"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeRelation"), eFunctions.Values.eTypeData.etdDouble, True), Session("sPolitype"), Session("nUsercode"))
                 End With
 
-                '+ CA024: Intermediarios 
+            '+ CA024: Intermediarios 
             Case "CA024"
                 With Request
                     mobjPolicySeq = New ePolicy.Commission
@@ -655,7 +655,7 @@
                     insvalSequence = mobjPolicySeq.insValCA024(.QueryString("Action"), .QueryString("bAll"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("cbeType"), mobjValues.StringToType(ldblPercent, eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddConColl"), mobjValues.StringToType(.Form.Item("valIntermed"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeRole"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeAgreement"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnInstallCom"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nAgency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnShare"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAmount"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnPercent_Ce"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
 
-                '+ CA025: Cliente de la póliza
+            '+ CA025: Cliente de la póliza
             Case "CA025"
 
                 With Request
@@ -682,7 +682,7 @@
                     End If
                 End With
 
-                '+ FR001: Instrumentos Financieros
+            '+ FR001: Instrumentos Financieros
             Case "FR001"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -711,11 +711,11 @@
                     End If
                 End With
 
-                '+ CA027, CA027A: Emisión de recibo automático
+            '+ CA027, CA027A: Emisión de recibo automático
             Case "CA027", "CA027A"
                 insvalSequence = vbNullString
 
-                '+ VI021: documentos solicitados
+            '+ VI021: documentos solicitados
             Case "VI021"
                 With Request
 
@@ -730,13 +730,13 @@
                     End If
                 End With
 
-                '+ IN010: Datos particulares de incendio
+            '+ IN010: Datos particulares de incendio
             Case "IN010"
                 With Request
                     insvalSequence = mobjPolicySeq.InsValIN010("IN010", Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cboDetailArt"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeConstCat"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFloor_quan"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndPeriod"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDep_prem"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeDecla_Freq"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeDecla_Type"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
 
-                '+ VI001: Interés asegurable
+            '+ VI001: Interés asegurable
             Case "VI001"
                 With Request
                     insvalSequence = mobjPolicySeq.InsValVI001("VI001", Session("sCertype"), Session("nBranch"),
@@ -757,33 +757,33 @@
                                                                mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
 
-                '**+ VI7001 - Life Assurance - Unit Linked
-                '+ VI7001 - Interés asegurable Unit Linked
-                '+ VI7001 - Interes Asegurable - Unit Linked
+            '**+ VI7001 - Life Assurance - Unit Linked
+            '+ VI7001 - Interés asegurable Unit Linked
+            '+ VI7001 - Interes Asegurable - Unit Linked
             Case "VI7001"
                 With Request
                     insvalSequence = mobjPolicySeq.InsValVI7001("VI7001", Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("cbovalgroup"), .Form.Item("cbovalsituation"), .Form.Item("tctIduraind"), .Form.Item("tctPduraind"), mobjValues.StringToType(.Form.Item("tcnInsurTimeAge"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnInsurTimeAgeLimit"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(CStr(0), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(CStr(0), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAgeReinsu"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAgeLimit"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCapitalCalc"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnSaving_pct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDisc_save_pct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDisc_unit_pct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeIndex_table"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valWarrn_table"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnPremdeal"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnIntwarr"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valOption"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeTypDurpay"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPay_Time"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
-                '+ VI7010 - Información general VUL
+            '+ VI7010 - Información general VUL
             Case "VI7010"
                 With Request
                     insvalSequence = mobjPolicySeq.InsValVI7010(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctClient"), .Form.Item("tctFirstname"), .Form.Item("tctLastname"), .Form.Item("tctLastname2"), mobjValues.StringToType(.Form.Item("tcdBirthDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tctAge"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeSex"), mobjValues.StringToType(.Form.Item("cbeOccupat"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chkSmoking"), .Form.Item("cbeTyperisk"), mobjValues.StringToType(.Form.Item("cbeCivilsta"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valOption"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbenCurrency"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+ VI7011 - Información general VUL
+            '+ VI7011 - Información general VUL
             Case "VI7011"
                 mobjPolicySeq = New ePolicy.Cover
                 With Request
                     insvalSequence = mobjPolicySeq.InsValCA014(.Form.Item("hddsKey"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeCurrencDes"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valGroup"), eFunctions.Values.eTypeData.etdDouble), Session("nTransaction"), "CA014", mobjValues.StringToType(.QueryString.Item("nRole"), eFunctions.Values.eTypeData.etdDouble), .QueryString("sClient"), Session("sBrancht"), mobjValues.StringToType(.Form.Item("hddnAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddnProdclas"), eFunctions.Values.eTypeData.etdDouble), Session("sSche_code"))
                 End With
-                '+ AU001: Información del vehículo
+            '+ AU001: Información del vehículo
             Case "AU001"
                 With Request
                     insvalSequence = mobjPolicySeq.insValAU001("AU001", Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbovalSituation"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctRegister"), .Form.Item("tctDigit"), .Form.Item("valVehcode"), mobjValues.StringToType(.Form.Item("tcnType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnYear"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeLicense_ty"), .Form.Item("tctMotor"), .Form.Item("tctChassis"), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCollectedPremium"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeGroup"), eFunctions.Values.eTypeData.etdInteger))
                     Session("valGroup") = mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble)
                 End With
 
-                '+ CA041: Selección de monedas
+            '+ CA041: Selección de monedas
             Case "CA041"
                 With Request
                     Dim nLength As Integer = 0
@@ -795,7 +795,7 @@
                     insvalSequence = mobjPolicySeq.insValCA041("CA041", .Form.Item("hddExist"), nLength, .Form.Item("hddExchange"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddCurrency"), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate))
                 End With
 
-                '+ CA639: Condición de capitales
+            '+ CA639: Condición de capitales
             Case "CA639"
                 mobjPolicySeq = New ePolicy.Cond_cover
                 With Request
@@ -812,7 +812,7 @@
                     End If
                 End With
                 mobjPolicySeq = Nothing
-                '+ Ventana de fin de proceso
+            '+ Ventana de fin de proceso
             Case "GE101"
                 insvalSequence = vbNullString
 
@@ -821,8 +821,8 @@
                     insvalSequence = mobjPolicySeq.insValCA047("CA047", mobjValues.StringToType(.Form.Item("tcdStayDate"), eFunctions.Values.eTypeData.etdDate))
                 End With
 
-                '**+ VI006:	Investments Funds.
-                '+ VI006: Fondos de inversiones.
+            '**+ VI006:	Investments Funds.
+            '+ VI006: Fondos de inversiones.
 
             Case "VI006"
 
@@ -858,7 +858,7 @@
                     lclsFunds_Pol = Nothing
                 End With
 
-                '+ VI732: Cuadro de valores garantizados 
+            '+ VI732: Cuadro de valores garantizados 
             Case "VI732"
                 mobjPolicySeq = New ePolicy.Guarant_val
                 With Request
@@ -876,7 +876,7 @@
                 End With
                 lclsDecla_benef = Nothing
 
-                '+ CA748: Observaciones de una propuesta
+            '+ CA748: Observaciones de una propuesta
             Case "CA748"
                 mobjPolicySeq = New ePolicy.obs_proposal
                 With Request
@@ -885,14 +885,14 @@
                     End If
                 End With
 
-                '+ VA589: Datos particulares de Vida activa
+            '+ VA589: Datos particulares de Vida activa
             Case "VA589"
                 mobjPolicySeq = New ePolicy.Activelife
                 With Request
                     insvalSequence = mobjPolicySeq.insValVA589(.QueryString("sCodispl"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeIduraind"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnInsurtime"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapitaldeath"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremdeal"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCalPrem"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbenTypeinvest"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnIntproject"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnWarminint"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valAgreement"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddnModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddnPremMin"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("valAgreement_sLevelint"))
                 End With
 
-                '+ VI701: Datos particulares de VidActiva
+            '+ VI701: Datos particulares de VidActiva
             Case "VI701"
                 mobjPolicySeq = New ePolicy.Life
                 With Request
@@ -900,14 +900,14 @@
 
                 End With
 
-                '+ CA658: Nómina de cotización (vida colectivo)
+            '+ CA658: Nómina de cotización (vida colectivo)
             Case "CA658"
                 mobjPolicySeq = New ePolicy.Client_tmp
                 With Request
                     insvalSequence = mobjPolicySeq.insvalCA658(Request.QueryString.Item("WindowType"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeRole"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcdBirthDat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeTAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnInsured"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeGroup"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnRentAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("OptAge"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddExistGroups"), .Form.Item("optType"))
                 End With
 
-                '+ VI811: Asegurados por coberturas (Pólizas innominadas)
+            '+ VI811: Asegurados por coberturas (Pólizas innominadas)
             Case "VI811"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -919,7 +919,7 @@
                     End If
                 End With
 
-                '+ VI662: Datos particulares vida colectivo (Educacional)
+            '+ VI662: Datos particulares vida colectivo (Educacional)
             Case "VI662"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -936,7 +936,7 @@
                     End If
                 End With
 
-                '+ AM002: Tarifas de atención médica
+            '+ AM002: Tarifas de atención médica
             Case "AM002"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -946,7 +946,7 @@
                     End If
                 End With
 
-                '+ AM003: Conceptos de pago por coberturas de atención médica
+            '+ AM003: Conceptos de pago por coberturas de atención médica
             Case "AM003"
                 With Request
                     mobjPolicySeq1 = New ePolicy.ValPolicySeq
@@ -959,7 +959,7 @@
                     mobjPolicySeq1 = Nothing
                 End With
 
-                '+ AM006: Exclusión de enfermedades
+            '+ AM006: Exclusión de enfermedades
             Case "AM006"
                 With Request
                     mobjPolicySeq = New ePolicy.Tab_am_exc
@@ -985,7 +985,7 @@
                     End If
                 End With
 
-                '+ VI666: Cotización
+            '+ VI666: Cotización
             Case "VI666"
                 mobjPolicySeq = New ePolicy.Cover_quota
                 With Request
@@ -999,7 +999,7 @@
                 End With
 
 
-                '+ VA595: Ilustración del valor póliz
+            '+ VA595: Ilustración del valor póliz
             Case "VA595"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1011,7 +1011,7 @@
                     End If
                 End With
 
-                '+ RV778: Datos particulares de rentas vitalicias
+            '+ RV778: Datos particulares de rentas vitalicias
             Case "RV778"
                 With Request
                     If .QueryString.Item("WindowType") <> "PopUp" Then
@@ -1023,7 +1023,7 @@
                     End If
                 End With
 
-                '+ CA048: Fin de proceso
+            '+ CA048: Fin de proceso
             Case "CA048"
                 insvalSequence = mobjPolicySeq.insValCA048("CA048", Request.Form.Item("chkPendenStat"), mobjValues.StringToType(Request.Form.Item("cbeWaitCode"), eFunctions.Values.eTypeData.etdDouble, True), Session("nTransaction"))
 
@@ -1031,7 +1031,7 @@
 
                 insvalSequence = mobjPolicySeq.insValCA050("CA050", Request.Form.Item("chkDetailedEntryPrinted"), mobjValues.StringToType(Request.Form.Item("cboWaitCode"), eFunctions.Values.eTypeData.etdDouble, True), Session("nTransaction"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate))
 
-                '+ OS001: Solicitud de ordenes de servicio
+            '+ OS001: Solicitud de ordenes de servicio
             Case "OS001", "OS001_K"
                 mobjPolicySeq = New eClaim.Prof_ord
                 With Request
@@ -1041,18 +1041,18 @@
                     End If
                 End With
 
-                '**+ CA829: Resumen de coberturas
-                '+ CA829: Resumen de coberturas.
+            '**+ CA829: Resumen de coberturas
+            '+ CA829: Resumen de coberturas.
 
             Case "CA829"
                 insvalSequence = vbNullString
 
-                '+ CA830: Certificado de cobertura
+            '+ CA830: Certificado de cobertura
             Case "CA830"
                 insvalSequence = mobjPolicySeq.insValCA830("CA830", Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnCoverageCertificate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("ValIntermed"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate))
 
-                '**+ VI7003: Savings Plan.
-                '+ VI7003: Plan de Ahorros.
+            '**+ VI7003: Savings Plan.
+            '+ VI7003: Plan de Ahorros.
             Case "VI7003"
                 With Request
                     If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -1061,8 +1061,8 @@
                     End If
                 End With
 
-                '**+ VI7005: Transference information.
-                '+ VI7005: Información de transferencia.
+            '**+ VI7005: Transference information.
+            '+ VI7005: Información de transferencia.
 
             Case "VI7005"
                 With Request
@@ -1073,17 +1073,17 @@
                     End If
                 End With
 
-                '+ VI849: Criterios de selección de riesgo (Asegurado).
+            '+ VI849: Criterios de selección de riesgo (Asegurado).
             Case "VI849"
                 insvalSequence = vbNullString
-                '+ CA851: Vía de pago
+            '+ CA851: Vía de pago
             Case "CA851"
                 mobjPolicySeq = New ePolicy.ValPolicySeq
                 With Request
                     'insvalSequence= VbNullstring
                     insvalSequence = mobjPolicySeq.insValCA851(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToDate(Session("dEffecdate")), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
-                '+ CA960: Límite por prestaciones.
+            '+ CA960: Límite por prestaciones.
             Case "CA960"
                 mobjPolicySeq = New ePolicy.Franchise
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -1095,7 +1095,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA100: convenios asociados a prestaciones
+            '+ CA100: convenios asociados a prestaciones
             Case "CA100"
                 mobjPolicySeq = New eProduct.Lend_Agree_Pres
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -1106,11 +1106,11 @@
                 End If
 
                 mobjPolicySeq = Nothing
-                '+ CA659: Secciones reporte automático para póliza
+            '+ CA659: Secciones reporte automático para póliza
             Case "CA659"
                 insvalSequence = ""
 
-                '+ VI006A: Fondos de inversiones por póliza matríz.
+            '+ VI006A: Fondos de inversiones por póliza matríz.
             Case "VI006A"
 
 
@@ -1149,7 +1149,7 @@
                 End With
                 lclsFunds_CO_P = Nothing
 
-                '+ VI8001: Prima base
+            '+ VI8001: Prima base
             Case "VI8001"
                 insvalSequence = ""
             Case "VI8002"
@@ -1168,7 +1168,7 @@
                 End With
 
 
-                '+ AP004: Clasificación de riesgos AP
+            '+ AP004: Clasificación de riesgos AP
             Case "AP004"
                 mobjPolicySeq = New ePolicy.Class_ap
                 With Request
@@ -1208,8 +1208,8 @@
                     End If
                 End With
 
-                '*+RO001: Particular information on Theft
-                '+RO001: Datos Particulares de Robo
+            '*+RO001: Particular information on Theft
+            '+RO001: Datos Particulares de Robo
             Case "RO001"
                 With Request
                     mobjPolicySeq = New ePolicy.Theft
@@ -1217,8 +1217,8 @@
 
                 End With
 
-                '*+TR001: particular information on transport
-                '+TR001: Información particular de Transporte
+            '*+TR001: particular information on transport
+            '+TR001: Información particular de Transporte
             Case "TR001"
                 With Request
                     mobjPolicySeq = New ePolicy.transport
@@ -1226,8 +1226,8 @@
 
                 End With
 
-                '*+TR002: Covered routes
-                '+TR002: Rutas aseguradas
+            '*+TR002: Covered routes
+            '+TR002: Rutas aseguradas
             Case "TR002"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1236,8 +1236,8 @@
                     End If
                 End With
 
-                '*+TR003: Shipped mechandise
-                '+TR003: Mercancías transportadas
+            '*+TR003: Shipped mechandise
+            '+TR003: Mercancías transportadas
             Case "TR003"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1265,8 +1265,8 @@
                     End If
                 End With
 
-                '+TR004: Transportation Modes
-                '+TR004: Medios de transporte
+            '+TR004: Transportation Modes
+            '+TR004: Medios de transporte
             Case "TR004"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1315,8 +1315,8 @@
 
                     End If
                 End With
-                '*+TR009: Itinerario de transporte
-                '+TR009: Transport Itineraries
+            '*+TR009: Itinerario de transporte
+            '+TR009: Transport Itineraries
             Case "TR009"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1333,14 +1333,14 @@
                     End If
                 End With
 
-                '+ SH001: Datos Particulares de Marítimo Cascos
+            '+ SH001: Datos Particulares de Marítimo Cascos
             Case "SH001"
                 mobjPolicySeq = New ePolicy.Ship
                 With Request
                     insvalSequence = mobjPolicySeq.insValSH001(.QueryString("sCodispl"), mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger), .QueryString("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeShipUse"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctName"), .Form.Item("tctRegist"), mobjValues.StringToType(.Form.Item("valMaterial"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctColor"), mobjValues.StringToType(.Form.Item("cbeShipType"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctConstructor"), mobjValues.StringToType(.Form.Item("tcnConsYear"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("tcnEquivYear"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("tcdLastCareDate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctLastCarePlace"), mobjValues.StringToType(.Form.Item("tcnDepth"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnLength"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnWaters"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnNumMotors"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctModelMotors"), .Form.Item("tctSerialMotors"), mobjValues.StringToType(.Form.Item("tcnPower"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnTRB"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnTRN"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapacity"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeUnitMesureCode"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctSeaPort"), .Form.Item("tctDotation"), .Form.Item("tctActionZone"))
                 End With
 
-                '+HO001: Datos Particulares de Hogar
+            '+HO001: Datos Particulares de Hogar
 
             Case "HO001"
                 With Request
@@ -1349,7 +1349,7 @@
 
                 End With
 
-                '+ RM001: Datos Particulares de Rotura de Maquinaria
+            '+ RM001: Datos Particulares de Rotura de Maquinaria
             Case "RM001"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1366,14 +1366,14 @@
                     End If
                 End With
 
-                '+RC001: Información particular de Resp. Civil
+            '+RC001: Información particular de Resp. Civil
             Case "RC001"
                 With Request
                     mobjPolicySeq = New ePolicy.Civil
                     insvalSequence = mobjPolicySeq.InsValRC001(.QueryString("sCodispl"), mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger), .QueryString("Action"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), mobjValues.StringToType(.Form.Item("cbeUnit_type"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(.Form.Item("tcnUnit_quan"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(.Form.Item("cbeBusinessTy"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("valCommerGrp"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("valCodKind"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctDescBussi"), mobjValues.StringToType(.Form.Item("valConstCat"), eFunctions.Values.eTypeData.etdInteger))
 
                 End With
-                '+ VI7500: SAAPV
+            '+ VI7500: SAAPV
             Case "VI7500"
 
                 mobjsAapv = New eSaapv.Saapv
@@ -1396,7 +1396,7 @@
             Case "GI1408"
                 insvalSequence = ""
 
-                '+ CA635: Condicines de prima
+            '+ CA635: Condicines de prima
             Case "CA635"
                 mobjPolicySeq = New ePolicy.Cond_cover_premium
                 With Request
@@ -1668,24 +1668,24 @@
                     insvalSequence = mobjPolicyseqAviat_Marit.insValAV001_SH010("SH010", mobjValues.StringToType(.Form.Item("cbeParticular"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctBrand"), .Form.Item("tctModel"), .Form.Item("tctYear"), .Form.Item("tctRegistrationnumber"), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctAddicionaltext"), , , , , , , , .Form.Item("tctName"), .Form.Item("tctSeries"), .Form.Item("tctOrigin"), .Form.Item("tctNavigationcertificate"), mobjValues.StringToType(.Form.Item("tcnQualificationship"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctPortdeparture"), .Form.Item("tctPortarrival"), .Form.Item("tctDimensions"))
                 End With
                 mobjPolicyseqAviat_Marit = Nothing
-                '+ AP010: Accidentes Personales.
+            '+ AP010: Accidentes Personales.
 
-                'Case "AP010"
-                '    mobjPolicySeq = New ePolicy.AccidentPerson
-                '    If Request.QueryString.Item("WindowType") = "PopUp" Then
-                '        With Request
+            'Case "AP010"
+            '    mobjPolicySeq = New ePolicy.AccidentPerson
+            '    If Request.QueryString.Item("WindowType") = "PopUp" Then
+            '        With Request
 
-                '            insvalSequence = mobjPolicySeq.insValAP010UPD(.QueryString("Action"), "AP010", .Form.Item("cbeEmployeeCode"), .Form.Item("tctLastName"), .Form.Item("tctLastName2"), _
-                '                                                        .Form.Item("tctFirstName"), .Form.Item("tctMiddleName"), mobjValues.StringToType(.Form.Item("DateBirthdate"), eFunctions.Values.eTypeData.etdDate), _
-                '                                                         mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctBeneficiarnotes"), _
-                '                                                         mobjValues.StringToType(.Form.Item("DateNulldate"), eFunctions.Values.eTypeData.etdDate))
+            '            insvalSequence = mobjPolicySeq.insValAP010UPD(.QueryString("Action"), "AP010", .Form.Item("cbeEmployeeCode"), .Form.Item("tctLastName"), .Form.Item("tctLastName2"), _
+            '                                                        .Form.Item("tctFirstName"), .Form.Item("tctMiddleName"), mobjValues.StringToType(.Form.Item("DateBirthdate"), eFunctions.Values.eTypeData.etdDate), _
+            '                                                         mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctBeneficiarnotes"), _
+            '                                                         mobjValues.StringToType(.Form.Item("DateNulldate"), eFunctions.Values.eTypeData.etdDate))
 
-                '        End With
-                '    Else
-                '        insvalSequence = mobjPolicySeq.insValAP010("AP010", Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble),
-                '                                                     mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble))
+            '        End With
+            '    Else
+            '        insvalSequence = mobjPolicySeq.insValAP010("AP010", Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble),
+            '                                                     mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble))
 
-                '    End If
+            '    End If
             Case "CM001"
                 mobjPolicySeq = New ePolicy.TRCM
                 With Request
@@ -1801,7 +1801,7 @@
                                                               Session("nUsercode"))
                     End If
                 End With
-                '+ VI641: Criterios para seleción de riesgo
+            '+ VI641: Criterios para seleción de riesgo
             Case "CA061"
                 mobjPolicySeq = New ePolicy.Creditor_information
                 With Request
@@ -1835,7 +1835,7 @@
                     End If
                 End With
 
-                '+ CA727 - Reportes automáticos de la póliza
+            '+ CA727 - Reportes automáticos de la póliza
             Case "CA727"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     lblnPost = mobjPolicySeq.insPostCA727(Request.QueryString.Item("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("cbeCodispl"), mobjValues.StringToType(Request.Form.Item("cbeTransactype"), eFunctions.Values.eTypeData.etdDouble), Session("nUsercode"))
@@ -1846,7 +1846,7 @@
                         Call lclsPolicy_Win.Add_PolicyWin(Session("scertype"), Session("nBranch"), Session("nProduct"), Session("npolicy"), Session("ncertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA727", "2")
                     End If
                 End If
-                '+ CA054 - Capitales Depreciados
+            '+ CA054 - Capitales Depreciados
             Case "CA054"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     lblnPost = mobjPolicySeq.insPostCA054(Request.QueryString.Item("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdStartdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdExpirdat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), Session("nUsercode"), mobjValues.StringToType(Session("nType_amend"), Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnEndorsementValue"), eFunctions.Values.eTypeData.etdDouble))
@@ -1855,7 +1855,7 @@
                     lclsPolicy_Win = New ePolicy.Policy_Win
                     Call lclsPolicy_Win.Add_PolicyWin(Session("scertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA054", "2")
                 End If
-                '+ CA054 - Capitales Depreciados
+            '+ CA054 - Capitales Depreciados
             Case "CA054"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     lblnPost = mobjPolicySeq.insPostCA054(Request.QueryString.Item("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("hddCCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdStartdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdExpirdat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), Session("nUsercode"), mobjValues.StringToType(Session("nType_amend"), Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnEndorsementValue"), eFunctions.Values.eTypeData.etdDouble))
@@ -1864,7 +1864,7 @@
                     lclsPolicy_Win = New ePolicy.Policy_Win
                     Call lclsPolicy_Win.Add_PolicyWin(Session("scertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA054", "2")
                 End If
-                '+ VI665 - Recargo por actividad del grupo (Vida colectivo).
+            '+ VI665 - Recargo por actividad del grupo (Vida colectivo).
             Case "VI665"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     mobjPolicySeq = New ePolicy.Activ_Group
@@ -1877,7 +1877,7 @@
                 End If
 
 
-                '+ VI681 - Recargos/Descuentos de los asegurados (Vida)
+            '+ VI681 - Recargos/Descuentos de los asegurados (Vida)
             Case "VI681"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     lclsInsured_expdis = New ePolicy.Insured_expdis
@@ -1888,20 +1888,20 @@
                     End With
                 End If
 
-                '+ CA001: Tratamiento de pólizas
+            '+ CA001: Tratamiento de pólizas
             Case "CA001"
                 Session("PageRetCA050") = "CA001"
                 lblnPost = insPostCA001()
-                '+ CA001: Tratamiento de pólizas
+            '+ CA001: Tratamiento de pólizas
             Case "CA001C"
                 Session("PageRetCA050") = "CA001C"
                 lblnPost = insPostCA001()
-                '+ CA003: Vía de cobro
+            '+ CA003: Vía de cobro
             Case "CA003"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA003(.QueryString("Action"), .Form.Item("tctClient"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeBankExt"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("valAccount"), mobjValues.StringToType(.Form.Item("cbeTyp_crecard"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("optBank"), Session("nUsercode"), mobjValues.StringToType(.Form.Item("tcdDateExpir"), eFunctions.Values.eTypeData.etdDate), "", .Form.Item("tctBankAuth"), Session("nTransaction"), .Form.Item("valCredi_card"), mobjValues.StringToType(.Form.Item("cbeTyp_Account"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
-                '+ VA1410: Ilustración del valor póliza VUL
+            '+ VA1410: Ilustración del valor póliza VUL
             Case "VI1410"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1933,7 +1933,7 @@
                         End If
                     End If
                 End With
-                '+ VA1410: Ilustración del valor póliza VUL
+            '+ VA1410: Ilustración del valor póliza VUL
             Case "VI7006"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -1949,7 +1949,7 @@
                     End If
                 End With
 
-                '+ CA004: Datos para la facturación
+            '+ CA004: Datos para la facturación
             Case "CA004"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA004(.QueryString("nHolder"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("sPolitype"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctClient"), .Form.Item("optFreq"), mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeQuota"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeIndexType"), .Form.Item("cbeIndexApl"), .Form.Item("chkNoNull"), mobjValues.StringToType(.Form.Item("tcdStartDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdExpirDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdIssuedat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdReqDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnCopies"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndexRate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDaysNull"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chkDeclarative"), .Form.Item("chkFracti"), IIf(String.IsNullOrEmpty(.Form.Item("chkRenewalAut")), "2", .Form.Item("chkRenewalAut")), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valAgreement"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSendAddr"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chksInsubank"), .Form.Item("chksNoPayRoll"), .Form.Item("chkExemption"), mobjValues.StringToType(.Form.Item("cbenSpecialbusiness"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chksLeg"), mobjValues.StringToType(.Form.Item("tcnDays_quot"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeBill_ind"), mobjValues.StringToType(.Form.Item("tcnDuration"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("hhDirTyp"), mobjValues.StringToType(.Form.Item("valCollector"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chkFracReceip"), mobjValues.StringToType(.Form.Item("valgroup_Agree"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("tctcumul_code"), mobjValues.StringToType(.Form.Item("cbeRepInsured"), eFunctions.Values.eTypeData.etdDouble, True), "1", .Form.Item("cbeReceipt_ind"), mobjValues.StringToType(.Form.Item("tcnTerm_grace"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(.Form.Item("tcdTariffDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeDepreciationtable"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("chksInd_Multiannual"), .Form.Item("chksIndqsame"), .Form.Item("chksInd_IFI"), mobjValues.StringToType(Session("nType_amend"), Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnExtraDay"), eFunctions.Values.eTypeData.etdDouble, True) , mobjValues.StringToType(.Form.Item("cbenFormPay"), eFunctions.Values.eTypeData.etdInteger, True) ,  mobjValues.StringToType(.Form.Item("cbenPromissory_Note"), eFunctions.Values.eTypeData.etdInteger,  True))
@@ -1960,13 +1960,13 @@
                         Session("nPayFreq") = mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble)
                     End If
                 End With
-                '+ Información general del colectivo
+            '+ Información general del colectivo
             Case "CA006"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA006(Session("sCertype"), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("sColtimre"), .Form.Item("cbeColInvot"), .Form.Item("cbeColReint"), mobjValues.StringToType(.Form.Item("tcnQCertif"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("txtTariff"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("cbeTypClause"), .Form.Item("cbeTypDiscxp"), .Form.Item("cbeDocuTyp"), .Form.Item("cbeTypModule"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCNotice"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("cbeColtPres"), .Form.Item("chkMassive"), .Form.Item("chkRepPrintCov"), mobjValues.StringToType(.Form.Item("cbenTypeExc"), eFunctions.Values.eTypeData.etdInteger))
                 End With
 
-                '+ VI021: documentos solicitados
+            '+ VI021: documentos solicitados
             Case "VI021"
                 With Request
 
@@ -2013,7 +2013,7 @@
                     End If
                 End With
 
-                '+ CA002: Convenios de cobranza de una póliza
+            '+ CA002: Convenios de cobranza de una póliza
             Case "CA002"
                 mobjPolicySeq = New ePolicy.Agreement_pol
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2025,7 +2025,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA008: Situaciones de riesgo.
+            '+ CA008: Situaciones de riesgo.
             Case "CA008"
                 mobjPolicySeq = New ePolicy.Situation
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2040,7 +2040,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA009: Capitales Básicos Asegurados
+            '+ CA009: Capitales Básicos Asegurados
             Case "CA009"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2055,7 +2055,7 @@
                     End If
                 End With
 
-                '+ CA010 : Bienes asegurables a la póliza.   
+            '+ CA010 : Bienes asegurables a la póliza.   
             Case "CA010"
                 With Request
                     mobjPolicySeq = New ePolicy.Property_Renamed
@@ -2069,7 +2069,7 @@
                 End With
 
 
-                '+ CA060 : Desglose de una cobertura.   
+            '+ CA060 : Desglose de una cobertura.   
             Case "CA060"
                 With Request
                     If Not .QueryString.Item("WindowType") = vbNullString Then
@@ -2094,7 +2094,7 @@
                         lblnPost = True
                     End If
                 End With
-                '+ CA011 = Grupos de Colectivos
+            '+ CA011 = Grupos de Colectivos
             Case "CA011"
                 lclsPolicy_Win = New ePolicy.Policy_Win
 
@@ -2115,7 +2115,7 @@
                     End If
                 End If
 
-                '+ CA012: Elementos de Protección            
+            '+ CA012: Elementos de Protección            
             Case "CA012"
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2145,7 +2145,7 @@
                 End If
 
 
-                '+ CA013: Módulos de la Póliza Individual o Certificado
+            '+ CA013: Módulos de la Póliza Individual o Certificado
             Case "CA013", "CA013A"
                 mobjPolicySeq = New ePolicy.Modules
                 With Request
@@ -2224,13 +2224,13 @@
                         End If
                     End If
                 End With
-                '+ CA015: Franquicia/Deducible de la Póliza
+            '+ CA015: Franquicia/Deducible de la Póliza
             Case "CA015", "CA15-1"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA015(Request.QueryString.Item("sCodispl"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), CStr(Session("nTransaction")), Session("sTypeCompanyUser"), .Form.Item("optFranchiseType"), .Form.Item("cbeFranqApl"), mobjValues.StringToType(.Form.Item("cbeCurrencyFD"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDiscountPerc"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDiscountAmou"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchisePerc"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseAmou"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseMin"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFranchiseMax"), eFunctions.Values.eTypeData.etdDouble), Session("sPolitype"))
                 End With
 
-                '+ CA016: Recargos/descuentos/impuestos de una póliza individual o certificado
+            '+ CA016: Recargos/descuentos/impuestos de una póliza individual o certificado
             Case "CA016", "CA016A"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2264,12 +2264,12 @@
 
                 mstrQueryString = "&nPage=" & Request.Form.Item("hddPage")
 
-                '+ CA017: Emisión de Recibos de una póliza 
+            '+ CA017: Emisión de Recibos de una póliza 
             Case "CA017"
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA017", "2")
 
-                '+ CA017A: Cuotas de un recibo 
+            '+ CA017A: Cuotas de un recibo 
             Case "CA017A"
                 If CBool(Request.Form.Item("hddbValCa017a")) Then
                     lclsPolicy_Win = New ePolicy.Policy_Win
@@ -2278,11 +2278,11 @@
                     lblnPost = True
                 End If
 
-                '+ CA017A: Emisión de Recibos de una póliza  solicitud de endoso
+            '+ CA017A: Emisión de Recibos de una póliza  solicitud de endoso
             Case "CA017B"
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA017B", "2")
-                '+ CA020: Distribución de Coaseguro
+            '+ CA020: Distribución de Coaseguro
             Case "CA020"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2292,7 +2292,7 @@
                     End If
                 End With
 
-                '+ CA021: Distribución de Reaseguro
+            '+ CA021: Distribución de Reaseguro
             Case "CA021"
 
                 If Not Session("bQuery") Then
@@ -2324,12 +2324,13 @@
                             mstrQueryString = "&nChange=" & Request.Form.Item("cbeChange") & "&nCapital_cov=" & Request.QueryString.Item("nCapital_cov")
                             lintGrid = 1
                         End If
-
-                        If CDbl(Request.Form.Item("cbeChange")) = 1 Or CDbl(Request.Form.Item("cbeChange")) = 2 Or CDbl(Request.Form.Item("cbeChange")) = 4 Then
+                        '+ PRY-REASEGUROS VT - CAPITAL CORRECTO PARA TIPO DE DISTRIBUCION FACULTATIVA  - LAMC - INICIO
+                        If CDbl(Request.Form.Item("cbeChange")) = 1 Or CDbl(Request.Form.Item("cbeChange")) = 2 Or CDbl(Request.Form.Item("cbeChange")) = 4 Or Or CDbl(Request.Form.Item("cbeChange")) = 3 Then
                             nCapital_rei = mobjValues.StringToType(Request.Form.Item("tcnReinCapital"), eFunctions.Values.eTypeData.etdDouble)
                         Else
                             nCapital_rei = mobjValues.StringToType(Request.Form.Item("tcnParticip"), eFunctions.Values.eTypeData.etdDouble)
                         End If
+                        '+ PRY-REASEGUROS VT - CAPITAL CORRECTO PARA TIPO DE DISTRIBUCION FACULTATIVA  - LAMC - FIN
                         lblnPost = lclsReinsuran.insPostCA021upd(lintGrid, Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("dNullDate"), mobjValues.StringToType(Request.Form.Item("cbeBranchrei"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("valCover"), eFunctions.Values.eTypeData.etdDouble), Request.Form.Item("valClient"), mobjValues.StringToType(llngType, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(llngCompany, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(ldtmAcce, eFunctions.Values.eTypeData.etdDate), nCapital_rei, mobjValues.StringToType(ldblCommiss, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnCurrency"), eFunctions.Values.eTypeData.etdDouble), Request.QueryString.Item("sHeap_Code"), mobjValues.StringToType(ldblInterRate, eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(ldblReserRate, eFunctions.Values.eTypeData.etdDouble), System.Math.Round(CDbl(mobjValues.StringToType(Request.Form.Item("tcnPercentage"), eFunctions.Values.eTypeData.etdDouble)), 6), Session("nUsercode"), Request.QueryString.Item("Action"), Request.Form.Item("tctBrancht"), CInt(Request.Form.Item("cbeChange")), CDbl(Request.Form.Item("tcnRetention")), mobjValues.StringToType(Request.Form.Item("tcnPremium_Agree"), Values.eTypeData.etdDouble))
 
                         '	                                                        mobjValues.StringToType(Request.Form(tcnInter_rate),eFunctions.Values.eTypeData.etdDouble),
@@ -2341,7 +2342,7 @@
                 Else
                     lblnPost = True
                 End If
-                '+ CA021A: REASEGURO PÓLIZA MATRIZ	    
+            '+ CA021A: REASEGURO PÓLIZA MATRIZ	    
             Case "CA021A"
                 'mstrQueryString = "&nQueryModeF=4" & 
                 lclsReinsuran = New ePolicy.Reinsuran
@@ -2359,7 +2360,7 @@
                 Else
                     lblnPost = lclsReinsuran.insPostCA021A(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"))
                 End If
-                '+ CA022: Cláusula/descriptivo/condición especial        
+            '+ CA022: Cláusula/descriptivo/condición especial        
             Case "CA022"
                 With Request
                     mobjPolicySeq = New ePolicy.Clause
@@ -2368,7 +2369,7 @@
                     End If
                 End With
 
-                '+ CA022A: Cláusulas de la póliza matriz
+            '+ CA022A: Cláusulas de la póliza matriz
             Case "CA022A"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA022A(.QueryString("sCodispl"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), .Form.Item("hddnClause"), .Form.Item("hddnSelClause"), .Form.Item("hddNoteNum"), .Form.Item("hddNoteNum_Prod"), mobjValues.StringToType(.Form.Item("valGroup"), eFunctions.Values.eTypeData.etdDouble), Request.Form.Item("chkType_Clause"), Request.Form.Item("tctDoc_attach"))
@@ -2389,7 +2390,7 @@
                     End If
                 End With
 
-                '+ CA023: Beneficiarios identificados por código
+            '+ CA023: Beneficiarios identificados por código
             Case "CA023"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     With Request
@@ -2423,7 +2424,7 @@
                     End With
                 End If
 
-                '+ CA024: Intermediarios
+            '+ CA024: Intermediarios
             Case "CA024"
                 With Request
                     If CBool(IIf(IsNothing(.QueryString.Item("bAll")), False, .QueryString.Item("bAll"))) Then
@@ -2435,7 +2436,7 @@
                     lblnPost = mobjPolicySeq.insPostCA024(.QueryString("bAll"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), .Form.Item("cbeType"), ldblPercent, .Form.Item("hddInd_Comm"), mobjValues.StringToType(.Form.Item("valIntermed"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeRole"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnShare"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddConColl"), .QueryString("Action"), Session("nTransaction"), mobjValues.StringToType(.Form.Item("cbeAgreement"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPercent_ce"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnInstallcom"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+CA025: Cliente de la póliza
+            '+CA025: Cliente de la póliza
             Case "CA025"
                 mobjPolicySeq = New ePolicy.Roles
                 With Request
@@ -2459,7 +2460,7 @@
                         lblnPost = mobjPolicySeq.InsPostCA025(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"))
                     End If
                 End With
-                '+FR001: Instrumentos Financieros
+            '+FR001: Instrumentos Financieros
             Case "FR001"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2489,7 +2490,7 @@
                     End If
                 End With
 
-                '+ CA027, CA027A: Emisión de recibo automático
+            '+ CA027, CA027A: Emisión de recibo automático
             Case "CA027", "CA027A"
                 If Request.QueryString.Item("sCodispl") = "CA027A" Then
                     mobjPolicySeq = New ePolicy.TDetail_pre
@@ -2583,7 +2584,7 @@
                 End If
                 mobjCertificat = Nothing
 
-                '+ CA639: Condición de capitales
+            '+ CA639: Condición de capitales
             Case "CA639"
                 mobjPolicySeq = New ePolicy.Cond_cover
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2631,8 +2632,8 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '**+ VI006:	Investments Funds.
-                '+ VI006: Fondos de inversiones.
+            '**+ VI006:	Investments Funds.
+            '+ VI006: Fondos de inversiones.
 
             Case "VI006"
 
@@ -2680,22 +2681,22 @@
 
                 End With
 
-                '+ IN010: Datos particulares de incendio
+            '+ IN010: Datos particulares de incendio
             Case "IN010"
                 With Request
                     lblnPost = mobjPolicySeq.InsPostIN010("Update", "IN010", Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cboDetailArt"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeConstCat"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnFloor_quan"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSpCombType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSideCloseType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndPeriod"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeRooftype"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeBuildType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSeismicZone"), eFunctions.Values.eTypeData.etdDouble), "", mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), eRemoteDB.Constants.intNull, eRemoteDB.Constants.intNull, mobjValues.StringToType(.Form.Item("tcnDep_prem"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeDecla_Freq"), .Form.Item("cbeDecla_Type"), Session("nUsercode"))
                     Session("IN010") = lblnPost
                 End With
 
-                '+ VI001: Interés Asegurable
+            '+ VI001: Interés Asegurable
             Case "VI001"
                 With Request
                     lblnPost = mobjPolicySeq.InsPostVI001("Update", "VI001", Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nUsercode"), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPerNunMi"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeTypDurins"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnInsur_Time"), eFunctions.Values.eTypeData.etdDouble), Session("sPolitype"), mobjValues.StringToType(.Form.Item("cbovalgroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbovalsituation"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcdexpirdat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnrentamount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbocurrrent"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcncount_insu"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnperc_cap"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeTypDurpay"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPay_Time"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcdDate_pay"), eFunctions.Values.eTypeData.etdDate))
                 End With
 
-                '**+ VI7001 - Life Assurance.
-                '+ VI7001 - Interés asegurable.
-                '+ VI7001 - Interes Asegurable - Unit Linked 
+            '**+ VI7001 - Life Assurance.
+            '+ VI7001 - Interés asegurable.
+            '+ VI7001 - Interes Asegurable - Unit Linked 
 
             Case "VI7001"
                 With Request
@@ -2713,7 +2714,7 @@
 
                 End With
 
-                '+ AU001: Información del vehículo
+            '+ AU001: Información del vehículo
 
             Case "AU001"
                 lclsPolicy_Win = New ePolicy.Policy_Win
@@ -2747,13 +2748,13 @@
                     lclsPolicy_Win = Nothing
                 End With
 
-                '+ CA041: Selección de Monedas
+            '+ CA041: Selección de Monedas
             Case "CA041"
                 With Request
                     lblnPost = mobjPolicySeq.insPostCA041(mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddExist"), .Form.Item("hddChange"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToDate(Session("dEffecdate")), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddCurrency"))
                 End With
 
-                '+ Ventana de Fin de proceso        
+            '+ Ventana de Fin de proceso        
             Case "GE101"
                 lblnPost = insCancel()
 
@@ -2762,7 +2763,7 @@
                     lblnPost = mobjPolicySeq.insPostCA047(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), .Form.Item("optTypeSolic"), .Form.Item("tcdStayDate"), Session("nTransaction"))
                 End With
 
-                '+ VI732: Cuadro de valores garantizados 
+            '+ VI732: Cuadro de valores garantizados 
             Case "VI732"
                 With Request
                     If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2774,7 +2775,7 @@
                 End With
 
 
-                '+ VI769: Declaración de beneficiarios
+            '+ VI769: Declaración de beneficiarios
             Case "VI769"
                 lclsDecla_benef = New ePolicy.Decla_benef
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -2784,7 +2785,7 @@
                 End If
                 lclsDecla_benef = Nothing
 
-                '+ CA748: Observaciones de una propuesta
+            '+ CA748: Observaciones de una propuesta
             Case "CA748"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2794,7 +2795,7 @@
                     End If
                 End With
 
-                '+ VA589: Datos particulares de Vida activa
+            '+ VA589: Datos particulares de Vida activa
             Case "VA589"
                 mobjPolicySeq = New ePolicy.Activelife
                 With Request
@@ -2802,17 +2803,17 @@
 
                 End With
 
-                '+ VI701: Datos particulares vida colectivo desgravamen
+            '+ VI701: Datos particulares vida colectivo desgravamen
             Case "VI701"
                 mobjPolicySeq = New ePolicy.Life
                 lblnPost = mobjPolicySeq.insPostVI701(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("cbeGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnAmount_cre"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnAmount_act"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("cbeCurren_cre"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("cbeCalcapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("cbeTyppremium"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("cbeSituation"), eFunctions.Values.eTypeData.etdDouble, True), Request.Form.Item("tctCreditnum"), mobjValues.StringToType(Request.Form.Item("cbeCred_pro"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcdInit_cre"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdEnd_cre"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("tctAccnum"), mobjValues.StringToType(Request.Form.Item("tcnCapitalmax"), eFunctions.Values.eTypeData.etdDouble), Session("nUsercode"), mobjValues.StringToType(Request.Form.Item("tcnRateDesg"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnQ_Quot"), eFunctions.Values.eTypeData.etdInteger, True), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnPremium"), eFunctions.Values.eTypeData.etdDouble))
-                '+ CA658: Nómina de cotización (vida colectivo)
+            '+ CA658: Nómina de cotización (vida colectivo)
             Case "CA658"
                 With Request
                     lblnPost = mobjPolicySeq.inspostCA658(Request.QueryString.Item("WindowType"), Request.QueryString.Item("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeGroup"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeRole"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnId"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("OptAge"), mobjValues.StringToType(.Form.Item("tcdBirthDat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnInitAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnEndAge"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnInsured"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnRentAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chkVIP"), .Form.Item("optType"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAge"), eFunctions.Values.eTypeData.etdDouble))
                 End With
 
-                '+ AM002: Tarifas de atención médica
+            '+ AM002: Tarifas de atención médica
             Case "AM002"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2834,7 +2835,7 @@
                     End If
                 End With
 
-                '+ AM006: Exclusión de enfermedades
+            '+ AM006: Exclusión de enfermedades
             Case "AM006"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2859,7 +2860,7 @@
                     End If
                 End With
 
-                '+ VI811: Asegurados por coberturas (Pólizas innominadas)
+            '+ VI811: Asegurados por coberturas (Pólizas innominadas)
             Case "VI811"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2867,7 +2868,7 @@
                     End If
                 End With
 
-                '+ VI666: Cotización
+            '+ VI666: Cotización
             Case "VI666"
                 mobjPolicySeq = New ePolicy.Cover_quota
                 With Request
@@ -2875,7 +2876,7 @@
                     mstrQueryString = "&nGroup=" & .QueryString.Item("nGroup")
                 End With
 
-                '+ VI662: Datos particulares vida colectivo (Educacional)
+            '+ VI662: Datos particulares vida colectivo (Educacional)
             Case "VI662"
                 With Request
                     If .QueryString.Item("WindowType") <> "PopUp" Then
@@ -2902,7 +2903,7 @@
                     End If
                 End With
 
-                '+ VA595: Ilustración del valor póliz
+            '+ VA595: Ilustración del valor póliz
             Case "VA595"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -2918,7 +2919,7 @@
                     End If
                 End With
 
-                '+ RV778: Datos particulares de rentas vitalicias
+            '+ RV778: Datos particulares de rentas vitalicias
             Case "RV778"
                 With Request
                     If .QueryString.Item("WindowType") <> "PopUp" Then
@@ -2932,7 +2933,7 @@
                     End If
                 End With
 
-                '+ OS001: Solicitud de ordenes de servicio
+            '+ OS001: Solicitud de ordenes de servicio
             Case "OS001", "OS001_K"
                 With Request
                     mstrQueryString = "&nOrdClass=" & Request.Form.Item("hddnOrdClass") & "&nBranch=" & Request.Form.Item("hddnBranch") & "&nProduct=" & Request.Form.Item("hddnProduct") & "&nPolicy=" & Request.Form.Item("hddnPolicy") & "&nProponum=" & Request.Form.Item("hddnProponum") & "&nCertif=" & Request.Form.Item("hddnCertif") & "&nClaim=" & Request.Form.Item("hddnClaim") & "&nCase_num=" & Request.Form.Item("hddnCase_num") & "&sCodisplOri=" & Request.Form.Item("hddsCodisplOri") & "&sBrancht=" & Request.Form.Item("hddsBrancht") & "&nDeman_type=" & Request.Form.Item("hddnDeman_type")
@@ -2954,19 +2955,19 @@
                     End If
                 End With
 
-                '**+ CA829: Resumen de coberturas
-                '+ CA829: Resumen de coberturas.
+            '**+ CA829: Resumen de coberturas
+            '+ CA829: Resumen de coberturas.
 
             Case "CA829"
                 lblnPost = True
 
-                '**+ CA830: Certificado de coberturas
-                '+ CA830: Certificado de coberturas
+            '**+ CA830: Certificado de coberturas
+            '+ CA830: Certificado de coberturas
             Case "CA830"
                 lblnPost = mobjPolicySeq.insPostCA830(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnCoverageCertificate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble))
 
-                '**+ VI7003: Savings Plan.
-                '+ VI7003: Plan de Ahorros.
+            '**+ VI7003: Savings Plan.
+            '+ VI7003: Plan de Ahorros.
 
             Case "VI7003"
                 With Request
@@ -2976,8 +2977,8 @@
                     End If
                 End With
 
-                '**+ VI7005: Transference information.
-                '+ VI7005: Información de transferencia. 
+            '**+ VI7005: Transference information.
+            '+ VI7005: Información de transferencia. 
 
             Case "VI7005"
                 With Request
@@ -2986,10 +2987,10 @@
                     End If
                 End With
 
-                '+ VI849: Criterios de selección de riesgo (Asegurado).
+            '+ VI849: Criterios de selección de riesgo (Asegurado).
             Case "VI849"
                 lblnPost = True
-                '+ CA851: Vía de Pago
+            '+ CA851: Vía de Pago
             Case "CA851"
                 mobjPolicySeq = New ePolicy.ValPolicySeq
                 With Request
@@ -2997,7 +2998,7 @@
                     lblnPost = mobjPolicySeq.insPostCA851(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToDate(Session("dEffecdate")), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hhDirTyp"), mobjValues.StringToType(.Form.Item("valCollector"), eFunctions.Values.eTypeData.etdDouble, True))
                 End With
 
-                '+ CA960: Límite por prestaciones.
+            '+ CA960: Límite por prestaciones.
             Case "CA960"
                 mobjPolicySeq = New ePolicy.Franchise
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -3010,7 +3011,7 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA100: prestaciones en convenio
+            '+ CA100: prestaciones en convenio
             Case "CA100"
                 mobjPolicySeq = New eProduct.Lend_Agree_Pres
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -3025,14 +3026,14 @@
                 End If
                 mobjPolicySeq = Nothing
 
-                '+ CA659: Secciones reporte automático para póliza
+            '+ CA659: Secciones reporte automático para póliza
             Case "CA659"
                 lblnPost = True
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 Call lclsPolicy_Win.Add_PolicyWin(Session("scertype"), Session("nBranch"), Session("nProduct"), Session("npolicy"), Session("ncertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA659", "2")
                 lclsPolicy_Win = Nothing
 
-                '+ VI8000: Valores garantizados
+            '+ VI8000: Valores garantizados
             Case "VI8000"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
                     mobjPolicySeq = New ePolicy.Guar_Saving_Pol
@@ -3044,7 +3045,7 @@
                     lblnPost = True
                 End If
 
-                '+ VI006A: Fondos de inversiones por póliza matríz.
+            '+ VI006A: Fondos de inversiones por póliza matríz.
             Case "VI006A"
 
                 'UPGRADE_NOTE: The 'ePolicy.Funds_CO_P' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Archivos de programa\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
@@ -3077,7 +3078,7 @@
 
                 End With
 
-                '+ VI8001: Prima base
+            '+ VI8001: Prima base
             Case "VI8001"
                 lblnPost = True
 
@@ -3085,7 +3086,7 @@
 
                 Call lclsPolicy_Win.Add_PolicyWin(Session("scertype"), Session("nBranch"), Session("nProduct"), Session("npolicy"), Session("ncertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "VI8001", "2")
 
-                '+VI8002:Ahorro Previsional
+            '+VI8002:Ahorro Previsional
 
             Case "VI8002"
                 mobjPolicySeq = New ePolicy.Apv_origin
@@ -3103,7 +3104,7 @@
                     End If
                 End With
 
-                '+ AP004: Clasificación de riesgos AP
+            '+ AP004: Clasificación de riesgos AP
             Case "AP004"
                 mobjPolicySeq = New ePolicy.Class_ap
                 With Request
@@ -3120,7 +3121,7 @@
                 End With
 
 
-                '+Declaración de las ventas mensuales de los seguros de crédito            
+            '+Declaración de las ventas mensuales de los seguros de crédito            
             Case "CT002"
                 mobjPolicySeq = New ePolicy.CreditSales
                 With Request
@@ -3134,7 +3135,7 @@
                     End If
                 End With
 
-                '+Actualizacion de la ventana de datos particulares de garantia
+            '+Actualizacion de la ventana de datos particulares de garantia
 
             Case "WT001"
                 mobjPolicySeq = New ePolicy.Warranty
@@ -3154,7 +3155,7 @@
                     End If
                 End With
 
-                '+RO001: Datos Particulares de Robo
+            '+RO001: Datos Particulares de Robo
             Case "RO001"
                 mobjPolicySeq = New ePolicy.Theft
                 With Request
@@ -3163,8 +3164,8 @@
 
                 End With
 
-                '*+TR001: Particular information on transport
-                '+TR001: Información particular de Transporte
+            '*+TR001: Particular information on transport
+            '+TR001: Información particular de Transporte
             Case "TR001"
                 mobjPolicySeq = New ePolicy.transport
                 With Request
@@ -3172,8 +3173,8 @@
                     Session("nLimitCapital") = mobjValues.StringToType(.Form.Item("tcnMaxLimTrip"), eFunctions.Values.eTypeData.etdDouble, True)
                 End With
 
-                '*+TR002: Covered routes
-                '+TR002: Rutas aseguradas
+            '*+TR002: Covered routes
+            '+TR002: Rutas aseguradas
             Case "TR002"
                 mobjPolicySeq = New ePolicy.tran_route
                 With Request
@@ -3182,8 +3183,8 @@
                     End If
                 End With
 
-                '*+ TR003: Shipped merchandise
-                '+ TR003: Mercancías transportadas
+            '*+ TR003: Shipped merchandise
+            '+ TR003: Mercancías transportadas
             Case "TR003"
                 mobjPolicySeq = New ePolicy.Tran_merch
                 With Request
@@ -3213,8 +3214,8 @@
                     End If
                 End With
 
-                '*+TR004: Transportation modes
-                '+TR004: Medios de transporte
+            '*+TR004: Transportation modes
+            '+TR004: Medios de transporte
             Case "TR004"
                 mobjPolicySeq = New ePolicy.tran_way
                 With Request
@@ -3223,8 +3224,8 @@
                         lblnPost = mobjPolicySeq.InsPostTR004(CDbl(.QueryString.Item("nZone")) = 1, .QueryString("sCodispl"), mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger), .QueryString("Action"), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdInteger), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), mobjValues.StringToType(.Form.Item("tcnWay"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctName_licen"), .Form.Item("tctDescript"), mobjValues.StringToType(.Form.Item("tcnNoteNum"), eFunctions.Values.eTypeData.etdLong))
                     End If
                 End With
-                '*+TR6000: Rate and Deductibles for transport of merchandise
-                '+TR6000: Tasas y deducibles para mercancías de transporte
+            '*+TR6000: Rate and Deductibles for transport of merchandise
+            '+TR6000: Tasas y deducibles para mercancías de transporte
             Case "TR6000"
                 mobjPolicySeq = New ePolicy.Tran_rate
                 With Request
@@ -3235,8 +3236,8 @@
                         lblnPost = True
                     End If
                 End With
-                '*+TR009: Itinerario de transporte
-                '+TR009: Transport Itineraries
+            '*+TR009: Itinerario de transporte
+            '+TR009: Transport Itineraries
             Case "TR009"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -3270,14 +3271,14 @@
                     End If
                 End With
 
-                '+ SH001: Datos particulares de Maritimo Cascos
+            '+ SH001: Datos particulares de Maritimo Cascos
             Case "SH001"
                 With Request
                     mobjPolicySeq = New ePolicy.Ship
                     lblnPost = mobjPolicySeq.insPostSH001(.QueryString("sCodispl"), mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger), .QueryString("Action"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), mobjValues.StringToType(.Form.Item("cbeShipUse"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctName"), .Form.Item("tctRegist"), mobjValues.StringToType(.Form.Item("valMaterial"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctColor"), mobjValues.StringToType(.Form.Item("cbeShipType"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctConstructor"), mobjValues.StringToType(.Form.Item("tcnConsYear"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("tcnEquivYear"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("tcdLastCareDate"), eFunctions.Values.eTypeData.etdDate), .Form.Item("tctLastCarePlace"), mobjValues.StringToType(.Form.Item("tcnDepth"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnLength"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnWaters"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnNumMotors"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctModelMotors"), .Form.Item("tctSerialMotors"), mobjValues.StringToType(.Form.Item("tcnPower"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnTRB"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnTRN"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapacity"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeUnitMesureCode"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("tctSeaPort"), .Form.Item("tctDotation"), .Form.Item("tctActionZone"))
                 End With
 
-                '+HO001: Datos Particulares de Hogar
+            '+HO001: Datos Particulares de Hogar
             Case "HO001"
                 mobjPolicySeq = New ePolicy.HomeOwner
                 With Request
@@ -3286,7 +3287,7 @@
 
                 End With
 
-                '+ RM001: Datos particulares de Rotura de Maquinaria
+            '+ RM001: Datos particulares de Rotura de Maquinaria
             Case "RM001"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -3304,7 +3305,7 @@
                 End With
                 mobjPolicySeq = Nothing
 
-                '+RC001: Información particular de Resp. Civil
+            '+RC001: Información particular de Resp. Civil
             Case "RC001"
                 mobjPolicySeq = New ePolicy.Civil
                 With Request
@@ -3321,7 +3322,7 @@
 
                 mobjsAapv = Nothing
 
-                '+CC001: Crédito y Caución
+            '+CC001: Crédito y Caución
             Case "CC001"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -3355,7 +3356,7 @@
                 End If
                 mobjInterface = Nothing
 
-                '+ CA635: Condiciones de prima
+            '+ CA635: Condiciones de prima
             Case "CA635"
                 mobjPolicySeq = New ePolicy.Cond_cover_premium
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -3809,35 +3810,35 @@
                 mobjPolicyseqAviat_Marit = Nothing
                 mobjPolicySeq = Nothing
 
-                '+ AP010: Accidentes Personales.
-                'Case "AP010"
-                '    mobjPolicySeq = New ePolicy.AccidentPerson
-                '    If Request.QueryString.Item("WindowType") = "PopUp" Then
-                '        With Request
-                '            lblnPost = mobjPolicySeq.InsPostAP010Upd(.QueryString("Action"), Session("sCertype"), _
-                '                                                        mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                        mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                        mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                        mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                        .Form.Item("cbeEmployeeCode"), .Form.Item("tctLastName"), .Form.Item("tctLastName2"), _
-                '                                                        .Form.Item("tctFirstName"), .Form.Item("tctMiddleName"), mobjValues.StringToType(.Form.Item("DateBirthdate"), eFunctions.Values.eTypeData.etdDate), _
-                '                                                         mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                '                                                         mobjValues.StringToType(.QueryString.Item("nGroup"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                         mobjValues.StringToType(.QueryString.Item("nSituation"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                         mobjValues.StringToType(.QueryString.Item("nNumberInsured"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                         .Form.Item("tctBeneficiarnotes"), _
-                '                                                         mobjValues.StringToType(.Form.Item("nConsec"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                         mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger), _
-                '                                                         mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdDouble), _
-                '                                                         mobjValues.StringToType(.Form.Item("DateNulldate"), eFunctions.Values.eTypeData.etdDate))
+            '+ AP010: Accidentes Personales.
+            'Case "AP010"
+            '    mobjPolicySeq = New ePolicy.AccidentPerson
+            '    If Request.QueryString.Item("WindowType") = "PopUp" Then
+            '        With Request
+            '            lblnPost = mobjPolicySeq.InsPostAP010Upd(.QueryString("Action"), Session("sCertype"), _
+            '                                                        mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                        mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                        mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                        mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                        .Form.Item("cbeEmployeeCode"), .Form.Item("tctLastName"), .Form.Item("tctLastName2"), _
+            '                                                        .Form.Item("tctFirstName"), .Form.Item("tctMiddleName"), mobjValues.StringToType(.Form.Item("DateBirthdate"), eFunctions.Values.eTypeData.etdDate), _
+            '                                                         mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
+            '                                                         mobjValues.StringToType(.QueryString.Item("nGroup"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                         mobjValues.StringToType(.QueryString.Item("nSituation"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                         mobjValues.StringToType(.QueryString.Item("nNumberInsured"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                         .Form.Item("tctBeneficiarnotes"), _
+            '                                                         mobjValues.StringToType(.Form.Item("nConsec"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                         mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger), _
+            '                                                         mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdDouble), _
+            '                                                         mobjValues.StringToType(.Form.Item("DateNulldate"), eFunctions.Values.eTypeData.etdDate))
 
 
 
-                '        End With
-                '    Else
-                '        lblnPost = True
-                '    End If
-                '    mobjPolicySeq = Nothing
+            '        End With
+            '    Else
+            '        lblnPost = True
+            '    End If
+            '    mobjPolicySeq = Nothing
 
             Case "CM001"
                 mobjPolicySeq = New ePolicy.TRCM
