@@ -280,46 +280,56 @@ function EnabledFields(nAction,nType){
 		else
 			onChangeCumulo();				
 }
+  // PRY-REASEGUROS VT - CALCULO DE PORCENTAJE CEDIDO  - RAOD - INI
+// insCalAmount: Calcula el porcentaje cedido y/o el importe límite 
 
-// insCalAmount: Calcula el porcentaje cedido y/o el importe límite
 //-----------------------------------------------------------------------------------------
-function insCalAmount(Field){
-//-----------------------------------------------------------------------------------------
-	var nQuota_sha
-	var nAmount 
-	var nReten 	
+function insCalAmount(Field){  
+ //-----------------------------------------------------------------------------------------
+    var nQuota_sha //--% CEDIDO
+    var nAmount // --MONTO LIMITE
+    var nReten 	//--MONTO DE RETENCION
     
-	nQuota_sha = insConvertNumber(self.document.forms[0].tcnQuota_sha.value);
-	nAmount    = insConvertNumber(self.document.forms[0].tcnAmount.value);
-	nReten     = insConvertNumber(self.document.forms[0].tcnReten.value);
-
-	if (Field.value!=0 && !isNaN(nReten)){
-		if (Field.name=='tcnQuota_sha'){
-			self.document.forms[0].tcnQuota_sha.value = VTFormat(nQuota_sha, '', '', '', 0, true);
-			self.document.forms[0].tcnAmount.value = VTFormat((nReten * nQuota_sha) / 100, '', '', '', 0, true);
-			
+    nQuota_sha = insConvertNumber(self.document.forms[0].tcnQuota_sha.value);
+    nAmount    = insConvertNumber(self.document.forms[0].tcnAmount.value);
+    nReten     = insConvertNumber(self.document.forms[0].tcnReten.value);
+	
+    if (Field.value!=0 && !isNaN(nReten)){
+        if (Field.name=='tcnQuota_sha'){
+            self.document.forms[0].tcnQuota_sha.value = VTFormat(nQuota_sha, '', '', '', 0, true);		   
+            self.document.forms[0].tcnAmount.value = VTFormat((nReten * nQuota_sha) / (100 - nQuota_sha) ,'', '', '', 0, true);
+        }
+            /*
 			if (!ValNumber(self.document.forms[0].tcnAmount,".","'","false",0))
-				self.document.forms[0].tcnQuota_sha.value='';			
+			    self.document.forms[0].tcnQuota_sha.value='';
+			//alert('quota valida ValNumber de nAmount => ' + nAmount)
 			if (nQuota_sha > 100){
 			    alert('El porcentaje de cesion no puede ser superior a 100%');
 			    self.document.forms[0].tcnQuota_sha.value='';
 			    self.document.forms[0].tcnAmount.value='';
-			}
-		}else{
-			if (nReten != 0 ) 			
-			    self.document.forms[0].tcnQuota_sha.value = VTFormat(((nAmount * 100)/(nAmount + nReten)), '', '', '', 6, true);
-			    
+			}*/
+	   
+        else{
+            if (nReten != 0 ) {
+                self.document.forms[0].tcnQuota_sha.value = VTFormat(((nAmount * 100)/(nAmount + nReten)), '', '', '', 6, true);
+                //nQuota_sha = insConvertNumber((nAmount * 100)/(nAmount + nReten));
+                //self.document.forms[0].tcnQuota_sha.value = VTFormat(nQuota_sha, '', '', '', 6, true);;
+            } 		           		 
+            /*
 			if(!ValNumber(self.document.forms[0].tcnQuota_sha,".",",","false",6))
 				self.document.forms[0].tcnAmount.value = '';
 
+            
             if(self.document.forms[0].tcnQuota_sha.value > 100){
                 alert('El porcentaje de cesion no puede ser superior a 100%');
 			    self.document.forms[0].tcnQuota_sha.value='';
 			    self.document.forms[0].tcnAmount.value='';
-		    }
-		}
-	}
-}	
+		    }*/
+
+        }
+    }
+}		
+    // PRY-REASEGUROS VT - CALCULO DE PORCENTAJE CEDIDO  - RAOD - FIN
 </SCRIPT>
 
 
