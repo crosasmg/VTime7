@@ -222,20 +222,20 @@ Find_Err:
 				End If
 			End If
 		End If
-		
-		
-		'+Validación del ingreso de algun tipo de calculo de cesion cuando solo es por cía
-		
-		If sWindowsType = "PopUp" Then
-			If (sIndCesscia = "1") And (sIndCessprcov = String.Empty Or sIndCessprcov = "") Then
-				
-				If (nCessrate = 0 Or nCessrate = eRemoteDB.Constants.intNull) And (nCessprfix = 0 Or nCessprfix = eRemoteDB.Constants.intNull) And (sRoucess = "" Or sRoucess = String.Empty) Then
-					Call lclsErrors.ErrorMessage(sCodispl, 300005)
-				End If
-			End If
-		End If
-		
-		insValCR307 = lclsErrors.Confirm
+
+        'PRY-REASEGUROS VT - EVITA QUE SE ASIGNE UNA CIA DE REASEGURO EN CONTRATO  - RAOD - INI
+        '+Validación del ingreso de algun tipo de calculo de cesion cuando solo es por cía
+
+        'If sWindowsType = "PopUp" Then
+        '	If (sIndCesscia = "1") And (sIndCessprcov = String.Empty Or sIndCessprcov = "") Then
+
+        '		If (nCessrate = 0 Or nCessrate = eRemoteDB.Constants.intNull) And (nCessprfix = 0 Or nCessprfix = eRemoteDB.Constants.intNull) And (sRoucess = "" Or sRoucess = String.Empty) Then
+        '			Call lclsErrors.ErrorMessage(sCodispl, 300005)
+        '		End If
+        '	End If
+        'End If
+        'PRY-REASEGUROS VT - EVITA QUE SE ASIGNE UNA CIA DE REASEGURO EN CONTRATO    - RAOD - FIN
+        insValCR307 = lclsErrors.Confirm
 		'UPGRADE_NOTE: Object lclsErrors may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		lclsErrors = Nothing
 		
