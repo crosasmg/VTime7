@@ -2325,7 +2325,7 @@
                             lintGrid = 1
                         End If
                         '+ PRY-REASEGUROS VT - CAPITAL CORRECTO PARA TIPO DE DISTRIBUCION FACULTATIVA  - LAMC - INICIO
-                        If CDbl(Request.Form.Item("cbeChange")) = 1 Or CDbl(Request.Form.Item("cbeChange")) = 2 Or CDbl(Request.Form.Item("cbeChange")) = 4 Or Or CDbl(Request.Form.Item("cbeChange")) = 3 Then
+                        If CDbl(Request.Form.Item("cbeChange")) = 1 Or CDbl(Request.Form.Item("cbeChange")) = 2 Or CDbl(Request.Form.Item("cbeChange")) = 4 Or CDbl(Request.Form.Item("cbeChange")) = 3 Then
                             nCapital_rei = mobjValues.StringToType(Request.Form.Item("tcnReinCapital"), eFunctions.Values.eTypeData.etdDouble)
                         Else
                             nCapital_rei = mobjValues.StringToType(Request.Form.Item("tcnParticip"), eFunctions.Values.eTypeData.etdDouble)
