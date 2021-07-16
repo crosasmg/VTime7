@@ -229,7 +229,7 @@
                             "&nCertif=" & Request.QueryString.Item("nCertif") &
                             "&dNullDate=" & Request.QueryString.Item("dNullDate") &
                             "&sNullReceipt=" & Request.QueryString.Item("sNullReceipt") &
-                            "&soptReceipt=" & Request.QueryString.Item("soptReceipt") &
+                            "&soptReceipt=' + (self.document.forms[0].optType[0].checked ? self.document.forms[0].optType[0].value : self.document.forms[0].optType[1].value) + '" &
                             "&nExeMode=" & Request.QueryString.Item("nExeMode") &
                             "&sExeReport=" & Request.QueryString.Item("sExeReport") &
                             "&nAgency=" & Request.QueryString.Item("nAgency") &
@@ -240,7 +240,7 @@
                             "&nPremium_Collect=' + self.document.forms[0].tcnPremium_Collec.value + '" &
                             "&nReceipt_Collec=" + Request.QueryString.Item("nReceipt_Collec") &
                             "&dEffecdate=' + self.document.forms[0].tcdStartDateR.value + '" &
-                            "&nTypeReceipt=" & Request.QueryString.Item("nTypeReceipt") &
+                            "&nTypeReceipt=' + (self.document.forms[0].optType[0].checked ? self.document.forms[0].optType[0].value : self.document.forms[0].optType[1].value) + '" &
                             "&nContrat=" & Request.QueryString.Item("nContrat") &
                             "&nCoupon=" & Request.QueryString.Item("nCoupon") &
                             "&nCouponAmount=" & Request.QueryString.Item("nCouponAmount")
@@ -810,7 +810,9 @@
                     .Columns("tcnCapital").DefValue = lclsTDetail_pre.nCapital
                     .Columns("hddAddTax").DefValue = lclsTDetail_pre.sAddtax
                     If lclsTDetail_pre.nPremiumA <> eRemoteDB.Constants.intNull Then
-                        If lclsTDetail_pre.nItem = 5 And Request.QueryString.Item("nTypeReceipt") = 2 Then
+                        'If lclsTDetail_pre.nItem = 5 And Request.QueryString.Item("nTypeReceipt") = 2 Then
+
+                        If lclsTDetail_pre.nItem = 5 And mclsTDetail_pre.nTypeReceipt = 2 Then
                             .Columns("tcnPremiumA").DefValue = -1 * lclsTDetail_pre.nPremiumA
                         Else
                             If lclsTDetail_pre.nPremiumA = 0 And lclsTDetail_pre.nPremium <> 0 And Request.QueryString.Item("nTypeReceipt") = 2 Then
@@ -1067,12 +1069,13 @@
                       "&sCodisplOrig=" & Request.QueryString.Item("sCodisplOrig") &
                       "&sOnSeq=" & Request.QueryString.Item("sOnSeq")
 
+
     '+ Cuando es llamada desde la CA033 se agregan variables al QueryString	
     'If lstrCodisplOrig = "CA033_CA080" Then
     '    lstrQueryString = lstrQueryString & "&sCodispl=" & lstrCodispl & "&sPopUp=1"
     'End If
     If Request.QueryString.Item("sCodisplOrig") = "CA033_CA080" Or
-       Request.QueryString.Item("sCodisplOrig") = "CA038" Then
+Request.QueryString.Item("sCodisplOrig") = "CA038" Then
         lstrQueryString = lstrQueryString & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sPopUp=1"
     End If
 
@@ -1349,7 +1352,7 @@ function changevaluesField(Option, Field){
                 with (self.document.forms[0]) {
                     if (optType[1].checked) {
                         btn_receiptCobro.disabled = false;
-                        chkDevReceipt.cheked = false;
+                        //chkDevReceipt.checked = false;
 
                         if (sCodispl == "CA080") {
                             tctClient.disabled = true;
@@ -1390,8 +1393,12 @@ function changevaluesField(Option, Field){
         with (self.document.forms[0]) {
             switch (Option.name) {
                 case "chkDevReceipt":
-                    if (tcnReceipt_Collec.value != '')
+                    if (tcnReceipt_Collec.value != ''){
                         changevaluesField('Receipt_Collect', tcnReceipt_Collec);
+                    } else{
+                        chkDevReceipt.checked = false;
+                    }
+                        
                     break;
 
                 case "tcnReceipt_Collec":
@@ -1467,7 +1474,7 @@ function changevaluesField(Option, Field){
             ldtmEffecdate_aux = Session("dEffecdate")
         Else
             ldtmEffecdate = Request.QueryString.Item("dEffecdate")
-            ldtmEffecdate_aux = Request.QueryString.Item("dEffecdate")
+            'ldtmEffecdate_aux = Request.QueryString.Item("dEffecdate")
         End If
 
         If Session("sClient") = "" Or Request.QueryString.Item("sClient") = "" Then
@@ -1497,27 +1504,45 @@ function changevaluesField(Option, Field){
             Session("sClient") = Request.QueryString.Item("sClient")
         End If
 
+        'INICIO DMendoza 14/07/2021
+        lstrNewData = Request.QueryString.Item("sNewData")
+
+        If lstrNewData = Nothing Then
+            lstrNewData = "1"
+        End If
+        If lstrNewData = "1" Then
+            Session("sKey") = Nothing
+            mclsTDetail_pre.sKey = Nothing
+        End If
+        If lstrNewData = "2" Then
+            If Session("sKey") <> "" Then
+                mclsTDetail_pre.sKey = Session("sKey")
+            End If
+        End If
+
+        'FIN DMendoza 14/07/2021
+
         Call mclsTDetail_pre.inspreCA080(Session("sCertype"),
-                                         Session("nBranch"),
-                                         Session("nProduct"),
-                                         Session("nPolicy"),
-                                         Session("nCertif"),
-                                         mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
-                                         mobjValues.StringToType(ldtmEffecdate, eFunctions.Values.eTypeData.etdDate),
-                                         mobjValues.StringToType(Request.QueryString.Item("dExpirdate"), eFunctions.Values.eTypeData.etdDate),
-                                         mobjValues.StringToType(Request.QueryString.Item("nTypeReceipt"), eFunctions.Values.eTypeData.etdInteger),
-                                         mobjValues.StringToType(Request.QueryString.Item("nReceipt"), eFunctions.Values.eTypeData.etdDouble),
-                                         mobjValues.StringToType(Request.QueryString.Item("nCurrency"), eFunctions.Values.eTypeData.etdInteger),
-                                         mobjValues.StringToType(Request.QueryString.Item("dIssuedat"), eFunctions.Values.eTypeData.etdDate),
-                                         mobjValues.StringToType(Request.QueryString.Item("nTratypei"), eFunctions.Values.eTypeData.etdInteger),
-                                         Request.QueryString.Item("sOrigReceipt"),
-                                         Session("SessionID"),
-                                         mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdInteger),
-                                         Request.QueryString.Item("sNewData"),
-                                         mobjValues.StringToType(Request.QueryString.Item("nReceipt_Collec"), eFunctions.Values.eTypeData.etdDouble),
-                                         mblnSequence,
-                                         mobjValues.StringToType(Request.QueryString.Item("nRecDevEqualColl"), eFunctions.Values.eTypeData.etdDouble),
-                                         Session("sClient"))
+                    Session("nBranch"),
+                    Session("nProduct"),
+                    Session("nPolicy"),
+                    Session("nCertif"),
+                    mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                    mobjValues.StringToType(ldtmEffecdate, eFunctions.Values.eTypeData.etdDate),
+                    mobjValues.StringToType(Request.QueryString.Item("dExpirdate"), eFunctions.Values.eTypeData.etdDate),
+                    mobjValues.StringToType(Request.QueryString.Item("nTypeReceipt"), eFunctions.Values.eTypeData.etdInteger),
+                    mobjValues.StringToType(Request.QueryString.Item("nReceipt"), eFunctions.Values.eTypeData.etdDouble),
+                    mobjValues.StringToType(Request.QueryString.Item("nCurrency"), eFunctions.Values.eTypeData.etdInteger),
+                    mobjValues.StringToType(Request.QueryString.Item("dIssuedat"), eFunctions.Values.eTypeData.etdDate),
+                    mobjValues.StringToType(Request.QueryString.Item("nTratypei"), eFunctions.Values.eTypeData.etdInteger),
+                    Request.QueryString.Item("sOrigReceipt"),
+                    Session("SessionID"),
+                    mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdInteger),
+                    lstrNewData,
+                    mobjValues.StringToType(Request.QueryString.Item("nReceipt_Collec"), eFunctions.Values.eTypeData.etdDouble),
+                    mblnSequence,
+                    mobjValues.StringToType(Request.QueryString.Item("nRecDevEqualColl"), eFunctions.Values.eTypeData.etdDouble),
+                    Session("sClient"))
 
         mblnError = mclsTDetail_pre.bError
 
@@ -1541,9 +1566,14 @@ function changevaluesField(Option, Field){
         Response.Write(mobjValues.HiddenControl("hddProvince", mclsTDetail_pre.mclsPolicy.nProvince))
 
         Response.Write(mobjValues.HiddenControl("tcnProceedingNum", 0))
-
+        'INICIO DMendoza 14/07/2021
         lstrKey = mclsTDetail_pre.sKey
         Response.Write(mobjValues.HiddenControl("hddsKey", lstrKey))
+
+        If Session("sKey") = "" Then
+            Session("sKey") = lstrKey
+        End If
+        'FIN DMendoza 14/07/2021
 
         If Request.QueryString.Item("sCodispl") = "CA080" Then
             Response.Write("<SCRIPT>self.document.forms[0].tcnProceedingNum.value=top.frames['fraHeader'].document.forms[0].tcnProceedingNum.value</SCRIPT>")

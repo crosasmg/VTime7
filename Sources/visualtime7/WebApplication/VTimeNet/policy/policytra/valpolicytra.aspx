@@ -74,7 +74,7 @@
 
         Select Case Request.QueryString.Item("sCodispl")
 
-        '+ CA032: Reverso de modificación/renovación de una póliza                
+            '+ CA032: Reverso de modificación/renovación de una póliza                
             Case "CA032"
                 With Request
                     If CDbl(.QueryString.Item("nZone")) = 1 Then
@@ -650,7 +650,7 @@
                     End If
                 End With
 
-                '+SO001: Digitación de Pólizas SOAP
+            '+SO001: Digitación de Pólizas SOAP
             Case "SO001"
                 Dim mobjPolicyTra = New ePolicy.Soap_entry
 
@@ -725,7 +725,7 @@
                     'UPGRADE_NOTE: Object mobjPolicyTra may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
                     mobjPolicyTra = Nothing
                 End With
-                '+ VI017: Traspaso por porcentajes
+            '+ VI017: Traspaso por porcentajes
             Case "VI017", "VI017-2"
                 With Request
 
@@ -760,7 +760,7 @@
                     'mstrQueryString = "&Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&dEffecdate=" & Request.Form.Item("hddStartDateR") & "&dExpirDate=" & Request.Form.Item("hddExpirDate") & "&nReceipt=" & Request.Form.Item("hddReceipt") & "&dIssuedat=" & Request.Form.Item("hddIssueDate") & "&nCurrency=" & Request.Form.Item("hddCurrency") & "&nTratypei=" & Request.Form.Item("hddSource") & "&sOrigReceipt=" & Request.Form.Item("hddOrigReceipt") & "&sCodisplOrig=" & .QueryString.Item("sCodisplOrig") & "&sCertype=" & .QueryString.Item("sCertype") & "&nBranch=" & .QueryString.Item("nBranch") & "&nProduct=" & .QueryString.Item("nProduct") & "&nPolicy=" & .QueryString.Item("nPolicy") & "&nCertif=" & .QueryString.Item("nCertif") & "&dNullDate=" & .QueryString.Item("dNullDate") & "&sNullReceipt=" & .QueryString.Item("sNullReceipt") & "&sTypeReceipt=" & .QueryString.Item("sTypeReceipt") & "&nExeMode=" & .QueryString.Item("nExeMode") & "&sExeReport=" & .QueryString.Item("sExeReport") & "&nAgency=" & .QueryString.Item("nAgency") & "&sOnSeq=" & .QueryString.Item("sOnSeq") & "&sNewData=" & .QueryString.Item("sNewData")
                     mstrQueryString = "&sCodisplOrig=" & .QueryString.Item("sCodisplOrig") &
                               "&sCertype=" & .QueryString.Item("sCertype") &
-                                "&nBranch=" & .QueryString.Item("nBranch") &
+                              "&nBranch=" & .QueryString.Item("nBranch") &
                               "&nProduct=" & .QueryString.Item("nProduct") &
                               "&nPolicy=" & .QueryString.Item("nPolicy") &
                               "&nCertif=" & .QueryString.Item("nCertif") &
@@ -774,7 +774,8 @@
                               "&sOnSeq=" & .QueryString.Item("sOnSeq") &
                               "&nPremium_Collect=" & .QueryString.Item("nPremium_Collect") &
                               "&sClient=" & .QueryString.Item("sClient") &
-                              "&hddClient=" & .QueryString.Item("hddClient")
+                              "&hddClient=" & .QueryString.Item("hddClient") &
+                              "&nTypeReceipt=" & .QueryString.Item("nTypeReceipt")
 
 
                     If CDbl(.QueryString.Item("nZone")) = 1 Then
@@ -905,7 +906,7 @@
 
         Select Case Request.QueryString.Item("sCodispl")
 
-        '+ CA032: Reverso de modificación/renovación de una póliza
+            '+ CA032: Reverso de modificación/renovación de una póliza
             Case "CA032"
                 With Request
                     If CDbl(.QueryString.Item("nZone")) = 1 Then
@@ -2248,7 +2249,7 @@
 
                 End If
 
-                '+ CA051 Hojas de Excel para la carga de pólizas / certificado
+            '+ CA051 Hojas de Excel para la carga de pólizas / certificado
             Case "CA051"
 
                 mobjPolicyTra = New eBatch.ValBatch
@@ -2292,7 +2293,7 @@
 
                 End With
 
-                '+CA099: Tratamiento de cotizaciones y solicitudes
+            '+CA099: Tratamiento de cotizaciones y solicitudes
             Case "CA099"
                 mobjPolicyTra = New ePolicy.TConvertions
                 With Request
@@ -2344,7 +2345,7 @@
                 End With
                 lblnPost = True
 
-                '+CA099A: Tratamiento de cotizaciones/solicitudes
+            '+CA099A: Tratamiento de cotizaciones/solicitudes
             Case "CA099A"
                 'UPGRADE_NOTE: The 'ePolicy.TConvertions' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
                 mobjPolicyTra = New ePolicy.TConvertions
@@ -2409,7 +2410,7 @@
                 End With
 
 
-                '+CA767: Tratamiento de propuestas especiales
+            '+CA767: Tratamiento de propuestas especiales
             Case "CA767"
                 'UPGRADE_NOTE: The 'ePolicy.Request' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
                 mobjPolicyTra = New ePolicy.Request
@@ -2480,7 +2481,7 @@
                     End If
                 End With
 
-                '+VIL733: Aniversario de coberturas (Productos de Vida)
+            '+VIL733: Aniversario de coberturas (Productos de Vida)
             Case "VIL733"
                 If CStr(Session("BatchEnabled")) <> "1" Then
                     'UPGRADE_NOTE: The 'ePolicy.ValPolicyTra' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
@@ -2515,7 +2516,7 @@
                     lblnPost = True
                 End If
 
-                '+CAL006: Reservas de Primas
+            '+CAL006: Reservas de Primas
             Case "CAL006"
 
                 With Request
@@ -2532,7 +2533,7 @@
                     End If
                 End If
 
-                '+VI008: Reducción de capital o vigencia
+            '+VI008: Reducción de capital o vigencia
             Case "VI008"
                 With Request
                     'UPGRADE_NOTE: The 'ePolicy.Certificat' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
@@ -2564,7 +2565,7 @@
                     End If
                 End With
 
-                '+VI806: Capitalización de Fondos (Previsión y Retiro)
+            '+VI806: Capitalización de Fondos (Previsión y Retiro)
             Case "VI806"
                 If CStr(Session("BatchEnabled")) <> "1" Then
                     With Request
@@ -2617,7 +2618,7 @@
                     End With
                     lclsBatch_param = Nothing
                 End If
-                '+CA642: Cambio de frecuencia de pago            
+            '+CA642: Cambio de frecuencia de pago            
             Case "CA642"
                 With Request
                     'UPGRADE_NOTE: The 'ePolicy.Policy' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
@@ -2712,7 +2713,7 @@
                 'UPGRADE_NOTE: The 'ePolicy.Certificat' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
                 mobjPolicyTra = New ePolicy.ValPolicyTra
                 lblnPost = mobjPolicyTra.inspostCA789("1", mobjValues.StringToType(Request.Form.Item("cbeBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("valProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnPolicy"), eFunctions.Values.eTypeData.etdDouble), 0, Session("nUsercode"))
-                '+ CA900: Autorización de propuestas sin pago de primera prima
+            '+ CA900: Autorización de propuestas sin pago de primera prima
             Case "CA900"
                 'UPGRADE_NOTE: The 'ePolicy.Policy' object is not registered in the migration machine. Copy this link in your browser for more: ms-its:C:\Program Files\ASP to ASP.NET Migration Assistant\AspToAspNet.chm::/1016.htm
                 mobjPolicyTra = New ePolicy.Policy
@@ -3021,7 +3022,7 @@
                              Session("nUsercode"))
                     End If
                 End With
-                '+vi7502: Control SAAPV
+            '+vi7502: Control SAAPV
             Case "VI7502"
                 With Request
 
@@ -3094,7 +3095,7 @@
                     End If
                 End With
 
-'+CA080, CA080A: Emisión de recibo manual
+            '+CA080, CA080A: Emisión de recibo manual
             Case "CA080", "CA080A"
                 With Request
                     If CDbl(.QueryString.Item("nZone")) = 1 Then
@@ -3113,7 +3114,14 @@
                         If .QueryString.Item("WindowType") = "PopUp" Then
                             'mstrQueryString = "&sCodisplOri=CA080" & "&nConcept=24" & "&dEffecdate=" & .Form.Item("tcdStartDateR") & "&nOfficepay=" & .Form.Item("hddnOffice") & "&nAmount=" & .Form.Item("hddAmountTot") & "&nCurrencypay=1" & "&nAmountPay=" & .Form.Item("hddAmountTotPay") & "&nPayOrderTyp=2" & "&sCertype=2" & "&nBranch=" & Session("nBranch") & "&nProduct=" & Session("nProduct") & "&nPolicy=" & Session("nPolicy") & "&nCertif=" & Session("nCertif") & "&nCurrency=" & .Form.Item("cbeCurrency") & "&sClient=" & .Form.Item("hddClient_policy") & "&sBenef=" & .Form.Item("hddClient_policy") & "&nBranchPay=" & .Form.Item("cbeBranchPay") & "&nProductPay=" & .Form.Item("valProductPay") & "&nPolicyPay=" & .Form.Item("tcnPolicyPay") & "&nCertifPay=" & .Form.Item("tcnCertifPay") & "&nBalance=" & "" & "&nOperat=" & "" & "&sAnulReceipt=" & "" & "&sReport=" & "" & "&nOffice=" & "" & "&nOfficeAgen=" & "" & "&nAgency=" & "" & "&nReceipt=" & .Form.Item("tcnReceipt") & "&dExpirDat=" & .Form.Item("tcdExpirDateR") & "&nSource=" & .Form.Item("cbeSource") & "&nTypeReceipt=" & .Form.Item("optType") & "&sOrigReceipt=" & .Form.Item("tctOrigReceipt") & "&sKey=" & .Form.Item("hddKey") & "&sAdjust=" & .Form.Item("chkAdjust") & "&nAdjReceipt=" & .Form.Item("tcnAdjReceipt") & "&nAdjAmount=" & .Form.Item("tcnAdjAmount") & "&nTypePay=" & .Form.Item("cbePayWay") & "&nOrigin_apv=" & .Form.Item("valOrigin")
                             'lblnPost = mobjPolicyTra.insPostCA080Upd(.QueryString("sCodispl"), .QueryString("sKey"), .QueryString("Action"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(.Form.Item("hddIssueDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBill_item"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_est"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_led"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_rei"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCodeItem"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCommi_rate"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCommission"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("hddModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumE"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddAddsuini"), mobjValues.StringToType(.Form.Item("hddType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddId_Bill"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("dtcClient"), .Form.Item("hddAddTax"), Session("nUsercode"), Session("SessionID"), mobjValues.StringToType(.Form.Item("cbePrem_det"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("hddPrem_det_old"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("hddPrem_det_proc"))
-                            lblnPost = mobjPolicyTra.insPostCA080Upd(.QueryString("sCodispl"), .QueryString("sKey"), .QueryString("Action"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(.Form.Item("tcdIssueDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBill_item"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_est"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_led"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_rei"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCodeItem"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCommi_rate"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCommission"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("hddModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumE"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddAddsuini"), mobjValues.StringToType(.Form.Item("hddType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddId_Bill"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("dtcClient"), .Form.Item("hddAddTax"), Session("nUsercode"), Session("SessionID"), mobjValues.StringToType(.Form.Item("cbePrem_det"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("hddPrem_det_old"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("hddPrem_det_proc"))
+                            'INICIO DMendoza 14/07/2021
+                            'lblnPost = mobjPolicyTra.insPostCA080Upd(.QueryString("sCodispl"), .QueryString("sKey"), .QueryString("Action"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(.Form.Item("tcdIssueDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBill_item"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_est"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_led"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_rei"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCodeItem"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCommi_rate"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCommission"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("hddModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumE"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddAddsuini"), mobjValues.StringToType(.Form.Item("hddType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddId_Bill"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("dtcClient"), .Form.Item("hddAddTax"), Session("nUsercode"), Session("SessionID"), mobjValues.StringToType(.Form.Item("cbePrem_det"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("hddPrem_det_old"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("hddPrem_det_proc"))
+                            lblnPost = mobjPolicyTra.insPostCA080Upd(.QueryString("sCodispl"), Session("sKey"), .QueryString("Action"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(.Form.Item("tcdIssueDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBill_item"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_est"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_led"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddBranch_rei"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCapital"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCodeItem"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnCommi_rate"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnCommission"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("hddModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumA"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnPremiumE"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("hddAddsuini"), mobjValues.StringToType(.Form.Item("hddType"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("hddId_Bill"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("dtcClient"), .Form.Item("hddAddTax"), Session("nUsercode"), Session("SessionID"), mobjValues.StringToType(.Form.Item("cbePrem_det"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(.Form.Item("hddPrem_det_old"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("hddPrem_det_proc"))
+                            If lblnPost Then
+                                mstrQueryString = mstrQueryString + "&sNewData=2"
+                            End If
+
+                            'FIN DMendoza 14/07/2021
                         Else
                             If Request.QueryString.Item("sCodispl") = "CA080A" Then
                                 lstrClient = .Form.Item("hddClient_policy")
@@ -3153,10 +3161,10 @@
                                                                   mobjValues.StringToType(.Form.Item("tcnProceedingNum"), eFunctions.Values.eTypeData.etdDouble),
                                                                   mobjValues.StringToType(.Form.Item("tcnContrat"), eFunctions.Values.eTypeData.etdDouble),
                                                                   mobjValues.StringToType(.Form.Item("tcnCoupon"), eFunctions.Values.eTypeData.etdDouble),
-                                                                  .Form.Item("hddsKey"))
+                                                                    Session("sKey"))
 
                             If lblnPost And Request.Form.Item("chkDelReceipt") <> "1" And
-                   mobjValues.StringToType(.Form.Item("tcnReceipt"), eFunctions.Values.eTypeData.etdDouble, 0) = eRemoteDB.Constants.intNull Then
+           mobjValues.StringToType(.Form.Item("tcnReceipt"), eFunctions.Values.eTypeData.etdDouble, 0) = eRemoteDB.Constants.intNull Then
 
                                 '+ Se envia alerta con número de recibo generado solo si la ejecución es definitiva 
                                 If Session("OptExecute") <> "1" Then
@@ -3165,6 +3173,7 @@
 
                                     Response.Write("<SCRIPT>opener.top.frames['fraHeader'].document.A392.disabled=true;</" & "SCRIPT>")
 
+                                    Session("sKey") = Nothing
                                     lclsGeneralCa080 = New eGeneral.GeneralFunction
                                     If mobjPolicyTra.nReceipt <> eRemoteDB.Constants.intNull Then
                                         lstrMessageCa080 = lclsGeneralCa080.insLoadMessage(5064) & " con Nro.: " & mobjPolicyTra.nReceipt
@@ -3226,7 +3235,7 @@
         mobjDocuments = New eReports.Report
 
         Select Case Codispl
-        '+ VIL733: Aniversario de coberturas (Productos de Vida)
+            '+ VIL733: Aniversario de coberturas (Productos de Vida)
             Case "VIL733"
                 With mobjDocuments
                     .ReportFilename = "VIL733.rpt"
@@ -3604,8 +3613,8 @@
                     .MergeCertif = Session("nCertif")
                     Response.Write((.Command))
                 End With
-                '+ VI7004: Impresión de rescate de póliza/certificado Vida no tradicional
-                '+ JESV: Formato nuevo cambiado el 22/04/2009
+            '+ VI7004: Impresión de rescate de póliza/certificado Vida no tradicional
+            '+ JESV: Formato nuevo cambiado el 22/04/2009
             Case "VI7004"
                 With mobjDocuments
                     lobjPolicy_His = New ePolicy.Policy
@@ -3662,7 +3671,7 @@
                     End If
                 End With
 
-                '+ CAL815: Rehabilitación/Reactivación masiva de pólizas
+            '+ CAL815: Rehabilitación/Reactivación masiva de pólizas
             Case "CAL815"
                 With mobjDocuments
                     .ReportFilename = "CAL815.rpt"
