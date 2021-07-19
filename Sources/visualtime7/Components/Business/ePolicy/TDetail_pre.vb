@@ -2248,8 +2248,8 @@ insValCA080_K_err:
                 End If
 
                 '+ Fecha de vigencia - hasta debe ser posterior o igual a fecha de vigencia - desde
-                If dStartdate <> CStr(eRemoteDB.Constants.intNull) And
-               dExpirdat <> CStr(eRemoteDB.Constants.intNull) Then
+                If dStartdate <> CStr(eRemoteDB.Constants.dtmNull) And
+               dExpirdat <> CStr(eRemoteDB.Constants.dtmNull) Then
                     If dStartdate > dExpirdat Then
                         Call lobjErrors.ErrorMessage(sCodispl, 11425)
                     End If
@@ -2264,7 +2264,8 @@ insValCA080_K_err:
 
                 '+ Validaciones del recibo
                 If nReceipt <> CStr(eRemoteDB.Constants.intNull) Then
-                    lclsPremium = CreateObject("eCollection.Premium")
+                    'lclsPremium = CreateObject("eCollection.Premium")
+                    lclsPremium = New eCollection.Premium 'Added by DMendoza 19/07/2021
                     With lclsPremium
                         If sCodispl = "CA080A" Then
                             If .Find("2", nReceipt, 0, 0, 0, 0) Then
@@ -2546,7 +2547,8 @@ insvalPolicyPeriod_err:
 
         lrecinsValCA080DB = New eRemoteDB.Execute
         With lrecinsValCA080DB
-            .StoredProcedure = "InsValCA028"
+            '.StoredProcedure = "InsValCA028"
+            .StoredProcedure = "INSVALCA080" 'Added by DMendoza 19/07/2021
             .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -2580,8 +2582,10 @@ insValCA080DB_err:
             .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("sKey", sKey, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nRecrelatedcoll", nRecrelatedcoll, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nResult", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            '.Parameters.Add("nRecrelatedcoll", nRecrelatedcoll, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nRecrelatedColl", nRecrelatedcoll, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable) 'Added by DMendoza 19/07/2021
+            '.Parameters.Add("nResult", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nResult", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable) 'Added by DMendoza 19/07/2021
             .Run(False)
             ValTaxIGV = IIf(.Parameters("nResult").Value = 2, False, True)
         End With

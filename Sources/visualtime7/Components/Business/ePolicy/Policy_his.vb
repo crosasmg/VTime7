@@ -41,7 +41,7 @@ Public Class Policy_his
     Public dEffecdate As Date 'datetime no       8                  yes      (n/a)              (n/a)
     Public sNull_move As String 'char     no       1                  yes      no                 yes
     Public dNulldate As Date 'datetime no       8                  yes      (n/a)              (n/a)
-    Public nReceipt As Integer 'int      no       4      10    0     yes      (n/a)              (n/a)
+    Public nReceipt As Double 'int      no       4      10    0     yes      (n/a)              (n/a)
     Public nTransactio As Integer 'int      no       4      10    0     yes      (n/a)              (n/a)
     Public nType As ePolicyHisType '  no       2      5     0     yes      (n/a)              (n/a)
     Public nUsercode As Integer 'smallint no       2      5     0     yes      (n/a)              (n/a)
