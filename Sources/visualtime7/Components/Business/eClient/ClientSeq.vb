@@ -51,12 +51,18 @@ Public Class ClientSeq
 				lobjErrors.ErrorMessage(sCodispl, 2090)
 			Else
 				If sDigit <> String.Empty Then
-					If UCase(sDigit) <> "E" Then
-                        If lobjClient.GetRUT(sClient) <> UCase(sDigit) Then
+                    If UCase(sDigit) <> "E" Then
+                        'INICIO DMendoza 11/08/2021
+                        ' Se comenta validación del digito verificador para que consulte en la BD
+                        'If lobjClient.GetRUT(sClient) <> UCase(sDigit) Then
+                        '    lobjErrors.ErrorMessage(sCodispl, 55032)
+                        'End If
+                        If UCase(lobjClient.sDigit) <> UCase(sDigit) Then
                             lobjErrors.ErrorMessage(sCodispl, 55032)
                         End If
-					End If
-				End If
+                        'FIN DMendoza 11/08/2021
+                    End If
+                End If
 			End If
 		End If
 		
