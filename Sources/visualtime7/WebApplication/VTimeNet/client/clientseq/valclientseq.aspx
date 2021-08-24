@@ -89,7 +89,7 @@
                     insvalSequence = lclsFiscal_Residence.insValBC007P(Session("sclient"), mobjValues.StringToType(Request.Form.Item("cbeCountry"), eFunctions.Values.eTypeData.etdInteger), Request.Form.Item("tctsus_Itinnum"), mobjValues.StringToType(Request.Form.Item("cbeNmotive_Itin"), eFunctions.Values.eTypeData.etdInteger), Request.Form.Item("tctsJurisdiction"))
 
                 End If
-                '+ Cuentas bancarias del cliente	
+            '+ Cuentas bancarias del cliente	
             Case "BC013"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -116,7 +116,7 @@
                     End If
                 End With
 
-                '+ Vía de cobro de un cliente		
+            '+ Vía de cobro de un cliente		
             Case "BC015"
                 With Request
                     If Not CBool(.Form.Item("bDisabledForm")) Then
@@ -196,7 +196,7 @@
                     End If
                 End With
 
-                '+BC6000: Documentos que identifican al cliente			
+            '+BC6000: Documentos que identifican al cliente			
             Case "BC6000"
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
@@ -235,7 +235,7 @@
         Dim lobjPhone As eGeneralForm.Phone
         Dim lclsClientWin As eClient.ClientWin
         Dim lclsErrors As eGeneralForm.GeneralForm
-
+        Dim lstrClient As String
         Dim lintTypeCompany As Object
 
         lobjValues = New eFunctions.Values
@@ -245,7 +245,15 @@
         Select Case Request.QueryString.Item("sCodispl")
             Case "BC003_K"
                 If Request.QueryString.Item("nMainAction") <> CStr(eFunctions.Menues.TypeActions.clngActionQuery) Then
+                    Dim mobjClient As eClient.Client
+                    mobjClient = New eClient.Client
+                    lstrClient = insGetNewClient(UCase(Request.Form.Item("tctClient")))
+                    Session("sClient") = mobjClient.ExpandCode(UCase(lstrClient))
+                    Session("nPerson_typ") = Request.Form.Item("cbePerson_typ")
+                    Session("Digit") = Request.Form.Item("tctClient_digit")
+
                     lblnPost = mobjClientSeq.insPostBC003_k(Session("sClient"), CInt(Request.QueryString.Item("nMainAction")), Session("nUserCode"), mobjValues.StringToType(Request.Form.Item("cbePerson_typ"), eFunctions.Values.eTypeData.etdDouble, True), Request.Form.Item("tctClient_digit"))
+                    lobjClient = Nothing
                 End If
 
             Case "BC007S"
@@ -478,7 +486,7 @@
 
                 End If
 
-                '+ Ventana de Fin de proceso		
+            '+ Ventana de Fin de proceso		
             Case "GE101"
                 If Request.Form.Item("optElim") = "Delete" Then
                     '+ Se elimina la información relacionada al cliente
@@ -507,7 +515,7 @@
                 Response.Write("<SCRIPT>if(opener.top.location.href.indexOf(""LinkSpecial=1"")!=-1){opener.top.close()}else{opener.top.location.reload();}</" & "Script>")
                 Response.Write("<SCRIPT>window.close()</" & "Script>")
                 lblnPost = False
-                '+ Invalidez   			
+            '+ Invalidez   			
             Case "BC801"
                 With Request
                     lblnPost = mobjClientSeq.insPostBC801(Session("sClient"), mobjValues.StringToType(.Form.Item("cbeDisability"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeIncapacity"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcdIncapacity"), eFunctions.Values.eTypeData.etdDate, True), mobjValues.StringToType(.Form.Item("valIncap_cod"), eFunctions.Values.eTypeData.etdDouble, True), Session("nUsercode"))
@@ -533,7 +541,7 @@
                         mstrQueryString = "&sInitials=" & Request.QueryString.Item("sInitials") & "&sPassword=" & Request.QueryString.Item("sPassword") & "&sStatus=" & Request.QueryString.Item("sStatus") & "&nRol=" & Request.QueryString.Item("nRol")
                     End If
                 End With
-                '+BC6000: Documentos que identifican al cliente
+            '+BC6000: Documentos que identifican al cliente
             Case "BC6000"
                 With Request
                     If .QueryString.Item("nFastRecord") = "1" And (.QueryString.Item("nTypeCompany") = "0" Or .QueryString.Item("nTypeCompany") = vbNullString) Then

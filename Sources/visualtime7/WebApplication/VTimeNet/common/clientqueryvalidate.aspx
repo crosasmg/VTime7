@@ -136,36 +136,45 @@
         lintTypeForm = Request.QueryString.Item("nTypeForm")
         lblnCreate = False
 
-        lblnCreate = UCase(Trim(Request.QueryString.Item("sDigit"))) = "E"
-
-        If Trim(Request.QueryString.Item("sDigit")) = "e" Then
-            Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & "E" & "')</" & "Script>")
+        mobjClient = New eClient.Client
+        mobjClient.sClient = lstrClientCode
+        If (mobjClient.Find(lstrClientCode, True)) = False Then
+            lblnCreate = True
         End If
+        'INICIO DMendoza 16/08/2021
+        '+ Se quita la validación de que el digito verificador sea la letra E para la creación
+        'lblnCreate = UCase(Trim(Request.QueryString.Item("sDigit"))) = "E"
+        If lblnCreate Then
+            'If Trim(Request.QueryString.Item("sDigit")) = "e" Then
+            'Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & "E" & "')</" & "Script>")
+            Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & Request.QueryString.Item("sDigit") & "')</" & "Script>")
+        End If
+        'FIN DMendoza 16/08/2021
 
         If Trim(lstrClientCode) = vbNullString Then
             If lblnCreate Then
                 lstrClientCode = mclsClient.GetNewClientCode
                 '+ Actualiza para JScript el valor del código y nombre del cliente.        
-                Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & "E" & "')</" & "Script>")
+                'Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & "E" & "')</" & "Script>")
+                Response.Write("<SCRIPT>UpdateClientCode('" & lstrClientCode & "','" & "" & "','" & Request.QueryString.Item("ControlName") & "','" & Request.QueryString.Item("sDivName") & "','" & Request.QueryString.Item("sDigit") & "')</" & "Script>")
+
                 If lstrForm = "CA025" Then
-                    Session("Digit") = "E"
+                    'Session("Digit") = "E"
+                    Session("Digit") = Request.QueryString.Item("sDigit")
                     Response.Redirect(("/VTimeNet/Common/GoTo.aspx?sCodispl=BC003_K&LinkSpecial=1&LinkParamsClient=" & lstrClientCode & "&LinkParamsClientControl=" & lstrClientControl & "&LinkSpecialAction=301"))
                 End If
             Else
                 lblnError = True
             End If
         Else
+            'INICIO DMendoza 16/08/2021
+            '+ Se agrega validación para que consulte el digito en la BD
             If Not lblnCreate Then
-                'INICIO DMendoza 11/08/2021
-                ' Se comenta validación del digito verificador para que consulte en la BD
-                mobjClient = New eClient.Client
-                mobjClient.sClient = lstrClientCode
-                mobjClient.Find(lstrClientCode, True)
                 lstrDigit = mobjClient.sDigit
                 'lstrDigit = mclsClient.GetRUT(lstrClientCode)
                 lblnError = lstrDigit <> UCase(Trim(Request.QueryString.Item("sDigit")))
-                'FIN DMendoza 11/08/2021
             End If
+            'FIN DMendoza 16/08/2021
         End If
 
         If (lblnError And Trim(Request.QueryString.Item("sDigit")) <> "") Or (lblnError And Trim(Request.QueryString.Item("sDigit")) = "" And Trim(Request.QueryString.Item("sClientCode")) <> "") Then

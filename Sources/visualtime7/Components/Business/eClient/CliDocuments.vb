@@ -367,20 +367,25 @@ Public Class CliDocuments
             '+ Se realizan las validaciones para un cliente Natural
 
             If lclsClient.nPerson_typ = 1 Then
+                'INICIO Dmendoza 18/08/2021
+                '+ Se quita la validación de que sea obligatorio el DNI para personas naturales
                 lclsCliDocumentss = New CliDocumentss
                 lblnRequierd = False
                 If lclsCliDocumentss.Find(sClient) Then
                     lblnCliDcoument = True
-                    For Each lclsCliDocuments In lclsCliDocumentss
-                        If lclsCliDocuments.nTypClientDoc = 1 Then
-                            lblnRequierd = True
-                            Exit For
-                        End If
-                    Next lclsCliDocuments
+                    lblnRequierd = True
+                    'For Each lclsCliDocuments In lclsCliDocumentss
+                    '    If lclsCliDocuments.nTypClientDoc = 2 Then
+                    '        'If lclsCliDocuments.nTypClientDoc = 1 Then
+                    '        lblnRequierd = True
+                    '        Exit For
+                    '    End If
+                    'Next lclsCliDocuments
                 Else
                     lblnRequierd = False
                 End If
                 lclsCliDocumentss = Nothing
+                'FIN Dmendoza 18/08/2021
 
                 If DateDiff(Microsoft.VisualBasic.DateInterval.Year, lclsClient.dBirthdat, Today) >= 18 And lclsClient.dBirthdat <> eRemoteDB.Constants.dtmNull Then
                     If Not lblnRequierd Then
@@ -414,7 +419,8 @@ Public Class CliDocuments
                     If lclsCliDocumentss.Find(sClient) Then
                         lblnCliDcoument = True
                         For Each lclsCliDocuments In lclsCliDocumentss
-                            If lclsCliDocuments.nTypClientDoc = 2 Then
+                            If lclsCliDocuments.nTypClientDoc = 1 Then
+                                'If lclsCliDocuments.nTypClientDoc = 1 Then
                                 lblnRequierd = True
                                 Exit For
                             End If

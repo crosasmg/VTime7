@@ -20,24 +20,38 @@ Public Class ClientSeq
 		Dim lobjErrors As Object
         Dim lobjClient As Client
         Dim sMessajeRet As String
-        
-		lobjErrors = eRemoteDB.NetHelper.CreateClassInstance("eFunctions.Errors")
+        '-Valida si se crea el cliente
+        Dim lblnCreate As Boolean
+
+        lobjErrors = eRemoteDB.NetHelper.CreateClassInstance("eFunctions.Errors")
 		lobjClient = New Client
-		
-		'+ Validaciones del campo cliente
-		'+ Debe estar lleno
-		If Trim(sClient) = String.Empty Then
-			lobjErrors.ErrorMessage(sCodispl, 2001)
-			'+ El primer carcter del código debe corresponder con uno válido
-		Else
-			If Not lobjClient.ValidateClientStruc(sClient) Then
-				lobjErrors.ErrorMessage(sCodispl, 2012)
-				'+Si la acción no es "registrar", debe existir en el archivo de clientes
-			ElseIf lobjClient.Find(lobjClient.sClient, True) Then 
-				If nAction = 301 Then
-					lobjErrors.ErrorMessage(sCodispl, 2065)
-				End If
-			Else
+
+        '+ Validaciones del campo cliente
+        '+ Debe estar lleno
+        If Trim(sClient) = String.Empty Then
+            lobjErrors.ErrorMessage(sCodispl, 2001)
+            '+ El primer carcter del código debe corresponder con uno válido
+        Else
+            'INICIO DMendoza 16/08/2021
+            lobjClient.sClient = Trim(sClient)
+            If lobjClient.Find(lobjClient.sClient, True) Then
+                lblnCreate = False
+            Else
+                lblnCreate = True
+            End If
+            'FIN DMendoza 16/08/2021
+
+            If Not lobjClient.ValidateClientStruc(sClient) Then
+                lobjErrors.ErrorMessage(sCodispl, 2012)
+                '+Si la acción no es "registrar", debe existir en el archivo de clientes
+                'INICIO DMendoza 16/08/2021
+            ElseIf lblnCreate = False Then
+                'ElseIf lobjClient.Find(lobjClient.sClient, True) Then
+                If nAction = 301 Then
+                    lobjErrors.ErrorMessage(sCodispl, 2065)
+                End If
+                'FIN DMendoza 16/08/2021
+            Else
 				If nAction <> 301 Then
 					lobjErrors.ErrorMessage(sCodispl, 1007)
 				End If
@@ -50,8 +64,11 @@ Public Class ClientSeq
 			If sDigit = String.Empty And Trim(sClient) <> String.Empty Then
 				lobjErrors.ErrorMessage(sCodispl, 2090)
 			Else
-				If sDigit <> String.Empty Then
-                    If UCase(sDigit) <> "E" Then
+                If sDigit <> String.Empty Then
+                    'INICIO DMendoza 16/08/2021
+                    ' Se quita la validación de que solo se creé con la letra E
+                    'If UCase(sDigit) <> "E" Then
+                    If lblnCreate = False Then
                         'INICIO DMendoza 11/08/2021
                         ' Se comenta validación del digito verificador para que consulte en la BD
                         'If lobjClient.GetRUT(sClient) <> UCase(sDigit) Then
@@ -62,8 +79,9 @@ Public Class ClientSeq
                         End If
                         'FIN DMendoza 11/08/2021
                     End If
+                    'FIN DMendoza 16/08/2021
                 End If
-			End If
+            End If
 		End If
 		
 		'+ Validaciones del campo tipo de persona
