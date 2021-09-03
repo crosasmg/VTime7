@@ -185,43 +185,43 @@ Public Class Premiums
 		'UPGRADE_NOTE: Object objNewMember may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
 		objNewMember = Nothing
 	End Function
-	
-	'% Add_COC002: añade un nuevo elemento a la colección usada en C0C002.
-	Public Function Add_COC002(ByVal nReceipt As Integer, ByVal nBulletins As Double, ByVal nCollecto As Double, ByVal dEffecdate As Date, ByVal dExpirDat As Date, ByVal nCurrency As Integer, ByVal nPremium As Double, ByVal nPremiumn As Double, ByVal nStatus_pre As Integer, ByVal nContrat As Double, ByVal nAmount As Double, ByVal nStat_draft As Integer, ByVal nDraft As Integer, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double) As Premium
-		'+ Create a new object
-		Dim objNewMember As eCollection.Premium
-		
-		objNewMember = New eCollection.Premium
-		
-		'+ Set the properties passed into the method
-		With objNewMember
-			.nReceipt = nReceipt
-			.nBulletins = nBulletins
-			.nCollecto = nCollecto
-			.dEffecdate = dEffecdate
-			.dExpirDat = dExpirDat
-			.nCurrency = nCurrency
-			.nPremium = nPremium
-			.nPremiumn = nPremiumn
-			.nStatus_pre = nStatus_pre
-			.nContrat = nContrat
-			.nAmount = nAmount
-			.nStat_draft = nStat_draft
-			.nDraft = nDraft
-		End With
-		
-		'** Key of the table: sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, nContrat, nDraft
-		'+ Llave de la tabla: sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, nContrat, nDraft
-		mCol.Add(objNewMember, "CO" & "2" & nBranch & nProduct & nPolicy & 0 & nReceipt & nContrat & nDraft)
-		
-		'+ Return the object created
-		Add_COC002 = objNewMember
-		'UPGRADE_NOTE: Object objNewMember may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
-		objNewMember = Nothing
-	End Function
-	
-	'%Find_Receipt_Pol: Permite leer los recibos y financiamientos de una poliza
-	Public Function Find_Receipt_Pol(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nProponum As Double, ByVal nInd_PolPro As Integer, Optional ByVal lblnFind As Boolean = False) As Boolean
+
+    '% Add_COC002: añade un nuevo elemento a la colección usada en C0C002.
+    Public Function Add_COC002(ByVal nReceipt As Long, ByVal nBulletins As Double, ByVal nCollecto As Double, ByVal dEffecdate As Date, ByVal dExpirDat As Date, ByVal nCurrency As Integer, ByVal nPremium As Double, ByVal nPremiumn As Double, ByVal nStatus_pre As Integer, ByVal nContrat As Double, ByVal nAmount As Double, ByVal nStat_draft As Integer, ByVal nDraft As Integer, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double) As Premium
+        '+ Create a new object
+        Dim objNewMember As eCollection.Premium
+
+        objNewMember = New eCollection.Premium
+
+        '+ Set the properties passed into the method
+        With objNewMember
+            .nReceipt = nReceipt
+            .nBulletins = nBulletins
+            .nCollecto = nCollecto
+            .dEffecdate = dEffecdate
+            .dExpirDat = dExpirDat
+            .nCurrency = nCurrency
+            .nPremium = nPremium
+            .nPremiumn = nPremiumn
+            .nStatus_pre = nStatus_pre
+            .nContrat = nContrat
+            .nAmount = nAmount
+            .nStat_draft = nStat_draft
+            .nDraft = nDraft
+        End With
+
+        '** Key of the table: sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, nContrat, nDraft
+        '+ Llave de la tabla: sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, nContrat, nDraft
+        mCol.Add(objNewMember, "CO" & "2" & nBranch & nProduct & nPolicy & 0 & nReceipt & nContrat & nDraft)
+
+        '+ Return the object created
+        Add_COC002 = objNewMember
+        'UPGRADE_NOTE: Object objNewMember may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        objNewMember = Nothing
+    End Function
+
+    '%Find_Receipt_Pol: Permite leer los recibos y financiamientos de una poliza
+    Public Function Find_Receipt_Pol(ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nProponum As Double, ByVal nInd_PolPro As Integer, Optional ByVal lblnFind As Boolean = False) As Boolean
 		Dim lrecreaPremium As eRemoteDB.Execute
 		Dim lclsPremium As Premium
 		
