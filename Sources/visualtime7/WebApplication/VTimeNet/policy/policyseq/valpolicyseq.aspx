@@ -1030,7 +1030,9 @@
             Case "CA050"
 
                 insvalSequence = mobjPolicySeq.insValCA050("CA050", Request.Form.Item("chkDetailedEntryPrinted"), mobjValues.StringToType(Request.Form.Item("cboWaitCode"), eFunctions.Values.eTypeData.etdDouble, True), Session("nTransaction"), Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate))
-
+            '+ CA072: Cuadro de rescate de poliza
+            Case "CA072"
+                insvalSequence = String.Empty
             '+ OS001: Solicitud de ordenes de servicio
             Case "OS001", "OS001_K"
                 mobjPolicySeq = New eClaim.Prof_ord
@@ -2269,6 +2271,10 @@
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA017", "2")
 
+                If Session("nBranch") = ePolicy.Policy.Branch_Pol.cstr_VidaIndividualLargoPlazo And Session("nProduct") = ePolicy.Policy.Product_Pol.cstr_VidaDevolucionProtecta Then
+                    lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA072", "2")
+                End If
+
             '+ CA017A: Cuotas de un recibo 
             Case "CA017A"
                 If CBool(Request.Form.Item("hddbValCa017a")) Then
@@ -2389,7 +2395,10 @@
                         End If
                     End If
                 End With
-
+            '+ CA072: Cuadro de rescate de poliza
+            Case "CA072"
+                lclsPolicy_Win = New ePolicy.Policy_Win
+                lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA072", "2")
             '+ CA023: Beneficiarios identificados por código
             Case "CA023"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -4800,7 +4809,7 @@ Session("nFinish") = ""
 
         '+ Si no se han validado los campos de la página
         If Request.Form.Item("sCodisplReload") = vbNullString Then
-	mstrErrors = insvalSequence
+            mstrErrors = insvalSequence()
             Session("sErrorTable") = mstrErrors
             Session("sForm") = Request.Form.ToString
             mblnReload = False
@@ -4812,23 +4821,23 @@ Session("nFinish") = ""
 
         If mstrErrors > vbNullString Then
             With Response
-		.Write("<SCRIPT LANGUAGE=JAVASCRIPT>")
+                .Write("<SCRIPT LANGUAGE=JAVASCRIPT>")
                 If Request.QueryString.Item("ActionType") = "Check" Then
-			.Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & Server.URLEncode(mstrCommand) & "&sQueryString=" & Server.URLEncode(Request.Params.Get("Query_String")) & "&ActionType=" & Request.QueryString.Item("ActionType") & "&nIndex=" & Request.QueryString.Item("nIndex") & "&nMainAction=" & Request.QueryString.Item("nMainAction") & mstrQueryString & """, ""PolicySeqError"",660,330);")
+                    .Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & Server.UrlEncode(mstrCommand) & "&sQueryString=" & Server.UrlEncode(Request.Params.Get("Query_String")) & "&ActionType=" & Request.QueryString.Item("ActionType") & "&nIndex=" & Request.QueryString.Item("nIndex") & "&nMainAction=" & Request.QueryString.Item("nMainAction") & mstrQueryString & """, ""PolicySeqError"",660,330);")
                 Else
                     .Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & Server.UrlEncode(mstrCommand) & "&sQueryString=" & Server.UrlEncode(Request.Params.Get("Query_String")) & mstrQueryString & """, ""PolicySeqError"",660,330);")
                     If Request.QueryString.Item("sCodispl") <> "CA021" Then
                         .Write(mobjValues.StatusControl(False, CShort(Request.QueryString.Item("nZone")), Request.QueryString.Item("WindowType")))
                     End If
                 End If
-		.Write("</SCRIPT>")
+                .Write("</SCRIPT>")
             End With
         Else
 
             If Request.QueryString.Item("nAction") <> CStr(eFunctions.Menues.TypeActions.clngAcceptdatafinish) Then
                 If insPostSequence() Then
 
-                    If Request.QueryString.Item("WindowType") <> "PopUp" Or _
+                    If Request.QueryString.Item("WindowType") <> "PopUp" Or
                       (Request.QueryString.Item("sCodispl") = "CA027A" And Request.QueryString.Item("sOnSeq") = "1") Then
 
                         '+ Si se está tratando con un frame y no con la ventana principal de la secuencia, 
@@ -4878,7 +4887,7 @@ Session("nFinish") = ""
                             '+ Si se trata de Fin de proceso, se recarga la ventana principal de la secuencia
                             Case "GE101"
                                 Response.Write("<script>top.opener.top.document.location.href=" & mstrLocationCA001 & ";</script>")
-                                '+ Emisión de recibo automático                                
+                            '+ Emisión de recibo automático                                
                             Case "CA027"
                                 Response.Write("<script>top.close();</script>")
                             Case "CA020"
@@ -4889,8 +4898,8 @@ Session("nFinish") = ""
                                 Response.Write("<script>top.opener.document.location.href='CA024.aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sInd_comm=" & Request.Form.Item("hddInd_Comm") & "&sConcoll=" & Request.Form.Item("hddConColl") & "&nCommityp=" & Session("hddsType") & "&nPercent=" & Request.Form.Item("hddtcnPercent") & "'</script>")
                             Case "CA061"
                                 Response.Write("<script>top.opener.document.location.href='CA061.aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sInd_comm=" & Request.Form.Item("hddInd_Comm") & "&sConcoll=" & Request.Form.Item("hddConColl") & "&nCommityp=" & Session("hddsType") & "&nPercent=" & Request.Form.Item("hddtcnPercent") & "&dIniDate=" & Request.QueryString.Item("dIniDate") & "&dEndDate=" & Request.QueryString.Item("dEndDate") & "'</script>")
-                        Case "CA061"
-                            Response.Write("<script>top.opener.document.location.href='CA061.aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sInd_comm=" & Request.Form.Item("hddInd_Comm") & "&sConcoll=" & Request.Form.Item("hddConColl") & "&nCommityp=" & Session("hddsType") & "&nPercent=" & Request.Form.Item("hddtcnPercent") & "&dIniDate=" & Request.QueryString.Item("dIniDate") & "&dEndDate=" & Request.QueryString.Item("dEndDate") & "'</script>")
+                            Case "CA061"
+                                Response.Write("<script>top.opener.document.location.href='CA061.aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sInd_comm=" & Request.Form.Item("hddInd_Comm") & "&sConcoll=" & Request.Form.Item("hddConColl") & "&nCommityp=" & Session("hddsType") & "&nPercent=" & Request.Form.Item("hddtcnPercent") & "&dIniDate=" & Request.QueryString.Item("dIniDate") & "&dEndDate=" & Request.QueryString.Item("dEndDate") & "'</script>")
                             Case "CA021"
                                 If mblnReload Then
                                     Response.Write("<script>window.close();top.opener.top.opener.top.frames['fraFolder'].document.location.href='" & Request.QueryString.Item("sCodispl") & ".aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sOnSeq=1" & Request.Form.Item("tctSetting") & "&sKeep=1&nBranchRei=" & Request.Form.Item("cbeBranchrei") & "&nModulec=" & Request.Form.Item("tcnModulec") & "&nCover=" & Request.Form.Item("valCover") & "&sClient=" & Request.Form.Item("valClient") & "&sPopupT=" & Request.Form.Item("tctPopUpT") & mstrQueryString & "'</script>")
@@ -4913,7 +4922,7 @@ Session("nFinish") = ""
                                     Response.Write("<script>top.opener.document.location.href='" & Request.QueryString.Item("sCodispl") & ".aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("Index") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sOnSeq=1&Reload=2&sClient=" & Request.Form.Item("hddsClient") & "&nRole=" & Request.Form.Item("hddnRole") & "'</script>")
                                 End If
 
-                                '+ Cuadro de valores garantizados
+                            '+ Cuadro de valores garantizados
                             Case "VI732"
                                 Response.Write("<script>top.opener.document.location.href='" & Request.QueryString.Item("sCodispl") & ".aspx?Reload=" & Request.Form.Item("chkContinue") & "&ReloadAction=" & Request.QueryString.Item("Action") & "&ReloadIndex=" & Request.QueryString.Item("ReloadIndex") & "&sCodispl=" & Request.QueryString.Item("sCodispl") & "&sOnSeq=1" & "&nMainAction=" & Request.QueryString.Item("nMainAction") & "&sAut_guarval=" & Request.Form.Item("hddAut_guarval") & "&nCurrency=" & Request.Form.Item("cbeCurrency") & "'</script>")
                             Case "AM002"

@@ -35,6 +35,14 @@ Public Class Policy
         cstrRansom = 8 'Rescatada
     End Enum
 
+    Enum Branch_Pol
+        cstr_VidaIndividualLargoPlazo = 71
+    End Enum
+
+    Enum Product_Pol
+        cstr_VidaDevolucionProtecta = 1
+    End Enum
+
     '+ Constantes
     '+ Ejecucion proceso Calculo de Reserva
     Const clngGenCalcReserva As Short = 86
@@ -7172,7 +7180,47 @@ Update_dNextReceip_err:
         lrecUpddNextReceip = Nothing
     End Function
 
+    Public Function ValSuspensionPolicy(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double) As Boolean
+        Dim lrecValidSuspensionPolicy As eRemoteDB.Execute
 
+        On Error GoTo ValidSuspensionPolicy_Err
+
+        lrecValidSuspensionPolicy = New eRemoteDB.Execute
+
+        '+
+        '+ Definición de store procedure VALSUSP_POLICY al 30-09-2021
+        '+
+        With lrecValidSuspensionPolicy
+            .StoredProcedure = "VALSUSP_POLICY"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nResult", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+            .Run(False)
+            ValSuspensionPolicy = IIf(.Parameters("nResult").Value = 0, False, True)
+
+            'If .Run Then
+            '    If .Parameters("nResult").Value > 0 Then
+            '        ValSuspensionPolicy = True
+            '    Else
+            '        ValSuspensionPolicy = False
+            '    End If
+            'Else
+            '    ValSuspensionPolicy = False
+            'End If
+        End With
+
+ValidSuspensionPolicy_Err:
+        If Err.Number Then
+            ValSuspensionPolicy = False
+        End If
+        'UPGRADE_NOTE: Object lrecValidSuspensionPolicy may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecValidSuspensionPolicy = Nothing
+        On Error GoTo 0
+
+    End Function
 
 End Class
 

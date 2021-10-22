@@ -115,6 +115,21 @@
 
         Response.Write(" " & vbCrLf)
         Response.Write("         </TD>" & vbCrLf)
+        If Session("nTransaction") = eCollection.Premium.PolTransac.clngPolicyQuery And Session("nBranch") = ePolicy.Policy.Branch_Pol.cstr_VidaIndividualLargoPlazo And Session("nProduct") = ePolicy.Policy.Product_Pol.cstr_VidaDevolucionProtecta Then
+
+            Response.Write("        <TD>" & vbCrLf)
+            Response.Write("        <LABEL>" & GetLocalResourceObject("lblStatusPolCaption") & "</LABEL>&nbsp;&nbsp;&nbsp;" & vbCrLf)
+            Response.Write("         </TD>" & vbCrLf)
+            Response.Write("        <TD ALIGN=""RIGHT"">" & vbCrLf)
+            If mclsPolicy.ValSuspensionPolicy(mstrCertype, Session("nBranch"), Session("nProduct"), Session("nPolicy")) Then
+                Response.Write(mobjValues.TextControl("lblStatusPol", 20, GetLocalResourceObject("lblStatusPolSuspendCaption"), , GetLocalResourceObject("lblStatusPolToolTip"), True))
+            Else
+                Response.Write(mobjValues.TextControl("lblStatusPol", 20, GetLocalResourceObject("lblStatusPolValidCaption"), , GetLocalResourceObject("lblStatusPolToolTip"), True))
+            End If
+            Response.Write("         </TD>" & vbCrLf)
+
+        End If
+
         Response.Write("         ")
 
         If Session("nTransaction") = 25 Or Session("nTransaction") = 26 Or Session("nTransaction") = 24 Then
