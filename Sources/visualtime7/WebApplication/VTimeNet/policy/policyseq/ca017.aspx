@@ -135,71 +135,72 @@ mobjMenu = Nothing
 <BODY ONUNLOAD="closeWindows();">
 <FORM METHOD="POST" ID="FORM" NAME="frmCA017" ACTION="ValPolicySeq.aspx?x=1">
 <%
-Response.Write(mobjValues.ShowWindowsName("CA017", Request.QueryString.Item("sWindowDescript")))
+    Response.Write(mobjValues.ShowWindowsName("CA017", Request.QueryString.Item("sWindowDescript")))
 
-mstrListReceipt = vbNullString
-mclsPremium = New eCollection.Premium
+    mstrListReceipt = vbNullString
+    mclsPremium = New eCollection.Premium
 
-Call lobjPolicy.Find(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), True)
+    Call lobjPolicy.Find(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), True)
 
-If mclsPremium.insValPrevInfo(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nTransaction")) Then
-	
-	lblRecal = True
-	If Session("nTransaction") = eCollection.Premium.PolTransac.clngRecuperation Then
-		If lclsProdMaster.FindProduct_li(Session("nBranch"), Session("nProduct"), Session("dEffecdate")) Then
-			If lclsProdMaster.nProdClas = 4 Then
-				If Session("nTransaction2") = eCollection.Premium.PolTransac.clngQuotationConvertion Or Session("nTransaction2") = eCollection.Premium.PolTransac.clngProposalConvertion Then
-					llngProponum = Session("nProponum")
-					
-					If lclsMove_acc.Find_sClient(lobjPolicy.sClient) Then
-						lblRecal = False
-					End If
-				Else
-					llngProponum = lobjPolicy.nProponum
-				End If
-				
-				
-			End If
-		End If
-		'        Elseif Session("nTransaction") = clngProprehabilitate Then
-		'		    lblRecal = False
-	End If
-	
-	If Request.QueryString.Item("nReceipt") = vbNullString Then
-		If lblRecal Then
-			Call mclsPremium.insPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
-			
-			mintDefaultReceipt = mclsPremium.nReceiptdefault
-			mstrListReceipt = mclsPremium.sListReceipt
-			Session("sColinvot") = mclsPremium.sColinvot
-		Else
-			If mclsPremium.Find_Premium_CA001(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif")) Then
-				mintDefaultReceipt = mclsPremium.nReceipt
-				mstrListReceipt = mclsPremium.sListReceipt
-			End If
-		End If
-	Else
-		mintDefaultReceipt = mobjValues.StringToType(Request.QueryString.Item("nReceipt"), eFunctions.Values.eTypeData.etdDouble)
-		mstrListReceipt = Request.QueryString.Item("sListReceipt")
-	End If
-End If
-'Response.Write "<NOTSCRIPT>alert('''mstrListReceipt''': '" & mstrListReceipt & "');</SCRIPT>"
-mblnReceiptexists = mclsPremium.InsReaCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("sPolitype"), Session("sColinvot"), mintDefaultReceipt, Session("sBrancht"))
+    If mclsPremium.insValPrevInfo(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nTransaction")) Then
 
-If mclsPremium.dStatdate <> eRemoteDB.Constants.dtmNull Then
-	mdatStatdate = mclsPremium.dStatdate
-End If
-If mclsPremium.dExpirDat <> eRemoteDB.Constants.dtmNull Then
-	mdatExpirDat = mclsPremium.dExpirDat
-End If
+        lblRecal = True
+        If Session("nTransaction") = eCollection.Premium.PolTransac.clngRecuperation Then
+            If lclsProdMaster.FindProduct_li(Session("nBranch"), Session("nProduct"), Session("dEffecdate")) Then
+                If lclsProdMaster.nProdClas = 4 Then
+                    If Session("nTransaction2") = eCollection.Premium.PolTransac.clngQuotationConvertion Or Session("nTransaction2") = eCollection.Premium.PolTransac.clngProposalConvertion Then
+                        llngProponum = Session("nProponum")
 
-'+ Si el Tipo de póliza es Colectiva, la facturación no es por certificado y
-'+ no es la póliza matriz
-If CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0" Then
+                        If lclsMove_acc.Find_sClient(lobjPolicy.sClient) Then
+                            lblRecal = False
+                        End If
+                    Else
+                        llngProponum = lobjPolicy.nProponum
+                    End If
+
+
+                End If
+            End If
+            '        Elseif Session("nTransaction") = clngProprehabilitate Then
+            '		    lblRecal = False
+        End If
+
+        If Request.QueryString.Item("nReceipt") = vbNullString Then
+            If lblRecal Then
+                Call mclsPremium.insPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
+
+                mintDefaultReceipt = mclsPremium.nReceiptdefault
+                mstrListReceipt = mclsPremium.sListReceipt
+                Session("sColinvot") = mclsPremium.sColinvot
+                Session("nReceiptGenInd") = mintDefaultReceipt 'ehh - Ad. vt fase II rsis 2
+            Else
+                If mclsPremium.Find_Premium_CA001(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif")) Then
+                    mintDefaultReceipt = mclsPremium.nReceipt
+                    mstrListReceipt = mclsPremium.sListReceipt
+                End If
+            End If
+        Else
+            mintDefaultReceipt = mobjValues.StringToType(Request.QueryString.Item("nReceipt"), eFunctions.Values.eTypeData.etdDouble)
+            mstrListReceipt = Request.QueryString.Item("sListReceipt")
+        End If
+    End If
+    'Response.Write "<NOTSCRIPT>alert('''mstrListReceipt''': '" & mstrListReceipt & "');</SCRIPT>"
+    mblnReceiptexists = mclsPremium.InsReaCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("sPolitype"), Session("sColinvot"), mintDefaultReceipt, Session("sBrancht"))
+
+    If mclsPremium.dStatdate <> eRemoteDB.Constants.dtmNull Then
+        mdatStatdate = mclsPremium.dStatdate
+    End If
+    If mclsPremium.dExpirDat <> eRemoteDB.Constants.dtmNull Then
+        mdatExpirDat = mclsPremium.dExpirDat
+    End If
+
+    '+ Si el Tipo de póliza es Colectiva, la facturación no es por certificado y
+    '+ no es la póliza matriz
+    If CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0" Then
         mstrLabel = "cboReceiptsCaptionMov"
-Else
+    Else
         mstrLabel = "cboReceiptsCaption"
-End If
+    End If
 %>           
     <TABLE WIDTH="100%">
         <TR>

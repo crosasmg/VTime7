@@ -259,6 +259,9 @@
                     'insValCollectionTra = mobjCollectionTra.insValCO700_K("CO700", Request.QueryString.Item("nMainAction"), mobjValues.StringToType(Session("nInsur_area"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("optDocType"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("optBillType"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("optProcess"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("tcdDateIni"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdDateEnd"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdDatePrint"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("optMode"), mobjValues.StringToType(Request.Form.Item("tcnBill"), eFunctions.Values.eTypeData.etdDouble, True), Request.Form.Item("dtcClient"), "2", mobjValues.StringToType(Request.Form.Item("cbeBranch"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("valProduct"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("tcnPolicy"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("cbeAgency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("tcdValDate"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("chkBill_Ind"))
                     insValCollectionTra = mobjCollectionTra.insValCO700_K("CO700", Request.QueryString.Item("nMainAction"), nInsur_Area, mobjValues.StringToType(Request.Form.Item("optDocType"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("optBillType"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("optProcess"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("tcdDateIni"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdDateEnd"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.Form.Item("tcdDatePrint"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("optMode"), mobjValues.StringToType(Request.Form.Item("tcnBill"), eFunctions.Values.eTypeData.etdDouble, True), Request.Form.Item("dtcClient"), "2", nBranch, nProduct, mobjValues.StringToType(Request.Form.Item("tcnPolicy"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("cbeAgency"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Request.Form.Item("tcdValDate"), eFunctions.Values.eTypeData.etdDate), Request.Form.Item("chkBill_Ind"))
                     If insValCollectionTra = vbNullString Then
+                        'ehh - Ad. vt fase II rsis 2
+                        Session("cbeBranchBill") = nBranch
+                        Session("valProductBill") = nProduct
                         mstrKey = mobjCollectionTra.skey
                     End If
 
@@ -728,6 +731,18 @@
                             mdtmDateEnd = mobjValues.StringToType(Request.QueryString.Item("dDateEnd"), eFunctions.Values.eTypeData.etdDate)
                             mdtmDatePrint = mobjValues.StringToType(Request.QueryString.Item("dDatePrint"), eFunctions.Values.eTypeData.etdDate)
                             mstrMode = Request.QueryString.Item("sModeT")
+
+                            'ehh - Ad. vt fase II rsis 2
+                            Dim mobjRecIng As New Reconocimiento_ingresos
+                            mobjRecIng = New Reconocimiento_ingresos
+                            Dim sBillGen As String
+                            sBillGen = mobjRecIng.reaBillGen(mobjValues.StringToType(Session("cbeBranchBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("valProductBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.QueryString.Item("nPolicy"), eFunctions.Values.eTypeData.etdDouble))
+                            If (sBillGen = String.Empty) Then
+
+                            Else
+                                Response.Write("<SCRIPT>alert('Se ha generado el comprobante: " & sBillGen & "');</" & "Script>")
+                            End If
+
                             'Call insPrintCollectionTra("CO700")
                         End If
                     End If

@@ -393,7 +393,7 @@
                                                                           mobjValues.StringToType(.Form.Item("tcnDiscountClaim"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                           mobjValues.StringToType(.Form.Item("tcnDisc_amounClaim"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                           mobjValues.StringToType(.Form.Item("tcnFrancdaysClaim"), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                          , , , mobjValues.StringToType(.Form.Item("hddnDataFound"), eFunctions.Values.eTypeData.etdDouble), .QueryString("Action"), .Form.Item("hddsChange"), Session("sSche_code"), .Form.Item("hddsVIP"), , mobjValues.StringToType(.Form.Item("cbenTypAgeMinM"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenTypAgeMinF"), eFunctions.Values.eTypeData.etdDouble, True))
+                                                                                      , , , mobjValues.StringToType(.Form.Item("hddnDataFound"), eFunctions.Values.eTypeData.etdDouble), .QueryString("Action"), .Form.Item("hddsChange"), Session("sSche_code"), .Form.Item("hddsVIP"), , mobjValues.StringToType(.Form.Item("cbenTypAgeMinM"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenTypAgeMinF"), eFunctions.Values.eTypeData.etdDouble, True))
 
                             If insvalSequence > vbNullString Then
                                 mstrScript = "top.frames['fraFolder'].document.forms[0].Sel.checked=" & .QueryString.Item("sChecked") & "false;" & "top.frames['fraFolder'].marrArray[0].Sel =" & .QueryString.Item("sChecked") & "false;"
@@ -410,7 +410,7 @@
                                                                           mobjValues.StringToType(.Form.GetValues("hddDiscountClaim").GetValue(CInt(.QueryString("nIndex")) - 1), eFunctions.Values.eTypeData.etdDouble, True),
                                                                           mobjValues.StringToType(.Form.GetValues("hddDisc_amounClaim").GetValue(CInt(.QueryString("nIndex")) - 1), eFunctions.Values.eTypeData.etdDouble, True),
                                                                           mobjValues.StringToType(.Form.GetValues("hddFrancdays").GetValue(CInt(.QueryString("nIndex")) - 1), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                          , , , mobjValues.StringToType(.Form.Item("hddnDataFound"), eFunctions.Values.eTypeData.etdDouble), .QueryString("Action"), .Form.GetValues("hddsChange").GetValue(CInt(.QueryString("nIndex")) - 1), Session("sSche_code"), .Form.Item("hddsVIP"), , mobjValues.StringToType(.Form.Item("cbenTypAgeMinM"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenTypAgeMinF"), eFunctions.Values.eTypeData.etdDouble, True))
+                                                                                      , , , mobjValues.StringToType(.Form.Item("hddnDataFound"), eFunctions.Values.eTypeData.etdDouble), .QueryString("Action"), .Form.GetValues("hddsChange").GetValue(CInt(.QueryString("nIndex")) - 1), Session("sSche_code"), .Form.Item("hddsVIP"), , mobjValues.StringToType(.Form.Item("cbenTypAgeMinM"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenTypAgeMinF"), eFunctions.Values.eTypeData.etdDouble, True))
 
                             If insvalSequence > vbNullString Then
                                 mstrScript = "top.frames['fraFolder'].document.forms[0].Sel[" & CStr(CShort(.QueryString.Item("nIndex")) - 1) & "].checked=" & .QueryString.Item("sChecked") & "false;" & "top.frames['fraFolder'].marrArray[" & CStr(CShort(.QueryString.Item("nIndex")) - 1) & "].Sel =" & .QueryString.Item("sChecked") & "false;"
@@ -1033,6 +1033,10 @@
             '+ CA072: Cuadro de rescate de poliza
             Case "CA072"
                 insvalSequence = String.Empty
+            '+ CA072: Estimación de contrato
+            Case "CA073"
+                mobjPolicySeq = New ePolicy.Reconocimiento_ingresos
+                insvalSequence = mobjPolicySeq.InsValCA073(mobjValues.StringToType(Request.Form.Item("tcnPrimNetaDC"), eFunctions.Values.eTypeData.etdDouble))
             '+ OS001: Solicitud de ordenes de servicio
             Case "OS001", "OS001_K"
                 mobjPolicySeq = New eClaim.Prof_ord
@@ -1954,7 +1958,7 @@
             '+ CA004: Datos para la facturación
             Case "CA004"
                 With Request
-                    lblnPost = mobjPolicySeq.insPostCA004(.QueryString("nHolder"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("sPolitype"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctClient"), .Form.Item("optFreq"), mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeQuota"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeIndexType"), .Form.Item("cbeIndexApl"), .Form.Item("chkNoNull"), mobjValues.StringToType(.Form.Item("tcdStartDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdExpirDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdIssuedat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdReqDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnCopies"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndexRate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDaysNull"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chkDeclarative"), .Form.Item("chkFracti"), IIf(String.IsNullOrEmpty(.Form.Item("chkRenewalAut")), "2", .Form.Item("chkRenewalAut")), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valAgreement"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSendAddr"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chksInsubank"), .Form.Item("chksNoPayRoll"), .Form.Item("chkExemption"), mobjValues.StringToType(.Form.Item("cbenSpecialbusiness"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chksLeg"), mobjValues.StringToType(.Form.Item("tcnDays_quot"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeBill_ind"), mobjValues.StringToType(.Form.Item("tcnDuration"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("hhDirTyp"), mobjValues.StringToType(.Form.Item("valCollector"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chkFracReceip"), mobjValues.StringToType(.Form.Item("valgroup_Agree"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("tctcumul_code"), mobjValues.StringToType(.Form.Item("cbeRepInsured"), eFunctions.Values.eTypeData.etdDouble, True), "1", .Form.Item("cbeReceipt_ind"), mobjValues.StringToType(.Form.Item("tcnTerm_grace"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(.Form.Item("tcdTariffDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeDepreciationtable"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("chksInd_Multiannual"), .Form.Item("chksIndqsame"), .Form.Item("chksInd_IFI"), mobjValues.StringToType(Session("nType_amend"), Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnExtraDay"), eFunctions.Values.eTypeData.etdDouble, True) , mobjValues.StringToType(.Form.Item("cbenFormPay"), eFunctions.Values.eTypeData.etdInteger, True) ,  mobjValues.StringToType(.Form.Item("cbenPromissory_Note"), eFunctions.Values.eTypeData.etdInteger,  True))
+                    lblnPost = mobjPolicySeq.insPostCA004(.QueryString("nHolder"), Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("npolicy"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("sPolitype"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("tctClient"), .Form.Item("optFreq"), mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeQuota"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeIndexType"), .Form.Item("cbeIndexApl"), .Form.Item("chkNoNull"), mobjValues.StringToType(.Form.Item("tcdStartDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdExpirDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdIssuedat"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcdReqDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("tcnCopies"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnIndexRate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnDaysNull"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chkDeclarative"), .Form.Item("chkFracti"), IIf(String.IsNullOrEmpty(.Form.Item("chkRenewalAut")), "2", .Form.Item("chkRenewalAut")), .Form.Item("optDirTyp"), mobjValues.StringToType(.Form.Item("cbeWayPay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnBillDay"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valAgreement"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("cbeSendAddr"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chksInsubank"), .Form.Item("chksNoPayRoll"), .Form.Item("chkExemption"), mobjValues.StringToType(.Form.Item("cbenSpecialbusiness"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("chksLeg"), mobjValues.StringToType(.Form.Item("tcnDays_quot"), eFunctions.Values.eTypeData.etdDouble), .Form.Item("cbeBill_ind"), mobjValues.StringToType(.Form.Item("tcnDuration"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("valOrigin"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("tcnAFPCommi"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("hhDirTyp"), mobjValues.StringToType(.Form.Item("valCollector"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("chkFracReceip"), mobjValues.StringToType(.Form.Item("valgroup_Agree"), eFunctions.Values.eTypeData.etdDouble, True), .Form.Item("tctcumul_code"), mobjValues.StringToType(.Form.Item("cbeRepInsured"), eFunctions.Values.eTypeData.etdDouble, True), "1", .Form.Item("cbeReceipt_ind"), mobjValues.StringToType(.Form.Item("tcnTerm_grace"), eFunctions.Values.eTypeData.etdLong), mobjValues.StringToType(.Form.Item("tcdTariffDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form.Item("cbeDepreciationtable"), eFunctions.Values.eTypeData.etdInteger), .Form.Item("chksInd_Multiannual"), .Form.Item("chksIndqsame"), .Form.Item("chksInd_IFI"), mobjValues.StringToType(Session("nType_amend"), Values.eTypeData.etdDouble), mobjValues.StringToType(.Form.Item("tcnExtraDay"), eFunctions.Values.eTypeData.etdDouble, True), mobjValues.StringToType(.Form.Item("cbenFormPay"), eFunctions.Values.eTypeData.etdInteger, True), mobjValues.StringToType(.Form.Item("cbenPromissory_Note"), eFunctions.Values.eTypeData.etdInteger, True))
                     If lblnPost Then
                         Session("dStartdate") = mobjValues.StringToType(.Form.Item("tcdStartDate"), eFunctions.Values.eTypeData.etdDate)
                         Session("dExpirdat") = mobjValues.StringToType(.Form.Item("tcdExpirDate"), eFunctions.Values.eTypeData.etdDate)
@@ -1962,6 +1966,11 @@
                         Session("nPayFreq") = mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble)
                     End If
                 End With
+                'ehh - Ad. vt fase I ca073
+                If CStr(Session("sPoliType")) = 2 Then
+                    lclsPolicy_Win = New ePolicy.Policy_Win
+                    Call lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nUsercode"), "CA073", "3")
+                End If
             '+ Información general del colectivo
             Case "CA006"
                 With Request
@@ -2274,7 +2283,6 @@
                 If Session("nBranch") = ePolicy.Policy.Branch_Pol.cstr_VidaIndividualLargoPlazo And Session("nProduct") = ePolicy.Policy.Product_Pol.cstr_VidaDevolucionProtecta Then
                     lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA072", "2")
                 End If
-
             '+ CA017A: Cuotas de un recibo 
             Case "CA017A"
                 If CBool(Request.Form.Item("hddbValCa017a")) Then
@@ -2341,7 +2349,7 @@
 
                         '	                                                        mobjValues.StringToType(Request.Form(tcnInter_rate),eFunctions.Values.eTypeData.etdDouble),
                     Else
-                        lblnPost = lclsReinsuran.insPostCA021(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble) ,  Session("sKey")    )
+                        lblnPost = lclsReinsuran.insPostCA021(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdDouble), Session("sKey"))
                     End If
 
                     lclsReinsuran = Nothing
@@ -2399,6 +2407,22 @@
             Case "CA072"
                 lclsPolicy_Win = New ePolicy.Policy_Win
                 lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA072", "2")
+            '+ CA073: Estimación de contrato
+            Case "CA073"
+                Dim strReciept As String = ""
+                Dim nStatus As Integer = 0
+                strReciept = mobjPolicySeq.insPostCA073(CStr(Session("sPolitype")), Session("sCertype"), Session("nBranch"), Session("nProduct"),
+                                                    Session("nPolicy"), Session("nCertif"), -1, -1, -1, mobjValues.StringToType(Request.Form.Item("tcnInPrimNetaFP"), eFunctions.Values.eTypeData.etdDouble),
+                                                    mobjValues.StringToType(Request.Form.Item("tcnInDE"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form.Item("tcnInIGV"), eFunctions.Values.eTypeData.etdDouble), nStatus)
+
+                If nStatus = 0 Then
+                    lclsPolicy_Win = New ePolicy.Policy_Win
+                    lblnPost = lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("nUsercode"), "CA073", "2")
+                    Session("strReciept") = strReciept
+                Else
+                    Response.Write("<SCRIPT>alert('Error en generar recibos.');</" & "Script>")
+                End If
+
             '+ CA023: Beneficiarios identificados por código
             Case "CA023"
                 If Request.QueryString.Item("WindowType") = "PopUp" Then
@@ -3198,26 +3222,26 @@
                 mobjPolicySeq = New ePolicy.Tran_merch
                 With Request
                     If .QueryString.Item("WindowType") = "PopUp" Then
-                        insPostSequence = mobjPolicySeq.InsPostTR003(CDbl(.QueryString.Item("nZone")) = 1, _
-                                                                     .QueryString("sCodispl"), _
-                                                                     mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger), _
-                                                                     .QueryString("Action"), _
-                                                                     mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdInteger), _
-                                                                     Session("sCertype"), _
-                                                                     Session("nBranch"), _
-                                                                     Session("nProduct"), _
-                                                                     Session("nPolicy"), _
-                                                                     Session("nCertif"), _
-                                                                     Session("dEffecdate"), _
-                                                                     mobjValues.StringToType(.Form.Item("cbeClassMerch"), eFunctions.Values.eTypeData.etdInteger), _
-                                                                     mobjValues.StringToType(.Form.Item("cbePacking"), eFunctions.Values.eTypeData.etdInteger), _
-                                                                     .Form.Item("tctDescript"), _
-                                                                     mobjValues.StringToType(.Form.Item("tcnQuanTrans"), eFunctions.Values.eTypeData.etdInteger), _
-                                                                     mobjValues.StringToType(.Form.Item("cbeUnit"), eFunctions.Values.eTypeData.etdInteger, True), _
-                                                                     mobjValues.StringToType(.Form.Item("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                     .Form.Item("cbeFranDedi"), _
-                                                                     mobjValues.StringToType(.Form.Item("tcnFranDedRate"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                     .Form.Item("tcnMinAmount"), _
+                        insPostSequence = mobjPolicySeq.InsPostTR003(CDbl(.QueryString.Item("nZone")) = 1,
+                                                                     .QueryString("sCodispl"),
+                                                                     mobjValues.StringToType(.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdInteger),
+                                                                     .QueryString("Action"),
+                                                                     mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdInteger),
+                                                                     Session("sCertype"),
+                                                                     Session("nBranch"),
+                                                                     Session("nProduct"),
+                                                                     Session("nPolicy"),
+                                                                     Session("nCertif"),
+                                                                     Session("dEffecdate"),
+                                                                     mobjValues.StringToType(.Form.Item("cbeClassMerch"), eFunctions.Values.eTypeData.etdInteger),
+                                                                     mobjValues.StringToType(.Form.Item("cbePacking"), eFunctions.Values.eTypeData.etdInteger),
+                                                                     .Form.Item("tctDescript"),
+                                                                     mobjValues.StringToType(.Form.Item("tcnQuanTrans"), eFunctions.Values.eTypeData.etdInteger),
+                                                                     mobjValues.StringToType(.Form.Item("cbeUnit"), eFunctions.Values.eTypeData.etdInteger, True),
+                                                                     mobjValues.StringToType(.Form.Item("tcnAmount"), eFunctions.Values.eTypeData.etdDouble),
+                                                                     .Form.Item("cbeFranDedi"),
+                                                                     mobjValues.StringToType(.Form.Item("tcnFranDedRate"), eFunctions.Values.eTypeData.etdDouble),
+                                                                     .Form.Item("tcnMinAmount"),
                                                                      .QueryString("nCurrency"))
 
                     End If
@@ -3327,7 +3351,7 @@
                 lblnPost = True
 
                 mobjsAapv = New eSaapv.Saapv
-                lblnPost = mobjsAapv.upd_policy(CStr(Session("sCertype")), CInt(Session("nBranch")), CInt(Session("nProduct")), CDbl(Session("nPolicy")), CDbl(Session("nCertif")), mobjValues.StringToType(Request.Form.Item("tcncod_saapv"), eFunctions.Values.eTypeData.etdDouble), CDate(Session("dEffecdate")), mobjValues.StringToType(Request.Form.Item("hddInstitution"), eFunctions.Values.eTypeData.etdLong))
+                lblnPost = mobjsAapv.Upd_policy(CStr(Session("sCertype")), CInt(Session("nBranch")), CInt(Session("nProduct")), CDbl(Session("nPolicy")), CDbl(Session("nCertif")), mobjValues.StringToType(Request.Form.Item("tcncod_saapv"), eFunctions.Values.eTypeData.etdDouble), CDate(Session("dEffecdate")), mobjValues.StringToType(Request.Form.Item("hddInstitution"), eFunctions.Values.eTypeData.etdLong))
 
                 mobjsAapv = Nothing
 
@@ -3454,7 +3478,7 @@
                                                                  nConsec:=mobjValues.StringToType(.Form.Item("nConsec_EquipElect"), eFunctions.Values.eTypeData.etdInteger),
                                                                  nElement_Type:=mobjValues.StringToType(.Form.Item("NTYPE_EquipElect"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                  nSection:=mobjValues.StringToType(.Form.Item("NSECTION_EquipElect"), eFunctions.Values.eTypeData.etdInteger, True),
-                                                                 sDescription:=.Form.Item("SDESCRIPTION_EquipElect"),
+                                                                 sDescription:= .Form.Item("SDESCRIPTION_EquipElect"),
                                                                  nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                  nRate:=mobjValues.StringToType(.Form.Item("NRATE_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                  nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True))
@@ -3477,11 +3501,11 @@
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
                                                                     nConsec:=mobjValues.StringToType(.Form.Item("nConsec_RotMaqui"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sTradeMark:=.Form.Item("STRADEMARK_RotMaqui"),
-                                                                    sModel:=.Form.Item("SMODEL_RotMaqui"),
+                                                                    sTradeMark:= .Form.Item("STRADEMARK_RotMaqui"),
+                                                                    sModel:= .Form.Item("SMODEL_RotMaqui"),
                                                                     nYear:=mobjValues.StringToType(.Form.Item("NYEAR_RotMaqui"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sOrigin:=.Form.Item("SORIGIN_RotMaqui"),
-                                                                    sSerialNumber:=.Form.Item("SSERIALNUMBER_RotMaqui"),
+                                                                    sOrigin:= .Form.Item("SORIGIN_RotMaqui"),
+                                                                    sSerialNumber:= .Form.Item("SSERIALNUMBER_RotMaqui"),
                                                                     nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nRate:=mobjValues.StringToType(.Form.Item("NRATE_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True), nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True))
                     End With
@@ -3500,11 +3524,11 @@
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
                                                                     nConsec:=mobjValues.StringToType(.Form.Item("nConsec_EquipMaquiContr"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sTradeMark:=.Form.Item("STRADEMARK_EquipMaquiContr"),
-                                                                    sModel:=.Form.Item("SMODEL_EquipMaquiContr"),
+                                                                    sTradeMark:= .Form.Item("STRADEMARK_EquipMaquiContr"),
+                                                                    sModel:= .Form.Item("SMODEL_EquipMaquiContr"),
                                                                     nYear:=mobjValues.StringToType(.Form.Item("NYEAR_EquipMaquiContr"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sOrigin:=.Form.Item("SORIGIN_EquipMaquiContr"),
-                                                                    sSerialNumber:=.Form.Item("SSERIALNUMBER_EquipMaquiContr"),
+                                                                    sOrigin:= .Form.Item("SORIGIN_EquipMaquiContr"),
+                                                                    sSerialNumber:= .Form.Item("SSERIALNUMBER_EquipMaquiContr"),
                                                                     nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nRate:=mobjValues.StringToType(.Form.Item("NRATE_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True), nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True))
                     End With
@@ -3522,12 +3546,12 @@
                                                                     nType:=mobjValues.StringToType(.Form.Item("NTYPE_Fidelity"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sclient:=.Form.Item("sClient_Fidelity"),
-                                                                    sDigit:=.Form.Item("SCLIENT_Fidelity_Digit"),
-                                                                    sFirstName:=.Form.Item("sFirstName_Fidelity"),
-                                                                    sMiddel_Name:=.Form.Item("sMiddleName_Fidelity"),
-                                                                    sLastName:=.Form.Item("sLastName_Fidelity"),
-                                                                    sLastName2:=.Form.Item("sLastName2_Fidelity"),
+                                                                    sclient:= .Form.Item("sClient_Fidelity"),
+                                                                    sDigit:= .Form.Item("SCLIENT_Fidelity_Digit"),
+                                                                    sFirstName:= .Form.Item("sFirstName_Fidelity"),
+                                                                    sMiddel_Name:= .Form.Item("sMiddleName_Fidelity"),
+                                                                    sLastName:= .Form.Item("sLastName_Fidelity"),
+                                                                    sLastName2:= .Form.Item("sLastName2_Fidelity"),
                                                                     nPosition:=mobjValues.StringToType(.Form.Item("NPOSITION_Fidelity"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                     nSalary:=mobjValues.StringToType(.Form.Item("NSALARY_Fidelity"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nFactor:=mobjValues.StringToType(.Form.Item("NFACTOR_Fidelity"), eFunctions.Values.eTypeData.etdDouble, True),
@@ -3568,14 +3592,14 @@
                                                                   nTheftCapital:=mobjValues.StringToType(.Form.Item("tcnTheftCapital"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                   nSecurityMen:=mobjValues.StringToType(.Form.Item("tcnSecurityMen"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                   nArea:=mobjValues.StringToType(.Form.Item("tcnArea"), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                  sInd_Fidelity:=.Form.Item("sInd_Fidelity"),
-                                                                  sInd_Electronic:=.Form.Item("sInd_Electronic"),
-                                                                  sInd_Machine:=.Form.Item("sInd_Machine"),
-                                                                  sInd_Contractor:=.Form.Item("sInd_Contractor"),
+                                                                  sInd_Fidelity:= .Form.Item("sInd_Fidelity"),
+                                                                  sInd_Electronic:= .Form.Item("sInd_Electronic"),
+                                                                  sInd_Machine:= .Form.Item("sInd_Machine"),
+                                                                  sInd_Contractor:= .Form.Item("sInd_Contractor"),
                                                                   nMoney_Transit:=mobjValues.StringToType(.Form.Item("tcnMoney_Transit"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                   nMoney_Permanence:=mobjValues.StringToType(.Form.Item("tcnMoney_Permanence"), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                  narticle:= mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdInteger, True) ,
-                                                                  sriskdescription:=.Form.Item("sriskdescription")
+                                                                  narticle:=mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdInteger, True),
+                                                                  sriskdescription:= .Form.Item("sriskdescription")
                                                                   )
 
 
@@ -3613,22 +3637,22 @@
             Case "CM001"
                 mobjPolicySeq = New ePolicy.TRCM
                 With Request
-                    lblnPost = mobjPolicySeq.InsPostCM001(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(.Form.Item("cbovalSituation"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(.Form.Item("cbeTypeWork"), eFunctions.Values.eTypeData.etdInteger), _
-                                                          .Form.Item("tctWorkname"), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_work"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_work"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_m"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_m"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_em"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_em"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger), _
+                    lblnPost = mobjPolicySeq.InsPostCM001(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(.Form.Item("cbovalSituation"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(.Form.Item("cbeTypeWork"), eFunctions.Values.eTypeData.etdInteger),
+                                                          .Form.Item("tctWorkname"),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_work"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_work"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_m"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_m"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_em"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_em"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger),
                                                           Session("nUsercode"))
                 End With
                 mobjPolicySeq = Nothing
@@ -3663,7 +3687,7 @@
                                                                  nConsec:=mobjValues.StringToType(.Form.Item("nConsec_EquipElect"), eFunctions.Values.eTypeData.etdInteger),
                                                                  nElement_Type:=mobjValues.StringToType(.Form.Item("NTYPE_EquipElect"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                  nSection:=mobjValues.StringToType(.Form.Item("NSECTION_EquipElect"), eFunctions.Values.eTypeData.etdInteger, True),
-                                                                 sDescription:=.Form.Item("SDESCRIPTION_EquipElect"),
+                                                                 sDescription:= .Form.Item("SDESCRIPTION_EquipElect"),
                                                                  nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                  nRate:=mobjValues.StringToType(.Form.Item("NRATE_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                  nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_EquipElect"), eFunctions.Values.eTypeData.etdDouble, True))
@@ -3686,11 +3710,11 @@
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
                                                                     nConsec:=mobjValues.StringToType(.Form.Item("nConsec_RotMaqui"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sTradeMark:=.Form.Item("STRADEMARK_RotMaqui"),
-                                                                    sModel:=.Form.Item("SMODEL_RotMaqui"),
+                                                                    sTradeMark:= .Form.Item("STRADEMARK_RotMaqui"),
+                                                                    sModel:= .Form.Item("SMODEL_RotMaqui"),
                                                                     nYear:=mobjValues.StringToType(.Form.Item("NYEAR_RotMaqui"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sOrigin:=.Form.Item("SORIGIN_RotMaqui"),
-                                                                    sSerialNumber:=.Form.Item("SSERIALNUMBER_RotMaqui"),
+                                                                    sOrigin:= .Form.Item("SORIGIN_RotMaqui"),
+                                                                    sSerialNumber:= .Form.Item("SSERIALNUMBER_RotMaqui"),
                                                                     nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nRate:=mobjValues.StringToType(.Form.Item("NRATE_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True), nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_RotMaqui"), eFunctions.Values.eTypeData.etdDouble, True))
                     End With
@@ -3709,11 +3733,11 @@
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
                                                                     nConsec:=mobjValues.StringToType(.Form.Item("nConsec_EquipMaquiContr"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sTradeMark:=.Form.Item("STRADEMARK_EquipMaquiContr"),
-                                                                    sModel:=.Form.Item("SMODEL_EquipMaquiContr"),
+                                                                    sTradeMark:= .Form.Item("STRADEMARK_EquipMaquiContr"),
+                                                                    sModel:= .Form.Item("SMODEL_EquipMaquiContr"),
                                                                     nYear:=mobjValues.StringToType(.Form.Item("NYEAR_EquipMaquiContr"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sOrigin:=.Form.Item("SORIGIN_EquipMaquiContr"),
-                                                                    sSerialNumber:=.Form.Item("SSERIALNUMBER_EquipMaquiContr"),
+                                                                    sOrigin:= .Form.Item("SORIGIN_EquipMaquiContr"),
+                                                                    sSerialNumber:= .Form.Item("SSERIALNUMBER_EquipMaquiContr"),
                                                                     nCapital:=mobjValues.StringToType(.Form.Item("NCAPITAL_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nRate:=mobjValues.StringToType(.Form.Item("NRATE_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True), nPremium:=mobjValues.StringToType(.Form.Item("NPREMIUM_EquipMaquiContr"), eFunctions.Values.eTypeData.etdDouble, True))
                     End With
@@ -3731,12 +3755,12 @@
                                                                     nType:=mobjValues.StringToType(.Form.Item("NTYPE_Fidelity"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                     dEffecdate:=mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                     nuserCode:=mobjValues.StringToType(Session("nUserCode"), eFunctions.Values.eTypeData.etdInteger),
-                                                                    sclient:=.Form.Item("sClient_Fidelity"),
-                                                                    sDigit:=.Form.Item("SCLIENT_Fidelity_Digit"),
-                                                                    sFirstName:=.Form.Item("sFirstName_Fidelity"),
-                                                                    sMiddel_Name:=.Form.Item("sMiddleName_Fidelity"),
-                                                                    sLastName:=.Form.Item("sLastName_Fidelity"),
-                                                                    sLastName2:=.Form.Item("sLastName2_Fidelity"),
+                                                                    sclient:= .Form.Item("sClient_Fidelity"),
+                                                                    sDigit:= .Form.Item("SCLIENT_Fidelity_Digit"),
+                                                                    sFirstName:= .Form.Item("sFirstName_Fidelity"),
+                                                                    sMiddel_Name:= .Form.Item("sMiddleName_Fidelity"),
+                                                                    sLastName:= .Form.Item("sLastName_Fidelity"),
+                                                                    sLastName2:= .Form.Item("sLastName2_Fidelity"),
                                                                     nPosition:=mobjValues.StringToType(.Form.Item("NPOSITION_Fidelity"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                     nSalary:=mobjValues.StringToType(.Form.Item("NSALARY_Fidelity"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                     nFactor:=mobjValues.StringToType(.Form.Item("NFACTOR_Fidelity"), eFunctions.Values.eTypeData.etdDouble, True),
@@ -3777,14 +3801,14 @@
                                                                   nTheftCapital:=mobjValues.StringToType(.Form.Item("tcnTheftCapital"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                   nSecurityMen:=mobjValues.StringToType(.Form.Item("tcnSecurityMen"), eFunctions.Values.eTypeData.etdInteger, True),
                                                                   nArea:=mobjValues.StringToType(.Form.Item("tcnArea"), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                  sInd_Fidelity:=.Form.Item("sInd_Fidelity"),
-                                                                  sInd_Electronic:=.Form.Item("sInd_Electronic"),
-                                                                  sInd_Machine:=.Form.Item("sInd_Machine"),
-                                                                  sInd_Contractor:=.Form.Item("sInd_Contractor"),
+                                                                  sInd_Fidelity:= .Form.Item("sInd_Fidelity"),
+                                                                  sInd_Electronic:= .Form.Item("sInd_Electronic"),
+                                                                  sInd_Machine:= .Form.Item("sInd_Machine"),
+                                                                  sInd_Contractor:= .Form.Item("sInd_Contractor"),
                                                                   nMoney_Transit:=mobjValues.StringToType(.Form.Item("tcnMoney_Transit"), eFunctions.Values.eTypeData.etdDouble, True),
                                                                   nMoney_Permanence:=mobjValues.StringToType(.Form.Item("tcnMoney_Permanence"), eFunctions.Values.eTypeData.etdDouble, True),
-                                                                  narticle:= mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdInteger, True) ,
-                                                                  sriskdescription:=.Form.Item("sriskdescription")
+                                                                  narticle:=mobjValues.StringToType(.Form.Item("cboArticle"), eFunctions.Values.eTypeData.etdInteger, True),
+                                                                  sriskdescription:= .Form.Item("sriskdescription")
                                                                   )
 
 
@@ -3852,22 +3876,22 @@
             Case "CM001"
                 mobjPolicySeq = New ePolicy.TRCM
                 With Request
-                    lblnPost = mobjPolicySeq.InsPostCM001(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(.Form.Item("cbovalSituation"), eFunctions.Values.eTypeData.etdDouble), _
-                                                          mobjValues.StringToType(.Form.Item("cbeTypeWork"), eFunctions.Values.eTypeData.etdInteger), _
-                                                          .Form.Item("tctWorkname"), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_work"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_work"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_m"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_m"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dInitialdate_em"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(.Form.Item("dEnddate_em"), eFunctions.Values.eTypeData.etdDate), _
-                                                          mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger), _
+                    lblnPost = mobjPolicySeq.InsPostCM001(Session("sCertype"), mobjValues.StringToType(Session("nBranch"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nProduct"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nPolicy"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("nCertif"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("cbovalGroup"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(.Form.Item("cbovalSituation"), eFunctions.Values.eTypeData.etdDouble),
+                                                          mobjValues.StringToType(.Form.Item("cbeTypeWork"), eFunctions.Values.eTypeData.etdInteger),
+                                                          .Form.Item("tctWorkname"),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_work"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_work"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_m"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_m"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dInitialdate_em"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(.Form.Item("dEnddate_em"), eFunctions.Values.eTypeData.etdDate),
+                                                          mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger),
                                                           Session("nUsercode"))
                 End With
                 mobjPolicySeq = Nothing
@@ -4407,6 +4431,11 @@
                     lclsPolicy_amend.dChangdat = mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate)
                 End If
                 lclsPolicy_amend.Add()
+                'ehh - Ad. vt fase II rsis 2
+                If CStr(Session("sPoliType")) = "1" Then
+                    Dim lclsRecIng As New Reconocimiento_ingresos
+                    lclsRecIng.genRecieptInd(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("nReceiptGenInd"))
+                End If
             End If
             lclsPolicy_amend = Nothing
         End If
@@ -4506,22 +4535,22 @@
             'Response.Write ("<SCRIPT>ShowPopUp(""/VTimeNet/Common/PrintPol.aspx?" & lstrQueryString & """, ""PrintPolicy"",700,650,""yes"",""no"",100,20,'yes','yes');</" & "Script>")
             lcolReport_prod = New eProduct.report_prods
 
-            If lcolReport_prod.FindReport_prod_By_Transac(Session("sCertype"), _
-                                                          Session("nBranch"), _
-                                                          Session("nProduct"), _
-                                                          Session("nPolicy"), _
-                                                          Session("nCertif"), _
-                                                          Session("nTransaction"), _
-                                                          eRemoteDB.Constants.intNull, _
-                                                          Session("dEffecdate"), _
+            If lcolReport_prod.FindReport_prod_By_Transac(Session("sCertype"),
+                                                          Session("nBranch"),
+                                                          Session("nProduct"),
+                                                          Session("nPolicy"),
+                                                          Session("nCertif"),
+                                                          Session("nTransaction"),
+                                                          eRemoteDB.Constants.intNull,
+                                                          Session("dEffecdate"),
                                                           True) Then
 
                 For Each lclsReport_prod In lcolReport_prod
 
-                    If Request.Form.Item("chkPrintNow") = "1" or Request.Form.Item("chkPrintControlDig") = "1" Then
+                    If Request.Form.Item("chkPrintNow") = "1" Or Request.Form.Item("chkPrintControlDig") = "1" Then
 
                         With mobjDocuments
-                            If Trim(lclsReport_prod.sCodCodispl) = "CAL668" and Request.Form.Item("chkPrintControlDig") = "1" then
+                            If Trim(lclsReport_prod.sCodCodispl) = "CAL668" And Request.Form.Item("chkPrintControlDig") = "1" Then
                                 .sCodispl = Trim(lclsReport_prod.sCodCodispl)
                                 .ReportFilename = lclsReport_prod.sReport
                                 .setStorProcParam(1, Session("sCertype"))
@@ -4727,7 +4756,7 @@
             With mobjDocuments
                 .ReportFilename = "CAL001_A.rpt"
                 .sCodispl = "CAL001"
-                .nFormat= 31
+                .nFormat = 31
                 .setStorProcParam(1, Session("sCertype"))
                 .setStorProcParam(2, Session("nBranch"))
                 .setStorProcParam(3, Session("nProduct"))

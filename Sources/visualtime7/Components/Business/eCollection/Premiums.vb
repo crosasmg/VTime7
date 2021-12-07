@@ -188,7 +188,7 @@ Public Class Premiums
 
     '% Add_COC002: añade un nuevo elemento a la colección usada en C0C002.
     '* nReceipt: cambio de tipo de dato integer a long - jehh 03092021
-    Public Function Add_COC002(ByVal nReceipt As Long, ByVal nBulletins As Double, ByVal nCollecto As Double, ByVal dEffecdate As Date, ByVal dExpirDat As Date, ByVal nCurrency As Integer, ByVal nPremium As Double, ByVal nPremiumn As Double, ByVal nStatus_pre As Integer, ByVal nContrat As Double, ByVal nAmount As Double, ByVal nStat_draft As Integer, ByVal nDraft As Integer, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double) As Premium
+    Public Function Add_COC002(ByVal nReceipt As Long, ByVal nBulletins As Double, ByVal nCollecto As Double, ByVal dEffecdate As Date, ByVal dExpirDat As Date, ByVal nCurrency As Integer, ByVal nPremium As Double, ByVal nPremiumn As Double, ByVal nStatus_pre As Integer, ByVal nContrat As Double, ByVal nAmount As Double, ByVal nStat_draft As Integer, ByVal nDraft As Integer, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal sSerie As String) As Premium
         '+ Create a new object
         Dim objNewMember As eCollection.Premium
 
@@ -209,6 +209,7 @@ Public Class Premiums
             .nAmount = nAmount
             .nStat_draft = nStat_draft
             .nDraft = nDraft
+            .sSerie = sSerie
         End With
 
         '** Key of the table: sCertype, nBranch, nProduct, nPolicy, nCertif, nReceipt, nContrat, nDraft
@@ -245,7 +246,7 @@ Public Class Premiums
 
                 If .Run Then
                     Do While Not .EOF
-                        Call Add_COC002(.FieldToClass("nReceipt"), .FieldToClass("nBulletins"), .FieldToClass("nCollecto"), .FieldToClass("dEffecdate"), .FieldToClass("dExpirDat"), .FieldToClass("nCurrency"), .FieldToClass("nPremium"), .FieldToClass("nPremiumn"), .FieldToClass("nStatus_Pre"), .FieldToClass("nContrat"), .FieldToClass("nAmount"), .FieldToClass("nStat_Draft"), .FieldToClass("nDraft"), nBranch, nProduct, .FieldToClass("nPolicy"))
+                        Call Add_COC002(.FieldToClass("nReceipt"), .FieldToClass("nBulletins"), .FieldToClass("nCollecto"), .FieldToClass("dEffecdate"), .FieldToClass("dExpirDat"), .FieldToClass("nCurrency"), .FieldToClass("nPremium"), .FieldToClass("nPremiumn"), .FieldToClass("nStatus_Pre"), .FieldToClass("nContrat"), .FieldToClass("nAmount"), .FieldToClass("nStat_Draft"), .FieldToClass("nDraft"), nBranch, nProduct, .FieldToClass("nPolicy"), .FieldToClass("sSerie"))
                         .RNext()
                     Loop
                     .RCloseRec()

@@ -220,10 +220,12 @@ Public Class Premium
 	Public sDescStatus_pre As String
 	Public sDescCard_type As String
 	Public sDescCurrency As String
-	
-	Public nIntertyp As Integer
-	
-	Private Structure udtReceipts
+
+    Public nIntertyp As Integer
+
+    Public sSerie As String 'fase ii reco. ing ehh
+
+    Private Structure udtReceipts
 		Dim nReceipt As Double
 	End Structure
 	
@@ -469,9 +471,11 @@ Public Class Premium
 		Me.sDescCurrency = String.Empty
 
 		Me.nIntertyp = eRemoteDB.Constants.intNull
-		Me.nRecrelatedcoll = CStr(eRemoteDB.Constants.intNull)
+        Me.nRecrelatedcoll = CStr(eRemoteDB.Constants.intNull)
 
-		bError = False
+        Me.sSerie = String.Empty
+
+        bError = False
 		nErrornum = eRemoteDB.Constants.intNull
 	End Sub
 	Public Sub New()
