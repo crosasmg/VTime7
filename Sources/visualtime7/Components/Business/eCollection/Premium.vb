@@ -4935,8 +4935,8 @@ FindPolicyIssue_Err:
 		
 		lrecinsPreca017 = New eRemoteDB.Execute
 		With lrecinsPreca017
-			.StoredProcedure = "INSPRECA017"
-			.Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .StoredProcedure = "INSPRECA017"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
@@ -4946,9 +4946,9 @@ FindPolicyIssue_Err:
 			.Parameters.Add("nTransaction", nTransaction, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nUsercode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sBrancht", sBrancht, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sList", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 100, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("nreceipt_default", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-			.Parameters.Add("sPolitype", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sList", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 100, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nreceipt_default", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sPolitype", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("sColinvot", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarChar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			.Parameters.Add("nCommit", 1, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 			
@@ -5571,124 +5571,174 @@ valPremiumExist_Err:
 		lrecvalPremiumExists = Nothing
 	End Function
 
-	'% Find2: Busca los datos correspondiente a un recibo en la tabla Premium.
-	'--------------------------------------------------------------------------------
-	Public Function Find2(ByVal certype As String,
-						 ByVal Receipt As Double,
-						 ByVal branch As Long,
-						 ByVal product As Long,
-						 ByVal Digit As Long,
-						 ByVal Paynumbe As Long,
-						 Optional ByVal lblnFind2 As Boolean = False,
-						 Optional ByVal nValidateStatus As Integer = 0) As Boolean
-		'--------------------------------------------------------------------------------
-		Dim lrecreaPremium_Receipt As eRemoteDB.Execute
+    '% Find2: Busca los datos correspondiente a un recibo en la tabla Premium.
+    '--------------------------------------------------------------------------------
+    Public Function Find2(ByVal certype As String,
+                         ByVal Receipt As Double,
+                         ByVal branch As Long,
+                         ByVal product As Long,
+                         ByVal Digit As Long,
+                         ByVal Paynumbe As Long,
+                         Optional ByVal lblnFind2 As Boolean = False,
+                         Optional ByVal nValidateStatus As Integer = 0) As Boolean
+        '--------------------------------------------------------------------------------
+        Dim lrecreaPremium_Receipt As eRemoteDB.Execute
 
-		On Error GoTo Find2_err
+        On Error GoTo Find2_err
 
-		lrecreaPremium_Receipt = New eRemoteDB.Execute
+        lrecreaPremium_Receipt = New eRemoteDB.Execute
 
-		If (certype = sCertype And
-			Receipt = nReceipt And
-			branch = nBranch And
-			product = nProduct And
-			Digit = nDigit And
-			Paynumbe = nPaynumbe) Or
-			lblnFind2 Then
-			Find2 = True
-		Else
+        If (certype = sCertype And
+            Receipt = nReceipt And
+            branch = nBranch And
+            product = nProduct And
+            Digit = nDigit And
+            Paynumbe = nPaynumbe) Or
+            lblnFind2 Then
+            Find2 = True
+        Else
 
-			'+ Definición de parámetros para stored procedure 'insudb.reaPremiumF_Receipt'
-			'+ Información leída el 23/09/1999 1:02:48 PM
-			With lrecreaPremium_Receipt
-				.StoredProcedure = "insreaPremium_Receiptnpkg.insreaPremium_Receipt"
-				.Parameters.Add("sCertype", certype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nReceipt", Receipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nBranch", branch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nProduct", product, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nDigit", Digit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nPaynumbe", Paynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-				.Parameters.Add("nValidateStatus", nValidateStatus, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            '+ Definición de parámetros para stored procedure 'insudb.reaPremiumF_Receipt'
+            '+ Información leída el 23/09/1999 1:02:48 PM
+            With lrecreaPremium_Receipt
+                .StoredProcedure = "insreaPremium_Receiptnpkg.insreaPremium_Receipt"
+                .Parameters.Add("sCertype", certype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nReceipt", Receipt, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nBranch", branch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nProduct", product, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 0, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nDigit", Digit, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nPaynumbe", Paynumbe, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+                .Parameters.Add("nValidateStatus", nValidateStatus, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
 
-				If .Run Then
-					sCertype = .FieldToClass("sCertype")
-					nReceipt = .FieldToClass("nReceipt")
-					nDigit = .FieldToClass("nDigit")
-					nPaynumbe = .FieldToClass("nPaynumbe")
-					sClient = .FieldToClass("sClient")
-					sCessions = .FieldToClass("sCessions")
-					sDirdebit = .FieldToClass("sDirdebit")
-					sLeadinvo = .FieldToClass("sLeadinvo")
-					sManauti = .FieldToClass("sManauti")
-					sRenewal = .FieldToClass("sRenewal")
-					sStatusva = .FieldToClass("sStatusva")
-					sSubstiti = .FieldToClass("sSubstiti")
-					sConColl = .FieldToClass("sConColl")
-					dEffecdate = .FieldToClass("dEffecdate")
-					dExpirDat = .FieldToClass("dExpirdat")
-					dIssuedat = .FieldToClass("dIssuedat")
-					dNulldate = .FieldToClass("dNulldate")
-					dPayDate = .FieldToClass("dPaydate")
-					dStatdate = .FieldToClass("dStatdate")
-					nBalance = .FieldToClass("nBalance")
-					nComamou = .FieldToClass("nComamou")
-					nExchange = .FieldToClass("nExchange")
-					nIntammou = .FieldToClass("nIntammou")
-					nParticip = .FieldToClass("nParticip")
-					nPremium = .FieldToClass("nPremium")
-					nPremiuml = .FieldToClass("nPremiuml")
-					nPremiumn = .FieldToClass("nPremiumn")
-					nPremiums = .FieldToClass("nPremiums")
-					nRate = .FieldToClass("nRate")
-					nTaxamou = .FieldToClass("nTaxamou")
-					nCollecto = .FieldToClass("nCollecto")
-					nContrat = .FieldToClass("nContrat")
-					nInspecto = .FieldToClass("nInspecto")
-					nIntermed = .FieldToClass("nIntermed")
-					nPolicy = .FieldToClass("nPolicy")
-					nSustit = .FieldToClass("nSustit")
-					nTransactio = .FieldToClass("nTransactio")
-					nStatus_pre = .FieldToClass("nStatus_pre")
-					nNullcode = .FieldToClass("nNullcode")
-					nCurrency = .FieldToClass("nCurrency")
-					nNoteNum = .FieldToClass("nNotenum")
-					nOffice = .FieldToClass("nOffice")
-					nType = .FieldToClass("nType")
-					nBranch = .FieldToClass("nBranch")
-					nTratypei = .FieldToClass("nTratypei")
-					nProduct = .FieldToClass("nProduct")
-					nUsercode = .FieldToClass("nUsercode")
-					nPeriod = .FieldToClass("nPeriod")
-					nCompany = .FieldToClass("nCompany")
-					sOrigReceipt = .FieldToClass("sOrigReceipt")
-					sCliename = .FieldToClass("sCliename")
-					sCurrency = .FieldToClass("sDescript")
-					nCertif = .FieldToClass("nCertif")
-					nProponum = .FieldToClass("nProponum", eRemoteDB.Constants.intNull)
-					nBulletins = .FieldToClass("nBulletins", eRemoteDB.Constants.intNull)
-					dCollSus_ini = .FieldToClass("dCollsus_ini")
-					dCollSus_end = .FieldToClass("dCollsus_end")
-					nSus_reason = .FieldToClass("nSus_reason")
-					sSus_origi = .FieldToClass("sSus_origi")
-					nInsur_area = .FieldToClass("nInsur_area", eRemoteDB.Constants.intNull)
-					nCollector = .FieldToClass("nCollector", eRemoteDB.Constants.intNull)
-					sDesBranch = .FieldToClass("sDescBranch")
-					sDescProd = .FieldToClass("sDescProduct")
-					nRecrelatedcoll = .FieldToClass("nRecRelatedColl")
+                If .Run Then
+                    sCertype = .FieldToClass("sCertype")
+                    nReceipt = .FieldToClass("nReceipt")
+                    nDigit = .FieldToClass("nDigit")
+                    nPaynumbe = .FieldToClass("nPaynumbe")
+                    sClient = .FieldToClass("sClient")
+                    sCessions = .FieldToClass("sCessions")
+                    sDirdebit = .FieldToClass("sDirdebit")
+                    sLeadinvo = .FieldToClass("sLeadinvo")
+                    sManauti = .FieldToClass("sManauti")
+                    sRenewal = .FieldToClass("sRenewal")
+                    sStatusva = .FieldToClass("sStatusva")
+                    sSubstiti = .FieldToClass("sSubstiti")
+                    sConColl = .FieldToClass("sConColl")
+                    dEffecdate = .FieldToClass("dEffecdate")
+                    dExpirDat = .FieldToClass("dExpirdat")
+                    dIssuedat = .FieldToClass("dIssuedat")
+                    dNulldate = .FieldToClass("dNulldate")
+                    dPayDate = .FieldToClass("dPaydate")
+                    dStatdate = .FieldToClass("dStatdate")
+                    nBalance = .FieldToClass("nBalance")
+                    nComamou = .FieldToClass("nComamou")
+                    nExchange = .FieldToClass("nExchange")
+                    nIntammou = .FieldToClass("nIntammou")
+                    nParticip = .FieldToClass("nParticip")
+                    nPremium = .FieldToClass("nPremium")
+                    nPremiuml = .FieldToClass("nPremiuml")
+                    nPremiumn = .FieldToClass("nPremiumn")
+                    nPremiums = .FieldToClass("nPremiums")
+                    nRate = .FieldToClass("nRate")
+                    nTaxamou = .FieldToClass("nTaxamou")
+                    nCollecto = .FieldToClass("nCollecto")
+                    nContrat = .FieldToClass("nContrat")
+                    nInspecto = .FieldToClass("nInspecto")
+                    nIntermed = .FieldToClass("nIntermed")
+                    nPolicy = .FieldToClass("nPolicy")
+                    nSustit = .FieldToClass("nSustit")
+                    nTransactio = .FieldToClass("nTransactio")
+                    nStatus_pre = .FieldToClass("nStatus_pre")
+                    nNullcode = .FieldToClass("nNullcode")
+                    nCurrency = .FieldToClass("nCurrency")
+                    nNoteNum = .FieldToClass("nNotenum")
+                    nOffice = .FieldToClass("nOffice")
+                    nType = .FieldToClass("nType")
+                    nBranch = .FieldToClass("nBranch")
+                    nTratypei = .FieldToClass("nTratypei")
+                    nProduct = .FieldToClass("nProduct")
+                    nUsercode = .FieldToClass("nUsercode")
+                    nPeriod = .FieldToClass("nPeriod")
+                    nCompany = .FieldToClass("nCompany")
+                    sOrigReceipt = .FieldToClass("sOrigReceipt")
+                    sCliename = .FieldToClass("sCliename")
+                    sCurrency = .FieldToClass("sDescript")
+                    nCertif = .FieldToClass("nCertif")
+                    nProponum = .FieldToClass("nProponum", eRemoteDB.Constants.intNull)
+                    nBulletins = .FieldToClass("nBulletins", eRemoteDB.Constants.intNull)
+                    dCollSus_ini = .FieldToClass("dCollsus_ini")
+                    dCollSus_end = .FieldToClass("dCollsus_end")
+                    nSus_reason = .FieldToClass("nSus_reason")
+                    sSus_origi = .FieldToClass("sSus_origi")
+                    nInsur_area = .FieldToClass("nInsur_area", eRemoteDB.Constants.intNull)
+                    nCollector = .FieldToClass("nCollector", eRemoteDB.Constants.intNull)
+                    sDesBranch = .FieldToClass("sDescBranch")
+                    sDescProd = .FieldToClass("sDescProduct")
+                    nRecrelatedcoll = .FieldToClass("nRecRelatedColl")
 
-					Find2 = True
-					.RCloseRec()
-				Else
-					Find2 = False
-				End If
-			End With
+                    Find2 = True
+                    .RCloseRec()
+                Else
+                    Find2 = False
+                End If
+            End With
 
-		End If
+        End If
 
 Find2_err:
-		lrecreaPremium_Receipt = Nothing
-	End Function
+        lrecreaPremium_Receipt = Nothing
+    End Function
 
+    'ehh - Ad. vt fase II reconocimiento de ingresos
+    Public Function InsPreCA017_2(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal dEffecdate As Date, ByVal dNulldate As Date, ByVal nTransaction As Integer, ByVal nUsercode As Integer, ByVal sBrancht As String) As Boolean
+
+        Dim lrecinsPreca017_2 As eRemoteDB.Execute
+
+        '+Definición de parámetros para stored procedure 'InsPreCA017'
+
+        On Error GoTo InsPreCA017_2_Err
+
+        lrecinsPreca017_2 = New eRemoteDB.Execute
+        With lrecinsPreca017_2
+            .StoredProcedure = "PKG_VT_RECONOCIMIENTO_INGRESOS.INSPRECA017"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("dNulldate", dNulldate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nTransaction", nTransaction, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nUsercode", nUsercode, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sBrancht", sBrancht, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sList", "", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 2000, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nreceipt_default", eRemoteDB.Constants.intNull, eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sPolitype", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sColinvot", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nCommit", 1, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+            If .Run(False) Then
+                InsPreCA017_2 = .Parameters("nreceipt_default").Value > 0
+                If InsPreCA017_2 Then
+                    With Me
+                        .sPolitype = Trim(lrecinsPreca017_2.Parameters("sPolitype").Value)
+                        .sColinvot = Trim(lrecinsPreca017_2.Parameters("sColinvot").Value)
+                        .sListReceipt = lrecinsPreca017_2.Parameters("sList").Value
+                        .nReceiptdefault = lrecinsPreca017_2.Parameters("nreceipt_default").Value
+                        .nCertif = nCertif
+                    End With
+                End If
+            End If
+        End With
+
+InsPreCA017_2_Err:
+        If Err.Number Then
+            InsPreCA017_2 = False
+        End If
+        On Error GoTo 0
+        'UPGRADE_NOTE: Object lrecinsPreca017 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecinsPreca017_2 = Nothing
+    End Function
 End Class
 
 

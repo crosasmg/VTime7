@@ -105,11 +105,12 @@
             nInPrimNetaFP = parseFloat(hcnInPrimNetaFP.value);
         }
         
-        try {
+        /*try {
             nInDE = parseFloat(tcnInDE.value);
         } catch (e) {
             nInDE = parseFloat(hcnInDE.value);
-        }
+        }*/
+        nInDE = 0;
         
         if (!isNaN(nInDE)) {
             if (nInDE > 0) {
@@ -118,15 +119,17 @@
         } else {
             nInDE = 0;
         }
-        tcnDEFP.value = nDEFP;
+        //tcnDEFP.value = nDEFP;
 
         nPrimaComFP = nInPrimNetaFP + nDEFP;
 
-        try {
+        /*try {
             nInIGV = parseFloat(tcnInIGV.value);
         } catch (e) {
             nInIGV = parseFloat(hcnInIGV.value);
-        }
+        }*/
+
+        nInIGV = 0;
         
         if (!isNaN(nInIGV)) {
             if (nInIGV > 0) {
@@ -135,21 +138,21 @@
         } else {
             nInIGV = 0;
         }
-        tcnIGVFP.value = Round2(nIGVFP);
+        //tcnIGVFP.value = Round2(nIGVFP);
         
         nPrimaTotFP = nPrimaComFP + nIGVFP;
 
         tcnPrimNetaFP.value = Round2(nInPrimNetaFP); //seteando campo
-        tcnPrimaComerFP.value = Round2(nPrimaComFP);
-        tcnPrimaTotalFP.value = Round2(nPrimaTotFP);
+        //tcnPrimaComerFP.value = Round2(nPrimaComFP);
+        //tcnPrimaTotalFP.value = Round2(nPrimaTotFP);
 
         nPrimNetaDC = Round2(nInPrimNetaFP * nMultFP); //(meses / fp) * primaneta 
         
         tcnPrimNetaDC.value = Round2(nPrimNetaDC);
-        tcnPrimaComerDc.value = Round2(nPrimaComFP * nMultFP);
-        tcnPrimaTotalDC.value = Round2(nPrimaTotFP * nMultFP);
-        tcnDEDC.value = Round2(nDEFP * nMultFP);
-        tcnIGVDc.value = Round2(nIGVFP * nMultFP);
+        //tcnPrimaComerDc.value = Round2(nPrimaComFP * nMultFP);
+        //tcnPrimaTotalDC.value = Round2(nPrimaTotFP * nMultFP);
+        //tcnDEDC.value = Round2(nDEFP * nMultFP);
+        //tcnIGVDc.value = Round2(nIGVFP * nMultFP);
     }
     window.onload = function () {
         RecalAmounts(null);
@@ -236,19 +239,19 @@
                                 <%=mobjValues.NumericControl("tcnInPrimNetaFP", 10, mclsRecIng.nInPrimNetaFP, , , , , , , , "RecalAmounts(this);", False, 4)%>
                                 <input type="hidden" name="hcnInPrimNetaFP" id="hcnInPrimNetaFP" value="<%= CStr(mclsRecIng.nInPrimNetaFP) %>" />
                             </td>
-                            <td><label id="99108"><%= GetLocalResourceObject("lblDerechoEmisionCaption") %></label></td>
+                            <!--<td><label id="99108"><%= GetLocalResourceObject("lblDerechoEmisionCaption") %></label></td>
                             <td>
                                 <%=mobjValues.NumericControl("tcnInDE", 2, mclsRecIng.nInDE, , , , , , , , "RecalAmounts(this);", , 4)%>
                                 <input type="hidden" name="hcnInDE" id="hcnInDE" value="<%= CStr(mclsRecIng.nInDE) %>" />
-                            </td>
+                            </td>-->
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><label id="99109"><%= GetLocalResourceObject("lblIGVCaption") %></label></td>
+                            <!--<td><label id="99109"><%= GetLocalResourceObject("lblIGVCaption") %></label></td>
                             <td><%=mobjValues.NumericControl("tcnInIGV", 2, mclsRecIng.nInIGV, , , , , , , , "RecalAmounts(this);", , 4)%>
                                 <input type="hidden" name="hcnInIGV" id="hcnInIGV" value="<%= CStr(mclsRecIng.nInIGV) %>" />
-                            </td>
+                            </td>-->
                         </tr>
                         <tr>
                             <td>
@@ -298,7 +301,7 @@
                                             <label id="99110"><%= GetLocalResourceObject("lblPrimaNetaFPCaption") %>:</label></td>                                        
                                         <td><input type="text" disabled name="tcnPrimNetaFP" id="tcnPrimNetaFP" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                         <td>
                                             <label id="99111"><%= GetLocalResourceObject("lblPrimaComercialFPCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnPrimaComerFP" id="tcnPrimaComerFP" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
@@ -307,11 +310,11 @@
                                         <td>
                                             <label id="99112"><%= GetLocalResourceObject("lblPrimaFPCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnPrimaTotalFP" id="tcnPrimaTotalFP" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </td>
                             <td width="50%" style="vertical-align: top;">
-                                <table>
+                                <!--<table>
                                     <tr>
                                         <td>
                                             <label id="99110"><%= GetLocalResourceObject("lblDEFPCaption") %>:</label></td>
@@ -322,7 +325,7 @@
                                             <label id="99121"><%= GetLocalResourceObject("lblIgvFPCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnIGVFP" id="tcnIGVFP" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
                                     </tr>
-                                </table>
+                                </table>-->
                             </td>
                             <% Else  %>                            
                             <td width="50%">
@@ -332,7 +335,7 @@
                                             <label id="99110"><%= GetLocalResourceObject("lblPrimaNetaFPCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimNetaFP", 10, , , , , , , , , "", True, 4)%></td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                         <td>
                                             <label id="99111"><%= GetLocalResourceObject("lblPrimaComercialFPCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimaComerFP", 10, , , , , , , , , "", True, 4)%></td>
@@ -341,11 +344,11 @@
                                         <td>
                                             <label id="99112"><%= GetLocalResourceObject("lblPrimaFPCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimaTotalFP", 10, , , , , , , , , "", True, 4)%></td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </td>
                             <td width="50%" style="vertical-align: top;">
-                                <table>
+                                <!--<table>
                                     <tr>
                                         <td>
                                             <label id="99110"><%= GetLocalResourceObject("lblDEFPCaption") %>:</label></td>
@@ -356,7 +359,7 @@
                                             <label id="99121"><%= GetLocalResourceObject("lblIgvFPCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnIGVFP", 10, , , , , , , , , "", True, 4)%></td>
                                     </tr>
-                                </table>
+                                </table>-->
                             </td>
                             <% End If  %>
                         </tr>
@@ -384,7 +387,7 @@
                                             <label id="99116"><%= GetLocalResourceObject("lblPrimaNetaDCCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnPrimNetaDC" id="tcnPrimNetaDC" size="10" maxlength="10" tabindex="4" title="" style="text-align:right" /></td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                         <td>
                                             <label id="99117"><%= GetLocalResourceObject("lblPrimaComerDCCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnPrimaComerDc" id="tcnPrimaComerDc" size="10" maxlength="10" tabindex="4" title="" style="text-align:right" /></td>
@@ -393,11 +396,11 @@
                                         <td>
                                             <label id="99118"><%= GetLocalResourceObject("lblPrimaTotalDCCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnPrimaTotalDC" id="tcnPrimaTotalDC" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </td>
                             <td width="50%" style="vertical-align: top;">
-                                <table>
+                                <!--<table>
                                     <tr>
                                         <td>
                                             <label id="99119"><%= GetLocalResourceObject("lblDEDCCaption") %>:</label></td>
@@ -408,7 +411,7 @@
                                             <label id="99120"><%= GetLocalResourceObject("lblIGVDCCaption") %>:</label></td>
                                         <td><input type="text" disabled name="tcnIGVDc" id="tcnIGVDc" size="10" maxlength="10" tabindex="4" title="" style="text-align:right"/></td>
                                     </tr>
-                                </table>
+                                </table>-->
                             </td>
                             <% Else  %>
                             <td width="50%">
@@ -418,7 +421,7 @@
                                             <label id="99116"><%= GetLocalResourceObject("lblPrimaNetaDCCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimNetaDC", 10, , , , , , , , , "", True, 4)%></td>
                                     </tr>
-                                    <tr>
+                                    <!--<tr>
                                         <td>
                                             <label id="99117"><%= GetLocalResourceObject("lblPrimaComerDCCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimaComerDc", 10, , , , , , , , , "", True, 4)%></td>
@@ -427,11 +430,11 @@
                                         <td>
                                             <label id="99118"><%= GetLocalResourceObject("lblPrimaTotalDCCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnPrimaTotalDC", 10, , , , , , , , , "", True, 4)%></td>
-                                    </tr>
+                                    </tr>-->
                                 </table>
                             </td>
                             <td width="50%" style="vertical-align: top;">
-                                <table>
+                                <!--<table>
                                     <tr>
                                         <td>
                                             <label id="99119"><%= GetLocalResourceObject("lblDEDCCaption") %>:</label></td>
@@ -442,7 +445,7 @@
                                             <label id="99120"><%= GetLocalResourceObject("lblIGVDCCaption") %>:</label></td>
                                         <td><%=mobjValues.NumericControl("tcnIGVDc", 10, , , , , , , , , "", True, 4)%></td>
                                     </tr>
-                                </table>
+                                </table>-->
                             </td>
                             <% End If  %>
                         </tr>

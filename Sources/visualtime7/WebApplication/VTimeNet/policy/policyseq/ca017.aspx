@@ -167,7 +167,14 @@ mobjMenu = Nothing
 
         If Request.QueryString.Item("nReceipt") = vbNullString Then
             If lblRecal Then
-                Call mclsPremium.insPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
+                'ehh - Ad. vt fase II reconocimiento de ingresos
+                '+ Si el Tipo de póliza es Colectiva, la facturación no es por certificado y
+                '+ no es la póliza matriz
+                If CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0" Then
+                    Call mclsPremium.InsPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
+                Else
+                    Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
+                End If
 
                 mintDefaultReceipt = mclsPremium.nReceiptdefault
                 mstrListReceipt = mclsPremium.sListReceipt

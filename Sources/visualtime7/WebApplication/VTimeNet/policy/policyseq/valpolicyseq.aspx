@@ -1966,7 +1966,7 @@
                         Session("nPayFreq") = mobjValues.StringToType(.Form.Item("cbePayFreq"), eFunctions.Values.eTypeData.etdDouble)
                     End If
                 End With
-                'ehh - Ad. vt fase I ca073
+                'ehh - Ad. vt fase I ca073 reconocimiento de ingresos
                 If CStr(Session("sPoliType")) = 2 Then
                     lclsPolicy_Win = New ePolicy.Policy_Win
                     Call lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nUsercode"), "CA073", "3")
@@ -4431,10 +4431,14 @@
                     lclsPolicy_amend.dChangdat = mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate)
                 End If
                 lclsPolicy_amend.Add()
-                'ehh - Ad. vt fase II rsis 2
-                If CStr(Session("sPoliType")) = "1" Then
-                    Dim lclsRecIng As New Reconocimiento_ingresos
-                    lclsRecIng.genRecieptInd(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("nReceiptGenInd"))
+                'ehh - Ad. vt fase II rsis 2 reconocimiento de ingresos
+                Dim lclsRecIng As New Reconocimiento_ingresos
+                If CStr(Session("sPoliType")) = "2" Then
+                    If Session("nCertif") = 0 Then
+                        Dim nStatus As Integer = 0
+                        lclsRecIng.insPostCA073(CStr(Session("sPolitype")), Session("sCertype"), Session("nBranch"), Session("nProduct"),
+                                                            Session("nPolicy"), Session("nCertif"), -1, -1, -1, 0, 0, 0, nStatus)
+                    End If
                 End If
             End If
             lclsPolicy_amend = Nothing
