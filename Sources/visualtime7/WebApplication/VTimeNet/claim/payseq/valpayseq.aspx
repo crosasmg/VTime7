@@ -55,7 +55,7 @@
                 With Request
                     If .QueryString("WindowType") = "PopUp" Then
                         ldblShareTotal = (mobjValues.StringToType(CStr(Session("SI008_tcnAmountPay")), eFunctions.Values.eTypeData.etdDouble) - mobjValues.StringToType(.Form("nAmountBef"), eFunctions.Values.eTypeData.etdDouble)) + mobjValues.StringToType(.Form("tcnAmountPayCover"), eFunctions.Values.eTypeData.etdDouble)
-                        insvalSequence = mobjClaim.insValSI008Upd("SI008", Session("sSche_code"), .QueryString("nMainAction"), Session("nClaim"), Session("nCase_num"), Session("nDeman_type"), mobjValues.StringToType(.Form("nModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("valCover"), eFunctions.Values.eTypeData.etdDouble), .QueryString("sClient"), mobjValues.StringToType(.Form("nCoverCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnConcept"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount_Paycov"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnTax"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmountPayCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnLocAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnExchange"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddRole"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nPay_Type")), eFunctions.Values.eTypeData.etdDouble), Session("dOccurdate_l"), mobjValues.StringToType(.Form("hddValdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form("hddPayDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("tcnId_Settle"), Values.eTypeData.etdInteger), mobjValues.StringToType(.Form("tcnFra_amount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDDR"), eFunctions.Values.eTypeData.etdDouble))
+                        insvalSequence = mobjClaim.insValSI008Upd("SI008", Session("sSche_code"), .QueryString("nMainAction"), Session("nClaim"), Session("nCase_num"), Session("nDeman_type"), mobjValues.StringToType(.Form("nModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("valCover"), eFunctions.Values.eTypeData.etdDouble), .QueryString("sClient"), mobjValues.StringToType(.Form("nCoverCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnConcept"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount_Paycov"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnTax"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmountPayCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnLocAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnExchange"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddRole"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nPay_Type")), eFunctions.Values.eTypeData.etdDouble), Session("dOccurdate_l"), mobjValues.StringToType(.Form("hddValdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form("hddPayDate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(.Form("hddCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.Form("tcnId_Settle"), Values.eTypeData.etdInteger), mobjValues.StringToType(.Form("tcnFra_amount"), eFunctions.Values.eTypeData.etdDouble),mobjValues.StringToType(.Form("tcnDDR"), eFunctions.Values.eTypeData.etdDouble)  )
 
                     Else
                         mobjClaim.nUsercode = Session("nUsercode")
@@ -67,7 +67,7 @@
                 End With
 
 
-            '+ SI754: Distribución de coaseguro de un siniestro - ACM - 01/07/2002
+                '+ SI754: Distribución de coaseguro de un siniestro - ACM - 01/07/2002
             Case "SI754"
                 lclsCl_Coinsuran = New eClaim.Cl_Coinsuran
 
@@ -217,7 +217,7 @@
                 mobjClaim = New eClaim.T_PayCla
                 With Request
                     If .QueryString("WindowType") = "PopUp" Then
-                        lblnPost = mobjClaim.insPostSI008Upd(mobjValues.StringToType(CStr(Session("nClaim")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nCase_num")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nDeman_type")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nCoverCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("valCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnConcept"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnExchange"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnTax"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmountPayCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nGroup_insu"), eFunctions.Values.eTypeData.etdDouble), .Form("nIndAutomatic"), Session("SI008_cbeCurrency"), mobjValues.StringToType(.Form("tcnAmount_Paycov"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddnTotcov_amount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnParticip"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciateamount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciaterate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciatebase"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnFra_amount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnRasa"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddRasaAnnual"), eFunctions.Values.eTypeData.etdDouble), .Form("hddRASA_routine"), mobjValues.StringToType(.Form("tcnDDR"), eFunctions.Values.eTypeData.etdDouble), "2", mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnId_Settle"), eFunctions.Values.eTypeData.etdDouble))
+                        lblnPost = mobjClaim.insPostSI008Upd(mobjValues.StringToType(CStr(Session("nClaim")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nCase_num")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nDeman_type")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nCoverCurrency"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("valCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nModulec"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnConcept"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnExchange"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnTax"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnAmountPayCover"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(CStr(Session("nUsercode")), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("nGroup_insu"), eFunctions.Values.eTypeData.etdDouble), .Form("nIndAutomatic"), Session("SI008_cbeCurrency"), mobjValues.StringToType(.Form("tcnAmount_Paycov"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddnTotcov_amount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnParticip"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciateamount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciaterate"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnDepreciatebase"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnFra_amount"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("tcnRasa"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(.Form("hddRasaAnnual"), eFunctions.Values.eTypeData.etdDouble), .Form("hddRASA_routine"), mobjValues.StringToType(.Form("tcnDDR"), eFunctions.Values.eTypeData.etdDouble), "2", mobjValues.StringToType(.Form("tcnAmount"), eFunctions.Values.eTypeData.etdDouble),  mobjValues.StringToType(.Form("tcnId_Settle"), eFunctions.Values.eTypeData.etdDouble))
 
                         Session("nCover") = mobjValues.StringToType(.Form("valCover"), eFunctions.Values.eTypeData.etdDouble)
                         Session("nPay_concep") = mobjValues.StringToType(.Form("tcnConcept"), eFunctions.Values.eTypeData.etdDouble)
@@ -279,13 +279,11 @@
                         Session("OP006_nInvoice") = .Form("tcnInvoice")
                         Session("OP006_nExchange") = mobjValues.StringToType(.Form("tcnExchange"), eFunctions.Values.eTypeData.etdDouble)
                         ldblAmount = mobjValues.StringToType(CStr(Session("SI008_Premium")), eFunctions.Values.eTypeData.etdDouble)
-                        ldblAmount = (mobjValues.StringToType(CStr(Session("SI008_tcnAmount_Paycov_sum")), eFunctions.Values.eTypeData.etdDouble)) - mobjValues.StringToType(ldblAmount, eFunctions.Values.eTypeData.etdDouble)
+                        ldblAmount = (mobjValues.StringToType(CStr(Session("SI008_tcnAmount_Paycov_sum")), eFunctions.Values.eTypeData.etdDouble)) -  mobjValues.StringToType(ldblAmount, eFunctions.Values.eTypeData.etdDouble)
 
                         Session("OP006_nAmount") = Session("SI008_tcnAmount_Paycov_sum")
-                        'Session("OP006_nAmountPay") = ldblAmount
+                        Session("OP006_nAmountPay") = ldblAmount
                         Session("SI008_nAmountPay") = mobjValues.StringToType(CStr(Session("SI008_tcnAmountPay")), eFunctions.Values.eTypeData.etdDouble)
-                        Session("OP006_nAmountPay") = Session("SI008_nAmountPay")
-
                         Session("OP006_nPay_Type") = mobjValues.StringToType(CStr(Session("nPay_Type")), eFunctions.Values.eTypeData.etdDouble)
                         Session("OP006_nPayOrderTyp") = mobjValues.StringToType(lintPay_Type, eFunctions.Values.eTypeData.etdDouble)
                         Session("OP006_Codispl") = mstrCodispl
@@ -309,7 +307,7 @@
 
                 End With
 
-            '+ SI754: Distribución de coaseguro de un siniestro - ACM - 01/07/2002
+                '+ SI754: Distribución de coaseguro de un siniestro - ACM - 01/07/2002
             Case "SI754"
                 lclsCl_Coinsuran = New eClaim.Cl_Coinsuran
                 If Request.QueryString("WindowType") = "PopUp" Then
@@ -324,7 +322,7 @@
                 lclsCl_Coinsuran = Nothing
 
 
-            '+SI749: Distribución de reasguro de un siniestro
+                '+SI749: Distribución de reasguro de un siniestro
             Case "SI749"
                 lobjcl_Reinsuran = New eClaim.cl_Reinsuran
 
@@ -352,7 +350,7 @@
                 lintCount = Nothing
                 'UPGRADE_NOTE: Object lobjcl_Reinsuran may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
                 lobjcl_Reinsuran = Nothing
-            '+SI762: Recibos pendientes para conciliación de siniestros
+                '+SI762: Recibos pendientes para conciliación de siniestros
             Case "SI762"
                 lobjT_ConcilClaim = New eClaim.T_ConcilClaim
 
@@ -366,7 +364,7 @@
 
                 If lblnPost Then
                     Response.Write("<script>top.fraHeader.document.forms[0].tcnPremium.value = '" & Session("SI008_Premium") & "';</" & "Script>")
-                    Session("OP006_nAmountPay") = Session("OP006_nAmount") - Session("SI008_Premium")
+                    Session("OP006_nAmountPay") =  Session("OP006_nAmount") -   Session("SI008_Premium")
                 End If
 
                 '+ Ventana de Fin de proceso		
@@ -441,15 +439,15 @@
             If insFinish Then
                 With mobjDocuments
                     lcolReport_prod = New eProduct.report_prods
-                    Session("sCertype") = "2"
-                    If lcolReport_prod.FindReport_prod_By_Transac("2",
-                                                                    Session("nBranch"),
-                                                                    Session("nProduct"),
-                                                                    0,
-                                                                    0,
-                                                                    1,
-                                                                    4,
-                                                                    Session("dEffecdate"),
+                    Session("sCertype")="2"
+                    If lcolReport_prod.FindReport_prod_By_Transac("2", _
+                                                                    Session("nBranch"), _
+                                                                    Session("nProduct"), _
+                                                                    0, _
+                                                                    0, _
+                                                                    1, _
+                                                                    4, _
+                                                                    Session("dEffecdate"), _
                                                                     True) Then
                         For Each lclsReport_prod In lcolReport_prod
                             If lclsReport_prod.sCodCodispl = "SI008" Then
@@ -462,7 +460,7 @@
                         Next
                     End If
                 End With
-            End If
+            end if
         End If
 
         'UPGRADE_NOTE: Object lclsT_Paycla may not be destroyed until it is garbage collected. Copy this link in your browser for more: 'http://msdn.microsoft.com/library/en-us/vbcon/html/vbup1029.aspx'
@@ -602,8 +600,8 @@
                 Session("sErrorTable") = vbNullString
                 Session("sForm") = vbNullString
             End If
-
-
+	
+	
             If mstrErrors > vbNullString Then
                 With Response
                     .Write("<script type='text/javascript'>")
@@ -614,7 +612,7 @@
             Else
                 If insPostSequence() Then
                     If Request.QueryString("WindowType") <> "PopUp" Then
-
+				
                         '+ Se mueve automaticamente a la siguiente página
                         If Request.Form.Item("sCodisplReload") = vbNullString Then
                             If Request.QueryString.Item("sCodispl") = "SI008_K" Then
@@ -649,7 +647,7 @@
                                 Response.Write("<script>top.opener.document.location.href='SI749.aspx?sCodispl=SI749&sCodisp=SI749&Reload=" & Request.Form("chkContinue") & "&ReloadAction=" & Request.QueryString("Action") & "&ReloadIndex=" & Request.QueryString("ReloadIndex") & "&nMainAction=" & Request.QueryString("nMainAction") & "&Index=" & Request.QueryString("Index") & mstrQueryString & "' </script>")
                             Case "SI762"
                                 Response.Write("<script>top.opener.document.location.href='SI762.aspx?sCodispl=SI762&sCodisp=SI762&Reload=" & Request.Form("chkContinue") & "&ReloadAction=" & Request.QueryString("Action") & "&ReloadIndex=" & Request.QueryString("ReloadIndex") & "&nMainAction=" & Request.QueryString("nMainAction") & "&Index=" & Request.QueryString("Index") & "' </script>")
-
+						
                         End Select
                     End If
                 Else
@@ -657,7 +655,7 @@
                 End If
             End If
         Else
-
+	
             If Request.QueryString("nMainAction") = eFunctions.Menues.TypeActions.clngActionQuery Then
                 Session("MenuOption") = Request.QueryString("nMainAction")
                 Response.Write("<script>top.location.reload();</script>")
@@ -665,7 +663,7 @@
                 If insFinish() Then
                     Session("sOriginalForm") = vbNullString
                     If CStr(Session("OP006_Codispl")) <> "SI008" Then
-                        Response.Write("<script>top.document.location.href = '/VTimeNet/common/GoTo.aspx?sCodispl=" & Session("OP006_Codispl") & "&nCurrencypay=" & Session("OP006_nCurrencyPay") & "&nCurrency=" & Session("OP006_nCurrency") & "&nOfficepay=" & Session("SI008_cbeOffice_pay") & "&nAmountpay=" & Session("OP006_nAmountPay") & "&nAmount=" & Session("OP006_nAmount") & "&nOffice=" & Session("SI008_cbeOffice_pay") & "&nOfficeAgen=" & Session("OP006_nOfficeAgen") & "&nAgency=" & Session("OP006_nAgency") & "&nPayOrderTyp=" & Session("OP006_nPayOrderTyp") & "&nBranch=" & Session("nBranch") & "&nProduct=" & Session("nProduct") & "&nPolicy=" & Session("nPolicy") & "&nTypesupport=" & Session("SI008_cbeDoc_Type") & "&nDoc_support=" & Session("SI008_tcnInvoice") & "';</script>")
+                        Response.Write("<script>top.document.location.href = '/VTimeNet/common/GoTo.aspx?sCodispl=" & Session("OP006_Codispl") & "&nCurrencypay=" & Session("OP006_nCurrencyPay") & "&nCurrency=" & Session("OP006_nCurrency") & "&nOfficepay=" & Session("SI008_cbeOffice_pay") & "&nAmountpay=" & Session("OP006_nAmountPay") & "&nAmount=" & Session("OP006_nAmountPay") & "&nOffice=" & Session("SI008_cbeOffice_pay") & "&nOfficeAgen=" & Session("OP006_nOfficeAgen") & "&nAgency=" & Session("OP006_nAgency") & "&nPayOrderTyp=" & Session("OP006_nPayOrderTyp") & "&nBranch=" & Session("nBranch") & "&nProduct=" & Session("nProduct") & "&nPolicy=" & Session("nPolicy") & "&nTypesupport=" & Session("SI008_cbeDoc_Type") & "&nDoc_support=" & Session("SI008_tcnInvoice") & "';</script>")
                     Else
                         If mobjValues.StringToType(CStr(Session("SI738_Benetype")), eFunctions.Values.eTypeData.etdDouble) > 0 Then
                             Response.Write("<script>top.document.location.href = '/VTimeNet/common/GoTo.aspx?sCodispl=SI738" & "&nCurrencypay=" & Session("OP006_nCurrency") & "&nOfficepay=" & Session("SI008_cbeOffice_pay") & "&nAmountpay=" & "&nOffice=" & Session("SI008_cbeOffice_pay") & "&nOfficeAgen=" & Session("OP006_nOfficeAgen") & "&nAgency=" & Session("OP006_nAgency") & "';</script>")
@@ -676,7 +674,7 @@
                 End If
             End If
         End If
-
+        
         mobjClaim = Nothing
         mobjValues = Nothing
 

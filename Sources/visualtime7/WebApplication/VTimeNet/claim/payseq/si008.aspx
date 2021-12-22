@@ -62,13 +62,13 @@
                 lblnDisabled = True
             End If
 
-            Call .AddPossiblesColumn(40265, "Moneda de Cobertura", "cbeCurrency_cov", "Table11", eFunctions.Values.eValuesType.clngComboType, , , , , , , True, , "Moneda origen en la que esta expresada la provision de la cobertura")
+            Call .AddPossiblesColumn(40265, "Moneda de origen", "cbeCurrency_cov", "Table11", eFunctions.Values.eValuesType.clngComboType, , , , , , , True, , "Moneda origen en la que esta expresada la provision de la cobertura")
             Call .AddNumericColumn(0, "% del Beneficiario", "tcnParticip", 5, , , "Porcentaje del Beneficiario", True, 2, , , , True)
-            Call .AddNumericColumn(0, "Monto en moneda de Cobertura", "tcnLocAmount_Pay", 18, , , "Monto expresado en la moneda de origen de la cobertura", True, 6, , , , True)
+            Call .AddNumericColumn(0, "Monto en moneda de origen", "tcnLocAmount_Pay", 18, , , "Monto expresado en la moneda de origen de la cobertura", True, 6, , , , True)
 
-            lobjColumn = .AddNumericColumn(40267, "Provision pendiente(Moneda de cobertura)", "tcnLocAmount", 18, "", , "Monto correspondiente al importe pendiente de reserva", True, 6, , , "ChangeValues(this);", True)
+            lobjColumn = .AddNumericColumn(40267, "Provision pendiente(Moneda de origen)", "tcnLocAmount", 18, "", , "Monto correspondiente al importe pendiente de reserva", True, 6, , , "ChangeValues(this);", True)
             lobjColumn.GridVisible = False
-            Call .AddNumericColumn(40267, "Pago (Moneda de cobertura)", "tcnAmount_Paycov", 18, "", , "Monto correspondiente al pago, sin impuestos en moneda de la cobertura", True, 6, , , "ChangeValues(this);")
+            Call .AddNumericColumn(40267, "Pago (Moneda de origen)", "tcnAmount_Paycov", 18, "", , "Monto correspondiente al pago, sin impuestos en moneda de la cobertura", True, 6, , , "ChangeValues(this);")
             lobjColumn = .AddNumericColumn(40267, "Provision pendiente(Moneda de pago)", "tcnProvPendPayCurr", 18, "", , "Monto correspondiente al importe pendiente de reserva", True, 6, , , "ChangeValues(this);", True)
             lobjColumn.PopUpVisible = False
             lobjColumn = .AddNumericColumn(40267, "Monto neto (Moneda de pago)", "tcnAmount", 18, "", , "Monto correspondiente al pago, sin impuestos", True, 6, , , "ChangeValues(this);", True)
@@ -151,9 +151,9 @@
         '+ Se definen las propiedades generales	del	grid
         With mobjGrid
             .Codispl = "SI008"
-            .Top = 0
-            .Height = 600
-            .Width = 580
+            .Top = 10
+            .Height = 560
+            .Width = 500
             .DeleteButton = False
             mobjGrid.sEditRecordParam = "sClient='      + document.forms[0].valClient.value        + '" & "&sClient_rep=' + document.forms[0].hddvalClient_rep.value + '" & "&nRole='       + document.forms[0].cbeRole.value          + '" & "&nPayForm='    + document.forms[0].cbePayForm.value       + '" & "&nCurrency='   + document.forms[0].cbeCurrency.value      + '" & "&nExchange='   + document.forms[0].tcnExchange.value      + '" & "&nServ_order=' + document.forms[0].valServ_order.value    + '" & "&nInvoice='    + document.forms[0].tcnInvoice.value       + '" & "&dValdate='    + document.forms[0].tcdValdate.value       + '" & "&dBillDate='   + document.forms[0].tcdBillDate.value      + '" & "&nDoc_Type='   + document.forms[0].cbeDoc_Type.value      + '" & "&dPaydate='    + document.forms[0].tcdPaydate.value       + ' &nDeductible_Met='    + document.forms[0].cbeDeductible_Met.value       + '"
 
@@ -228,9 +228,6 @@
         Dim lclsT_PayCla As eClaim.T_PayCla
         Dim lclsExchange As eGeneral.Exchange
         Dim lclsGen_cover As eProduct.Gen_cover
-        Dim lclsCurren_pol As ePolicy.Curren_pol
-        Dim lintCurrPol As Integer
-        Dim lintCurr As Integer
         lclsGen_cover = New eProduct.Gen_cover
         Dim DateAux As Date = mobjValues.StringToDate(CStr(Session("SI008_tcdValdate")))
         If DateAux = eRemoteDB.Constants.dtmNull Then
@@ -239,30 +236,14 @@
         lclsT_PayCla = New eClaim.T_PayCla
         lcolT_PayClas = New eClaim.T_PayClas
         lclsExchange = New eGeneral.Exchange
-        lclsCurren_pol = New ePolicy.Curren_pol
-        If CInt(Session("SI008_cbeCurrency")) < 1 Then
-            Session("SI008_cbeCurrency") = 1
-            Session("nCurrPaySI008") = 1
-
-        End If
+        Session("SI008_cbeCurrency") = 1
+        Session("nCurrPaySI008") = 1
         If Session("SI008_cbeCurrency") <> vbNullString Then
-            lclsClaim = New eClaim.Claim
-            Call lclsClaim.Find(CDbl(Session("nClaim")))
-            lintCurr = Session("SI008_cbeCurrency")
-            If lclsCurren_pol.Find_Currency_Sel(lclsClaim.sCertype, lclsClaim.nBranch, lclsClaim.nProduct, lclsClaim.nPolicy, lclsClaim.nCertif, CDate(Session("dOccurdate_l"))) Then
-                lintCurrPol = lclsCurren_pol.nCurrency
-            Else
-                lintCurrPol = 1
-            End If
-            lclsClaim = Nothing
-            Call lclsExchange.Convert(eRemoteDB.Constants.intNull, 0, lintCurrPol, lintCurr, DateAux, eRemoteDB.Constants.intNull)
-            If lclsExchange.pdblExchange > 0 Then
-                Session("SI008_tcnExchange") = lclsExchange.pdblExchange
-            Else
-                Session("SI008_tcnExchange") = 1
-            End If
+            lclsExchange.Find(CInt(Session("SI008_cbeCurrency")), DateAux)
+            Session("SI008_tcnExchange") = lclsExchange.nExchange
         End If
-        lclsCurren_pol = Nothing
+
+
         Response.Write("" & vbCrLf)
         Response.Write("<script>" & vbCrLf)
         Response.Write("" & vbCrLf)
@@ -510,7 +491,7 @@
         Response.Write("			<TD>")
         mobjValues.BlankPosition = True
 
-        Response.Write(mobjValues.PossiblesValues("cbeCurrency", "TabCurrency_b", eFunctions.Values.eValuesType.clngComboType, CStr(Session("SI008_cbeCurrency")),  ,  , , , , "ChangeValues(this);", False, , "Moneda en la que se realiza el pago"))
+        Response.Write(mobjValues.PossiblesValues("cbeCurrency", "TabCurrency_b", eFunctions.Values.eValuesType.clngComboType, CStr(Session("SI008_cbeCurrency")),  ,  , , , , ,  true,  , "Moneda en la que se realiza el pago"))
 
 
         Response.Write("</TD>" & vbCrLf)
@@ -838,7 +819,7 @@
     var mlngPay_Type
     <%="mlngPay_Type='" & Session("nPay_Type") & "'"%>    
 
-
+         
 //%	ChangeValues: se realiza los cambios en los controles dependientes)
 //-------------------------------------------------------------------------------------------
 function ChangeValues(Field){
@@ -867,7 +848,7 @@ function ChangeValues(Field){
 					              '&dValdate=' + hddValdate_aux.value +
 					              '&nTyp=1' 
 					insDefValues('AmountPay',lstrQString,'/VTimeNet/Claim/PaySeq');
-					
+
 					self.document.forms[0].tcnLocAmount_Pay.value = self.document.forms[0].tcnAmount_Paycov.value.replace('.', '');
 					self.document.forms[0].tcnAmount.value = self.document.forms[0].tcnAmount.value;
                     self.document.forms[0].tcnAmountPayCover.value = self.document.forms[0].tcnAmount_Paycov.value.replace('.', '');
@@ -884,11 +865,10 @@ function ChangeValues(Field){
 				                  '&nDepreciateamount='       + tcnDepreciateamount.value +
                                   '&nDepreciatebase='       + tcnDepreciatebase.value +
                                   '&nDepreciaterate='       + tcnDepreciaterate.value +
-				                  '&nAmountPayedCover='    + tcnAmount.value +
+				                  '&nAmountPayedCover='    + tcnAmountPayedCover.value +
 				                  '&nAmountPayCover='    + tcnAmount_Paycov.value +
-				                  '&sRASA_routine='    + hddRASA_routine.value       
-                    //alert(lstrQString);
-                    //insDefValues('CalSi008', lstrQString, '/VTimeNet/Claim/PaySeq');
+				                  '&sRASA_routine='    + hddRASA_routine.value                    
+                    insDefValues('CalSi008', lstrQString, '/VTimeNet/Claim/PaySeq');
 
 
 				}
