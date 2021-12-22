@@ -4024,7 +4024,9 @@ InsPreVI009_Err:
                 caseResult = mdblIntLoans
 
             Case "tcnSurrCurr"
-                caseResult = caseResult("tcnRescDef", nProponum) * mdblExchange
+                'caseResult = caseResult("tcnRescDef", nProponum) * mdblExchange
+                caseResult = mdblRescDef * mdblExchange
+
                 caseResult = System.Math.Round(caseResult, 0)
                 lblnValidateZero = True
 

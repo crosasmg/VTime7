@@ -388,9 +388,9 @@ Public Class T_PayClas
         If ldblParticip <> eRemoteDB.Constants.intNull And ldblParticip > 0 Then
             '+ Se rescata reserva en moneda de la cobertura (original)
             ldblTot_Amountaux = ldblTot_Amountpaycov
-            insCalnLoc_Amount = (ldblLoc_reservBenef * ldblParticip / 100) - ldblTot_Amountaux
+            insCalnLoc_Amount = (ldblLoc_reservBenef * ldblParticip / 100) '- ldblTot_Amountaux se comenta el descontar lo pagado ya que se basa en la reserva
         Else
-            insCalnLoc_Amount = ldblLoc_reservBenef - ldblTot_Amountpaycov
+            insCalnLoc_Amount = ldblLoc_reservBenef  '-  ldblTot_Amountpaycov se comenta ya que no debe desontar lo pagado y basarse en la reserva
         End If
 
         lclsClaim_his = Nothing
