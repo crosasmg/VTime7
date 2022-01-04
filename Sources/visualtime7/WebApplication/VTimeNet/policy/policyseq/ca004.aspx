@@ -96,6 +96,19 @@
 %>
 <script type="text/javascript" src="/VTimeNet/Scripts/GenFunctions.js"></script>
 <script type='text/javascript'>
+    $(document).ready(function () { // ehh reconocimiento de ingresos 29122021
+        $('input[name=optFreq]').click(function () {
+            let valoptFreq = $('input:radio[name=optFreq]:checked').val();
+            if (valoptFreq == 2) {
+                $('#cbePayFreq').val('6');
+                $("#cbePayFreq").prop("disabled", true);
+            } else {
+                $("#cbePayFreq").prop("disabled", false);
+                $('#cbePayFreq').val('5');
+            }
+        });
+
+    });
 //+ Cantidad de cuotas 
     var lintcbeQuota
 

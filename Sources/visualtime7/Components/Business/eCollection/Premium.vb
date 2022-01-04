@@ -5739,6 +5739,37 @@ InsPreCA017_2_Err:
         'UPGRADE_NOTE: Object lrecinsPreca017 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
         lrecinsPreca017_2 = Nothing
     End Function
+
+    Public Function ReaColinovt(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double) As String
+
+        Dim lrecReaColinovt As eRemoteDB.Execute
+
+        '+Definición de parámetros para stored procedure 'ReaColinovt'
+
+        On Error GoTo ReaColinovt_Err
+
+        lrecReaColinovt = New eRemoteDB.Execute
+        With lrecReaColinovt
+            .StoredProcedure = "PKG_VT_RECONOCIMIENTO_INGRESOS.REACOLINVOT"
+            .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("sColinvot", " ", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+
+            If .Run(False) Then
+                ReaColinovt = Trim(lrecReaColinovt.Parameters("sColinvot").Value)
+            End If
+        End With
+
+ReaColinovt_Err:
+        If Err.Number Then
+            ReaColinovt = Nothing
+        End If
+        On Error GoTo 0
+        'UPGRADE_NOTE: Object lrecinsPreca017 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
+        lrecReaColinovt = Nothing
+    End Function
 End Class
 
 

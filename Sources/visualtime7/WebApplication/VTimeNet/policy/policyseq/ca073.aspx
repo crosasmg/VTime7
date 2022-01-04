@@ -236,7 +236,7 @@
                         <tr>
                             <td><label id="99107"><%= GetLocalResourceObject("lblIngPrimaNetaCaption") %>:</label></td>
                             <td>
-                                <%=mobjValues.NumericControl("tcnInPrimNetaFP", 10, mclsRecIng.nInPrimNetaFP, , , , , , , , "RecalAmounts(this);", False, 4)%>
+                                <%=mobjValues.NumericControl("tcnInPrimNetaFP", 14, mclsRecIng.nInPrimNetaFP, , , , 6, , , , "RecalAmounts(this);", False, 4)%>
                                 <input type="hidden" name="hcnInPrimNetaFP" id="hcnInPrimNetaFP" value="<%= CStr(mclsRecIng.nInPrimNetaFP) %>" />
                             </td>
                             <!--<td><label id="99108"><%= GetLocalResourceObject("lblDerechoEmisionCaption") %></label></td>

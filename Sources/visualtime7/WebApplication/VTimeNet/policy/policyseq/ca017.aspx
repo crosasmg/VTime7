@@ -170,7 +170,10 @@ mobjMenu = Nothing
                 'ehh - Ad. vt fase II reconocimiento de ingresos
                 '+ Si el Tipo de póliza es Colectiva, la facturación no es por certificado y
                 '+ no es la póliza matriz
-                If CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0" Then
+                If IsNothing(Session("sColinvot")) Then
+                    Session("sColinvot") = mclsPremium.ReaColinovt(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"))
+                End If
+                If (CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0") Or Session("nBranch") = 71 Then
                     Call mclsPremium.InsPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
                 Else
                     Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
