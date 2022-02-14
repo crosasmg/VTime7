@@ -1,6 +1,7 @@
 Option Strict Off
 Option Explicit On
 Imports System.Text.RegularExpressions
+Imports System.Configuration
 Public Class ClientSeq
 	'%-------------------------------------------------------%'
 	'% $Workfile:: ClientSeq.cls                            $%'
@@ -57,36 +58,27 @@ Public Class ClientSeq
 				End If
 			End If
 		End If
-		
-		'+ Validaciones del dígito verificador
-		'+ Debe estar lleno
-		If nAction = 301 Or nAction = 302 Then
-			If sDigit = String.Empty And Trim(sClient) <> String.Empty Then
-				lobjErrors.ErrorMessage(sCodispl, 2090)
-			Else
-                If sDigit <> String.Empty Then
-                    'INICIO DMendoza 16/08/2021
-                    ' Se quita la validación de que solo se creé con la letra E
-                    'If UCase(sDigit) <> "E" Then
-                    If lblnCreate = False Then
-                        'INICIO DMendoza 11/08/2021
-                        ' Se comenta validación del digito verificador para que consulte en la BD
-                        'If lobjClient.GetRUT(sClient) <> UCase(sDigit) Then
-                        '    lobjErrors.ErrorMessage(sCodispl, 55032)
-                        'End If
-                        If UCase(lobjClient.sDigit) <> UCase(sDigit) Then
-                            lobjErrors.ErrorMessage(sCodispl, 55032)
+
+        '+ Validaciones del dígito verificador
+        '+ Debe estar lleno
+        If ConfigurationManager.AppSettings("UseClientDigit.Enable") = "True" Then
+            If nAction = 301 Or nAction = 302 Then
+                If sDigit = String.Empty And Trim(sClient) <> String.Empty Then
+                    lobjErrors.ErrorMessage(sCodispl, 2090)
+                Else
+                    If sDigit <> String.Empty Then
+                        If UCase(sDigit) <> "E" Then
+                            If lobjClient.GetRUT(sClient) <> sDigit Then
+                                lobjErrors.ErrorMessage(sCodispl, 55032)
+                            End If
                         End If
-                        'FIN DMendoza 11/08/2021
                     End If
-                    'FIN DMendoza 16/08/2021
                 End If
             End If
-		End If
-		
-		'+ Validaciones del campo tipo de persona
-		'+ Debe estar lleno
-		If nPerson_typ = eRemoteDB.Constants.intNull Then
+        End If
+        '+ Validaciones del campo tipo de persona
+        '+ Debe estar lleno
+        If nPerson_typ = eRemoteDB.Constants.intNull Then
 			lobjErrors.ErrorMessage(sCodispl, 11334)
 		Else
             If nAction = 301 Then

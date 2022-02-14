@@ -1279,11 +1279,13 @@ Public Class Values
     '% ClientControl: Devuelve la estructura para la búsqueda de los clientes.
     'UPGRADE_NOTE: Alias was upgraded to Alias_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
     Public Function ClientControl(ByVal FieldName As String, ByVal DefValue As String, Optional ByVal isRequired As Boolean = False, Optional ByVal Alias_Renamed As String = "", Optional ByVal OnChange As String = "", Optional ByVal Disabled As Boolean = False, Optional ByVal FieldClieName As String = "", Optional ByVal isDIVDefine As Boolean = False, Optional ByVal GridField As Boolean = False, Optional ByVal HRefUrl As String = "", Optional ByVal HRefScript As String = "", Optional ByVal nTypeForm As eTypeClient = eTypeClient.SearchClient, Optional ByVal TabIndex As Short = 0, Optional ByVal CreateClient As Boolean = False, Optional ByVal isPopUp As Boolean = False, Optional ByVal sQueryString As String = "", Optional ByVal bAllowInvalid As Boolean = False, Optional ByVal Cliename As String = "", Optional ByVal Digit As String = "", Optional ByVal CustomPage As String = "", Optional ByVal bAllowInvalidFormat As Boolean = False) As Object
+
         Dim lstrOnChange As String
         Dim lstrOnchangeDigit As String
         Dim lobjClient As Object
         Dim lstrCliename As String
         Dim lstrDigit As String
+
 
         '#If LOG Then
         '    eRemotedb.FileSupport.AddBufferToFile sSessionID & "|Begin|Control|ClientControl|" & FieldName, sSessionID
@@ -1299,16 +1301,14 @@ Public Class Values
         End If
 
         '+ Arma la estructura del evento OnChange del botón.
-        lstrOnChange = "if ($(""#" & FieldName & "_Old"").val() != $(""#" & FieldName & """).val()" & "){ValidateClient(this,""" & FieldClieName & """," & IIf(CreateClient, "true", "false") & "," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & """," & IIf(bAllowInvalid, "true", "false") & "," & IIf(bAllowInvalidFormat, "true", "false") & ");}"
-        'lstrOnChange = "if (" & FieldName & "_Old.value != " & FieldName & ".value" & "){ValidateClient(this,""" & FieldClieName & """," & IIf(CreateClient, "true", "false") & "," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & """," & IIf(bAllowInvalid, "true", "false") & "," & IIf(bAllowInvalidFormat, "true", "false") & ");}"
         OnChange = Replace(Replace(OnChange, "'", """"), """", "\""")
-
-        ClientControl = "<SCRIPT>var mintTypeForm=" & nTypeForm & ";</SCRIPT><TABLE CELLPADING=0 CELLSPACING=0 BORDER=0><TR><TD>" & TextControl(FieldName, 14, DefValue, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, lstrOnChange, Disabled, TabIndex)
+        lstrOnChange = "if (" & FieldName & "_Old.value != " & FieldName & ".value" & "){ValidateClient(this,""" & FieldClieName & """," & IIf(CreateClient, "true", "false") & "," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ");}"
+        ClientControl = "<script>var mintTypeForm=" & nTypeForm & ";</script><TABLE CELLPADING=0 CELLSPACING=0 BORDER=0><TR><TD style=""vertical-align:middle"">" & TextControl(FieldName, 14, DefValue, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, lstrOnChange, Disabled, TabIndex, IIf(ConfigurationManager.AppSettings("UseClientDigit.Enable") = "False", 15, 0))
 
         If Not mblnActionQuery And Not GridField Then
 
-            'lstrOnchangeDigit = "if (" & FieldName & "_Digit" & "_Old.value != " & FieldName & "_Digit.value" & "){ValidateDigit(this,self.document.forms[" & nParentForm & "]." & FieldName & ",false," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & "," & IIf(bAllowInvalidFormat, "true", "false") & ",""" & FieldClieName & """);}"
-            lstrOnchangeDigit = "if ($(""#" & FieldName & "_Digit" & "_Old"").val() != $(""#" & FieldName & "_Digit"").val()" & "){ValidateDigit(this,self.document.forms[" & nParentForm & "]." & FieldName & ",false," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & "," & IIf(bAllowInvalidFormat, "true", "false") & ",""" & FieldClieName & """);}"
+            lstrOnchangeDigit = "if (" & FieldName & "_Digit" & "_Old.value != " & FieldName & "_Digit.value" & "){ValidateDigit(this,self.document.forms[" & nParentForm & "]." & FieldName & ",false," & nTypeForm & ",""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ",""" & FieldClieName & """);}"
+
             lstrCliename = String.Empty
             lstrDigit = String.Empty
 
@@ -1330,12 +1330,18 @@ Public Class Values
                 sDescript = lstrCliename
             End If
 
-            If CustomPage = String.Empty Then
-                ClientControl = ClientControl & "<LABEL>-</LABEL>" & TextControl(FieldName & "_Digit", 1, lstrDigit, False, Alias_Renamed & "(Dígito)", GridField, , , lstrOnchangeDigit, Disabled, TabIndex) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/btn_ValuesOff.png", Alias_Renamed, , "insShowClientQuery(""" & FieldName & """," & nTypeForm & ",""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
-
+            If ConfigurationManager.AppSettings("UseClientDigit.Enable") = "False" Then
+                If CustomPage = String.Empty Then
+                    ClientControl = ClientControl & HiddenControl(FieldName & "_Digit", String.Empty) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/FindClientOff.png", Alias_Renamed, , "insShowClientQuery(""" & FieldName & """,mintTypeForm,""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
+                Else
+                    ClientControl = ClientControl & HiddenControl(FieldName & "_Digit", String.Empty) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/FindClientOff.png", Alias_Renamed, , "insShowClientCustomPage(""" & CustomPage & """,""" & FieldName & """," & nTypeForm & ",""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
+                End If
             Else
-                ClientControl = ClientControl & "<LABEL>-</LABEL>" & TextControl(FieldName & "_Digit", 1, lstrDigit, False, Alias_Renamed & "(Dígito)", GridField, , , lstrOnchangeDigit, Disabled, TabIndex) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/btn_ValuesOff.png", Alias_Renamed, , "insShowClientCustomPage(""" & CustomPage & """,""" & FieldName & """," & nTypeForm & ",""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
-
+                If CustomPage = String.Empty Then
+                    ClientControl = ClientControl & "<LABEL>-</LABEL>" & TextControl(FieldName & "_Digit", 1, lstrDigit, False, Alias_Renamed & "(Dígito)", GridField, , , lstrOnchangeDigit, Disabled, TabIndex) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/FindClientOff.png", Alias_Renamed, , "insShowClientQuery(""" & FieldName & """,mintTypeForm,""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
+                Else
+                    ClientControl = ClientControl & "<LABEL>-</LABEL>" & TextControl(FieldName & "_Digit", 1, lstrDigit, False, Alias_Renamed & "(Dígito)", GridField, , , lstrOnchangeDigit, Disabled, TabIndex) & AnimatedButtonControl("btn" & FieldName, "/VTimeNet/Images/FindClientOff.png", Alias_Renamed, , "insShowClientCustomPage(""" & CustomPage & """,""" & FieldName & """," & nTypeForm & ",""" & FieldClieName & """,""" & ClientRole & """," & TypeList & ",""" & sQueryString & "&sOnChange=" & OnChange & """," & IIf(bAllowInvalid, "true", "false") & ")", Disabled, TabIndex)
+                End If
             End If
 
             If Not isDIVDefine Then
@@ -1359,11 +1365,15 @@ Public Class Values
                     sDigit = Digit
                     sDescript = Cliename
                 End If
-                ClientControl = ClientControl & "-" & "</TD><TD>" & TextControl(FieldName & "_Digit", 2, sDigit, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, , Disabled) & " " & "</TD><TD>" & TextControl(FieldName & "Des", 30, sDescript, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, , Disabled)
+                If ConfigurationManager.AppSettings("UseClientDigit.Enable") = "False" Then
+                    ClientControl = ClientControl & "</TD><TD> - " & HiddenControl(FieldName & "_Digit", String.Empty) & " " & "</TD><TD>" & TextControl(FieldName & "Des", 30, sDescript, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, , Disabled)
+                Else
+                    ClientControl = ClientControl & "-" & "</TD><TD>" & TextControl(FieldName & "_Digit", 2, sDigit, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, , Disabled) & " " & "</TD><TD>" & TextControl(FieldName & "Des", 30, sDescript, isRequired, Alias_Renamed, GridField, HRefUrl, HRefScript, , Disabled)
+                End If
+
             End If
             ClientControl = ClientControl & "</TD></TR></TABLE>"
         End If
-
         ClientRole = String.Empty
         TypeList = ecbeTypeList.none
 
@@ -1371,6 +1381,7 @@ Public Class Values
         '    eRemotedb.FileSupport.AddBufferToFile sSessionID & "|Finish|Control|ClientControl|" & FieldName, sSessionID
         '#End If
     End Function
+
 
     '% FileControl: devuelve la estructura de un campo para busqueda de archivos
     Public Function FileControl(ByVal FieldName As String, Optional ByVal Size As Short = 30, Optional ByVal OnClick As String = "", Optional ByVal Disabled As Boolean = False, Optional ByVal TabIndex As Short = 0, Optional ByVal OnChange As String = "") As String
