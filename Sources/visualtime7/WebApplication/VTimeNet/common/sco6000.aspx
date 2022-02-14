@@ -85,6 +85,7 @@
                                             Request.QueryString.Item("nPolicy"),
                                             Request.QueryString.Item("nCertif"),
                                             Request.QueryString.Item("sPoliType"),
+                                            "",
                                             mobjValues.StringToType(Request.QueryString.Item("nPremium"), eFunctions.Values.eTypeData.etdDouble),
                                             mobjValues.StringToType(Request.QueryString.Item("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                             Request.QueryString.Item("sDevReceipt")) Then

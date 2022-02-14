@@ -31,32 +31,38 @@ Dim lstrAsegurado As String
 
 </script>
 <%Response.Expires = -1441
-mobjNetFrameWork = New eNetFrameWork.Layout
-mobjNetFrameWork.sSessionID = Session.SessionID
-mobjNetFrameWork.nUsercode = Session("nUsercode")
-Call mobjNetFrameWork.BeginPage("CA050")
-'~End Header Block VisualTimer Utility
-Response.CacheControl = "private"
+    mobjNetFrameWork = New eNetFrameWork.Layout
+    mobjNetFrameWork.sSessionID = Session.SessionID
+    mobjNetFrameWork.nUsercode = Session("nUsercode")
+    Call mobjNetFrameWork.BeginPage("CA050")
+    '~End Header Block VisualTimer Utility
+    Response.CacheControl = "private"
 
-mobjValues = New eFunctions.Values
-'^Begin Body Block VisualTimer Utility 1.1 31/3/03 19.42.04
-mobjValues.sSessionID = Session.SessionID
-mobjValues.nUsercode = Session("nUsercode")
-'~End Body Block VisualTimer Utility
+    mobjValues = New eFunctions.Values
+    '^Begin Body Block VisualTimer Utility 1.1 31/3/03 19.42.04
+    mobjValues.sSessionID = Session.SessionID
+    mobjValues.nUsercode = Session("nUsercode")
+    '~End Body Block VisualTimer Utility
 
-mobjValues.sCodisplPage = "CA050"
-mobjPolicy = New ePolicy.Policy_his
-lclsClient = New eClient.Client
-lclsClientRoles = New ePolicy.Roles
+    mobjValues.sCodisplPage = "CA050"
+    mobjPolicy = New ePolicy.Policy_his
+    lclsClient = New eClient.Client
+    lclsClientRoles = New ePolicy.Roles
 
     mobjValues.ActionQuery = Session("bQuery")
-    
-    
+
+
     If mobjValues.StringToType(Session("nTransaction2"), eFunctions.Values.eTypeData.etdInteger) = 16 Then
         Session("nTransaction") = Session("nTransaction2")
     End If
 
+    Session("nWaitCodeca050") = False 'ehh - Ad. vt fase II reconocimiento de ingresos
+
     Call mobjPolicy.insPreca050(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), Session("sTypeCompanyUser"), mobjValues.StringToType(Session("nTransaction"), eFunctions.Values.eTypeData.etdInteger), mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble), Session("sJustQuote"))
+
+    If mobjPolicy.nWaitCode <= 0 Then 'ehh - Ad. vt fase II reconocimiento de ingresos
+        Session("nWaitCodeca050") = True
+    End If
 
     If mobjPolicy.nPrintNow = 2 Then
         lblnchkprint = False
@@ -87,8 +93,8 @@ lclsClientRoles = New ePolicy.Roles
 <SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/Constantes.js"></SCRIPT>
 <SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
 <%
-Response.Write(mobjValues.StyleSheet())
-Response.Write(mobjValues.WindowsTitle("CA050", Request.QueryString.Item("sWindowDescript")))
+        Response.Write(mobjValues.StyleSheet())
+        Response.Write(mobjValues.WindowsTitle("CA050", Request.QueryString.Item("sWindowDescript")))
 %>
 <SCRIPT>
 //- Variable para el control de versiones

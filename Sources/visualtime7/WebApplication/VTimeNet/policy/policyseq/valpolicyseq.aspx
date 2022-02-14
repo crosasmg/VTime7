@@ -1967,7 +1967,7 @@
                     End If
                 End With
                 'ehh - Ad. vt fase I ca073 reconocimiento de ingresos
-                If CStr(Session("sPoliType")) = 2 Then
+                If CStr(Session("sPoliType")) = 2 And Session("nCertif") = 0 Then
                     lclsPolicy_Win = New ePolicy.Policy_Win
                     Call lclsPolicy_Win.Add_PolicyWin(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), Session("nUsercode"), "CA073", "3")
                 End If
@@ -4433,11 +4433,27 @@
                 lclsPolicy_amend.Add()
                 'ehh - Ad. vt fase II rsis 2 reconocimiento de ingresos
                 Dim lclsRecIng As New Reconocimiento_ingresos
-                If CStr(Session("sPoliType")) = "2" Then
-                    If Session("nCertif") = 0 Then
-                        Dim nStatus As Integer = 0
-                        lclsRecIng.insPostCA073(CStr(Session("sPolitype")), Session("sCertype"), Session("nBranch"), Session("nProduct"),
-                                                            Session("nPolicy"), Session("nCertif"), -1, -1, -1, 0, 0, 0, nStatus)
+                Dim mclsPremium As New eCollection.Premium
+                If Session("nWaitCodeca050") = True Then
+                    Dim sColinvot_aux As String = ""
+                    Dim sPolitype_aux As String = ""
+                    mclsPremium.ReaColinovt(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), sColinvot_aux, sPolitype_aux)
+                    Session("sColinvot") = sColinvot_aux
+                    Session("sPolitype") = sPolitype_aux
+                    If Session("nBranch") <> 71 Then
+                        If CStr(Session("sPoliType")) = "2" Then
+                            If Session("nCertif") = 0 Then
+                                Dim nStatus As Integer = 0
+                                lclsRecIng.insPostCA073(CStr(Session("sPolitype")), Session("sCertype"), Session("nBranch"), Session("nProduct"),
+                                                                    Session("nPolicy"), Session("nCertif"), -1, -1, -1, 0, 0, 0, nStatus)
+                            Else
+                                If (CStr(Session("sColinvot")) = "2") Then 'tipo de recibo por certificado
+                                    Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"), "4")
+                                End If
+                            End If
+                        Else
+                            Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"), "4")
+                        End If
                     End If
                 End If
             End If

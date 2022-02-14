@@ -736,7 +736,7 @@
                             Dim mobjRecIng As New Reconocimiento_ingresos
                             mobjRecIng = New Reconocimiento_ingresos
                             Dim sBillGen As String
-                            sBillGen = mobjRecIng.reaBillGen(mobjValues.StringToType(Session("cbeBranchBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("valProductBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.QueryString.Item("nPolicy"), eFunctions.Values.eTypeData.etdDouble))
+                            sBillGen = mobjRecIng.reaBillGen(mobjValues.StringToType(Session("cbeBranchBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Session("valProductBill"), eFunctions.Values.eTypeData.etdDouble), mobjValues.StringToType(Request.QueryString.Item("nPolicy"), eFunctions.Values.eTypeData.etdDouble), Request.QueryString.Item("sKey"))
                             If (sBillGen = String.Empty) Then
 
                             Else

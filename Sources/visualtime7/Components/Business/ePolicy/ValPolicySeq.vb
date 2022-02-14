@@ -4415,7 +4415,7 @@ ReaPropQuotPremium_Err:
     End Function
 
     '%ReaPolicy_QuotProp: retorna las cotizaciones pendientes de una p�liza
-    Public Function ReaPolicy_QuotProp(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nPropQuot As Integer, ByVal nStatquota As Certificat.Stat_quot, ByRef sQuotProp As String) As Boolean
+    Public Function ReaPolicy_QuotProp(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Double, ByVal nPropQuot As Long, ByVal nStatquota As Certificat.Stat_quot, ByRef sQuotProp As String) As Boolean
         Dim lintCount As Integer
         Dim lblnSpecprop As Boolean
         Dim lrecReaPolicy_QuotProp As eRemoteDB.Execute

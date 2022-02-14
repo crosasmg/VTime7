@@ -170,13 +170,25 @@ mobjMenu = Nothing
                 'ehh - Ad. vt fase II reconocimiento de ingresos
                 '+ Si el Tipo de póliza es Colectiva, la facturación no es por certificado y
                 '+ no es la póliza matriz
-                If IsNothing(Session("sColinvot")) Then
-                    Session("sColinvot") = mclsPremium.ReaColinovt(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"))
-                End If
+                '! asegurando valores de politype y colinvot
+                Dim sColinvot_aux As String = ""
+                Dim sPolitype_aux As String = ""
+                mclsPremium.ReaColinovt(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), sColinvot_aux, sPolitype_aux)
+                Session("sColinvot") = sColinvot_aux
+                Session("sPolitype") = sPolitype_aux
+                Dim file As System.IO.StreamWriter
+                file = My.Computer.FileSystem.OpenTextFileWriter("C:\logE\logE.txt", True)
+                Try
+                    'no pasa a prod
+                    file.WriteLine(CStr(Session("sCertype")) & "|" & CStr(Session("nBranch")) & "|" & CStr(Session("nProduct")) & "|" & CStr(Session("nPolicy")) & "|" & CStr(Session("sColinvot")) & "|" & CStr(Session("sPolitype")) & "|" & CStr(Session("nCertif")))
+                    file.Close()
+                Catch ex As Exception
+                    file.Close()
+                End Try
                 If (CStr(Session("sPolitype")) = "2" And CStr(Session("sColinvot")) <> "2" And CStr(Session("nCertif")) <> "0") Or Session("nBranch") = 71 Then
                     Call mclsPremium.InsPreCA017(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
                 Else
-                    Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"))
+                    Call mclsPremium.InsPreCA017_2(Session("sCertype"), Session("nBranch"), Session("nProduct"), Session("nPolicy"), Session("nCertif"), Session("dEffecdate"), eRemoteDB.Constants.dtmNull, Session("nTransaction"), Session("nUsercode"), Session("sBrancht"), "3")
                 End If
 
                 mintDefaultReceipt = mclsPremium.nReceiptdefault

@@ -33,8 +33,8 @@ Public Class Address
     Public nLon_minute As Integer '                                                              no                                  4           10    0     yes                                 (n/a)                               (n/a)
 	Public nCertif As Integer '                                                              no                                  4           10    0     yes                                 (n/a)                               (n/a)
 	Public nClaim As Double '                                                              no                                  4           10    0     yes                                 (n/a)                               (n/a)
-	Public nPolicy As Integer '                                                              no                                  4           10    0     yes                                 (n/a)                               (n/a)
-	Public nLocal As Integer '                                                            no                                  2           5     0     yes                                 (n/a)                               (n/a)
+    Public nPolicy As Double '                                                              no                                  4           10    0     yes                                 (n/a)                               (n/a)
+    Public nLocal As Integer '                                                            no                                  2           5     0     yes                                 (n/a)                               (n/a)
 	Public nZip_Code As Double '                                                              no                                  4           10    0     no                                  (n/a)                               (n/a)
 	Public nLat_grade As Integer '                                                            no                                  2           5     0     yes                                 (n/a)                               (n/a)
 	Public nLon_grade As Integer '                                                            no                                  2           5     0     yes                                 (n/a)                               (n/a)
@@ -619,7 +619,7 @@ insUpdAddress_err:
 
     '+ Se encarga de borrar o actualizar la direccion de la poliza
     '+ Segun hoja 416 Felipe Lagos B.
-    Public Function insDelAddr_CA004(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Integer, ByVal nCertif As Integer, ByVal dEffecdate As Date, ByVal nUsercode As Integer) As Boolean
+    Public Function insDelAddr_CA004(ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Integer, ByVal dEffecdate As Date, ByVal nUsercode As Integer) As Boolean
 
         Dim lrecinsDelAddr_CA004 As eRemoteDB.Execute
         Dim lclsPolicy_Win As Object
@@ -661,7 +661,7 @@ insDelAddr_CA004_err:
 
     '+ Se encarga de borrar o actualizar la direccion de la poliza
     '+ Segun hoja 416 Felipe Lagos B.
-    Public Function valAddress_send(ByVal nRecOwner As Integer, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Integer, ByVal nCertif As Integer, ByVal dEffecdate As Date, ByVal sClient As String) As Boolean
+    Public Function valAddress_send(ByVal nRecOwner As Integer, ByVal sCertype As String, ByVal nBranch As Integer, ByVal nProduct As Integer, ByVal nPolicy As Double, ByVal nCertif As Integer, ByVal dEffecdate As Date, ByVal sClient As String) As Boolean
         Dim lrecAddress As eRemoteDB.Execute
         Dim lintExists As Integer
 
@@ -675,7 +675,7 @@ insDelAddr_CA004_err:
             .Parameters.Add("sCertype", sCertype, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 1, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("nBranch", nBranch, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("nProduct", nProduct, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbSmallInt, 22, 0, 5, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
-            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("nPolicy", nPolicy, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("nCertif", nCertif, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbInteger, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("dEffecdate", dEffecdate, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDBTimeStamp, 0, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("sClient", sClient, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 14, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)

@@ -143,7 +143,7 @@ insbtc00015_Err:
         lrecinsPreCA073 = Nothing
     End Sub
 
-    Public Function reaBillGen(ByVal NBRANCH As Integer, ByVal NPRODUCT As Integer, ByVal NPOLICY As Long) As String
+    Public Function reaBillGen(ByVal NBRANCH As Integer, ByVal NPRODUCT As Integer, ByVal NPOLICY As Long, ByVal SKEY As String) As String
         Dim lrecreaBillGen As eRemoteDB.Execute
         Dim lstrError As String = String.Empty
 
@@ -155,6 +155,7 @@ insbtc00015_Err:
             .Parameters.Add("NBRANCH", NBRANCH, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("NPRODUCT", NPRODUCT, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbNumeric, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("NPOLICY", NPOLICY, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbDouble, 22, 0, 10, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
+            .Parameters.Add("SKEY", SKEY, eRemoteDB.Parameter.eRmtDataDir.rdbParamInput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             .Parameters.Add("SBILL", "", eRemoteDB.Parameter.eRmtDataDir.rdbParamInputOutput, eRemoteDB.Parameter.eRmtDataType.rdbVarchar, 20, 0, 0, eRemoteDB.Parameter.eRmtDataAttrib.rdbParamNullable)
             If .Run(False) Then
                 If .Parameters("SBILL").Value <> String.Empty Then
