@@ -3,24 +3,24 @@
 <%@ Import namespace="eCoReinsuran" %>
 <script language="VB" runat="Server">
 
-'- Objeto para el manejo de las funciones generales de carga de valores
-Dim mobjValues As eFunctions.Values
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
 
-'- Objeto para el manejo de las rutinas genéricas
-Dim mobjMenu As eFunctions.Menues
+    '- Objeto para el manejo de las rutinas genéricas
+    Dim mobjMenu As eFunctions.Menues
 
-'- Se define la variable modular utilizada para la carga y actualización de datos de la forma    
-Dim mclsCuentecn As eCoReinsuran.Cuentecn
+    '- Se define la variable modular utilizada para la carga y actualización de datos de la forma    
+    Dim mclsCuentecn As eCoReinsuran.Cuentecn
 
 
-'% insPreCR006H: Realiza la lectura para la carga de los datos de la forma
-'------------------------------------------------------------------------------------------------
-Private Sub insPreCR006H()
-	'------------------------------------------------------------------------------------------------
-	Call mclsCuentecn.Find(CInt(Request.QueryString.Item("nNumber")), CInt(Request.QueryString.Item("nBranch")), CInt(Request.QueryString.Item("nType")), CInt(Request.QueryString.Item("nCompany")), CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), Request.QueryString.Item("sBussiType"), CInt(Request.QueryString.Item("nCurrency")))
-	
-	Call mclsCuentecn.DefaultValues("CR006H", CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), CInt(Request.QueryString.Item("nMainAction")))
-End Sub
+    '% insPreCR006H: Realiza la lectura para la carga de los datos de la forma
+    '------------------------------------------------------------------------------------------------
+    Private Sub insPreCR006H()
+        '------------------------------------------------------------------------------------------------
+        Call mclsCuentecn.Find(CInt(Request.QueryString.Item("nNumber")), CInt(Request.QueryString.Item("nBranch")), CInt(Request.QueryString.Item("nType")), CInt(Request.QueryString.Item("nCompany")), CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), Request.QueryString.Item("sBussiType"), CInt(Request.QueryString.Item("nCurrency")), CInt(Request.QueryString.Item("nIdConsec")))
+
+        Call mclsCuentecn.DefaultValues("CR006H", CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), CInt(Request.QueryString.Item("nMainAction")))
+    End Sub
 
 </script>
 <%Response.Expires = -1
@@ -56,7 +56,7 @@ function DisabledFields(Reinsurance){
 //--------------------------------------------------------------------------------------------
 function AmountResum(Reinsurance){
 //--------------------------------------------------------------------------------------------
-
+    //PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
 	with(self.document.forms[0]){
 		if(typeof(Reinsurance)=='undefined'){
 			//Total Asegurador
@@ -65,15 +65,15 @@ function AmountResum(Reinsurance){
 							 insConvertNumber(tcnRCarPrem.value)  + insConvertNumber(tcnRCarSin.value)    + 
 							 insConvertNumber(tcnGastoReas.value)  + insConvertNumber(tcnCommission.value) + 
 							 insConvertNumber(tcnClaimCed.value)  + insConvertNumber(tcnImpuesto.value);
-			tcnTotInsu.value = VTFormat(tcnTotInsu_tmp, "", "", "", 0, true);
+			tcnTotInsu.value = VTFormat(tcnTotInsu_tmp, "", "", "", 6, true);
 			
 			//Saldo
 			tcnBalance_tmp = insConvertNumber(tcnTotInsu.value) - insConvertNumber(tcnTotRei.value);
 
 			if (tcnBalance_tmp < 0){
-				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 6, true);
 			}else{
-				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 6, true);
 			}
 			$(tcnBalance).change();			
 			
@@ -81,19 +81,20 @@ function AmountResum(Reinsurance){
 		}else{
 			//Total Asegurador
 			tcnTotInsu_tmp = insConvertNumber(tcnClaimCed.value) + insConvertNumber(tcnImpuesto.value);
-			tcnTotInsu.value = VTFormat(tcnTotInsu_tmp, "", "", "", 0, true);
+			tcnTotInsu.value = VTFormat(tcnTotInsu_tmp, "", "", "", 6, true);
 			
 			//Saldo
 			tcnBalance_tmp = insConvertNumber(tcnTotInsu.value)- insConvertNumber(tcnTotRei.value);		
 
 			if (tcnBalance_tmp < 0){
-				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 6, true);
 			}else{
-				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 6, true);
 			}
 			$(tcnBalance).change();			
 		}
 	}
+	//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 }
 //PutZero: Función que no permite que algún campo quede sin valor(en blanco).
 //--------------------------------------------------------------------------------------------

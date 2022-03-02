@@ -2,19 +2,19 @@
 <%@ Import namespace="eFunctions" %>
 <script language="VB" runat="Server">
 
-'- Objeto para el manejo de las funciones generales de carga de valores
-Dim mobjValues As eFunctions.Values
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
 
-'- Objeto para el manejo de las rutinas genéricas
-Dim mobjMenu As eFunctions.Menues
+    '- Objeto para el manejo de las rutinas genéricas
+    Dim mobjMenu As eFunctions.Menues
 
 
 </script>
 <%Response.Expires = -1
-mobjValues = New eFunctions.Values
-mobjMenu = New eFunctions.Menues
+    mobjValues = New eFunctions.Values
+    mobjMenu = New eFunctions.Menues
 
-mobjValues.sCodisplPage = "cr006_k"
+    mobjValues.sCodisplPage = "cr006_k"
 %>
 
 
@@ -73,6 +73,8 @@ function insStateZone(){
 			self.document.forms[0].tcnPerNum.disabled=false;
 		}
 	}
+
+	self.document.forms[0].tcnIdConsec.disabled = false;
 }
 
 // ChangeYearSer: Muestra el año completo (4 digitos)
@@ -138,6 +140,10 @@ function ChangeReinsurance(Field,Disabled){
 			self.document.forms[0].btncbeContraType.disabled=true;
 			self.document.forms[0].cbeContraType.value=4;
 			$(self.document.forms[0].cbeContraType).change();
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
+			self.document.forms[0].tcnIdConsec.value = '';
+			self.document.forms[0].tcnIdConsec.disabled = false;
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}		
 //Proporcionales: Muestra los valores 
@@ -153,7 +159,11 @@ function ChangeReinsurance(Field,Disabled){
 			ChangeYearSer(self.document.forms[0].tcnYearSer.value);
 			self.document.forms[0].cbeBussiType.disabled=false;
 			$(self.document.forms[0].cbeContraType).change();
-			self.document.forms[0].elements['cbeContraType'].List='2,3,5,6,7,8,9,10';
+			self.document.forms[0].elements['cbeContraType'].List = '2,3,5,6,7,8,9,10';
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
+			self.document.forms[0].tcnIdConsec.value = '';
+			self.document.forms[0].tcnIdConsec.disabled = false;
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}			
 //Desabilita los campos Año-Serie y Tipo de negocio si se selecciona no proporcional.
@@ -169,8 +179,11 @@ function ChangeReinsurance(Field,Disabled){
 			self.document.forms[0].tcnNumber.disabled=false;
 			self.document.forms[0].tcnNumber.value='';
 			$(self.document.forms[0].cbeContraType).change();
-			self.document.forms[0].elements['cbeContraType'].List='683,685,686,687,688';
-
+			self.document.forms[0].elements['cbeContraType'].List = '683,685,686,687,688';
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
+			self.document.forms[0].tcnIdConsec.value = '';
+			self.document.forms[0].tcnIdConsec.disabled = false;
+			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}	
 		default:
@@ -224,10 +237,10 @@ function ClearDescCompany(){
 <HEAD>
     <META NAME="GENERATOR" CONTENT="Microsoft Visual Studio 6.0"/>
     <%With Response
-	.Write(mobjValues.StyleSheet() & vbCrLf)
-	.Write(mobjMenu.MakeMenu("CR006_K", "CR006.aspx", 1, ""))
-End With
-mobjMenu = Nothing%>
+            .Write(mobjValues.StyleSheet() & vbCrLf)
+            .Write(mobjMenu.MakeMenu("CR006_K", "CR006.aspx", 1, ""))
+        End With
+        mobjMenu = Nothing%>
 </HEAD>
 <BODY ONUNLOAD="closeWindows();">
 <TD><BR></TD>
@@ -249,6 +262,10 @@ mobjMenu = Nothing%>
 			<TD WIDTH="5%">&nbsp;</TD>
 			<TD WIDTH="10%"><LABEL><%= GetLocalResourceObject("tcnNumberCaption") %></LABEL></TD>
 			<TD><%=mobjValues.NumericControl("tcnNumber", 5,  ,  , GetLocalResourceObject("tcnNumberToolTip"),  ,  ,  ,  ,  ,  , True, 4)%></TD>
+            <%--PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO--%>
+            <TD WIDTH="10%"><LABEL>Id Consecutivo</LABEL></TD>
+            <TD><%=mobjValues.NumericControl("tcnIdConsec", 10, "",  , GetLocalResourceObject("tcnIdConsec"),  ,  ,  ,  ,  ,  , False, 11)%></TD>            
+            <%--PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN--%>
 		</TR>
         <TR>
 			<TD WIDTH="45%"><%=mobjValues.OptionControl(0, "optReinsurance", GetLocalResourceObject("optReinsurance_CStr2Caption"), "1", CStr(2), "ChangeReinsurance(this.value);", True, 2, GetLocalResourceObject("optReinsurance_CStr2ToolTip"))%></TD>
@@ -262,10 +279,10 @@ mobjMenu = Nothing%>
             <TD>&nbsp;</TD>
             <TD><label><%= GetLocalResourceObject("cbeContraTypeCaption") %></LABEL></TD>
 			<%
-mobjValues.TypeList = CShort("1")
-mobjValues.TypeOrder = CShort("1")
-mobjValues.List = "2,3,5,6,7,8,9,10"
-mobjValues.BlankPosition = False
+                mobjValues.TypeList = CShort("1")
+                mobjValues.TypeOrder = CShort("1")
+                mobjValues.List = "2,3,5,6,7,8,9,10"
+                mobjValues.BlankPosition = False
 %>
 			<TD><%=mobjValues.PossiblesValues("cbeContraType", "table173", eFunctions.Values.eValuesType.clngWindowType, "",  ,  ,  ,  ,  ,  , True,  , GetLocalResourceObject("cbeContraTypeToolTip"), eFunctions.Values.eTypeCode.eNumeric, 6)%></TD>
             <TD><LABEL><%= GetLocalResourceObject("tcnYearSerCaption") %></LABEL></TD>
@@ -295,8 +312,8 @@ mobjValues.BlankPosition = False
             <TD WIDTH="5%">&nbsp;</TD>
             <TD><LABEL><%= GetLocalResourceObject("cbeBussiTypeCaption") %></LABEL></TD>
             <TD><%
-mobjValues.BlankPosition = False
-Response.Write(mobjValues.PossiblesValues("cbeBussiType", "table20", eFunctions.Values.eValuesType.clngComboType, "",  ,  ,  ,  ,  ,  , True,  , GetLocalResourceObject("cbeBussiTypeToolTip"),  , 10))
+                    mobjValues.BlankPosition = False
+                    Response.Write(mobjValues.PossiblesValues("cbeBussiType", "table20", eFunctions.Values.eValuesType.clngComboType, "",  ,  ,  ,  ,  ,  , True,  , GetLocalResourceObject("cbeBussiTypeToolTip"),  , 10))
 %>
 		    </TD>
         </TR>    

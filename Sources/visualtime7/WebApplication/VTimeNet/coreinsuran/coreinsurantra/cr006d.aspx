@@ -3,35 +3,35 @@
 <%@ Import namespace="eCoReinsuran" %>
 <script language="VB" runat="Server">
 
-'- Objeto para el manejo de las funciones generales de carga de valores
-Dim mobjValues As eFunctions.Values
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
 
-'- Objeto para el manejo de las rutinas genéricas
-Dim mobjMenu As eFunctions.Menues
+    '- Objeto para el manejo de las rutinas genéricas
+    Dim mobjMenu As eFunctions.Menues
 
-'- Se define la variable modular utilizada para la carga y actualización de datos de la forma    
-Dim mclsCuentecn As eCoReinsuran.Cuentecn
+    '- Se define la variable modular utilizada para la carga y actualización de datos de la forma    
+    Dim mclsCuentecn As eCoReinsuran.Cuentecn
 
 
-'% insPreCR006D: Realiza la lectura para la carga de los datos de la forma
-'------------------------------------------------------------------------------------------------
-Private Sub insPreCR006D()
-	'------------------------------------------------------------------------------------------------
-	Call mclsCuentecn.Find(CInt(Request.QueryString.Item("nNumber")), CInt(Request.QueryString.Item("nBranch")), CInt(Request.QueryString.Item("nType")), CInt(Request.QueryString.Item("nCompany")), CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), Request.QueryString.Item("sBussiType"), CInt(Request.QueryString.Item("nCurrency")))
-	
-	Call mclsCuentecn.DefaultValues("CR006D", CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), CInt(Request.QueryString.Item("nMainAction")))
-End Sub
+    '% insPreCR006D: Realiza la lectura para la carga de los datos de la forma
+    '------------------------------------------------------------------------------------------------
+    Private Sub insPreCR006D()
+        '------------------------------------------------------------------------------------------------
+        Call mclsCuentecn.Find(CInt(Request.QueryString.Item("nNumber")), CInt(Request.QueryString.Item("nBranch")), CInt(Request.QueryString.Item("nType")), CInt(Request.QueryString.Item("nCompany")), CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), Request.QueryString.Item("sBussiType"), CInt(Request.QueryString.Item("nCurrency")), CInt(Request.QueryString.Item("nIdConsec")))
+
+        Call mclsCuentecn.DefaultValues("CR006D", CInt(Request.QueryString.Item("nPerType")), CInt(Request.QueryString.Item("nPerNum")), CInt(Request.QueryString.Item("nMainAction")))
+    End Sub
 
 </script>
 <%Response.Expires = -1
-mobjValues = New eFunctions.Values
-mobjMenu = New eFunctions.Menues
-mclsCuentecn = New eCoReinsuran.Cuentecn
+    mobjValues = New eFunctions.Values
+    mobjMenu = New eFunctions.Menues
+    mclsCuentecn = New eCoReinsuran.Cuentecn
 
-mobjValues.ActionQuery = Session("bQuery")
-Call insPreCR006D()
+    mobjValues.ActionQuery = Session("bQuery")
+    Call insPreCR006D()
 
-mobjValues.sCodisplPage = "cr006d"
+    mobjValues.sCodisplPage = "cr006d"
 %>
 <SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
 <SCRIPT>
@@ -54,7 +54,7 @@ function DisabledFields(Reinsurance){
 //--------------------------------------------------------------------------------------------
 function AmountResum(Reinsurance){
 //--------------------------------------------------------------------------------------------
-
+    //PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
 	with(self.document.forms[0]){
 		if(typeof(Reinsurance)=='undefined'){
 			//Total reasegurador
@@ -63,16 +63,16 @@ function AmountResum(Reinsurance){
 							insConvertNumber(tcnInterPrem.value) + insConvertNumber(tcnInterSin.value) + 
 							insConvertNumber(tcnECarPrem.value) + insConvertNumber(tcnECarSin.value);
 			
-			tcnTotRei.value = VTFormat(tcnTotRei_tmp, "", "", "", 0, true);
+			tcnTotRei.value = VTFormat(tcnTotRei_tmp, "", "", "", 6, true);
 			$(tcnTotRei).change();
 			
 			//Saldo
 			tcnBalance_tmp = insConvertNumber(tcnTotRei.value) - insConvertNumber(tcnTotInsu.value);
 
 			if (tcnBalance_tmp < 0){
-				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 6, true);
 			}else{
-				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 6, true);
 			}
 			$(tcnBalance).change();
 
@@ -80,19 +80,20 @@ function AmountResum(Reinsurance){
 		}else{
 			//Total reasegurador
 			tcnTotRei_tmp = insConvertNumber(tcnPremCed.value);
-			tcnTotRei.value = VTFormat(tcnTotRei_tmp, "", "", "", 0, true);
+			tcnTotRei.value = VTFormat(tcnTotRei_tmp, "", "", "", 6, true);
 
 			//Saldo
 			tcnBalance_tmp = insConvertNumber(tcnTotRei.value) - insConvertNumber(tcnTotInsu.value);
 
 			if (tcnBalance_tmp < 0){
-				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp * -1, "", "", "", 6, true);
 			}else{
-				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 0, true);
+				tcnBalance.value = VTFormat(tcnBalance_tmp, "", "", "", 6, true);
 			}
 			$(tcnBalance).change();
 		}
 	}
+	//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 }
 
 //PutZero: Función que no permite que algún campo quede sin valor(en blanco).
@@ -107,12 +108,12 @@ function PutZero(Field){
 <HEAD>
     <META NAME="GENERATOR" CONTENT="Microsoft Visual Studio 6.0"/>
     <%With Response
-	.Write(mobjValues.StyleSheet() & vbCrLf)
-	.Write(mobjMenu.setZone(2, "CR006D", "CR006D.aspx"))
-	.Write(mobjValues.ShowWindowsName("CR006D"))
-	.Write("<BR><BR>")
-End With
-mobjMenu = Nothing%>
+            .Write(mobjValues.StyleSheet() & vbCrLf)
+            .Write(mobjMenu.setZone(2, "CR006D", "CR006D.aspx"))
+            .Write(mobjValues.ShowWindowsName("CR006D"))
+            .Write("<BR><BR>")
+        End With
+        mobjMenu = Nothing%>
 </HEAD>
 <BODY ONUNLOAD="closeWindows();">
 <FORM METHOD="post" ID="FORM" NAME="frmCR006D" ACTION="valCoReinsuranTra.aspx?nMainAction=<%=Request.QueryString.Item("nMainAction")%>">
@@ -178,9 +179,9 @@ mobjMenu = Nothing%>
     document.VssVersion="$$Revision: 1 $|$$Date: 2/09/03 19:02 $"     
 </SCRIPT>
 <%
-If mclsCuentecn.nRequestnu > 0 Then
-	Response.Write("<SCRIPT>DisabledFields(" & Request.QueryString.Item("nReinsurance") & ");</SCRIPT>")
-End If
+    If mclsCuentecn.nRequestnu > 0 Then
+        Response.Write("<SCRIPT>DisabledFields(" & Request.QueryString.Item("nReinsurance") & ");</SCRIPT>")
+    End If
 %>
 </BODY>
 </HTML>
