@@ -75,6 +75,7 @@ function insStateZone(){
 	}
 
 	self.document.forms[0].tcnIdConsec.disabled = false;
+	self.document.forms[0].cbePerType.disabled = false;
 }
 
 // ChangeYearSer: Muestra el año completo (4 digitos)
@@ -88,10 +89,10 @@ function ChangeYearSer(Field){
 		}
 	}
 	else{
-		self.document.forms[0].cbePerType.disabled=true;
-		self.document.forms[0].tcnPerNum.disabled=true;
-		self.document.forms[0].cbePerType.value=5;
-		self.document.forms[0].tcnPerNum.value=1;
+		//self.document.forms[0].cbePerType.disabled=true;
+		//self.document.forms[0].tcnPerNum.disabled=true;
+		//self.document.forms[0].cbePerType.value=5;
+		//self.document.forms[0].tcnPerNum.value=1;
 	}
 }
 //% getCompleteYear: Esta rutina se encarga de devolver el año completo (4 digitos) cuando se introduce incompleto (2 dígitos).
@@ -135,14 +136,15 @@ function ChangeReinsurance(Field,Disabled){
 			self.document.forms[0].tcnYearSer.disabled=false;
 			ChangeYearSer(self.document.forms[0].tcnYearSer.value);
 			self.document.forms[0].cbeBussiType.disabled=false;
-			self.document.forms[0].tcnYearSer.value='';
+			self.document.forms[0].tcnYearSer.value = '';
+			self.document.forms[0].cbePerType.disabled = false;
 			self.document.forms[0].cbeContraType.disabled=true;
 			self.document.forms[0].btncbeContraType.disabled=true;
 			self.document.forms[0].cbeContraType.value=4;
 			$(self.document.forms[0].cbeContraType).change();
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
-			self.document.forms[0].tcnIdConsec.value = '';
-			self.document.forms[0].tcnIdConsec.disabled = false;
+			//self.document.forms[0].tcnIdConsec.value = '';
+			//self.document.forms[0].tcnIdConsec.disabled = false;
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}		
@@ -157,12 +159,13 @@ function ChangeReinsurance(Field,Disabled){
 			self.document.forms[0].tcnYearSer.value='';
 			self.document.forms[0].tcnYearSer.disabled=false;
 			ChangeYearSer(self.document.forms[0].tcnYearSer.value);
-			self.document.forms[0].cbeBussiType.disabled=false;
+			self.document.forms[0].cbeBussiType.disabled = false;
+			self.document.forms[0].cbePerType.disabled = false;
 			$(self.document.forms[0].cbeContraType).change();
 			self.document.forms[0].elements['cbeContraType'].List = '2,3,5,6,7,8,9,10';
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
-			self.document.forms[0].tcnIdConsec.value = '';
-			self.document.forms[0].tcnIdConsec.disabled = false;
+			//self.document.forms[0].tcnIdConsec.value = '';
+			//self.document.forms[0].tcnIdConsec.disabled = false;
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}			
@@ -175,14 +178,15 @@ function ChangeReinsurance(Field,Disabled){
 			ChangeYearSer(self.document.forms[0].tcnYearSer.value);
 			self.document.forms[0].cbeBussiType.value='0';
 			self.document.forms[0].cbeBussiType.disabled=true;
-			self.document.forms[0].cbePerType.disabled=true;
+			self.document.forms[0].cbePerType.disabled = true;
+			self.document.forms[0].tcnPerNum.disabled = true;
 			self.document.forms[0].tcnNumber.disabled=false;
 			self.document.forms[0].tcnNumber.value='';
 			$(self.document.forms[0].cbeContraType).change();
 			self.document.forms[0].elements['cbeContraType'].List = '683,685,686,687,688';
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO
-			self.document.forms[0].tcnIdConsec.value = '';
-			self.document.forms[0].tcnIdConsec.disabled = false;
+			//self.document.forms[0].tcnIdConsec.value = '';
+			//self.document.forms[0].tcnIdConsec.disabled = false;
 			//PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN
 			break;
 		}	
@@ -264,7 +268,7 @@ function ClearDescCompany(){
 			<TD><%=mobjValues.NumericControl("tcnNumber", 5,  ,  , GetLocalResourceObject("tcnNumberToolTip"),  ,  ,  ,  ,  ,  , True, 4)%></TD>
             <%--PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - INICIO--%>
             <TD WIDTH="10%"><LABEL>Id Consecutivo</LABEL></TD>
-            <TD><%=mobjValues.NumericControl("tcnIdConsec", 10, "",  , GetLocalResourceObject("tcnIdConsec"),  ,  ,  ,  ,  ,  , False, 11)%></TD>            
+            <TD><%=mobjValues.NumericControl("tcnIdConsec", 10, "",  , GetLocalResourceObject("tcnIdConsec"),  ,  ,  ,  ,  ,  , True, 11)%></TD>            
             <%--PRY-REASEGUROS VT - LEVANTAMIENTO DE AJUSTE DE CUENTAS TECNICAS  - LAMC - FIN--%>
 		</TR>
         <TR>

@@ -24,15 +24,15 @@
 
 </script>
 <%Response.Expires = -1
-mobjValues = New eFunctions.Values
-mobjMenu = New eFunctions.Menues
-mclsCuentecn = New eCoReinsuran.Cuentecn
+    mobjValues = New eFunctions.Values
+    mobjMenu = New eFunctions.Menues
+    mclsCuentecn = New eCoReinsuran.Cuentecn
 
-mobjValues.ActionQuery = Session("bQuery")
+    mobjValues.ActionQuery = Session("bQuery")
 
-Call insPreCR006H()
+    Call insPreCR006H()
 
-mobjValues.sCodisplPage = "cr006h"
+    mobjValues.sCodisplPage = "cr006h"
 %>
 <SCRIPT LANGUAGE="JavaScript" SRC="/VTimeNet/Scripts/GenFunctions.js"></SCRIPT>
 <SCRIPT>
@@ -108,12 +108,12 @@ function PutZero(Field){
 <HEAD>
     <META NAME="GENERATOR" CONTENT="Microsoft Visual Studio 6.0"/>
     <%With Response
-	.Write(mobjValues.StyleSheet() & vbCrLf)
-	.Write(mobjMenu.setZone(2, "CR006H", "CR006H.aspx"))
-	.Write(mobjValues.ShowWindowsName("CR006H"))
-	.Write("<BR><BR>")
-End With
-mobjMenu = Nothing%>
+            .Write(mobjValues.StyleSheet() & vbCrLf)
+            .Write(mobjMenu.setZone(2, "CR006H", "CR006H.aspx"))
+            .Write(mobjValues.ShowWindowsName("CR006H"))
+            .Write("<BR><BR>")
+        End With
+        mobjMenu = Nothing%>
 </HEAD>
 <BODY ONUNLOAD="closeWindows();">
 <FORM METHOD="post" ID="FORM" NAME="frmCR006H" ACTION="valCoReinsuranTra.aspx?nMainAction=<%=Request.QueryString.Item("nMainAction")%>">
@@ -173,9 +173,9 @@ mobjMenu = Nothing%>
     document.VssVersion="$$Revision: 1 $|$$Date: 2/09/03 19:02 $" 
 </SCRIPT>    
 <%
-If mclsCuentecn.nRequestnu > 0 Then
-	Response.Write("<SCRIPT>DisabledFields(" & Request.QueryString.Item("nReinsurance") & ");</SCRIPT>")
-End If
+    If mclsCuentecn.nRequestnu > 0 Then
+        Response.Write("<SCRIPT>DisabledFields(" & Request.QueryString.Item("nReinsurance") & ");</SCRIPT>")
+    End If
 %>
 </BODY>
 </HTML>

@@ -597,18 +597,18 @@ insValCRL006_Err:
 
                 '+ Se trae la última fecha de ejecución del proceso de generación de cesiones de primas RNP y
                 '+ se valida que la fecha armada no sea mayor a la fecha de ejecución del procesos de generación de primas RNP.
-                Call lclsCtrolDate.Find(clngGenCessPremiumNonPro)
-                If CDate(lstrDate) > lclsCtrolDate.dEffecdate Then
-                    Call lclsErrors.ErrorMessage(sCodispl, 90000507, , , CStr(lclsCtrolDate.dEffecdate))
-                End If
+                'Call lclsCtrolDate.Find(clngGenCessPremiumNonPro)
+                'If CDate(lstrDate) > lclsCtrolDate.dEffecdate Then
+                '    Call lclsErrors.ErrorMessage(sCodispl, 90000507, , , CStr(lclsCtrolDate.dEffecdate))
+                'End If
 
                 lclsCtrolDate.dEffecdate = eRemoteDB.Constants.dtmNull
 
                 '+ Se extrae la fecha de generación de los procesos de generación de siniestros RNP.
-                Call lclsCtrolDate.Find(clngGenCessClaimNonPro)
-                If CDate(lstrDate) > lclsCtrolDate.dEffecdate Then
-                    Call lclsErrors.ErrorMessage(sCodispl, 90000508, , , CStr(lclsCtrolDate.dEffecdate))
-                End If
+                'Call lclsCtrolDate.Find(clngGenCessClaimNonPro)
+                'If CDate(lstrDate) > lclsCtrolDate.dEffecdate Then
+                '    Call lclsErrors.ErrorMessage(sCodispl, 90000508, , , CStr(lclsCtrolDate.dEffecdate))
+                'End If
 
                 lclsCtrolDate.dEffecdate = eRemoteDB.Constants.dtmNull
 

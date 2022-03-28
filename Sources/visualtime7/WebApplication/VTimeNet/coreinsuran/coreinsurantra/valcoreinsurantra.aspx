@@ -126,19 +126,19 @@
             Case "CR782"
                 Dim lclsProfit As New eCoReinsuran.Contr_Rate_Profit
                 If CDbl(Request.QueryString.Item("nZone")) = 1 Then
-                    insvalCoReinsuranTra = lclsProfit.insValCR782_k("CR782", mobjValues.StringToType(Request.Form.Item("tcdEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble))
+                    insvalCoReinsuranTra = lclsProfit.InsValCR782_K("CR782", mobjValues.StringToType(Request.Form.Item("tcdEffecdate"), eFunctions.Values.eTypeData.etdDate), mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble))
                 Else
                     If Request.QueryString.Item("WindowType") = "PopUp" Then
                         With Request
-                            insvalCoReinsuranTra = lclsProfit.insValCR782("CR782", mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnIni_Policy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnEnd_Policy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                                                                          mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble), _
+                            insvalCoReinsuranTra = lclsProfit.InsValCR782("CR782", mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnIni_Policy"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnEnd_Policy"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                                                                          mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble),
                                                                           .QueryString.Item("Action"))
                         End With
                     End If
@@ -151,21 +151,21 @@
                 Else
                     If Request.QueryString.Item("WindowType") = "PopUp" Then
                         With Request
-                            insvalCoReinsuranTra = lclsProfit.InsValCR783("CR783", mobjValues.StringToType(.Form.Item("cbeInsur_area"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("valCovergen"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeTypeVal"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnFromValue"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnToValue"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnAmountFix"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeTypeCom"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble), _
+                            insvalCoReinsuranTra = lclsProfit.InsValCR783("CR783", mobjValues.StringToType(.Form.Item("cbeInsur_area"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("valCovergen"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeTypeVal"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnFromValue"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                                                                          mobjValues.StringToType(.Form.Item("tcnToValue"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnAmountFix"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeTypeCom"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(Request.QueryString.Item("nMainAction"), eFunctions.Values.eTypeData.etdDouble),
                                                                           .QueryString.Item("Action"))
                         End With
                     End If
@@ -220,11 +220,11 @@
                 If lblnPost Then
 
                     '+ Dependiendo de los totales generados, el sistema va a llamar a favor del asegurado o a favor del reasegurador.
-                    If mobjCoReinsuranTra.nSal_f_rein > mobjCoReinsuranTra.nSal_f_comp Then
+                    If Math.Abs(mobjCoReinsuranTra.nSal_f_rein) > Math.Abs(mobjCoReinsuranTra.nSal_f_comp) Then
 
                         '+ A favor del reasegurador.
                         mstrString = "CR006D"
-                    ElseIf mobjCoReinsuranTra.nSal_f_comp >= mobjCoReinsuranTra.nSal_f_rein Then
+                    ElseIf Math.Abs(mobjCoReinsuranTra.nSal_f_comp) >= Math.Abs(mobjCoReinsuranTra.nSal_f_rein) Then
 
                         '+ A favor del asegurador.
                         mstrString = "CR006H"
@@ -299,7 +299,7 @@
                     mobjCoReinsuranTra = New eCoReinsuran.Contr_rate_II
                     If CDbl(.QueryString.Item("nZone")) = 1 Then
                         '+ Se toma el ultimo valor consultado a ser duplicado 
-                        If CDbl(IIf(Request.QueryString.Item("nMainAction")="",0,Request.QueryString.Item("nMainAction"))) = 401 Then
+                        If CDbl(IIf(Request.QueryString.Item("nMainAction") = "", 0, Request.QueryString.Item("nMainAction"))) = 401 Then
                             Session("nLastNumber") = .Form.Item("tcnNumber")
                             Session("nLastBranch") = .Form.Item("cbenBranch_rei")
                             Session("nLastType") = .Form.Item("cbeType")
@@ -405,14 +405,14 @@
                         Dim lclsProfit As New eCoReinsuran.Contr_Rate_Profit
                         'mobjCoReinsuranTra = Server.CreateObject("eCoReinsuran.Contr_Rate_Profit")
                         With Request
-                            lblnPost = lclsProfit.InspostCR782Upd(.QueryString("Action"), mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnIni_Policy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnEnd_Policy"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
+                            lblnPost = lclsProfit.InspostCR782Upd(.QueryString("Action"), mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnIni_Policy"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnEnd_Policy"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
                                                                           mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble))
                         End With
                         lclsProfit = Nothing
@@ -429,20 +429,20 @@
                         Dim lclsCommiss_contr As New eCoReinsuran.Commiss_contr
                         'mobjCoReinsuranTra = Server.CreateObject("eCoReinsuran.Contr_Rate_Profit")
                         With Request
-                            lblnPost = lclsCommiss_contr.InspostCR783Upd(.QueryString("Action"), mobjValues.StringToType(.Form.Item("cbeInsur_area"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("valCovergen"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeTypeVal"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnFromValue"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnToValue"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnAmountFix"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble), _
-                                                                          .Form.Item("cbeTypeCom"), _
+                            lblnPost = lclsCommiss_contr.InspostCR783Upd(.QueryString("Action"), mobjValues.StringToType(.Form.Item("cbeInsur_area"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCompany"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeBranchRei"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeContraType"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnNumber"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("valCovergen"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeTypeVal"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnFromValue"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(Session("dEffecdate"), eFunctions.Values.eTypeData.etdDate),
+                                                                          mobjValues.StringToType(.Form.Item("tcnToValue"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnAmountFix"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("cbeCurrency"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          mobjValues.StringToType(.Form.Item("tcnPercent"), eFunctions.Values.eTypeData.etdDouble),
+                                                                          .Form.Item("cbeTypeCom"),
                                                                           mobjValues.StringToType(Session("nUsercode"), eFunctions.Values.eTypeData.etdDouble))
                         End With
                         lclsCommiss_contr = Nothing
@@ -461,8 +461,8 @@
 
 </script>
 <%Response.Expires = -1
-mobjValues = New eFunctions.Values
-mstrCommand = "&sModule=CoReinsuran&sProject=CoReinsuranTra&sCodisplReload=" & Request.QueryString.Item("sCodispl")
+    mobjValues = New eFunctions.Values
+    mstrCommand = "&sModule=CoReinsuran&sProject=CoReinsuranTra&sCodisplReload=" & Request.QueryString.Item("sCodispl")
 
 
 %>
@@ -491,11 +491,11 @@ function NewLocation(Source,Codisp)
 }
 </SCRIPT>
 <%
-    If Request.QueryString.Item("nAction") <> CStr(eFunctions.Menues.TypeActions.clngAcceptdataFinish) Or Request.QueryString.Item("nMainAction") = CStr(eFunctions.Menues.TypeActions.clngActionDuplicate) Then
+    If Request.QueryString.Item("nAction") <> CStr(eFunctions.Menues.TypeActions.clngAcceptdatafinish) Or Request.QueryString.Item("nMainAction") = CStr(eFunctions.Menues.TypeActions.clngActionDuplicate) Then
 
         '+ Si no se han validado los campos de la página
         If Request.Form.Item("sCodisplReload") = vbNullString Then
-            mstrErrors = insvalCoReinsuranTra
+            mstrErrors = insvalCoReinsuranTra()
             Session("sErrorTable") = mstrErrors
             Session("sForm") = Request.Form.ToString
         Else
@@ -506,14 +506,14 @@ function NewLocation(Source,Codisp)
         If mstrErrors > vbNullString Then
             With Response
                 .Write("<SCRIPT LANGUAGE=JAVASCRIPT>")
-                .Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & Server.URLEncode(mstrCommand) & "&sQueryString=" & Server.URLEncode(Request.Params.Get("Query_String")) & """, ""CoReinsuranTraError"",660,330);")
+                .Write("ShowPopUp(""/VTimeNet/Common/Errors.aspx?sSource=" & Server.UrlEncode(mstrCommand) & "&sQueryString=" & Server.UrlEncode(Request.Params.Get("Query_String")) & """, ""CoReinsuranTraError"",660,330);")
                 .Write(mobjValues.StatusControl(False, CShort(Request.QueryString.Item("nZone")), Request.QueryString.Item("WindowType")))
                 .Write("</SCRIPT>")
             End With
         Else
-            If insPostCoReinsuranTra Then
+            If insPostCoReinsuranTra() Then
                 If Request.QueryString.Item("WindowType") <> "PopUp" Then
-                    If Request.QueryString.Item("nAction") = CStr(eFunctions.Menues.TypeActions.clngAcceptdataFinish) Then
+                    If Request.QueryString.Item("nAction") = CStr(eFunctions.Menues.TypeActions.clngAcceptdatafinish) Then
                         Response.Write("<SCRIPT>insReloadTop(false)</SCRIPT>")
                     Else
                         If Request.QueryString.Item("sCodispl") = "CR006_k" Or Request.QueryString.Item("sCodispl") = "CR006_K" Then
@@ -526,6 +526,9 @@ function NewLocation(Source,Codisp)
                             Else
                                 Response.Write("<SCRIPT>top.document.location.reload();</SCRIPT>")
                             End If
+                        ElseIf Request.QueryString.Item("sCodispl") = "CR006D" Or Request.QueryString.Item("sCodispl") = "CR006H" Then
+                            Response.Write("<SCRIPT>top.document.location.reload();</SCRIPT>")
+                            Response.Write("<script>alert('Se realizó la operación correctamente.');</script>")
                         Else
                             If Request.QueryString.Item("sCodispl") = "CR781" Then
                                 Response.Write("<SCRIPT>insReloadTop(false)</SCRIPT>")
@@ -556,6 +559,11 @@ function NewLocation(Source,Codisp)
 
                 If Request.QueryString.Item("sCodispl") = "CR006_k" Or Request.QueryString.Item("sCodispl") = "CR006_K" Then
                     Response.Write("<SCRIPT>top.document.location.reload();</SCRIPT>")
+                End If
+
+                If Request.QueryString.Item("sCodispl") = "CR006D" Or Request.QueryString.Item("sCodispl") = "CR006H" Then
+                    Response.Write("<SCRIPT>insReloadTop(false)</SCRIPT>")
+                    Response.Write("<script>alert('No se pudo realizar la operación.');</script>")
                 End If
             End If
         End If
