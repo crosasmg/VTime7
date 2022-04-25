@@ -69,7 +69,7 @@ Private Sub insPreGI1407()
 				.Columns("tctSheet").DefValue = lclsJobs.sSheet
 				.Columns("tctOutputFile").DefValue = lclsJobs.sOutputFile
 				.Columns("tctStatus").DefValue = lclsJobs.sStatus
-				If lclsJobs.sView_Interface = "1" Then
+				If lclsJobs.sView_Interface = "1" And lclsJobs.sOutputFile <> "" Then
 					.Columns("tctViewInterface").DefValue = "Ver Archivo"
 					.Columns("tctViewInterface").HRefScript = "showFile('" & lclsJobs.sDirOut & "', '" & lclsJobs.sOutputFile & "')"
                                         
