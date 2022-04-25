@@ -3,89 +3,89 @@
 <%@ Import namespace="eSchedule" %>
 <script language="VB" runat="Server"> 
 
-'- Objeto para el manejo de las funciones generales de carga de valores
-Dim mobjValues As eFunctions.Values
+    '- Objeto para el manejo de las funciones generales de carga de valores
+    Dim mobjValues As eFunctions.Values
 
-'- Objeto para el manejo del grid de la página
-Dim mobjGrid As eFunctions.Grid
+    '- Objeto para el manejo del grid de la página
+    Dim mobjGrid As eFunctions.Grid
 
-'- Objeto para el manejo del menú
-Dim mobjMenu As eFunctions.Menues
+    '- Objeto para el manejo del menú
+    Dim mobjMenu As eFunctions.Menues
 
-'- Objeto para el manejo particular de los datos de la página
-Dim mcolClass As Object
+    '- Objeto para el manejo particular de los datos de la página
+    Dim mcolClass As Object
 
 
-'% insDefineHeader: se definen las propiedades del grid
-'--------------------------------------------------------------------------------------------
-Private Sub insDefineHeader()
-	'--------------------------------------------------------------------------------------------
-	mobjGrid = New eFunctions.Grid
-	
-	'+ Se definen las columnas del grid    
-	With mobjGrid.Columns
-		.AddHiddenColumn("hddKey", "")
-		.AddTextColumn(0, GetLocalResourceObject("tctSheetColumnCaption"), "tctSheet", 50, "",  , GetLocalResourceObject("tctSheetColumnToolTip"))
-		.AddTextColumn(0, GetLocalResourceObject("tctStatusColumnCaption"), "tctStatus", 50, "",  , GetLocalResourceObject("tctStatusColumnToolTip"))
-		.AddTextColumn(0, GetLocalResourceObject("tctOutputFileColumnCaption"), "tctOutputFile", 100, "",  , GetLocalResourceObject("tctOutputFileColumnToolTip"))
-		.AddTextColumn(0, GetLocalResourceObject("tctViewInterfaceColumnCaption"), "tctViewInterface", 10, GetLocalResourceObject("tctViewInterfaceColumnCaption"),  , GetLocalResourceObject("tctViewInterfaceColumnToolTip"))
-	End With
-	
-	'+ Se definen las propiedades generales del grid
-	
-	With mobjGrid
-		.Codispl = "GI1407"
-		.sCodisplPage = "GI1407"
-		.AddButton = False
-		.DeleteButton = False
-		.ActionQuery = mobjValues.ActionQuery
-		.Height = 500
-		.Width = 1000
-		.nMainAction = CShort(IIf(Request.QueryString.Item("nMainAction") ="", 0, Request.QueryString.Item("nMainAction")))
-		.Columns("Sel").GridVisible = False
-		If Request.QueryString.Item("Reload") = "1" Then
-			.sReloadIndex = Request.QueryString.Item("ReloadIndex")
-		End If
-	End With
-	
-End Sub
+    '% insDefineHeader: se definen las propiedades del grid
+    '--------------------------------------------------------------------------------------------
+    Private Sub insDefineHeader()
+        '--------------------------------------------------------------------------------------------
+        mobjGrid = New eFunctions.Grid
 
-'% insPreCodispl: se realiza el manejo del grid
-'--------------------------------------------------------------------------------------------
-Private Sub insPreGI1407()
-	'--------------------------------------------------------------------------------------------
-	Dim lclsJobs As eSchedule.Batch_job
-	Dim lintCount As Double
-	
-	lclsJobs = New eSchedule.Batch_job
-	
-	If lclsJobs.Find_Interface_Batch_Job(Session("sKey")) Then
+        '+ Se definen las columnas del grid    
+        With mobjGrid.Columns
+            .AddHiddenColumn("hddKey", "")
+            .AddTextColumn(0, GetLocalResourceObject("tctSheetColumnCaption"), "tctSheet", 50, "",  , GetLocalResourceObject("tctSheetColumnToolTip"))
+            .AddTextColumn(0, GetLocalResourceObject("tctStatusColumnCaption"), "tctStatus", 50, "",  , GetLocalResourceObject("tctStatusColumnToolTip"))
+            .AddTextColumn(0, GetLocalResourceObject("tctOutputFileColumnCaption"), "tctOutputFile", 100, "",  , GetLocalResourceObject("tctOutputFileColumnToolTip"))
+            .AddTextColumn(0, GetLocalResourceObject("tctViewInterfaceColumnCaption"), "tctViewInterface", 10, GetLocalResourceObject("tctViewInterfaceColumnCaption"),  , GetLocalResourceObject("tctViewInterfaceColumnToolTip"))
+        End With
 
-		lintCount = 1
-		While lclsJobs.ItemBatchJob(lintCount)
+        '+ Se definen las propiedades generales del grid
+
+        With mobjGrid
+            .Codispl = "GI1407"
+            .sCodisplPage = "GI1407"
+            .AddButton = False
+            .DeleteButton = False
+            .ActionQuery = mobjValues.ActionQuery
+            .Height = 500
+            .Width = 1000
+            .nMainAction = CShort(IIf(Request.QueryString.Item("nMainAction") ="", 0, Request.QueryString.Item("nMainAction")))
+            .Columns("Sel").GridVisible = False
+            If Request.QueryString.Item("Reload") = "1" Then
+                .sReloadIndex = Request.QueryString.Item("ReloadIndex")
+            End If
+        End With
+
+    End Sub
+
+    '% insPreCodispl: se realiza el manejo del grid
+    '--------------------------------------------------------------------------------------------
+    Private Sub insPreGI1407()
+        '--------------------------------------------------------------------------------------------
+        Dim lclsJobs As eSchedule.Batch_job
+        Dim lintCount As Double
+
+        lclsJobs = New eSchedule.Batch_job
+
+        If lclsJobs.Find_Interface_Batch_Job(Session("sKey")) Then
+
+            lintCount = 1
+            While lclsJobs.ItemBatchJob(lintCount)
                 Session("sdirout")= lclsJobs.sDirOut
-			With mobjGrid
-				.Columns("hddKey").DefValue = lclsJobs.sKey
-				.Columns("tctSheet").DefValue = lclsJobs.sSheet
-				.Columns("tctOutputFile").DefValue = lclsJobs.sOutputFile
-				.Columns("tctStatus").DefValue = lclsJobs.sStatus
-				If lclsJobs.sView_Interface = "1" And lclsJobs.sOutputFile <> "" Then
-					.Columns("tctViewInterface").DefValue = "Ver Archivo"
-					.Columns("tctViewInterface").HRefScript = "showFile('" & lclsJobs.sDirOut & "', '" & lclsJobs.sOutputFile & "')"
-                                        
-				Else
-					.Columns("tctViewInterface").DefValue = ""
-					.Columns("tctViewInterface").HRefScript = ""
+                With mobjGrid
+                    .Columns("hddKey").DefValue = lclsJobs.sKey
+                    .Columns("tctSheet").DefValue = lclsJobs.sSheet
+                    .Columns("tctOutputFile").DefValue = lclsJobs.sOutputFile
+                    .Columns("tctStatus").DefValue = lclsJobs.sStatus
+                    If lclsJobs.sView_Interface = "1" And lclsJobs.sOutputFile <> "" Then
+                        .Columns("tctViewInterface").DefValue = "Ver Archivo"
+                        .Columns("tctViewInterface").HRefScript = "showFile('" & lclsJobs.sDirOut & "', '" & lclsJobs.sOutputFile & "')"
+
+                    Else
+                        .Columns("tctViewInterface").DefValue = ""
+                        .Columns("tctViewInterface").HRefScript = ""
                     End If
-				Response.Write(.DoRow)
-			End With
-			lintCount = lintCount + 1
-		End While
-	End If
-	lclsJobs = Nothing
-	
-	Response.Write(mobjGrid.closeTable())
-End Sub
+                    Response.Write(.DoRow)
+                End With
+                lintCount = lintCount + 1
+            End While
+        End If
+        lclsJobs = Nothing
+
+        Response.Write(mobjGrid.closeTable())
+    End Sub
 
 </script>
 <%Response.Expires = 0
